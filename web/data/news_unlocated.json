@@ -4,321 +4,23 @@
     {
       "device": "E-bike",
       "outcome": "Fatality",
-      "age_band": "25-44",
+      "age_band": "45-64",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "wxyz.com",
-      "url": "https://www.wxyz.com/news/e-bike-rider-hit-and-killed-by-truck-in-ferndale",
-      "seendate": "20260618T203000Z",
-      "confidence_tier": "corroborated",
+      "domain": "q95fm.net",
+      "url": "https://www.q95fm.net/2026/06/19/regional-news-june-19th-2026/",
+      "seendate": "20260620T113000Z",
+      "confidence_tier": "single_source",
       "corroborating_domains": [
-        "citizensvoice.com",
-        "dailyrecord.co.uk",
-        "irishmirror.ie",
-        "q95fm.net",
-        "standardspeaker.com",
-        "theage.com.au",
-        "timesofindia.indiatimes.com",
-        "walesonline.co.uk",
-        "wxyz.com"
+        "q95fm.net"
       ],
       "sources": [
-        {
-          "domain": "wxyz.com",
-          "url": "https://www.wxyz.com/news/e-bike-rider-hit-and-killed-by-truck-in-ferndale",
-          "date": "20260618T203000Z"
-        },
-        {
-          "domain": "theage.com.au",
-          "url": "https://www.theage.com.au/national/queensland/carry-his-loss-family-mourn-son-drunk-driver-jailed-20260618-p6087k.html",
-          "date": "20260618T093000Z"
-        },
-        {
-          "domain": "citizensvoice.com",
-          "url": "https://www.citizensvoice.com/2026/06/19/communities-consider-safety-as-e-bikes-gain-popularity/",
-          "date": "20260619T223000Z"
-        },
-        {
-          "domain": "standardspeaker.com",
-          "url": "https://www.standardspeaker.com/2026/06/19/communities-consider-safety-as-e-bikes-gain-popularity/",
-          "date": "20260619T213000Z"
-        },
-        {
-          "domain": "walesonline.co.uk",
-          "url": "https://www.walesonline.co.uk/news/wales-news/final-day-ely-riot-sentencing-34149582",
-          "date": "20260619T101500Z"
-        },
-        {
-          "domain": "irishmirror.ie",
-          "url": "https://www.irishmirror.ie/news/irish-news/significant-increase-scrambler-seizures-show-37317017",
-          "date": "20260619T054500Z"
-        },
-        {
-          "domain": "dailyrecord.co.uk",
-          "url": "https://www.dailyrecord.co.uk/news/scottish-news/criminal-record-edinburgh-knife-rampage-37325262",
-          "date": "20260620T184500Z"
-        },
         {
           "domain": "q95fm.net",
           "url": "https://www.q95fm.net/2026/06/19/regional-news-june-19th-2026/",
           "date": "20260620T113000Z"
-        },
-        {
-          "domain": "timesofindia.indiatimes.com",
-          "url": "https://timesofindia.indiatimes.com/entertainment/english/hollywood/news/angelina-jolies-son-pax-jolie-pitt-maintains-ties-with-brad-pitts-family-despite-strained-relationship-with-actor-reports/articleshow/131869422.cms",
-          "date": "20260620T040000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wtae.com",
-      "url": "https://www.wtae.com/article/man-injured-car-bike-crash-lower-burrell/71619549",
-      "seendate": "20260618T011500Z",
-      "confidence_tier": "corroborated",
-      "corroborating_domains": [
-        "dailyrecord.co.uk",
-        "gloucesteradvocate.com.au",
-        "kcci.com",
-        "mirror.co.uk",
-        "newcastleherald.com.au",
-        "terracestandard.com",
-        "the-independent.com",
-        "wtae.com"
-      ],
-      "sources": [
-        {
-          "domain": "wtae.com",
-          "url": "https://www.wtae.com/article/man-injured-car-bike-crash-lower-burrell/71619549",
-          "date": "20260618T011500Z"
-        },
-        {
-          "domain": "newcastleherald.com.au",
-          "url": "https://www.newcastleherald.com.au/story/9295249/newcastle-gp-injured-in-e-bike-hit-and-run-at-throsby-crossing/",
-          "date": "20260619T210000Z"
-        },
-        {
-          "domain": "gloucesteradvocate.com.au",
-          "url": "https://www.gloucesteradvocate.com.au/story/9295249/newcastle-gp-injured-in-e-bike-hit-and-run-at-throsby-crossing/",
-          "date": "20260619T210000Z"
-        },
-        {
-          "domain": "terracestandard.com",
-          "url": "https://terracestandard.com/2026/06/19/one-person-injured-in-incident-between-scooter-and-vehicle-in-terrace/",
-          "date": "20260619T203000Z"
-        },
-        {
-          "domain": "kcci.com",
-          "url": "https://www.kcci.com/article/electric-bike-and-scooter-injuries-surge-in-iowa-unitypoint-health-reports/71633359",
-          "date": "20260619T031500Z"
-        },
-        {
-          "domain": "the-independent.com",
-          "url": "https://www.the-independent.com/arts-entertainment/tv/news/nicky-campbell-daughter-e-bike-accident-b2999577.html",
-          "date": "20260620T153000Z"
-        },
-        {
-          "domain": "dailyrecord.co.uk",
-          "url": "https://www.dailyrecord.co.uk/news/scottish-news/bbc-star-nicky-campbells-daughter-37324360",
-          "date": "20260620T124500Z"
-        },
-        {
-          "domain": "mirror.co.uk",
-          "url": "https://www.mirror.co.uk/3am/celebrity-news/nicky-campbell-daughter-accident-bike-37323909",
-          "date": "20260620T084500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "outcome": "Fatality",
-      "age_band": "18-24",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wisn.com",
-      "url": "https://www.wisn.com/article/man-arrested-after-scooter-strikes-pedestrian-on-mlk-drive-sidewalk/71628570",
-      "seendate": "20260618T171500Z",
-      "confidence_tier": "corroborated",
-      "corroborating_domains": [
-        "wisn.com",
-        "yahoo.com"
-      ],
-      "sources": [
-        {
-          "domain": "wisn.com",
-          "url": "https://www.wisn.com/article/man-arrested-after-scooter-strikes-pedestrian-on-mlk-drive-sidewalk/71628570",
-          "date": "20260618T171500Z"
-        },
-        {
-          "domain": "yahoo.com",
-          "url": "https://www.yahoo.com/news/us/articles/siblings-e-scooter-deaths-moves-125209072.html",
-          "date": "20260618T141500Z"
-        },
-        {
-          "domain": "wisn.com",
-          "url": "https://www.wisn.com/article/milwaukee-alderman-seeks-scooter-speed-restraints-after-crash/71640984",
-          "date": "20260620T020000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "outcome": "Fatality",
-      "age_band": "45-64",
-      "city": null,
-      "state": "NH",
-      "location_precision": "outlet_market",
-      "located": false,
-      "domain": "wmur.com",
-      "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
-      "seendate": "20260620T000000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wmur.com"
-      ],
-      "sources": [
-        {
-          "domain": "wmur.com",
-          "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
-          "date": "20260620T000000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "outcome": "Severe injury",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "warringtonguardian.co.uk",
-      "url": "https://www.warringtonguardian.co.uk/news/26207137.girl-12-stable-condition-suffering-injuries-e-bike-crash/",
-      "seendate": "20260618T171500Z",
-      "confidence_tier": "corroborated",
-      "corroborating_domains": [
-        "connectionnewspapers.com",
-        "kfiam640.iheart.com",
-        "liverpoolecho.co.uk",
-        "manchestereveningnews.co.uk",
-        "warringtonguardian.co.uk",
-        "westsidetoday.com"
-      ],
-      "sources": [
-        {
-          "domain": "warringtonguardian.co.uk",
-          "url": "https://www.warringtonguardian.co.uk/news/26207137.girl-12-stable-condition-suffering-injuries-e-bike-crash/",
-          "date": "20260618T171500Z"
-        },
-        {
-          "domain": "manchestereveningnews.co.uk",
-          "url": "https://www.manchestereveningnews.co.uk/news/greater-manchester-news/girl-12-fighting-life-after-34141038",
-          "date": "20260618T080000Z"
-        },
-        {
-          "domain": "westsidetoday.com",
-          "url": "https://westsidetoday.com/2026/06/17/suspect-faces-attempted-murder-charges-after-intentionally-ramming-pedestrians-during-culver-city-police-chase/",
-          "date": "20260618T071500Z"
-        },
-        {
-          "domain": "kfiam640.iheart.com",
-          "url": "https://kfiam640.iheart.com/content/2026-06-17-man-arrested-after-allegedly-striking-pedestrians-in-culver-city/",
-          "date": "20260618T040000Z"
-        },
-        {
-          "domain": "connectionnewspapers.com",
-          "url": "https://www.connectionnewspapers.com/news/2026/jun/17/e-bikes-are-here-in-alexandria/",
-          "date": "20260618T010000Z"
-        },
-        {
-          "domain": "liverpoolecho.co.uk",
-          "url": "https://www.liverpoolecho.co.uk/news/liverpool-news/police-hunt-e-bike-after-34151481",
-          "date": "20260619T133000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "cbc.ca",
-      "url": "https://www.cbc.ca/news/canada/british-columbia/e-scooter-prince-george-injury-9.7241024",
-      "seendate": "20260619T021500Z",
-      "confidence_tier": "corroborated",
-      "corroborating_domains": [
-        "caledoniacourier.com",
-        "cbc.ca"
-      ],
-      "sources": [
-        {
-          "domain": "cbc.ca",
-          "url": "https://www.cbc.ca/news/canada/british-columbia/e-scooter-prince-george-injury-9.7241024",
-          "date": "20260619T021500Z"
-        },
-        {
-          "domain": "caledoniacourier.com",
-          "url": "https://caledoniacourier.com/2026/06/18/scooter-driver-hospitalized-after-accident-with-truck-in-prince-george/",
-          "date": "20260619T013000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "outcome": "Severe injury",
-      "age_band": "18-24",
-      "city": "North County",
-      "state": "CA",
-      "location_precision": "county+outlet_market",
-      "located": true,
-      "domain": "10news.com",
-      "url": "https://www.10news.com/news/local-news/san-diego-news/e-bike-rider-critically-injured-in-clairemont-mesa-traffic-collision",
-      "seendate": "20260620T230000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "10news.com"
-      ],
-      "sources": [
-        {
-          "domain": "10news.com",
-          "url": "https://www.10news.com/news/local-news/san-diego-news/e-bike-rider-critically-injured-in-clairemont-mesa-traffic-collision",
-          "date": "20260620T230000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": "Promise",
-      "state": "MO",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "aol.co.uk",
-      "url": "https://www.aol.co.uk/articles/nicky-campbells-daughter-lilla-26-125254000.html",
-      "seendate": "20260620T160000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "aol.co.uk"
-      ],
-      "sources": [
-        {
-          "domain": "aol.co.uk",
-          "url": "https://www.aol.co.uk/articles/nicky-campbells-daughter-lilla-26-125254000.html",
-          "date": "20260620T160000Z"
         }
       ]
     },
@@ -326,22 +28,22 @@
       "device": "E-bike",
       "outcome": "Fatality",
       "age_band": "13-17 (teen)",
-      "city": "Dulles",
-      "state": "DC",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "wjla.com",
-      "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
-      "seendate": "20260617T234500Z",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "walesonline.co.uk",
+      "url": "https://www.walesonline.co.uk/news/wales-news/final-day-ely-riot-sentencing-34149582",
+      "seendate": "20260619T101500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "wjla.com"
+        "walesonline.co.uk"
       ],
       "sources": [
         {
-          "domain": "wjla.com",
-          "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
-          "date": "20260617T234500Z"
+          "domain": "walesonline.co.uk",
+          "url": "https://www.walesonline.co.uk/news/wales-news/final-day-ely-riot-sentencing-34149582",
+          "date": "20260619T101500Z"
         }
       ]
     }
