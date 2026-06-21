@@ -3,116 +3,254 @@
   "reports": [
     {
       "device": "E-bike",
-      "outcome": "Severe injury",
-      "age_band": "13-17 (teen)",
+      "outcome": "Fatality",
+      "age_band": "45-64",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "kildare-nationalist.ie",
-      "url": "https://www.kildare-nationalist.ie/news/teenager-critically-injured-in-laois-e-bike-crash_arid-102497.html",
-      "seendate": "20260621T210000Z",
+      "domain": "q95fm.net",
+      "url": "https://www.q95fm.net/2026/06/19/regional-news-june-19th-2026/",
+      "seendate": "20260620T113000Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "kildare-nationalist.ie"
+        "q95fm.net"
       ],
       "sources": [
         {
-          "domain": "kildare-nationalist.ie",
-          "url": "https://www.kildare-nationalist.ie/news/teenager-critically-injured-in-laois-e-bike-crash_arid-102497.html",
-          "date": "20260621T210000Z"
+          "domain": "q95fm.net",
+          "url": "https://www.q95fm.net/2026/06/19/regional-news-june-19th-2026/",
+          "date": "20260620T113000Z"
         }
       ]
     },
     {
       "device": "E-bike",
-      "outcome": "Severe injury",
+      "outcome": "Fatality",
       "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "nova.ie",
-      "url": "https://www.nova.ie/a-teenage-boy-has-been-left-in-critical-condition-following-an-e-bike-crash/",
-      "seendate": "20260621T190000Z",
+      "domain": "nj1015.com",
+      "url": "https://nj1015.com/stafford-township-ice-incident-2/",
+      "seendate": "20260617T193000Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "nova.ie"
+        "nj1015.com"
       ],
       "sources": [
         {
-          "domain": "nova.ie",
-          "url": "https://www.nova.ie/a-teenage-boy-has-been-left-in-critical-condition-following-an-e-bike-crash/",
-          "date": "20260621T190000Z"
+          "domain": "nj1015.com",
+          "url": "https://nj1015.com/stafford-township-ice-incident-2/",
+          "date": "20260617T193000Z"
         }
       ]
     },
     {
       "device": "E-bike",
-      "outcome": "Severe injury",
+      "outcome": "Injury",
+      "age_band": "65+",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "salinapost.com",
+      "url": "https://salinapost.com/posts/179eac4d-3a99-447f-a3d4-d57e07caef80",
+      "seendate": "20260617T183000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "salinapost.com"
+      ],
+      "sources": [
+        {
+          "domain": "salinapost.com",
+          "url": "https://salinapost.com/posts/179eac4d-3a99-447f-a3d4-d57e07caef80",
+          "date": "20260617T183000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "outcome": "Fatality",
       "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "laois-nationalist.ie",
-      "url": "https://www.laois-nationalist.ie/news/teenager-critically-injured-in-portlaoise-e-bike-crash_arid-102470.html",
-      "seendate": "20260621T163000Z",
+      "domain": "nbcchicago.com",
+      "url": "https://www.nbcchicago.com/news/local/authorities-identify-teen-killed-in-crash-while-riding-e-bike-in-franklin-park/3949657/",
+      "seendate": "20260617T021500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "laois-nationalist.ie"
+        "nbcchicago.com"
       ],
       "sources": [
         {
-          "domain": "laois-nationalist.ie",
-          "url": "https://www.laois-nationalist.ie/news/teenager-critically-injured-in-portlaoise-e-bike-crash_arid-102470.html",
-          "date": "20260621T163000Z"
+          "domain": "nbcchicago.com",
+          "url": "https://www.nbcchicago.com/news/local/authorities-identify-teen-killed-in-crash-while-riding-e-bike-in-franklin-park/3949657/",
+          "date": "20260617T021500Z"
         }
       ]
     },
     {
       "device": "E-bike",
-      "outcome": "Severe injury",
-      "age_band": "0-12 (child)",
+      "outcome": "Fatality",
+      "age_band": "18-24",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "irishtimes.com",
-      "url": "https://www.irishtimes.com/ireland/2026/06/21/boy-14-in-critical-condition-after-e-bike-crash/",
-      "seendate": "20260621T154500Z",
+      "domain": "abc7chicago.com",
+      "url": "https://abc7chicago.com/post/teen-driving-bike-killed-franklin-park-crash-belmont-avenue-george-street-police-say/19309425/",
+      "seendate": "20260616T181500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "irishtimes.com"
+        "abc7chicago.com"
       ],
       "sources": [
         {
-          "domain": "irishtimes.com",
-          "url": "https://www.irishtimes.com/ireland/2026/06/21/boy-14-in-critical-condition-after-e-bike-crash/",
-          "date": "20260621T154500Z"
+          "domain": "abc7chicago.com",
+          "url": "https://abc7chicago.com/post/teen-driving-bike-killed-franklin-park-crash-belmont-avenue-george-street-police-say/19309425/",
+          "date": "20260616T181500Z"
         }
       ]
     },
     {
       "device": "E-bike",
-      "outcome": "Severe injury",
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wcvb.com",
+      "url": "https://www.wcvb.com/article/e-bike-rider-injured-in-haverhill-crash-during-morning-rush-hour/71602362",
+      "seendate": "20260616T173000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wcvb.com"
+      ],
+      "sources": [
+        {
+          "domain": "wcvb.com",
+          "url": "https://www.wcvb.com/article/e-bike-rider-injured-in-haverhill-crash-during-morning-rush-hour/71602362",
+          "date": "20260616T173000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "outcome": "Injury",
       "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "breakingnews.ie",
-      "url": "https://www.breakingnews.ie/ireland/teenager-14-in-critical-condition-after-crash-involving-e-bike-in-co-laois-1916632.html",
-      "seendate": "20260621T144500Z",
+      "domain": "theintelligencer.com",
+      "url": "https://www.theintelligencer.com/news/article/edwardsville-il-ebike-crash-teen-hospital-22307488.php",
+      "seendate": "20260616T170000Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "breakingnews.ie"
+        "theintelligencer.com"
       ],
       "sources": [
         {
-          "domain": "breakingnews.ie",
-          "url": "https://www.breakingnews.ie/ireland/teenager-14-in-critical-condition-after-crash-involving-e-bike-in-co-laois-1916632.html",
-          "date": "20260621T144500Z"
+          "domain": "theintelligencer.com",
+          "url": "https://www.theintelligencer.com/news/article/edwardsville-il-ebike-crash-teen-hospital-22307488.php",
+          "date": "20260616T170000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "outcome": "Fatality",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "talkradio960.com",
+      "url": "https://talkradio960.com/ixp/36/p/lafayette-hit-run-scooter-fatality/",
+      "seendate": "20260616T093000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "talkradio960.com"
+      ],
+      "sources": [
+        {
+          "domain": "talkradio960.com",
+          "url": "https://talkradio960.com/ixp/36/p/lafayette-hit-run-scooter-fatality/",
+          "date": "20260616T093000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "outcome": "Severe injury",
+      "age_band": "18-24",
+      "city": "North County",
+      "state": "CA",
+      "location_precision": "county+outlet_market",
+      "located": true,
+      "domain": "10news.com",
+      "url": "https://www.10news.com/news/local-news/san-diego-news/e-bike-rider-critically-injured-in-clairemont-mesa-traffic-collision",
+      "seendate": "20260620T230000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "10news.com"
+      ],
+      "sources": [
+        {
+          "domain": "10news.com",
+          "url": "https://www.10news.com/news/local-news/san-diego-news/e-bike-rider-critically-injured-in-clairemont-mesa-traffic-collision",
+          "date": "20260620T230000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "outcome": "Fatality",
+      "age_band": "45-64",
+      "city": "Matthew. ROCHESTER",
+      "state": "NH",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "wmur.com",
+      "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
+      "seendate": "20260620T000000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wmur.com"
+      ],
+      "sources": [
+        {
+          "domain": "wmur.com",
+          "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
+          "date": "20260620T000000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": "Dulles",
+      "state": "DC",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "wjla.com",
+      "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
+      "seendate": "20260617T234500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wjla.com"
+      ],
+      "sources": [
+        {
+          "domain": "wjla.com",
+          "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
+          "date": "20260617T234500Z"
         }
       ]
     }
