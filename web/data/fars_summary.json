@@ -1,0 +1,434 @@
+{
+  "measure": "count",
+  "measure_note": "These are COUNTS of fatalities, not rates. We have no national ridership denominator, so do not read a high count as a high per-rider risk.",
+  "provenance": {
+    "source": "NHTSA",
+    "dataset": "FARS (National)",
+    "years": [
+      2022,
+      2023
+    ],
+    "url": "https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars",
+    "limitations": "Fatal motor-vehicle crashes on public roads ONLY. Single-bike falls are excluded. E-bikes are included with conventional bikes from 2022 but cannot be separated. ~1-2% of records have unknown location and are omitted from the map but kept in totals."
+  },
+  "totals": {
+    "fatalities": 2359,
+    "by_year": {
+      "2022": 1149,
+      "2023": 1210
+    },
+    "minors_by_year": {
+      "2022": 87,
+      "2023": 82
+    }
+  },
+  "by_state": [
+    {
+      "label": "Florida",
+      "count": 463
+    },
+    {
+      "label": "California",
+      "count": 344
+    },
+    {
+      "label": "Texas",
+      "count": 202
+    },
+    {
+      "label": "Arizona",
+      "count": 111
+    },
+    {
+      "label": "New York",
+      "count": 106
+    },
+    {
+      "label": "Louisiana",
+      "count": 81
+    },
+    {
+      "label": "Illinois",
+      "count": 78
+    },
+    {
+      "label": "North Carolina",
+      "count": 66
+    },
+    {
+      "label": "Michigan",
+      "count": 64
+    },
+    {
+      "label": "Georgia",
+      "count": 54
+    },
+    {
+      "label": "South Carolina",
+      "count": 51
+    },
+    {
+      "label": "Indiana",
+      "count": 50
+    },
+    {
+      "label": "New Jersey",
+      "count": 48
+    },
+    {
+      "label": "Pennsylvania",
+      "count": 44
+    },
+    {
+      "label": "Colorado",
+      "count": 37
+    },
+    {
+      "label": "Ohio",
+      "count": 32
+    },
+    {
+      "label": "Oklahoma",
+      "count": 32
+    },
+    {
+      "label": "Oregon",
+      "count": 32
+    },
+    {
+      "label": "Kentucky",
+      "count": 30
+    },
+    {
+      "label": "Mississippi",
+      "count": 30
+    },
+    {
+      "label": "Nevada",
+      "count": 29
+    },
+    {
+      "label": "Washington",
+      "count": 28
+    },
+    {
+      "label": "Tennessee",
+      "count": 27
+    },
+    {
+      "label": "Virginia",
+      "count": 27
+    },
+    {
+      "label": "Maryland",
+      "count": 25
+    },
+    {
+      "label": "Utah",
+      "count": 25
+    },
+    {
+      "label": "Alabama",
+      "count": 24
+    },
+    {
+      "label": "Wisconsin",
+      "count": 22
+    },
+    {
+      "label": "Missouri",
+      "count": 21
+    },
+    {
+      "label": "Massachusetts",
+      "count": 19
+    },
+    {
+      "label": "Arkansas",
+      "count": 17
+    },
+    {
+      "label": "New Mexico",
+      "count": 16
+    },
+    {
+      "label": "Hawaii",
+      "count": 15
+    },
+    {
+      "label": "Idaho",
+      "count": 13
+    },
+    {
+      "label": "Kansas",
+      "count": 13
+    },
+    {
+      "label": "Delaware",
+      "count": 12
+    },
+    {
+      "label": "Minnesota",
+      "count": 12
+    },
+    {
+      "label": "Iowa",
+      "count": 9
+    },
+    {
+      "label": "Connecticut",
+      "count": 8
+    },
+    {
+      "label": "District of Columbia",
+      "count": 6
+    },
+    {
+      "label": "West Virginia",
+      "count": 6
+    },
+    {
+      "label": "Nebraska",
+      "count": 6
+    },
+    {
+      "label": "Montana",
+      "count": 5
+    },
+    {
+      "label": "New Hampshire",
+      "count": 4
+    },
+    {
+      "label": "South Dakota",
+      "count": 3
+    },
+    {
+      "label": "Wyoming",
+      "count": 3
+    },
+    {
+      "label": "Alaska",
+      "count": 2
+    },
+    {
+      "label": "Maine",
+      "count": 2
+    },
+    {
+      "label": "Vermont",
+      "count": 2
+    },
+    {
+      "label": "Rhode Island",
+      "count": 2
+    },
+    {
+      "label": "North Dakota",
+      "count": 1
+    }
+  ],
+  "by_age_band": [
+    {
+      "label": "45-64",
+      "count": 912
+    },
+    {
+      "label": "25-44",
+      "count": 676
+    },
+    {
+      "label": "65+",
+      "count": 444
+    },
+    {
+      "label": "18-24",
+      "count": 116
+    },
+    {
+      "label": "13-17 (teen)",
+      "count": 113
+    },
+    {
+      "label": "0-12 (child)",
+      "count": 56
+    },
+    {
+      "label": "Unknown",
+      "count": 42
+    }
+  ],
+  "by_sex": [
+    {
+      "label": "Male",
+      "count": 2032
+    },
+    {
+      "label": "Female",
+      "count": 302
+    },
+    {
+      "label": "Not Reported",
+      "count": 24
+    },
+    {
+      "label": "Reported as Unknown",
+      "count": 1
+    }
+  ],
+  "by_lighting": [
+    {
+      "label": "Daylight",
+      "count": 1036
+    },
+    {
+      "label": "Dark - Lighted",
+      "count": 596
+    },
+    {
+      "label": "Dark - Not Lighted",
+      "count": 578
+    },
+    {
+      "label": "Dusk",
+      "count": 65
+    },
+    {
+      "label": "Dawn",
+      "count": 37
+    },
+    {
+      "label": "Dark - Unknown Lighting",
+      "count": 33
+    },
+    {
+      "label": "Reported as Unknown",
+      "count": 8
+    },
+    {
+      "label": "Not Reported",
+      "count": 6
+    }
+  ],
+  "by_pbcat_crash_group": [
+    {
+      "label": "Motorist Overtaking Bicyclist",
+      "count": 719
+    },
+    {
+      "label": "Bicyclist Failed to Yield - Midblock",
+      "count": 195
+    },
+    {
+      "label": "Bicyclist Left Turn / Merge",
+      "count": 175
+    },
+    {
+      "label": "Crossing Paths - Other Circumstances",
+      "count": 175
+    },
+    {
+      "label": "Parallel Paths - Other Circumstances",
+      "count": 158
+    },
+    {
+      "label": "Bicyclist Failed to Yield - Signalized Intersection",
+      "count": 157
+    },
+    {
+      "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+      "count": 146
+    },
+    {
+      "label": "Wrong-Way / Wrong-Side",
+      "count": 125
+    },
+    {
+      "label": "Other / Unknown - Insufficient Details",
+      "count": 115
+    },
+    {
+      "label": "Loss of Control / Turning Error",
+      "count": 105
+    },
+    {
+      "label": "Motorist Left Turn / Merge",
+      "count": 85
+    },
+    {
+      "label": "Motorist Right Turn / Merge",
+      "count": 55
+    },
+    {
+      "label": "Motorist Failed to Yield - Sign-Controlled Intersection",
+      "count": 32
+    },
+    {
+      "label": "Motorist Failed to Yield - Signalized Intersection",
+      "count": 32
+    },
+    {
+      "label": "Other / Unusual Circumstances",
+      "count": 28
+    },
+    {
+      "label": "Bicyclist Right Turn / Merge",
+      "count": 28
+    },
+    {
+      "label": "Motorist Failed to Yield - Midblock",
+      "count": 13
+    },
+    {
+      "label": "Bicyclist Overtaking Motor Vehicle",
+      "count": 12
+    },
+    {
+      "label": "Backing Vehicle",
+      "count": 3
+    },
+    {
+      "label": "Non-Trafficway",
+      "count": 1
+    }
+  ],
+  "by_hour": {
+    "0": 81,
+    "1": 41,
+    "2": 51,
+    "3": 45,
+    "4": 41,
+    "5": 98,
+    "6": 95,
+    "7": 84,
+    "8": 95,
+    "9": 67,
+    "10": 65,
+    "11": 83,
+    "12": 77,
+    "13": 70,
+    "14": 80,
+    "15": 106,
+    "16": 113,
+    "17": 135,
+    "18": 141,
+    "19": 165,
+    "20": 180,
+    "21": 194,
+    "22": 160,
+    "23": 85,
+    "99": 7
+  },
+  "data_quality": {
+    "geo_known": {
+      "2022": 1144,
+      "2023": 1205
+    },
+    "geo_unknown": {
+      "2022": 5,
+      "2023": 5
+    },
+    "helmet": "FARS does not reliably code helmet use for cyclists (HELM_USE is a motor-vehicle-occupant field). Helmet correlation should come from NEISS, not FARS.",
+    "ebike_isolation": "Not possible in FARS. Counts are all pedalcyclists."
+  }
+}

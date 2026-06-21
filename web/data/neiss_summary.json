@@ -1,0 +1,591 @@
+{
+  "2024": {
+    "year": 2024,
+    "measure": "national_estimate",
+    "provenance": {
+      "source": "CPSC",
+      "dataset": "NEISS (National Electronic Injury Surveillance System)",
+      "years": [
+        2024
+      ],
+      "url": "https://www.cpsc.gov/Research--Statistics/NEISS-Injury-Data",
+      "limitations": "NEISS samples ~100 hospital EDs nationally; figures here are WEIGHTED NATIONAL ESTIMATES, not raw counts, and carry sampling uncertainty not shown in this v1. NEISS has NO location field -- these numbers cannot be mapped or compared city-to-city. E-bikes only have a dedicated product code (5045) from 2024 onward; in earlier years e-bikes are mixed into the general 'Bicycles' code (5040) and cannot be isolated from this data. NEISS undercounts single-bike falls relative to ED visits because it only captures cases that presented to a sampled ED."
+    },
+    "sample_size_raw_cases": 19045,
+    "totals": {
+      "estimated_ed_visits": 774133,
+      "estimated_minors": 241302,
+      "estimated_fatalities": 1057,
+      "estimated_hospitalized": 100915,
+      "estimated_head_or_brain_related": 97643
+    },
+    "data_quality": {
+      "fatalities_raw_sample_n": 25,
+      "fatality_estimate_caveat": "Fatality estimates from a sample this size carry very wide uncertainty. FARS, a census, is the better source for fatal pedalcyclist counts -- see fars_summary.json.",
+      "ebike_isolation": "Confirmed e-bike code (5045) used: counts are reliable."
+    },
+    "by_device": [
+      {
+        "label": "Bicycle (e-bikes included, not separable)",
+        "estimate": 431414
+      },
+      {
+        "label": "Scooters, powered (e-scooters) -- 2020 onward",
+        "estimate": 117311
+      },
+      {
+        "label": "Scooters, unspecified powered/unpowered",
+        "estimate": 93891
+      },
+      {
+        "label": "E-bike (confirmed, 2024+ only)",
+        "estimate": 59608
+      },
+      {
+        "label": "Bicycles, non-powered (introduced 2024, alongside 5045 split)",
+        "estimate": 45674
+      },
+      {
+        "label": "Self-balancing scooters / hoverboards",
+        "estimate": 16329
+      },
+      {
+        "label": "Scooters, unpowered -- 2020 onward",
+        "estimate": 9906
+      }
+    ],
+    "by_device_raw_n": {
+      "Self-balancing scooters / hoverboards": 443,
+      "Bicycle (e-bikes included, not separable)": 10515,
+      "Scooters, unspecified powered/unpowered": 2663,
+      "E-bike (confirmed, 2024+ only)": 1290,
+      "Scooters, powered (e-scooters) -- 2020 onward": 2779,
+      "Bicycles, non-powered (introduced 2024, alongside 5045 split)": 1042,
+      "Scooters, unpowered -- 2020 onward": 313
+    },
+    "by_age_band": [
+      {
+        "label": "25-44",
+        "estimate": 218571
+      },
+      {
+        "label": "0-12 (child)",
+        "estimate": 162290
+      },
+      {
+        "label": "45-64",
+        "estimate": 148505
+      },
+      {
+        "label": "18-24",
+        "estimate": 90450
+      },
+      {
+        "label": "13-17 (teen)",
+        "estimate": 79012
+      },
+      {
+        "label": "65+",
+        "estimate": 73394
+      },
+      {
+        "label": "Unknown",
+        "estimate": 1911
+      }
+    ],
+    "by_sex": [
+      {
+        "label": "Male",
+        "estimate": 570331
+      },
+      {
+        "label": "Female",
+        "estimate": 202752
+      },
+      {
+        "label": "Not recorded",
+        "estimate": 1050
+      }
+    ],
+    "by_diagnosis": [
+      {
+        "label": "Fracture",
+        "estimate": 201314
+      },
+      {
+        "label": "Contusion / abrasion",
+        "estimate": 141887
+      },
+      {
+        "label": "Other / not stated",
+        "estimate": 139141
+      },
+      {
+        "label": "Laceration",
+        "estimate": 97435
+      },
+      {
+        "label": "Internal organ injury",
+        "estimate": 86153
+      },
+      {
+        "label": "Strain or sprain",
+        "estimate": 46636
+      },
+      {
+        "label": "Concussion",
+        "estimate": 18394
+      },
+      {
+        "label": "Hematoma",
+        "estimate": 12793
+      },
+      {
+        "label": "Dislocation",
+        "estimate": 8097
+      },
+      {
+        "label": "Dental injury",
+        "estimate": 7376
+      }
+    ],
+    "by_body_part": [
+      {
+        "label": "Head",
+        "estimate": 124964
+      },
+      {
+        "label": "Face",
+        "estimate": 84006
+      },
+      {
+        "label": "Knee",
+        "estimate": 63799
+      },
+      {
+        "label": "Shoulder",
+        "estimate": 58445
+      },
+      {
+        "label": "Wrist",
+        "estimate": 53213
+      },
+      {
+        "label": "Upper trunk",
+        "estimate": 52269
+      },
+      {
+        "label": "Lower trunk",
+        "estimate": 44784
+      },
+      {
+        "label": "Lower leg",
+        "estimate": 42627
+      },
+      {
+        "label": "Elbow",
+        "estimate": 38639
+      },
+      {
+        "label": "Lower arm",
+        "estimate": 35863
+      }
+    ],
+    "by_device_age_band": {
+      "Self-balancing scooters / hoverboards": [
+        {
+          "label": "0-12 (child)",
+          "estimate": 8329
+        },
+        {
+          "label": "25-44",
+          "estimate": 3681
+        },
+        {
+          "label": "18-24",
+          "estimate": 1514
+        },
+        {
+          "label": "45-64",
+          "estimate": 1286
+        },
+        {
+          "label": "13-17 (teen)",
+          "estimate": 1119
+        },
+        {
+          "label": "65+",
+          "estimate": 333
+        },
+        {
+          "label": "Unknown",
+          "estimate": 66
+        }
+      ],
+      "Bicycle (e-bikes included, not separable)": [
+        {
+          "label": "25-44",
+          "estimate": 105144
+        },
+        {
+          "label": "0-12 (child)",
+          "estimate": 95200
+        },
+        {
+          "label": "45-64",
+          "estimate": 92240
+        },
+        {
+          "label": "65+",
+          "estimate": 55242
+        },
+        {
+          "label": "13-17 (teen)",
+          "estimate": 43940
+        },
+        {
+          "label": "18-24",
+          "estimate": 38560
+        },
+        {
+          "label": "Unknown",
+          "estimate": 1087
+        }
+      ],
+      "Scooters, unspecified powered/unpowered": [
+        {
+          "label": "0-12 (child)",
+          "estimate": 34960
+        },
+        {
+          "label": "25-44",
+          "estimate": 22255
+        },
+        {
+          "label": "45-64",
+          "estimate": 11919
+        },
+        {
+          "label": "18-24",
+          "estimate": 10547
+        },
+        {
+          "label": "13-17 (teen)",
+          "estimate": 10264
+        },
+        {
+          "label": "65+",
+          "estimate": 3490
+        },
+        {
+          "label": "Unknown",
+          "estimate": 455
+        }
+      ],
+      "E-bike (confirmed, 2024+ only)": [
+        {
+          "label": "25-44",
+          "estimate": 20574
+        },
+        {
+          "label": "45-64",
+          "estimate": 14801
+        },
+        {
+          "label": "18-24",
+          "estimate": 8286
+        },
+        {
+          "label": "13-17 (teen)",
+          "estimate": 6790
+        },
+        {
+          "label": "65+",
+          "estimate": 5565
+        },
+        {
+          "label": "0-12 (child)",
+          "estimate": 3542
+        },
+        {
+          "label": "Unknown",
+          "estimate": 51
+        }
+      ],
+      "Scooters, powered (e-scooters) -- 2020 onward": [
+        {
+          "label": "25-44",
+          "estimate": 45049
+        },
+        {
+          "label": "18-24",
+          "estimate": 20600
+        },
+        {
+          "label": "45-64",
+          "estimate": 20584
+        },
+        {
+          "label": "0-12 (child)",
+          "estimate": 12332
+        },
+        {
+          "label": "13-17 (teen)",
+          "estimate": 12071
+        },
+        {
+          "label": "65+",
+          "estimate": 6539
+        },
+        {
+          "label": "Unknown",
+          "estimate": 136
+        }
+      ],
+      "Bicycles, non-powered (introduced 2024, alongside 5045 split)": [
+        {
+          "label": "25-44",
+          "estimate": 21148
+        },
+        {
+          "label": "18-24",
+          "estimate": 10273
+        },
+        {
+          "label": "45-64",
+          "estimate": 7188
+        },
+        {
+          "label": "13-17 (teen)",
+          "estimate": 3888
+        },
+        {
+          "label": "65+",
+          "estimate": 2070
+        },
+        {
+          "label": "0-12 (child)",
+          "estimate": 1057
+        },
+        {
+          "label": "Unknown",
+          "estimate": 51
+        }
+      ],
+      "Scooters, unpowered -- 2020 onward": [
+        {
+          "label": "0-12 (child)",
+          "estimate": 6869
+        },
+        {
+          "label": "13-17 (teen)",
+          "estimate": 939
+        },
+        {
+          "label": "25-44",
+          "estimate": 720
+        },
+        {
+          "label": "18-24",
+          "estimate": 670
+        },
+        {
+          "label": "45-64",
+          "estimate": 488
+        },
+        {
+          "label": "65+",
+          "estimate": 155
+        },
+        {
+          "label": "Unknown",
+          "estimate": 65
+        }
+      ]
+    },
+    "by_device_diagnosis": {
+      "Self-balancing scooters / hoverboards": [
+        {
+          "label": "Fracture",
+          "estimate": 5982
+        },
+        {
+          "label": "Other / not stated",
+          "estimate": 2603
+        },
+        {
+          "label": "Contusion / abrasion",
+          "estimate": 2388
+        },
+        {
+          "label": "Internal organ injury",
+          "estimate": 2171
+        },
+        {
+          "label": "Laceration",
+          "estimate": 1190
+        },
+        {
+          "label": "Strain or sprain",
+          "estimate": 1103
+        }
+      ],
+      "Bicycle (e-bikes included, not separable)": [
+        {
+          "label": "Fracture",
+          "estimate": 107195
+        },
+        {
+          "label": "Other / not stated",
+          "estimate": 81846
+        },
+        {
+          "label": "Contusion / abrasion",
+          "estimate": 77881
+        },
+        {
+          "label": "Laceration",
+          "estimate": 55711
+        },
+        {
+          "label": "Internal organ injury",
+          "estimate": 48108
+        },
+        {
+          "label": "Strain or sprain",
+          "estimate": 25912
+        }
+      ],
+      "Scooters, unspecified powered/unpowered": [
+        {
+          "label": "Fracture",
+          "estimate": 24775
+        },
+        {
+          "label": "Other / not stated",
+          "estimate": 18083
+        },
+        {
+          "label": "Contusion / abrasion",
+          "estimate": 15306
+        },
+        {
+          "label": "Laceration",
+          "estimate": 13850
+        },
+        {
+          "label": "Internal organ injury",
+          "estimate": 8028
+        },
+        {
+          "label": "Strain or sprain",
+          "estimate": 6872
+        }
+      ],
+      "E-bike (confirmed, 2024+ only)": [
+        {
+          "label": "Fracture",
+          "estimate": 16382
+        },
+        {
+          "label": "Contusion / abrasion",
+          "estimate": 12067
+        },
+        {
+          "label": "Other / not stated",
+          "estimate": 9360
+        },
+        {
+          "label": "Internal organ injury",
+          "estimate": 8053
+        },
+        {
+          "label": "Laceration",
+          "estimate": 6617
+        },
+        {
+          "label": "Strain or sprain",
+          "estimate": 3018
+        }
+      ],
+      "Scooters, powered (e-scooters) -- 2020 onward": [
+        {
+          "label": "Fracture",
+          "estimate": 32464
+        },
+        {
+          "label": "Contusion / abrasion",
+          "estimate": 21443
+        },
+        {
+          "label": "Other / not stated",
+          "estimate": 18838
+        },
+        {
+          "label": "Internal organ injury",
+          "estimate": 14074
+        },
+        {
+          "label": "Laceration",
+          "estimate": 13000
+        },
+        {
+          "label": "Strain or sprain",
+          "estimate": 6660
+        }
+      ],
+      "Bicycles, non-powered (introduced 2024, alongside 5045 split)": [
+        {
+          "label": "Fracture",
+          "estimate": 12087
+        },
+        {
+          "label": "Contusion / abrasion",
+          "estimate": 11013
+        },
+        {
+          "label": "Other / not stated",
+          "estimate": 7531
+        },
+        {
+          "label": "Laceration",
+          "estimate": 5826
+        },
+        {
+          "label": "Internal organ injury",
+          "estimate": 4345
+        },
+        {
+          "label": "Strain or sprain",
+          "estimate": 1889
+        }
+      ],
+      "Scooters, unpowered -- 2020 onward": [
+        {
+          "label": "Fracture",
+          "estimate": 2429
+        },
+        {
+          "label": "Contusion / abrasion",
+          "estimate": 1789
+        },
+        {
+          "label": "Internal organ injury",
+          "estimate": 1373
+        },
+        {
+          "label": "Laceration",
+          "estimate": 1242
+        },
+        {
+          "label": "Strain or sprain",
+          "estimate": 1181
+        },
+        {
+          "label": "Other / not stated",
+          "estimate": 880
+        }
+      ]
+    }
+  }
+}

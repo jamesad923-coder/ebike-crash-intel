@@ -1,0 +1,39 @@
+name: Refresh news-sourced incident reports
+
+# Runs the GDELT-based news pipeline on a schedule and commits the updated
+# web/data/news_*.json artifacts. The static dashboard (web/index.html)
+# already reads these files directly -- no server, no deploy step beyond
+# whatever already serves web/ (Vercel/Pages/etc. auto-redeploy on push).
+#
+# NOT YET ENABLED: this file is committed but the schedule below will only
+# actually run once this repo exists on GitHub with Actions enabled. See
+# AUTOMATION.md for why this lives here instead of running inside a chat
+# session, and for the manual NEISS refresh step this workflow does NOT
+# cover (CPSC's server blocks scripted requests; FARS/news do not).
+on:
+  schedule:
+    # Every 6 hours. GDELT's own free-tier rate limit (~1 req/5s/IP) is the
+    # binding constraint, not GitHub's -- this cadence is far inside it.
+    - cron: "17 */6 * * *"
+  workflow_dispatch: {}  # allows a manual "Run workflow" click too
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run news pipeline
+        run: python3 etl/news/transform_news.py 7d
+      - name: Commit updated artifacts if changed
+        run: |
+          git config user.name "ebike-crash-intel-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add web/data/news_incidents.geojson web/data/news_unlocated.json
+          git diff --staged --quiet || git commit -m "Auto-refresh news-sourced incident reports"
+          git push
