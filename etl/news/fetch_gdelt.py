@@ -34,18 +34,36 @@ DEVICE_TERMS = ['"e-bike"', '"electric bike"', "ebike", '"e-scooter"',
 EVENT_TERMS = ["crash", "killed", "struck", "collision", "injured", "dead", "hit"]
 
 
-def build_query() -> str:
+def build_query(us_only: bool = True) -> str:
     devices = " OR ".join(DEVICE_TERMS)
     events = " OR ".join(EVENT_TERMS)
-    return f"({devices}) ({events})"
+    q = f"({devices}) ({events})"
+    if us_only:
+        # CRITICAL for recall, not just relevance: without this, GDELT's
+        # global volume on these generic terms is dominated by non-US
+        # noise (UK/Ireland local papers, e-bike product/sales coverage,
+        # etc.). We measured this directly -- of 75 results sorted by
+        # recency, only ~11.5 HOURS of real-world time were covered before
+        # the cap was hit, meaning a real story from days earlier (a teen's
+        # fatal e-bike crash, confirmed indexed by GDELT) never made it into
+        # our candidate set at all. It wasn't rejected by extraction -- it
+        # was crowded out before extraction ever ran. Restricting to US
+        # sources removes most of that noise and lets maxrecords actually
+        # cover the requested timespan.
+        q += " sourcecountry:US"
+    return q
 
 
-def fetch_articles(timespan="3d", maxrecords=75, max_retries=5) -> list[dict]:
+def fetch_articles(timespan="3d", maxrecords=250, max_retries=5, us_only: bool = True) -> list[dict]:
     """Query GDELT for recent candidate articles. Returns raw GDELT records
     (title, domain, url, seendate) -- no body text yet, no extraction yet.
+
+    maxrecords defaults to 250, GDELT's documented maximum for the free DOC
+    2.0 API -- using a smaller cap (we previously used 75) silently drops
+    real stories under high global volume; see build_query()'s us_only note.
     """
     params = {
-        "query": build_query(),
+        "query": build_query(us_only=us_only),
         "mode": "artlist",
         "maxrecords": str(maxrecords),
         "format": "json",
@@ -60,7 +78,9 @@ def fetch_articles(timespan="3d", maxrecords=75, max_retries=5) -> list[dict]:
         try:
             with urllib.request.urlopen(req, timeout=30) as r:
                 data = json.loads(r.read().decode("utf-8") or "{}")
-                return data.get("articles", [])
+                articles = data.get("articles", [])
+                _warn_if_undercovered(articles, timespan, maxrecords)
+                return articles
         except HTTPError as e:
             if e.code == 429 and attempt < max_retries - 1:
                 time.sleep(delay)
@@ -68,6 +88,35 @@ def fetch_articles(timespan="3d", maxrecords=75, max_retries=5) -> list[dict]:
                 continue
             raise
     return []
+
+
+_TIMESPAN_DAYS = {"1d": 1, "3d": 3, "7d": 7, "14d": 14, "1week": 7, "2week": 14}
+
+
+def _warn_if_undercovered(articles: list[dict], timespan: str, maxrecords: int) -> None:
+    """If the maxrecords cap was hit and the returned articles span
+    meaningfully less time than requested, the candidate set is silently
+    incomplete -- older real stories within the requested window exist in
+    GDELT but never made it into our results. Surface this loudly (stdout,
+    visible in the Action log) rather than letting it fail silently, since
+    this exact failure mode is what caused real crash reports to be missed.
+    """
+    if len(articles) < maxrecords or not articles:
+        return
+    requested_days = _TIMESPAN_DAYS.get(timespan)
+    if not requested_days:
+        return
+    dates = sorted(a["seendate"][:8] for a in articles if a.get("seendate"))
+    if not dates:
+        return
+    from datetime import datetime
+    span_days = (datetime.strptime(dates[-1], "%Y%m%d") - datetime.strptime(dates[0], "%Y%m%d")).days
+    if span_days < requested_days * 0.5:
+        print(f"WARNING: hit maxrecords={maxrecords} cap, but results only "
+              f"span {span_days}d of the requested {requested_days}d window "
+              f"({dates[0]} to {dates[-1]}). Older real stories may be "
+              f"missing from this run -- consider raising maxrecords or "
+              f"narrowing the query further.")
 
 
 if __name__ == "__main__":

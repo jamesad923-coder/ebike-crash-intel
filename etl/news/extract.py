@@ -33,8 +33,14 @@ STATE_ABBR = {
 # AP-style dateline: "CITY, ST --" near the start of the article, e.g.
 # "HOBOKEN, N.J. -- A 15-year-old ..." Most precise signal when present, but
 # most local news (as opposed to wire-service copy) doesn't use one.
+#
+# Two-letter STATE GROUP allows an optional period after each letter
+# ("NJ" or "N.J.") because AP style periods two-word state abbreviations
+# in datelines -- "SOUTHAMPTON TWP., N.J. (WPVI) --" is a real example
+# that the un-dotted-only pattern completely missed in testing. Matched as
+# two separate single-letter groups and concatenated by the caller.
 DATELINE_RE = re.compile(
-    r"\b([A-Z][A-Za-z. ]{2,30}),\s*([A-Z]{2})\b\s*[-–—]"
+    r"\b([A-Z][A-Za-z. ]{2,30}),\s*([A-Z])\.?([A-Z])\.?\b\s*[-–—]"
 )
 
 # Looser fallback: "City, ST" or "City, State" mentioned anywhere in the
@@ -42,7 +48,7 @@ DATELINE_RE = re.compile(
 # Capped at 1 extra word (not 2): wider caps invite picking up junk tokens
 # like section labels ("LIVE", "SE") that precede the real place name.
 CITY_STATE_RE = re.compile(
-    r"\b([A-Z][a-zA-Z.]+(?: [A-Z][a-zA-Z.]+){0,1}),\s*([A-Z]{2})\b"
+    r"\b([A-Z][a-zA-Z.]+(?: [A-Z][a-zA-Z.]+){0,1}),\s*([A-Z])\.?([A-Z])\.?\b"
 )
 
 # County mentions are common in local TV/newspaper copy even without a city
@@ -211,7 +217,13 @@ def _clean_place(raw: str) -> str:
             words = words[i + 1:]
     while words and words[0].lower().rstrip(".") in JUNK_PREFIXES:
         words = words[1:]
-    return " ".join(words).strip()
+    place = " ".join(words).strip()
+    # AP-style datelines are SHOUTED IN ALL CAPS ("SOUTHAMPTON TWP.",
+    # N.J.) -- fine for matching/geocoding (case-insensitive) but ugly to
+    # display. Title-case anything that came through fully upper-case.
+    if place.isupper():
+        place = place.title()
+    return place
 
 
 def extract_location(text: str, domain: str | None = None) -> tuple[str, str, str] | None:
@@ -220,17 +232,20 @@ def extract_location(text: str, domain: str | None = None) -> tuple[str, str, st
     "county+outlet_market" (county, medium -- coarser by nature), or
     "outlet_market" (state only, from a curated domain table, lowest)."""
     m = DATELINE_RE.search(text[:1500])
-    if m and m.group(2) in STATE_ABBR and not PERSON_NAME_RE.match(m.group(1)):
-        place = _clean_place(m.group(1).strip(", "))
-        if place:
-            return place, m.group(2), "dateline"
+    if m:
+        state = (m.group(2) + m.group(3)).upper()
+        if state in STATE_ABBR and not PERSON_NAME_RE.match(m.group(1)):
+            place = _clean_place(m.group(1).strip(", "))
+            if place:
+                return place, state, "dateline"
 
     for m in CITY_STATE_RE.finditer(text):
-        if m.group(2) not in STATE_ABBR or PERSON_NAME_RE.match(m.group(1)):
+        state = (m.group(2) + m.group(3)).upper()
+        if state not in STATE_ABBR or PERSON_NAME_RE.match(m.group(1)):
             continue
         place = _clean_place(m.group(1).strip(", "))
         if place:
-            return place, m.group(2), "city_state_mention"
+            return place, state, "city_state_mention"
 
     m = COUNTY_RE.search(text)
     if m and domain in DOMAIN_STATE:
