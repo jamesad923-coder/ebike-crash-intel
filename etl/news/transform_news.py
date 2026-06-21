@@ -28,6 +28,7 @@ import urllib.request
 from collections import defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
+from urllib.error import HTTPError
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common.schema import source_stamp  # noqa: E402
@@ -257,7 +258,20 @@ if __name__ == "__main__":
     timespan = sys.argv[1] if len(sys.argv) > 1 else "7d"
     OUT.mkdir(parents=True, exist_ok=True)
     CACHE.mkdir(parents=True, exist_ok=True)
-    result = run(timespan)
+    try:
+        result = run(timespan)
+    except HTTPError as e:
+        if e.code == 429:
+            # GDELT's free, keyless API is shared across everyone using it --
+            # a 429 here means it was busy at this exact moment, not that
+            # anything is broken. Skip this cycle quietly (exit 0, no
+            # "workflow failed" email) rather than erroring; the next
+            # scheduled run picks it up normally. The data files are simply
+            # left as they were after the last successful run.
+            print("GDELT rate-limited this run (HTTP 429) -- skipping, "
+                  "will retry on the next scheduled run. Not an error.")
+            sys.exit(0)
+        raise
     (OUT / "news_incidents.geojson").write_text(json.dumps(result["geojson"], indent=2))
     (OUT / "news_unlocated.json").write_text(json.dumps(result["unlocated"], indent=2))
     print(f"GDELT candidates fetched: {result['raw_count']}")
