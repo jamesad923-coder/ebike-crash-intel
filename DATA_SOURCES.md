@@ -131,14 +131,61 @@ the short version.
   rate-limit a shared IP, which a scheduled run (its own dedicated IP) is
   less exposed to than ad-hoc testing was.
 
+## Census ACS — bike-commute exposure proxy
+
+- **What it is:** American Community Survey 5-year estimates, table B08301
+  ("Means of Transportation to Work"), variable B08301_018E (Bicycle) over
+  B08301_001E (Total). Used as a state-level cycling-prevalence proxy to
+  turn a FARS fatality COUNT into a rate.
+- **Access:** `https://api.census.gov/data/2022/acs/acs5` -- as of May 2026
+  Census requires a free API key for every request (previously
+  rate-limited but key-optional). Sign up at
+  `https://api.census.gov/data/key_signup.html`; the key must be activated
+  via a link in the confirmation email before it works. Read from the
+  `CENSUS_API_KEY` environment variable (a GitHub Actions secret in CI, a
+  gitignored `.env.local` for local dev) -- never hardcoded.
+- **Known limitation, repeated everywhere this data is used:** this is a
+  COMMUTE-cycling proxy, not a ridership count. It misses recreational
+  riding, delivery riding, and any trip by someone under working age --
+  exactly the population most central to e-bike injuries. We use it
+  because it's the best available free federal proxy, not because it's a
+  good fit. A state can rank very differently on raw fatality count vs.
+  this rate-adjusted measure; the dashboard shows both, side by side, on
+  purpose.
+
+## Risk & Prevention layer (this project's own model)
+
+Three interpretable components, all built from FARS + ACS data already
+described above -- no new external source, no opaque machine learning:
+
+1. **State ranking** -- FARS fatalities ÷ ACS bike-commute proxy, per
+   10,000 commuters. See the ACS caveat above.
+2. **Factor profile** -- cross-tab of PBCAT crash type by lighting and
+   time-of-day, from FARS `pbtype.csv`/`accident.csv`. Every combination
+   shows its sample size; a 3-case pattern is displayed as a 3-case
+   pattern, not implied to carry the same confidence as a 300-case one.
+3. **Cluster flags** -- coarse (~0.15-degree) geographic binning of FARS
+   fatality points, flagging areas with 3+ documented fatalities. This is
+   a raw-count density flag, explicitly NOT an exposure-adjusted risk
+   rate -- we have no street-level ridership data (see "Ridership/exposure"
+   below). A busy urban area will appear here partly because more people
+   ride there, not necessarily because it's more dangerous per rider.
+
+Each factor-profile entry is paired with a prevention lever -- a citation
+from FHWA/NACTO/NHTSA road-safety guidance matched to the PBCAT crash type,
+defined in `etl/risk/prevention_levers.py`. These are NOT claims that our
+data proves the lever works; they're pointers to where that evidence
+already exists in the literature.
+
 ## Sources not yet integrated (and why)
 
 | Source | Status | Why not yet |
 |---|---|---|
+| News ingestion (GDELT) | **Done** | Live -- see "News-sourced reports" above. |
+| State-level exposure proxy (ACS bike-commute) | **Done** | Live -- see "Risk & Prevention layer" above. Commute-only; not true ridership. |
 | NHTSA CRSS (non-fatal crash estimates) | Phase 2 | Adds depth to FARS-style crashes; not essential for v1's two-source MVP. |
-| City/county open-data portals (Vision Zero etc.) | Phase 3 | Coverage varies wildly by city; needed for any real rate-based hotspot work, paired with exposure data. |
-| Ridership/exposure (GBFS, Strava Metro) | Phase 3 | The hardest gap — no national denominator exists at all; only a few cities publish anything usable. |
+| City/county open-data portals (Vision Zero etc.) | Phase 3 | Coverage varies wildly by city; needed for any real street-level rate work, paired with exposure data. |
+| True ridership/exposure (GBFS, Strava Metro) | Phase 3 | The hardest gap — no national street-level denominator exists; only a few cities publish anything usable. ACS commute data is a partial, coarser stand-in at the state level only. |
 | OpenStreetMap / infrastructure context | Phase 3 | Legitimate role is bike-lane/intersection context near a known crash point, not crash detection. |
 | Court records (PACER, state systems) | Phase 4 | Fragmented, slow, sparse coverage; needs careful "adjudicated outcome, not AI fault" framing. |
-| News ingestion | Phase 4 | Only source for many individual crashes federal data misses, but the dedup/verification/privacy burden is high — explicitly lower-confidence tier when added. |
 | Satellite/aerial crash detection | **Not planned** | Doesn't work for crash detection. Confirmed dead end; imagery's only legitimate use here is static infrastructure context. |

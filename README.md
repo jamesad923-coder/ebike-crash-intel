@@ -25,8 +25,13 @@ different questions, run on different timescales, and cannot be joined:
    This is the only tab that can show something that happened yesterday —
    see AUTOMATION.md for what "automatic" actually requires here and what's
    still a manual step.
-
-No rates yet — see "What's not here" below.
+4. **Risk & Prevention** — this project's own interpretable model, built
+   entirely from the FARS + Census ACS data above (no opaque ML): a
+   state-level risk ranking adjusted by a bike-commute exposure proxy, a
+   PBCAT contributing-factor cross-tab with sample sizes shown, and
+   raw-count fatality cluster flags -- each paired with a sourced,
+   evidence-based prevention lever (FHWA/NACTO/NHTSA guidance). See
+   DATA_SOURCES.md for what this can and can't honestly claim.
 
 ## Quick start
 

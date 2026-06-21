@@ -1,0 +1,5169 @@
+{
+  "years": [
+    2022,
+    2023
+  ],
+  "methodology_note": "Three interpretable components, no opaque machine learning: (1) state ranking adjusts FARS fatality counts by an ACS commute-cycling proxy -- a real but limited exposure denominator; (2) factor profile is a cross-tab of PBCAT crash type by lighting/time-of-day with sample sizes shown; (3) cluster flags are raw fatality-count density, not an exposure-adjusted rate. Prevention levers are citations from FHWA/NACTO/NHTSA road-safety guidance tied to the matching PBCAT crash type, not claims our data proves the lever works.",
+  "state_ranking": {
+    "years": [
+      2022,
+      2023
+    ],
+    "measure_note": "fatalities_per_10k_bike_commuters uses ACS commute-to-work cycling share as an exposure PROXY, not true ridership. It misses recreational, delivery, and minors' riding -- exactly the population central to e-bike injuries. Compare the rate rank against the raw count rank: a state can look very different on each. States with zero ACS bike-commuters couldn't be rate-adjusted and are listed separately, not silently dropped.",
+    "states_unrated_no_acs_data": [],
+    "ranking": [
+      {
+        "state": "Mississippi",
+        "fatalities_raw_count": 27,
+        "bike_commuters_acs_proxy": 1065,
+        "fatalities_per_10k_bike_commuters": 253.52,
+        "rate_rank": 1,
+        "count_rank": 22
+      },
+      {
+        "state": "Alabama",
+        "fatalities_raw_count": 24,
+        "bike_commuters_acs_proxy": 1805,
+        "fatalities_per_10k_bike_commuters": 132.96,
+        "rate_rank": 2,
+        "count_rank": 27
+      },
+      {
+        "state": "Louisiana",
+        "fatalities_raw_count": 81,
+        "bike_commuters_acs_proxy": 7306,
+        "fatalities_per_10k_bike_commuters": 110.87,
+        "rate_rank": 3,
+        "count_rank": 6
+      },
+      {
+        "state": "South Carolina",
+        "fatalities_raw_count": 51,
+        "bike_commuters_acs_proxy": 4928,
+        "fatalities_per_10k_bike_commuters": 103.49,
+        "rate_rank": 4,
+        "count_rank": 11
+      },
+      {
+        "state": "Florida",
+        "fatalities_raw_count": 462,
+        "bike_commuters_acs_proxy": 49608,
+        "fatalities_per_10k_bike_commuters": 93.13,
+        "rate_rank": 5,
+        "count_rank": 1
+      },
+      {
+        "state": "North Carolina",
+        "fatalities_raw_count": 66,
+        "bike_commuters_acs_proxy": 7340,
+        "fatalities_per_10k_bike_commuters": 89.92,
+        "rate_rank": 6,
+        "count_rank": 8
+      },
+      {
+        "state": "Kentucky",
+        "fatalities_raw_count": 30,
+        "bike_commuters_acs_proxy": 3392,
+        "fatalities_per_10k_bike_commuters": 88.44,
+        "rate_rank": 7,
+        "count_rank": 19
+      },
+      {
+        "state": "Oklahoma",
+        "fatalities_raw_count": 32,
+        "bike_commuters_acs_proxy": 3724,
+        "fatalities_per_10k_bike_commuters": 85.93,
+        "rate_rank": 8,
+        "count_rank": 16
+      },
+      {
+        "state": "Delaware",
+        "fatalities_raw_count": 12,
+        "bike_commuters_acs_proxy": 1397,
+        "fatalities_per_10k_bike_commuters": 85.9,
+        "rate_rank": 9,
+        "count_rank": 36
+      },
+      {
+        "state": "Arkansas",
+        "fatalities_raw_count": 17,
+        "bike_commuters_acs_proxy": 2052,
+        "fatalities_per_10k_bike_commuters": 82.85,
+        "rate_rank": 10,
+        "count_rank": 31
+      },
+      {
+        "state": "Nevada",
+        "fatalities_raw_count": 29,
+        "bike_commuters_acs_proxy": 3711,
+        "fatalities_per_10k_bike_commuters": 78.15,
+        "rate_rank": 11,
+        "count_rank": 20
+      },
+      {
+        "state": "Tennessee",
+        "fatalities_raw_count": 27,
+        "bike_commuters_acs_proxy": 3710,
+        "fatalities_per_10k_bike_commuters": 72.78,
+        "rate_rank": 12,
+        "count_rank": 23
+      },
+      {
+        "state": "Texas",
+        "fatalities_raw_count": 202,
+        "bike_commuters_acs_proxy": 30812,
+        "fatalities_per_10k_bike_commuters": 65.56,
+        "rate_rank": 13,
+        "count_rank": 3
+      },
+      {
+        "state": "West Virginia",
+        "fatalities_raw_count": 6,
+        "bike_commuters_acs_proxy": 917,
+        "fatalities_per_10k_bike_commuters": 65.43,
+        "rate_rank": 14,
+        "count_rank": 40
+      },
+      {
+        "state": "Georgia",
+        "fatalities_raw_count": 54,
+        "bike_commuters_acs_proxy": 8541,
+        "fatalities_per_10k_bike_commuters": 63.22,
+        "rate_rank": 15,
+        "count_rank": 10
+      },
+      {
+        "state": "Arizona",
+        "fatalities_raw_count": 107,
+        "bike_commuters_acs_proxy": 19629,
+        "fatalities_per_10k_bike_commuters": 54.51,
+        "rate_rank": 16,
+        "count_rank": 4
+      },
+      {
+        "state": "Indiana",
+        "fatalities_raw_count": 50,
+        "bike_commuters_acs_proxy": 12088,
+        "fatalities_per_10k_bike_commuters": 41.36,
+        "rate_rank": 17,
+        "count_rank": 12
+      },
+      {
+        "state": "Michigan",
+        "fatalities_raw_count": 64,
+        "bike_commuters_acs_proxy": 15752,
+        "fatalities_per_10k_bike_commuters": 40.63,
+        "rate_rank": 18,
+        "count_rank": 9
+      },
+      {
+        "state": "Missouri",
+        "fatalities_raw_count": 21,
+        "bike_commuters_acs_proxy": 5279,
+        "fatalities_per_10k_bike_commuters": 39.78,
+        "rate_rank": 19,
+        "count_rank": 29
+      },
+      {
+        "state": "New Jersey",
+        "fatalities_raw_count": 48,
+        "bike_commuters_acs_proxy": 12807,
+        "fatalities_per_10k_bike_commuters": 37.48,
+        "rate_rank": 20,
+        "count_rank": 13
+      },
+      {
+        "state": "New Mexico",
+        "fatalities_raw_count": 16,
+        "bike_commuters_acs_proxy": 4542,
+        "fatalities_per_10k_bike_commuters": 35.23,
+        "rate_rank": 21,
+        "count_rank": 32
+      },
+      {
+        "state": "Kansas",
+        "fatalities_raw_count": 13,
+        "bike_commuters_acs_proxy": 3994,
+        "fatalities_per_10k_bike_commuters": 32.55,
+        "rate_rank": 22,
+        "count_rank": 34
+      },
+      {
+        "state": "Maryland",
+        "fatalities_raw_count": 25,
+        "bike_commuters_acs_proxy": 8469,
+        "fatalities_per_10k_bike_commuters": 29.52,
+        "rate_rank": 23,
+        "count_rank": 25
+      },
+      {
+        "state": "Utah",
+        "fatalities_raw_count": 25,
+        "bike_commuters_acs_proxy": 8661,
+        "fatalities_per_10k_bike_commuters": 28.87,
+        "rate_rank": 24,
+        "count_rank": 26
+      },
+      {
+        "state": "Hawaii",
+        "fatalities_raw_count": 15,
+        "bike_commuters_acs_proxy": 5617,
+        "fatalities_per_10k_bike_commuters": 26.7,
+        "rate_rank": 25,
+        "count_rank": 33
+      },
+      {
+        "state": "California",
+        "fatalities_raw_count": 344,
+        "bike_commuters_acs_proxy": 135240,
+        "fatalities_per_10k_bike_commuters": 25.44,
+        "rate_rank": 26,
+        "count_rank": 2
+      },
+      {
+        "state": "New Hampshire",
+        "fatalities_raw_count": 4,
+        "bike_commuters_acs_proxy": 1591,
+        "fatalities_per_10k_bike_commuters": 25.14,
+        "rate_rank": 27,
+        "count_rank": 44
+      },
+      {
+        "state": "Illinois",
+        "fatalities_raw_count": 78,
+        "bike_commuters_acs_proxy": 33628,
+        "fatalities_per_10k_bike_commuters": 23.19,
+        "rate_rank": 28,
+        "count_rank": 7
+      },
+      {
+        "state": "South Dakota",
+        "fatalities_raw_count": 3,
+        "bike_commuters_acs_proxy": 1380,
+        "fatalities_per_10k_bike_commuters": 21.74,
+        "rate_rank": 29,
+        "count_rank": 45
+      },
+      {
+        "state": "Connecticut",
+        "fatalities_raw_count": 8,
+        "bike_commuters_acs_proxy": 3798,
+        "fatalities_per_10k_bike_commuters": 21.06,
+        "rate_rank": 30,
+        "count_rank": 39
+      },
+      {
+        "state": "Ohio",
+        "fatalities_raw_count": 32,
+        "bike_commuters_acs_proxy": 15206,
+        "fatalities_per_10k_bike_commuters": 21.04,
+        "rate_rank": 31,
+        "count_rank": 17
+      },
+      {
+        "state": "Nebraska",
+        "fatalities_raw_count": 6,
+        "bike_commuters_acs_proxy": 3032,
+        "fatalities_per_10k_bike_commuters": 19.79,
+        "rate_rank": 32,
+        "count_rank": 41
+      },
+      {
+        "state": "Virginia",
+        "fatalities_raw_count": 27,
+        "bike_commuters_acs_proxy": 13714,
+        "fatalities_per_10k_bike_commuters": 19.69,
+        "rate_rank": 33,
+        "count_rank": 24
+      },
+      {
+        "state": "Idaho",
+        "fatalities_raw_count": 13,
+        "bike_commuters_acs_proxy": 6640,
+        "fatalities_per_10k_bike_commuters": 19.58,
+        "rate_rank": 34,
+        "count_rank": 35
+      },
+      {
+        "state": "Iowa",
+        "fatalities_raw_count": 9,
+        "bike_commuters_acs_proxy": 5479,
+        "fatalities_per_10k_bike_commuters": 16.43,
+        "rate_rank": 35,
+        "count_rank": 38
+      },
+      {
+        "state": "Pennsylvania",
+        "fatalities_raw_count": 43,
+        "bike_commuters_acs_proxy": 26271,
+        "fatalities_per_10k_bike_commuters": 16.37,
+        "rate_rank": 36,
+        "count_rank": 14
+      },
+      {
+        "state": "New York",
+        "fatalities_raw_count": 105,
+        "bike_commuters_acs_proxy": 71839,
+        "fatalities_per_10k_bike_commuters": 14.62,
+        "rate_rank": 37,
+        "count_rank": 5
+      },
+      {
+        "state": "Wisconsin",
+        "fatalities_raw_count": 22,
+        "bike_commuters_acs_proxy": 15713,
+        "fatalities_per_10k_bike_commuters": 14.0,
+        "rate_rank": 38,
+        "count_rank": 28
+      },
+      {
+        "state": "Wyoming",
+        "fatalities_raw_count": 3,
+        "bike_commuters_acs_proxy": 2476,
+        "fatalities_per_10k_bike_commuters": 12.12,
+        "rate_rank": 39,
+        "count_rank": 46
+      },
+      {
+        "state": "Colorado",
+        "fatalities_raw_count": 37,
+        "bike_commuters_acs_proxy": 30681,
+        "fatalities_per_10k_bike_commuters": 12.06,
+        "rate_rank": 40,
+        "count_rank": 15
+      },
+      {
+        "state": "Washington",
+        "fatalities_raw_count": 28,
+        "bike_commuters_acs_proxy": 25880,
+        "fatalities_per_10k_bike_commuters": 10.82,
+        "rate_rank": 41,
+        "count_rank": 21
+      },
+      {
+        "state": "Rhode Island",
+        "fatalities_raw_count": 2,
+        "bike_commuters_acs_proxy": 1918,
+        "fatalities_per_10k_bike_commuters": 10.43,
+        "rate_rank": 42,
+        "count_rank": 47
+      },
+      {
+        "state": "Oregon",
+        "fatalities_raw_count": 32,
+        "bike_commuters_acs_proxy": 32077,
+        "fatalities_per_10k_bike_commuters": 9.98,
+        "rate_rank": 43,
+        "count_rank": 18
+      },
+      {
+        "state": "North Dakota",
+        "fatalities_raw_count": 1,
+        "bike_commuters_acs_proxy": 1040,
+        "fatalities_per_10k_bike_commuters": 9.62,
+        "rate_rank": 44,
+        "count_rank": 51
+      },
+      {
+        "state": "Maine",
+        "fatalities_raw_count": 2,
+        "bike_commuters_acs_proxy": 2085,
+        "fatalities_per_10k_bike_commuters": 9.59,
+        "rate_rank": 45,
+        "count_rank": 48
+      },
+      {
+        "state": "Montana",
+        "fatalities_raw_count": 5,
+        "bike_commuters_acs_proxy": 5930,
+        "fatalities_per_10k_bike_commuters": 8.43,
+        "rate_rank": 46,
+        "count_rank": 43
+      },
+      {
+        "state": "Alaska",
+        "fatalities_raw_count": 2,
+        "bike_commuters_acs_proxy": 2447,
+        "fatalities_per_10k_bike_commuters": 8.17,
+        "rate_rank": 47,
+        "count_rank": 49
+      },
+      {
+        "state": "Vermont",
+        "fatalities_raw_count": 2,
+        "bike_commuters_acs_proxy": 2501,
+        "fatalities_per_10k_bike_commuters": 8.0,
+        "rate_rank": 48,
+        "count_rank": 50
+      },
+      {
+        "state": "Minnesota",
+        "fatalities_raw_count": 12,
+        "bike_commuters_acs_proxy": 15334,
+        "fatalities_per_10k_bike_commuters": 7.83,
+        "rate_rank": 49,
+        "count_rank": 37
+      },
+      {
+        "state": "Massachusetts",
+        "fatalities_raw_count": 19,
+        "bike_commuters_acs_proxy": 27036,
+        "fatalities_per_10k_bike_commuters": 7.03,
+        "rate_rank": 50,
+        "count_rank": 30
+      },
+      {
+        "state": "District of Columbia",
+        "fatalities_raw_count": 6,
+        "bike_commuters_acs_proxy": 12169,
+        "fatalities_per_10k_bike_commuters": 4.93,
+        "rate_rank": 51,
+        "count_rank": 42
+      }
+    ]
+  },
+  "factor_profile": {
+    "years": [
+      2022,
+      2023
+    ],
+    "profiles": [
+      {
+        "lighting": "Daylight",
+        "time_of_day": "Midday (10am-3pm)",
+        "sample_size": 374,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.171,
+        "top_crash_type_count": 64,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 64
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 55
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 38
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 32
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 32
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 29
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 22
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 20
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 15
+          },
+          {
+            "label": "Motorist Right Turn / Merge",
+            "count": 14
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 12
+          },
+          {
+            "label": "Other / Unusual Circumstances",
+            "count": 11
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 11
+          },
+          {
+            "label": "Motorist Failed to Yield - Signalized Intersection",
+            "count": 7
+          },
+          {
+            "label": "Motorist Failed to Yield - Sign-Controlled Intersection",
+            "count": 7
+          },
+          {
+            "label": "Backing Vehicle",
+            "count": 2
+          },
+          {
+            "label": "Motorist Failed to Yield - Midblock",
+            "count": 1
+          },
+          {
+            "label": "Bicyclist Right Turn / Merge",
+            "count": 1
+          },
+          {
+            "label": "Non-Trafficway",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Daylight",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "sample_size": 348,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.135,
+        "top_crash_type_count": 47,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 47
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 45
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 36
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 31
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 28
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 26
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 23
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 18
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 18
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 18
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 17
+          },
+          {
+            "label": "Motorist Right Turn / Merge",
+            "count": 12
+          },
+          {
+            "label": "Motorist Failed to Yield - Sign-Controlled Intersection",
+            "count": 9
+          },
+          {
+            "label": "Bicyclist Overtaking Motor Vehicle",
+            "count": 5
+          },
+          {
+            "label": "Bicyclist Right Turn / Merge",
+            "count": 5
+          },
+          {
+            "label": "Other / Unusual Circumstances",
+            "count": 4
+          },
+          {
+            "label": "Motorist Failed to Yield - Signalized Intersection",
+            "count": 4
+          },
+          {
+            "label": "Motorist Failed to Yield - Midblock",
+            "count": 1
+          },
+          {
+            "label": "Backing Vehicle",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Lighted",
+        "time_of_day": "Night (7-11pm)",
+        "sample_size": 300,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.233,
+        "top_crash_type_count": 70,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 70
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 43
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 36
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 33
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 18
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 17
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 16
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 16
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 14
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 11
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 10
+          },
+          {
+            "label": "Motorist Failed to Yield - Sign-Controlled Intersection",
+            "count": 4
+          },
+          {
+            "label": "Motorist Failed to Yield - Signalized Intersection",
+            "count": 3
+          },
+          {
+            "label": "Bicyclist Right Turn / Merge",
+            "count": 3
+          },
+          {
+            "label": "Motorist Failed to Yield - Midblock",
+            "count": 2
+          },
+          {
+            "label": "Other / Unusual Circumstances",
+            "count": 2
+          },
+          {
+            "label": "Motorist Right Turn / Merge",
+            "count": 2
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Not Lighted",
+        "time_of_day": "Night (7-11pm)",
+        "sample_size": 286,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.503,
+        "top_crash_type_count": 144,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 144
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 25
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 22
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 19
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 17
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 13
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 12
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 11
+          },
+          {
+            "label": "Bicyclist Right Turn / Merge",
+            "count": 7
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 6
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 4
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 2
+          },
+          {
+            "label": "Motorist Failed to Yield - Midblock",
+            "count": 2
+          },
+          {
+            "label": "Motorist Failed to Yield - Signalized Intersection",
+            "count": 1
+          },
+          {
+            "label": "Motorist Right Turn / Merge",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Daylight",
+        "time_of_day": "Morning (5-10am)",
+        "sample_size": 251,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.311,
+        "top_crash_type_count": 78,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 78
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 23
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 17
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 16
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 16
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 15
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 14
+          },
+          {
+            "label": "Motorist Right Turn / Merge",
+            "count": 14
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 9
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 9
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 8
+          },
+          {
+            "label": "Motorist Failed to Yield - Sign-Controlled Intersection",
+            "count": 7
+          },
+          {
+            "label": "Motorist Failed to Yield - Signalized Intersection",
+            "count": 6
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 6
+          },
+          {
+            "label": "Other / Unusual Circumstances",
+            "count": 5
+          },
+          {
+            "label": "Bicyclist Overtaking Motor Vehicle",
+            "count": 4
+          },
+          {
+            "label": "Motorist Failed to Yield - Midblock",
+            "count": 3
+          },
+          {
+            "label": "Bicyclist Right Turn / Merge",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Lighted",
+        "time_of_day": "Late night/early morning (11pm-5am)",
+        "sample_size": 181,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.398,
+        "top_crash_type_count": 72,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 72
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 20
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 19
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 12
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 12
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 10
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 10
+          },
+          {
+            "label": "Motorist Failed to Yield - Signalized Intersection",
+            "count": 6
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 5
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 4
+          },
+          {
+            "label": "Motorist Right Turn / Merge",
+            "count": 3
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 2
+          },
+          {
+            "label": "Other / Unusual Circumstances",
+            "count": 2
+          },
+          {
+            "label": "Bicyclist Right Turn / Merge",
+            "count": 2
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 1
+          },
+          {
+            "label": "Bicyclist Overtaking Motor Vehicle",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Not Lighted",
+        "time_of_day": "Late night/early morning (11pm-5am)",
+        "sample_size": 156,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.558,
+        "top_crash_type_count": 87,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 87
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 22
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 13
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 11
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 7
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 5
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 4
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 2
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 2
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 1
+          },
+          {
+            "label": "Bicyclist Overtaking Motor Vehicle",
+            "count": 1
+          },
+          {
+            "label": "Bicyclist Right Turn / Merge",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Not Lighted",
+        "time_of_day": "Morning (5-10am)",
+        "sample_size": 77,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.545,
+        "top_crash_type_count": 42,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 42
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 7
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 6
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 6
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 4
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 3
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 3
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 2
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 1
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 1
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 1
+          },
+          {
+            "label": "Motorist Failed to Yield - Midblock",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Lighted",
+        "time_of_day": "Morning (5-10am)",
+        "sample_size": 62,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.274,
+        "top_crash_type_count": 17,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 17
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 10
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 7
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 5
+          },
+          {
+            "label": "Motorist Right Turn / Merge",
+            "count": 4
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 3
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 3
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 3
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 2
+          },
+          {
+            "label": "Bicyclist Right Turn / Merge",
+            "count": 2
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 2
+          },
+          {
+            "label": "Motorist Failed to Yield - Sign-Controlled Intersection",
+            "count": 1
+          },
+          {
+            "label": "Motorist Failed to Yield - Signalized Intersection",
+            "count": 1
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 1
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Not Lighted",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "sample_size": 59,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.576,
+        "top_crash_type_count": 34,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 34
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 4
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 3
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 3
+          },
+          {
+            "label": "Bicyclist Right Turn / Merge",
+            "count": 3
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 3
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 2
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 2
+          },
+          {
+            "label": "Motorist Failed to Yield - Signalized Intersection",
+            "count": 1
+          },
+          {
+            "label": "Other / Unusual Circumstances",
+            "count": 1
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 1
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 1
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Daylight",
+        "time_of_day": "Night (7-11pm)",
+        "sample_size": 59,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.271,
+        "top_crash_type_count": 16,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 16
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 6
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 6
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 5
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 5
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 5
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 3
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 3
+          },
+          {
+            "label": "Motorist Failed to Yield - Signalized Intersection",
+            "count": 2
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 2
+          },
+          {
+            "label": "Motorist Failed to Yield - Sign-Controlled Intersection",
+            "count": 2
+          },
+          {
+            "label": "Motorist Failed to Yield - Midblock",
+            "count": 1
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 1
+          },
+          {
+            "label": "Bicyclist Right Turn / Merge",
+            "count": 1
+          },
+          {
+            "label": "Other / Unusual Circumstances",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Lighted",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "sample_size": 52,
+        "top_crash_type": "Bicyclist Failed to Yield - Midblock",
+        "top_crash_type_share": 0.154,
+        "top_crash_type_count": 8,
+        "all_types": [
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 8
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 7
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 7
+          },
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 6
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 5
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 4
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 4
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 3
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 2
+          },
+          {
+            "label": "Motorist Right Turn / Merge",
+            "count": 2
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 2
+          },
+          {
+            "label": "Bicyclist Right Turn / Merge",
+            "count": 1
+          },
+          {
+            "label": "Motorist Failed to Yield - Sign-Controlled Intersection",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Midblock crossing islands/refuges",
+            "Improved street lighting",
+            "Rider education on midblock crossing risk"
+          ],
+          "why": "Midblock crossings lack the visual cues and right-of-way clarity of a signalized intersection.",
+          "source": "FHWA PBCAT crash-type countermeasure tables"
+        }
+      },
+      {
+        "lighting": "Dawn",
+        "time_of_day": "Morning (5-10am)",
+        "sample_size": 37,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.378,
+        "top_crash_type_count": 14,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 14
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 3
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 3
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 3
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 3
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 3
+          },
+          {
+            "label": "Motorist Right Turn / Merge",
+            "count": 2
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 1
+          },
+          {
+            "label": "Motorist Failed to Yield - Midblock",
+            "count": 1
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 1
+          },
+          {
+            "label": "Motorist Failed to Yield - Signalized Intersection",
+            "count": 1
+          },
+          {
+            "label": "Bicyclist Right Turn / Merge",
+            "count": 1
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dusk",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "sample_size": 34,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.235,
+        "top_crash_type_count": 8,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 8
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 7
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 6
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 3
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+            "count": 3
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 3
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 2
+          },
+          {
+            "label": "Motorist Right Turn / Merge",
+            "count": 1
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dusk",
+        "time_of_day": "Night (7-11pm)",
+        "sample_size": 30,
+        "top_crash_type": "Bicyclist Failed to Yield - Signalized Intersection",
+        "top_crash_type_share": 0.167,
+        "top_crash_type_count": 5,
+        "all_types": [
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 5
+          },
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 4
+          },
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 4
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 4
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 3
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 2
+          },
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 2
+          },
+          {
+            "label": "Other / Unusual Circumstances",
+            "count": 2
+          },
+          {
+            "label": "Motorist Failed to Yield - Sign-Controlled Intersection",
+            "count": 1
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 1
+          },
+          {
+            "label": "Motorist Failed to Yield - Midblock",
+            "count": 1
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Bicycle-specific signal phases",
+            "Protected intersection design",
+            "Leading bicycle intervals"
+          ],
+          "why": "Separates bicycle and turning-vehicle movements in time, removing the conflict rather than relying on yielding.",
+          "source": "NACTO Urban Bikeway Design Guide -- Bicycle Signals"
+        }
+      },
+      {
+        "lighting": "Dark - Unknown Lighting",
+        "time_of_day": "Night (7-11pm)",
+        "sample_size": 21,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.333,
+        "top_crash_type_count": 7,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 7
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 3
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 3
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 2
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 2
+          },
+          {
+            "label": "Wrong-Way / Wrong-Side",
+            "count": 2
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 1
+          },
+          {
+            "label": "Bicyclist Overtaking Motor Vehicle",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Unknown Lighting",
+        "time_of_day": "Late night/early morning (11pm-5am)",
+        "sample_size": 6,
+        "top_crash_type": "Other / Unknown - Insufficient Details",
+        "top_crash_type_share": 0.333,
+        "top_crash_type_count": 2,
+        "all_types": [
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 2
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Midblock",
+            "count": 1
+          },
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 1
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 1
+          },
+          {
+            "label": "Bicyclist Failed to Yield - Signalized Intersection",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Street lighting improvements",
+            "Bicycle-mounted lighting/reflective gear requirements or education"
+          ],
+          "why": "Dark-unlit conditions show a substantially higher concentration of fatal motorist-overtaking crashes than daylight in our own factor profile -- lighting is one of the few levers a city can act on directly and quickly.",
+          "source": "NHTSA Countermeasures That Work (Pedestrian/Bicyclist Safety chapter)"
+        }
+      },
+      {
+        "lighting": "Reported as Unknown",
+        "time_of_day": "Morning (5-10am)",
+        "sample_size": 6,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.667,
+        "top_crash_type_count": 4,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 4
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 2
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Unknown Lighting",
+        "time_of_day": "Morning (5-10am)",
+        "sample_size": 5,
+        "top_crash_type": "Motorist Left Turn / Merge",
+        "top_crash_type_share": 0.4,
+        "top_crash_type_count": 2,
+        "all_types": [
+          {
+            "label": "Motorist Left Turn / Merge",
+            "count": 2
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 2
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Street lighting improvements",
+            "Bicycle-mounted lighting/reflective gear requirements or education"
+          ],
+          "why": "Dark-unlit conditions show a substantially higher concentration of fatal motorist-overtaking crashes than daylight in our own factor profile -- lighting is one of the few levers a city can act on directly and quickly.",
+          "source": "NHTSA Countermeasures That Work (Pedestrian/Bicyclist Safety chapter)"
+        }
+      },
+      {
+        "lighting": "Daylight",
+        "time_of_day": "Unknown",
+        "sample_size": 3,
+        "top_crash_type": "Crossing Paths - Other Circumstances",
+        "top_crash_type_share": 0.333,
+        "top_crash_type_count": 1,
+        "all_types": [
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 1
+          },
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 1
+          },
+          {
+            "label": "Loss of Control / Turning Error",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Improved lighting at conflict points",
+            "Sightline clearance",
+            "Speed reduction near crossings"
+          ],
+          "why": "A catch-all for path-crossing conflicts not otherwise typed; general visibility and speed countermeasures apply broadly.",
+          "source": "FHWA PBCAT v3 User Guide"
+        }
+      },
+      {
+        "lighting": "Not Reported",
+        "time_of_day": "Night (7-11pm)",
+        "sample_size": 3,
+        "top_crash_type": "Other / Unknown - Insufficient Details",
+        "top_crash_type_share": 0.333,
+        "top_crash_type_count": 1,
+        "all_types": [
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 1
+          },
+          {
+            "label": "Crossing Paths - Other Circumstances",
+            "count": 1
+          },
+          {
+            "label": "Parallel Paths - Other Circumstances",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "lighting": "Not Reported",
+        "time_of_day": "Unknown",
+        "sample_size": 3,
+        "top_crash_type": "Other / Unknown - Insufficient Details",
+        "top_crash_type_share": 1.0,
+        "top_crash_type_count": 3,
+        "all_types": [
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "lighting": "Reported as Unknown",
+        "time_of_day": "Midday (10am-3pm)",
+        "sample_size": 1,
+        "top_crash_type": "Other / Unknown - Insufficient Details",
+        "top_crash_type_share": 1.0,
+        "top_crash_type_count": 1,
+        "all_types": [
+          {
+            "label": "Other / Unknown - Insufficient Details",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "lighting": "Dark - Unknown Lighting",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "sample_size": 1,
+        "top_crash_type": "Bicyclist Left Turn / Merge",
+        "top_crash_type_share": 1.0,
+        "top_crash_type_count": 1,
+        "all_types": [
+          {
+            "label": "Bicyclist Left Turn / Merge",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Two-stage turn boxes",
+            "Protected intersection design"
+          ],
+          "why": "Lets a cyclist complete a left turn in two signal phases without merging across traffic.",
+          "source": "NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Lighted",
+        "time_of_day": "Unknown",
+        "sample_size": 1,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 1.0,
+        "top_crash_type_count": 1,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dusk",
+        "time_of_day": "Morning (5-10am)",
+        "sample_size": 1,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 1.0,
+        "top_crash_type_count": 1,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Reported as Unknown",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "sample_size": 1,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 1.0,
+        "top_crash_type_count": 1,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Daylight",
+        "time_of_day": "Late night/early morning (11pm-5am)",
+        "sample_size": 1,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 1.0,
+        "top_crash_type_count": 1,
+        "all_types": [
+          {
+            "label": "Motorist Overtaking Bicyclist",
+            "count": 1
+          }
+        ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      }
+    ]
+  },
+  "clusters": {
+    "years": [
+      2022,
+      2023
+    ],
+    "grid_size_degrees": 0.15,
+    "min_cluster_size": 3,
+    "measure_note": "Counts of documented fatalities in a coarse area, NOT an exposure-adjusted risk rate. We have no ridership data at this granularity (see DATA_SOURCES.md) -- busier areas will show up here partly because more people ride there.",
+    "clusters": [
+      {
+        "center": [
+          -73.875,
+          40.725
+        ],
+        "fatality_count": 21,
+        "states": [
+          "New York"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "21 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -112.425,
+          33.525
+        ],
+        "fatality_count": 19,
+        "states": [
+          "Arizona"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "19 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.175,
+          25.875
+        ],
+        "fatality_count": 18,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "18 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -73.875,
+          40.875
+        ],
+        "fatality_count": 16,
+        "states": [
+          "New Jersey",
+          "New York"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "16 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.225,
+          34.125
+        ],
+        "fatality_count": 14,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 2,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "14 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -111.975,
+          33.525
+        ],
+        "fatality_count": 12,
+        "states": [
+          "Arizona"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "12 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.825,
+          33.825
+        ],
+        "fatality_count": 12,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "12 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.175,
+          26.025
+        ],
+        "fatality_count": 12,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 2,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "12 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -89.925,
+          30.075
+        ],
+        "fatality_count": 12,
+        "states": [
+          "Louisiana"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "12 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.175,
+          26.175
+        ],
+        "fatality_count": 11,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "11 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -112.125,
+          33.525
+        ],
+        "fatality_count": 10,
+        "states": [
+          "Arizona"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "10 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -111.825,
+          33.525
+        ],
+        "fatality_count": 10,
+        "states": [
+          "Arizona"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "10 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.375,
+          28.575
+        ],
+        "fatality_count": 10,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 2,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "10 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -114.975,
+          36.225
+        ],
+        "fatality_count": 10,
+        "states": [
+          "Nevada"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "10 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -118.125,
+          33.975
+        ],
+        "fatality_count": 9,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "9 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -118.275,
+          34.125
+        ],
+        "fatality_count": 9,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "9 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.025,
+          26.775
+        ],
+        "fatality_count": 9,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "9 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.425,
+          27.375
+        ],
+        "fatality_count": 9,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "9 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.425,
+          27.525
+        ],
+        "fatality_count": 9,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "9 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -110.775,
+          32.325
+        ],
+        "fatality_count": 8,
+        "states": [
+          "Arizona"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "8 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.675,
+          34.125
+        ],
+        "fatality_count": 8,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "8 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -121.275,
+          38.625
+        ],
+        "fatality_count": 8,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "8 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.825,
+          26.775
+        ],
+        "fatality_count": 8,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "8 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.725,
+          27.975
+        ],
+        "fatality_count": 8,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "8 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.025,
+          26.625
+        ],
+        "fatality_count": 8,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 2,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "8 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.425,
+          28.125
+        ],
+        "fatality_count": 8,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "8 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -110.925,
+          32.325
+        ],
+        "fatality_count": 7,
+        "states": [
+          "Arizona"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "7 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -121.275,
+          38.775
+        ],
+        "fatality_count": 7,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "7 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -104.925,
+          39.825
+        ],
+        "fatality_count": 7,
+        "states": [
+          "Colorado"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "7 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.975,
+          27.075
+        ],
+        "fatality_count": 7,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "7 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.375,
+          28.425
+        ],
+        "fatality_count": 7,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 2,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "7 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.575,
+          28.425
+        ],
+        "fatality_count": 7,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "7 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.275,
+          27.975
+        ],
+        "fatality_count": 7,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "7 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.125,
+          28.275
+        ],
+        "fatality_count": 7,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "7 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.225,
+          28.575
+        ],
+        "fatality_count": 7,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "7 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -98.475,
+          29.475
+        ],
+        "fatality_count": 7,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "7 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -111.975,
+          33.675
+        ],
+        "fatality_count": 6,
+        "states": [
+          "Arizona"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -116.925,
+          33.825
+        ],
+        "fatality_count": 6,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -118.425,
+          34.125
+        ],
+        "fatality_count": 6,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -121.425,
+          38.625
+        ],
+        "fatality_count": 6,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -118.275,
+          33.975
+        ],
+        "fatality_count": 6,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.425,
+          27.975
+        ],
+        "fatality_count": 6,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.275,
+          28.125
+        ],
+        "fatality_count": 6,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.675,
+          24.675
+        ],
+        "fatality_count": 6,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.675,
+          26.175
+        ],
+        "fatality_count": 6,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.575,
+          27.975
+        ],
+        "fatality_count": 6,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -87.675,
+          41.925
+        ],
+        "fatality_count": 6,
+        "states": [
+          "Illinois"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -86.025,
+          39.825
+        ],
+        "fatality_count": 6,
+        "states": [
+          "Indiana"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -85.725,
+          38.175
+        ],
+        "fatality_count": 6,
+        "states": [
+          "Kentucky"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -90.975,
+          30.525
+        ],
+        "fatality_count": 6,
+        "states": [
+          "Louisiana"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -83.025,
+          42.375
+        ],
+        "fatality_count": 6,
+        "states": [
+          "Michigan"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -95.175,
+          29.775
+        ],
+        "fatality_count": 6,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "6 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -118.125,
+          34.125
+        ],
+        "fatality_count": 5,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.375,
+          34.125
+        ],
+        "fatality_count": 5,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.525,
+          34.125
+        ],
+        "fatality_count": 5,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 2,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -121.875,
+          37.425
+        ],
+        "fatality_count": 5,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -121.275,
+          38.025
+        ],
+        "fatality_count": 5,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -120.975,
+          37.725
+        ],
+        "fatality_count": 5,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.575,
+          27.525
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.025,
+          26.325
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.025,
+          26.175
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.125,
+          29.325
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.675,
+          26.625
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.075,
+          32.175
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Georgia"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -87.675,
+          42.075
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Illinois"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -87.525,
+          38.025
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Indiana"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -84.975,
+          43.125
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Michigan"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -115.125,
+          36.225
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Nevada"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -75.075,
+          39.975
+        ],
+        "fatality_count": 5,
+        "states": [
+          "New Jersey",
+          "Pennsylvania"
+        ],
+        "minors_involved": 2,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -77.475,
+          43.275
+        ],
+        "fatality_count": 5,
+        "states": [
+          "New York"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -73.725,
+          40.875
+        ],
+        "fatality_count": 5,
+        "states": [
+          "New York"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.025,
+          33.075
+        ],
+        "fatality_count": 5,
+        "states": [
+          "South Carolina"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -95.475,
+          29.775
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -95.025,
+          29.925
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -96.675,
+          32.775
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -95.325,
+          29.775
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -111.825,
+          40.725
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Utah"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -87.825,
+          43.125
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Wisconsin"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.825,
+          28.125
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -75.075,
+          40.125
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Pennsylvania"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -95.325,
+          29.925
+        ],
+        "fatality_count": 5,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "5 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -112.125,
+          33.675
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Arizona"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -118.125,
+          34.725
+        ],
+        "fatality_count": 4,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.975,
+          34.125
+        ],
+        "fatality_count": 4,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.525,
+          33.675
+        ],
+        "fatality_count": 4,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -118.425,
+          34.275
+        ],
+        "fatality_count": 4,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -119.625,
+          36.825
+        ],
+        "fatality_count": 4,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.075,
+          34.125
+        ],
+        "fatality_count": 4,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.225,
+          34.275
+        ],
+        "fatality_count": 4,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -122.175,
+          37.875
+        ],
+        "fatality_count": 4,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.975,
+          33.975
+        ],
+        "fatality_count": 4,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.075,
+          32.775
+        ],
+        "fatality_count": 4,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -76.875,
+          38.925
+        ],
+        "fatality_count": 4,
+        "states": [
+          "District of Columbia"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.925,
+          29.175
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.925,
+          29.325
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.675,
+          28.125
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.325,
+          27.675
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.525,
+          30.375
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.375,
+          27.525
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.225,
+          28.275
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -114.675,
+          42.225
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Idaho"
+        ],
+        "minors_involved": 2,
+        "years": [
+          2022
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -87.525,
+          41.925
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Illinois"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -87.525,
+          42.075
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Illinois"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -87.825,
+          42.075
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Illinois"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -84.375,
+          38.175
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Kentucky"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -83.175,
+          42.525
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Michigan"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -85.575,
+          42.975
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Michigan"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -106.725,
+          32.325
+        ],
+        "fatality_count": 4,
+        "states": [
+          "New Mexico"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -73.725,
+          40.725
+        ],
+        "fatality_count": 4,
+        "states": [
+          "New York"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -95.925,
+          36.225
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Oklahoma"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -123.075,
+          44.175
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Oregon"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -75.225,
+          39.975
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Pennsylvania"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -74.775,
+          40.275
+        ],
+        "fatality_count": 4,
+        "states": [
+          "New Jersey",
+          "Pennsylvania"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -97.275,
+          32.775
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -96.975,
+          32.775
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -122.325,
+          47.625
+        ],
+        "fatality_count": 4,
+        "states": [
+          "Washington"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -74.025,
+          40.875
+        ],
+        "fatality_count": 4,
+        "states": [
+          "New Jersey"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "4 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -112.425,
+          33.375
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Arizona"
+        ],
+        "minors_involved": 2,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -111.675,
+          33.375
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Arizona"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.825,
+          33.975
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -121.425,
+          39.075
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -122.325,
+          38.025
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -119.775,
+          36.825
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.225,
+          33.225
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -117.075,
+          33.225
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -119.025,
+          35.475
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -121.125,
+          38.775
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -120.825,
+          37.125
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 2,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -121.425,
+          38.775
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -116.475,
+          33.825
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -116.175,
+          33.825
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -118.125,
+          33.825
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -121.725,
+          37.425
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -118.275,
+          33.825
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -118.875,
+          35.475
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -104.775,
+          39.825
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Colorado"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -75.525,
+          39.225
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Delaware"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.325,
+          26.025
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.425,
+          27.675
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.475,
+          25.575
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.125,
+          28.125
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.675,
+          26.475
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.025,
+          26.475
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.125,
+          27.075
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.725,
+          27.825
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.375,
+          28.275
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.275,
+          27.075
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.425,
+          28.575
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.325,
+          25.725
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.425,
+          27.225
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.725,
+          28.125
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.975,
+          28.125
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -87.225,
+          30.525
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.175,
+          26.325
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.175,
+          27.375
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -87.225,
+          30.375
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -87.825,
+          41.925
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Illinois"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -89.475,
+          40.725
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Illinois"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -86.175,
+          39.825
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Indiana"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -91.125,
+          30.525
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Louisiana"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -90.825,
+          30.375
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Louisiana"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -92.025,
+          30.375
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Louisiana"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -77.025,
+          39.075
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Maryland"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -72.525,
+          42.225
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Massachusetts"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -83.025,
+          42.525
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Michigan"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.875,
+          42.525
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Michigan"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -83.175,
+          42.375
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Michigan"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -74.025,
+          41.025
+        ],
+        "fatality_count": 3,
+        "states": [
+          "New Jersey"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -106.575,
+          35.175
+        ],
+        "fatality_count": 3,
+        "states": [
+          "New Mexico"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -78.675,
+          42.975
+        ],
+        "fatality_count": 3,
+        "states": [
+          "New York"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -78.825,
+          42.975
+        ],
+        "fatality_count": 3,
+        "states": [
+          "New York"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -72.975,
+          40.875
+        ],
+        "fatality_count": 3,
+        "states": [
+          "New York"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -73.275,
+          40.725
+        ],
+        "fatality_count": 3,
+        "states": [
+          "New York"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.525,
+          41.475
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Ohio"
+        ],
+        "minors_involved": 2,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.875,
+          39.975
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Ohio"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -97.575,
+          35.475
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Oklahoma"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -122.475,
+          45.675
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Oregon",
+          "Washington"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -123.825,
+          46.275
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Oregon"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -79.425,
+          33.525
+        ],
+        "fatality_count": 3,
+        "states": [
+          "South Carolina"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -89.775,
+          35.325
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Tennessee"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -96.675,
+          33.075
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -95.625,
+          29.775
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -98.325,
+          29.625
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -111.825,
+          41.025
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Utah"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -76.275,
+          37.125
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Virginia"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -77.325,
+          37.575
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Virginia"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -76.425,
+          37.125
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Virginia"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -122.175,
+          47.475
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Washington"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022,
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -87.975,
+          43.125
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Wisconsin"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2022
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -121.125,
+          38.025
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -122.025,
+          37.725
+        ],
+        "fatality_count": 3,
+        "states": [
+          "California"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -104.925,
+          40.575
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Colorado"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -82.575,
+          27.825
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.775,
+          28.725
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -80.325,
+          25.575
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Florida"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -81.975,
+          33.525
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Georgia"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -89.625,
+          39.825
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Illinois"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -87.375,
+          41.625
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Indiana"
+        ],
+        "minors_involved": 1,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -85.575,
+          40.125
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Indiana"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -76.725,
+          39.525
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Maryland"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -119.625,
+          39.525
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Nevada"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -96.825,
+          35.475
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Oklahoma"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -86.775,
+          36.075
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Tennessee"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      },
+      {
+        "center": [
+          -102.825,
+          30.975
+        ],
+        "fatality_count": 3,
+        "states": [
+          "Texas"
+        ],
+        "minors_involved": 0,
+        "years": [
+          2023
+        ],
+        "note": "3 documented fatalities within ~0.15-degree area across {'2022': 1149, '2023': 1210} -- a count-based pattern flag, not an exposure-adjusted risk rate."
+      }
+    ]
+  }
+}

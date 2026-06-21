@@ -1,0 +1,34 @@
+name: Refresh risk & prevention layer
+
+# Unlike the news refresh (which needs hours-level freshness), FARS and ACS
+# are both annual federal releases -- there is nothing to gain from running
+# this every 6 hours. Weekly is already far more often than the underlying
+# data changes; this mainly exists so the pipeline re-runs automatically
+# when a new FARS year is added to the script args, without a manual step.
+on:
+  schedule:
+    - cron: "23 7 * * 1"  # Mondays, off the hour/half-hour per scheduling guidance
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-risk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run risk pipeline
+        env:
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+        run: python3 etl/risk/transform_risk.py 2022 2023
+      - name: Commit updated artifacts if changed
+        run: |
+          git config user.name "ebike-crash-intel-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add web/data/risk_summary.json
+          git diff --staged --quiet || git commit -m "Auto-refresh risk & prevention layer"
+          git push

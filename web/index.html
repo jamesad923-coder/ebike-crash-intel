@@ -17,7 +17,7 @@
     font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
   #app { display:grid; grid-template-columns:380px 1fr; height:100vh; }
   #side { overflow-y:auto; border-right:1px solid var(--line); padding:18px; }
-  #map, #news-map { height:100%; }
+  #map, #news-map, #risk-map { height:100%; }
   h1 { font-size:18px; margin:0 0 2px; }
   h2 { font-size:13px; text-transform:uppercase; letter-spacing:.05em;
     color:var(--muted); margin:22px 0 8px; }
@@ -54,7 +54,7 @@
   .tab.on { color:var(--txt); border-bottom-color:var(--accent); font-weight:600; }
   .view { display:none; height:calc(100vh - 41px); overflow-y:auto; }
   .view.on { display:block; }
-  #view-fars.on, #view-news.on { display:grid; grid-template-columns:380px 1fr; }
+  #view-fars.on, #view-news.on, #view-risk.on { display:grid; grid-template-columns:380px 1fr; }
   #side-neiss { max-width:680px; margin:0 auto; padding:18px; }
   .tier-badge { display:inline-block; font-size:10px; font-weight:700; text-transform:uppercase;
     letter-spacing:.03em; padding:2px 7px; border-radius:4px; margin-left:6px; }
@@ -65,6 +65,20 @@
   .report-card .src-link { color:var(--accent); font-size:11px; }
   .estimate-note { font-size:11px; color:var(--muted); margin:2px 0 14px; }
   .stat .l b { color:#f0d999; }
+  table.rank-table { width:100%; border-collapse:collapse; font-size:12px; margin-bottom:8px; }
+  table.rank-table th { text-align:left; color:var(--muted); font-weight:600;
+    border-bottom:1px solid var(--line); padding:5px 4px; }
+  table.rank-table td { padding:5px 4px; border-bottom:1px solid #1d232b; }
+  table.rank-table .rank-shift-up { color:var(--warn); }
+  table.rank-table .rank-shift-down { color:var(--good); }
+  .factor-card { border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin-bottom:8px; }
+  .factor-card .head { display:flex; justify-content:space-between; font-size:12.5px; font-weight:600; }
+  .factor-card .n { color:var(--muted); font-weight:400; font-size:11px; }
+  .factor-card .lever { margin-top:6px; padding-top:6px; border-top:1px solid #1d232b;
+    font-size:11.5px; color:#c9d6e3; }
+  .factor-card .lever b { color:var(--good); }
+  .factor-card .lever .src { color:var(--muted); font-size:10.5px; display:block; margin-top:2px; }
+  .toggle-row { display:flex; gap:6px; margin-bottom:10px; }
 </style>
 </head>
 <body>
@@ -72,6 +86,7 @@
   <div class="tab on" data-view="fars">Fatalities — map (FARS)</div>
   <div class="tab" data-view="neiss">Injuries — national estimates (NEISS)</div>
   <div class="tab" data-view="news">Recent reports — news (unverified)</div>
+  <div class="tab" data-view="risk">Risk &amp; Prevention</div>
 </div>
 
 <div id="view-fars" class="view on">
@@ -197,6 +212,42 @@
   </div>
 </div>
 
+<div id="view-risk" class="view">
+  <div id="side">
+    <h1>Risk &amp; Prevention</h1>
+    <p class="sub">Interpretable patterns, not a black-box prediction · every number shows its sample size</p>
+
+    <div class="banner">
+      <b>Read this first.</b> Nothing here is machine-learning prediction —
+      it's interpretable cross-tabs and a rate adjustment, fully auditable.
+      The state ranking divides FARS fatalities by ACS <b>commute-cycling</b>
+      data — a real but limited proxy that misses recreational, delivery, and
+      minors' riding (the population most central to e-bikes). Cluster flags
+      are raw fatality <b>counts</b> in an area, not exposure-adjusted risk —
+      busier places show up partly because more people ride there. Prevention
+      levers are citations from FHWA/NACTO/NHTSA guidance, not claims our
+      data proves they work.
+    </div>
+
+    <h2>State ranking: rate vs. raw count</h2>
+    <p class="sub" style="margin-top:-4px">Toggle to see how differently a state ranks once adjusted for bike-commute share.</p>
+    <div class="toggle-row" id="risk-rank-toggle"></div>
+    <div id="risk-rank-table"></div>
+
+    <h2>Contributing-factor patterns (PBCAT × conditions)</h2>
+    <div id="risk-factors"></div>
+
+    <div class="src" id="risk-src"></div>
+  </div>
+  <div style="position:relative">
+    <div id="risk-map"></div>
+    <div class="legend">
+      <div>circle size = fatality count in area</div>
+      <div style="color:var(--muted);margin-top:4px">count-based flag, not a risk rate</div>
+    </div>
+  </div>
+</div>
+
 <script>
 const DATA = "data/";
 let GEO, SUMMARY;
@@ -262,6 +313,7 @@ document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () =>
   document.getElementById("view-"+t.dataset.view).classList.add("on");
   if (t.dataset.view === "fars") map.resize();
   if (t.dataset.view === "news") newsMap.resize();
+  if (t.dataset.view === "risk") riskMap.resize();
 }));
 
 // ---- Recent Reports (news) panel ----
@@ -469,6 +521,99 @@ map.on("load", async () => {
 
   recompute();
 });
+
+// ---- Risk & Prevention panel ----
+const riskMap = new maplibregl.Map({
+  container: "risk-map",
+  style: { version: 8,
+    sources: { carto: { type:"raster",
+      tiles:["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
+      tileSize:256, attribution:"© OpenStreetMap, © CARTO" }},
+    layers: [{ id:"carto", type:"raster", source:"carto" }] },
+  center: [-96, 38], zoom: 3.4
+});
+
+let RISK, riskSortBy = "rate";
+
+function renderRankTable() {
+  const rows = [...RISK.state_ranking.ranking]
+    .sort((a,b) => riskSortBy === "rate"
+      ? a.fatalities_per_10k_bike_commuters < b.fatalities_per_10k_bike_commuters ? 1 : -1
+      : a.fatalities_raw_count < b.fatalities_raw_count ? 1 : -1)
+    .slice(0, 15);
+  const html = `<table class="rank-table"><tr>
+      <th>State</th><th>Rate rank</th><th>Count rank</th><th>Per 10k commuters</th><th>Raw count</th>
+    </tr>` + rows.map(r => {
+      const shift = r.rate_rank - r.count_rank;
+      const shiftClass = shift < 0 ? "rank-shift-up" : shift > 0 ? "rank-shift-down" : "";
+      return `<tr>
+        <td>${r.state}</td>
+        <td>#${r.rate_rank}</td>
+        <td class="${shiftClass}">#${r.count_rank}</td>
+        <td>${r.fatalities_per_10k_bike_commuters}</td>
+        <td>${r.fatalities_raw_count}</td>
+      </tr>`;
+    }).join("") + `</table>`;
+  document.getElementById("risk-rank-table").innerHTML = html;
+}
+
+function renderFactors() {
+  document.getElementById("risk-factors").innerHTML = RISK.factor_profile.profiles.slice(0, 10).map(p => {
+    const lever = p.prevention_lever
+      ? `<div class="lever"><b>Lever:</b> ${p.prevention_lever.levers.join(", ")}
+           <span class="src">${p.prevention_lever.source}</span></div>`
+      : "";
+    return `<div class="factor-card">
+      <div class="head"><span>${p.lighting} · ${p.time_of_day}</span><span class="n">n=${p.sample_size}</span></div>
+      <div style="margin-top:4px">${p.top_crash_type} — ${(p.top_crash_type_share*100).toFixed(0)}% of coded cases</div>
+      ${lever}
+    </div>`;
+  }).join("");
+}
+
+async function loadRisk() {
+  RISK = await fetch(DATA+"risk_summary.json").then(r=>r.json());
+
+  const tc = document.getElementById("risk-rank-toggle");
+  [["rate","By rate (adjusted)"],["count","By raw count"]].forEach(([v,l])=>{
+    chip(tc, l, (b)=>{ riskSortBy=v;
+      [...tc.children].forEach(c=>c.classList.remove("on")); b.classList.add("on");
+      renderRankTable();
+    }, v==="rate");
+  });
+  renderRankTable();
+  renderFactors();
+
+  const clusterGeo = {
+    type: "FeatureCollection",
+    features: RISK.clusters.clusters.map(c => ({
+      type: "Feature",
+      geometry: { type: "Point", coordinates: c.center },
+      properties: { count: c.fatality_count, states: c.states.join(", "), minors: c.minors_involved },
+    })),
+  };
+  riskMap.addSource("clusters", { type: "geojson", data: clusterGeo });
+  riskMap.addLayer({ id: "cluster-pts", type: "circle", source: "clusters",
+    paint: { "circle-color": "#f78166", "circle-opacity": 0.55, "circle-stroke-width": 1,
+      "circle-stroke-color": "#000",
+      "circle-radius": ["interpolate", ["linear"], ["get", "count"], 3, 5, 21, 22] }});
+  riskMap.on("click", "cluster-pts", e => {
+    const p = e.features[0].properties;
+    new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+      `<b>${p.count} documented fatalities</b> in this area<br>
+       States: ${p.states}<br>Minors involved: ${p.minors}<br>
+       <span style="color:#8b949e">Count-based flag, not an exposure-adjusted risk rate.</span>`
+    ).addTo(riskMap);
+  });
+  riskMap.on("mouseenter", "cluster-pts", () => riskMap.getCanvas().style.cursor = "pointer");
+  riskMap.on("mouseleave", "cluster-pts", () => riskMap.getCanvas().style.cursor = "");
+
+  document.getElementById("risk-src").innerHTML =
+    `<b>Methodology:</b> ${RISK.methodology_note}<br><br>
+     <b>State ranking caveat:</b> ${RISK.state_ranking.measure_note}<br><br>
+     <b>Cluster caveat:</b> ${RISK.clusters.measure_note}`;
+}
+loadRisk();
 </script>
 </body>
 </html>
