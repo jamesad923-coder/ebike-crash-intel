@@ -119,8 +119,8 @@
     {
       "device": "E-bike",
       "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": "Fairfax County",
+      "age_band": "13-17 (teen)",
+      "city": "Montgomery County",
       "state": "DC",
       "location_precision": "county+outlet_market",
       "located": true,
