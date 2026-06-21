@@ -26,6 +26,52 @@
     },
     {
       "device": "E-bike",
+      "outcome": "Injury",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "mirror.co.uk",
+      "url": "https://www.mirror.co.uk/3am/celebrity-news/nicky-campbell-daughter-accident-bike-37323909",
+      "seendate": "20260620T084500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "mirror.co.uk"
+      ],
+      "sources": [
+        {
+          "domain": "mirror.co.uk",
+          "url": "https://www.mirror.co.uk/3am/celebrity-news/nicky-campbell-daughter-accident-bike-37323909",
+          "date": "20260620T084500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "outcome": "Fatality",
+      "age_band": "45-64",
+      "city": null,
+      "state": "NH",
+      "location_precision": "outlet_market",
+      "located": false,
+      "domain": "wmur.com",
+      "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
+      "seendate": "20260620T000000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wmur.com"
+      ],
+      "sources": [
+        {
+          "domain": "wmur.com",
+          "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
+          "date": "20260620T000000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
       "outcome": "Fatality",
       "age_band": "13-17 (teen)",
       "city": null,
@@ -44,6 +90,52 @@
           "domain": "walesonline.co.uk",
           "url": "https://www.walesonline.co.uk/news/wales-news/final-day-ely-riot-sentencing-34149582",
           "date": "20260619T101500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "outcome": "Severe injury",
+      "age_band": "18-24",
+      "city": "North County",
+      "state": "CA",
+      "location_precision": "county+outlet_market",
+      "located": true,
+      "domain": "10news.com",
+      "url": "https://www.10news.com/news/local-news/san-diego-news/e-bike-rider-critically-injured-in-clairemont-mesa-traffic-collision",
+      "seendate": "20260620T230000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "10news.com"
+      ],
+      "sources": [
+        {
+          "domain": "10news.com",
+          "url": "https://www.10news.com/news/local-news/san-diego-news/e-bike-rider-critically-injured-in-clairemont-mesa-traffic-collision",
+          "date": "20260620T230000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": "Fairfax County",
+      "state": "DC",
+      "location_precision": "county+outlet_market",
+      "located": true,
+      "domain": "wjla.com",
+      "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
+      "seendate": "20260617T234500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wjla.com"
+      ],
+      "sources": [
+        {
+          "domain": "wjla.com",
+          "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
+          "date": "20260617T234500Z"
         }
       ]
     }
