@@ -247,31 +247,50 @@ def extract_location(text: str, domain: str | None = None) -> tuple[str, str, st
 def extract_incident(article: dict) -> dict | None:
     """Try full-text extraction; fall back to title-only. Returns None if we
     can't confidently confirm BOTH a device and a crash/injury event -- we'd
-    rather under-report than mis-tag an unrelated article."""
-    title = article.get("title", "") or ""
+    rather under-report than mis-tag an unrelated article.
+
+    Headlines ("Man killed in e-bike crash") are short and virtually always
+    state device+crash+outcome together about the SAME event -- checking
+    the title alone first is both more reliable and avoids a real failure
+    mode we hit in testing: requiring proximity across the full article let
+    real incidents get rejected when the device was re-mentioned far from
+    the body's crash/outcome language, while a title-only check would have
+    confirmed them immediately. Body text (with a wider but still-bounded
+    proximity window) is the fallback when the title alone isn't enough.
+    """
+    # GDELT's title field inserts spaces around hyphens within words
+    # ("e - bike", "14 - year - old") -- silently breaks every hyphen-aware
+    # regex (device, age) until normalized back to "e-bike", "14-year-old".
+    title = re.sub(r"(?<=\w) - (?=\w)", "-", article.get("title", "") or "")
     body = fetch_text(article.get("url", ""))
     text = (title + " " + body) if body else title
 
-    device_match = extract_device(text)
-    if not device_match:
-        return None
-    device, device_pos = device_match
+    title_device = extract_device(title)
+    title_crash = extract_crash_position(title)
+    title_outcome = extract_outcome(title)
+    if title_device and title_crash is not None and title_outcome:
+        device, outcome = title_device[0], title_outcome[0]
+    else:
+        device_match = extract_device(text)
+        if not device_match:
+            return None
+        device, device_pos = device_match
 
-    crash_pos = extract_crash_position(text)
-    if crash_pos is None:
-        return None
+        crash_pos = extract_crash_position(text)
+        if crash_pos is None:
+            return None
 
-    outcome_match = extract_outcome(text)
-    if not outcome_match:
-        return None
-    outcome, outcome_pos = outcome_match
+        outcome_match = extract_outcome(text)
+        if not outcome_match:
+            return None
+        outcome, outcome_pos = outcome_match
 
-    # All three signals must describe the SAME event, not three unrelated
-    # mentions scattered across a long page (nav links, related-stories
-    # blocks, etc.). Require them within a shared window of each other.
-    positions = [device_pos, crash_pos, outcome_pos]
-    if max(positions) - min(positions) > PROXIMITY_WINDOW:
-        return None
+        # All three signals must describe the SAME event, not three
+        # unrelated mentions scattered across a long page (nav links,
+        # related-stories blocks, etc.).
+        positions = [device_pos, crash_pos, outcome_pos]
+        if max(positions) - min(positions) > PROXIMITY_WINDOW:
+            return None
 
     loc = extract_location(text if body else "", article.get("domain")) if body else (
         (None, DOMAIN_STATE[article["domain"]], "outlet_market")
