@@ -1,4 +1,120 @@
 {
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
-  "reports": []
+  "reports": [
+    {
+      "device": "E-bike",
+      "outcome": "Severe injury",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "kildare-nationalist.ie",
+      "url": "https://www.kildare-nationalist.ie/news/teenager-critically-injured-in-laois-e-bike-crash_arid-102497.html",
+      "seendate": "20260621T210000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "kildare-nationalist.ie"
+      ],
+      "sources": [
+        {
+          "domain": "kildare-nationalist.ie",
+          "url": "https://www.kildare-nationalist.ie/news/teenager-critically-injured-in-laois-e-bike-crash_arid-102497.html",
+          "date": "20260621T210000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "outcome": "Severe injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nova.ie",
+      "url": "https://www.nova.ie/a-teenage-boy-has-been-left-in-critical-condition-following-an-e-bike-crash/",
+      "seendate": "20260621T190000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nova.ie"
+      ],
+      "sources": [
+        {
+          "domain": "nova.ie",
+          "url": "https://www.nova.ie/a-teenage-boy-has-been-left-in-critical-condition-following-an-e-bike-crash/",
+          "date": "20260621T190000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "outcome": "Severe injury",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "laois-nationalist.ie",
+      "url": "https://www.laois-nationalist.ie/news/teenager-critically-injured-in-portlaoise-e-bike-crash_arid-102470.html",
+      "seendate": "20260621T163000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "laois-nationalist.ie"
+      ],
+      "sources": [
+        {
+          "domain": "laois-nationalist.ie",
+          "url": "https://www.laois-nationalist.ie/news/teenager-critically-injured-in-portlaoise-e-bike-crash_arid-102470.html",
+          "date": "20260621T163000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "outcome": "Severe injury",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "irishtimes.com",
+      "url": "https://www.irishtimes.com/ireland/2026/06/21/boy-14-in-critical-condition-after-e-bike-crash/",
+      "seendate": "20260621T154500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "irishtimes.com"
+      ],
+      "sources": [
+        {
+          "domain": "irishtimes.com",
+          "url": "https://www.irishtimes.com/ireland/2026/06/21/boy-14-in-critical-condition-after-e-bike-crash/",
+          "date": "20260621T154500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "outcome": "Severe injury",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "breakingnews.ie",
+      "url": "https://www.breakingnews.ie/ireland/teenager-14-in-critical-condition-after-crash-involving-e-bike-in-co-laois-1916632.html",
+      "seendate": "20260621T144500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "breakingnews.ie"
+      ],
+      "sources": [
+        {
+          "domain": "breakingnews.ie",
+          "url": "https://www.breakingnews.ie/ireland/teenager-14-in-critical-condition-after-crash-involving-e-bike-in-co-laois-1916632.html",
+          "date": "20260621T144500Z"
+        }
+      ]
+    }
+  ]
 }
