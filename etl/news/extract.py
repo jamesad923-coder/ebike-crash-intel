@@ -86,7 +86,41 @@ DEVICE_PATTERNS = [
 FATAL_RE = re.compile(r"\bkilled\b|\bdied\b|\bdead\b|\bfatal(ity|ly)?\b|\bdoa\b", re.I)
 SEVERE_RE = re.compile(r"critical(ly)? (injured|condition)|life-threatening", re.I)
 INJURY_RE = re.compile(r"\binjured\b|\bhurt\b|\bhospitalized\b", re.I)
-CRASH_RE = re.compile(r"crash|collision|struck|hit by|accident", re.I)
+
+# Deliberately NOT "hit by" or bare "struck" -- both are dangerously generic
+# in English ("hit by a BB gun pellet", "struck a deal", "struck out") and
+# caused a real false positive in testing: an article about teens on e-bikes
+# shooting pedestrians with BB guns matched as an e-bike CRASH because the
+# article said people were "hit by the projectiles." Requiring an article +
+# noun after "struck/hit by" anchors these to an actual collision.
+CRASH_RE = re.compile(
+    r"\bcrash(ed|es|ing)?\b|\bcollision\b|\baccident\b|"
+    r"\b(struck|hit) by (a|an|the) (car|truck|vehicle|driver|suv|van|bus|motorist)\b|"
+    r"\bran into\b|\bplowed into\b|\bstruck (a|an|the) (pedestrian|cyclist|rider)\b",
+    re.I,
+)
+
+# Negation cues checked in a window around a candidate crash/outcome match.
+# Plain keyword matching has no idea "no one was hurt" negates "hurt" --
+# this is exactly what let the BB-gun article through ("no one reported any
+# serious injury" was treated the same as a real injury report).
+NEGATION_RE = re.compile(
+    r"\bno\b|\bnobody\b|\bno one\b|\bnone\b|\bwithout\b|\bnot\b|n't\b|\bzero\b",
+    re.I,
+)
+
+# Device, crash, and outcome mentions must occur within this many characters
+# of each other to count as describing the same event -- otherwise a long
+# article that happens to mention an e-bike in one paragraph and an unrelated
+# "crash" in another could be wrongly stitched together.
+PROXIMITY_WINDOW = 500
+
+
+def _negated_nearby(text: str, start: int, end: int, window: int = 50) -> bool:
+    """True if a negation cue appears in the ~window chars immediately
+    before the match (where "no", "nobody", "without" etc. typically sit
+    relative to the thing they're negating)."""
+    return bool(NEGATION_RE.search(text[max(0, start - window):end]))
 
 AGE_NUM_RE = re.compile(r"\b(\d{1,2})[\s-]year[\s-]old\b", re.I)
 TEEN_RE = re.compile(r"\bteen(ager)?\b", re.I)
@@ -119,20 +153,33 @@ def fetch_text(url: str, timeout=15) -> str:
         return ""
 
 
-def extract_device(text: str) -> str | None:
+def extract_device(text: str) -> tuple[str, int] | None:
+    """Returns (label, match_start) for the first device mention, or None."""
     for pattern, label in DEVICE_PATTERNS:
-        if pattern.search(text):
-            return label
+        m = pattern.search(text)
+        if m:
+            return label, m.start()
     return None
 
 
-def extract_outcome(text: str) -> str | None:
-    if FATAL_RE.search(text):
-        return "Fatality"
-    if SEVERE_RE.search(text):
-        return "Severe injury"
-    if INJURY_RE.search(text):
-        return "Injury"
+def extract_outcome(text: str) -> tuple[str, int] | None:
+    """Returns (tier, match_start) for the most severe NON-NEGATED outcome
+    mention, or None. Each candidate match is checked for a negation cue
+    immediately before it ("no one was hurt" must not count as "hurt")."""
+    for pattern, tier in [(FATAL_RE, "Fatality"), (SEVERE_RE, "Severe injury"), (INJURY_RE, "Injury")]:
+        for m in pattern.finditer(text):
+            if not _negated_nearby(text, m.start(), m.end()):
+                return tier, m.start()
+    return None
+
+
+def extract_crash_position(text: str) -> int | None:
+    """Returns the position of the first non-negated crash-event mention,
+    or None. Negation check matters here too: 'no collision occurred' or
+    similar should not count."""
+    for m in CRASH_RE.finditer(text):
+        if not _negated_nearby(text, m.start(), m.end()):
+            return m.start()
     return None
 
 
@@ -205,13 +252,25 @@ def extract_incident(article: dict) -> dict | None:
     body = fetch_text(article.get("url", ""))
     text = (title + " " + body) if body else title
 
-    device = extract_device(text)
-    if not device:
+    device_match = extract_device(text)
+    if not device_match:
         return None
-    if not CRASH_RE.search(text):
+    device, device_pos = device_match
+
+    crash_pos = extract_crash_position(text)
+    if crash_pos is None:
         return None
-    outcome = extract_outcome(text)
-    if not outcome:
+
+    outcome_match = extract_outcome(text)
+    if not outcome_match:
+        return None
+    outcome, outcome_pos = outcome_match
+
+    # All three signals must describe the SAME event, not three unrelated
+    # mentions scattered across a long page (nav links, related-stories
+    # blocks, etc.). Require them within a shared window of each other.
+    positions = [device_pos, crash_pos, outcome_pos]
+    if max(positions) - min(positions) > PROXIMITY_WINDOW:
         return None
 
     loc = extract_location(text if body else "", article.get("domain")) if body else (

@@ -113,21 +113,38 @@ def _parse_date(seendate: str) -> datetime | None:
 
 
 def corroborate(incidents: list[dict]) -> list[dict]:
-    """Group by (city, state, outcome, device) within a 3-day window across
-    distinct domains; tag each incident with the resulting confidence tier
-    and the count of corroborating domains."""
+    """Group by (city, state, outcome, device) within a 2-day window across
+    distinct domains; tag each incident with the resulting confidence tier.
+
+    CRITICAL: an incident with no extracted location has city=None. Grouping
+    by (city, state, ...) naively would put EVERY unlocated incident into
+    the same (None, None, outcome, device) bucket regardless of whether
+    they're real, distinct events -- and falsely mark them "corroborated"
+    just because two unrelated, unlocated articles both happened to fail
+    location extraction. We caught exactly this bug in testing. Fix: an
+    incident with no location is NEVER grouped with another incident -- it
+    is always its own singleton, tier "single_source", full stop. Real
+    corroboration requires a real location to anchor the comparison.
+    """
+    out = []
     groups = defaultdict(list)
     for inc in incidents:
+        if inc["city"] is None:
+            # No location anchor -- never group, never call it corroborated.
+            inc2 = dict(inc)
+            inc2["confidence_tier"] = "single_source"
+            inc2["corroborating_domains"] = [inc["domain"]]
+            out.append(inc2)
+            continue
         key = (inc["city"], inc["state"], inc["outcome"], inc["device"])
         groups[key].append(inc)
 
-    out = []
     for key, group in groups.items():
         group.sort(key=lambda i: _parse_date(i["seendate"]) or datetime.min)
         for inc in group:
             d0 = _parse_date(inc["seendate"])
             window = [g for g in group if d0 and _parse_date(g["seendate"])
-                      and abs((_parse_date(g["seendate"]) - d0).days) <= 3]
+                      and abs((_parse_date(g["seendate"]) - d0).days) <= 2]
             domains = {g["domain"] for g in window}
             tier = "corroborated" if len(domains) >= 2 else "single_source"
             inc2 = dict(inc)
@@ -140,19 +157,34 @@ def corroborate(incidents: list[dict]) -> list[dict]:
 def dedupe_by_event(incidents: list[dict]) -> list[dict]:
     """Collapse multiple articles about the same real-world event (same
     city/state/device/outcome/~date) into one incident record, listing all
-    source URLs instead of duplicating points on the map."""
+    source URLs instead of duplicating points on the map.
+
+    Same rule as corroborate(): an incident with no location is never
+    merged with another -- each is its own record. Keying on (None, None,
+    ...) would otherwise silently fold together different, unrelated
+    unlocated stories that happen to share a device/outcome/week.
+    """
     groups = defaultdict(list)
+    standalone = []
     for inc in incidents:
+        if inc["city"] is None:
+            standalone.append(inc)
+            continue
         d = _parse_date(inc["seendate"])
         bucket = d.strftime("%Y-%W") if d else "unknown"
         key = (inc["city"], inc["state"], inc["device"], inc["outcome"], bucket)
         groups[key].append(inc)
+
     merged = []
     for key, group in groups.items():
         base = dict(group[0])
         base["sources"] = [{"domain": g["domain"], "url": g["url"], "date": g["seendate"]} for g in group]
         base["confidence_tier"] = group[0]["confidence_tier"]
         base["corroborating_domains"] = sorted({g["domain"] for g in group})
+        merged.append(base)
+    for inc in standalone:
+        base = dict(inc)
+        base["sources"] = [{"domain": inc["domain"], "url": inc["url"], "date": inc["seendate"]}]
         merged.append(base)
     return merged
 
