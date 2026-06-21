@@ -235,6 +235,10 @@
     <div id="risk-rank-table"></div>
 
     <h2>Contributing-factor patterns (PBCAT × conditions)</h2>
+    <p class="sub" style="margin-top:-4px">Each card below is its own
+      independent group of crashes (its own "n"), not a slice of one shared
+      total — percentages describe only that card's cases and are not
+      meant to add up across cards.</p>
     <div id="risk-factors"></div>
 
     <div class="src" id="risk-src"></div>
@@ -565,7 +569,7 @@ function renderFactors() {
       : "";
     return `<div class="factor-card">
       <div class="head"><span>${p.lighting} · ${p.time_of_day}</span><span class="n">n=${p.sample_size}</span></div>
-      <div style="margin-top:4px">${p.top_crash_type} — ${(p.top_crash_type_share*100).toFixed(0)}% of coded cases</div>
+      <div style="margin-top:4px">${p.top_crash_type} — ${(p.top_crash_type_share*100).toFixed(0)}% of these ${p.sample_size} cases</div>
       ${lever}
     </div>`;
   }).join("");
