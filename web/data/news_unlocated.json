@@ -75,14 +75,14 @@
     {
       "device": "E-bike",
       "outcome": "Injury",
-      "age_band": "13-17 (teen)",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "theacorn.com",
-      "url": "https://www.theacorn.com/articles/more-e-bike-restrictions-gear-up/",
-      "seendate": "20260618T203000Z",
+      "domain": "wtae.com",
+      "url": "https://www.wtae.com/article/man-injured-car-bike-crash-lower-burrell/71619549",
+      "seendate": "20260618T011500Z",
       "confidence_tier": "corroborated",
       "corroborating_domains": [
         "dailyrecord.co.uk",
@@ -92,15 +92,9 @@
         "newcastleherald.com.au",
         "terracestandard.com",
         "the-independent.com",
-        "theacorn.com",
         "wtae.com"
       ],
       "sources": [
-        {
-          "domain": "theacorn.com",
-          "url": "https://www.theacorn.com/articles/more-e-bike-restrictions-gear-up/",
-          "date": "20260618T203000Z"
-        },
         {
           "domain": "wtae.com",
           "url": "https://www.wtae.com/article/man-injured-car-bike-crash-lower-burrell/71619549",
@@ -217,7 +211,8 @@
         "kfiam640.iheart.com",
         "liverpoolecho.co.uk",
         "manchestereveningnews.co.uk",
-        "warringtonguardian.co.uk"
+        "warringtonguardian.co.uk",
+        "westsidetoday.com"
       ],
       "sources": [
         {
@@ -229,6 +224,11 @@
           "domain": "manchestereveningnews.co.uk",
           "url": "https://www.manchestereveningnews.co.uk/news/greater-manchester-news/girl-12-fighting-life-after-34141038",
           "date": "20260618T080000Z"
+        },
+        {
+          "domain": "westsidetoday.com",
+          "url": "https://westsidetoday.com/2026/06/17/suspect-faces-attempted-murder-charges-after-intentionally-ramming-pedestrians-during-culver-city-police-chase/",
+          "date": "20260618T071500Z"
         },
         {
           "domain": "kfiam640.iheart.com",
