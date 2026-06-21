@@ -115,29 +115,6 @@
           "date": "20260620T230000Z"
         }
       ]
-    },
-    {
-      "device": "E-bike",
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": "Montgomery County",
-      "state": "DC",
-      "location_precision": "county+outlet_market",
-      "located": true,
-      "domain": "wjla.com",
-      "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
-      "seendate": "20260617T234500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wjla.com"
-      ],
-      "sources": [
-        {
-          "domain": "wjla.com",
-          "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
-          "date": "20260617T234500Z"
-        }
-      ]
     }
   ]
 }
