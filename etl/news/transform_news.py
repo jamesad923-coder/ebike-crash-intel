@@ -182,6 +182,11 @@ def dedupe_by_event(incidents: list[dict]) -> list[dict]:
         base["sources"] = [{"domain": g["domain"], "url": g["url"], "date": g["seendate"]} for g in group]
         base["confidence_tier"] = group[0]["confidence_tier"]
         base["corroborating_domains"] = sorted({g["domain"] for g in group})
+        # OR across all merged articles -- if ANY corroborating source
+        # mentions a throttle-ambiguous term, the flag should show even if
+        # the first-seen article (whichever happened to become `base`)
+        # didn't happen to mention it.
+        base["throttle_ambiguous"] = any(g.get("throttle_ambiguous") for g in group)
         merged.append(base)
     for inc in standalone:
         base = dict(inc)
@@ -218,6 +223,7 @@ def run(timespan="7d") -> dict:
                 "city": inc["city"], "state": inc["state"],
                 "location_precision": inc.get("location_precision"),
                 "device": inc["device"], "outcome": inc["outcome"],
+                "throttle_ambiguous": inc.get("throttle_ambiguous", False),
                 "age_band": inc["age_band"],
                 "confidence_tier": inc["confidence_tier"],
                 "corroborating_domains": inc["corroborating_domains"],

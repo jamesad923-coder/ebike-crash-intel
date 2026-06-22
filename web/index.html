@@ -185,7 +185,11 @@
       keyword/pattern matching, not read by a person. We show
       <b>city/county + age band only — never a name or exact age</b>, even
       when the source article includes one. Click through to the source(s)
-      to verify before treating any single report as fact.
+      to verify before treating any single report as fact. A
+      <b>⚠ throttle vehicle?</b> badge means the article mentions a
+      throttle-capable vehicle (e.g. Sur-Ron) that may not legally be a
+      Class 1-3 e-bike at all — federal data has no e-bike class field, so
+      this is a text-keyword flag, not a verified classification.
     </div>
 
     <div class="stat"><span class="n" id="news-total">–</span><span class="l">reports detected, last 7 days</span></div>
@@ -344,9 +348,12 @@ function renderNewsList() {
   document.getElementById("news-list").innerHTML = feats.map(f => {
     const p = f.properties;
     const srcLinks = p.sources.map(s => `<a class="src-link" href="${s.url}" target="_blank">${s.domain}</a>`).join(", ");
+    const throttleBadge = p.throttle_ambiguous
+      ? `<span class="tier-badge" style="background:#3d1a1a;color:#ff8a8a" title="Article mentions a throttle-capable vehicle (e.g. Sur-Ron) that may not legally be a Class 1-3 e-bike">⚠ throttle vehicle?</span>`
+      : "";
     return `<div class="report-card">
       <span class="loc">${p.city}, ${p.state}</span>
-      <span class="tier-badge tier-${p.confidence_tier}">${p.confidence_tier.replace("_"," ")}</span><br>
+      <span class="tier-badge tier-${p.confidence_tier}">${p.confidence_tier.replace("_"," ")}</span>${throttleBadge}<br>
       ${p.device} · ${p.outcome} · age band: ${p.age_band} · ${p.date ? p.date.slice(0,8) : ""}<br>
       Source(s): ${srcLinks}
     </div>`;

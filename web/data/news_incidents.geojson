@@ -23,6 +23,7 @@
         "location_precision": "county+outlet_market",
         "device": "E-scooter",
         "outcome": "Fatality",
+        "throttle_ambiguous": false,
         "age_band": "13-17 (teen)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
@@ -53,6 +54,7 @@
         "location_precision": "county+outlet_market",
         "device": "E-bike",
         "outcome": "Fatality",
+        "throttle_ambiguous": false,
         "age_band": "25-44",
         "confidence_tier": "single_source",
         "corroborating_domains": [
@@ -83,6 +85,7 @@
         "location_precision": "county+outlet_market",
         "device": "E-bike",
         "outcome": "Fatality",
+        "throttle_ambiguous": true,
         "age_band": "13-17 (teen)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
@@ -91,16 +94,11 @@
         "sources": [
           {
             "domain": "news4jax.com",
-            "url": "https://www.news4jax.com/news/local/2026/06/15/community-gathers-to-remember-carson-farias-14-year-old-killed-in-clay-county-e-bike-crash/",
-            "date": "20260615T054500Z"
-          },
-          {
-            "domain": "news4jax.com",
             "url": "https://www.news4jax.com/news/local/2026/06/19/14-year-old-killed-in-clay-county-e-bike-crash-to-be-laid-to-rest-friday-as-family-community-reel-from-tragic-loss/",
             "date": "20260619T144500Z"
           }
         ],
-        "date": "20260615T054500Z"
+        "date": "20260619T144500Z"
       }
     },
     {
@@ -118,6 +116,7 @@
         "location_precision": "county+outlet_market",
         "device": "E-bike",
         "outcome": "Fatality",
+        "throttle_ambiguous": false,
         "age_band": "13-17 (teen)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
@@ -148,6 +147,7 @@
         "location_precision": "city_state_mention",
         "device": "E-bike",
         "outcome": "Injury",
+        "throttle_ambiguous": false,
         "age_band": "0-12 (child)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
@@ -168,36 +168,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.9602972,
-          40.9831598
-        ]
-      },
-      "properties": {
-        "city": "Blairstown",
-        "state": "NJ",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "age_band": "25-44",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "mcall.com"
-        ],
-        "sources": [
-          {
-            "domain": "mcall.com",
-            "url": "https://www.mcall.com/2026/06/18/2-killed-in-bethlehem-crash-involving-e-bike-motorcycles-are-identified/",
-            "date": "20260618T124500Z"
-          }
-        ],
-        "date": "20260618T124500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -119.8155355,
           36.6713502
         ]
@@ -208,6 +178,7 @@
         "location_precision": "county+outlet_market",
         "device": "E-bike",
         "outcome": "Severe injury",
+        "throttle_ambiguous": false,
         "age_band": "13-17 (teen)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
@@ -238,6 +209,7 @@
         "location_precision": "city_state_mention",
         "device": "E-bike",
         "outcome": "Fatality",
+        "throttle_ambiguous": false,
         "age_band": "18-24",
         "confidence_tier": "single_source",
         "corroborating_domains": [
@@ -258,89 +230,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.7380885,
-          39.931466
+          -72.3897131,
+          40.8842482
         ]
       },
       "properties": {
-        "city": "Southampton Twp.",
-        "state": "NJ",
+        "city": "Southampton",
+        "state": "NY",
         "location_precision": "city_state_mention",
         "device": "E-bike",
         "outcome": "Fatality",
-        "age_band": "13-17 (teen)",
+        "throttle_ambiguous": false,
+        "age_band": "65+",
         "confidence_tier": "single_source",
         "corroborating_domains": [
-          "6abc.com"
+          "wjla.com"
         ],
         "sources": [
           {
-            "domain": "6abc.com",
-            "url": "https://6abc.com/post/remembering-chase-sudano-teen-killed-southampton-twp-bike-crash-remembered-star-wrestler/19317966/",
+            "domain": "wjla.com",
+            "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
             "date": "20260617T234500Z"
           }
         ],
         "date": "20260617T234500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.4547891,
-          42.9956397
-        ]
-      },
-      "properties": {
-        "city": "Manchester",
-        "state": "NH",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "age_band": "25-44",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "unionleader.com"
-        ],
-        "sources": [
-          {
-            "domain": "unionleader.com",
-            "url": "https://www.unionleader.com/news/local/manchester/one-dead-in-manchester-crash-involving-e-bike-dump-truck/article_1167addb-e3a6-42b5-b960-f32f571439d7.html",
-            "date": "20260617T230000Z"
-          }
-        ],
-        "date": "20260617T230000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.0254256,
-          39.4862777
-        ]
-      },
-      "properties": {
-        "city": "Vineland",
-        "state": "NJ",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "age_band": "25-44",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "republicanherald.com"
-        ],
-        "sources": [
-          {
-            "domain": "republicanherald.com",
-            "url": "https://www.republicanherald.com/2026/06/16/new-details-from-investigation-of-fatal-e-bike-crash-in-schuylkill-county/",
-            "date": "20260616T233000Z"
-          }
-        ],
-        "date": "20260616T233000Z"
       }
     }
   ]

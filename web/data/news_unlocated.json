@@ -3,6 +3,7 @@
   "reports": [
     {
       "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "45-64",
       "city": null,
@@ -26,167 +27,79 @@
     },
     {
       "device": "E-bike",
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nj1015.com",
-      "url": "https://nj1015.com/stafford-township-ice-incident-2/",
-      "seendate": "20260617T193000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nj1015.com"
-      ],
-      "sources": [
-        {
-          "domain": "nj1015.com",
-          "url": "https://nj1015.com/stafford-township-ice-incident-2/",
-          "date": "20260617T193000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "65+",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "salinapost.com",
-      "url": "https://salinapost.com/posts/179eac4d-3a99-447f-a3d4-d57e07caef80",
-      "seendate": "20260617T183000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "salinapost.com"
-      ],
-      "sources": [
-        {
-          "domain": "salinapost.com",
-          "url": "https://salinapost.com/posts/179eac4d-3a99-447f-a3d4-d57e07caef80",
-          "date": "20260617T183000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcchicago.com",
-      "url": "https://www.nbcchicago.com/news/local/authorities-identify-teen-killed-in-crash-while-riding-e-bike-in-franklin-park/3949657/",
-      "seendate": "20260617T021500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcchicago.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcchicago.com",
-          "url": "https://www.nbcchicago.com/news/local/authorities-identify-teen-killed-in-crash-while-riding-e-bike-in-franklin-park/3949657/",
-          "date": "20260617T021500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "outcome": "Fatality",
-      "age_band": "18-24",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "abc7chicago.com",
-      "url": "https://abc7chicago.com/post/teen-driving-bike-killed-franklin-park-crash-belmont-avenue-george-street-police-say/19309425/",
-      "seendate": "20260616T181500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "abc7chicago.com"
-      ],
-      "sources": [
-        {
-          "domain": "abc7chicago.com",
-          "url": "https://abc7chicago.com/post/teen-driving-bike-killed-franklin-park-crash-belmont-avenue-george-street-police-say/19309425/",
-          "date": "20260616T181500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wcvb.com",
-      "url": "https://www.wcvb.com/article/e-bike-rider-injured-in-haverhill-crash-during-morning-rush-hour/71602362",
-      "seendate": "20260616T173000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wcvb.com"
-      ],
-      "sources": [
-        {
-          "domain": "wcvb.com",
-          "url": "https://www.wcvb.com/article/e-bike-rider-injured-in-haverhill-crash-during-morning-rush-hour/71602362",
-          "date": "20260616T173000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "outcome": "Injury",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "theintelligencer.com",
-      "url": "https://www.theintelligencer.com/news/article/edwardsville-il-ebike-crash-teen-hospital-22307488.php",
-      "seendate": "20260616T170000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "theintelligencer.com"
-      ],
-      "sources": [
-        {
-          "domain": "theintelligencer.com",
-          "url": "https://www.theintelligencer.com/news/article/edwardsville-il-ebike-crash-teen-hospital-22307488.php",
-          "date": "20260616T170000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "outcome": "Fatality",
       "age_band": "25-44",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "talkradio960.com",
-      "url": "https://talkradio960.com/ixp/36/p/lafayette-hit-run-scooter-fatality/",
-      "seendate": "20260616T093000Z",
+      "domain": "mirror.co.uk",
+      "url": "https://www.mirror.co.uk/3am/celebrity-news/nicky-campbell-daughter-accident-bike-37323909",
+      "seendate": "20260620T084500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "talkradio960.com"
+        "mirror.co.uk"
       ],
       "sources": [
         {
-          "domain": "talkradio960.com",
-          "url": "https://talkradio960.com/ixp/36/p/lafayette-hit-run-scooter-fatality/",
-          "date": "20260616T093000Z"
+          "domain": "mirror.co.uk",
+          "url": "https://www.mirror.co.uk/3am/celebrity-news/nicky-campbell-daughter-accident-bike-37323909",
+          "date": "20260620T084500Z"
         }
       ]
     },
     {
       "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "walesonline.co.uk",
+      "url": "https://www.walesonline.co.uk/news/wales-news/final-day-ely-riot-sentencing-34149582",
+      "seendate": "20260619T101500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "walesonline.co.uk"
+      ],
+      "sources": [
+        {
+          "domain": "walesonline.co.uk",
+          "url": "https://www.walesonline.co.uk/news/wales-news/final-day-ely-riot-sentencing-34149582",
+          "date": "20260619T101500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": "PA",
+      "location_precision": "outlet_market",
+      "located": false,
+      "domain": "mcall.com",
+      "url": "https://www.mcall.com/2026/06/18/2-killed-in-bethlehem-crash-involving-e-bike-motorcycles-are-identified/",
+      "seendate": "20260618T124500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "mcall.com"
+      ],
+      "sources": [
+        {
+          "domain": "mcall.com",
+          "url": "https://www.mcall.com/2026/06/18/2-killed-in-bethlehem-crash-involving-e-bike-motorcycles-are-identified/",
+          "date": "20260618T124500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Severe injury",
       "age_band": "18-24",
       "city": "North County",
@@ -210,6 +123,7 @@
     },
     {
       "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "45-64",
       "city": "Matthew. ROCHESTER",
@@ -228,29 +142,6 @@
           "domain": "wmur.com",
           "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
           "date": "20260620T000000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": "Dulles",
-      "state": "DC",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "wjla.com",
-      "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
-      "seendate": "20260617T234500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wjla.com"
-      ],
-      "sources": [
-        {
-          "domain": "wjla.com",
-          "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
-          "date": "20260617T234500Z"
         }
       ]
     }

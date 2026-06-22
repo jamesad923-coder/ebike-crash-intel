@@ -130,6 +130,16 @@ the short version.
   project's own testing are documented in AUTOMATION.md); GDELT itself can
   rate-limit a shared IP, which a scheduled run (its own dedicated IP) is
   less exposed to than ad-hoc testing was.
+- **Throttle-vehicle flag:** federal data (NEISS/FARS) has no e-bike Class
+  1/2/3 or throttle-vs-pedal-assist field at all -- there is no way to get
+  a clean class breakdown from any source this project has access to. News
+  text sometimes names a specific throttle-capable vehicle (Sur-Ron,
+  "electric dirt bike," "e-motorcycle," moped-style, etc.) that may not
+  legally be a Class 1-3 e-bike. We flag this from text as
+  `throttle_ambiguous: true`, separate from the device label -- a real
+  example caught in testing: Carson Farias's vehicle was described in
+  coverage as "his small electric dirt bike." This is a text-keyword
+  signal, not a verified vehicle classification.
 
 ## Census ACS — bike-commute exposure proxy
 

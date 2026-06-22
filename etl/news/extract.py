@@ -84,10 +84,27 @@ DOMAIN_STATE = {
 }
 
 DEVICE_PATTERNS = [
-    (re.compile(r"e-?bike|electric bike|sur-?ron", re.I), "E-bike"),
+    (re.compile(r"e-?bike|electric bike", re.I), "E-bike"),
     (re.compile(r"e-?scooter|electric scooter", re.I), "E-scooter"),
     (re.compile(r"hoverboard|self-balancing scooter", re.I), "Hoverboard"),
 ]
+
+# Federal data (NEISS/FARS) has no Class 1/2/3 or throttle-vs-pedal-assist
+# field at all -- there is no way to get a clean e-bike-class breakdown
+# from any source this project has access to (we checked; see
+# DATA_SOURCES.md). But news text often names a specific throttle-capable
+# vehicle that may not legally be an e-bike at all -- a Sur-Ron, for
+# example, is frequently an unregistered off-road electric motorbike, not
+# a Class 1-3 pedal-assist e-bike, even when an article loosely calls it
+# "e-bike/e-motorcycle" (a real example seen in testing: Chase Sudano's
+# coverage). We flag this from text, separately from the device label, as
+# an honest "might not be what 'e-bike' usually means" signal -- NOT a
+# verified vehicle classification.
+THROTTLE_AMBIGUOUS_RE = re.compile(
+    r"sur-?ron|e-?motorcycle|electric motorcycle|electric dirt ?bike|"
+    r"mini-?bike|pocket ?bike|moped-?style|off-road electric bike",
+    re.I,
+)
 
 FATAL_RE = re.compile(r"\bkilled\b|\bdied\b|\bdead\b|\bfatal(ity|ly)?\b|\bdoa\b", re.I)
 SEVERE_RE = re.compile(r"critical(ly)? (injured|condition)|life-threatening", re.I)
@@ -160,12 +177,27 @@ def fetch_text(url: str, timeout=15) -> str:
 
 
 def extract_device(text: str) -> tuple[str, int] | None:
-    """Returns (label, match_start) for the first device mention, or None."""
+    """Returns (label, match_start) for the first device mention, or None.
+    Checks standard e-bike/e-scooter/hoverboard patterns first; if none
+    match but a throttle-ambiguous term does (Sur-Ron etc.), that becomes
+    the device label so the article isn't silently dropped -- it just gets
+    flagged for the dashboard rather than mislabeled as a plain "E-bike"."""
     for pattern, label in DEVICE_PATTERNS:
         m = pattern.search(text)
         if m:
             return label, m.start()
+    m = THROTTLE_AMBIGUOUS_RE.search(text)
+    if m:
+        return "Throttle vehicle (unclear e-bike classification)", m.start()
     return None
+
+
+def has_throttle_ambiguous_mention(text: str) -> bool:
+    """True if a throttle-ambiguous term (Sur-Ron, e-motorcycle, etc.)
+    appears ANYWHERE in the text, regardless of which device label was
+    ultimately chosen -- an article that says both "e-bike" and "Sur-Ron"
+    should still carry this flag even though its primary label is E-bike."""
+    return bool(THROTTLE_AMBIGUOUS_RE.search(text))
 
 
 def extract_outcome(text: str) -> tuple[str, int] | None:
@@ -316,6 +348,7 @@ def extract_incident(article: dict) -> dict | None:
     has_place = bool(loc and loc[0])
     return {
         "device": device,
+        "throttle_ambiguous": has_throttle_ambiguous_mention(text),
         "outcome": outcome,
         "age_band": extract_age_band(text),
         "city": loc[0] if loc else None,
