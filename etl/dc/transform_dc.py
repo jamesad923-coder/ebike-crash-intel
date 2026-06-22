@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 import sys
 from collections import defaultdict
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -22,9 +23,35 @@ OUT = ROOT / "web" / "data"
 
 RECENT_MONTHS = ["202601", "202602", "202603", "202604", "202605"]
 
+# The raw dataset spans 1996-2026, very unevenly (1 record in 1996, a gap
+# to 2011, then ramping up -- 2016 onward is when DC's reporting clearly
+# became consistent). Mixing 30 years of uneven reporting into one "total
+# crashes by ward" number would make a ward look worse partly because it's
+# been recorded for longer, not because it's more dangerous NOW. We filter
+# the ward comparison to a fixed, recent, consistent window instead, and
+# report the exact window used so nothing is silently decided for the reader.
+RECENT_WINDOW_YEARS = 5
+
+
+def _parse_crash_date(epoch_ms) -> datetime | None:
+    if not epoch_ms:
+        return None
+    try:
+        return datetime.fromtimestamp(epoch_ms / 1000, tz=timezone.utc)
+    except (TypeError, ValueError, OSError):
+        return None
+
 
 def build_ward_summary() -> dict:
     records = cached_bicycle_crashes()
+    dated = [(r, _parse_crash_date(r.get("FROMDATE"))) for r in records]
+    all_dates = [d for _, d in dated if d is not None]
+    full_range = (min(all_dates), max(all_dates)) if all_dates else (None, None)
+
+    cutoff_year = full_range[1].year - RECENT_WINDOW_YEARS + 1 if full_range[1] else None
+    cutoff = datetime(cutoff_year, 1, 1, tzinfo=timezone.utc) if cutoff_year else None
+    recent = [(r, d) for r, d in dated if d and cutoff and d >= cutoff]
+
     by_ward = defaultdict(lambda: {
         "crashes": 0, "fatal": 0, "major_injury": 0, "minor_injury": 0,
         "speeding_involved": 0,
@@ -32,9 +59,9 @@ def build_ward_summary() -> dict:
     no_ward = 0
     features = []
 
-    for r in records:
+    for r, d in recent:
         ward = r.get("WARD")
-        if not ward:
+        if not ward or ward == "Null":
             no_ward += 1
             continue
         w = by_ward[ward]
@@ -54,6 +81,7 @@ def build_ward_summary() -> dict:
                     "fatal": bool(r.get("FATAL_BICYCLIST")),
                     "major_injury": bool(r.get("MAJORINJURIES_BICYCLIST")),
                     "speeding_involved": bool(r.get("SPEEDING_INVOLVED")),
+                    "date": d.strftime("%Y-%m-%d"),
                 },
             })
 
@@ -61,18 +89,34 @@ def build_ward_summary() -> dict:
     ward_rows.sort(key=lambda r: -r["crashes"])
 
     return {
+        "date_window": {
+            "start": cutoff.strftime("%Y-%m-%d") if cutoff else None,
+            "end": full_range[1].strftime("%Y-%m-%d") if full_range[1] else None,
+            "years": RECENT_WINDOW_YEARS,
+            "full_dataset_start": full_range[0].strftime("%Y-%m-%d") if full_range[0] else None,
+            "full_dataset_end": full_range[1].strftime("%Y-%m-%d") if full_range[1] else None,
+        },
         "measure_note": (
-            "Bicycle-involved crash COUNTS by DC ward, all years in the "
-            "source dataset (not exposure-adjusted -- no per-ward "
-            "ridership data is wired in; see the separate Capital "
-            "Bikeshare e-bike trip context below, which is citywide "
-            "context only, not used to compute a per-ward rate). Same "
-            "federal-data-style gap applies here too: this is all "
-            "bicyclist crashes, e-bikes included but not isolated -- DC's "
-            "crash data has no e-bike-specific flag either."
+            f"Bicycle-involved crash COUNTS by DC ward, filtered to the "
+            f"most recent {RECENT_WINDOW_YEARS} years of data "
+            f"({cutoff.strftime('%B %Y') if cutoff else '?'} through "
+            f"{full_range[1].strftime('%B %Y') if full_range[1] else '?'}). "
+            f"The full source dataset actually goes back to "
+            f"{full_range[0].strftime('%Y') if full_range[0] else '?'}, but "
+            f"reporting was sparse and inconsistent before 2016 -- mixing "
+            f"30 years of uneven reporting into one ward total would make "
+            f"a ward look worse partly because it's been recorded longer, "
+            f"not because it's more dangerous now. NOT exposure-adjusted "
+            f"-- no per-ward ridership data is wired in; see the separate "
+            f"Capital Bikeshare e-bike trip context below, which is "
+            f"citywide context only, not used to compute a per-ward rate. "
+            f"Same federal-data-style gap applies here too: this is all "
+            f"bicyclist crashes, e-bikes included but not isolated -- DC's "
+            f"crash data has no e-bike-specific flag either."
         ),
-        "records_with_no_ward": no_ward,
-        "total_records": len(records),
+        "records_with_no_ward_or_date": no_ward,
+        "total_records_in_window": len(recent),
+        "total_records_all_time": len(records),
         "by_ward": ward_rows,
         "geojson": {"type": "FeatureCollection", "features": features},
     }
@@ -119,8 +163,12 @@ if __name__ == "__main__":
     result = build()
     (OUT / "dc_pilot.json").write_text(json.dumps(result, indent=2))
     ws = result["ward_summary"]
-    print(f"Total bicycle-crash records: {ws['total_records']} ({ws['records_with_no_ward']} with no ward)")
-    print("By ward:")
+    dw = ws["date_window"]
+    print(f"Date window used: {dw['start']} to {dw['end']} ({dw['years']} years)")
+    print(f"Full dataset actually spans: {dw['full_dataset_start']} to {dw['full_dataset_end']}")
+    print(f"Records in window: {ws['total_records_in_window']} of {ws['total_records_all_time']} all-time "
+          f"({ws['records_with_no_ward_or_date']} excluded: no ward/date)")
+    print("By ward (in-window):")
     for r in ws["by_ward"]:
         print(f"  {r['ward']:10} crashes={r['crashes']:5}  fatal={r['fatal']:2}  "
               f"major={r['major_injury']:3}  minor={r['minor_injury']:4}")
