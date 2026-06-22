@@ -16,7 +16,7 @@
   html,body { margin:0; height:100%; background:var(--bg); color:var(--txt);
     font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
   #app { display:grid; grid-template-columns:380px 1fr; height:100vh; }
-  #side { overflow-y:auto; border-right:1px solid var(--line); padding:18px; }
+  .side { overflow-y:auto; border-right:1px solid var(--line); padding:18px; }
   #map, #news-map, #risk-map, #dc-map { height:100%; }
   h1 { font-size:18px; margin:0 0 2px; }
   h2 { font-size:13px; text-transform:uppercase; letter-spacing:.05em;
@@ -79,6 +79,25 @@
   .factor-card .lever b { color:var(--good); }
   .factor-card .lever .src { color:var(--muted); font-size:10.5px; display:block; margin-top:2px; }
   .toggle-row { display:flex; gap:6px; margin-bottom:10px; }
+
+  /* Mobile: the tabs row wrapped into a 5-line stack and the map was
+     squeezed into a ~10px sliver next to a full-width side panel on a
+     phone screen -- confirmed by actually testing at 390px wide, not
+     assumed. Stack side panel above map and make tabs scroll instead of
+     wrap below this breakpoint. */
+  @media (max-width: 860px) {
+    .tabs { overflow-x:auto; white-space:nowrap; flex-wrap:nowrap; }
+    .tab { flex:0 0 auto; }
+    .view { height:auto !important; }
+    #view-fars.on, #view-news.on, #view-risk.on, #view-dc.on {
+      display:flex !important; flex-direction:column;
+      grid-template-columns:none;
+    }
+    .side { border-right:none; border-bottom:1px solid var(--line);
+      max-height:60vh; }
+    #map, #news-map, #risk-map, #dc-map { height:50vh; }
+    #side-neiss { max-width:none; }
+  }
 </style>
 </head>
 <body>
@@ -91,7 +110,7 @@
 </div>
 
 <div id="view-fars" class="view on">
-  <div id="side">
+  <div class="side">
     <h1>Pedalcyclist Fatalities</h1>
     <p class="sub">U.S. fatal crashes · open data · every number traceable to source</p>
 
@@ -172,7 +191,7 @@
 </div>
 
 <div id="view-news" class="view">
-  <div id="side">
+  <div class="side">
     <h1>Recent Reports</h1>
     <p class="sub">Auto-detected from news coverage · unverified beyond automated checks</p>
 
@@ -218,7 +237,7 @@
 </div>
 
 <div id="view-risk" class="view">
-  <div id="side">
+  <div class="side">
     <h1>Risk &amp; Prevention</h1>
     <p class="sub">Interpretable patterns, not a black-box prediction · every number shows its sample size</p>
 
@@ -259,7 +278,7 @@
 </div>
 
 <div id="view-dc" class="view">
-  <div id="side">
+  <div class="side">
     <h1>DC Pilot</h1>
     <p class="sub">First city-level deep-dive · proof of concept for expanding beyond national data</p>
 
