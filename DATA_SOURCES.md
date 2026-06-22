@@ -397,6 +397,18 @@ already exists in the literature.
   reporting was separately verified for consistency the way DC's 2016
   cutoff was (DC's actual per-year record counts were checked directly;
   Chicago's were not, beyond confirming the dataset's full range).
+- **OSM bike-lane layer added too** -- same Overpass API approach as DC
+  (`etl/chicago/fetch_bike_lanes.py`, bounding box derived directly from
+  the ward polygon coordinates rather than guessed). Confirmed live:
+  7,600 way segments, 52,823 geometry points. The proximity-index module
+  (`etl/dc/bike_lane_proximity.py`) is fully generic and reused as-is for
+  Chicago, no duplication. Chicago is the only pilot with BOTH signals
+  shown side by side, deliberately not reconciled into one number:
+  `in_bike_lane` (direct police report) and `near_mapped_bike_lane`
+  (~30m OSM-proximity estimate, same method as DC) -- they can and do
+  disagree (the near-lane count runs consistently higher than the
+  reported-in-lane count across every ward checked), since OSM coverage
+  and an officer's on-scene call are two different, imperfect signals.
 
 ## Sources not yet integrated (and why)
 

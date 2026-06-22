@@ -352,9 +352,12 @@
       Counts are <b>not</b> exposure-adjusted on their own — see the
       ward-exposure table below for that, which (like DC) compares ALL
       cyclists' crashes to Divvy's fleet only, NOT a true risk-per-rider
-      rate. Two fields here are DIRECTLY police-reported (not an estimate
-      like DC's OSM-proximity check): helmet use and whether the
-      bicyclist was in a marked bike lane at the time.
+      rate. The ward table has TWO different bike-lane fields, shown
+      separately on purpose: <b>"Reported in lane"</b> is what the police
+      officer recorded at the scene, and <b>"Near mapped lane"</b> is the
+      same ~30m OpenStreetMap-proximity estimate built for DC. They can
+      disagree — a real lane might not be mapped on OSM yet, or vice
+      versa. Helmet use is also directly police-reported.
     </div>
 
     <p class="estimate-note" id="chi-window-detail"></p>
@@ -379,6 +382,7 @@
     <div class="legend">
       <div><span class="dot" style="background:#a371f7"></span>fatal outcome</div>
       <div><span class="dot" style="background:#f78166"></span>other crash</div>
+      <div><span style="display:inline-block;width:14px;height:2px;background:#3fb950;vertical-align:middle;margin-right:6px"></span>mapped bike lane (OSM)</div>
     </div>
   </div>
 </div>
@@ -930,14 +934,14 @@ async function loadChicago() {
   document.getElementById("chi-fatal").textContent = totalFatal;
 
   document.getElementById("chi-ward-table").innerHTML = `<table class="rank-table"><tr>
-      <th>Ward</th><th>Crashes</th><th>Fatal</th><th>Major inj.</th><th>Helmet used</th><th>In bike lane</th><th>Minors</th>
+      <th>Ward</th><th>Crashes</th><th>Fatal</th><th>Major inj.</th><th>Helmet used</th><th>Reported in lane</th><th>Near mapped lane</th><th>Minors</th>
     </tr>` + ws.by_ward.map(r => {
       const helmetKnown = r.helmet_used + r.helmet_not_used;
       const helmetPct = helmetKnown ? Math.round(r.helmet_used/helmetKnown*100) : null;
       return `<tr>
         <td>${r.ward}</td><td>${r.crashes}</td><td>${r.fatal}</td><td>${r.major_injury}</td>
         <td>${helmetPct !== null ? helmetPct+"%" : "n/a"}</td>
-        <td>${r.in_bike_lane}</td><td>${r.minors_involved}</td>
+        <td>${r.in_bike_lane}</td><td>${r.near_mapped_bike_lane}</td><td>${r.minors_involved}</td>
       </tr>`;
     }).join("") + `</table>`;
 
@@ -954,6 +958,14 @@ async function loadChicago() {
       </tr>`).join("") + `</table>`;
   document.getElementById("chi-exposure-note").textContent = we.measure_note;
 
+  // Bike lane geometry drawn FIRST so crash points layer on top of it --
+  // same lazy-loaded separate-file pattern as DC.
+  fetch(DATA+"chicago_bike_lanes.geojson").then(r=>r.json()).then(lanesGeo => {
+    chicagoMap.addSource("chicago-bike-lanes", { type:"geojson", data: lanesGeo });
+    chicagoMap.addLayer({ id:"chicago-lane-lines", type:"line", source:"chicago-bike-lanes",
+      paint:{ "line-color":"#3fb950", "line-width":1.5, "line-opacity":0.55 }});
+  });
+
   chicagoMap.addSource("chicago-crashes", { type:"geojson", data: ws.geojson });
   chicagoMap.addLayer({ id:"chicago-pts", type:"circle", source:"chicago-crashes",
     paint:{ "circle-radius":["case",["get","fatal"],7,4],
@@ -966,7 +978,8 @@ async function loadChicago() {
        Major injury: ${p.major_injury ? "Yes" : "No"}<br>
        Minor injury: ${p.minor_injury ? "Yes" : "No"}<br>
        Helmet used: ${p.helmet_used === null ? "Unknown" : (p.helmet_used ? "Yes" : "No")}<br>
-       In marked bike lane: ${p.in_bike_lane ? "Yes" : "No"}<br>
+       Reported in marked bike lane: ${p.in_bike_lane ? "Yes" : "No"}<br>
+       Near a mapped bike lane (~30m): ${p.near_mapped_bike_lane ? "Yes" : "No"}<br>
        Age band: ${p.age_band}`
     ).addTo(chicagoMap);
   });

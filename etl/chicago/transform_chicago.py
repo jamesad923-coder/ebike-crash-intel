@@ -19,6 +19,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from chicago.fetch_chicago_crashes import cached_bicycle_crashes  # noqa: E402
 from chicago.fetch_divvy import cached_month_trips  # noqa: E402
 from chicago.ward_boundaries import WardLookup  # noqa: E402
+from chicago.fetch_bike_lanes import cached_bike_lanes  # noqa: E402
+from dc.bike_lane_proximity import BikeLaneIndex  # noqa: E402 (fully generic, reused as-is)
 from common.schema import age_band  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -53,11 +55,12 @@ RECENT_MONTHS = _recent_months()
 def build_ward_summary() -> dict:
     records = cached_bicycle_crashes(CRASH_CUTOFF)
     lookup = WardLookup()
+    lane_index = BikeLaneIndex(cached_bike_lanes())
 
     by_ward = defaultdict(lambda: {
         "crashes": 0, "fatal": 0, "major_injury": 0, "minor_injury": 0,
         "helmet_used": 0, "helmet_not_used": 0, "in_bike_lane": 0,
-        "minors_involved": 0,
+        "near_mapped_bike_lane": 0, "minors_involved": 0,
     })
     no_geo = 0
     features = []
@@ -81,6 +84,7 @@ def build_ward_summary() -> dict:
         helmet_used = "HELMET" in safety and "NOT USED" not in safety and safety != "USAGE UNKNOWN"
         helmet_known = "HELMET" in safety or safety == "USAGE UNKNOWN" or safety == "NONE PRESENT"
         in_lane = r.get("pedpedal_location") == "BIKE LANE"
+        near_lane = lane_index.is_near(lat, lon)
         band = age_band(r.get("age"))
         is_minor_age = band in ("0-12 (child)", "13-17 (teen)")
 
@@ -90,6 +94,7 @@ def build_ward_summary() -> dict:
         w["major_injury"] += int(major)
         w["minor_injury"] += int(minor_inj)
         w["in_bike_lane"] += int(in_lane)
+        w["near_mapped_bike_lane"] += int(near_lane)
         w["minors_involved"] += int(is_minor_age)
         if helmet_known:
             if helmet_used:
@@ -103,6 +108,7 @@ def build_ward_summary() -> dict:
             "properties": {
                 "ward": ward, "fatal": fatal, "major_injury": major,
                 "minor_injury": minor_inj, "in_bike_lane": in_lane,
+                "near_mapped_bike_lane": near_lane,
                 "helmet_used": helmet_used if helmet_known else None,
                 "age_band": band,
                 "date": (r.get("crash_date") or "")[:10],
@@ -125,9 +131,15 @@ def build_ward_summary() -> dict:
             f"crash data has no e-bike-specific flag either, same gap as "
             f"every other source in this project. helmet_used/"
             f"helmet_not_used and in_bike_lane are DIRECTLY police-"
-            f"reported fields (not an OSM-proximity estimate like DC) -- "
-            f"more reliable, but still subject to whatever the reporting "
-            f"officer observed and recorded at the scene."
+            f"reported fields -- more reliable than an estimate, but "
+            f"still subject to whatever the reporting officer observed "
+            f"and recorded at the scene. near_mapped_bike_lane is the "
+            f"SEPARATE OSM-proximity estimate also used for DC (within "
+            f"~30m of a mapped cycleway) -- it can disagree with "
+            f"in_bike_lane (e.g. a real lane exists but isn't mapped on "
+            f"OSM yet, or the officer's 'in bike lane' call was about a "
+            f"lane too new/minor to be in OSM). Both are shown, not "
+            f"reconciled into one number."
         ),
         "records_excluded_no_geo_or_ward": no_geo,
         "total_records": len(records),
@@ -204,6 +216,31 @@ def build_ward_exposure() -> dict:
     }
 
 
+def build_bike_lanes_geojson() -> dict:
+    """Written as a SEPARATE file, same reasoning as DC: the lane
+    geometry (~7,600 ways, ~52,823 points) would meaningfully bloat the
+    main payload; the dashboard already lazy-loads each tab independently."""
+    lanes = cached_bike_lanes()
+    features = [
+        {
+            "type": "Feature",
+            "geometry": {"type": "LineString", "coordinates": [[lon, lat] for lat, lon in w["geometry"]]},
+            "properties": {"name": w["tags"].get("name", "")},
+        }
+        for w in lanes if len(w["geometry"]) >= 2
+    ]
+    return {
+        "type": "FeatureCollection",
+        "provenance_note": (
+            "OpenStreetMap cycleway/bike-lane geometry within Chicago, "
+            "fetched via the free Overpass API. Crowdsourced/volunteer-"
+            "mapped data -- shown for infrastructure CONTEXT only, never "
+            "to detect crashes."
+        ),
+        "features": features,
+    }
+
+
 def build() -> dict:
     return {"ward_summary": build_ward_summary(), "ward_exposure": build_ward_exposure()}
 
@@ -220,10 +257,15 @@ if __name__ == "__main__":
         helmet_pct = (r["helmet_used"] / helmet_known * 100) if helmet_known else 0
         print(f"  {r['ward']:10} crashes={r['crashes']:4} fatal={r['fatal']:2} "
               f"major={r['major_injury']:3} helmet_used={helmet_pct:.0f}% "
-              f"in_lane={r['in_bike_lane']:3} minors={r['minors_involved']:3}")
+              f"in_lane={r['in_bike_lane']:3} near_lane={r['near_mapped_bike_lane']:3} "
+              f"minors={r['minors_involved']:3}")
     we = result["ward_exposure"]
     print(f"\nWard exposure ({we['window']['start']} to {we['window']['end']}):")
     for r in we["by_ward"][:10]:
         print(f"  {r['ward']:10} crashes={r['crashes_in_window']:3} "
               f"divvy_trips={r['divvy_trips_in_window']:6} rate={r['crashes_per_1000_divvy_trips']}")
+
+    lanes_geojson = build_bike_lanes_geojson()
+    (OUT / "chicago_bike_lanes.geojson").write_text(json.dumps(lanes_geojson))
+    print(f"\nWrote {OUT / 'chicago_bike_lanes.geojson'} ({len(lanes_geojson['features'])} lane segments)")
     print(f"\nWrote {OUT / 'chicago_pilot.json'}")
