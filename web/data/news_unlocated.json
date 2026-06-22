@@ -29,6 +29,54 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "dailyadvance.com",
+      "url": "http://www.dailyadvance.com/opinion/editorial_columnists/lisa-jarvis-the-e-scooter-boom-is-putting-kids-at-risk/article_ac63a38b-0c54-57aa-a593-52ca8bc594b4.html",
+      "seendate": "20260621T143000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "dailyadvance.com"
+      ],
+      "sources": [
+        {
+          "domain": "dailyadvance.com",
+          "url": "http://www.dailyadvance.com/opinion/editorial_columnists/lisa-jarvis-the-e-scooter-boom-is-putting-kids-at-risk/article_ac63a38b-0c54-57aa-a593-52ca8bc594b4.html",
+          "date": "20260621T143000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "reflector.com",
+      "url": "http://www.reflector.com/opinion/editorial_columnists/lisa-jarvis-the-e-scooter-boom-is-putting-kids-at-risk/article_14aea381-57af-5e2f-8b8d-6edc703286f5.html",
+      "seendate": "20260621T121500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "reflector.com"
+      ],
+      "sources": [
+        {
+          "domain": "reflector.com",
+          "url": "http://www.reflector.com/opinion/editorial_columnists/lisa-jarvis-the-e-scooter-boom-is-putting-kids-at-risk/article_14aea381-57af-5e2f-8b8d-6edc703286f5.html",
+          "date": "20260621T121500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
       "age_band": "45-64",
       "city": null,
       "state": null,
