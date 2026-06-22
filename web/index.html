@@ -289,7 +289,10 @@
     <div id="dc-ward-table"></div>
 
     <h2>Capital Bikeshare: e-bike share of trips</h2>
-    <p class="sub" style="margin-top:-4px">Citywide context, not a per-ward rate (see banner above).</p>
+    <p class="sub" style="margin-top:-4px">A "trip" is one bikeshare
+      rental — someone unlocking a bike at one station/spot and docking
+      it at another (or the same) station. Citywide context, not a
+      per-ward rate (see banner above).</p>
     <div id="dc-bikeshare"></div>
 
     <div class="src" id="dc-src"></div>
@@ -734,10 +737,10 @@ async function loadDC() {
   document.getElementById("dc-fatal").textContent = totalFatal;
 
   document.getElementById("dc-ward-table").innerHTML = `<table class="rank-table"><tr>
-      <th>Ward</th><th>Crashes</th><th>Fatal</th><th>Major inj.</th><th>Minor inj.</th>
+      <th>Ward</th><th>Crashes</th><th>Fatal</th><th>Major inj.</th><th>Minor inj.</th><th>Speeding</th>
     </tr>` + ws.by_ward.filter(r=>r.ward!=="Null").map(r => `<tr>
         <td>${r.ward}</td><td>${r.crashes}</td><td>${r.fatal}</td>
-        <td>${r.major_injury}</td><td>${r.minor_injury}</td>
+        <td>${r.major_injury}</td><td>${r.minor_injury}</td><td>${r.speeding_involved}</td>
       </tr>`).join("") + `</table>`;
 
   const bs = DC.bikeshare_context.monthly;
@@ -758,6 +761,7 @@ async function loadDC() {
     new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
       `<b>${p.ward}</b> · ${p.date}<br>Fatal: ${p.fatal ? "Yes" : "No"}<br>
        Major injury: ${p.major_injury ? "Yes" : "No"}<br>
+       Minor injury: ${p.minor_injury ? "Yes" : "No"}<br>
        Speeding involved: ${p.speeding_involved ? "Yes" : "No"}`
     ).addTo(dcMap);
   });

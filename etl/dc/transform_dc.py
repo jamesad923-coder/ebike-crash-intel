@@ -80,6 +80,7 @@ def build_ward_summary() -> dict:
                     "ward": ward,
                     "fatal": bool(r.get("FATAL_BICYCLIST")),
                     "major_injury": bool(r.get("MAJORINJURIES_BICYCLIST")),
+                    "minor_injury": bool(r.get("MINORINJURIES_BICYCLIST")),
                     "speeding_involved": bool(r.get("SPEEDING_INVOLVED")),
                     "date": d.strftime("%Y-%m-%d"),
                 },
