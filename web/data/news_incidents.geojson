@@ -210,7 +210,7 @@
         "device": "E-bike",
         "outcome": "Severe injury",
         "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
+        "age_band": "Unknown",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "abc30.com"
@@ -272,7 +272,7 @@
         "device": "E-bike",
         "outcome": "Fatality",
         "throttle_ambiguous": false,
-        "age_band": "18-24",
+        "age_band": "Unknown",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "wjla.com"
