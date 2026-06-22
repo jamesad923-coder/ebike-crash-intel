@@ -33,6 +33,12 @@ different questions, run on different timescales, and cannot be joined:
    cluster flags -- each paired with a sourced, evidence-based prevention
    lever (FHWA/NACTO/NHTSA guidance). See DATA_SOURCES.md for what this
    can and can't honestly claim.
+5. **DC Pilot** — the first city-level crash source: 7,378 real,
+   geocoded bicycle crashes by ward (Open Data DC), shown alongside
+   Capital Bikeshare's e-bike-specific trip data (a real find -- e-bike
+   trips are 68-74% of all bikeshare trips every month checked) as
+   separate citywide context, not blended into a fake per-ward rate. A
+   proof of concept for whether other cities are worth adding next.
 
 ## Quick start
 

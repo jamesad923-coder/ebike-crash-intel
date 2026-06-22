@@ -213,6 +213,52 @@ defined in `etl/risk/prevention_levers.py`. These are NOT claims that our
 data proves the lever works; they're pointers to where that evidence
 already exists in the literature.
 
+## DC Pilot — first city-level crash source
+
+- **What it is:** the project's first crash source finer than national/
+  state. Two real, verified, live feeds:
+  1. **Open Data DC bicycle crashes** (DDOT/MPD COBALT system) --
+     `https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Safety_WebMercator/MapServer/24`,
+     an ArcGIS FeatureServer, no key required. Confirmed live: 7,378
+     bicycle-involved crash records with exact lat/lon, ward, and a
+     PER-CRASH severity breakdown (`FATAL_BICYCLIST`,
+     `MAJORINJURIES_BICYCLIST`, `MINORINJURIES_BICYCLIST`,
+     `SPEEDING_INVOLVED`). `maxRecordCount` is 1000 -- `fetch_dc_crashes.py`
+     paginates via `resultOffset` to get the full set; a naive single
+     query would silently truncate to the first 1000 records.
+  2. **Capital Bikeshare trip history** --
+     `https://s3.amazonaws.com/capitalbikeshare-data/{YYYYMM}-capitalbikeshare-tripdata.zip`,
+     published monthly, no key required. Genuinely **e-bike-specific**
+     (`rideable_type` field distinguishes `electric_bike` from
+     `classic_bike` per trip) -- a real find, rarer and better-targeted
+     than the ACS commute proxy used at the state level. Confirmed live:
+     e-bike trips are 68-74% of all Capital Bikeshare trips every month
+     checked (Jan-May 2026).
+- **Why ward crash counts and bikeshare e-bike share are NOT combined
+  into a per-ward rate:** doing so honestly would require mapping each
+  bikeshare trip's station to a ward (point-in-polygon against ward
+  boundaries) -- not built. Faking a per-ward rate without that mapping
+  would be exactly the kind of invented precision this project exists to
+  avoid. The two are shown side by side, explicitly uncombined.
+- **Known limitations:** DC's crash data has no e-bike-specific flag
+  either (same gap as FARS/NEISS/CRSS) -- ward counts are all bicycle
+  crashes, e-bikes included but not isolated. Capital Bikeshare data
+  covers only its own fleet, not personally-owned e-bikes (most of what
+  the news-sourced fatality reports involve). Ward crash counts are raw
+  counts, not exposure-adjusted -- a busy ward looks "worse" partly
+  because more riding happens there.
+- **Real finding:** Ward 7 had 5 bicyclist fatalities from only 326
+  crashes on record, vs. Ward 2's 4 fatalities from 2,406 crashes -- a
+  notably worse fatal-outcome ratio in Ward 7, consistent with documented
+  infrastructure disparities east of the Anacostia River. This is a count
+  comparison, not a rate -- stated as a pattern worth investigating, not
+  a proven causal claim.
+- **This is a proof of concept**, not a template assumed to generalize:
+  whether other cities have comparably good open data (exact crash
+  coordinates, per-mode severity breakdown, AND a bikeshare system that
+  actually distinguishes e-bike trips) would need to be checked city by
+  city, the same way DC was verified here rather than assumed.
+
 ## Sources not yet integrated (and why)
 
 | Source | Status | Why not yet |

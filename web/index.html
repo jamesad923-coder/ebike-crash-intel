@@ -17,7 +17,7 @@
     font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
   #app { display:grid; grid-template-columns:380px 1fr; height:100vh; }
   #side { overflow-y:auto; border-right:1px solid var(--line); padding:18px; }
-  #map, #news-map, #risk-map { height:100%; }
+  #map, #news-map, #risk-map, #dc-map { height:100%; }
   h1 { font-size:18px; margin:0 0 2px; }
   h2 { font-size:13px; text-transform:uppercase; letter-spacing:.05em;
     color:var(--muted); margin:22px 0 8px; }
@@ -54,7 +54,7 @@
   .tab.on { color:var(--txt); border-bottom-color:var(--accent); font-weight:600; }
   .view { display:none; height:calc(100vh - 41px); overflow-y:auto; }
   .view.on { display:block; }
-  #view-fars.on, #view-news.on, #view-risk.on { display:grid; grid-template-columns:380px 1fr; }
+  #view-fars.on, #view-news.on, #view-risk.on, #view-dc.on { display:grid; grid-template-columns:380px 1fr; }
   #side-neiss { max-width:680px; margin:0 auto; padding:18px; }
   .tier-badge { display:inline-block; font-size:10px; font-weight:700; text-transform:uppercase;
     letter-spacing:.03em; padding:2px 7px; border-radius:4px; margin-left:6px; }
@@ -87,6 +87,7 @@
   <div class="tab" data-view="neiss">Injuries — national estimates (NEISS)</div>
   <div class="tab" data-view="news">Recent reports — news (unverified)</div>
   <div class="tab" data-view="risk">Risk &amp; Prevention</div>
+  <div class="tab" data-view="dc">DC Pilot — city deep-dive</div>
 </div>
 
 <div id="view-fars" class="view on">
@@ -257,6 +258,44 @@
   </div>
 </div>
 
+<div id="view-dc" class="view">
+  <div id="side">
+    <h1>DC Pilot</h1>
+    <p class="sub">First city-level deep-dive · proof of concept for expanding beyond national data</p>
+
+    <div class="banner">
+      <b>Read this first.</b> Ward crash counts are <b>not</b>
+      exposure-adjusted — we don't have per-ward ridership data, so this
+      doesn't tell you a ward is more dangerous PER RIDER, only that more
+      crashes are documented there. DC's data has no e-bike-specific flag
+      either — same gap as the federal sources. The Capital Bikeshare
+      e-bike trip context below is genuinely e-bike-specific (rare for
+      this project!) but covers only Capital Bikeshare's own fleet, not
+      personally-owned e-bikes — it's shown as citywide context, not
+      blended into the ward numbers.
+    </div>
+
+    <div class="stat"><span class="n" id="dc-total">–</span><span class="l">bicycle-involved crashes on record</span></div>
+    <div class="stat minor"><span class="n" id="dc-fatal">–</span><span class="l">resulted in a bicyclist fatality</span></div>
+
+    <h2>By ward</h2>
+    <div id="dc-ward-table"></div>
+
+    <h2>Capital Bikeshare: e-bike share of trips</h2>
+    <p class="sub" style="margin-top:-4px">Citywide context, not a per-ward rate (see banner above).</p>
+    <div id="dc-bikeshare"></div>
+
+    <div class="src" id="dc-src"></div>
+  </div>
+  <div style="position:relative">
+    <div id="dc-map"></div>
+    <div class="legend">
+      <div><span class="dot" style="background:#a371f7"></span>fatal outcome</div>
+      <div><span class="dot" style="background:#f78166"></span>other bicycle crash</div>
+    </div>
+  </div>
+</div>
+
 <script>
 const DATA = "data/";
 let GEO, SUMMARY;
@@ -323,6 +362,7 @@ document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () =>
   if (t.dataset.view === "fars") map.resize();
   if (t.dataset.view === "news") newsMap.resize();
   if (t.dataset.view === "risk") riskMap.resize();
+  if (t.dataset.view === "dc") dcMap.resize();
 }));
 
 // ---- Recent Reports (news) panel ----
@@ -642,6 +682,63 @@ async function loadRisk() {
      <b>Cluster caveat:</b> ${RISK.clusters.measure_note}`;
 }
 loadRisk();
+
+// ---- DC Pilot panel ----
+const dcMap = new maplibregl.Map({
+  container: "dc-map",
+  style: { version: 8,
+    sources: { carto: { type:"raster",
+      tiles:["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
+      tileSize:256, attribution:"© OpenStreetMap, © CARTO" }},
+    layers: [{ id:"carto", type:"raster", source:"carto" }] },
+  center: [-77.02, 38.91], zoom: 11.5
+});
+
+async function loadDC() {
+  const DC = await fetch(DATA+"dc_pilot.json").then(r=>r.json());
+  const ws = DC.ward_summary;
+
+  document.getElementById("dc-total").textContent = ws.total_records.toLocaleString();
+  const totalFatal = ws.by_ward.reduce((s,r)=>s+r.fatal, 0);
+  document.getElementById("dc-fatal").textContent = totalFatal;
+
+  document.getElementById("dc-ward-table").innerHTML = `<table class="rank-table"><tr>
+      <th>Ward</th><th>Crashes</th><th>Fatal</th><th>Major inj.</th><th>Minor inj.</th>
+    </tr>` + ws.by_ward.filter(r=>r.ward!=="Null").map(r => `<tr>
+        <td>${r.ward}</td><td>${r.crashes}</td><td>${r.fatal}</td>
+        <td>${r.major_injury}</td><td>${r.minor_injury}</td>
+      </tr>`).join("") + `</table>`;
+
+  const bs = DC.bikeshare_context.monthly;
+  const maxTrips = Math.max(...bs.map(r=>r.total_trips));
+  document.getElementById("dc-bikeshare").innerHTML = bs.map(r => `
+    <div class="bar-row">
+      <div class="lab"><span>${r.month}</span><span>${(r.electric_bike_share*100).toFixed(0)}% e-bike (${r.total_trips.toLocaleString()} trips)</span></div>
+      <div class="bar"><i style="width:${(r.total_trips/maxTrips*100).toFixed(1)}%"></i></div>
+    </div>`).join("");
+
+  dcMap.addSource("dc-crashes", { type:"geojson", data: ws.geojson });
+  dcMap.addLayer({ id:"dc-pts", type:"circle", source:"dc-crashes",
+    paint:{ "circle-radius":["case",["get","fatal"],7,4],
+      "circle-opacity":0.7, "circle-stroke-width":0.5, "circle-stroke-color":"#000",
+      "circle-color":["case",["get","fatal"],"#a371f7","#f78166"] }});
+  dcMap.on("click","dc-pts",e=>{
+    const p = e.features[0].properties;
+    new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+      `<b>${p.ward}</b><br>Fatal: ${p.fatal ? "Yes" : "No"}<br>
+       Major injury: ${p.major_injury ? "Yes" : "No"}<br>
+       Speeding involved: ${p.speeding_involved ? "Yes" : "No"}`
+    ).addTo(dcMap);
+  });
+  dcMap.on("mouseenter","dc-pts",()=>dcMap.getCanvas().style.cursor="pointer");
+  dcMap.on("mouseleave","dc-pts",()=>dcMap.getCanvas().style.cursor="");
+
+  document.getElementById("dc-src").innerHTML =
+    `<b>Ward crash data:</b> ${ws.measure_note}<br><br>
+     <b>Bikeshare context:</b> ${DC.bikeshare_context.measure_note}<br><br>
+     Source: Open Data DC (DDOT/MPD crash data), Capital Bikeshare trip history.`;
+}
+loadDC();
 </script>
 </body>
 </html>

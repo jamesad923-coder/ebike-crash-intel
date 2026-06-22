@@ -1,0 +1,29 @@
+name: Refresh DC pilot
+
+# DC's crash data and Capital Bikeshare's trip files both update on the
+# order of days/weeks, not hours -- weekly is already more than enough.
+on:
+  schedule:
+    - cron: "41 8 * * 1"  # Mondays, off the hour/half-hour per scheduling guidance
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-dc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run DC pilot pipeline
+        run: python3 etl/dc/transform_dc.py
+      - name: Commit updated artifacts if changed
+        run: |
+          git config user.name "ebike-crash-intel-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add web/data/dc_pilot.json
+          git diff --staged --quiet || git commit -m "Auto-refresh DC pilot data"
+          git push
