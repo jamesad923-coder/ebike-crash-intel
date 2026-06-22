@@ -369,22 +369,22 @@ document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () =>
   document.querySelectorAll(".view").forEach(x=>x.classList.remove("on"));
   t.classList.add("on");
   document.getElementById("view-"+t.dataset.view).classList.add("on");
+  // Each tab's data + map are loaded lazily, on first visit, not upfront --
+  // a fresh page load previously fetched ~2MB across all 5 tabs and
+  // rendered 4 separate maps (with their own tile requests) even though a
+  // visitor only ever sees the FARS tab by default.
   if (t.dataset.view === "fars") map.resize();
-  if (t.dataset.view === "news") newsMap.resize();
-  if (t.dataset.view === "risk") riskMap.resize();
-  if (t.dataset.view === "dc") dcMap.resize();
+  if (t.dataset.view === "news") { loadNews(); newsMap.resize(); }
+  if (t.dataset.view === "neiss") loadNeiss();
+  if (t.dataset.view === "risk") { loadRisk(); riskMap.resize(); }
+  if (t.dataset.view === "dc") { loadDC(); dcMap.resize(); }
 }));
 
 // ---- Recent Reports (news) panel ----
-const newsMap = new maplibregl.Map({
-  container: "news-map",
-  style: { version: 8,
-    sources: { carto: { type:"raster",
-      tiles:["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
-      tileSize:256, attribution:"© OpenStreetMap, © CARTO" }},
-    layers: [{ id:"carto", type:"raster", source:"carto" }] },
-  center: [-96, 38], zoom: 3.4
-});
+// Deferred: built only on first click of the News tab, not on page load --
+// the FARS tab is what visitors actually see first, so the other three
+// tabs' maps and ~2MB combined of JSON had no reason to load upfront.
+let newsMap;
 
 let newsActiveTier = "all";
 let NEWS_GEO = null;
@@ -415,7 +415,19 @@ function renderNewsList() {
   }
 }
 
+let newsLoaded = false;
 async function loadNews() {
+  if (newsLoaded) return;
+  newsLoaded = true;
+  newsMap = new maplibregl.Map({
+    container: "news-map",
+    style: { version: 8,
+      sources: { carto: { type:"raster",
+        tiles:["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
+        tileSize:256, attribution:"© OpenStreetMap, © CARTO" }},
+      layers: [{ id:"carto", type:"raster", source:"carto" }] },
+    center: [-96, 38], zoom: 3.4
+  });
   const [geo, unlocated] = await Promise.all([
     fetch(DATA+"news_incidents.geojson").then(r=>r.json()),
     fetch(DATA+"news_unlocated.json").then(r=>r.json())
@@ -464,10 +476,12 @@ async function loadNews() {
 
   renderNewsList();
 }
-loadNews();
 
 // ---- NEISS panel ----
+let neissLoaded = false;
 async function loadNeiss() {
+  if (neissLoaded) return;
+  neissLoaded = true;
   const data = await fetch(DATA+"neiss_summary.json").then(r=>r.json());
   const y = Object.keys(data)[0];
   const d = data[y];
@@ -500,7 +514,6 @@ async function loadNeiss() {
     `Source: <b>${pv.source} — ${pv.dataset}</b> (${pv.years.join(", ")}).
      <a href="${pv.url}" target="_blank">dataset</a><br><br>${pv.limitations}`;
 }
-loadNeiss();
 
 function chip(container, label, onClick, on=false) {
   const b = document.createElement("button");
@@ -585,15 +598,7 @@ map.on("load", async () => {
 });
 
 // ---- Risk & Prevention panel ----
-const riskMap = new maplibregl.Map({
-  container: "risk-map",
-  style: { version: 8,
-    sources: { carto: { type:"raster",
-      tiles:["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
-      tileSize:256, attribution:"© OpenStreetMap, © CARTO" }},
-    layers: [{ id:"carto", type:"raster", source:"carto" }] },
-  center: [-96, 38], zoom: 3.4
-});
+let riskMap; // deferred -- built on first click of the Risk & Prevention tab
 
 let RISK, riskSortBy = "rate";
 
@@ -641,7 +646,19 @@ function renderFactors() {
   }).join("");
 }
 
+let riskLoaded = false;
 async function loadRisk() {
+  if (riskLoaded) return;
+  riskLoaded = true;
+  riskMap = new maplibregl.Map({
+    container: "risk-map",
+    style: { version: 8,
+      sources: { carto: { type:"raster",
+        tiles:["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
+        tileSize:256, attribution:"© OpenStreetMap, © CARTO" }},
+      layers: [{ id:"carto", type:"raster", source:"carto" }] },
+    center: [-96, 38], zoom: 3.4
+  });
   RISK = await fetch(DATA+"risk_summary.json").then(r=>r.json());
 
   const tc = document.getElementById("risk-rank-toggle");
@@ -691,18 +708,9 @@ async function loadRisk() {
      <b>State ranking caveat:</b> ${RISK.state_ranking.measure_note}<br><br>
      <b>Cluster caveat:</b> ${RISK.clusters.measure_note}`;
 }
-loadRisk();
 
 // ---- DC Pilot panel ----
-const dcMap = new maplibregl.Map({
-  container: "dc-map",
-  style: { version: 8,
-    sources: { carto: { type:"raster",
-      tiles:["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
-      tileSize:256, attribution:"© OpenStreetMap, © CARTO" }},
-    layers: [{ id:"carto", type:"raster", source:"carto" }] },
-  center: [-77.02, 38.91], zoom: 11.5
-});
+let dcMap; // deferred -- built on first click of the DC Pilot tab
 
 function formatYYYYMM(yyyymm) {
   const year = yyyymm.slice(0,4), month = parseInt(yyyymm.slice(4,6), 10) - 1;
@@ -716,7 +724,19 @@ function formatISODate(iso) {
   return `${names[parseInt(m,10)-1]} ${y}`;
 }
 
+let dcLoaded = false;
 async function loadDC() {
+  if (dcLoaded) return;
+  dcLoaded = true;
+  dcMap = new maplibregl.Map({
+    container: "dc-map",
+    style: { version: 8,
+      sources: { carto: { type:"raster",
+        tiles:["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
+        tileSize:256, attribution:"© OpenStreetMap, © CARTO" }},
+      layers: [{ id:"carto", type:"raster", source:"carto" }] },
+    center: [-77.02, 38.91], zoom: 11.5
+  });
   const DC = await fetch(DATA+"dc_pilot.json").then(r=>r.json());
   const ws = DC.ward_summary;
   const dw = ws.date_window;
@@ -773,7 +793,6 @@ async function loadDC() {
      <b>Bikeshare context:</b> ${DC.bikeshare_context.measure_note}<br><br>
      Source: Open Data DC (DDOT/MPD crash data), Capital Bikeshare trip history.`;
 }
-loadDC();
 </script>
 </body>
 </html>
