@@ -17,27 +17,35 @@ conversation" for "this is now live infrastructure" -- it isn't.
 
 ## What does
 
-**A scheduled GitHub Actions workflow**, already written and committed at
-`.github/workflows/refresh-news.yml`. It runs `etl/news/transform_news.py`
-every 6 hours and commits the updated `web/data/news_*.json` files. Because
-the dashboard is a static site that already reads those files directly, a
-new commit *is* the deploy -- if `web/` is hosted on Vercel/Cloudflare
-Pages/GitHub Pages with auto-deploy-on-push, a new crash report goes from
-"GDELT indexed the article" to "live on your public map" with no manual
-step, typically within the 6-hour window.
+**This is live, not theoretical** -- the repo is public at
+`github.com/jamesad923-coder/ebike-crash-intel`, hosted on GitHub Pages,
+and three scheduled GitHub Actions workflows run unattended:
 
-**This workflow is written but not running.** It only executes once this
-project exists as a real GitHub repository with Actions enabled. That means:
+- **`refresh-news.yml`** -- every 6 hours, runs `etl/news/transform_news.py`
+  and commits updated `web/data/news_*.json`. This is the one that matters
+  for "show it within hours, not years."
+- **`refresh-risk.yml`** -- weekly (Mondays), rebuilds the Risk & Prevention
+  layer. As a side effect this also re-fetches FARS and CRSS for whatever
+  years are passed to it, so FARS/CRSS effectively get refreshed weekly too,
+  even though there's no separate `refresh-fars.yml` -- one less workflow to
+  maintain, same result.
+- **`refresh-dc-pilot.yml`** -- weekly (Mondays), rebuilds the DC ward
+  crash summary and Capital Bikeshare e-bike trip context.
+- **`deploy-pages.yml`** -- fires after any of the above (via
+  `workflow_run`, since GitHub deliberately doesn't let a bot's own commit
+  trigger other workflows via `push` -- this took a real fix to discover
+  and wire up, see git history) and republishes the live site. A new crash
+  report goes from "GDELT indexed the article" to "live on the public map"
+  with nobody touching a keyboard, typically within the 6-hour window.
 
-1. Creating a GitHub repo (public, since Actions minutes are free there)
-2. Pushing this code to it
-3. Confirming the Action runs successfully at least once
-
-Steps 1-2 are exactly the kind of "visible to others / shared state" action
-I don't take without you explicitly saying so -- creating a public repo and
-pushing your project to it is a real, visible action with consequences (it's
-public, it's discoverable, it represents you). Tell me to go ahead and I will
-set this up; I won't do it unannounced.
+**A real gap observed in production, not hypothetical:** GitHub's own cron
+scheduler is not 100% reliable -- one scheduled news-refresh slot (00:17 UTC
+on 2026-06-22) never fired at all, with no error, no failed run, just
+nothing in the run history. This seems to coincide with heavy push activity
+on the repo around that time (many commits, each triggering its own deploy
+run) possibly contending for scheduler capacity. Recovered by triggering the
+workflow manually. Worth knowing: "scheduled" means "GitHub will usually run
+this close to on time," not "guaranteed."
 
 ## What's still manual, and stays manual
 
@@ -47,11 +55,6 @@ set this up; I won't do it unannounced.
   year, so this is a low-cost manual step, not a gap that undermines the
   "automatic" goal -- the part that actually needs to be fast (new crashes)
   already is.
-- **FARS** could be added to the same scheduled workflow (it's fully
-  scriptable, like news), but it only updates annually too, so scheduling it
-  more than a few times a year buys nothing. Not included in the workflow
-  above for that reason -- rerun `etl/fars/transform_fars.py <year>` by hand
-  when NHTSA publishes a new year.
 
 ## The honest residual risk, even once this is running
 
