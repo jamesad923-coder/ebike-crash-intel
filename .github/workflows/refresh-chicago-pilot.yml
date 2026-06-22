@@ -1,0 +1,33 @@
+name: Refresh Chicago pilot
+
+# Same cadence reasoning as DC: crash/trip data updates on the order of
+# days/weeks, not hours. Offset from refresh-dc-pilot.yml's time (Mondays
+# 8:41am) so the two weekly jobs don't compete for scheduler capacity at
+# the exact same moment -- a real missed-cron-slot incident happened
+# earlier in this project during a period of heavy concurrent workflow
+# activity (see AUTOMATION.md).
+on:
+  schedule:
+    - cron: "53 9 * * 1"  # Mondays, offset from the DC pilot's slot
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-chicago:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run Chicago pilot pipeline
+        run: python3 etl/chicago/transform_chicago.py
+      - name: Commit updated artifacts if changed
+        run: |
+          git config user.name "ebike-crash-intel-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add web/data/chicago_pilot.json
+          git diff --staged --quiet || git commit -m "Auto-refresh Chicago pilot data"
+          git push

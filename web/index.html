@@ -17,7 +17,7 @@
     font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
   #app { display:grid; grid-template-columns:380px 1fr; height:100vh; }
   .side { overflow-y:auto; border-right:1px solid var(--line); padding:18px; }
-  #map, #news-map, #risk-map, #dc-map { height:100%; }
+  #map, #news-map, #risk-map, #dc-map, #chicago-map { height:100%; }
   h1 { font-size:18px; margin:0 0 2px; }
   h2 { font-size:13px; text-transform:uppercase; letter-spacing:.05em;
     color:var(--muted); margin:22px 0 8px; }
@@ -54,7 +54,7 @@
   .tab.on { color:var(--txt); border-bottom-color:var(--accent); font-weight:600; }
   .view { display:none; height:calc(100vh - 41px); overflow-y:auto; }
   .view.on { display:block; }
-  #view-fars.on, #view-news.on, #view-risk.on, #view-dc.on { display:grid; grid-template-columns:380px 1fr; }
+  #view-fars.on, #view-news.on, #view-risk.on, #view-dc.on, #view-chicago.on { display:grid; grid-template-columns:380px 1fr; }
   #side-neiss { max-width:680px; margin:0 auto; padding:18px; }
   .tier-badge { display:inline-block; font-size:10px; font-weight:700; text-transform:uppercase;
     letter-spacing:.03em; padding:2px 7px; border-radius:4px; margin-left:6px; }
@@ -89,13 +89,13 @@
     .tabs { overflow-x:auto; white-space:nowrap; flex-wrap:nowrap; }
     .tab { flex:0 0 auto; }
     .view { height:auto !important; }
-    #view-fars.on, #view-news.on, #view-risk.on, #view-dc.on {
+    #view-fars.on, #view-news.on, #view-risk.on, #view-dc.on, #view-chicago.on {
       display:flex !important; flex-direction:column;
       grid-template-columns:none;
     }
     .side { border-right:none; border-bottom:1px solid var(--line);
       max-height:60vh; }
-    #map, #news-map, #risk-map, #dc-map { height:50vh; }
+    #map, #news-map, #risk-map, #dc-map, #chicago-map { height:50vh; }
     #side-neiss { max-width:none; }
   }
 </style>
@@ -107,6 +107,7 @@
   <div class="tab" data-view="news">Recent reports — news (unverified)</div>
   <div class="tab" data-view="risk">Risk &amp; Prevention</div>
   <div class="tab" data-view="dc">DC Pilot — city deep-dive</div>
+  <div class="tab" data-view="chicago">Chicago Pilot — city deep-dive</div>
 </div>
 
 <div id="view-fars" class="view on">
@@ -337,6 +338,51 @@
   </div>
 </div>
 
+<div id="view-chicago" class="view">
+  <div class="side">
+    <h1>Chicago Pilot</h1>
+    <p class="sub">Second city deep-dive · verified independently, not assumed from DC's pattern</p>
+
+    <div class="banner">
+      <b>Read this first.</b> Ward crash counts cover
+      <b id="chi-window-text">a fixed recent window</b> — Chicago's full
+      data goes back to 2015, but we used a window matching DC's in
+      length as a consistency choice, not because we separately verified
+      Chicago's older reporting the way DC's pre-2016 gap was checked.
+      Counts are <b>not</b> exposure-adjusted on their own — see the
+      ward-exposure table below for that, which (like DC) compares ALL
+      cyclists' crashes to Divvy's fleet only, NOT a true risk-per-rider
+      rate. Two fields here are DIRECTLY police-reported (not an estimate
+      like DC's OSM-proximity check): helmet use and whether the
+      bicyclist was in a marked bike lane at the time.
+    </div>
+
+    <p class="estimate-note" id="chi-window-detail"></p>
+
+    <div class="stat"><span class="n" id="chi-total">–</span><span class="l">bicyclist-involved crash records</span></div>
+    <div class="stat minor"><span class="n" id="chi-fatal">–</span><span class="l">resulted in a fatality</span></div>
+
+    <h2>By ward</h2>
+    <div id="chi-ward-table"></div>
+
+    <h2>Crashes relative to Divvy activity, by ward</h2>
+    <p class="sub" style="margin-top:-4px"><b>Not a risk-per-rider rate</b>
+      — same caveat as DC's bikeshare comparison. Both sides use the same
+      <b id="chi-exposure-window">recent</b> window.</p>
+    <div id="chi-exposure-table"></div>
+    <p class="estimate-note" id="chi-exposure-note"></p>
+
+    <div class="src" id="chi-src"></div>
+  </div>
+  <div style="position:relative">
+    <div id="chicago-map"></div>
+    <div class="legend">
+      <div><span class="dot" style="background:#a371f7"></span>fatal outcome</div>
+      <div><span class="dot" style="background:#f78166"></span>other crash</div>
+    </div>
+  </div>
+</div>
+
 <script>
 const DATA = "data/";
 let GEO, SUMMARY;
@@ -409,6 +455,7 @@ document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () =>
   if (t.dataset.view === "neiss") loadNeiss();
   if (t.dataset.view === "risk") { loadRisk(); riskMap.resize(); }
   if (t.dataset.view === "dc") { loadDC(); dcMap.resize(); }
+  if (t.dataset.view === "chicago") { loadChicago(); chicagoMap.resize(); }
 }));
 
 // ---- Recent Reports (news) panel ----
@@ -848,6 +895,87 @@ async function loadDC() {
     `<b>Ward crash data:</b> ${ws.measure_note}<br><br>
      <b>Bikeshare context:</b> ${DC.bikeshare_context.measure_note}<br><br>
      Source: Open Data DC (DDOT/MPD crash data), Capital Bikeshare trip history.`;
+}
+
+// ---- Chicago Pilot panel ----
+let chicagoMap; // deferred -- built on first click of the Chicago tab
+let chicagoLoaded = false;
+
+async function loadChicago() {
+  if (chicagoLoaded) return;
+  chicagoLoaded = true;
+  chicagoMap = new maplibregl.Map({
+    container: "chicago-map",
+    style: { version: 8,
+      sources: { carto: { type:"raster",
+        tiles:["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
+        tileSize:256, attribution:"© OpenStreetMap, © CARTO" }},
+      layers: [{ id:"carto", type:"raster", source:"carto" }] },
+    center: [-87.66, 41.85], zoom: 10.2
+  });
+
+  const CHI = await fetch(DATA+"chicago_pilot.json").then(r=>r.json());
+  const ws = CHI.ward_summary;
+  const dw = ws.date_window;
+
+  const windowLabel = `${formatISODate(dw.start)}–${formatISODate(dw.end)}`;
+  document.getElementById("chi-window-text").textContent = windowLabel;
+  document.getElementById("chi-window-detail").textContent =
+    `Showing ${windowLabel}. ${ws.total_records.toLocaleString()} total `
+    + `records, ${ws.records_excluded_no_geo_or_ward} excluded (no usable `
+    + `location/ward).`;
+
+  document.getElementById("chi-total").textContent = ws.total_records.toLocaleString();
+  const totalFatal = ws.by_ward.reduce((s,r)=>s+r.fatal, 0);
+  document.getElementById("chi-fatal").textContent = totalFatal;
+
+  document.getElementById("chi-ward-table").innerHTML = `<table class="rank-table"><tr>
+      <th>Ward</th><th>Crashes</th><th>Fatal</th><th>Major inj.</th><th>Helmet used</th><th>In bike lane</th><th>Minors</th>
+    </tr>` + ws.by_ward.map(r => {
+      const helmetKnown = r.helmet_used + r.helmet_not_used;
+      const helmetPct = helmetKnown ? Math.round(r.helmet_used/helmetKnown*100) : null;
+      return `<tr>
+        <td>${r.ward}</td><td>${r.crashes}</td><td>${r.fatal}</td><td>${r.major_injury}</td>
+        <td>${helmetPct !== null ? helmetPct+"%" : "n/a"}</td>
+        <td>${r.in_bike_lane}</td><td>${r.minors_involved}</td>
+      </tr>`;
+    }).join("") + `</table>`;
+
+  const we = CHI.ward_exposure;
+  document.getElementById("chi-exposure-window").textContent =
+    `${formatISODate(we.window.start)}–${formatISODate(we.window.end)}`;
+  document.getElementById("chi-exposure-table").innerHTML = `<table class="rank-table"><tr>
+      <th>Ward</th><th>Crashes</th><th>Divvy trips</th><th>of which e-bike</th><th>Crashes / 1,000 trips</th>
+    </tr>` + we.by_ward.map(r => `<tr>
+        <td>${r.ward}</td><td>${r.crashes_in_window}</td>
+        <td>${r.divvy_trips_in_window.toLocaleString()}</td>
+        <td>${r.divvy_ebike_trips_in_window.toLocaleString()}</td>
+        <td>${r.crashes_per_1000_divvy_trips ?? "n/a"}</td>
+      </tr>`).join("") + `</table>`;
+  document.getElementById("chi-exposure-note").textContent = we.measure_note;
+
+  chicagoMap.addSource("chicago-crashes", { type:"geojson", data: ws.geojson });
+  chicagoMap.addLayer({ id:"chicago-pts", type:"circle", source:"chicago-crashes",
+    paint:{ "circle-radius":["case",["get","fatal"],7,4],
+      "circle-opacity":0.7, "circle-stroke-width":0.5, "circle-stroke-color":"#000",
+      "circle-color":["case",["get","fatal"],"#a371f7","#f78166"] }});
+  chicagoMap.on("click","chicago-pts",e=>{
+    const p = e.features[0].properties;
+    new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+      `<b>${p.ward}</b> · ${p.date}<br>Fatal: ${p.fatal ? "Yes" : "No"}<br>
+       Major injury: ${p.major_injury ? "Yes" : "No"}<br>
+       Minor injury: ${p.minor_injury ? "Yes" : "No"}<br>
+       Helmet used: ${p.helmet_used === null ? "Unknown" : (p.helmet_used ? "Yes" : "No")}<br>
+       In marked bike lane: ${p.in_bike_lane ? "Yes" : "No"}<br>
+       Age band: ${p.age_band}`
+    ).addTo(chicagoMap);
+  });
+  chicagoMap.on("mouseenter","chicago-pts",()=>chicagoMap.getCanvas().style.cursor="pointer");
+  chicagoMap.on("mouseleave","chicago-pts",()=>chicagoMap.getCanvas().style.cursor="");
+
+  document.getElementById("chi-src").innerHTML =
+    `<b>Ward crash data:</b> ${ws.measure_note}<br><br>
+     Source: City of Chicago Data Portal (Traffic Crashes - People/Crashes), Divvy trip history.`;
 }
 </script>
 </body>

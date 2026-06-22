@@ -13,7 +13,7 @@ on:
   # updates would land in the repo but the live site would never redeploy.
   # workflow_run fires regardless of who/what triggered the upstream run.
   workflow_run:
-    workflows: ["Refresh news-sourced incident reports", "Refresh risk & prevention layer", "Refresh DC pilot"]
+    workflows: ["Refresh news-sourced incident reports", "Refresh risk & prevention layer", "Refresh DC pilot", "Refresh Chicago pilot"]
     types: [completed]
 
 permissions:

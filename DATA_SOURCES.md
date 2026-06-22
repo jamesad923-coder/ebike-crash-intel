@@ -342,6 +342,62 @@ already exists in the literature.
   coverage and accuracy depend on contributor activity, and a real lane
   could exist but not be mapped, or vice versa.
 
+## Chicago Pilot — second city, verified independently
+
+- **What it is:** the second city-level pilot, built only after checking
+  Chicago's data on its own terms -- not assumed to work just because DC
+  did. Two real, verified, live feeds:
+  1. **Chicago Data Portal** (Socrata) -- "Traffic Crashes - People"
+     (`u6pd-qa9d`) filtered to `person_type='BICYCLE'`, joined in Python
+     to "Traffic Crashes - Crashes" (`85ca-t3if`) via `crash_record_id`
+     for lat/lon and conditions (Socrata can't join across datasets
+     server-side). Confirmed live: 11,162 bicyclist records since
+     2021-01-01, 99.8% successfully geo-joined.
+  2. **Divvy trip history** (`https://s3.amazonaws.com/divvy-tripdata/`) --
+     Divvy is operated by Lyft, the same company as Capital Bikeshare,
+     and publishes the IDENTICAL schema including the e-bike-specific
+     `rideable_type` field. ~67-70% of trips checked were `electric_bike`.
+     Genuinely simpler than DC's case: every trip row carries its own
+     lat/lon directly (even the ~21% with no station_id -- dockless
+     e-bike trips), so no station-to-coordinate lookup is needed first.
+- **Two fields Chicago has that DC's data didn't, both DIRECTLY
+  police-reported (not an estimate):**
+  - `safety_equipment` -- helmet use, a real correlation field no other
+    source in this project has cleanly. ~34% of records with a known
+    value showed a helmet was used.
+  - `pedpedal_location` -- whether the bicyclist was reported "IN BIKE
+    LANE" vs "IN ROADWAY"/etc. at the time of the crash. More reliable
+    than DC's OSM-proximity estimate (which only tells you a lane was
+    NEARBY, not that the cyclist was using it) -- but still only as
+    accurate as what the reporting officer observed and recorded.
+- **A real performance problem, found and fixed:** the initial ward
+  lookup (bounding-box pre-filter + full point-in-ring test per call)
+  did not finish in a reasonable time against Chicago's real data volume
+  (~1.7M Divvy trip points to map). Fixed by precomputing a grid
+  rasterization ONCE at startup (test each ~150m grid cell's center
+  against the ward polygons a single time, cache the result), turning
+  every actual per-point lookup into an O(1) dict access. Setup cost
+  ~13 seconds; the full pipeline (crash join + 5 months of trip mapping)
+  completed in under 30 seconds afterward. Tradeoff made explicit: this
+  approximates true polygon boundaries at ~150m grid resolution, so a
+  thin band of points right at a ward boundary could be assigned to the
+  adjacent ward -- accepted as a small, known imprecision for citywide
+  aggregate analysis, not exact-everywhere geometry.
+- **A real URL-length bug, found and fixed:** the person-to-crash join
+  initially batched 200 `crash_record_id` values per query (each ID is
+  ~128 hex characters) and hit HTTP 414 (Request-URI Too Large).
+  Reduced to batches of 25.
+- **Privacy:** the People dataset includes exact age per record (a real
+  11-year-old's exact age appeared in a sample record pulled during
+  development) -- age-banded immediately using this project's existing
+  `age_band()` function, the same privacy rule applied everywhere else;
+  exact age is never stored or displayed.
+- **Known limitation:** the 2021 cutoff matches DC's window LENGTH as a
+  consistency choice -- it is not a claim that Chicago's pre-2021
+  reporting was separately verified for consistency the way DC's 2016
+  cutoff was (DC's actual per-year record counts were checked directly;
+  Chicago's were not, beyond confirming the dataset's full range).
+
 ## Sources not yet integrated (and why)
 
 | Source | Status | Why not yet |

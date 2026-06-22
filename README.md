@@ -9,7 +9,7 @@ See [PROJECT_BRIEF.md](PROJECT_BRIEF.md) for the full mission and constraints.
 
 ## What this v1 actually is
 
-Five honest, separate views — deliberately not merged, because they answer
+Six honest, separate views — deliberately not merged, because they answer
 different questions, run on different timescales, and cannot be joined:
 
 1. **Fatalities (FARS)** — a map of pedalcyclist fatalities in fatal
@@ -34,11 +34,18 @@ different questions, run on different timescales, and cannot be joined:
    lever (FHWA/NACTO/NHTSA guidance). See DATA_SOURCES.md for what this
    can and can't honestly claim.
 5. **DC Pilot** — the first city-level crash source: 7,378 real,
-   geocoded bicycle crashes by ward (Open Data DC), shown alongside
-   Capital Bikeshare's e-bike-specific trip data (a real find -- e-bike
-   trips are 68-74% of all bikeshare trips every month checked) as
-   separate citywide context, not blended into a fake per-ward rate. A
-   proof of concept for whether other cities are worth adding next.
+   geocoded bicycle crashes by ward (Open Data DC), a real per-ward
+   crashes-per-bikeshare-trip comparison (Capital Bikeshare e-bike trips
+   mapped to wards via point-in-polygon), and OpenStreetMap bike-lane
+   proximity context. Wards 7/8 rank worst on both the exposure-relative
+   measure and bike-lane coverage -- three independent signals pointing
+   the same direction.
+6. **Chicago Pilot** — the second city, verified independently rather
+   than assumed from DC's pattern: 11,162 bicyclist crash records since
+   2021 (Chicago Data Portal), Divvy's e-bike-specific trip data (same
+   Lyft-operated schema as Capital Bikeshare), and two fields DC's data
+   didn't have cleanly -- directly police-reported helmet use and
+   bike-lane-location-at-crash-time.
 
 ## Quick start
 
