@@ -94,16 +94,11 @@
         "sources": [
           {
             "domain": "news4jax.com",
-            "url": "https://www.news4jax.com/news/local/2026/06/15/community-gathers-to-remember-carson-farias-14-year-old-killed-in-clay-county-e-bike-crash/",
-            "date": "20260615T054500Z"
-          },
-          {
-            "domain": "news4jax.com",
             "url": "https://www.news4jax.com/news/local/2026/06/19/14-year-old-killed-in-clay-county-e-bike-crash-to-be-laid-to-rest-friday-as-family-community-reel-from-tragic-loss/",
             "date": "20260619T144500Z"
           }
         ],
-        "date": "20260615T054500Z"
+        "date": "20260619T144500Z"
       }
     },
     {
@@ -173,14 +168,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.9602972,
-          40.9831598
+          -75.3289302,
+          40.7451356
         ]
       },
       "properties": {
-        "city": "Blairstown",
-        "state": "NJ",
-        "location_precision": "city_state_mention",
+        "city": "Northampton County",
+        "state": "PA",
+        "location_precision": "county+outlet_market",
         "device": "E-bike",
         "outcome": "Fatality",
         "throttle_ambiguous": false,
@@ -277,7 +272,7 @@
         "device": "E-bike",
         "outcome": "Fatality",
         "throttle_ambiguous": false,
-        "age_band": "65+",
+        "age_band": "18-24",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "wjla.com"
