@@ -19,6 +19,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from dc.fetch_dc_crashes import cached_bicycle_crashes  # noqa: E402
 from dc.fetch_capital_bikeshare import cached_recent_months, cached_station_months  # noqa: E402
 from dc.ward_boundaries import WardLookup  # noqa: E402
+from dc.fetch_bike_lanes import cached_bike_lanes  # noqa: E402
+from dc.bike_lane_proximity import BikeLaneIndex  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "web" / "data"
@@ -73,9 +75,11 @@ def build_ward_summary() -> dict:
     cutoff = datetime(cutoff_year, 1, 1, tzinfo=timezone.utc) if cutoff_year else None
     recent = [(r, d) for r, d in dated if d and cutoff and d >= cutoff]
 
+    lane_index = BikeLaneIndex(cached_bike_lanes())
+
     by_ward = defaultdict(lambda: {
         "crashes": 0, "fatal": 0, "major_injury": 0, "minor_injury": 0,
-        "speeding_involved": 0,
+        "speeding_involved": 0, "near_bike_lane": 0,
     })
     no_ward = 0
     features = []
@@ -94,6 +98,9 @@ def build_ward_summary() -> dict:
 
         lat, lon = r.get("LATITUDE"), r.get("LONGITUDE")
         if lat and lon:
+            near_lane = lane_index.is_near(lat, lon)
+            if near_lane:
+                w["near_bike_lane"] += 1
             features.append({
                 "type": "Feature",
                 "geometry": {"type": "Point", "coordinates": [lon, lat]},
@@ -103,6 +110,7 @@ def build_ward_summary() -> dict:
                     "major_injury": bool(r.get("MAJORINJURIES_BICYCLIST")),
                     "minor_injury": bool(r.get("MINORINJURIES_BICYCLIST")),
                     "speeding_involved": bool(r.get("SPEEDING_INVOLVED")),
+                    "near_bike_lane": near_lane,
                     "date": d.strftime("%Y-%m-%d"),
                 },
             })
@@ -134,7 +142,13 @@ def build_ward_summary() -> dict:
             f"citywide context only, not used to compute a per-ward rate. "
             f"Same federal-data-style gap applies here too: this is all "
             f"bicyclist crashes, e-bikes included but not isolated -- DC's "
-            f"crash data has no e-bike-specific flag either."
+            f"crash data has no e-bike-specific flag either. "
+            f"'near_bike_lane' (per-crash and ward %) means within ~30m of "
+            f"an OpenStreetMap-mapped cycleway/bike lane -- infrastructure "
+            f"CONTEXT only, not a cause: a crash flagged 'near a bike lane' "
+            f"is not necessarily caused by its presence OR absence, and the "
+            f"30m buffer absorbs GPS/mapping imprecision rather than "
+            f"claiming the crash happened exactly on the lane."
         ),
         "records_with_no_ward_or_date": no_ward,
         "total_records_in_window": len(recent),
@@ -271,6 +285,34 @@ def build_ward_exposure() -> dict:
     }
 
 
+def build_bike_lanes_geojson() -> dict:
+    """Written as a SEPARATE file from dc_pilot.json (not inlined) -- the
+    lane geometry (~5,375 ways, ~38,877 points) would meaningfully bloat
+    the main payload, and the dashboard already lazy-loads each tab's data
+    independently, so a separate fetch fits that existing pattern."""
+    lanes = cached_bike_lanes()
+    features = [
+        {
+            "type": "Feature",
+            "geometry": {"type": "LineString", "coordinates": [[lon, lat] for lat, lon in w["geometry"]]},
+            "properties": {"name": w["tags"].get("name", "")},
+        }
+        for w in lanes if len(w["geometry"]) >= 2
+    ]
+    return {
+        "type": "FeatureCollection",
+        "provenance_note": (
+            "OpenStreetMap cycleway/bike-lane geometry within DC, fetched "
+            "via the free Overpass API. Crowdsourced/volunteer-mapped data "
+            "-- coverage and accuracy depend on OSM contributors, not an "
+            "official DDOT bike-lane inventory (though it's drawn largely "
+            "from one). Shown for infrastructure CONTEXT only, never to "
+            "detect crashes."
+        ),
+        "features": features,
+    }
+
+
 def build(years: list[int] | None = None) -> dict:
     return {
         "ward_summary": build_ward_summary(),
@@ -291,8 +333,10 @@ if __name__ == "__main__":
           f"({ws['records_with_no_ward_or_date']} excluded: no ward/date)")
     print("By ward (in-window):")
     for r in ws["by_ward"]:
+        pct_near = (r["near_bike_lane"] / r["crashes"] * 100) if r["crashes"] else 0
         print(f"  {r['ward']:10} crashes={r['crashes']:5}  fatal={r['fatal']:2}  "
-              f"major={r['major_injury']:3}  minor={r['minor_injury']:4}")
+              f"major={r['major_injury']:3}  minor={r['minor_injury']:4}  "
+              f"near_bike_lane={r['near_bike_lane']:4} ({pct_near:.0f}%)")
     print(f"\nMapped points: {len(ws['geojson']['features'])}")
     print("\nCapital Bikeshare e-bike share by month:")
     for r in result["bikeshare_context"]["monthly"]:
@@ -307,3 +351,7 @@ if __name__ == "__main__":
               f"rate={rate if rate is not None else 'n/a'}")
     print(f"Unmapped bikeshare trips (outside DC wards): {we['unmapped_bikeshare_trips']}")
     print(f"\nWrote {OUT / 'dc_pilot.json'}")
+
+    lanes_geojson = build_bike_lanes_geojson()
+    (OUT / "dc_bike_lanes.geojson").write_text(json.dumps(lanes_geojson))
+    print(f"Wrote {OUT / 'dc_bike_lanes.geojson'} ({len(lanes_geojson['features'])} lane segments)")

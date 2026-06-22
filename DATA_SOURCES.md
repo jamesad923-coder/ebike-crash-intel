@@ -302,6 +302,46 @@ already exists in the literature.
   actually distinguishes e-bike trips) would need to be checked city by
   city, the same way DC was verified here rather than assumed.
 
+## DC Pilot — OpenStreetMap bike-lane infrastructure context
+
+- **What it is:** the "why" layer for the DC crash data above -- was
+  there a marked/protected bike lane near where a crash happened? Fetched
+  via the free Overpass API (`https://overpass-api.de/api/interpreter`,
+  no key required) for DC's bounding box, matching `highway=cycleway` and
+  `cycleway`/`cycleway:left`/`cycleway:right`/`cycleway:both` =
+  `lane`/`track`/`opposite_lane` tags. Confirmed live: 5,375 way segments,
+  38,877 geometry points.
+- **A real syntax bug worth knowing about if extending this:** Overpass
+  QL requires quoting tag KEYS that contain a colon --
+  `way["cycleway:left"="lane"]` is correct, `way[cycleway:left=lane]`
+  returns HTTP 400. Found by testing directly, not assumed.
+- **Method:** grid-indexed nearest-vertex distance (not true point-to-
+  line-segment geometry) -- DC's OSM cycleways are densely vertexed
+  (10-12 points per short urban segment, confirmed directly), so nearest-
+  vertex is a reasonable stand-in without a GIS library dependency. A
+  crash is flagged "near a bike lane" if within 30 meters of any lane
+  vertex -- chosen to absorb GPS/mapping imprecision in both datasets,
+  not as a precise "the lane was right there" claim. Verified against a
+  known true-positive (an exact lane vertex coordinate) and a known
+  true-negative (200m offset) before trusting it.
+- **Critical framing, stated in the data and the dashboard, not just
+  here:** this is infrastructure CONTEXT, never a cause and never crash
+  DETECTION -- the brief is explicit that imagery/OSM cannot detect
+  crashes; this only explains the road environment around crashes DC's
+  own MPD data already documented.
+- **Real finding, ties together with the ward-exposure data above:**
+  Wards 7 and 8 -- the same two wards that rank WORST on
+  crashes-per-1,000-bikeshare-trips -- also have by far the LOWEST share
+  of crashes occurring near a mapped bike lane (7% and 4%, vs. 45-53% in
+  Wards 1, 2, and 6). Visually obvious on the map too: the green lane
+  network is visibly sparser east of the Anacostia River. Consistent
+  with documented infrastructure disparities, not proof of a causal
+  mechanism on its own.
+- **Known limitation:** OSM is crowdsourced/volunteer-mapped, not an
+  official DDOT bike-lane inventory (though it draws heavily from one) --
+  coverage and accuracy depend on contributor activity, and a real lane
+  could exist but not be mapped, or vice versa.
+
 ## Sources not yet integrated (and why)
 
 | Source | Status | Why not yet |

@@ -296,7 +296,10 @@
       Capital Bikeshare e-bike trip context below is genuinely
       e-bike-specific (rare for this project!) but covers only Capital
       Bikeshare's own fleet, not personally-owned e-bikes — shown as
-      citywide context, not blended into the ward numbers.
+      citywide context, not blended into the ward numbers. "Near bike
+      lane" means within ~30m of an OpenStreetMap-mapped cycleway —
+      infrastructure <b>context, not a cause</b>: a crash near a bike lane
+      isn't necessarily caused by its presence or absence.
     </div>
 
     <div class="estimate-note" id="dc-window-detail"></div>
@@ -329,6 +332,7 @@
     <div class="legend">
       <div><span class="dot" style="background:#a371f7"></span>fatal outcome</div>
       <div><span class="dot" style="background:#f78166"></span>other bicycle crash</div>
+      <div><span style="display:inline-block;width:14px;height:2px;background:#3fb950;vertical-align:middle;margin-right:6px"></span>mapped bike lane (OSM)</div>
     </div>
   </div>
 </div>
@@ -784,10 +788,11 @@ async function loadDC() {
   document.getElementById("dc-fatal").textContent = totalFatal;
 
   document.getElementById("dc-ward-table").innerHTML = `<table class="rank-table"><tr>
-      <th>Ward</th><th>Crashes</th><th>Fatal</th><th>Major inj.</th><th>Minor inj.</th><th>Speeding</th>
+      <th>Ward</th><th>Crashes</th><th>Fatal</th><th>Major inj.</th><th>Minor inj.</th><th>Speeding</th><th>Near bike lane</th>
     </tr>` + ws.by_ward.filter(r=>r.ward!=="Null").map(r => `<tr>
         <td>${r.ward}</td><td>${r.crashes}</td><td>${r.fatal}</td>
         <td>${r.major_injury}</td><td>${r.minor_injury}</td><td>${r.speeding_involved}</td>
+        <td>${r.crashes ? (r.near_bike_lane/r.crashes*100).toFixed(0) : 0}% (${r.near_bike_lane})</td>
       </tr>`).join("") + `</table>`;
 
   const we = DC.ward_exposure;
@@ -811,6 +816,16 @@ async function loadDC() {
       <div class="bar"><i style="width:${(r.total_trips/maxTrips*100).toFixed(1)}%"></i></div>
     </div>`).join("");
 
+  // Bike lane geometry drawn FIRST so crash points layer on top of it.
+  // Fetched as its own file (not bundled into dc_pilot.json) -- the lane
+  // geometry alone is ~1.6MB, same lazy-loading rationale as every other
+  // tab in this dashboard.
+  fetch(DATA+"dc_bike_lanes.geojson").then(r=>r.json()).then(lanesGeo => {
+    dcMap.addSource("dc-bike-lanes", { type:"geojson", data: lanesGeo });
+    dcMap.addLayer({ id:"dc-lane-lines", type:"line", source:"dc-bike-lanes",
+      paint:{ "line-color":"#3fb950", "line-width":1.5, "line-opacity":0.55 }});
+  });
+
   dcMap.addSource("dc-crashes", { type:"geojson", data: ws.geojson });
   dcMap.addLayer({ id:"dc-pts", type:"circle", source:"dc-crashes",
     paint:{ "circle-radius":["case",["get","fatal"],7,4],
@@ -822,7 +837,8 @@ async function loadDC() {
       `<b>${p.ward}</b> · ${p.date}<br>Fatal: ${p.fatal ? "Yes" : "No"}<br>
        Major injury: ${p.major_injury ? "Yes" : "No"}<br>
        Minor injury: ${p.minor_injury ? "Yes" : "No"}<br>
-       Speeding involved: ${p.speeding_involved ? "Yes" : "No"}`
+       Speeding involved: ${p.speeding_involved ? "Yes" : "No"}<br>
+       Near a mapped bike lane (~30m): ${p.near_bike_lane ? "Yes" : "No"}`
     ).addTo(dcMap);
   });
   dcMap.on("mouseenter","dc-pts",()=>dcMap.getCanvas().style.cursor="pointer");
