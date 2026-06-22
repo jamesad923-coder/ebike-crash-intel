@@ -48326,5 +48326,71 @@
         "electric_bike_share": 0.677
       }
     ]
+  },
+  "ward_exposure": {
+    "window": {
+      "start": "2026-01-01",
+      "end": "2026-05-31"
+    },
+    "unmapped_bikeshare_trips": 213811,
+    "measure_note": "NOT a true risk-per-rider rate. crashes_per_1000_bikeshare_trips divides ALL bicycle crashes in a ward (personal bikes, personal e-bikes, AND bikeshare riders) by Capital Bikeshare trips ONLY -- two different, overlapping-but-not-identical populations. Read this as 'how much bicycle crash activity relative to how much bikeshare activity', not 'how dangerous is it per cyclist'. Both crashes and trips are restricted to the same Jan-May 2026 window so the comparison is at least apples-to-apples on TIME, even though it isn't on POPULATION. Station-to-ward mapping is point-in-polygon against DC's official 2022 ward boundaries; a small number of trips started at stations outside DC proper (e.g. Arlington, VA) and could not be mapped to any DC ward -- excluded, not forced into the nearest one.",
+    "by_ward": [
+      {
+        "ward": "Ward 7",
+        "crashes_jan_may_2026": 18,
+        "bikeshare_trips_jan_may_2026": 27242,
+        "bikeshare_ebike_trips_jan_may_2026": 16862,
+        "crashes_per_1000_bikeshare_trips": 0.66
+      },
+      {
+        "ward": "Ward 8",
+        "crashes_jan_may_2026": 18,
+        "bikeshare_trips_jan_may_2026": 31665,
+        "bikeshare_ebike_trips_jan_may_2026": 19397,
+        "crashes_per_1000_bikeshare_trips": 0.57
+      },
+      {
+        "ward": "Ward 4",
+        "crashes_jan_may_2026": 25,
+        "bikeshare_trips_jan_may_2026": 59964,
+        "bikeshare_ebike_trips_jan_may_2026": 48227,
+        "crashes_per_1000_bikeshare_trips": 0.42
+      },
+      {
+        "ward": "Ward 3",
+        "crashes_jan_may_2026": 17,
+        "bikeshare_trips_jan_may_2026": 67446,
+        "bikeshare_ebike_trips_jan_may_2026": 50153,
+        "crashes_per_1000_bikeshare_trips": 0.25
+      },
+      {
+        "ward": "Ward 5",
+        "crashes_jan_may_2026": 31,
+        "bikeshare_trips_jan_may_2026": 141840,
+        "bikeshare_ebike_trips_jan_may_2026": 104260,
+        "crashes_per_1000_bikeshare_trips": 0.22
+      },
+      {
+        "ward": "Ward 6",
+        "crashes_jan_may_2026": 82,
+        "bikeshare_trips_jan_may_2026": 387725,
+        "bikeshare_ebike_trips_jan_may_2026": 224231,
+        "crashes_per_1000_bikeshare_trips": 0.21
+      },
+      {
+        "ward": "Ward 1",
+        "crashes_jan_may_2026": 53,
+        "bikeshare_trips_jan_may_2026": 307722,
+        "bikeshare_ebike_trips_jan_may_2026": 237588,
+        "crashes_per_1000_bikeshare_trips": 0.17
+      },
+      {
+        "ward": "Ward 2",
+        "crashes_jan_may_2026": 94,
+        "bikeshare_trips_jan_may_2026": 629861,
+        "bikeshare_ebike_trips_jan_may_2026": 385294,
+        "crashes_per_1000_bikeshare_trips": 0.15
+      }
+    ]
   }
 }

@@ -234,19 +234,51 @@ already exists in the literature.
      than the ACS commute proxy used at the state level. Confirmed live:
      e-bike trips are 68-74% of all Capital Bikeshare trips every month
      checked (Jan-May 2026).
-- **Why ward crash counts and bikeshare e-bike share are NOT combined
-  into a per-ward rate:** doing so honestly would require mapping each
-  bikeshare trip's station to a ward (point-in-polygon against ward
-  boundaries) -- not built. Faking a per-ward rate without that mapping
-  would be exactly the kind of invented precision this project exists to
-  avoid. The two are shown side by side, explicitly uncombined.
+- **Station-to-ward mapping (built):** `etl/dc/ward_boundaries.py` fetches
+  DC's official "Wards from 2022" polygon layer
+  (`https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/53`,
+  found via the ArcGIS Online item-search API, same pattern as the crash
+  layer) and does a plain ray-casting point-in-polygon test (the 8 ward
+  polygons are single-ring, no holes -- confirmed directly, no GIS
+  library needed). Verified against known landmarks (White House -> Ward
+  2, Eastern Market -> Ward 6, Adams Morgan -> Ward 1, etc.) before
+  trusting it. Each Capital Bikeshare station's trip data
+  (`fetch_capital_bikeshare.py:fetch_month_by_station`) is mapped to a
+  ward this way, giving a REAL per-ward bikeshare-activity figure instead
+  of citywide-only context.
+- **Why this still isn't a true per-ward RISK rate, even with real
+  station-to-ward mapping:** the numerator (ward crash counts) includes
+  ALL cyclists -- personal bikes, personal e-bikes, AND bikeshare riders.
+  The denominator (bikeshare trips) counts ONLY Capital Bikeshare's
+  fleet. These are different, overlapping-but-not-identical populations.
+  `ward_exposure.measure_note` in the output (and the dashboard) calls
+  this "crashes relative to bikeshare activity," explicitly not
+  "risk per rider" -- the distinction matters and is stated every place
+  the number appears, not just here. Both crash counts and trip counts
+  in this specific comparison are restricted to the same Jan-May 2026
+  window (the only window where both data sources actually overlap;
+  the ward crash table elsewhere on the page uses a longer 5-year window
+  for more statistical power on its own, separate question).
+- **Real finding:** Wards 7 and 8 (east of the Anacostia River, lower
+  bikeshare ridership) rank HIGHEST on crashes-per-1,000-bikeshare-trips
+  (0.66 and 0.57), while Ward 2 (highest raw crash count AND highest
+  bikeshare activity) ranks LOWEST (0.15) -- the same kind of inversion
+  BikeMaps.org found with Strava data (busy, well-served areas look
+  "dangerous" on raw counts partly because more riding happens there).
+  About 14% of bikeshare trips in the dataset (213,811 of ~1.5M across
+  5 months) start at stations outside DC proper (Arlington VA, Alexandria
+  VA, Bethesda MD, Reston VA -- confirmed by inspecting the actual
+  unmapped station names) and are excluded from ward totals rather than
+  forced into the nearest ward.
 - **Known limitations:** DC's crash data has no e-bike-specific flag
   either (same gap as FARS/NEISS/CRSS) -- ward counts are all bicycle
   crashes, e-bikes included but not isolated. Capital Bikeshare data
   covers only its own fleet, not personally-owned e-bikes (most of what
-  the news-sourced fatality reports involve). Ward crash counts are raw
-  counts, not exposure-adjusted -- a busy ward looks "worse" partly
-  because more riding happens there.
+  the news-sourced fatality reports involve). The main ward table (5-year
+  window, for statistical power) is still a raw count with no exposure
+  adjustment; the separate ward-exposure comparison above addresses this
+  partially, for the shorter overlapping window, with the population
+  caveat already stated.
 - **Date-window correction (caught by the user, fixed):** the raw crash
   dataset actually spans 1996-2026, but reporting was sparse and
   inconsistent before roughly 2016. The ward table originally summed

@@ -307,11 +307,19 @@
     <h2>By ward</h2>
     <div id="dc-ward-table"></div>
 
+    <h2>Crashes relative to bikeshare activity, by ward</h2>
+    <p class="sub" style="margin-top:-4px"><b>Not a risk-per-rider rate</b> —
+      see callout below the table. Mapped each Capital Bikeshare station to
+      its ward (point-in-polygon against DC's official boundaries) so this
+      is a real, computed comparison, not disconnected context. Both sides
+      use the same Jan–May 2026 window.</p>
+    <div id="dc-exposure-table"></div>
+    <p class="estimate-note" id="dc-exposure-note"></p>
+
     <h2>Capital Bikeshare: e-bike share of trips</h2>
     <p class="sub" style="margin-top:-4px">A "trip" is one bikeshare
       rental — someone unlocking a bike at one station/spot and docking
-      it at another (or the same) station. Citywide context, not a
-      per-ward rate (see banner above).</p>
+      it at another (or the same) station. Citywide trend, for context.</p>
     <div id="dc-bikeshare"></div>
 
     <div class="src" id="dc-src"></div>
@@ -781,6 +789,17 @@ async function loadDC() {
         <td>${r.ward}</td><td>${r.crashes}</td><td>${r.fatal}</td>
         <td>${r.major_injury}</td><td>${r.minor_injury}</td><td>${r.speeding_involved}</td>
       </tr>`).join("") + `</table>`;
+
+  const we = DC.ward_exposure;
+  document.getElementById("dc-exposure-table").innerHTML = `<table class="rank-table"><tr>
+      <th>Ward</th><th>Crashes</th><th>Bikeshare trips</th><th>of which e-bike</th><th>Crashes / 1,000 trips</th>
+    </tr>` + we.by_ward.map(r => `<tr>
+        <td>${r.ward}</td><td>${r.crashes_jan_may_2026}</td>
+        <td>${r.bikeshare_trips_jan_may_2026.toLocaleString()}</td>
+        <td>${r.bikeshare_ebike_trips_jan_may_2026.toLocaleString()}</td>
+        <td>${r.crashes_per_1000_bikeshare_trips ?? "n/a"}</td>
+      </tr>`).join("") + `</table>`;
+  document.getElementById("dc-exposure-note").textContent = we.measure_note;
 
   const bs = DC.bikeshare_context.monthly;
   const maxTrips = Math.max(...bs.map(r=>r.total_trips));

@@ -63,6 +63,62 @@ def cached_recent_months(months: list[str]) -> dict[str, dict]:
     return {m: cached[m] for m in months}
 
 
+def fetch_month_by_station(yyyymm: str) -> dict:
+    """Returns per-station trip data for one month:
+    {station_id: {"name": str, "lat": float, "lon": float,
+                   "electric_bike": n, "classic_bike": n, ...}}
+
+    Needed to map bikeshare activity onto DC wards -- a trip has a lat/lon
+    (via its station), a citywide total does not. Station coordinates have
+    minor per-trip GPS jitter (confirmed directly: a handful of distinct
+    rounded values per station), so we keep the most frequently seen
+    rounded coordinate as that station's representative point.
+    """
+    url = f"{S3_BASE}/{yyyymm}-capitalbikeshare-tripdata.zip"
+    req = urllib.request.Request(url, headers={"User-Agent": "ebike-crash-intel/0.1"})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        zip_bytes = r.read()
+
+    from collections import Counter
+    stations: dict[str, dict] = {}
+    coord_votes: dict[str, Counter] = {}
+    with zipfile.ZipFile(io.BytesIO(zip_bytes)) as z:
+        csv_name = next(n for n in z.namelist() if n.endswith(".csv"))
+        with z.open(csv_name) as f:
+            reader = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8"))
+            for row in reader:
+                sid = row.get("start_station_id")
+                if not sid:
+                    continue
+                lat, lon = row.get("start_lat"), row.get("start_lng")
+                if not lat or not lon:
+                    continue
+                rtype = row.get("rideable_type", "unknown")
+                if sid not in stations:
+                    stations[sid] = {"name": row.get("start_station_name", ""), "counts": {}}
+                    coord_votes[sid] = Counter()
+                stations[sid]["counts"][rtype] = stations[sid]["counts"].get(rtype, 0) + 1
+                coord_votes[sid][(round(float(lat), 4), round(float(lon), 4))] += 1
+
+    for sid, votes in coord_votes.items():
+        (lat, lon), _ = votes.most_common(1)[0]
+        stations[sid]["lat"] = lat
+        stations[sid]["lon"] = lon
+    return stations
+
+
+def cached_station_months(months: list[str]) -> dict[str, dict]:
+    RAW.mkdir(parents=True, exist_ok=True)
+    cache_path = RAW / "capital_bikeshare_by_station.json"
+    cached = json.loads(cache_path.read_text()) if cache_path.exists() else {}
+    for m in months:
+        if m not in cached:
+            print(f"  fetching per-station Capital Bikeshare trips for {m}...")
+            cached[m] = fetch_month_by_station(m)
+    cache_path.write_text(json.dumps(cached))
+    return {m: cached[m] for m in months}
+
+
 if __name__ == "__main__":
     months = sys.argv[1:] or ["202605"]
     result = cached_recent_months(months)

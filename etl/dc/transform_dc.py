@@ -16,7 +16,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from dc.fetch_dc_crashes import cached_bicycle_crashes  # noqa: E402
-from dc.fetch_capital_bikeshare import cached_recent_months  # noqa: E402
+from dc.fetch_capital_bikeshare import cached_recent_months, cached_station_months  # noqa: E402
+from dc.ward_boundaries import WardLookup  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "web" / "data"
@@ -152,10 +153,96 @@ def build_bikeshare_context() -> dict:
     }
 
 
+def build_ward_exposure() -> dict:
+    """A REAL per-ward exposure-relative indicator, not the disconnected
+    citywide context this used to be. Maps each Capital Bikeshare station
+    to its ward (point-in-polygon against the 8 official ward boundaries)
+    and aggregates trips by ward for the SAME Jan-May 2026 window used for
+    crashes here -- the two were previously on mismatched timescales (5
+    years of crashes vs. 5 months of trips), which would have made any
+    "rate" meaningless. This is the smallest window where both sides
+    actually overlap.
+
+    CRITICAL METHODOLOGY CAVEAT, not a footnote: the numerator (crashes)
+    counts ALL cyclists in a ward (personal bikes, personal e-bikes, AND
+    bikeshare riders). The denominator (bikeshare trips) counts ONLY
+    Capital Bikeshare's fleet. These are NOT the same population. This
+    ratio is a "crashes relative to bikeshare activity" indicator, NOT a
+    true risk-per-rider rate -- we say this in the output and the
+    dashboard must repeat it, not just this docstring.
+    """
+    lookup = WardLookup()
+    station_months = cached_station_months(RECENT_MONTHS)
+
+    ward_trips = defaultdict(lambda: {"total": 0, "electric_bike": 0})
+    unmapped_trips = 0
+    for month_data in station_months.values():
+        for sid, info in month_data.items():
+            if "lat" not in info or "lon" not in info:
+                continue
+            ward = lookup.ward_for(info["lon"], info["lat"])
+            counts = info["counts"]
+            month_total = sum(counts.values())
+            if ward is None:
+                unmapped_trips += month_total
+                continue
+            ward_trips[ward]["total"] += month_total
+            ward_trips[ward]["electric_bike"] += counts.get("electric_bike", 0)
+
+    # Crashes in the SAME Jan-May 2026 window, by ward.
+    records = cached_bicycle_crashes()
+    win_start = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    win_end = datetime(2026, 6, 1, tzinfo=timezone.utc)
+    crashes_in_window = defaultdict(int)
+    for r in records:
+        d = _parse_crash_date(r.get("FROMDATE"))
+        ward = r.get("WARD")
+        if not d or not ward or ward == "Null" or not (win_start <= d < win_end):
+            continue
+        crashes_in_window[ward] += 1
+
+    rows = []
+    for ward in sorted(set(ward_trips) | set(crashes_in_window)):
+        trips = ward_trips.get(ward, {"total": 0, "electric_bike": 0})
+        crashes = crashes_in_window.get(ward, 0)
+        rate = (crashes / trips["total"] * 1000) if trips["total"] else None
+        rows.append({
+            "ward": ward,
+            "crashes_jan_may_2026": crashes,
+            "bikeshare_trips_jan_may_2026": trips["total"],
+            "bikeshare_ebike_trips_jan_may_2026": trips["electric_bike"],
+            "crashes_per_1000_bikeshare_trips": round(rate, 2) if rate is not None else None,
+        })
+    rows.sort(key=lambda r: -(r["crashes_per_1000_bikeshare_trips"] or 0))
+
+    return {
+        "window": {"start": "2026-01-01", "end": "2026-05-31"},
+        "unmapped_bikeshare_trips": unmapped_trips,
+        "measure_note": (
+            "NOT a true risk-per-rider rate. crashes_per_1000_bikeshare_trips "
+            "divides ALL bicycle crashes in a ward (personal bikes, personal "
+            "e-bikes, AND bikeshare riders) by Capital Bikeshare trips "
+            "ONLY -- two different, overlapping-but-not-identical "
+            "populations. Read this as 'how much bicycle crash activity "
+            "relative to how much bikeshare activity', not 'how dangerous "
+            "is it per cyclist'. Both crashes and trips are restricted to "
+            "the same Jan-May 2026 window so the comparison is at least "
+            "apples-to-apples on TIME, even though it isn't on POPULATION. "
+            "Station-to-ward mapping is point-in-polygon against DC's "
+            "official 2022 ward boundaries; a small number of trips "
+            "started at stations outside DC proper (e.g. Arlington, VA) "
+            "and could not be mapped to any DC ward -- excluded, not "
+            "forced into the nearest one."
+        ),
+        "by_ward": rows,
+    }
+
+
 def build(years: list[int] | None = None) -> dict:
     return {
         "ward_summary": build_ward_summary(),
         "bikeshare_context": build_bikeshare_context(),
+        "ward_exposure": build_ward_exposure(),
     }
 
 
@@ -178,4 +265,12 @@ if __name__ == "__main__":
     for r in result["bikeshare_context"]["monthly"]:
         print(f"  {r['month']}: {r['electric_bike_share']*100:.0f}% e-bike "
               f"({r['electric_bike_trips']:,} of {r['total_trips']:,})")
+    we = result["ward_exposure"]
+    print(f"\nWard exposure (crashes per 1000 bikeshare trips, {we['window']['start']} to {we['window']['end']}):")
+    for r in we["by_ward"]:
+        rate = r["crashes_per_1000_bikeshare_trips"]
+        print(f"  {r['ward']:10} crashes={r['crashes_jan_may_2026']:4}  "
+              f"bikeshare_trips={r['bikeshare_trips_jan_may_2026']:6}  "
+              f"rate={rate if rate is not None else 'n/a'}")
+    print(f"Unmapped bikeshare trips (outside DC wards): {we['unmapped_bikeshare_trips']}")
     print(f"\nWrote {OUT / 'dc_pilot.json'}")
