@@ -3,7 +3,7 @@
     2022,
     2023
   ],
-  "methodology_note": "Three interpretable components, no opaque machine learning: (1) state ranking adjusts FARS fatality counts by an ACS commute-cycling proxy -- a real but limited exposure denominator; (2) factor profile is a cross-tab of PBCAT crash type by lighting/time-of-day with sample sizes shown; (3) cluster flags are raw fatality-count density, not an exposure-adjusted rate. Prevention levers are citations from FHWA/NACTO/NHTSA road-safety guidance tied to the matching PBCAT crash type, not claims our data proves the lever works.",
+  "methodology_note": "Interpretable components, no opaque machine learning: (1) state ranking adjusts FARS fatality counts by an ACS commute-cycling proxy -- a real but limited exposure denominator; (2) TWO factor profiles, kept separate on purpose -- fatal crashes (FARS, census, raw counts) and non-fatal crashes (CRSS, weighted probability-sample estimate) -- because mixing an unweighted census with a weighted sample into one number would misrepresent both; (3) cluster flags are raw fatality-count density, not an exposure-adjusted rate. Prevention levers are citations from FHWA/NACTO/NHTSA road-safety guidance tied to the matching PBCAT crash type, not claims our data proves the lever works.",
   "state_ranking": {
     "years": [
       2022,
@@ -1724,11 +1724,11 @@
         ],
         "prevention_lever": {
           "levers": [
-            "Street lighting improvements",
-            "Bicycle-mounted lighting/reflective gear requirements or education"
+            "Protected left-turn signal phases",
+            "Protected intersection design"
           ],
-          "why": "Dark-unlit conditions show a substantially higher concentration of fatal motorist-overtaking crashes than daylight in our own factor profile -- lighting is one of the few levers a city can act on directly and quickly.",
-          "source": "NHTSA Countermeasures That Work (Pedestrian/Bicyclist Safety chapter)"
+          "why": "Separates the turning movement from the bicycle through-movement in time rather than relying on driver judgment.",
+          "source": "NACTO Urban Bikeway Design Guide"
         }
       },
       {
@@ -1916,6 +1916,451 @@
             "count": 1
           }
         ],
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      }
+    ]
+  },
+  "factor_profile_crss": {
+    "years": [
+      2022,
+      2023
+    ],
+    "measure_note": "CRSS is a weighted probability sample of NON-FATAL police-reported crashes -- it excludes fatal crashes by design (those are FARS's domain, shown separately). Figures here are weighted NATIONAL ESTIMATES, not raw counts. Each combination also shows raw_sample_n -- the actual number of sampled cases behind the estimate -- since a small raw sample can still produce a large-looking weighted estimate.",
+    "profiles": [
+      {
+        "lighting": "Daylight",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "raw_sample_n": 1160,
+        "estimated_crashes": 33241,
+        "top_crash_type": "Crossing Paths - Other Circumstances",
+        "top_crash_type_share": 0.164,
+        "top_crash_type_estimate": 5447,
+        "prevention_lever": {
+          "levers": [
+            "Improved lighting at conflict points",
+            "Sightline clearance",
+            "Speed reduction near crossings"
+          ],
+          "why": "A catch-all for path-crossing conflicts not otherwise typed; general visibility and speed countermeasures apply broadly.",
+          "source": "FHWA PBCAT v3 User Guide"
+        }
+      },
+      {
+        "lighting": "Daylight",
+        "time_of_day": "Midday (10am-3pm)",
+        "raw_sample_n": 1035,
+        "estimated_crashes": 27035,
+        "top_crash_type": "Crossing Paths - Other Circumstances",
+        "top_crash_type_share": 0.145,
+        "top_crash_type_estimate": 3921,
+        "prevention_lever": {
+          "levers": [
+            "Improved lighting at conflict points",
+            "Sightline clearance",
+            "Speed reduction near crossings"
+          ],
+          "why": "A catch-all for path-crossing conflicts not otherwise typed; general visibility and speed countermeasures apply broadly.",
+          "source": "FHWA PBCAT v3 User Guide"
+        }
+      },
+      {
+        "lighting": "Daylight",
+        "time_of_day": "Morning (5-10am)",
+        "raw_sample_n": 590,
+        "estimated_crashes": 16704,
+        "top_crash_type": "Motorist Failed to Yield - Sign-Controlled Intersection",
+        "top_crash_type_share": 0.164,
+        "top_crash_type_estimate": 2744,
+        "prevention_lever": {
+          "levers": [
+            "All-way stop conversion where warranted",
+            "Sightline clearance at stop signs",
+            "Intersection daylighting (removing parking near corners)"
+          ],
+          "why": "Same root cause as the cyclist-side failure-to-yield type: sign-controlled intersections rely entirely on driver judgment, which clearing sightlines directly supports.",
+          "source": "NACTO Don't Give Up at the Intersection"
+        }
+      },
+      {
+        "lighting": "Dark - Lighted",
+        "time_of_day": "Night (7-11pm)",
+        "raw_sample_n": 371,
+        "estimated_crashes": 9628,
+        "top_crash_type": "Crossing Paths - Other Circumstances",
+        "top_crash_type_share": 0.188,
+        "top_crash_type_estimate": 1812,
+        "prevention_lever": {
+          "levers": [
+            "Improved lighting at conflict points",
+            "Sightline clearance",
+            "Speed reduction near crossings"
+          ],
+          "why": "A catch-all for path-crossing conflicts not otherwise typed; general visibility and speed countermeasures apply broadly.",
+          "source": "FHWA PBCAT v3 User Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Lighted",
+        "time_of_day": "Late night/early morning (11pm-5am)",
+        "raw_sample_n": 130,
+        "estimated_crashes": 3407,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.236,
+        "top_crash_type_estimate": 805,
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Lighted",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "raw_sample_n": 105,
+        "estimated_crashes": 3077,
+        "top_crash_type": "Motorist Left Turn / Merge",
+        "top_crash_type_share": 0.168,
+        "top_crash_type_estimate": 518,
+        "prevention_lever": {
+          "levers": [
+            "Protected left-turn signal phases",
+            "Protected intersection design"
+          ],
+          "why": "Separates the turning movement from the bicycle through-movement in time rather than relying on driver judgment.",
+          "source": "NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Daylight",
+        "time_of_day": "Night (7-11pm)",
+        "raw_sample_n": 111,
+        "estimated_crashes": 3074,
+        "top_crash_type": "Motorist Failed to Yield - Midblock",
+        "top_crash_type_share": 0.116,
+        "top_crash_type_estimate": 355,
+        "prevention_lever": {
+          "levers": [
+            "Midblock crossing islands/refuges",
+            "Improved street lighting"
+          ],
+          "why": "Midblock locations lack the right-of-way clarity of a signalized or sign-controlled intersection for either party.",
+          "source": "FHWA PBCAT crash-type countermeasure tables"
+        }
+      },
+      {
+        "lighting": "Dark - Not Lighted",
+        "time_of_day": "Night (7-11pm)",
+        "raw_sample_n": 86,
+        "estimated_crashes": 2628,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.353,
+        "top_crash_type_estimate": 927,
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dusk",
+        "time_of_day": "Night (7-11pm)",
+        "raw_sample_n": 72,
+        "estimated_crashes": 2344,
+        "top_crash_type": "Crossing Paths - Other Circumstances",
+        "top_crash_type_share": 0.166,
+        "top_crash_type_estimate": 389,
+        "prevention_lever": {
+          "levers": [
+            "Improved lighting at conflict points",
+            "Sightline clearance",
+            "Speed reduction near crossings"
+          ],
+          "why": "A catch-all for path-crossing conflicts not otherwise typed; general visibility and speed countermeasures apply broadly.",
+          "source": "FHWA PBCAT v3 User Guide"
+        }
+      },
+      {
+        "lighting": "Dusk",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "raw_sample_n": 60,
+        "estimated_crashes": 1694,
+        "top_crash_type": "Bicyclist Failed to Yield - Signalized Intersection",
+        "top_crash_type_share": 0.156,
+        "top_crash_type_estimate": 264,
+        "prevention_lever": {
+          "levers": [
+            "Bicycle-specific signal phases",
+            "Protected intersection design",
+            "Leading bicycle intervals"
+          ],
+          "why": "Separates bicycle and turning-vehicle movements in time, removing the conflict rather than relying on yielding.",
+          "source": "NACTO Urban Bikeway Design Guide -- Bicycle Signals"
+        }
+      },
+      {
+        "lighting": "Dark - Lighted",
+        "time_of_day": "Morning (5-10am)",
+        "raw_sample_n": 45,
+        "estimated_crashes": 1167,
+        "top_crash_type": "Motorist Right Turn / Merge",
+        "top_crash_type_share": 0.169,
+        "top_crash_type_estimate": 197,
+        "prevention_lever": {
+          "levers": [
+            "Right-turn-on-red restrictions near bike lanes",
+            "Protected intersection design",
+            "Bicycle-priority right-turn lane markings"
+          ],
+          "why": "Reduces the 'right-hook' conflict where a turning driver crosses a cyclist's straight-through path.",
+          "source": "NACTO Urban Bikeway Design Guide -- Protected Intersections"
+        }
+      },
+      {
+        "lighting": "Dawn",
+        "time_of_day": "Morning (5-10am)",
+        "raw_sample_n": 34,
+        "estimated_crashes": 841,
+        "top_crash_type": "Crossing Paths - Other Circumstances",
+        "top_crash_type_share": 0.205,
+        "top_crash_type_estimate": 173,
+        "prevention_lever": {
+          "levers": [
+            "Improved lighting at conflict points",
+            "Sightline clearance",
+            "Speed reduction near crossings"
+          ],
+          "why": "A catch-all for path-crossing conflicts not otherwise typed; general visibility and speed countermeasures apply broadly.",
+          "source": "FHWA PBCAT v3 User Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Not Lighted",
+        "time_of_day": "Late night/early morning (11pm-5am)",
+        "raw_sample_n": 26,
+        "estimated_crashes": 628,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.479,
+        "top_crash_type_estimate": 301,
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Not Lighted",
+        "time_of_day": "Morning (5-10am)",
+        "raw_sample_n": 23,
+        "estimated_crashes": 586,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 0.595,
+        "top_crash_type_estimate": 348,
+        "prevention_lever": {
+          "levers": [
+            "Protected/separated bike lanes",
+            "Lower posted speed limits",
+            "Safe passing distance laws"
+          ],
+          "why": "Removes the need for a motorist to judge passing distance at all, or reduces the speed differential and stopping distance if a misjudgment happens.",
+          "source": "FHWA Bikeway Selection Guide; NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Not Lighted",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "raw_sample_n": 18,
+        "estimated_crashes": 570,
+        "top_crash_type": "Motorist Failed to Yield - Sign-Controlled Intersection",
+        "top_crash_type_share": 0.239,
+        "top_crash_type_estimate": 136,
+        "prevention_lever": {
+          "levers": [
+            "All-way stop conversion where warranted",
+            "Sightline clearance at stop signs",
+            "Intersection daylighting (removing parking near corners)"
+          ],
+          "why": "Same root cause as the cyclist-side failure-to-yield type: sign-controlled intersections rely entirely on driver judgment, which clearing sightlines directly supports.",
+          "source": "NACTO Don't Give Up at the Intersection"
+        }
+      },
+      {
+        "lighting": "Daylight",
+        "time_of_day": "Unknown",
+        "raw_sample_n": 18,
+        "estimated_crashes": 438,
+        "top_crash_type": "Bicyclist Failed to Yield - Signalized Intersection",
+        "top_crash_type_share": 0.217,
+        "top_crash_type_estimate": 95,
+        "prevention_lever": {
+          "levers": [
+            "Bicycle-specific signal phases",
+            "Protected intersection design",
+            "Leading bicycle intervals"
+          ],
+          "why": "Separates bicycle and turning-vehicle movements in time, removing the conflict rather than relying on yielding.",
+          "source": "NACTO Urban Bikeway Design Guide -- Bicycle Signals"
+        }
+      },
+      {
+        "lighting": "Dark - Unknown Lighting",
+        "time_of_day": "Late night/early morning (11pm-5am)",
+        "raw_sample_n": 18,
+        "estimated_crashes": 424,
+        "top_crash_type": "Motorist Left Turn / Merge",
+        "top_crash_type_share": 0.227,
+        "top_crash_type_estimate": 96,
+        "prevention_lever": {
+          "levers": [
+            "Protected left-turn signal phases",
+            "Protected intersection design"
+          ],
+          "why": "Separates the turning movement from the bicycle through-movement in time rather than relying on driver judgment.",
+          "source": "NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Unknown Lighting",
+        "time_of_day": "Night (7-11pm)",
+        "raw_sample_n": 7,
+        "estimated_crashes": 174,
+        "top_crash_type": "Bicyclist Overtaking Motor Vehicle",
+        "top_crash_type_share": 0.348,
+        "top_crash_type_estimate": 61,
+        "prevention_lever": {
+          "levers": [
+            "Wider bike lanes/passing space",
+            "Rider education on safe passing of stopped/slow traffic"
+          ],
+          "why": "Gives a cyclist room to pass a stopped or slow vehicle without entering the vehicle's blind spot or travel lane.",
+          "source": "FHWA PBCAT crash-type countermeasure tables"
+        }
+      },
+      {
+        "lighting": "Dark - Lighted",
+        "time_of_day": "Unknown",
+        "raw_sample_n": 4,
+        "estimated_crashes": 100,
+        "top_crash_type": "Bicyclist Left Turn / Merge",
+        "top_crash_type_share": 0.276,
+        "top_crash_type_estimate": 28,
+        "prevention_lever": {
+          "levers": [
+            "Two-stage turn boxes",
+            "Protected intersection design"
+          ],
+          "why": "Lets a cyclist complete a left turn in two signal phases without merging across traffic.",
+          "source": "NACTO Urban Bikeway Design Guide"
+        }
+      },
+      {
+        "lighting": "Reported as Unknown",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "raw_sample_n": 2,
+        "estimated_crashes": 46,
+        "top_crash_type": "Crossing Paths - Other Circumstances",
+        "top_crash_type_share": 0.514,
+        "top_crash_type_estimate": 23,
+        "prevention_lever": {
+          "levers": [
+            "Improved lighting at conflict points",
+            "Sightline clearance",
+            "Speed reduction near crossings"
+          ],
+          "why": "A catch-all for path-crossing conflicts not otherwise typed; general visibility and speed countermeasures apply broadly.",
+          "source": "FHWA PBCAT v3 User Guide"
+        }
+      },
+      {
+        "lighting": "Not Reported",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "raw_sample_n": 1,
+        "estimated_crashes": 32,
+        "top_crash_type": "Bicyclist Failed to Yield - Sign-Controlled Intersection",
+        "top_crash_type_share": 1.0,
+        "top_crash_type_estimate": 32,
+        "prevention_lever": {
+          "levers": [
+            "All-way stop conversion where warranted",
+            "Sightline clearance at stop signs",
+            "Intersection daylighting (removing parking near corners)"
+          ],
+          "why": "Sign-controlled intersections rely entirely on driver/rider judgment; clearing sightlines and adding daylighting reduces the chance of a missed yield.",
+          "source": "NACTO Don't Give Up at the Intersection"
+        }
+      },
+      {
+        "lighting": "Dark - Unknown Lighting",
+        "time_of_day": "Unknown",
+        "raw_sample_n": 1,
+        "estimated_crashes": 25,
+        "top_crash_type": "Motorist Right Turn / Merge",
+        "top_crash_type_share": 1.0,
+        "top_crash_type_estimate": 25,
+        "prevention_lever": {
+          "levers": [
+            "Right-turn-on-red restrictions near bike lanes",
+            "Protected intersection design",
+            "Bicycle-priority right-turn lane markings"
+          ],
+          "why": "Reduces the 'right-hook' conflict where a turning driver crosses a cyclist's straight-through path.",
+          "source": "NACTO Urban Bikeway Design Guide -- Protected Intersections"
+        }
+      },
+      {
+        "lighting": "Reported as Unknown",
+        "time_of_day": "Unknown",
+        "raw_sample_n": 1,
+        "estimated_crashes": 24,
+        "top_crash_type": "Other / Unknown - Insufficient Details",
+        "top_crash_type_share": 1.0,
+        "top_crash_type_estimate": 24
+      },
+      {
+        "lighting": "Dark - Unknown Lighting",
+        "time_of_day": "Afternoon/Evening rush (3-7pm)",
+        "raw_sample_n": 1,
+        "estimated_crashes": 22,
+        "top_crash_type": "Crossing Paths - Other Circumstances",
+        "top_crash_type_share": 1.0,
+        "top_crash_type_estimate": 22,
+        "prevention_lever": {
+          "levers": [
+            "Improved lighting at conflict points",
+            "Sightline clearance",
+            "Speed reduction near crossings"
+          ],
+          "why": "A catch-all for path-crossing conflicts not otherwise typed; general visibility and speed countermeasures apply broadly.",
+          "source": "FHWA PBCAT v3 User Guide"
+        }
+      },
+      {
+        "lighting": "Dark - Unknown Lighting",
+        "time_of_day": "Morning (5-10am)",
+        "raw_sample_n": 1,
+        "estimated_crashes": 21,
+        "top_crash_type": "Motorist Overtaking Bicyclist",
+        "top_crash_type_share": 1.0,
+        "top_crash_type_estimate": 21,
         "prevention_lever": {
           "levers": [
             "Protected/separated bike lanes",

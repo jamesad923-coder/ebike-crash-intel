@@ -243,6 +243,7 @@
       independent group of crashes (its own "n"), not a slice of one shared
       total — percentages describe only that card's cases and are not
       meant to add up across cards.</p>
+    <div class="toggle-row" id="risk-factor-toggle"></div>
     <div id="risk-factors"></div>
 
     <div class="src" id="risk-src"></div>
@@ -568,15 +569,23 @@ function renderRankTable() {
   document.getElementById("risk-rank-table").innerHTML = html;
 }
 
+let riskFactorSource = "fars";
+
 function renderFactors() {
-  document.getElementById("risk-factors").innerHTML = RISK.factor_profile.profiles.slice(0, 10).map(p => {
+  const isFars = riskFactorSource === "fars";
+  const profiles = isFars ? RISK.factor_profile.profiles : RISK.factor_profile_crss.profiles;
+  document.getElementById("risk-factors").innerHTML = profiles.slice(0, 10).map(p => {
     const lever = p.prevention_lever
       ? `<div class="lever"><b>Lever:</b> ${p.prevention_lever.levers.join(", ")}
            <span class="src">${p.prevention_lever.source}</span></div>`
       : "";
+    const n = isFars ? p.sample_size : p.raw_sample_n;
+    const stat = isFars
+      ? `${p.top_crash_type} — ${(p.top_crash_type_share*100).toFixed(0)}% of these ${n} cases`
+      : `${p.top_crash_type} — ${(p.top_crash_type_share*100).toFixed(0)}% of an estimated ${p.estimated_crashes.toLocaleString()} crashes (raw sample n=${n})`;
     return `<div class="factor-card">
-      <div class="head"><span>${p.lighting} · ${p.time_of_day}</span><span class="n">n=${p.sample_size}</span></div>
-      <div style="margin-top:4px">${p.top_crash_type} — ${(p.top_crash_type_share*100).toFixed(0)}% of these ${p.sample_size} cases</div>
+      <div class="head"><span>${p.lighting} · ${p.time_of_day}</span><span class="n">n=${n}</span></div>
+      <div style="margin-top:4px">${stat}</div>
       ${lever}
     </div>`;
   }).join("");
@@ -593,6 +602,14 @@ async function loadRisk() {
     }, v==="rate");
   });
   renderRankTable();
+
+  const ftc = document.getElementById("risk-factor-toggle");
+  [["fars","Fatal crashes (FARS, census)"],["crss","Non-fatal crashes (CRSS, weighted estimate)"]].forEach(([v,l])=>{
+    chip(ftc, l, (b)=>{ riskFactorSource=v;
+      [...ftc.children].forEach(c=>c.classList.remove("on")); b.classList.add("on");
+      renderFactors();
+    }, v==="fars");
+  });
   renderFactors();
 
   const clusterGeo = {

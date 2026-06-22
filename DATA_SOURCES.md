@@ -141,6 +141,32 @@ the short version.
   coverage as "his small electric dirt bike." This is a text-keyword
   signal, not a verified vehicle classification.
 
+## CRSS — Crash Report Sampling System (NHTSA)
+
+- **What it is:** the non-fatal sibling of FARS -- a nationally
+  representative PROBABILITY SAMPLE of police-reported crashes (it
+  excludes fatal crashes entirely; those stay in FARS). Same file
+  structure as FARS (`accident.csv`, `person.csv`, `pbtype.csv`) and the
+  same `PER_TYP` pedalcyclist coding (6=Bicyclist, 7=Other Pedalcyclist),
+  but every row carries a sample `WEIGHT` -- summing weights gives a
+  national estimate, not a raw count -- and there is **no
+  latitude/longitude** at all, so CRSS cannot be mapped, only used for
+  national-level statistics.
+- **Access:** `https://static.nhtsa.gov/nhtsa/downloads/CRSS/{year}/CRSS{year}CSV.zip`
+  -- no authentication, no bot-blocking, fully scriptable, verified live
+  for 2022 and 2023.
+- **Why kept separate from the FARS factor profile, not merged:** FARS is
+  an unweighted census (each row = one real fatal crash); CRSS is a
+  weighted sample. Adding a FARS row-count to a CRSS weighted-sum would
+  mix two different kinds of number and misrepresent both. The dashboard
+  shows them as two toggleable, clearly-labeled views instead.
+- **Real finding from combining the two:** the most common FATAL crash
+  type is "Motorist Overtaking Bicyclist," but the most common NON-FATAL
+  crash type is "Crossing Paths" / "Failed to Yield" -- consistent with
+  overtaking crashes at speed being more likely to prove fatal than
+  intersection/crossing conflicts. Neither profile alone would show this;
+  having both, kept honestly separate, does.
+
 ## Census ACS — bike-commute exposure proxy
 
 - **What it is:** American Community Survey 5-year estimates, table B08301
@@ -193,7 +219,7 @@ already exists in the literature.
 |---|---|---|
 | News ingestion (GDELT) | **Done** | Live -- see "News-sourced reports" above. |
 | State-level exposure proxy (ACS bike-commute) | **Done** | Live -- see "Risk & Prevention layer" above. Commute-only; not true ridership. |
-| NHTSA CRSS (non-fatal crash estimates) | Phase 2 | Adds depth to FARS-style crashes; not essential for v1's two-source MVP. |
+| NHTSA CRSS (non-fatal crash estimates) | **Done** | Live -- see "CRSS" above. |
 | City/county open-data portals (Vision Zero etc.) | Phase 3 | Coverage varies wildly by city; needed for any real street-level rate work, paired with exposure data. |
 | True ridership/exposure (GBFS, Strava Metro) | Phase 3 | The hardest gap — no national street-level denominator exists; only a few cities publish anything usable. ACS commute data is a partial, coarser stand-in at the state level only. |
 | OpenStreetMap / infrastructure context | Phase 3 | Legitimate role is bike-lane/intersection context near a known crash point, not crash detection. |

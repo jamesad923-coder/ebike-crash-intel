@@ -68,6 +68,39 @@ LEVERS = {
                "to contact in the first place.",
         "source": "FHWA Bikeway Selection Guide",
     },
+    "Motorist Failed to Yield - Sign-Controlled Intersection": {
+        "levers": ["All-way stop conversion where warranted", "Sightline clearance at stop signs",
+                   "Intersection daylighting (removing parking near corners)"],
+        "why": "Same root cause as the cyclist-side failure-to-yield type: "
+               "sign-controlled intersections rely entirely on driver "
+               "judgment, which clearing sightlines directly supports.",
+        "source": "NACTO Don't Give Up at the Intersection",
+    },
+    "Motorist Failed to Yield - Midblock": {
+        "levers": ["Midblock crossing islands/refuges", "Improved street lighting"],
+        "why": "Midblock locations lack the right-of-way clarity of a "
+               "signalized or sign-controlled intersection for either party.",
+        "source": "FHWA PBCAT crash-type countermeasure tables",
+    },
+    "Motorist Left Turn / Merge": {
+        "levers": ["Protected left-turn signal phases", "Protected intersection design"],
+        "why": "Separates the turning movement from the bicycle through-"
+               "movement in time rather than relying on driver judgment.",
+        "source": "NACTO Urban Bikeway Design Guide",
+    },
+    "Motorist Right Turn / Merge": {
+        "levers": ["Right-turn-on-red restrictions near bike lanes", "Protected intersection design",
+                   "Bicycle-priority right-turn lane markings"],
+        "why": "Reduces the 'right-hook' conflict where a turning driver "
+               "crosses a cyclist's straight-through path.",
+        "source": "NACTO Urban Bikeway Design Guide -- Protected Intersections",
+    },
+    "Bicyclist Overtaking Motor Vehicle": {
+        "levers": ["Wider bike lanes/passing space", "Rider education on safe passing of stopped/slow traffic"],
+        "why": "Gives a cyclist room to pass a stopped or slow vehicle "
+               "without entering the vehicle's blind spot or travel lane.",
+        "source": "FHWA PBCAT crash-type countermeasure tables",
+    },
 }
 
 GENERAL_LIGHTING_LEVER = {
