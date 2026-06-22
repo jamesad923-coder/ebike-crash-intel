@@ -11,8 +11,9 @@ from __future__ import annotations
 import json
 import sys
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.error import HTTPError
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from dc.fetch_dc_crashes import cached_bicycle_crashes  # noqa: E402
@@ -22,7 +23,26 @@ from dc.ward_boundaries import WardLookup  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "web" / "data"
 
-RECENT_MONTHS = ["202601", "202602", "202603", "202604", "202605"]
+
+def _recent_months(n=5) -> list[str]:
+    """Last n calendar months as YYYYMM, ending with LAST month (not the
+    current one -- Capital Bikeshare publishes a month's file with some
+    lag, so the in-progress current month almost never has a file yet).
+    Computed dynamically so this doesn't quietly go stale the way a
+    hardcoded list would -- a hardcoded ["202601",...,"202605"] was
+    exactly this kind of silent staleness risk, caught during review."""
+    now = datetime.now(timezone.utc)
+    months = []
+    y, m = now.year, now.month
+    for _ in range(n):
+        m -= 1
+        if m == 0:
+            m, y = 12, y - 1
+        months.append(f"{y}{m:02d}")
+    return sorted(months)
+
+
+RECENT_MONTHS = _recent_months()
 
 # The raw dataset spans 1996-2026, very unevenly (1 record in 1996, a gap
 # to 2011, then ramping up -- 2016 onward is when DC's reporting clearly
@@ -173,6 +193,10 @@ def build_ward_exposure() -> dict:
     """
     lookup = WardLookup()
     station_months = cached_station_months(RECENT_MONTHS)
+    months_fetched = sorted(station_months.keys())  # actual months available,
+    # not RECENT_MONTHS verbatim -- a not-yet-published month gets skipped
+    # upstream, so the window must reflect what we actually got, not what
+    # we asked for.
 
     ward_trips = defaultdict(lambda: {"total": 0, "electric_bike": 0})
     unmapped_trips = 0
@@ -189,10 +213,19 @@ def build_ward_exposure() -> dict:
             ward_trips[ward]["total"] += month_total
             ward_trips[ward]["electric_bike"] += counts.get("electric_bike", 0)
 
-    # Crashes in the SAME Jan-May 2026 window, by ward.
+    # Crashes in the SAME window as the bikeshare months actually fetched.
+    if not months_fetched:
+        return {
+            "window": {"start": None, "end": None},
+            "unmapped_bikeshare_trips": 0,
+            "measure_note": "No Capital Bikeshare months were available to compute this.",
+            "by_ward": [],
+        }
+    win_start = datetime(int(months_fetched[0][:4]), int(months_fetched[0][4:]), 1, tzinfo=timezone.utc)
+    last_y, last_m = int(months_fetched[-1][:4]), int(months_fetched[-1][4:])
+    win_end = datetime(last_y + (1 if last_m == 12 else 0), 1 if last_m == 12 else last_m + 1, 1, tzinfo=timezone.utc)
+
     records = cached_bicycle_crashes()
-    win_start = datetime(2026, 1, 1, tzinfo=timezone.utc)
-    win_end = datetime(2026, 6, 1, tzinfo=timezone.utc)
     crashes_in_window = defaultdict(int)
     for r in records:
         d = _parse_crash_date(r.get("FROMDATE"))
@@ -208,15 +241,15 @@ def build_ward_exposure() -> dict:
         rate = (crashes / trips["total"] * 1000) if trips["total"] else None
         rows.append({
             "ward": ward,
-            "crashes_jan_may_2026": crashes,
-            "bikeshare_trips_jan_may_2026": trips["total"],
-            "bikeshare_ebike_trips_jan_may_2026": trips["electric_bike"],
+            "crashes_in_window": crashes,
+            "bikeshare_trips_in_window": trips["total"],
+            "bikeshare_ebike_trips_in_window": trips["electric_bike"],
             "crashes_per_1000_bikeshare_trips": round(rate, 2) if rate is not None else None,
         })
     rows.sort(key=lambda r: -(r["crashes_per_1000_bikeshare_trips"] or 0))
 
     return {
-        "window": {"start": "2026-01-01", "end": "2026-05-31"},
+        "window": {"start": win_start.strftime("%Y-%m-%d"), "end": (win_end - timedelta(days=1)).strftime("%Y-%m-%d")},
         "unmapped_bikeshare_trips": unmapped_trips,
         "measure_note": (
             "NOT a true risk-per-rider rate. crashes_per_1000_bikeshare_trips "
@@ -269,8 +302,8 @@ if __name__ == "__main__":
     print(f"\nWard exposure (crashes per 1000 bikeshare trips, {we['window']['start']} to {we['window']['end']}):")
     for r in we["by_ward"]:
         rate = r["crashes_per_1000_bikeshare_trips"]
-        print(f"  {r['ward']:10} crashes={r['crashes_jan_may_2026']:4}  "
-              f"bikeshare_trips={r['bikeshare_trips_jan_may_2026']:6}  "
+        print(f"  {r['ward']:10} crashes={r['crashes_in_window']:4}  "
+              f"bikeshare_trips={r['bikeshare_trips_in_window']:6}  "
               f"rate={rate if rate is not None else 'n/a'}")
     print(f"Unmapped bikeshare trips (outside DC wards): {we['unmapped_bikeshare_trips']}")
     print(f"\nWrote {OUT / 'dc_pilot.json'}")

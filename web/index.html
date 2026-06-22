@@ -312,7 +312,7 @@
       see callout below the table. Mapped each Capital Bikeshare station to
       its ward (point-in-polygon against DC's official boundaries) so this
       is a real, computed comparison, not disconnected context. Both sides
-      use the same Jan–May 2026 window.</p>
+      use the same <b id="dc-exposure-window">recent</b> window.</p>
     <div id="dc-exposure-table"></div>
     <p class="estimate-note" id="dc-exposure-note"></p>
 
@@ -791,12 +791,14 @@ async function loadDC() {
       </tr>`).join("") + `</table>`;
 
   const we = DC.ward_exposure;
+  document.getElementById("dc-exposure-window").textContent =
+    `${formatISODate(we.window.start)}–${formatISODate(we.window.end)}`;
   document.getElementById("dc-exposure-table").innerHTML = `<table class="rank-table"><tr>
       <th>Ward</th><th>Crashes</th><th>Bikeshare trips</th><th>of which e-bike</th><th>Crashes / 1,000 trips</th>
     </tr>` + we.by_ward.map(r => `<tr>
-        <td>${r.ward}</td><td>${r.crashes_jan_may_2026}</td>
-        <td>${r.bikeshare_trips_jan_may_2026.toLocaleString()}</td>
-        <td>${r.bikeshare_ebike_trips_jan_may_2026.toLocaleString()}</td>
+        <td>${r.ward}</td><td>${r.crashes_in_window}</td>
+        <td>${r.bikeshare_trips_in_window.toLocaleString()}</td>
+        <td>${r.bikeshare_ebike_trips_in_window.toLocaleString()}</td>
         <td>${r.crashes_per_1000_bikeshare_trips ?? "n/a"}</td>
       </tr>`).join("") + `</table>`;
   document.getElementById("dc-exposure-note").textContent = we.measure_note;

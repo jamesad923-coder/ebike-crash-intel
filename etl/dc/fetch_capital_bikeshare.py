@@ -51,16 +51,24 @@ def fetch_month(yyyymm: str) -> dict:
 
 
 def cached_recent_months(months: list[str]) -> dict[str, dict]:
-    """Fetch + cache trip-type counts for a list of "YYYYMM" months."""
+    """Fetch + cache trip-type counts for a list of "YYYYMM" months.
+    Months are now computed dynamically (see transform_dc.py's
+    _recent_months), so a request for a not-yet-published month is a real
+    possibility, not just a hypothetical -- skip it rather than crash the
+    whole pipeline over one missing file."""
+    from urllib.error import HTTPError
     RAW.mkdir(parents=True, exist_ok=True)
     cache_path = RAW / "capital_bikeshare_monthly_counts.json"
     cached = json.loads(cache_path.read_text()) if cache_path.exists() else {}
     for m in months:
         if m not in cached:
             print(f"  fetching Capital Bikeshare trips for {m}...")
-            cached[m] = fetch_month(m)
+            try:
+                cached[m] = fetch_month(m)
+            except HTTPError as e:
+                print(f"    skipping {m}: not available yet ({e.code})")
     cache_path.write_text(json.dumps(cached, indent=2))
-    return {m: cached[m] for m in months}
+    return {m: cached[m] for m in months if m in cached}
 
 
 def fetch_month_by_station(yyyymm: str) -> dict:
@@ -108,15 +116,19 @@ def fetch_month_by_station(yyyymm: str) -> dict:
 
 
 def cached_station_months(months: list[str]) -> dict[str, dict]:
+    from urllib.error import HTTPError
     RAW.mkdir(parents=True, exist_ok=True)
     cache_path = RAW / "capital_bikeshare_by_station.json"
     cached = json.loads(cache_path.read_text()) if cache_path.exists() else {}
     for m in months:
         if m not in cached:
             print(f"  fetching per-station Capital Bikeshare trips for {m}...")
-            cached[m] = fetch_month_by_station(m)
+            try:
+                cached[m] = fetch_month_by_station(m)
+            except HTTPError as e:
+                print(f"    skipping {m}: not available yet ({e.code})")
     cache_path.write_text(json.dumps(cached))
-    return {m: cached[m] for m in months}
+    return {m: cached[m] for m in months if m in cached}
 
 
 if __name__ == "__main__":
