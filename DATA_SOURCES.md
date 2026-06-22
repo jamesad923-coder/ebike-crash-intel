@@ -247,12 +247,23 @@ already exists in the literature.
   the news-sourced fatality reports involve). Ward crash counts are raw
   counts, not exposure-adjusted -- a busy ward looks "worse" partly
   because more riding happens there.
-- **Real finding:** Ward 7 had 5 bicyclist fatalities from only 326
-  crashes on record, vs. Ward 2's 4 fatalities from 2,406 crashes -- a
-  notably worse fatal-outcome ratio in Ward 7, consistent with documented
-  infrastructure disparities east of the Anacostia River. This is a count
-  comparison, not a rate -- stated as a pattern worth investigating, not
-  a proven causal claim.
+- **Date-window correction (caught by the user, fixed):** the raw crash
+  dataset actually spans 1996-2026, but reporting was sparse and
+  inconsistent before roughly 2016. The ward table originally summed
+  all 30 years into one cumulative total -- which would make a ward
+  look worse partly because it's been recorded longer, not because it's
+  more dangerous now. Fixed: `transform_dc.py` now filters to a fixed,
+  recent window (the most recent 5 years, computed dynamically from the
+  data's own max date) and reports BOTH the windowed and all-time record
+  counts, plus the exact date range, explicitly in the dashboard -- not
+  just in this file.
+- **Real finding (in the corrected 5-year window, Jan 2022-Jun 2026):**
+  Ward 7 had 3 bicyclist fatalities from 128 crashes on record, vs.
+  Ward 1's 0 fatalities from 418 crashes -- a worse fatal-outcome ratio
+  in Ward 7, consistent with documented infrastructure disparities east
+  of the Anacostia River. These are still small counts (a handful of
+  fatalities citywide), so this is stated as a pattern worth
+  investigating, not statistically robust proof of a real disparity.
 - **This is a proof of concept**, not a template assumed to generalize:
   whether other cities have comparably good open data (exact crash
   coordinates, per-mode severity breakdown, AND a bikeshare system that
