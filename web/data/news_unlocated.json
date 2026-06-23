@@ -2,6 +2,30 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "65+",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wmdt.com",
+      "url": "https://www.wmdt.com/2026/06/potomac-woman-killed-in-fatal-e-bike-crash-in-rehoboth-beach/",
+      "seendate": "20260622T210000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wmdt.com"
+      ],
+      "sources": [
+        {
+          "domain": "wmdt.com",
+          "url": "https://www.wmdt.com/2026/06/potomac-woman-killed-in-fatal-e-bike-crash-in-rehoboth-beach/",
+          "date": "20260622T210000Z"
+        }
+      ]
+    },
+    {
       "device": "Throttle vehicle (unclear e-bike classification)",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
@@ -94,6 +118,30 @@
           "domain": "q95fm.net",
           "url": "https://www.q95fm.net/2026/06/19/regional-news-june-19th-2026/",
           "date": "20260620T113000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "yahoo.com",
+      "url": "https://www.yahoo.com/news/us/articles/abuse-hurled-judge-first-group-114846525.html",
+      "seendate": "20260617T220000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "yahoo.com"
+      ],
+      "sources": [
+        {
+          "domain": "yahoo.com",
+          "url": "https://www.yahoo.com/news/us/articles/abuse-hurled-judge-first-group-114846525.html",
+          "date": "20260617T220000Z"
         }
       ]
     },
@@ -214,30 +262,6 @@
           "domain": "wcvb.com",
           "url": "https://www.wcvb.com/article/e-bike-rider-injured-in-haverhill-crash-during-morning-rush-hour/71602362",
           "date": "20260616T173000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "theintelligencer.com",
-      "url": "https://www.theintelligencer.com/news/article/edwardsville-il-ebike-crash-teen-hospital-22307488.php",
-      "seendate": "20260616T170000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "theintelligencer.com"
-      ],
-      "sources": [
-        {
-          "domain": "theintelligencer.com",
-          "url": "https://www.theintelligencer.com/news/article/edwardsville-il-ebike-crash-teen-hospital-22307488.php",
-          "date": "20260616T170000Z"
         }
       ]
     },
