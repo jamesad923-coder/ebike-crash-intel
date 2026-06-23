@@ -49,10 +49,29 @@
 
   #crash-stage.approach #crash-bike { transform:translate(-50%,-94%) translateX(-68px); }
   #crash-stage.approach #crash-car { transform:translate(-50%,-89.4%) translateX(72px); }
-  #crash-stage.impact #crash-bike { transform:translate(-50%,-94%) translateX(-68px) scale(1.15); opacity:0;
-    transition:transform .07s ease-out, opacity .07s linear; }
-  #crash-stage.impact #crash-car { transform:translate(-50%,-89.4%) translateX(72px) scale(1.15); opacity:0;
-    transition:transform .07s ease-out, opacity .07s linear; }
+
+  /* On impact, instead of an instant opacity snap to 0 (which read as
+     "vehicle vanishes, unrelated debris appears"), each vehicle judders
+     -- a quick violent jitter + scale-up -- while fading out over ~170ms,
+     overlapping with the debris already flying from its body. The
+     dissolve-while-juddering is what should sell "breaking apart"
+     instead of a hard cut. */
+  @keyframes crash-judder-bike {
+    0%   { transform:translate(-50%,-94%) translateX(-68px) translate(0,0) scale(1); }
+    25%  { transform:translate(-50%,-94%) translateX(-68px) translate(-4px,2px) scale(1.04); }
+    50%  { transform:translate(-50%,-94%) translateX(-68px) translate(3px,-3px) scale(1.08); }
+    75%  { transform:translate(-50%,-94%) translateX(-68px) translate(-2px,2px) scale(1.12); }
+    100% { transform:translate(-50%,-94%) translateX(-68px) translate(0,0) scale(1.16); opacity:0; }
+  }
+  @keyframes crash-judder-car {
+    0%   { transform:translate(-50%,-89.4%) translateX(72px) translate(0,0) scale(1); }
+    25%  { transform:translate(-50%,-89.4%) translateX(72px) translate(4px,2px) scale(1.04); }
+    50%  { transform:translate(-50%,-89.4%) translateX(72px) translate(-3px,-3px) scale(1.08); }
+    75%  { transform:translate(-50%,-89.4%) translateX(72px) translate(2px,2px) scale(1.12); }
+    100% { transform:translate(-50%,-89.4%) translateX(72px) translate(0,0) scale(1.16); opacity:0; }
+  }
+  #crash-stage.impact #crash-bike { animation:crash-judder-bike .17s ease-out forwards; }
+  #crash-stage.impact #crash-car { animation:crash-judder-car .17s ease-out forwards; }
 
   /* A thin expanding RING, not a filled circle -- a filled circle growing
      reads as "a bubble that pops into dots"; a ring reads as a shockwave,
@@ -206,8 +225,22 @@
     #crash-car { width:104px; transform:translate(-50%,-89.4%) translateX(250px); }
     #crash-stage.approach #crash-bike { transform:translate(-50%,-94%) translateX(-48px); }
     #crash-stage.approach #crash-car { transform:translate(-50%,-89.4%) translateX(50px); }
-    #crash-stage.impact #crash-bike { transform:translate(-50%,-94%) translateX(-48px) scale(1.15); }
-    #crash-stage.impact #crash-car { transform:translate(-50%,-89.4%) translateX(50px) scale(1.15); }
+    @keyframes crash-judder-bike {
+      0%   { transform:translate(-50%,-94%) translateX(-48px) translate(0,0) scale(1); }
+      25%  { transform:translate(-50%,-94%) translateX(-48px) translate(-3px,2px) scale(1.04); }
+      50%  { transform:translate(-50%,-94%) translateX(-48px) translate(2px,-2px) scale(1.08); }
+      75%  { transform:translate(-50%,-94%) translateX(-48px) translate(-2px,1px) scale(1.12); }
+      100% { transform:translate(-50%,-94%) translateX(-48px) translate(0,0) scale(1.16); opacity:0; }
+    }
+    @keyframes crash-judder-car {
+      0%   { transform:translate(-50%,-89.4%) translateX(50px) translate(0,0) scale(1); }
+      25%  { transform:translate(-50%,-89.4%) translateX(50px) translate(3px,2px) scale(1.04); }
+      50%  { transform:translate(-50%,-89.4%) translateX(50px) translate(-2px,-2px) scale(1.08); }
+      75%  { transform:translate(-50%,-89.4%) translateX(50px) translate(2px,1px) scale(1.12); }
+      100% { transform:translate(-50%,-89.4%) translateX(50px) translate(0,0) scale(1.16); opacity:0; }
+    }
+    #crash-stage.impact #crash-bike { animation:crash-judder-bike .17s ease-out forwards; }
+    #crash-stage.impact #crash-car { animation:crash-judder-car .17s ease-out forwards; }
     #crash-logo { font-size:24px; }
   }
 </style>
