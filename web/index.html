@@ -20,23 +20,30 @@
 
   /* Intro: a 2D bike + car slide together, "collide", scatter into dots
      (same visual language as the crash-point map markers), then those
-     dots converge while the wordmark fades in. Pure CSS transitions
-     driven by JS class toggles -- no animation library needed. */
-  #crash-scene { position:relative; width:300px; height:64px; margin-bottom:4px; }
-  #crash-bike, #crash-car { position:absolute; top:50%; font-size:32px; line-height:1;
-    left:0; transform:translateY(-50%); transition:left 1.1s cubic-bezier(.4,0,.2,1), opacity .12s linear; }
-  #crash-car { left:auto; right:0; transform:translateY(-50%) scaleX(-1); }
-  #crash-scene.approach #crash-bike { left:calc(50% - 15px); }
-  #crash-scene.approach #crash-car { right:calc(50% - 15px); }
+     dots drift down into the wordmark as it fades in. Pure CSS
+     transitions driven by JS class toggles -- no animation library.
+     Both vehicles move via a single shared `transform` transition
+     (not left/right) so their motion is symmetric and can't silently
+     fail to animate on one side. */
+  #crash-scene { position:relative; width:440px; height:170px; margin-bottom:6px; }
+  #crash-bike, #crash-car { position:absolute; top:46%; left:50%;
+    transition:transform 2s cubic-bezier(.3,.06,.15,1), opacity .15s linear; }
+  #crash-bike { width:108px; transform:translate(-50%,-50%) translateX(-190px); color:var(--accent); }
+  #crash-car { width:124px; transform:translate(-50%,-50%) translateX(190px); color:#c75c50; }
+  #crash-scene.approach #crash-bike,
+  #crash-scene.approach #crash-car { transform:translate(-50%,-50%) translateX(0); }
   #crash-scene.impact #crash-bike, #crash-scene.impact #crash-car { opacity:0; }
-  .crash-dot { position:absolute; top:50%; left:50%; width:7px; height:7px; border-radius:50%;
+  #crash-bike svg, #crash-car svg { display:block; width:100%; height:auto; }
+
+  .crash-dot { position:absolute; top:46%; left:50%; border-radius:50%;
     transform:translate(-50%,-50%); opacity:0; pointer-events:none; }
-  .crash-dot.scatter { opacity:1; transition:transform .65s cubic-bezier(.18,.85,.2,1), opacity .15s linear;
+  .crash-dot.scatter { opacity:1; transition:transform .9s cubic-bezier(.16,.84,.2,1), opacity .15s linear;
     transform:translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))); }
-  .crash-dot.converge { opacity:0; transition:transform .9s cubic-bezier(.3,0,.2,1), opacity .85s ease; }
+  .crash-dot.converge { opacity:0; transition:transform 1.4s cubic-bezier(.4,0,.2,1), opacity 1.2s ease-in;
+    transform:translate(calc(-50% + var(--cdx)), calc(-50% + var(--cdy))); }
 
   #crash-logo-wrap { opacity:0; transform:scale(.85);
-    transition:opacity .8s ease, transform .8s cubic-bezier(.3,0,.2,1); }
+    transition:opacity .9s ease, transform .9s cubic-bezier(.3,0,.2,1); }
   #crash-logo-wrap.show { opacity:1; transform:scale(1); }
 
   .loading-logo { font-size:26px; font-weight:700; letter-spacing:.01em; color:var(--txt);
@@ -167,14 +174,37 @@
     #map, #news-map, #risk-map { height:50vh; }
     #side-neiss { max-width:none; }
     #dc-map, #chicago-map { height:60vh; }
+    #crash-scene { width:300px; height:130px; }
+    #crash-bike { width:78px; transform:translate(-50%,-50%) translateX(-128px); }
+    #crash-car { width:90px; transform:translate(-50%,-50%) translateX(128px); }
+    #crash-scene.approach #crash-bike,
+    #crash-scene.approach #crash-car { transform:translate(-50%,-50%) translateX(0); }
   }
 </style>
 </head>
 <body>
 <div id="loading-screen">
   <div id="crash-scene">
-    <div id="crash-bike">🚴</div>
-    <div id="crash-car">🚗</div>
+    <div id="crash-bike">
+      <svg viewBox="0 0 110 70" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="24" cy="54" r="14"/>
+        <circle cx="84" cy="54" r="14"/>
+        <path d="M24,54 L46,30 L64,30 L84,54"/>
+        <path d="M46,30 L36,54"/>
+        <path d="M64,30 L74,18 L84,18"/>
+        <path d="M64,19 L52,34" stroke-width="4.5"/>
+        <circle cx="64" cy="11" r="8" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>
+    <div id="crash-car">
+      <svg viewBox="0 0 130 64" fill="none">
+        <path d="M10,46 L10,38 Q10,33 15,31 L28,24 L42,13 L82,13 L98,23 L114,28 Q120,30 120,36 L120,46 Z" fill="currentColor"/>
+        <circle cx="32" cy="48" r="10" fill="#0e1116"/>
+        <circle cx="32" cy="48" r="5" fill="currentColor"/>
+        <circle cx="100" cy="48" r="10" fill="#0e1116"/>
+        <circle cx="100" cy="48" r="5" fill="currentColor"/>
+      </svg>
+    </div>
     <div id="crash-burst"></div>
   </div>
   <div id="crash-logo-wrap">
@@ -505,11 +535,11 @@ const DATA = "data/";
 
 // ---- Loading screen: intro animation + minimum display time ----
 // The intro (bike + car approach, "collide", scatter into dots, dots
-// converge into the wordmark) takes ~2.7s to play out. MIN_LOADING_MS
+// drift down into the wordmark) takes ~4.5s to play out. MIN_LOADING_MS
 // guarantees it's never cut short by a fast connection -- hide is gated
 // on whichever finishes later: the animation or the real FARS data.
 const LOADING_START = performance.now();
-const MIN_LOADING_MS = 3000;
+const MIN_LOADING_MS = 4800;
 
 function hideLoadingScreen() {
   const el = document.getElementById("loading-screen");
@@ -523,7 +553,7 @@ function hideLoadingScreenWhenReady() {
 }
 // Safety net: never leave a user stuck on the loading screen if the map
 // tiles or FARS data fail/stall.
-setTimeout(hideLoadingScreen, 9000);
+setTimeout(hideLoadingScreen, 11000);
 
 (function runCrashIntro() {
   const scene = document.getElementById("crash-scene");
@@ -537,7 +567,7 @@ setTimeout(hideLoadingScreen, 9000);
     return;
   }
 
-  const APPROACH_MS = 1050, SCATTER_MS = 600, CONVERGE_MS = 900, DOT_COUNT = 34;
+  const APPROACH_MS = 2000, SCATTER_MS = 900, CONVERGE_MS = 1400, DOT_COUNT = 42;
 
   requestAnimationFrame(() => scene.classList.add("approach"));
 
@@ -548,10 +578,18 @@ setTimeout(hideLoadingScreen, 9000);
       const dot = document.createElement("div");
       dot.className = "crash-dot";
       const angle = (i / DOT_COUNT) * Math.PI * 2 + (Math.random() * 0.4 - 0.2);
-      const dist = 46 + Math.random() * 88;
-      dot.style.setProperty("--dx", `${Math.cos(angle) * dist}px`);
-      dot.style.setProperty("--dy", `${Math.sin(angle) * dist * 0.55}px`);
+      const outDist = 60 + Math.random() * 120;
+      dot.style.setProperty("--dx", `${Math.cos(angle) * outDist}px`);
+      dot.style.setProperty("--dy", `${Math.sin(angle) * outDist * 0.6 - 12}px`);
+      // Converge target: drift down toward where the wordmark sits below
+      // the scene, instead of snapping back to the same center point --
+      // this is what makes the dots look like they're feeding the logo
+      // rather than just zooming back in on themselves.
+      dot.style.setProperty("--cdx", `${Math.random() * 70 - 35}px`);
+      dot.style.setProperty("--cdy", `${120 + Math.random() * 50}px`);
       dot.style.background = i % 3 === 0 ? "var(--minor)" : "var(--accent)";
+      const size = 5 + Math.random() * 4;
+      dot.style.width = dot.style.height = `${size}px`;
       burst.appendChild(dot);
       dots.push(dot);
     }
@@ -559,7 +597,9 @@ setTimeout(hideLoadingScreen, 9000);
 
     setTimeout(() => {
       dots.forEach(d => { d.classList.remove("scatter"); d.classList.add("converge"); });
-      logoWrap.classList.add("show");
+      // Logo fades in slightly after the dots start arriving, so it
+      // reads as "formed by" the converging dots, not a separate pop-in.
+      setTimeout(() => logoWrap.classList.add("show"), CONVERGE_MS * 0.35);
       setTimeout(() => dots.forEach(d => d.remove()), CONVERGE_MS + 100);
     }, SCATTER_MS);
   }, APPROACH_MS);
