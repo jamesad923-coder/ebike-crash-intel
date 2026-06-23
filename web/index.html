@@ -61,12 +61,11 @@
     border:2.5px solid #fff8f0; opacity:0; transform:translate(-50%,-50%) scale(0); pointer-events:none; }
 
   #crash-burst { position:absolute; top:64%; left:50%; width:0; height:0; }
-  .crash-dot { position:absolute; top:50%; left:50%;
-    transform:translate(-50%,-50%) rotate(var(--rot, 0deg)); opacity:0; pointer-events:none; }
-  .crash-dot.scatter { opacity:1; transition:transform .6s cubic-bezier(.12,.8,.25,1), opacity .08s linear;
-    transform:translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(var(--rot, 0deg)); }
-  .crash-dot.converge { opacity:0; transition:transform .65s cubic-bezier(.5,0,.3,1), opacity .55s ease-in;
-    transform:translate(calc(-50% + var(--cdx)), calc(-50% + var(--cdy))) rotate(var(--rot, 0deg)); }
+  /* Positioning, color, size, and every transform/transition state for
+     .crash-dot is set per-element via inline style in JS (runCrashIntro)
+     -- each piece needs its own spawn point, throw vector, and converge
+     target, which doesn't fit a shared class-based rule. */
+  .crash-dot { position:absolute; top:50%; left:50%; pointer-events:none; }
 
   #crash-logo { position:absolute; top:50%; left:50%; white-space:nowrap;
     font-size:30px; font-weight:700; letter-spacing:.01em; color:var(--txt);
@@ -592,6 +591,7 @@ setTimeout(hideLoadingScreen, 11000);
 (function runCrashIntro() {
   const stage = document.getElementById("crash-stage");
   const bike = document.getElementById("crash-bike");
+  const car = document.getElementById("crash-car");
   const burst = document.getElementById("crash-burst");
   const logo = document.getElementById("crash-logo");
   const flash = document.getElementById("crash-flash");
@@ -608,53 +608,55 @@ setTimeout(hideLoadingScreen, 11000);
   const SCATTER_MS = 600, CONVERGE_MS = 680, DOT_COUNT = 52;
 
   function triggerImpact() {
-    stage.classList.add("impact"); // bike + car punch and vanish at the exact instant they touch
-
-    // Impact flash: a quick two-step trigger (set the "before" state with
-    // transitions off, then turn transitions on next frame) so the pulse
-    // is actually visible instead of a transition from 0 opacity to 0.
-    // Kept small/fast and a thin ring (see CSS) -- a slow-growing filled
-    // circle reads as "a bubble that pops into dots", which is exactly
-    // the look we're trying to avoid.
-    flash.style.transition = "none";
-    flash.style.opacity = "0.85";
-    flash.style.transform = "translate(-50%,-50%) scale(0.5)";
-    requestAnimationFrame(() => {
-      flash.style.transition = "transform .22s cubic-bezier(.1,.8,.2,1), opacity .22s ease-out";
-      flash.style.opacity = "0";
-      flash.style.transform = "translate(-50%,-50%) scale(3.2)";
-    });
-
-    // burst is a 0x0 anchor pinned exactly at the collision point -- use
-    // its own rect as the origin rather than recomputing the stage center,
-    // since the ground-line layout moved that point off dead-center.
-    const burstRect = burst.getBoundingClientRect();
+    // Measure the vehicles' real footprints BEFORE hiding them -- this is
+    // what lets debris spawn across each vehicle's actual body instead of
+    // bursting from one shared point. transform:scale doesn't change
+    // layout geometry, but we read rects before toggling state regardless
+    // to avoid any ambiguity about transition timing.
+    const bikeRect = bike.getBoundingClientRect();
+    const carRect = car.getBoundingClientRect();
+    const burstRect = burst.getBoundingClientRect(); // 0x0 anchor at the contact point
     const logoRect = logo.getBoundingClientRect();
     const cx = burstRect.left, cy = burstRect.top;
+
+    stage.classList.add("impact"); // bike + car punch and vanish at the exact instant they touch
+
+    // Impact flash: small, fast, thin ring -- a quick spark at the
+    // contact point, kept subtle now that the debris itself (not the
+    // flash) carries the visual weight of "this is breaking apart".
+    flash.style.transition = "none";
+    flash.style.opacity = "0.8";
+    flash.style.transform = "translate(-50%,-50%) scale(0.5)";
+    requestAnimationFrame(() => {
+      flash.style.transition = "transform .2s cubic-bezier(.1,.8,.2,1), opacity .2s ease-out";
+      flash.style.opacity = "0";
+      flash.style.transform = "translate(-50%,-50%) scale(2.6)";
+    });
 
     const dots = [];
     for (let i = 0; i < DOT_COUNT; i++) {
       const dot = document.createElement("div");
       dot.className = "crash-dot";
-      const angle = (i / DOT_COUNT) * Math.PI * 2 + (Math.random() * 0.5 - 0.25);
-      // Wide variance in throw distance (some pieces barely move, some
-      // fly far) instead of a uniform ring -- reads as irregular shatter
-      // debris, not a clean "blooming" particle ring.
-      const outDist = 35 + Math.random() * 165;
-      dot.style.setProperty("--dx", `${Math.cos(angle) * outDist}px`);
-      dot.style.setProperty("--dy", `${Math.sin(angle) * outDist * 0.65 - 24}px`);
-      dot.style.setProperty("--rot", `${Math.random() * 320 - 160}deg`);
-      const tx = logoRect.left + Math.random() * logoRect.width - cx;
-      const ty = logoRect.top + Math.random() * logoRect.height - cy;
-      dot.style.setProperty("--cdx", `${tx}px`);
-      dot.style.setProperty("--cdy", `${ty}px`);
-      // Debris keeps each vehicle's own color (bike-orange / car-purple),
-      // not the map-legend colors -- reinforces that this came FROM the
-      // two vehicles, not a generic unrelated particle effect.
-      dot.style.background = i % 2 === 0 ? "var(--accent)" : "var(--minor)";
-      // Mix small rotated rect "shards" in with circles -- a field of
-      // identical circles reads as confetti/bubbles; irregular shapes
-      // tumbling outward reads as actual broken pieces.
+
+      // Half the debris spawns across the bike's footprint, half across
+      // the car's -- each piece's color matches the vehicle it's FROM.
+      const fromBike = i < DOT_COUNT / 2;
+      const srcRect = fromBike ? bikeRect : carRect;
+      const sx = (srcRect.left + Math.random() * srcRect.width) - cx;
+      const sy = (srcRect.top + Math.random() * srcRect.height) - cy;
+
+      // Throw direction is derived from the piece's own spawn position
+      // relative to the collision point (plus jitter), not an arbitrary
+      // index-based slice -- a piece spawned on the bike's far side
+      // flies further outward on that side, like real wreckage would.
+      const baseAngle = Math.atan2(sy, sx || 0.001);
+      const angle = baseAngle + (Math.random() * 1.3 - 0.65);
+      const outDist = 30 + Math.random() * 150;
+      const ox = sx + Math.cos(angle) * outDist;
+      const oy = sy + Math.sin(angle) * outDist * 0.65 - 18;
+      const rot = Math.random() * 320 - 160;
+
+      dot.style.background = fromBike ? "var(--accent)" : "var(--minor)";
       const isShard = Math.random() < 0.4;
       if (isShard) {
         dot.style.width = `${5 + Math.random() * 6}px`;
@@ -665,22 +667,41 @@ setTimeout(hideLoadingScreen, 11000);
         dot.style.width = dot.style.height = `${size}px`;
         dot.style.borderRadius = "50%";
       }
-      // Small random stagger so the burst doesn't fire in perfect unison
-      // -- real debris doesn't leave the point of impact in lockstep.
-      dot.style.transitionDelay = `${Math.random() * 45}ms`;
+
+      // Render immediately AT the spawn point within the vehicle's own
+      // body -- no flying in from a center point. The very first visible
+      // frame should look like "a piece of the vehicle, revealed in
+      // place," which is what actually sells "breaking apart" instead of
+      // "vehicle vanishes, unrelated burst appears".
+      dot.style.transition = "none";
+      dot.style.transform = `translate(calc(-50% + ${sx}px), calc(-50% + ${sy}px)) rotate(${rot}deg)`;
+      dot.style.opacity = "1";
       burst.appendChild(dot);
-      dots.push(dot);
+
+      const tx = logoRect.left + Math.random() * logoRect.width - cx;
+      const ty = logoRect.top + Math.random() * logoRect.height - cy;
+
+      dots.push({ el: dot, ox, oy, rot, tx, ty });
     }
-    requestAnimationFrame(() => dots.forEach(d => d.classList.add("scatter")));
+
+    // Next frame: release each piece outward from its own spawn point.
+    requestAnimationFrame(() => {
+      dots.forEach(d => {
+        d.el.style.transitionDelay = `${Math.random() * 45}ms`;
+        d.el.style.transition = "transform .6s cubic-bezier(.12,.8,.25,1), opacity .1s linear";
+        d.el.style.transform = `translate(calc(-50% + ${d.ox}px), calc(-50% + ${d.oy}px)) rotate(${d.rot}deg)`;
+      });
+    });
 
     setTimeout(() => {
       dots.forEach(d => {
-        d.classList.remove("scatter");
-        d.classList.add("converge");
-        d.style.transitionDelay = "0ms";
+        d.el.style.transitionDelay = "0ms";
+        d.el.style.transition = "transform .65s cubic-bezier(.5,0,.3,1), opacity .55s ease-in";
+        d.el.style.opacity = "0";
+        d.el.style.transform = `translate(calc(-50% + ${d.tx}px), calc(-50% + ${d.ty}px)) rotate(${d.rot}deg)`;
       });
       requestAnimationFrame(() => logo.classList.add("show"));
-      setTimeout(() => { footer.classList.add("show"); dots.forEach(d => d.remove()); }, CONVERGE_MS * 0.8);
+      setTimeout(() => { footer.classList.add("show"); dots.forEach(d => d.el.remove()); }, CONVERGE_MS * 0.8);
     }, SCATTER_MS);
   }
 
