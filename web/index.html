@@ -18,42 +18,57 @@
     transition:opacity 0.4s ease, visibility 0.4s ease; }
   #loading-screen.hide { opacity:0; visibility:hidden; pointer-events:none; }
 
-  /* Intro: a 2D bike + car slide together, collide just short of fully
-     overlapping, and shatter into colored debris (each vehicle's own
+  /* Intro: a 2D bike + car race toward each other on a shared ground
+     line, collide, and shatter into colored debris (each vehicle's own
      color, not the map-legend colors) which then converges onto real
-     sampled points within the rendered wordmark as it fades in --
-     measured via getBoundingClientRect at the moment of impact, not an
-     arbitrary offset, so the dots visibly "become" the text instead of
-     fading out next to it. Pure CSS transitions driven by JS class
-     toggles, no animation library. */
-  #crash-stage { position:relative; width:480px; height:230px; margin:0 auto; }
-  #crash-bike, #crash-car { position:absolute; top:50%; left:50%;
-    transition:transform 1.9s cubic-bezier(.3,.06,.15,1), opacity .1s linear; }
-  #crash-bike { width:128px; color:var(--accent); transform:translate(-50%,-50%) translateX(-210px); }
-  #crash-car { width:150px; color:var(--minor); transform:translate(-50%,-50%) translateX(210px); }
-  #crash-bike svg, #crash-car svg { display:block; width:100%; height:auto; }
-  #crash-stage.approach #crash-bike { transform:translate(-50%,-50%) translateX(-26px); }
-  #crash-stage.approach #crash-car { transform:translate(-50%,-50%) translateX(28px); }
-  #crash-stage.impact #crash-bike { transform:translate(-50%,-50%) translateX(-26px) scale(1.12); opacity:0;
-    transition:transform .14s ease-out, opacity .14s linear; }
-  #crash-stage.impact #crash-car { transform:translate(-50%,-50%) translateX(28px) scale(1.12); opacity:0;
-    transition:transform .14s ease-out, opacity .14s linear; }
+     sampled points within the rendered wordmark -- measured via
+     getBoundingClientRect at the moment of impact -- so the dots
+     visibly "become" the text. Pure CSS transitions driven by JS class
+     toggles, no animation library. The vehicles approach on an
+     accelerating (ease-in) curve so they're at top speed at the
+     moment of contact, not decelerating into it -- a decelerating
+     approach is what made earlier versions feel limp. */
+  #crash-stage { position:relative; width:520px; height:230px; margin:0 auto; overflow:visible; }
+  #crash-ground { position:absolute; top:64%; left:6%; right:6%; height:2px;
+    background:linear-gradient(90deg, transparent, var(--line) 12%, var(--line) 88%, transparent);
+    overflow:hidden; }
+  #crash-ground::after { content:""; position:absolute; inset:0;
+    background:repeating-linear-gradient(90deg, var(--muted) 0 12px, transparent 12px 26px); opacity:.3; }
 
-  #crash-flash { position:absolute; top:50%; left:50%; width:14px; height:14px; border-radius:50%;
+  #crash-bike, #crash-car { position:absolute; top:64%; left:50%;
+    transition:transform .85s cubic-bezier(.55,.085,.68,.53), opacity .08s linear; }
+  #crash-bike { width:128px; color:var(--accent); transform:translate(-50%,-94%) translateX(-300px); }
+  #crash-car { width:150px; color:var(--minor); transform:translate(-50%,-89.4%) translateX(300px); }
+  #crash-bike svg, #crash-car svg { display:block; width:100%; height:auto; }
+  #crash-bike::before, #crash-car::before { content:""; position:absolute; top:55%; height:3px;
+    border-radius:2px; background:currentColor; opacity:0; }
+  #crash-bike::before { right:103%; width:0; }
+  #crash-car::before { left:103%; width:0; }
+  #crash-stage.approach #crash-bike::before, #crash-stage.approach #crash-car::before {
+    width:60px; opacity:.55; transition:width .85s cubic-bezier(.55,.085,.68,.53), opacity .5s ease-out; }
+
+  #crash-stage.approach #crash-bike { transform:translate(-50%,-94%) translateX(-68px); }
+  #crash-stage.approach #crash-car { transform:translate(-50%,-89.4%) translateX(72px); }
+  #crash-stage.impact #crash-bike { transform:translate(-50%,-94%) translateX(-68px) scale(1.15); opacity:0;
+    transition:transform .07s ease-out, opacity .07s linear; }
+  #crash-stage.impact #crash-car { transform:translate(-50%,-89.4%) translateX(72px) scale(1.15); opacity:0;
+    transition:transform .07s ease-out, opacity .07s linear; }
+
+  #crash-flash { position:absolute; top:64%; left:50%; width:14px; height:14px; border-radius:50%;
     background:#fff8f0; opacity:0; transform:translate(-50%,-50%) scale(0); pointer-events:none; }
 
-  #crash-burst { position:absolute; top:50%; left:50%; width:0; height:0; }
+  #crash-burst { position:absolute; top:64%; left:50%; width:0; height:0; }
   .crash-dot { position:absolute; top:50%; left:50%; border-radius:50%;
     transform:translate(-50%,-50%); opacity:0; pointer-events:none; }
-  .crash-dot.scatter { opacity:1; transition:transform .85s cubic-bezier(.16,.84,.2,1), opacity .15s linear;
+  .crash-dot.scatter { opacity:1; transition:transform .55s cubic-bezier(.16,.84,.2,1), opacity .1s linear;
     transform:translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))); }
-  .crash-dot.converge { opacity:0; transition:transform 1.2s cubic-bezier(.4,0,.2,1), opacity 1.05s ease-in;
+  .crash-dot.converge { opacity:0; transition:transform .7s cubic-bezier(.5,0,.3,1), opacity .6s ease-in;
     transform:translate(calc(-50% + var(--cdx)), calc(-50% + var(--cdy))); }
 
   #crash-logo { position:absolute; top:50%; left:50%; white-space:nowrap;
     font-size:30px; font-weight:700; letter-spacing:.01em; color:var(--txt);
-    opacity:0; transform:translate(-50%,-50%) scale(.92);
-    transition:opacity 1s ease, transform 1s cubic-bezier(.3,0,.2,1); }
+    opacity:0; transform:translate(-50%,-50%) scale(1.1);
+    transition:opacity .45s ease, transform .45s cubic-bezier(.34,1.56,.64,1); }
   #crash-logo.show { opacity:1; transform:translate(-50%,-50%) scale(1); }
 
   #crash-footer { margin-top:8px; text-align:center; opacity:0; transition:opacity .6s ease; }
@@ -184,13 +199,13 @@
     #map, #news-map, #risk-map { height:50vh; }
     #side-neiss { max-width:none; }
     #dc-map, #chicago-map { height:60vh; }
-    #crash-stage { width:320px; height:160px; }
-    #crash-bike { width:90px; transform:translate(-50%,-50%) translateX(-140px); }
-    #crash-car { width:104px; transform:translate(-50%,-50%) translateX(140px); }
-    #crash-stage.approach #crash-bike { transform:translate(-50%,-50%) translateX(-18px); }
-    #crash-stage.approach #crash-car { transform:translate(-50%,-50%) translateX(20px); }
-    #crash-stage.impact #crash-bike { transform:translate(-50%,-50%) translateX(-18px) scale(1.12); }
-    #crash-stage.impact #crash-car { transform:translate(-50%,-50%) translateX(20px) scale(1.12); }
+    #crash-stage { width:340px; height:170px; }
+    #crash-bike { width:90px; transform:translate(-50%,-94%) translateX(-190px); }
+    #crash-car { width:104px; transform:translate(-50%,-89.4%) translateX(190px); }
+    #crash-stage.approach #crash-bike { transform:translate(-50%,-94%) translateX(-48px); }
+    #crash-stage.approach #crash-car { transform:translate(-50%,-89.4%) translateX(50px); }
+    #crash-stage.impact #crash-bike { transform:translate(-50%,-94%) translateX(-48px) scale(1.15); }
+    #crash-stage.impact #crash-car { transform:translate(-50%,-89.4%) translateX(50px) scale(1.15); }
     #crash-logo { font-size:24px; }
   }
 </style>
@@ -198,6 +213,7 @@
 <body>
 <div id="loading-screen">
   <div id="crash-stage">
+    <div id="crash-ground"></div>
     <div id="crash-bike">
       <svg viewBox="0 0 100 68" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="16" cy="48" r="16"/>
@@ -549,12 +565,12 @@
 const DATA = "data/";
 
 // ---- Loading screen: intro animation + minimum display time ----
-// The intro (bike + car approach, collide, shatter into debris, debris
-// converges into the wordmark) takes ~4.3s to play out. MIN_LOADING_MS
+// The intro (bike + car race together, collide, shatter into debris,
+// debris snaps into the wordmark) takes ~2.4s to play out. MIN_LOADING_MS
 // guarantees it's never cut short by a fast connection -- hide is gated
 // on whichever finishes later: the animation or the real FARS data.
 const LOADING_START = performance.now();
-const MIN_LOADING_MS = 4600;
+const MIN_LOADING_MS = 2800;
 
 function hideLoadingScreen() {
   const el = document.getElementById("loading-screen");
@@ -572,6 +588,7 @@ setTimeout(hideLoadingScreen, 11000);
 
 (function runCrashIntro() {
   const stage = document.getElementById("crash-stage");
+  const bike = document.getElementById("crash-bike");
   const burst = document.getElementById("crash-burst");
   const logo = document.getElementById("crash-logo");
   const flash = document.getElementById("crash-flash");
@@ -585,12 +602,10 @@ setTimeout(hideLoadingScreen, 11000);
     return;
   }
 
-  const APPROACH_MS = 1900, SCATTER_MS = 850, CONVERGE_MS = 1200, DOT_COUNT = 46;
+  const SCATTER_MS = 550, CONVERGE_MS = 700, DOT_COUNT = 46;
 
-  requestAnimationFrame(() => stage.classList.add("approach"));
-
-  setTimeout(() => {
-    stage.classList.add("impact"); // bike + car punch and vanish at the collision point
+  function triggerImpact() {
+    stage.classList.add("impact"); // bike + car punch and vanish at the exact instant they touch
 
     // Impact flash: a quick two-step trigger (set the "before" state with
     // transitions off, then turn transitions on next frame) so the pulse
@@ -599,33 +614,31 @@ setTimeout(hideLoadingScreen, 11000);
     flash.style.opacity = "0.9";
     flash.style.transform = "translate(-50%,-50%) scale(0.4)";
     requestAnimationFrame(() => {
-      flash.style.transition = "transform .4s cubic-bezier(.1,.8,.2,1), opacity .4s ease-out";
+      flash.style.transition = "transform .35s cubic-bezier(.1,.8,.2,1), opacity .35s ease-out";
       flash.style.opacity = "0";
       flash.style.transform = "translate(-50%,-50%) scale(9)";
     });
 
-    // Sample real points within the actual rendered wordmark (still
-    // opacity:0 but already laid out, so its rect is valid) so the
-    // debris converges onto the literal text instead of an arbitrary
-    // point near it -- this is what makes it read as "becoming" the logo.
-    const stageRect = stage.getBoundingClientRect();
+    // burst is a 0x0 anchor pinned exactly at the collision point -- use
+    // its own rect as the origin rather than recomputing the stage center,
+    // since the ground-line layout moved that point off dead-center.
+    const burstRect = burst.getBoundingClientRect();
     const logoRect = logo.getBoundingClientRect();
-    const cx = stageRect.left + stageRect.width / 2;
-    const cy = stageRect.top + stageRect.height / 2;
+    const cx = burstRect.left, cy = burstRect.top;
 
     const dots = [];
     for (let i = 0; i < DOT_COUNT; i++) {
       const dot = document.createElement("div");
       dot.className = "crash-dot";
       const angle = (i / DOT_COUNT) * Math.PI * 2 + (Math.random() * 0.4 - 0.2);
-      const outDist = 55 + Math.random() * 115;
+      const outDist = 50 + Math.random() * 100;
       dot.style.setProperty("--dx", `${Math.cos(angle) * outDist}px`);
-      dot.style.setProperty("--dy", `${Math.sin(angle) * outDist * 0.65}px`);
+      dot.style.setProperty("--dy", `${Math.sin(angle) * outDist * 0.65 - 20}px`);
       const tx = logoRect.left + Math.random() * logoRect.width - cx;
       const ty = logoRect.top + Math.random() * logoRect.height - cy;
       dot.style.setProperty("--cdx", `${tx}px`);
       dot.style.setProperty("--cdy", `${ty}px`);
-      // Debris keeps each vehicle's own color (bike-orange / car-red),
+      // Debris keeps each vehicle's own color (bike-orange / car-purple),
       // not the map-legend colors -- reinforces that this came FROM the
       // two vehicles, not a generic unrelated particle effect.
       dot.style.background = i % 2 === 0 ? "var(--accent)" : "var(--minor)";
@@ -638,12 +651,21 @@ setTimeout(hideLoadingScreen, 11000);
 
     setTimeout(() => {
       dots.forEach(d => { d.classList.remove("scatter"); d.classList.add("converge"); });
-      // Logo fades in as the debris arrives at its position, not before
-      // and not as an unrelated pop-in afterward.
       requestAnimationFrame(() => logo.classList.add("show"));
-      setTimeout(() => { footer.classList.add("show"); dots.forEach(d => d.remove()); }, CONVERGE_MS * 0.7);
+      setTimeout(() => { footer.classList.add("show"); dots.forEach(d => d.remove()); }, CONVERGE_MS * 0.8);
     }, SCATTER_MS);
-  }, APPROACH_MS);
+  }
+
+  // Trigger the instant the approach transition actually finishes, rather
+  // than an estimated timeout -- guarantees zero perceptible gap between
+  // contact and shatter.
+  bike.addEventListener("transitionend", function onArrive(e) {
+    if (e.propertyName !== "transform") return;
+    bike.removeEventListener("transitionend", onArrive);
+    triggerImpact();
+  });
+
+  requestAnimationFrame(() => stage.classList.add("approach"));
 })();
 
 let GEO, SUMMARY;
