@@ -36,16 +36,16 @@
     background:repeating-linear-gradient(90deg, var(--muted) 0 12px, transparent 12px 26px); opacity:.3; }
 
   #crash-bike, #crash-car { position:absolute; top:64%; left:50%;
-    transition:transform .85s cubic-bezier(.55,.085,.68,.53), opacity .08s linear; }
-  #crash-bike { width:128px; color:var(--accent); transform:translate(-50%,-94%) translateX(-300px); }
-  #crash-car { width:150px; color:var(--minor); transform:translate(-50%,-89.4%) translateX(300px); }
+    transition:transform 1.3s cubic-bezier(.6,.04,.7,.5), opacity .08s linear; }
+  #crash-bike { width:128px; color:var(--accent); transform:translate(-50%,-94%) translateX(-400px); }
+  #crash-car { width:150px; color:var(--minor); transform:translate(-50%,-89.4%) translateX(400px); }
   #crash-bike svg, #crash-car svg { display:block; width:100%; height:auto; }
   #crash-bike::before, #crash-car::before { content:""; position:absolute; top:55%; height:3px;
     border-radius:2px; background:currentColor; opacity:0; }
   #crash-bike::before { right:103%; width:0; }
   #crash-car::before { left:103%; width:0; }
   #crash-stage.approach #crash-bike::before, #crash-stage.approach #crash-car::before {
-    width:60px; opacity:.55; transition:width .85s cubic-bezier(.55,.085,.68,.53), opacity .5s ease-out; }
+    width:70px; opacity:.55; transition:width 1.3s cubic-bezier(.6,.04,.7,.5), opacity .7s ease-out; }
 
   #crash-stage.approach #crash-bike { transform:translate(-50%,-94%) translateX(-68px); }
   #crash-stage.approach #crash-car { transform:translate(-50%,-89.4%) translateX(72px); }
@@ -54,16 +54,19 @@
   #crash-stage.impact #crash-car { transform:translate(-50%,-89.4%) translateX(72px) scale(1.15); opacity:0;
     transition:transform .07s ease-out, opacity .07s linear; }
 
-  #crash-flash { position:absolute; top:64%; left:50%; width:14px; height:14px; border-radius:50%;
-    background:#fff8f0; opacity:0; transform:translate(-50%,-50%) scale(0); pointer-events:none; }
+  /* A thin expanding RING, not a filled circle -- a filled circle growing
+     reads as "a bubble that pops into dots"; a ring reads as a shockwave,
+     which is what should be visually subordinate to the debris itself. */
+  #crash-flash { position:absolute; top:64%; left:50%; width:18px; height:18px; border-radius:50%;
+    border:2.5px solid #fff8f0; opacity:0; transform:translate(-50%,-50%) scale(0); pointer-events:none; }
 
   #crash-burst { position:absolute; top:64%; left:50%; width:0; height:0; }
-  .crash-dot { position:absolute; top:50%; left:50%; border-radius:50%;
-    transform:translate(-50%,-50%); opacity:0; pointer-events:none; }
-  .crash-dot.scatter { opacity:1; transition:transform .55s cubic-bezier(.16,.84,.2,1), opacity .1s linear;
-    transform:translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))); }
-  .crash-dot.converge { opacity:0; transition:transform .7s cubic-bezier(.5,0,.3,1), opacity .6s ease-in;
-    transform:translate(calc(-50% + var(--cdx)), calc(-50% + var(--cdy))); }
+  .crash-dot { position:absolute; top:50%; left:50%;
+    transform:translate(-50%,-50%) rotate(var(--rot, 0deg)); opacity:0; pointer-events:none; }
+  .crash-dot.scatter { opacity:1; transition:transform .6s cubic-bezier(.12,.8,.25,1), opacity .08s linear;
+    transform:translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(var(--rot, 0deg)); }
+  .crash-dot.converge { opacity:0; transition:transform .65s cubic-bezier(.5,0,.3,1), opacity .55s ease-in;
+    transform:translate(calc(-50% + var(--cdx)), calc(-50% + var(--cdy))) rotate(var(--rot, 0deg)); }
 
   #crash-logo { position:absolute; top:50%; left:50%; white-space:nowrap;
     font-size:30px; font-weight:700; letter-spacing:.01em; color:var(--txt);
@@ -200,8 +203,8 @@
     #side-neiss { max-width:none; }
     #dc-map, #chicago-map { height:60vh; }
     #crash-stage { width:340px; height:170px; }
-    #crash-bike { width:90px; transform:translate(-50%,-94%) translateX(-190px); }
-    #crash-car { width:104px; transform:translate(-50%,-89.4%) translateX(190px); }
+    #crash-bike { width:90px; transform:translate(-50%,-94%) translateX(-250px); }
+    #crash-car { width:104px; transform:translate(-50%,-89.4%) translateX(250px); }
     #crash-stage.approach #crash-bike { transform:translate(-50%,-94%) translateX(-48px); }
     #crash-stage.approach #crash-car { transform:translate(-50%,-89.4%) translateX(50px); }
     #crash-stage.impact #crash-bike { transform:translate(-50%,-94%) translateX(-48px) scale(1.15); }
@@ -602,7 +605,7 @@ setTimeout(hideLoadingScreen, 11000);
     return;
   }
 
-  const SCATTER_MS = 550, CONVERGE_MS = 700, DOT_COUNT = 46;
+  const SCATTER_MS = 600, CONVERGE_MS = 680, DOT_COUNT = 52;
 
   function triggerImpact() {
     stage.classList.add("impact"); // bike + car punch and vanish at the exact instant they touch
@@ -610,13 +613,16 @@ setTimeout(hideLoadingScreen, 11000);
     // Impact flash: a quick two-step trigger (set the "before" state with
     // transitions off, then turn transitions on next frame) so the pulse
     // is actually visible instead of a transition from 0 opacity to 0.
+    // Kept small/fast and a thin ring (see CSS) -- a slow-growing filled
+    // circle reads as "a bubble that pops into dots", which is exactly
+    // the look we're trying to avoid.
     flash.style.transition = "none";
-    flash.style.opacity = "0.9";
-    flash.style.transform = "translate(-50%,-50%) scale(0.4)";
+    flash.style.opacity = "0.85";
+    flash.style.transform = "translate(-50%,-50%) scale(0.5)";
     requestAnimationFrame(() => {
-      flash.style.transition = "transform .35s cubic-bezier(.1,.8,.2,1), opacity .35s ease-out";
+      flash.style.transition = "transform .22s cubic-bezier(.1,.8,.2,1), opacity .22s ease-out";
       flash.style.opacity = "0";
-      flash.style.transform = "translate(-50%,-50%) scale(9)";
+      flash.style.transform = "translate(-50%,-50%) scale(3.2)";
     });
 
     // burst is a 0x0 anchor pinned exactly at the collision point -- use
@@ -630,10 +636,14 @@ setTimeout(hideLoadingScreen, 11000);
     for (let i = 0; i < DOT_COUNT; i++) {
       const dot = document.createElement("div");
       dot.className = "crash-dot";
-      const angle = (i / DOT_COUNT) * Math.PI * 2 + (Math.random() * 0.4 - 0.2);
-      const outDist = 50 + Math.random() * 100;
+      const angle = (i / DOT_COUNT) * Math.PI * 2 + (Math.random() * 0.5 - 0.25);
+      // Wide variance in throw distance (some pieces barely move, some
+      // fly far) instead of a uniform ring -- reads as irregular shatter
+      // debris, not a clean "blooming" particle ring.
+      const outDist = 35 + Math.random() * 165;
       dot.style.setProperty("--dx", `${Math.cos(angle) * outDist}px`);
-      dot.style.setProperty("--dy", `${Math.sin(angle) * outDist * 0.65 - 20}px`);
+      dot.style.setProperty("--dy", `${Math.sin(angle) * outDist * 0.65 - 24}px`);
+      dot.style.setProperty("--rot", `${Math.random() * 320 - 160}deg`);
       const tx = logoRect.left + Math.random() * logoRect.width - cx;
       const ty = logoRect.top + Math.random() * logoRect.height - cy;
       dot.style.setProperty("--cdx", `${tx}px`);
@@ -642,15 +652,33 @@ setTimeout(hideLoadingScreen, 11000);
       // not the map-legend colors -- reinforces that this came FROM the
       // two vehicles, not a generic unrelated particle effect.
       dot.style.background = i % 2 === 0 ? "var(--accent)" : "var(--minor)";
-      const size = 4 + Math.random() * 4;
-      dot.style.width = dot.style.height = `${size}px`;
+      // Mix small rotated rect "shards" in with circles -- a field of
+      // identical circles reads as confetti/bubbles; irregular shapes
+      // tumbling outward reads as actual broken pieces.
+      const isShard = Math.random() < 0.4;
+      if (isShard) {
+        dot.style.width = `${5 + Math.random() * 6}px`;
+        dot.style.height = `${3 + Math.random() * 4}px`;
+        dot.style.borderRadius = "1px";
+      } else {
+        const size = 3.5 + Math.random() * 5;
+        dot.style.width = dot.style.height = `${size}px`;
+        dot.style.borderRadius = "50%";
+      }
+      // Small random stagger so the burst doesn't fire in perfect unison
+      // -- real debris doesn't leave the point of impact in lockstep.
+      dot.style.transitionDelay = `${Math.random() * 45}ms`;
       burst.appendChild(dot);
       dots.push(dot);
     }
     requestAnimationFrame(() => dots.forEach(d => d.classList.add("scatter")));
 
     setTimeout(() => {
-      dots.forEach(d => { d.classList.remove("scatter"); d.classList.add("converge"); });
+      dots.forEach(d => {
+        d.classList.remove("scatter");
+        d.classList.add("converge");
+        d.style.transitionDelay = "0ms";
+      });
       requestAnimationFrame(() => logo.classList.add("show"));
       setTimeout(() => { footer.classList.add("show"); dots.forEach(d => d.remove()); }, CONVERGE_MS * 0.8);
     }, SCATTER_MS);
