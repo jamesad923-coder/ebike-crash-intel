@@ -197,30 +197,6 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcchicago.com",
-      "url": "https://www.nbcchicago.com/news/local/authorities-identify-teen-killed-in-crash-while-riding-e-bike-in-franklin-park/3949657/",
-      "seendate": "20260617T021500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcchicago.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcchicago.com",
-          "url": "https://www.nbcchicago.com/news/local/authorities-identify-teen-killed-in-crash-while-riding-e-bike-in-franklin-park/3949657/",
-          "date": "20260617T021500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
       "age_band": "18-24",
       "city": null,
       "state": null,
@@ -262,30 +238,6 @@
           "domain": "wcvb.com",
           "url": "https://www.wcvb.com/article/e-bike-rider-injured-in-haverhill-crash-during-morning-rush-hour/71602362",
           "date": "20260616T173000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "talkradio960.com",
-      "url": "https://talkradio960.com/ixp/36/p/lafayette-hit-run-scooter-fatality/",
-      "seendate": "20260616T093000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "talkradio960.com"
-      ],
-      "sources": [
-        {
-          "domain": "talkradio960.com",
-          "url": "https://talkradio960.com/ixp/36/p/lafayette-hit-run-scooter-fatality/",
-          "date": "20260616T093000Z"
         }
       ]
     },
@@ -334,6 +286,30 @@
           "domain": "wmur.com",
           "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
           "date": "20260620T000000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": "Montgomery County",
+      "state": "DC",
+      "location_precision": "county+outlet_market",
+      "located": true,
+      "domain": "wjla.com",
+      "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
+      "seendate": "20260617T234500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wjla.com"
+      ],
+      "sources": [
+        {
+          "domain": "wjla.com",
+          "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
+          "date": "20260617T234500Z"
         }
       ]
     }

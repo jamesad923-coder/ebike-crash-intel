@@ -261,37 +261,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -72.3897131,
-          40.8842482
-        ]
-      },
-      "properties": {
-        "city": "Southampton",
-        "state": "NY",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "18-24",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wjla.com"
-        ],
-        "sources": [
-          {
-            "domain": "wjla.com",
-            "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
-            "date": "20260617T234500Z"
-          }
-        ],
-        "date": "20260617T234500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -74.7380885,
           39.931466
         ]
