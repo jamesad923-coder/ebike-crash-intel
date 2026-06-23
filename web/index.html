@@ -17,7 +17,8 @@
     font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
   #app { display:grid; grid-template-columns:380px 1fr; height:100vh; }
   .side { overflow-y:auto; border-right:1px solid var(--line); padding:18px; }
-  #map, #news-map, #risk-map, #dc-map, #chicago-map { height:100%; }
+  #map, #news-map, #risk-map { height:100%; }
+  #dc-map, #chicago-map { height:480px; border-radius:10px; }
   h1 { font-size:18px; margin:0 0 2px; }
   h2 { font-size:13px; text-transform:uppercase; letter-spacing:.05em;
     color:var(--muted); margin:22px 0 8px; }
@@ -54,7 +55,8 @@
   .tab.on { color:var(--txt); border-bottom-color:var(--accent); font-weight:600; }
   .view { display:none; height:calc(100vh - 41px); overflow-y:auto; }
   .view.on { display:block; }
-  #view-fars.on, #view-news.on, #view-risk.on, #view-dc.on, #view-chicago.on { display:grid; grid-template-columns:380px 1fr; }
+  #view-fars.on, #view-news.on, #view-risk.on { display:grid; grid-template-columns:380px 1fr; }
+  #view-cities.on { display:block; height:calc(100vh - 41px); overflow-y:auto; }
   #side-neiss { max-width:680px; margin:0 auto; padding:18px; }
   .tier-badge { display:inline-block; font-size:10px; font-weight:700; text-transform:uppercase;
     letter-spacing:.03em; padding:2px 7px; border-radius:4px; margin-left:6px; }
@@ -80,6 +82,35 @@
   .factor-card .lever .src { color:var(--muted); font-size:10.5px; display:block; margin-top:2px; }
   .toggle-row { display:flex; gap:6px; margin-bottom:10px; }
 
+  /* City Pilots: DC + Chicago merged into one tab (was two separate tabs --
+     felt cluttered with 7 tabs total). Single scrolling column, each city
+     as a self-contained block (info above, map below) shown/hidden by the
+     DC/Chicago/Both toggle, instead of the side+map grid every other tab
+     uses -- stacking two full grid layouts vertically would make the page
+     both very tall AND require the map to awkwardly share height. */
+  #cities-header { padding:18px; max-width:900px; margin:0 auto; }
+  .city-block { max-width:900px; margin:0 auto; padding:0 18px 28px;
+    overflow:hidden; transition:max-height 0.3s ease, opacity 0.25s ease;
+    opacity:1; }
+  .city-block.hidden { opacity:0; pointer-events:none; }
+  .city-block-map-wrap { position:relative; margin-top:14px; }
+
+  /* Accordion: collapsible sections for the long ward/exposure/trend
+     tables -- defaults to collapsed so the page reads as headline stats
+     first, details on demand, not one long unbroken stat dump. */
+  .accordion { border:1px solid var(--line); border-radius:8px; margin:10px 0; overflow:hidden; }
+  .accordion-toggle { width:100%; display:flex; align-items:center; gap:8px;
+    background:var(--panel); border:none; color:var(--txt); cursor:pointer;
+    padding:10px 12px; font-size:13px; text-transform:uppercase; letter-spacing:.05em;
+    font-weight:600; text-align:left; }
+  .accordion-toggle:hover { background:#1c222b; }
+  .accordion-arrow { display:inline-block; transition:transform 0.2s ease;
+    color:var(--accent); font-size:11px; }
+  .accordion-toggle.open .accordion-arrow { transform:rotate(90deg); }
+  .accordion-content { max-height:0; overflow:hidden; transition:max-height 0.25s ease; }
+  .accordion-content-inner { padding:12px; }
+  .accordion-sub { color:var(--muted); font-size:11.5px; margin:0 0 8px; }
+
   /* Mobile: the tabs row wrapped into a 5-line stack and the map was
      squeezed into a ~10px sliver next to a full-width side panel on a
      phone screen -- confirmed by actually testing at 390px wide, not
@@ -89,13 +120,13 @@
     .tabs { overflow-x:auto; white-space:nowrap; flex-wrap:nowrap; }
     .tab { flex:0 0 auto; }
     .view { height:auto !important; }
-    #view-fars.on, #view-news.on, #view-risk.on, #view-dc.on, #view-chicago.on {
+    #view-fars.on, #view-news.on, #view-risk.on {
       display:flex !important; flex-direction:column;
       grid-template-columns:none;
     }
     .side { border-right:none; border-bottom:1px solid var(--line);
       max-height:60vh; }
-    #map, #news-map, #risk-map, #dc-map, #chicago-map { height:50vh; }
+    #map, #news-map, #risk-map { height:50vh; }
     #side-neiss { max-width:none; }
   }
 </style>
@@ -106,8 +137,7 @@
   <div class="tab" data-view="neiss">Injuries — national estimates (NEISS)</div>
   <div class="tab" data-view="news">Recent reports — news (unverified)</div>
   <div class="tab" data-view="risk">Risk &amp; Prevention</div>
-  <div class="tab" data-view="dc">DC Pilot — city deep-dive</div>
-  <div class="tab" data-view="chicago">Chicago Pilot — city deep-dive</div>
+  <div class="tab" data-view="cities">City Pilots</div>
 </div>
 
 <div id="view-fars" class="view on">
@@ -278,9 +308,15 @@
   </div>
 </div>
 
-<div id="view-dc" class="view">
-  <div class="side">
-    <h1>DC Pilot</h1>
+<div id="view-cities" class="view">
+  <div id="cities-header">
+    <h1>City Pilots</h1>
+    <p class="sub">City-level deep-dives — verified independently per city, not assumed to generalize</p>
+    <div class="filters" id="city-toggle"></div>
+  </div>
+
+  <div id="city-block-dc" class="city-block">
+    <h1 style="font-size:16px">Washington, DC</h1>
     <p class="sub">First city-level deep-dive · proof of concept for expanding beyond national data</p>
 
     <div class="banner">
@@ -308,39 +344,54 @@
     <div class="stat"><span class="n" id="dc-total">–</span><span class="l">bicycle-involved crashes <b id="dc-total-label">in this window</b></span></div>
     <div class="stat minor"><span class="n" id="dc-fatal">–</span><span class="l">resulted in a bicyclist fatality</span></div>
 
-    <h2>By ward</h2>
-    <div id="dc-ward-table"></div>
+    <div class="accordion">
+      <button class="accordion-toggle" data-target="dc-ward-wrap"><span class="accordion-arrow">▶</span> By ward</button>
+      <div class="accordion-content" id="dc-ward-wrap">
+        <div class="accordion-content-inner"><div id="dc-ward-table"></div></div>
+      </div>
+    </div>
 
-    <h2>Crashes relative to bikeshare activity, by ward</h2>
-    <p class="sub" style="margin-top:-4px"><b>Not a risk-per-rider rate</b> —
-      see callout below the table. Mapped each Capital Bikeshare station to
-      its ward (point-in-polygon against DC's official boundaries) so this
-      is a real, computed comparison, not disconnected context. Both sides
-      use the same <b id="dc-exposure-window">recent</b> window.</p>
-    <div id="dc-exposure-table"></div>
-    <p class="estimate-note" id="dc-exposure-note"></p>
+    <div class="accordion">
+      <button class="accordion-toggle" data-target="dc-exposure-wrap"><span class="accordion-arrow">▶</span> Crashes relative to bikeshare activity, by ward</button>
+      <div class="accordion-content" id="dc-exposure-wrap">
+        <div class="accordion-content-inner">
+          <p class="accordion-sub"><b>Not a risk-per-rider rate</b> —
+            see callout below the table. Mapped each Capital Bikeshare station to
+            its ward (point-in-polygon against DC's official boundaries) so this
+            is a real, computed comparison, not disconnected context. Both sides
+            use the same <b id="dc-exposure-window">recent</b> window.</p>
+          <div id="dc-exposure-table"></div>
+          <p class="estimate-note" id="dc-exposure-note"></p>
+        </div>
+      </div>
+    </div>
 
-    <h2>Capital Bikeshare: e-bike share of trips</h2>
-    <p class="sub" style="margin-top:-4px">A "trip" is one bikeshare
-      rental — someone unlocking a bike at one station/spot and docking
-      it at another (or the same) station. Citywide trend, for context.</p>
-    <div id="dc-bikeshare"></div>
+    <div class="accordion">
+      <button class="accordion-toggle" data-target="dc-bikeshare-wrap"><span class="accordion-arrow">▶</span> Capital Bikeshare: e-bike share of trips</button>
+      <div class="accordion-content" id="dc-bikeshare-wrap">
+        <div class="accordion-content-inner">
+          <p class="accordion-sub">A "trip" is one bikeshare rental — someone
+            unlocking a bike at one station/spot and docking it at another
+            (or the same) station. Citywide trend, for context.</p>
+          <div id="dc-bikeshare"></div>
+        </div>
+      </div>
+    </div>
 
     <div class="src" id="dc-src"></div>
-  </div>
-  <div style="position:relative">
-    <div id="dc-map"></div>
-    <div class="legend">
-      <div><span class="dot" style="background:#a371f7"></span>fatal outcome</div>
-      <div><span class="dot" style="background:#f78166"></span>other bicycle crash</div>
-      <div><span style="display:inline-block;width:14px;height:2px;background:#3fb950;vertical-align:middle;margin-right:6px"></span>mapped bike lane (OSM)</div>
+
+    <div class="city-block-map-wrap">
+      <div id="dc-map"></div>
+      <div class="legend">
+        <div><span class="dot" style="background:#a371f7"></span>fatal outcome</div>
+        <div><span class="dot" style="background:#f78166"></span>other bicycle crash</div>
+        <div><span style="display:inline-block;width:14px;height:2px;background:#3fb950;vertical-align:middle;margin-right:6px"></span>mapped bike lane (OSM)</div>
+      </div>
     </div>
   </div>
-</div>
 
-<div id="view-chicago" class="view">
-  <div class="side">
-    <h1>Chicago Pilot</h1>
+  <div id="city-block-chicago" class="city-block hidden">
+    <h1 style="font-size:16px">Chicago</h1>
     <p class="sub">Second city deep-dive · verified independently, not assumed from DC's pattern</p>
 
     <div class="banner">
@@ -350,7 +401,7 @@
       length as a consistency choice, not because we separately verified
       Chicago's older reporting the way DC's pre-2016 gap was checked.
       Counts are <b>not</b> exposure-adjusted on their own — see the
-      ward-exposure table below for that, which (like DC) compares ALL
+      ward-exposure section below for that, which (like DC) compares ALL
       cyclists' crashes to Divvy's fleet only, NOT a true risk-per-rider
       rate. The ward table has TWO different bike-lane fields, shown
       separately on purpose: <b>"Reported in lane"</b> is what the police
@@ -365,24 +416,35 @@
     <div class="stat"><span class="n" id="chi-total">–</span><span class="l">bicyclist-involved crash records</span></div>
     <div class="stat minor"><span class="n" id="chi-fatal">–</span><span class="l">resulted in a fatality</span></div>
 
-    <h2>By ward</h2>
-    <div id="chi-ward-table"></div>
+    <div class="accordion">
+      <button class="accordion-toggle" data-target="chi-ward-wrap"><span class="accordion-arrow">▶</span> By ward</button>
+      <div class="accordion-content" id="chi-ward-wrap">
+        <div class="accordion-content-inner"><div id="chi-ward-table"></div></div>
+      </div>
+    </div>
 
-    <h2>Crashes relative to Divvy activity, by ward</h2>
-    <p class="sub" style="margin-top:-4px"><b>Not a risk-per-rider rate</b>
-      — same caveat as DC's bikeshare comparison. Both sides use the same
-      <b id="chi-exposure-window">recent</b> window.</p>
-    <div id="chi-exposure-table"></div>
-    <p class="estimate-note" id="chi-exposure-note"></p>
+    <div class="accordion">
+      <button class="accordion-toggle" data-target="chi-exposure-wrap"><span class="accordion-arrow">▶</span> Crashes relative to Divvy activity, by ward</button>
+      <div class="accordion-content" id="chi-exposure-wrap">
+        <div class="accordion-content-inner">
+          <p class="accordion-sub"><b>Not a risk-per-rider rate</b> —
+            same caveat as DC's bikeshare comparison. Both sides use the same
+            <b id="chi-exposure-window">recent</b> window.</p>
+          <div id="chi-exposure-table"></div>
+          <p class="estimate-note" id="chi-exposure-note"></p>
+        </div>
+      </div>
+    </div>
 
     <div class="src" id="chi-src"></div>
-  </div>
-  <div style="position:relative">
-    <div id="chicago-map"></div>
-    <div class="legend">
-      <div><span class="dot" style="background:#a371f7"></span>fatal outcome</div>
-      <div><span class="dot" style="background:#f78166"></span>other crash</div>
-      <div><span style="display:inline-block;width:14px;height:2px;background:#3fb950;vertical-align:middle;margin-right:6px"></span>mapped bike lane (OSM)</div>
+
+    <div class="city-block-map-wrap">
+      <div id="chicago-map"></div>
+      <div class="legend">
+        <div><span class="dot" style="background:#a371f7"></span>fatal outcome</div>
+        <div><span class="dot" style="background:#f78166"></span>other crash</div>
+        <div><span style="display:inline-block;width:14px;height:2px;background:#3fb950;vertical-align:middle;margin-right:6px"></span>mapped bike lane (OSM)</div>
+      </div>
     </div>
   </div>
 </div>
@@ -458,8 +520,7 @@ document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () =>
   if (t.dataset.view === "news") { loadNews(); newsMap.resize(); }
   if (t.dataset.view === "neiss") loadNeiss();
   if (t.dataset.view === "risk") { loadRisk(); riskMap.resize(); }
-  if (t.dataset.view === "dc") { loadDC(); dcMap.resize(); }
-  if (t.dataset.view === "chicago") { loadChicago(); chicagoMap.resize(); }
+  if (t.dataset.view === "cities") activateCityToggle(cityToggleState);
 }));
 
 // ---- Recent Reports (news) panel ----
@@ -806,6 +867,109 @@ function formatISODate(iso) {
   return `${names[parseInt(m,10)-1]} ${y}`;
 }
 
+// ---- Accordion helper (collapsible ward/exposure/trend tables) ----
+// Click handlers are wired up once at page load (the toggle buttons are
+// static HTML, just their content starts empty). Data loads async after
+// a tab/toggle click, though -- if someone opens an accordion before that
+// fetch resolves, its max-height would be locked to an empty container's
+// height. refreshAccordion() re-measures an already-open section after its
+// content arrives, so that race can't leave a table invisible.
+function initAccordion(toggleEl) {
+  const content = document.getElementById(toggleEl.dataset.target);
+  toggleEl.addEventListener("click", () => {
+    const isOpen = toggleEl.classList.toggle("open");
+    content.style.maxHeight = isOpen ? content.scrollHeight + "px" : "0px";
+    // An accordion lives inside a city-block, which ALSO uses a JS-driven
+    // max-height (not CSS auto) for its own show/hide animation -- if we
+    // don't grow the parent too, the parent's old (smaller) max-height
+    // would clip the accordion we just opened, even though the accordion
+    // itself thinks it's fully open.
+    refreshAncestorCityBlock(toggleEl);
+  });
+}
+function refreshAccordion(targetId) {
+  const content = document.getElementById(targetId);
+  const toggleEl = document.querySelector(`.accordion-toggle[data-target="${targetId}"]`);
+  if (toggleEl && toggleEl.classList.contains("open")) {
+    content.style.maxHeight = content.scrollHeight + "px";
+  }
+  refreshAncestorCityBlock(content);
+}
+function refreshAncestorCityBlock(el) {
+  const block = el.closest(".city-block");
+  // If the block's max-height is currently a fixed px value (mid- or just-
+  // after its own show transition), grow it to match -- otherwise (the
+  // common case, "none"/auto) there's nothing to clip and nothing to do.
+  // Reading a fixed maxHeight here and just re-measuring scrollHeight
+  // would still be wrong DURING a CSS transition (the child's animated
+  // height hasn't visually caught up to its target yet, even though the
+  // target value is already set) -- so this only handles the "block is
+  // a fixed px and currently not transitioning" case; the show/hide
+  // transition itself is handled by setCityBlockVisible below.
+  if (block && !block.classList.contains("hidden") && block.style.maxHeight && block.style.maxHeight !== "none") {
+    block.style.maxHeight = block.scrollHeight + "px";
+  }
+}
+document.querySelectorAll(".accordion-toggle").forEach(initAccordion);
+
+// ---- City Pilots toggle (DC / Chicago / Both) ----
+// Merged from two separate tabs into one, per feedback that 7 tabs felt
+// cluttered. Each city is a self-contained block, shown/hidden rather than
+// torn down/rebuilt -- cheap, and avoids re-fetching data on every toggle.
+//
+// Standard "animate to/from auto height" pattern: max-height transitions
+// can't interpolate to/from "none", so showing a block sets a concrete
+// px target, lets the transition play, then releases to "none" once
+// settled -- after that, accordions inside can grow freely with no
+// coordination needed (no fixed height left to clip them). Hiding does
+// the reverse: pin to a concrete current height first (forcing a reflow
+// so the browser registers it), THEN drop to 0 so there's an actual
+// animatable start point instead of jumping straight from "none".
+let cityToggleState = "dc";
+const CITY_BLOCK_TRANSITION_MS = 320;
+function setCityBlockVisible(block, visible) {
+  if (visible) {
+    block.classList.remove("hidden");
+    block.style.maxHeight = block.scrollHeight + "px";
+    setTimeout(() => {
+      if (!block.classList.contains("hidden")) block.style.maxHeight = "none";
+    }, CITY_BLOCK_TRANSITION_MS);
+  } else {
+    block.style.maxHeight = block.scrollHeight + "px";
+    void block.offsetHeight; // force reflow so the browser registers that height
+    block.classList.add("hidden");
+    block.style.maxHeight = "0px";
+  }
+}
+function activateCityToggle(state) {
+  cityToggleState = state;
+  const showDC = state === "dc" || state === "both";
+  const showChicago = state === "chicago" || state === "both";
+  const dcBlock = document.getElementById("city-block-dc");
+  const chiBlock = document.getElementById("city-block-chicago");
+  setCityBlockVisible(dcBlock, showDC);
+  setCityBlockVisible(chiBlock, showChicago);
+  if (showDC) {
+    loadDC().then(()=>setCityBlockVisible(dcBlock, true));
+    requestAnimationFrame(()=>dcMap && dcMap.resize());
+  }
+  if (showChicago) {
+    loadChicago().then(()=>setCityBlockVisible(chiBlock, true));
+    requestAnimationFrame(()=>chicagoMap && chicagoMap.resize());
+  }
+}
+
+(function setupCityToggle() {
+  const tc = document.getElementById("city-toggle");
+  [["dc","DC"],["chicago","Chicago"],["both","Both"]].forEach(([v,l]) => {
+    chip(tc, l, (b) => {
+      [...tc.children].forEach(c=>c.classList.remove("on"));
+      b.classList.add("on");
+      activateCityToggle(v);
+    }, v === "dc");
+  });
+})();
+
 let dcLoaded = false;
 async function loadDC() {
   if (dcLoaded) return;
@@ -899,6 +1063,8 @@ async function loadDC() {
     `<b>Ward crash data:</b> ${ws.measure_note}<br><br>
      <b>Bikeshare context:</b> ${DC.bikeshare_context.measure_note}<br><br>
      Source: Open Data DC (DDOT/MPD crash data), Capital Bikeshare trip history.`;
+
+  ["dc-ward-wrap","dc-exposure-wrap","dc-bikeshare-wrap"].forEach(refreshAccordion);
 }
 
 // ---- Chicago Pilot panel ----
@@ -989,6 +1155,8 @@ async function loadChicago() {
   document.getElementById("chi-src").innerHTML =
     `<b>Ward crash data:</b> ${ws.measure_note}<br><br>
      Source: City of Chicago Data Portal (Traffic Crashes - People/Crashes), Divvy trip history.`;
+
+  ["chi-ward-wrap","chi-exposure-wrap"].forEach(refreshAccordion);
 }
 </script>
 </body>
