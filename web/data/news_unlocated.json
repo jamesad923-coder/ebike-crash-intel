@@ -2,6 +2,30 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "65+",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wmdt.com",
+      "url": "https://www.wmdt.com/2026/06/potomac-woman-killed-in-fatal-e-bike-crash-in-rehoboth-beach/",
+      "seendate": "20260622T210000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wmdt.com"
+      ],
+      "sources": [
+        {
+          "domain": "wmdt.com",
+          "url": "https://www.wmdt.com/2026/06/potomac-woman-killed-in-fatal-e-bike-crash-in-rehoboth-beach/",
+          "date": "20260622T210000Z"
+        }
+      ]
+    },
+    {
       "device": "Throttle vehicle (unclear e-bike classification)",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
@@ -106,6 +130,30 @@
       "state": null,
       "location_precision": null,
       "located": false,
+      "domain": "yahoo.com",
+      "url": "https://www.yahoo.com/news/us/articles/abuse-hurled-judge-first-group-114846525.html",
+      "seendate": "20260617T220000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "yahoo.com"
+      ],
+      "sources": [
+        {
+          "domain": "yahoo.com",
+          "url": "https://www.yahoo.com/news/us/articles/abuse-hurled-judge-first-group-114846525.html",
+          "date": "20260617T220000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
       "domain": "nj1015.com",
       "url": "https://nj1015.com/stafford-township-ice-incident-2/",
       "seendate": "20260617T193000Z",
@@ -142,30 +190,6 @@
           "domain": "salinapost.com",
           "url": "https://salinapost.com/posts/179eac4d-3a99-447f-a3d4-d57e07caef80",
           "date": "20260617T183000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcchicago.com",
-      "url": "https://www.nbcchicago.com/news/local/authorities-identify-teen-killed-in-crash-while-riding-e-bike-in-franklin-park/3949657/",
-      "seendate": "20260617T021500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcchicago.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcchicago.com",
-          "url": "https://www.nbcchicago.com/news/local/authorities-identify-teen-killed-in-crash-while-riding-e-bike-in-franklin-park/3949657/",
-          "date": "20260617T021500Z"
         }
       ]
     },
@@ -220,54 +244,6 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "theintelligencer.com",
-      "url": "https://www.theintelligencer.com/news/article/edwardsville-il-ebike-crash-teen-hospital-22307488.php",
-      "seendate": "20260616T170000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "theintelligencer.com"
-      ],
-      "sources": [
-        {
-          "domain": "theintelligencer.com",
-          "url": "https://www.theintelligencer.com/news/article/edwardsville-il-ebike-crash-teen-hospital-22307488.php",
-          "date": "20260616T170000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "talkradio960.com",
-      "url": "https://talkradio960.com/ixp/36/p/lafayette-hit-run-scooter-fatality/",
-      "seendate": "20260616T093000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "talkradio960.com"
-      ],
-      "sources": [
-        {
-          "domain": "talkradio960.com",
-          "url": "https://talkradio960.com/ixp/36/p/lafayette-hit-run-scooter-fatality/",
-          "date": "20260616T093000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
       "outcome": "Severe injury",
       "age_band": "18-24",
       "city": "North County",
@@ -310,6 +286,30 @@
           "domain": "wmur.com",
           "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
           "date": "20260620T000000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": "Montgomery County",
+      "state": "DC",
+      "location_precision": "county+outlet_market",
+      "located": true,
+      "domain": "wjla.com",
+      "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
+      "seendate": "20260617T234500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wjla.com"
+      ],
+      "sources": [
+        {
+          "domain": "wjla.com",
+          "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
+          "date": "20260617T234500Z"
         }
       ]
     }

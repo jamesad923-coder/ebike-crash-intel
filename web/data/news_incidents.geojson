@@ -210,7 +210,7 @@
         "device": "E-bike",
         "outcome": "Severe injury",
         "throttle_ambiguous": false,
-        "age_band": "Unknown",
+        "age_band": "13-17 (teen)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "abc30.com"
@@ -254,37 +254,6 @@
           }
         ],
         "date": "20260618T014500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -72.3897131,
-          40.8842482
-        ]
-      },
-      "properties": {
-        "city": "Southampton",
-        "state": "NY",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "Unknown",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wjla.com"
-        ],
-        "sources": [
-          {
-            "domain": "wjla.com",
-            "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
-            "date": "20260617T234500Z"
-          }
-        ],
-        "date": "20260617T234500Z"
       }
     },
     {
