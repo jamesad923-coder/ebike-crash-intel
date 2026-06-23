@@ -86,11 +86,14 @@
      target, which doesn't fit a shared class-based rule. */
   .crash-dot { position:absolute; top:50%; left:50%; pointer-events:none; }
 
+  /* Clean settle, no bounce/overshoot -- a spring-in pop read as
+     cartoony next to the debris convergence; a quiet upward float +
+     fade reads as the wordmark resolving into place. */
   #crash-logo { position:absolute; top:50%; left:50%; white-space:nowrap;
     font-size:30px; font-weight:700; letter-spacing:.01em; color:var(--txt);
-    opacity:0; transform:translate(-50%,-50%) scale(1.1);
-    transition:opacity .45s ease, transform .45s cubic-bezier(.34,1.56,.64,1); }
-  #crash-logo.show { opacity:1; transform:translate(-50%,-50%) scale(1); }
+    opacity:0; transform:translate(-50%,-50%) translateY(7px) scale(0.97);
+    transition:opacity .5s cubic-bezier(.16,.8,.24,1), transform .5s cubic-bezier(.16,.8,.24,1); }
+  #crash-logo.show { opacity:1; transform:translate(-50%,-50%) translateY(0) scale(1); }
 
   #crash-footer { margin-top:8px; text-align:center; opacity:0; transition:opacity .6s ease; }
   #crash-footer.show { opacity:1; }
@@ -687,19 +690,17 @@ setTimeout(hideLoadingScreen, 11000);
       const outDist = 30 + Math.random() * 150;
       const ox = sx + Math.cos(angle) * outDist;
       const oy = sy + Math.sin(angle) * outDist * 0.65 - 18;
-      const rot = Math.random() * 320 - 160;
 
+      // Plain filled circles styled exactly like the actual crash-point
+      // map markers (same opacity + thin dark stroke as the FARS/DC/
+      // Chicago point layers) -- ties the debris directly to the site's
+      // own visual language instead of being generic confetti shapes.
       dot.style.background = fromBike ? "var(--accent)" : "var(--minor)";
-      const isShard = Math.random() < 0.4;
-      if (isShard) {
-        dot.style.width = `${5 + Math.random() * 6}px`;
-        dot.style.height = `${3 + Math.random() * 4}px`;
-        dot.style.borderRadius = "1px";
-      } else {
-        const size = 3.5 + Math.random() * 5;
-        dot.style.width = dot.style.height = `${size}px`;
-        dot.style.borderRadius = "50%";
-      }
+      dot.style.borderRadius = "50%";
+      dot.style.opacity = "0.85";
+      dot.style.boxShadow = "0 0 0 0.6px rgba(0,0,0,0.8)";
+      const size = 4 + Math.random() * 6;
+      dot.style.width = dot.style.height = `${size}px`;
 
       // Render immediately AT the spawn point within the vehicle's own
       // body -- no flying in from a center point. The very first visible
@@ -707,34 +708,43 @@ setTimeout(hideLoadingScreen, 11000);
       // place," which is what actually sells "breaking apart" instead of
       // "vehicle vanishes, unrelated burst appears".
       dot.style.transition = "none";
-      dot.style.transform = `translate(calc(-50% + ${sx}px), calc(-50% + ${sy}px)) rotate(${rot}deg)`;
-      dot.style.opacity = "1";
+      dot.style.transform = `translate(calc(-50% + ${sx}px), calc(-50% + ${sy}px))`;
       burst.appendChild(dot);
 
-      const tx = logoRect.left + Math.random() * logoRect.width - cx;
-      const ty = logoRect.top + Math.random() * logoRect.height - cy;
+      // Converge target: a tight cluster around the logo's own center
+      // (small jitter only), not scattered across its full width -- a
+      // wide spread of landing points read as messy/illegible. Pieces
+      // gathering to one focal point, then fading as the wordmark
+      // resolves there, is what actually looks like a clean formation.
+      const logoCx = logoRect.left + logoRect.width / 2 - cx;
+      const logoCy = logoRect.top + logoRect.height / 2 - cy;
+      const tx = logoCx + (Math.random() * 36 - 18);
+      const ty = logoCy + (Math.random() * 14 - 7);
 
-      dots.push({ el: dot, ox, oy, rot, tx, ty });
+      dots.push({ el: dot, ox, oy, tx, ty });
     }
 
     // Next frame: release each piece outward from its own spawn point.
     requestAnimationFrame(() => {
       dots.forEach(d => {
         d.el.style.transitionDelay = `${Math.random() * 45}ms`;
-        d.el.style.transition = "transform .6s cubic-bezier(.12,.8,.25,1), opacity .1s linear";
-        d.el.style.transform = `translate(calc(-50% + ${d.ox}px), calc(-50% + ${d.oy}px)) rotate(${d.rot}deg)`;
+        d.el.style.transition = "transform .6s cubic-bezier(.12,.8,.25,1)";
+        d.el.style.transform = `translate(calc(-50% + ${d.ox}px), calc(-50% + ${d.oy}px))`;
       });
     });
 
     setTimeout(() => {
       dots.forEach(d => {
-        d.el.style.transitionDelay = "0ms";
-        d.el.style.transition = "transform .65s cubic-bezier(.5,0,.3,1), opacity .55s ease-in";
+        d.el.style.transitionDelay = `${Math.random() * 35}ms`;
+        d.el.style.transition = "transform .55s cubic-bezier(.65,0,.35,1), opacity .4s ease-in";
         d.el.style.opacity = "0";
-        d.el.style.transform = `translate(calc(-50% + ${d.tx}px), calc(-50% + ${d.ty}px)) rotate(${d.rot}deg)`;
+        d.el.style.transform = `translate(calc(-50% + ${d.tx}px), calc(-50% + ${d.ty}px))`;
       });
-      requestAnimationFrame(() => logo.classList.add("show"));
-      setTimeout(() => { footer.classList.add("show"); dots.forEach(d => d.el.remove()); }, CONVERGE_MS * 0.8);
+      // Logo resolves once the gathered debris has mostly arrived, not
+      // racing it from the start -- reads as "the gathered pieces become
+      // the wordmark" instead of two competing animations.
+      setTimeout(() => logo.classList.add("show"), CONVERGE_MS * 0.55);
+      setTimeout(() => { footer.classList.add("show"); dots.forEach(d => d.el.remove()); }, CONVERGE_MS + 150);
     }, SCATTER_MS);
   }
 
