@@ -2,6 +2,54 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "kcci.com",
+      "url": "https://www.kcci.com/article/grimes-iowa-teen-injured-car-crash-electric-scooter/71679356",
+      "seendate": "20260623T201500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "kcci.com"
+      ],
+      "sources": [
+        {
+          "domain": "kcci.com",
+          "url": "https://www.kcci.com/article/grimes-iowa-teen-injured-car-crash-electric-scooter/71679356",
+          "date": "20260623T201500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Severe injury",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "local10.com",
+      "url": "https://www.local10.com/news/local/2026/06/23/doral-man-accused-of-fleeing-miami-crash-that-left-electric-scooter-rider-critically-injured/",
+      "seendate": "20260623T191500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "local10.com"
+      ],
+      "sources": [
+        {
+          "domain": "local10.com",
+          "url": "https://www.local10.com/news/local/2026/06/23/doral-man-accused-of-fleeing-miami-crash-that-left-electric-scooter-rider-critically-injured/",
+          "date": "20260623T191500Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -22,6 +70,30 @@
           "domain": "wmdt.com",
           "url": "https://www.wmdt.com/2026/06/potomac-woman-killed-in-fatal-e-bike-crash-in-rehoboth-beach/",
           "date": "20260622T210000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nbcbayarea.com",
+      "url": "https://www.nbcbayarea.com/news/local/san-jose-e-scooter-crash/4102624/",
+      "seendate": "20260622T191500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nbcbayarea.com"
+      ],
+      "sources": [
+        {
+          "domain": "nbcbayarea.com",
+          "url": "https://www.nbcbayarea.com/news/local/san-jose-e-scooter-crash/4102624/",
+          "date": "20260622T191500Z"
         }
       ]
     },
@@ -190,54 +262,6 @@
           "domain": "salinapost.com",
           "url": "https://salinapost.com/posts/179eac4d-3a99-447f-a3d4-d57e07caef80",
           "date": "20260617T183000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "18-24",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "abc7chicago.com",
-      "url": "https://abc7chicago.com/post/teen-driving-bike-killed-franklin-park-crash-belmont-avenue-george-street-police-say/19309425/",
-      "seendate": "20260616T181500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "abc7chicago.com"
-      ],
-      "sources": [
-        {
-          "domain": "abc7chicago.com",
-          "url": "https://abc7chicago.com/post/teen-driving-bike-killed-franklin-park-crash-belmont-avenue-george-street-police-say/19309425/",
-          "date": "20260616T181500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wcvb.com",
-      "url": "https://www.wcvb.com/article/e-bike-rider-injured-in-haverhill-crash-during-morning-rush-hour/71602362",
-      "seendate": "20260616T173000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wcvb.com"
-      ],
-      "sources": [
-        {
-          "domain": "wcvb.com",
-          "url": "https://www.wcvb.com/article/e-bike-rider-injured-in-haverhill-crash-during-morning-rush-hour/71602362",
-          "date": "20260616T173000Z"
         }
       ]
     },
