@@ -608,7 +608,7 @@ const DATA = "data/";
 // guarantees it's never cut short by a fast connection -- hide is gated
 // on whichever finishes later: the animation or the real FARS data.
 const LOADING_START = performance.now();
-const MIN_LOADING_MS = 3700;
+const MIN_LOADING_MS = 3750;
 
 function hideLoadingScreen() {
   const el = document.getElementById("loading-screen");
@@ -641,7 +641,7 @@ setTimeout(hideLoadingScreen, 11000);
     return;
   }
 
-  const SCATTER_MS = 1450, CONVERGE_MS = 680, DOT_COUNT = 52;
+  const SCATTER_MS = 1450, CONVERGE_MS = 780, DOT_COUNT = 52;
 
   function triggerImpact() {
     // Measure the vehicles' real footprints BEFORE hiding them -- this is
@@ -678,6 +678,13 @@ setTimeout(hideLoadingScreen, 11000);
     for (let n = timingOrder.length - 1; n > 0; n--) {
       const j = Math.floor(Math.random() * (n + 1));
       [timingOrder[n], timingOrder[j]] = [timingOrder[j], timingOrder[n]];
+    }
+    // Separate shuffle for the converge phase so pieces don't gather
+    // into the wordmark in the same relative order they left in.
+    const convergeOrder = Array.from({ length: DOT_COUNT }, (_, n) => n);
+    for (let n = convergeOrder.length - 1; n > 0; n--) {
+      const j = Math.floor(Math.random() * (n + 1));
+      [convergeOrder[n], convergeOrder[j]] = [convergeOrder[j], convergeOrder[n]];
     }
 
     const dots = [];
@@ -749,9 +756,16 @@ setTimeout(hideLoadingScreen, 11000);
       // which is why it still read as one synchronized burst -- spacing
       // by rank guarantees every piece, not just a few stragglers, has a
       // visibly distinct moment.
-      const appearDelay = Math.max(0, (timingOrder[i] / DOT_COUNT) * 500 + (Math.random() * 50 - 25));
-      const travelMs = 400 + Math.random() * 500;
-      dots.push({ el: dot, ox, oy, tx, ty, appearDelay, travelMs });
+      // Wide stagger (~950ms) + SHORT individual travel (~220-450ms) --
+      // staggered start times alone don't read as individualized if
+      // each piece is still moving for most of that window, since most
+      // pieces end up "in flight" at the same time regardless of when
+      // they started. Quick, snappy per-piece motion is what actually
+      // creates visible separation: a piece darts out and settles,
+      // THEN another starts while the first is already still.
+      const appearDelay = Math.max(0, (timingOrder[i] / DOT_COUNT) * 950 + (Math.random() * 60 - 30));
+      const travelMs = 220 + Math.random() * 230;
+      dots.push({ el: dot, ox, oy, tx, ty, appearDelay, travelMs, convergeRank: convergeOrder[i] });
     }
 
     // Next frame: each piece appears and launches outward together, at
@@ -767,8 +781,11 @@ setTimeout(hideLoadingScreen, 11000);
 
     setTimeout(() => {
       dots.forEach(d => {
-        const convergeDelay = Math.random() * 35;
-        d.el.style.transition = `transform .55s cubic-bezier(.65,0,.35,1) ${convergeDelay}ms, opacity .4s ease-in ${convergeDelay}ms`;
+        // Same wide-stagger + quick-travel principle as the scatter
+        // phase: a 35ms window was effectively no stagger at all, which
+        // is why convergence still read as "they all go in together."
+        const convergeDelay = Math.max(0, (d.convergeRank / DOT_COUNT) * 400 + (Math.random() * 40 - 20));
+        d.el.style.transition = `transform .3s cubic-bezier(.4,0,.2,1) ${convergeDelay}ms, opacity .25s ease-in ${convergeDelay}ms`;
         d.el.style.opacity = "0";
         d.el.style.transform = `translate(calc(-50% + ${d.tx}px), calc(-50% + ${d.ty}px))`;
       });
