@@ -669,6 +669,17 @@ setTimeout(hideLoadingScreen, 11000);
       flash.style.transform = "translate(-50%,-50%) scale(2.6)";
     });
 
+    // Timing order is shuffled independently of spawn-origin order (i <
+    // DOT_COUNT/2 = bike, otherwise car) -- without this, bike debris
+    // would always appear before car debris as two sequential blocks
+    // instead of interleaved, since both vehicles actually shatter at
+    // the same instant.
+    const timingOrder = Array.from({ length: DOT_COUNT }, (_, n) => n);
+    for (let n = timingOrder.length - 1; n > 0; n--) {
+      const j = Math.floor(Math.random() * (n + 1));
+      [timingOrder[n], timingOrder[j]] = [timingOrder[j], timingOrder[n]];
+    }
+
     const dots = [];
     for (let i = 0; i < DOT_COUNT; i++) {
       const dot = document.createElement("div");
@@ -731,7 +742,14 @@ setTimeout(hideLoadingScreen, 11000);
       // window. Each piece also gets its OWN travel duration, not a
       // shared one, so even pieces that leave close together move at
       // visibly different paces rather than in lockstep.
-      const appearDelay = Math.random() * Math.random() * 450;
+      // Spread delays evenly ACROSS the whole window by shuffled rank
+      // (plus small jitter), instead of drawing each independently at
+      // random. Independent random draws bunch most pieces near zero by
+      // sheer probability (only a minority land in the visible "tail"),
+      // which is why it still read as one synchronized burst -- spacing
+      // by rank guarantees every piece, not just a few stragglers, has a
+      // visibly distinct moment.
+      const appearDelay = Math.max(0, (timingOrder[i] / DOT_COUNT) * 500 + (Math.random() * 50 - 25));
       const travelMs = 400 + Math.random() * 500;
       dots.push({ el: dot, ox, oy, tx, ty, appearDelay, travelMs });
     }
