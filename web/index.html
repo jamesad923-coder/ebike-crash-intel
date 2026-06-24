@@ -608,7 +608,7 @@ const DATA = "data/";
 // guarantees it's never cut short by a fast connection -- hide is gated
 // on whichever finishes later: the animation or the real FARS data.
 const LOADING_START = performance.now();
-const MIN_LOADING_MS = 3400;
+const MIN_LOADING_MS = 3300;
 
 function hideLoadingScreen() {
   const el = document.getElementById("loading-screen");
@@ -641,7 +641,7 @@ setTimeout(hideLoadingScreen, 11000);
     return;
   }
 
-  const SCATTER_MS = 1150, CONVERGE_MS = 780, DOT_COUNT = 52;
+  const SCATTER_MS = 1050, CONVERGE_MS = 780, DOT_COUNT = 52;
 
   function triggerImpact() {
     // Measure the vehicles' real footprints BEFORE hiding them -- this is
@@ -763,7 +763,7 @@ setTimeout(hideLoadingScreen, 11000);
       // they started. Quick, snappy per-piece motion is what actually
       // creates visible separation: a piece darts out and settles,
       // THEN another starts while the first is already still.
-      const appearDelay = Math.max(0, (timingOrder[i] / DOT_COUNT) * 650 + (Math.random() * 60 - 30));
+      const appearDelay = Math.max(0, (timingOrder[i] / DOT_COUNT) * 560 + (Math.random() * 60 - 30));
       const travelMs = 220 + Math.random() * 230;
       dots.push({ el: dot, ox, oy, tx, ty, appearDelay, travelMs, convergeRank: convergeOrder[i] });
     }
