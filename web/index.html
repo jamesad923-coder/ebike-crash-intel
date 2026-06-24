@@ -608,7 +608,7 @@ const DATA = "data/";
 // guarantees it's never cut short by a fast connection -- hide is gated
 // on whichever finishes later: the animation or the real FARS data.
 const LOADING_START = performance.now();
-const MIN_LOADING_MS = 2950;
+const MIN_LOADING_MS = 3700;
 
 function hideLoadingScreen() {
   const el = document.getElementById("loading-screen");
@@ -641,7 +641,7 @@ setTimeout(hideLoadingScreen, 11000);
     return;
   }
 
-  const SCATTER_MS = 720, CONVERGE_MS = 680, DOT_COUNT = 52;
+  const SCATTER_MS = 1450, CONVERGE_MS = 680, DOT_COUNT = 52;
 
   function triggerImpact() {
     // Measure the vehicles' real footprints BEFORE hiding them -- this is
@@ -725,16 +725,23 @@ setTimeout(hideLoadingScreen, 11000);
       const tx = logoCx + (Math.random() * 36 - 18);
       const ty = logoCy + (Math.random() * 14 - 7);
 
-      const appearDelay = Math.random() * 150;
-      dots.push({ el: dot, ox, oy, tx, ty, appearDelay });
+      // Cascade + trickle: most pieces still leave in the initial burst
+      // (squaring biases the distribution toward 0), but a visible tail
+      // keeps trickling out for a while after -- not a single uniform
+      // window. Each piece also gets its OWN travel duration, not a
+      // shared one, so even pieces that leave close together move at
+      // visibly different paces rather than in lockstep.
+      const appearDelay = Math.random() * Math.random() * 450;
+      const travelMs = 400 + Math.random() * 500;
+      dots.push({ el: dot, ox, oy, tx, ty, appearDelay, travelMs });
     }
 
     // Next frame: each piece appears and launches outward together, at
-    // its own staggered moment -- not a single synchronized burst.
+    // its own staggered moment and its own pace -- not a single
+    // synchronized burst.
     requestAnimationFrame(() => {
       dots.forEach(d => {
-        d.el.style.transitionDelay = `${d.appearDelay}ms`;
-        d.el.style.transition = "opacity .12s linear, transform .6s cubic-bezier(.12,.8,.25,1)";
+        d.el.style.transition = `opacity .12s linear ${d.appearDelay}ms, transform ${d.travelMs}ms cubic-bezier(.12,.8,.25,1) ${d.appearDelay}ms`;
         d.el.style.opacity = "0.85";
         d.el.style.transform = `translate(calc(-50% + ${d.ox}px), calc(-50% + ${d.oy}px))`;
       });
@@ -742,8 +749,8 @@ setTimeout(hideLoadingScreen, 11000);
 
     setTimeout(() => {
       dots.forEach(d => {
-        d.el.style.transitionDelay = `${Math.random() * 35}ms`;
-        d.el.style.transition = "transform .55s cubic-bezier(.65,0,.35,1), opacity .4s ease-in";
+        const convergeDelay = Math.random() * 35;
+        d.el.style.transition = `transform .55s cubic-bezier(.65,0,.35,1) ${convergeDelay}ms, opacity .4s ease-in ${convergeDelay}ms`;
         d.el.style.opacity = "0";
         d.el.style.transform = `translate(calc(-50% + ${d.tx}px), calc(-50% + ${d.ty}px))`;
       });
