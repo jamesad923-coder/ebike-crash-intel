@@ -608,7 +608,7 @@ const DATA = "data/";
 // guarantees it's never cut short by a fast connection -- hide is gated
 // on whichever finishes later: the animation or the real FARS data.
 const LOADING_START = performance.now();
-const MIN_LOADING_MS = 2800;
+const MIN_LOADING_MS = 2950;
 
 function hideLoadingScreen() {
   const el = document.getElementById("loading-screen");
@@ -641,7 +641,7 @@ setTimeout(hideLoadingScreen, 11000);
     return;
   }
 
-  const SCATTER_MS = 600, CONVERGE_MS = 680, DOT_COUNT = 52;
+  const SCATTER_MS = 720, CONVERGE_MS = 680, DOT_COUNT = 52;
 
   function triggerImpact() {
     // Measure the vehicles' real footprints BEFORE hiding them -- this is
@@ -697,16 +697,20 @@ setTimeout(hideLoadingScreen, 11000);
       // own visual language instead of being generic confetti shapes.
       dot.style.background = fromBike ? "var(--accent)" : "var(--minor)";
       dot.style.borderRadius = "50%";
-      dot.style.opacity = "0.85";
       dot.style.boxShadow = "0 0 0 0.6px rgba(0,0,0,0.8)";
       const size = 4 + Math.random() * 6;
       dot.style.width = dot.style.height = `${size}px`;
 
-      // Render immediately AT the spawn point within the vehicle's own
-      // body -- no flying in from a center point. The very first visible
-      // frame should look like "a piece of the vehicle, revealed in
-      // place," which is what actually sells "breaking apart" instead of
-      // "vehicle vanishes, unrelated burst appears".
+      // Spawn invisible AT the spawn point within the vehicle's own body
+      // -- no flying in from a center point. Each piece is revealed
+      // (opacity 0 -> 0.85) at its OWN randomized moment within a short
+      // window, already in motion toward its outward point as it
+      // appears, rather than every piece popping in in the same frame
+      // and only staggering when it starts moving. Real debris doesn't
+      // sit still and then launch -- it's already moving the instant
+      // it's visible, and a shattering object doesn't release every
+      // fragment in the same instant either.
+      dot.style.opacity = "0";
       dot.style.transition = "none";
       dot.style.transform = `translate(calc(-50% + ${sx}px), calc(-50% + ${sy}px))`;
       burst.appendChild(dot);
@@ -721,14 +725,17 @@ setTimeout(hideLoadingScreen, 11000);
       const tx = logoCx + (Math.random() * 36 - 18);
       const ty = logoCy + (Math.random() * 14 - 7);
 
-      dots.push({ el: dot, ox, oy, tx, ty });
+      const appearDelay = Math.random() * 150;
+      dots.push({ el: dot, ox, oy, tx, ty, appearDelay });
     }
 
-    // Next frame: release each piece outward from its own spawn point.
+    // Next frame: each piece appears and launches outward together, at
+    // its own staggered moment -- not a single synchronized burst.
     requestAnimationFrame(() => {
       dots.forEach(d => {
-        d.el.style.transitionDelay = `${Math.random() * 45}ms`;
-        d.el.style.transition = "transform .6s cubic-bezier(.12,.8,.25,1)";
+        d.el.style.transitionDelay = `${d.appearDelay}ms`;
+        d.el.style.transition = "opacity .12s linear, transform .6s cubic-bezier(.12,.8,.25,1)";
+        d.el.style.opacity = "0.85";
         d.el.style.transform = `translate(calc(-50% + ${d.ox}px), calc(-50% + ${d.oy}px))`;
       });
     });
