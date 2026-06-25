@@ -220,6 +220,11 @@
             "domain": "abc30.com",
             "url": "https://abc30.com/post/man-critical-condition-bike-crash-central-fresno-police-say/19320191/",
             "date": "20260618T080000Z"
+          },
+          {
+            "domain": "abc30.com",
+            "url": "https://abc30.com/post/teen-critical-condition-being-hit-car-bike-selma-police-say/19320153/",
+            "date": "20260618T054500Z"
           }
         ],
         "date": "20260618T080000Z"
@@ -316,37 +321,6 @@
           }
         ],
         "date": "20260617T230000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.0254256,
-          39.4862777
-        ]
-      },
-      "properties": {
-        "city": "Vineland",
-        "state": "NJ",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "25-44",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "republicanherald.com"
-        ],
-        "sources": [
-          {
-            "domain": "republicanherald.com",
-            "url": "https://www.republicanherald.com/2026/06/16/new-details-from-investigation-of-fatal-e-bike-crash-in-schuylkill-county/",
-            "date": "20260616T233000Z"
-          }
-        ],
-        "date": "20260616T233000Z"
       }
     }
   ]
