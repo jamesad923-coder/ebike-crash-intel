@@ -2,30 +2,6 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Severe injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "catcountry1073.com",
-      "url": "https://catcountry1073.com/ixp/564/p/eht-nj-life-threatening-crash/",
-      "seendate": "20260625T010000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "catcountry1073.com"
-      ],
-      "sources": [
-        {
-          "domain": "catcountry1073.com",
-          "url": "https://catcountry1073.com/ixp/564/p/eht-nj-life-threatening-crash/",
-          "date": "20260625T010000Z"
-        }
-      ]
-    },
-    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -190,30 +166,6 @@
           "domain": "q95fm.net",
           "url": "https://www.q95fm.net/2026/06/19/regional-news-june-19th-2026/",
           "date": "20260620T113000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": "PA",
-      "location_precision": "outlet_market",
-      "located": false,
-      "domain": "mcall.com",
-      "url": "https://www.mcall.com/2026/06/18/2-killed-in-bethlehem-crash-involving-e-bike-motorcycles-are-identified/",
-      "seendate": "20260618T124500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "mcall.com"
-      ],
-      "sources": [
-        {
-          "domain": "mcall.com",
-          "url": "https://www.mcall.com/2026/06/18/2-killed-in-bethlehem-crash-involving-e-bike-motorcycles-are-identified/",
-          "date": "20260618T124500Z"
         }
       ]
     },
