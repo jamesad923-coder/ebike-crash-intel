@@ -2,6 +2,30 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Severe injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "catcountry1073.com",
+      "url": "https://catcountry1073.com/ixp/564/p/eht-nj-life-threatening-crash/",
+      "seendate": "20260625T010000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "catcountry1073.com"
+      ],
+      "sources": [
+        {
+          "domain": "catcountry1073.com",
+          "url": "https://catcountry1073.com/ixp/564/p/eht-nj-life-threatening-crash/",
+          "date": "20260625T010000Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -74,30 +98,6 @@
       ]
     },
     {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcbayarea.com",
-      "url": "https://www.nbcbayarea.com/news/local/san-jose-e-scooter-crash/4102624/",
-      "seendate": "20260622T191500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcbayarea.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcbayarea.com",
-          "url": "https://www.nbcbayarea.com/news/local/san-jose-e-scooter-crash/4102624/",
-          "date": "20260622T191500Z"
-        }
-      ]
-    },
-    {
       "device": "Throttle vehicle (unclear e-bike classification)",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
@@ -149,6 +149,30 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "reflector.com",
+      "url": "http://www.reflector.com/opinion/editorial_columnists/lisa-jarvis-the-e-scooter-boom-is-putting-kids-at-risk/article_14aea381-57af-5e2f-8b8d-6edc703286f5.html",
+      "seendate": "20260621T121500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "reflector.com"
+      ],
+      "sources": [
+        {
+          "domain": "reflector.com",
+          "url": "http://www.reflector.com/opinion/editorial_columnists/lisa-jarvis-the-e-scooter-boom-is-putting-kids-at-risk/article_14aea381-57af-5e2f-8b8d-6edc703286f5.html",
+          "date": "20260621T121500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
       "age_band": "45-64",
       "city": null,
       "state": null,
@@ -175,21 +199,21 @@
       "outcome": "Fatality",
       "age_band": "Unknown",
       "city": null,
-      "state": null,
-      "location_precision": null,
+      "state": "PA",
+      "location_precision": "outlet_market",
       "located": false,
-      "domain": "yahoo.com",
-      "url": "https://www.yahoo.com/news/us/articles/abuse-hurled-judge-first-group-114846525.html",
-      "seendate": "20260617T220000Z",
+      "domain": "mcall.com",
+      "url": "https://www.mcall.com/2026/06/18/2-killed-in-bethlehem-crash-involving-e-bike-motorcycles-are-identified/",
+      "seendate": "20260618T124500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "yahoo.com"
+        "mcall.com"
       ],
       "sources": [
         {
-          "domain": "yahoo.com",
-          "url": "https://www.yahoo.com/news/us/articles/abuse-hurled-judge-first-group-114846525.html",
-          "date": "20260617T220000Z"
+          "domain": "mcall.com",
+          "url": "https://www.mcall.com/2026/06/18/2-killed-in-bethlehem-crash-involving-e-bike-motorcycles-are-identified/",
+          "date": "20260618T124500Z"
         }
       ]
     },
@@ -238,30 +262,6 @@
           "domain": "wmur.com",
           "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
           "date": "20260620T000000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": "HouseMontgomery County",
-      "state": "DC",
-      "location_precision": "county+outlet_market",
-      "located": true,
-      "domain": "wjla.com",
-      "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
-      "seendate": "20260617T234500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wjla.com"
-      ],
-      "sources": [
-        {
-          "domain": "wjla.com",
-          "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
-          "date": "20260617T234500Z"
         }
       ]
     }
