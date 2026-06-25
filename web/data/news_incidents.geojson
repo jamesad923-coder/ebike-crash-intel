@@ -193,37 +193,6 @@
         ],
         "date": "20260619T013000Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.6621294,
-          41.4086874
-        ]
-      },
-      "properties": {
-        "city": "Scranton",
-        "state": "PA",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "thetimes-tribune.com"
-        ],
-        "sources": [
-          {
-            "domain": "thetimes-tribune.com",
-            "url": "https://www.thetimes-tribune.com/2026/06/18/juvenile-e-bike-rider-seriously-injured-in-clarks-summit-crash/",
-            "date": "20260618T193000Z"
-          }
-        ],
-        "date": "20260618T193000Z"
-      }
     }
   ]
 }
