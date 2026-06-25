@@ -224,37 +224,6 @@
         ],
         "date": "20260618T193000Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.3289302,
-          40.7451356
-        ]
-      },
-      "properties": {
-        "city": "Northampton County",
-        "state": "PA",
-        "location_precision": "county+outlet_market",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "25-44",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "mcall.com"
-        ],
-        "sources": [
-          {
-            "domain": "mcall.com",
-            "url": "https://www.mcall.com/2026/06/18/2-killed-in-bethlehem-crash-involving-e-bike-motorcycles-are-identified/",
-            "date": "20260618T124500Z"
-          }
-        ],
-        "date": "20260618T124500Z"
-      }
     }
   ]
 }
