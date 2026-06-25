@@ -656,19 +656,9 @@ setTimeout(hideLoadingScreen, 11000);
   const footer = document.getElementById("crash-footer");
   if (!stage || !logo) return;
 
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    // Hide only the moving parts, NOT the whole stage -- #crash-logo is
-    // nested inside #crash-stage, so hiding the stage itself (the
-    // previous approach) hid the logo too despite separately trying to
-    // show it, leaving only the footer (a sibling) visible.
-    ["crash-bike", "crash-car", "crash-ground", "crash-flash"].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.style.display = "none";
-    });
-    logo.classList.add("show");
-    footer.classList.add("show");
-    return;
-  }
+  // Intentionally plays for every visitor regardless of OS-level
+  // "reduce motion" settings -- a deliberate brand choice, not an
+  // oversight.
 
   const SCATTER_MS = 1050, CONVERGE_MS = 780, DOT_COUNT = 52;
 
