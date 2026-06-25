@@ -13,6 +13,68 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -74.6171489,
+          39.3820672
+        ]
+      },
+      "properties": {
+        "city": "Harbor Township",
+        "state": "NJ",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Severe injury",
+        "throttle_ambiguous": false,
+        "age_band": "Unknown",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "catcountry1073.com"
+        ],
+        "sources": [
+          {
+            "domain": "catcountry1073.com",
+            "url": "https://catcountry1073.com/ixp/564/p/eht-nj-life-threatening-crash/",
+            "date": "20260625T010000Z"
+          }
+        ],
+        "date": "20260625T010000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.4298248,
+          42.0775022
+        ]
+      },
+      "properties": {
+        "city": "Olean",
+        "state": "NY",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "Unknown",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "wkbw.com"
+        ],
+        "sources": [
+          {
+            "domain": "wkbw.com",
+            "url": "https://www.wkbw.com/news/local-news/cattaraugus-county/family-of-olean-man-demands-answers-after-hit-and-run",
+            "date": "20260625T010000Z"
+          }
+        ],
+        "date": "20260625T010000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -116.0833144,
           34.8253019
         ]
@@ -130,197 +192,6 @@
           }
         ],
         "date": "20260619T013000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.6621294,
-          41.4086874
-        ]
-      },
-      "properties": {
-        "city": "Scranton",
-        "state": "PA",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "thetimes-tribune.com"
-        ],
-        "sources": [
-          {
-            "domain": "thetimes-tribune.com",
-            "url": "https://www.thetimes-tribune.com/2026/06/18/juvenile-e-bike-rider-seriously-injured-in-clarks-summit-crash/",
-            "date": "20260618T193000Z"
-          }
-        ],
-        "date": "20260618T193000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.3289302,
-          40.7451356
-        ]
-      },
-      "properties": {
-        "city": "Northampton County",
-        "state": "PA",
-        "location_precision": "county+outlet_market",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "25-44",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "mcall.com"
-        ],
-        "sources": [
-          {
-            "domain": "mcall.com",
-            "url": "https://www.mcall.com/2026/06/18/2-killed-in-bethlehem-crash-involving-e-bike-motorcycles-are-identified/",
-            "date": "20260618T124500Z"
-          }
-        ],
-        "date": "20260618T124500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -119.8155355,
-          36.6713502
-        ]
-      },
-      "properties": {
-        "city": "Fresno County",
-        "state": "CA",
-        "location_precision": "county+outlet_market",
-        "device": "E-bike",
-        "outcome": "Severe injury",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "abc30.com"
-        ],
-        "sources": [
-          {
-            "domain": "abc30.com",
-            "url": "https://abc30.com/post/man-critical-condition-bike-crash-central-fresno-police-say/19320191/",
-            "date": "20260618T080000Z"
-          },
-          {
-            "domain": "abc30.com",
-            "url": "https://abc30.com/post/teen-critical-condition-being-hit-car-bike-selma-police-say/19320153/",
-            "date": "20260618T054500Z"
-          }
-        ],
-        "date": "20260618T080000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.0363849,
-          38.8950982
-        ]
-      },
-      "properties": {
-        "city": "Washington",
-        "state": "DC",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "18-24",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wtop.com"
-        ],
-        "sources": [
-          {
-            "domain": "wtop.com",
-            "url": "https://wtop.com/dc/2026/06/e-bike-crash-leaves-man-dead-in-southeast-dc-police-say/",
-            "date": "20260618T014500Z"
-          }
-        ],
-        "date": "20260618T014500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -74.7380885,
-          39.931466
-        ]
-      },
-      "properties": {
-        "city": "Southampton Twp.",
-        "state": "NJ",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "6abc.com"
-        ],
-        "sources": [
-          {
-            "domain": "6abc.com",
-            "url": "https://6abc.com/post/remembering-chase-sudano-teen-killed-southampton-twp-bike-crash-remembered-star-wrestler/19317966/",
-            "date": "20260617T234500Z"
-          }
-        ],
-        "date": "20260617T234500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.4547891,
-          42.9956397
-        ]
-      },
-      "properties": {
-        "city": "Manchester",
-        "state": "NH",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "25-44",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "unionleader.com"
-        ],
-        "sources": [
-          {
-            "domain": "unionleader.com",
-            "url": "https://www.unionleader.com/news/local/manchester/one-dead-in-manchester-crash-involving-e-bike-dump-truck/article_1167addb-e3a6-42b5-b960-f32f571439d7.html",
-            "date": "20260617T230000Z"
-          }
-        ],
-        "date": "20260617T230000Z"
       }
     }
   ]

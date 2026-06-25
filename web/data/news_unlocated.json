@@ -74,30 +74,6 @@
       ]
     },
     {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcbayarea.com",
-      "url": "https://www.nbcbayarea.com/news/local/san-jose-e-scooter-crash/4102624/",
-      "seendate": "20260622T191500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcbayarea.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcbayarea.com",
-          "url": "https://www.nbcbayarea.com/news/local/san-jose-e-scooter-crash/4102624/",
-          "date": "20260622T191500Z"
-        }
-      ]
-    },
-    {
       "device": "Throttle vehicle (unclear e-bike classification)",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
@@ -172,30 +148,6 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "yahoo.com",
-      "url": "https://www.yahoo.com/news/us/articles/abuse-hurled-judge-first-group-114846525.html",
-      "seendate": "20260617T220000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "yahoo.com"
-      ],
-      "sources": [
-        {
-          "domain": "yahoo.com",
-          "url": "https://www.yahoo.com/news/us/articles/abuse-hurled-judge-first-group-114846525.html",
-          "date": "20260617T220000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
       "outcome": "Severe injury",
       "age_band": "18-24",
       "city": "North County",
@@ -238,30 +190,6 @@
           "domain": "wmur.com",
           "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
           "date": "20260620T000000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": "HouseMontgomery County",
-      "state": "DC",
-      "location_precision": "county+outlet_market",
-      "located": true,
-      "domain": "wjla.com",
-      "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
-      "seendate": "20260617T234500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wjla.com"
-      ],
-      "sources": [
-        {
-          "domain": "wjla.com",
-          "url": "https://wjla.com/news/local/man-dead-after-e-bike-crash-on-frederick-douglass-memorial-bridge-south-capitol-street-metropolitan-police-department-washington-dc-june-2026",
-          "date": "20260617T234500Z"
         }
       ]
     }
