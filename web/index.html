@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>🚲</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg width='16' height='16' viewBox='0 0 72 72' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='36' cy='36' r='16' stroke='%23f78166' stroke-width='4'/><path d='M28,49 L36,21 L44,49' stroke='%23e6edf3' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/><circle cx='10' cy='8' r='7' fill='%23a371f7'/><circle cx='60' cy='6' r='5' fill='%23f78166'/><circle cx='58' cy='60' r='7' fill='%23a371f7'/><circle cx='8' cy='58' r='5' fill='%23f78166'/></svg>" />
 <title>U.S. Pedalcyclist &amp; E-Bike Crash Intelligence</title>
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
@@ -90,10 +90,12 @@
      cartoony next to the debris convergence; a quiet upward float +
      fade reads as the wordmark resolving into place. */
   #crash-logo { position:absolute; top:50%; left:50%; white-space:nowrap;
+    display:flex; align-items:center; justify-content:center; gap:10px;
     font-size:30px; font-weight:700; letter-spacing:.01em; color:var(--txt);
     opacity:0; transform:translate(-50%,-50%) translateY(7px) scale(0.97);
     transition:opacity .5s cubic-bezier(.16,.8,.24,1), transform .5s cubic-bezier(.16,.8,.24,1); }
   #crash-logo.show { opacity:1; transform:translate(-50%,-50%) translateY(0) scale(1); }
+  #crash-logo svg { width:32px; height:32px; flex-shrink:0; }
 
   #crash-footer { margin-top:8px; text-align:center; opacity:0; transition:opacity .6s ease; }
   #crash-footer.show { opacity:1; }
@@ -245,6 +247,7 @@
     #crash-stage.impact #crash-bike { animation:crash-judder-bike .17s ease-out forwards; }
     #crash-stage.impact #crash-car { animation:crash-judder-car .17s ease-out forwards; }
     #crash-logo { font-size:24px; }
+    #crash-logo svg { width:26px; height:26px; }
   }
 </style>
 </head>
@@ -275,7 +278,23 @@
     </div>
     <div id="crash-flash"></div>
     <div id="crash-burst"></div>
-    <div id="crash-logo">🚲 Crash Atlas</div>
+    <div id="crash-logo">
+      <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="36" cy="36" r="16" stroke="#f78166" stroke-width="2"/>
+        <ellipse cx="36" cy="36" rx="16" ry="6" stroke="#f78166" stroke-width="0.7" opacity="0.3"/>
+        <ellipse cx="36" cy="36" rx="6" ry="16" stroke="#f78166" stroke-width="0.7" opacity="0.3"/>
+        <path d="M28,49 L36,21 L44,49" stroke="#e6edf3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="31" y1="40" x2="41" y2="40" stroke="#a371f7" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="10" cy="8" r="5" fill="#a371f7" stroke="#0e1116" stroke-width="1.5"/>
+        <circle cx="60" cy="6" r="3.5" fill="#f78166" stroke="#0e1116" stroke-width="1.5"/>
+        <circle cx="66" cy="36" r="4" fill="#f78166" stroke="#0e1116" stroke-width="1.5"/>
+        <circle cx="58" cy="60" r="5" fill="#a371f7" stroke="#0e1116" stroke-width="1.5"/>
+        <circle cx="8" cy="58" r="4" fill="#f78166" stroke="#0e1116" stroke-width="1.5"/>
+        <circle cx="4" cy="32" r="3" fill="#d29922" stroke="#0e1116" stroke-width="1"/>
+        <circle cx="36" cy="4" r="2.5" fill="#a371f7" stroke="#0e1116" stroke-width="1"/>
+      </svg>
+      <span>Crash Atlas</span>
+    </div>
   </div>
   <div id="crash-footer">
     <div class="loading-tagline">Loading U.S. bicycle &amp; e-bike crash data…</div>
