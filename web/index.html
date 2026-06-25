@@ -100,18 +100,14 @@
   #crash-logo.show { opacity:1; transform:translate(-50%,-50%) translateY(0) scale(1); }
   #crash-logo svg { width:64px; height:64px; flex-shrink:0; }
 
-  #crash-footer { margin-top:8px; text-align:center; opacity:0; transition:opacity .6s ease; }
-  #crash-footer.show { opacity:1; }
-  .loading-tagline { color:var(--muted); font-size:13px; letter-spacing:.01em; }
-  .loading-dots { display:flex; gap:8px; margin-top:16px; justify-content:center; }
-  .loading-dots span { width:9px; height:9px; border-radius:50%; background:var(--accent);
-    animation:loading-bounce 1.1s ease-in-out infinite; }
-  .loading-dots span:nth-child(2) { background:var(--minor); animation-delay:.15s; }
-  .loading-dots span:nth-child(3) { background:var(--accent); animation-delay:.3s; }
-  @keyframes loading-bounce {
-    0%, 80%, 100% { transform:scale(0.6); opacity:.4; }
-    40% { transform:scale(1); opacity:1; }
-  }
+  #crash-footer { margin-top:22px; text-align:center; opacity:0; transition:opacity .6s ease;
+    transform:translateY(4px); }
+  #crash-footer.show { opacity:1; transform:translateY(0); }
+  #load-map-btn { padding:11px 30px; font-size:15px; font-weight:700; letter-spacing:.01em;
+    background:var(--accent); color:#1a1208; border:none; border-radius:22px; cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease; }
+  #load-map-btn:hover { transform:translateY(-1px); box-shadow:0 4px 14px rgba(247,129,102,.35); }
+  #load-map-btn:active { transform:translateY(0); }
   html,body { margin:0; height:100%; background:var(--bg); color:var(--txt);
     font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
   #app { display:grid; grid-template-columns:380px 1fr; height:100vh; }
@@ -148,10 +144,35 @@
     border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-size:12px; }
   .legend .dot { display:inline-block; width:10px; height:10px; border-radius:50%;
     margin-right:6px; vertical-align:middle; }
-  .tabs { display:flex; gap:4px; padding:0 18px; border-bottom:1px solid var(--line); }
+  .tabs { display:flex; align-items:center; gap:4px; padding:0 18px; border-bottom:1px solid var(--line); }
   .tab { padding:10px 14px; font-size:13px; color:var(--muted); cursor:pointer;
     border-bottom:2px solid transparent; }
   .tab.on { color:var(--txt); border-bottom-color:var(--accent); font-weight:600; }
+  #info-btn { margin-left:auto; width:24px; height:24px; border-radius:50%;
+    border:1px solid var(--line); background:transparent; color:var(--muted);
+    font:italic 700 13px Georgia,serif; cursor:pointer; flex-shrink:0;
+    transition:border-color .15s ease, color .15s ease; }
+  #info-btn:hover { border-color:var(--accent); color:var(--accent); }
+
+  #info-modal { position:fixed; inset:0; z-index:2000; display:none;
+    background:rgba(0,0,0,.55); }
+  #info-modal.show { display:flex; align-items:center; justify-content:center; }
+  #info-panel { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    max-width:560px; width:90%; max-height:80vh; overflow-y:auto; padding:26px 28px;
+    position:relative; }
+  #info-close { position:absolute; top:14px; right:14px; width:28px; height:28px;
+    border-radius:50%; border:1px solid var(--line); background:transparent; color:var(--muted);
+    font-size:16px; cursor:pointer; line-height:1; }
+  #info-close:hover { border-color:var(--accent); color:var(--accent); }
+  #info-panel h2 { font-size:19px; margin:0 0 4px; display:flex; align-items:center; gap:9px; }
+  #info-panel h2 svg { width:24px; height:24px; flex-shrink:0; }
+  #info-panel .sub { margin:0 0 16px; }
+  #info-panel h3 { font-size:12px; text-transform:uppercase; letter-spacing:.05em;
+    color:var(--muted); margin:20px 0 8px; }
+  #info-panel p { font-size:13px; line-height:1.6; color:#c9d6e3; margin:0 0 10px; }
+  #info-panel ul { margin:0; padding-left:18px; font-size:13px; line-height:1.7; color:#c9d6e3; }
+  #info-panel li { margin-bottom:4px; }
+  #info-panel a { color:var(--accent); }
   .view { display:none; height:calc(100vh - 41px); overflow-y:auto; }
   .view.on { display:block; }
   #view-fars.on, #view-news.on, #view-risk.on { display:grid; grid-template-columns:380px 1fr; }
@@ -300,8 +321,7 @@
     </div>
   </div>
   <div id="crash-footer">
-    <div class="loading-tagline">Loading U.S. bicycle &amp; e-bike crash data…</div>
-    <div class="loading-dots"><span></span><span></span><span></span></div>
+    <button id="load-map-btn">Load Map</button>
   </div>
 </div>
 <div class="tabs">
@@ -310,6 +330,56 @@
   <div class="tab" data-view="news">Recent reports — news (unverified)</div>
   <div class="tab" data-view="risk">Risk &amp; Prevention</div>
   <div class="tab" data-view="cities">City Pilots</div>
+  <button id="info-btn" title="About Crash Atlas">i</button>
+</div>
+
+<div id="info-modal">
+  <div id="info-panel">
+    <button id="info-close" title="Close">&times;</button>
+    <h2>
+      <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="36" cy="36" r="16" stroke="#f78166" stroke-width="2"/>
+        <ellipse cx="36" cy="36" rx="16" ry="6" stroke="#f78166" stroke-width="0.7" opacity="0.3"/>
+        <ellipse cx="36" cy="36" rx="6" ry="16" stroke="#f78166" stroke-width="0.7" opacity="0.3"/>
+        <path d="M28,49 L36,21 L44,49" stroke="#e6edf3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="31" y1="40" x2="41" y2="40" stroke="#a371f7" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="10" cy="8" r="5" fill="#a371f7" stroke="#161b22" stroke-width="1.5"/>
+        <circle cx="60" cy="6" r="3.5" fill="#f78166" stroke="#161b22" stroke-width="1.5"/>
+        <circle cx="66" cy="36" r="4" fill="#f78166" stroke="#161b22" stroke-width="1.5"/>
+        <circle cx="58" cy="60" r="5" fill="#a371f7" stroke="#161b22" stroke-width="1.5"/>
+        <circle cx="8" cy="58" r="4" fill="#f78166" stroke="#161b22" stroke-width="1.5"/>
+        <circle cx="4" cy="32" r="3" fill="#d29922" stroke="#161b22" stroke-width="1"/>
+        <circle cx="36" cy="4" r="2.5" fill="#a371f7" stroke="#161b22" stroke-width="1"/>
+      </svg>
+      Crash Atlas
+    </h2>
+    <p class="sub">U.S. Pedalcyclist &amp; E-Bike Crash Intelligence — an open-source dashboard
+      built to help riders, parents, planners, and journalists see real patterns in bicycle
+      and micromobility crashes, without inventing certainty the data doesn't support.</p>
+
+    <h3>What's in here</h3>
+    <ul>
+      <li><b>Fatalities (FARS)</b> — a map of pedalcyclist fatalities in fatal motor-vehicle
+        crashes, with NHTSA's pre-crash-action coding. Federal, annual, lags ~1-2 years.</li>
+      <li><b>Injuries (NEISS)</b> — national ED-visit estimates for micromobility injuries,
+        broken out by device, age, and diagnosis, with a confirmed e-bike slice.</li>
+      <li><b>Recent reports (news)</b> — automatically detected crash mentions from the last
+        7 days, age-band/device/outcome only, tagged corroborated vs. single-source.</li>
+      <li><b>Risk &amp; Prevention</b> — an interpretable (no opaque ML) state-level risk
+        ranking and contributing-factor breakdown, each paired with a sourced prevention lever.</li>
+      <li><b>City Pilots</b> — ward-level crash data and bikeshare exposure context for
+        Washington, DC and Chicago, verified independently per city.</li>
+    </ul>
+
+    <h3>On the data</h3>
+    <p>Every view discloses its own limitations directly in the UI — sample sizes, what a
+      dataset can and can't claim, and where estimates stand in for real counts. Counts are
+      not adjusted for ridership unless explicitly labeled as a rate.</p>
+
+    <p class="sub" style="margin:14px 0 0;">
+      <a href="https://github.com/jamesad923-coder/ebike-crash-intel" target="_blank">View source &amp; data sources on GitHub →</a>
+    </p>
+  </div>
 </div>
 
 <div id="view-fars" class="view on">
@@ -624,27 +694,35 @@
 <script>
 const DATA = "data/";
 
-// ---- Loading screen: intro animation + minimum display time ----
-// The intro (bike + car race together, collide, shatter into debris,
-// debris snaps into the wordmark) takes ~2.4s to play out. MIN_LOADING_MS
-// guarantees it's never cut short by a fast connection -- hide is gated
-// on whichever finishes later: the animation or the real FARS data.
-const LOADING_START = performance.now();
-const MIN_LOADING_MS = 3300;
-
+// ---- Loading screen: intro animation, dismissed by the "Load Map"
+// button (not auto-hidden) once the user is ready. ----
 function hideLoadingScreen() {
   const el = document.getElementById("loading-screen");
   if (!el) return;
   el.classList.add("hide");
   setTimeout(() => el.remove(), 450);
+  if (typeof map !== "undefined" && map) requestAnimationFrame(() => map.resize());
 }
-function hideLoadingScreenWhenReady() {
-  const elapsed = performance.now() - LOADING_START;
-  setTimeout(hideLoadingScreen, Math.max(0, MIN_LOADING_MS - elapsed));
-}
-// Safety net: never leave a user stuck on the loading screen if the map
-// tiles or FARS data fail/stall.
-setTimeout(hideLoadingScreen, 11000);
+document.getElementById("load-map-btn").addEventListener("click", hideLoadingScreen);
+// Safety net: if the intro animation itself fails to run for any reason
+// (the button never appears), don't trap the user on this screen forever.
+setTimeout(hideLoadingScreen, 20000);
+
+// ---- About / info modal ----
+(function setupInfoModal() {
+  const modal = document.getElementById("info-modal");
+  const openBtn = document.getElementById("info-btn");
+  const closeBtn = document.getElementById("info-close");
+  const open = () => {
+    modal.classList.add("show");
+    document.getElementById("info-panel").scrollTop = 0;
+  };
+  const close = () => modal.classList.remove("show");
+  openBtn.addEventListener("click", open);
+  closeBtn.addEventListener("click", close);
+  modal.addEventListener("click", e => { if (e.target === modal) close(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+})();
 
 (function runCrashIntro() {
   const stage = document.getElementById("crash-stage");
@@ -1115,7 +1193,6 @@ map.on("load", async () => {
      <a href="${pv.url}" target="_blank">dataset</a><br><br>${pv.limitations}`;
 
   recompute();
-  hideLoadingScreenWhenReady();
 });
 
 // ---- Risk & Prevention panel ----
