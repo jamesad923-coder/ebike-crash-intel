@@ -100,68 +100,6 @@
         ],
         "date": "20260620T063000Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -83.3804439,
-          42.6618842
-        ]
-      },
-      "properties": {
-        "city": "Oakland County",
-        "state": "MI",
-        "location_precision": "county+outlet_market",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "25-44",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "theoaklandpress.com"
-        ],
-        "sources": [
-          {
-            "domain": "theoaklandpress.com",
-            "url": "https://www.theoaklandpress.com/2026/06/19/investigation-continues-into-fatal-crash-involving-e-bike-operator-and-road-commission-truck/",
-            "date": "20260619T144500Z"
-          }
-        ],
-        "date": "20260619T144500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.8470596,
-          29.9766524
-        ]
-      },
-      "properties": {
-        "city": "Clay County",
-        "state": "FL",
-        "location_precision": "county+outlet_market",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": true,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "news4jax.com"
-        ],
-        "sources": [
-          {
-            "domain": "news4jax.com",
-            "url": "https://www.news4jax.com/news/local/2026/06/19/14-year-old-killed-in-clay-county-e-bike-crash-to-be-laid-to-rest-friday-as-family-community-reel-from-tragic-loss/",
-            "date": "20260619T144500Z"
-          }
-        ],
-        "date": "20260619T144500Z"
-      }
     }
   ]
 }
