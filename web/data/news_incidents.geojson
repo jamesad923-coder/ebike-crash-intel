@@ -162,37 +162,6 @@
         ],
         "date": "20260619T144500Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -119.8155355,
-          36.6713502
-        ]
-      },
-      "properties": {
-        "city": "Fresno County",
-        "state": "CA",
-        "location_precision": "county+outlet_market",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "abc30.com"
-        ],
-        "sources": [
-          {
-            "domain": "abc30.com",
-            "url": "https://abc30.com/post/selma-police-urge-caution-15-year-old-boy-dies-bike-crash/19326773/",
-            "date": "20260619T013000Z"
-          }
-        ],
-        "date": "20260619T013000Z"
-      }
     }
   ]
 }
