@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -90.6647985,
+          42.5006243
+        ]
+      },
+      "properties": {
+        "city": "Dubuque",
+        "state": "IA",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "0-12 (child)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "telegraphherald.com"
+        ],
+        "sources": [
+          {
+            "domain": "telegraphherald.com",
+            "url": "https://www.telegraphherald.com/news/tri-state/article_3b4ba382-ad80-4897-96bf-1a9ea0f41d86.html",
+            "date": "20260627T101500Z"
+          }
+        ],
+        "date": "20260627T101500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -121.493895,
           38.5810606
         ]
