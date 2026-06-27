@@ -13,6 +13,68 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -121.493895,
+          38.5810606
+        ]
+      },
+      "properties": {
+        "city": "Sacramento",
+        "state": "CA",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "Unknown",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "wisn.com"
+        ],
+        "sources": [
+          {
+            "domain": "wisn.com",
+            "url": "https://www.wisn.com/article/e-bike-rider-hurt-after-collision-with-pick-up-truck-in-west-allis/71750340",
+            "date": "20260627T043000Z"
+          }
+        ],
+        "date": "20260627T043000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.80378,
+          45.4871723
+        ]
+      },
+      "properties": {
+        "city": "Beaverton",
+        "state": "OR",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "kbnd.com"
+        ],
+        "sources": [
+          {
+            "domain": "kbnd.com",
+            "url": "https://kbnd.com/kbnd-news/regional-news/921940",
+            "date": "20260626T143000Z"
+          }
+        ],
+        "date": "20260626T143000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -74.6171489,
           39.3820672
         ]
@@ -68,37 +130,6 @@
           }
         ],
         "date": "20260625T010000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -116.0833144,
-          34.8253019
-        ]
-      },
-      "properties": {
-        "city": "San Bernardino County",
-        "state": "CA",
-        "location_precision": "county+outlet_market",
-        "device": "E-scooter",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "dailybulletin.com"
-        ],
-        "sources": [
-          {
-            "domain": "dailybulletin.com",
-            "url": "https://www.dailybulletin.com/2026/06/19/pomona-unified-creates-safety-initiative-to-honor-student-killed-in-e-scooter-crash/",
-            "date": "20260620T063000Z"
-          }
-        ],
-        "date": "20260620T063000Z"
       }
     }
   ]

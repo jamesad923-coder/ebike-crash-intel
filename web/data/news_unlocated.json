@@ -2,6 +2,78 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "18-24",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "abc7ny.com",
+      "url": "https://abc7ny.com/post/18-year-old-vincent-battiloro-allegedly-ran-down-girls-car-charged-adult/19391863/",
+      "seendate": "20260627T030000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "abc7ny.com"
+      ],
+      "sources": [
+        {
+          "domain": "abc7ny.com",
+          "url": "https://abc7ny.com/post/18-year-old-vincent-battiloro-allegedly-ran-down-girls-car-charged-adult/19391863/",
+          "date": "20260627T030000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nj1015.com",
+      "url": "https://nj1015.com/garwood-teen-murder-trial/",
+      "seendate": "20260627T020000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nj1015.com"
+      ],
+      "sources": [
+        {
+          "domain": "nj1015.com",
+          "url": "https://nj1015.com/garwood-teen-murder-trial/",
+          "date": "20260627T020000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "miragenews.com",
+      "url": "https://www.miragenews.com/driver-charged-in-newport-e-bike-road-rage-1699884/",
+      "seendate": "20260626T040000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "miragenews.com"
+      ],
+      "sources": [
+        {
+          "domain": "miragenews.com",
+          "url": "https://www.miragenews.com/driver-charged-in-newport-e-bike-road-rage-1699884/",
+          "date": "20260626T040000Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -190,30 +262,6 @@
           "domain": "10news.com",
           "url": "https://www.10news.com/news/local-news/san-diego-news/e-bike-rider-critically-injured-in-clairemont-mesa-traffic-collision",
           "date": "20260620T230000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "45-64",
-      "city": "Matthew. ROCHESTER",
-      "state": "NH",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "wmur.com",
-      "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
-      "seendate": "20260620T000000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wmur.com"
-      ],
-      "sources": [
-        {
-          "domain": "wmur.com",
-          "url": "https://www.wmur.com/article/e-bike-crash-shattuck-brother-61926/71640741",
-          "date": "20260620T000000Z"
         }
       ]
     }
