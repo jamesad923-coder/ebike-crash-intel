@@ -101,30 +101,6 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "18-24",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "clickondetroit.com",
-      "url": "https://www.clickondetroit.com/news/local/2026/06/23/morning-4-e-bike-injuries-rising-among-kids-as-doctors-warn-parents-about-speed-safety-risks-and-more-news/",
-      "seendate": "20260623T160000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "clickondetroit.com"
-      ],
-      "sources": [
-        {
-          "domain": "clickondetroit.com",
-          "url": "https://www.clickondetroit.com/news/local/2026/06/23/morning-4-e-bike-injuries-rising-among-kids-as-doctors-warn-parents-about-speed-safety-risks-and-more-news/",
-          "date": "20260623T160000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
       "age_band": "65+",
       "city": null,
       "state": null,
