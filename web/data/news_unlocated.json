@@ -50,30 +50,6 @@
       ]
     },
     {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "miragenews.com",
-      "url": "https://www.miragenews.com/driver-charged-in-newport-e-bike-road-rage-1699884/",
-      "seendate": "20260626T040000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "miragenews.com"
-      ],
-      "sources": [
-        {
-          "domain": "miragenews.com",
-          "url": "https://www.miragenews.com/driver-charged-in-newport-e-bike-road-rage-1699884/",
-          "date": "20260626T040000Z"
-        }
-      ]
-    },
-    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -125,6 +101,30 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "clickondetroit.com",
+      "url": "https://www.clickondetroit.com/news/local/2026/06/23/morning-4-e-bike-injuries-rising-among-kids-as-doctors-warn-parents-about-speed-safety-risks-and-more-news/",
+      "seendate": "20260623T160000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "clickondetroit.com"
+      ],
+      "sources": [
+        {
+          "domain": "clickondetroit.com",
+          "url": "https://www.clickondetroit.com/news/local/2026/06/23/morning-4-e-bike-injuries-rising-among-kids-as-doctors-warn-parents-about-speed-safety-risks-and-more-news/",
+          "date": "20260623T160000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
       "age_band": "65+",
       "city": null,
       "state": null,
@@ -142,30 +142,6 @@
           "domain": "wmdt.com",
           "url": "https://www.wmdt.com/2026/06/potomac-woman-killed-in-fatal-e-bike-crash-in-rehoboth-beach/",
           "date": "20260622T210000Z"
-        }
-      ]
-    },
-    {
-      "device": "Throttle vehicle (unclear e-bike classification)",
-      "throttle_ambiguous": true,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nydailynews.com",
-      "url": "https://www.nydailynews.com/2026/06/21/boy-who-died-in-harlem-electric-dirt-bike-crash-planned-to-celebrate-recent-13th-birthday-next-day/",
-      "seendate": "20260621T223000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nydailynews.com"
-      ],
-      "sources": [
-        {
-          "domain": "nydailynews.com",
-          "url": "https://www.nydailynews.com/2026/06/21/boy-who-died-in-harlem-electric-dirt-bike-crash-planned-to-celebrate-recent-13th-birthday-next-day/",
-          "date": "20260621T223000Z"
         }
       ]
     }

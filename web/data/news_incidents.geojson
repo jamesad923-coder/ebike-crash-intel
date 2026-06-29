@@ -162,6 +162,37 @@
         ],
         "date": "20260625T010000Z"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.6579179,
+          30.3262247
+        ]
+      },
+      "properties": {
+        "city": "Jacksonville",
+        "state": "FL",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "25-44",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "clickondetroit.com"
+        ],
+        "sources": [
+          {
+            "domain": "clickondetroit.com",
+            "url": "https://www.clickondetroit.com/news/local/2026/06/22/rochester-considers-new-rules-for-e-bikes-bikes-on-downtown-sidewalks-to-protect-pedestrians/",
+            "date": "20260623T014500Z"
+          }
+        ],
+        "date": "20260623T014500Z"
+      }
     }
   ]
 }
