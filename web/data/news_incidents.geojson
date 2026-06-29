@@ -117,7 +117,7 @@
         "device": "E-bike",
         "outcome": "Severe injury",
         "throttle_ambiguous": false,
-        "age_band": "Unknown",
+        "age_band": "65+",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "catcountry1073.com"
@@ -179,7 +179,7 @@
         "device": "E-bike",
         "outcome": "Fatality",
         "throttle_ambiguous": false,
-        "age_band": "25-44",
+        "age_band": "0-12 (child)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "clickondetroit.com"
