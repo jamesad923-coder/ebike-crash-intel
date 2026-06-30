@@ -55,7 +55,7 @@
         "device": "E-bike",
         "outcome": "Injury",
         "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
+        "age_band": "Unknown",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "wisn.com"

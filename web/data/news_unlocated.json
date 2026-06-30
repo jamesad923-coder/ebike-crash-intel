@@ -26,30 +26,6 @@
       ]
     },
     {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nj1015.com",
-      "url": "https://nj1015.com/garwood-teen-murder-trial/",
-      "seendate": "20260627T020000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nj1015.com"
-      ],
-      "sources": [
-        {
-          "domain": "nj1015.com",
-          "url": "https://nj1015.com/garwood-teen-murder-trial/",
-          "date": "20260627T020000Z"
-        }
-      ]
-    },
-    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
