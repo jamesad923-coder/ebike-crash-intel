@@ -96,30 +96,6 @@
           "date": "20260623T191500Z"
         }
       ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "65+",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wmdt.com",
-      "url": "https://www.wmdt.com/2026/06/potomac-woman-killed-in-fatal-e-bike-crash-in-rehoboth-beach/",
-      "seendate": "20260622T210000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wmdt.com"
-      ],
-      "sources": [
-        {
-          "domain": "wmdt.com",
-          "url": "https://www.wmdt.com/2026/06/potomac-woman-killed-in-fatal-e-bike-crash-in-rehoboth-beach/",
-          "date": "20260622T210000Z"
-        }
-      ]
     }
   ]
 }
