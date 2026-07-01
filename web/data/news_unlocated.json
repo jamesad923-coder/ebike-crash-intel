@@ -26,50 +26,50 @@
       ]
     },
     {
-      "device": "E-scooter",
+      "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Injury",
+      "outcome": "Fatality",
       "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "kcci.com",
-      "url": "https://www.kcci.com/article/grimes-iowa-teen-injured-car-crash-electric-scooter/71679356",
-      "seendate": "20260623T201500Z",
+      "domain": "nj1015.com",
+      "url": "https://nj1015.com/garwood-teen-murder-trial/",
+      "seendate": "20260627T020000Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "kcci.com"
+        "nj1015.com"
       ],
       "sources": [
         {
-          "domain": "kcci.com",
-          "url": "https://www.kcci.com/article/grimes-iowa-teen-injured-car-crash-electric-scooter/71679356",
-          "date": "20260623T201500Z"
+          "domain": "nj1015.com",
+          "url": "https://nj1015.com/garwood-teen-murder-trial/",
+          "date": "20260627T020000Z"
         }
       ]
     },
     {
       "device": "E-scooter",
       "throttle_ambiguous": false,
-      "outcome": "Severe injury",
-      "age_band": "45-64",
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "local10.com",
-      "url": "https://www.local10.com/news/local/2026/06/23/doral-man-accused-of-fleeing-miami-crash-that-left-electric-scooter-rider-critically-injured/",
-      "seendate": "20260623T191500Z",
+      "domain": "katu.com",
+      "url": "https://katu.com/news/local/teen-on-e-scooter-dies-at-hospital-after-being-hit-by-car-in-beaverton-oregon-multnomah-county-traffic-alert-crash-police-investigatuion-local",
+      "seendate": "20260625T224500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "local10.com"
+        "katu.com"
       ],
       "sources": [
         {
-          "domain": "local10.com",
-          "url": "https://www.local10.com/news/local/2026/06/23/doral-man-accused-of-fleeing-miami-crash-that-left-electric-scooter-rider-critically-injured/",
-          "date": "20260623T191500Z"
+          "domain": "katu.com",
+          "url": "https://katu.com/news/local/teen-on-e-scooter-dies-at-hospital-after-being-hit-by-car-in-beaverton-oregon-multnomah-county-traffic-alert-crash-police-investigatuion-local",
+          "date": "20260625T224500Z"
         }
       ]
     }
