@@ -48,30 +48,6 @@
           "date": "20260627T020000Z"
         }
       ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "miragenews.com",
-      "url": "https://www.miragenews.com/driver-charged-in-newport-e-bike-road-rage-1699884/",
-      "seendate": "20260626T040000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "miragenews.com"
-      ],
-      "sources": [
-        {
-          "domain": "miragenews.com",
-          "url": "https://www.miragenews.com/driver-charged-in-newport-e-bike-road-rage-1699884/",
-          "date": "20260626T040000Z"
-        }
-      ]
     }
   ]
 }
