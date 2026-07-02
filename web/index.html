@@ -400,6 +400,9 @@
     <div class="stat minor"><span class="n" id="s-minor">–</span><span class="l">were minors (under 18)</span></div>
     <div class="stat"><span class="n" id="s-mapped">–</span><span class="l">have a known location (shown on map)</span></div>
 
+    <h2>Year-over-year trend</h2>
+    <div id="year-trend"></div>
+
     <h2>Year</h2>
     <div class="filters" id="f-year"></div>
 
@@ -413,6 +416,9 @@
 
     <h2>Lighting at time of crash</h2>
     <div id="lighting"></div>
+
+    <h2>Sex</h2>
+    <div id="sex-breakdown"></div>
 
     <div class="src" id="src"></div>
   </div>
@@ -954,6 +960,7 @@ function recompute() {
   };
   bars(document.getElementById("pbcat"), tally("crash_group", ["", "Not a Cyclist"]));
   bars(document.getElementById("lighting"), tally("lighting"));
+  bars(document.getElementById("sex-breakdown"), tally("sex", ["Reported as Unknown"]));
 
   // map
   if (map.getSource("fatalities")) {
@@ -1193,6 +1200,14 @@ map.on("load", async () => {
      <a href="${pv.url}" target="_blank">dataset</a><br><br>${pv.limitations}`;
 
   recompute();
+
+  const trendRows = Object.keys(SUMMARY.totals.by_year)
+    .sort()
+    .map(y => ({
+      label: `${y} (${fmt(SUMMARY.totals.minors_by_year[y] || 0)} minors)`,
+      count: SUMMARY.totals.by_year[y]
+    }));
+  bars(document.getElementById("year-trend"), trendRows);
 });
 
 // ---- Risk & Prevention panel ----
