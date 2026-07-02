@@ -38,8 +38,22 @@ LAT_BAD = {"77.7777", "88.8888", "99.9999", ""}
 LON_BAD = {"777.7777", "888.8888", "999.9999", ""}
 
 
-def _read(path: Path) -> list[dict]:
-    with open(path, encoding="latin-1") as fh:
+def _find(csv_dir: Path, name: str) -> Path:
+    """Resolve a FARS CSV by name, case-insensitively. NHTSA's zips are
+    inconsistent about casing across years -- 2022/2023 ship lowercase
+    (accident.csv, person.csv, pbtype.csv) while 2019 and earlier ship
+    mixed-case (accident.CSV, Person.CSV, PBType.CSV). macOS's default
+    filesystem hides this, but the Linux CI runner is case-sensitive, so
+    match on lowercased name to stay reproducible across both."""
+    target = name.lower()
+    for p in csv_dir.iterdir():
+        if p.name.lower() == target:
+            return p
+    raise FileNotFoundError(f"{name} not found in {csv_dir}")
+
+
+def _read(csv_dir: Path, name: str) -> list[dict]:
+    with open(_find(csv_dir, name), encoding="latin-1") as fh:
         return list(csv.DictReader(fh))
 
 
@@ -72,13 +86,13 @@ def transform(years: list[int]) -> dict:
 
     for year in years:
         csv_dir = fetch_year(year)
-        acc = {a["ST_CASE"]: a for a in _read(csv_dir / "accident.csv")}
+        acc = {a["ST_CASE"]: a for a in _read(csv_dir, "accident.csv")}
         # PBCAT keyed by case+veh+person
         pbtype = {}
-        for r in _read(csv_dir / "pbtype.csv"):
+        for r in _read(csv_dir, "pbtype.csv"):
             pbtype[(r["ST_CASE"], r["VEH_NO"], r["PER_NO"])] = r
 
-        for p in _read(csv_dir / "person.csv"):
+        for p in _read(csv_dir, "person.csv"):
             if p["PER_TYP"] not in PEDALCYCLIST:
                 continue
             a = acc.get(p["ST_CASE"], {})
@@ -172,7 +186,7 @@ def transform(years: list[int]) -> dict:
 
 
 if __name__ == "__main__":
-    years = [int(y) for y in sys.argv[1:]] or [2022, 2023]
+    years = [int(y) for y in sys.argv[1:]] or [2019, 2020, 2021, 2022, 2023, 2024]
     OUT.mkdir(parents=True, exist_ok=True)
     result = transform(years)
     (OUT / "fars_points.geojson").write_text(json.dumps(result["geojson"]))

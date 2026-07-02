@@ -45,7 +45,9 @@ def fetch_year(year: int) -> Path:
     return csv_dir
 
 
+DEFAULT_YEARS = [2019, 2020, 2021, 2022, 2023, 2024]
+
 if __name__ == "__main__":
-    years = [int(y) for y in sys.argv[1:]] or [2022, 2023]
+    years = [int(y) for y in sys.argv[1:]] or DEFAULT_YEARS
     for y in years:
         fetch_year(y)
