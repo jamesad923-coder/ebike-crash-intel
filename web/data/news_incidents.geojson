@@ -55,7 +55,7 @@
         "device": "E-bike",
         "outcome": "Injury",
         "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
+        "age_band": "Unknown",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "wisn.com"
@@ -99,68 +99,6 @@
           }
         ],
         "date": "20260626T143000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -74.6171489,
-          39.3820672
-        ]
-      },
-      "properties": {
-        "city": "Harbor Township",
-        "state": "NJ",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Severe injury",
-        "throttle_ambiguous": false,
-        "age_band": "Unknown",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "catcountry1073.com"
-        ],
-        "sources": [
-          {
-            "domain": "catcountry1073.com",
-            "url": "https://catcountry1073.com/ixp/564/p/eht-nj-life-threatening-crash/",
-            "date": "20260625T010000Z"
-          }
-        ],
-        "date": "20260625T010000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.4298248,
-          42.0775022
-        ]
-      },
-      "properties": {
-        "city": "Olean",
-        "state": "NY",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "Unknown",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wkbw.com"
-        ],
-        "sources": [
-          {
-            "domain": "wkbw.com",
-            "url": "https://www.wkbw.com/news/local-news/cattaraugus-county/family-of-olean-man-demands-answers-after-hit-and-run",
-            "date": "20260625T010000Z"
-          }
-        ],
-        "date": "20260625T010000Z"
       }
     }
   ]
