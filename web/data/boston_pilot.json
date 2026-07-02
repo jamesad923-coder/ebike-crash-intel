@@ -1,0 +1,20 @@
+{
+  "ward_summary": {
+    "date_window": {"start": null, "end": null, "years": 5},
+    "measure_note": "Data not yet generated — run etl/boston/transform_boston.py to populate.",
+    "records_excluded_no_geo_or_district": 0,
+    "total_records": 0,
+    "by_ward": [],
+    "geojson": {"type": "FeatureCollection", "features": []}
+  },
+  "bikeshare_context": {
+    "measure_note": "Data not yet generated.",
+    "monthly": []
+  },
+  "ward_exposure": {
+    "window": {"start": null, "end": null},
+    "unmapped_trips": 0,
+    "measure_note": "Data not yet generated.",
+    "by_ward": []
+  }
+}

@@ -1,0 +1,30 @@
+name: Refresh Boston pilot
+
+# Same cadence and offset rationale as DC and Chicago: weekly is more than
+# enough for data that updates on the order of days/weeks; offsets prevent
+# concurrent scheduler slot contention (see AUTOMATION.md).
+on:
+  schedule:
+    - cron: "17 10 * * 1"  # Mondays, offset from DC (8:41) and Chicago (9:53)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-boston:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run Boston pilot pipeline
+        run: python3 etl/boston/transform_boston.py
+      - name: Commit updated artifacts if changed
+        run: |
+          git config user.name "ebike-crash-intel-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add web/data/boston_pilot.json web/data/boston_bike_lanes.geojson
+          git diff --staged --quiet || git commit -m "Auto-refresh Boston pilot data"
+          git push

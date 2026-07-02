@@ -638,6 +638,70 @@
     </div>
   </div>
 
+  <div id="city-block-boston" class="city-block hidden">
+    <h1 style="font-size:16px">Boston</h1>
+    <p class="sub">Third city deep-dive · Verified independently per city, not assumed from DC or Chicago</p>
+
+    <div class="banner">
+      <b>Read this first.</b> District crash counts cover
+      <b id="bos-window-text">a fixed recent window</b>. Source is the City of
+      Boston <b>Vision Zero Crash Records</b> (data.boston.gov). Boston's
+      severity data has only <b>"Fatal injury" vs "Non-fatal injury"</b> —
+      no separate major/minor split like DC. No <b>speeding flag</b> and no
+      <b>e-bike-specific flag</b> (same gap as every other city in this
+      project). Districts are assigned via <b>point-in-polygon</b> against
+      Boston City Council District boundaries — no district field in the
+      crash records directly. Bikeshare exposure is <b>Bluebikes only</b>,
+      same caveat as DC: covers their fleet, not personally-owned bikes.
+    </div>
+
+    <p class="estimate-note" id="bos-window-detail"></p>
+
+    <div class="stat"><span class="n" id="bos-total">–</span><span class="l">bicycle-involved crashes <b id="bos-total-label">in this window</b></span></div>
+    <div class="stat minor"><span class="n" id="bos-fatal">–</span><span class="l">resulted in a bicyclist fatality</span></div>
+
+    <div class="accordion">
+      <button class="accordion-toggle" data-target="bos-ward-wrap"><span class="accordion-arrow">▶</span> By District Stats</button>
+      <div class="accordion-content" id="bos-ward-wrap">
+        <div class="accordion-content-inner"><div id="bos-ward-table"></div></div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion-toggle" data-target="bos-exposure-wrap"><span class="accordion-arrow">▶</span> Crashes relative to Bluebikes activity, by district</button>
+      <div class="accordion-content" id="bos-exposure-wrap">
+        <div class="accordion-content-inner">
+          <p class="accordion-sub"><b>Not a risk-per-rider rate</b> —
+            same caveat as DC. Both sides use the same
+            <b id="bos-exposure-window">recent</b> window.</p>
+          <div id="bos-exposure-table"></div>
+          <p class="estimate-note" id="bos-exposure-note"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion-toggle" data-target="bos-bikeshare-wrap"><span class="accordion-arrow">▶</span> Bluebikes: e-bike share of trips</button>
+      <div class="accordion-content" id="bos-bikeshare-wrap">
+        <div class="accordion-content-inner">
+          <p class="accordion-sub">A "trip" is one Bluebikes rental. Citywide trend, for context.</p>
+          <div id="bos-bikeshare"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="src" id="bos-src"></div>
+
+    <div class="city-block-map-wrap">
+      <div id="boston-map" style="height:780px;border-radius:10px"></div>
+      <div class="legend">
+        <div><span class="dot" style="background:#a371f7"></span>fatal outcome</div>
+        <div><span class="dot" style="background:#f78166"></span>other bicycle crash</div>
+        <div><span style="display:inline-block;width:14px;height:2px;background:#3fb950;vertical-align:middle;margin-right:6px"></span>mapped bike lane (OSM)</div>
+      </div>
+    </div>
+  </div>
+
   <div id="city-block-chicago" class="city-block hidden">
     <h1 style="font-size:16px">Chicago</h1>
     <p class="sub">Second city deep-dive · verified independently, not assumed from DC's pattern</p>
@@ -691,6 +755,60 @@
       <div class="legend">
         <div><span class="dot" style="background:#a371f7"></span>fatal outcome</div>
         <div><span class="dot" style="background:#f78166"></span>other crash</div>
+        <div><span style="display:inline-block;width:14px;height:2px;background:#3fb950;vertical-align:middle;margin-right:6px"></span>mapped bike lane (OSM)</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="city-block-nyc" class="city-block hidden">
+    <h1 style="font-size:16px">New York City</h1>
+    <p class="sub">Fourth city deep-dive · Verified independently per city, not assumed from DC or Chicago</p>
+
+    <div class="banner">
+      <b>Read this first.</b> Borough crash counts cover
+      <b id="nyc-window-text">a fixed recent window</b>. Source is the
+      <b>NYC Motor Vehicle Collisions</b> dataset (NYPD, data.cityofnewyork.us), filtered to
+      crashes involving at least one cyclist injury or fatality. Borough is
+      taken directly from the NYPD record — no spatial join needed. No
+      <b>e-bike-specific flag</b> in the crash data. Bikeshare exposure uses
+      <b>Citi Bike only</b> (excludes Jersey City files); same fleet-only
+      caveat as every other city. Crash points without a reported borough
+      are excluded from borough-level tables but are still shown on the map
+      if they have coordinates.
+    </div>
+
+    <p class="estimate-note" id="nyc-window-detail"></p>
+
+    <div class="stat"><span class="n" id="nyc-total">–</span><span class="l">cyclist-involved crashes <b id="nyc-total-label">in this window</b></span></div>
+    <div class="stat minor"><span class="n" id="nyc-fatal">–</span><span class="l">resulted in a cyclist fatality</span></div>
+
+    <div class="accordion">
+      <button class="accordion-toggle" data-target="nyc-ward-wrap"><span class="accordion-arrow">▶</span> By Borough Stats</button>
+      <div class="accordion-content" id="nyc-ward-wrap">
+        <div class="accordion-content-inner"><div id="nyc-ward-table"></div></div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion-toggle" data-target="nyc-exposure-wrap"><span class="accordion-arrow">▶</span> Crashes relative to Citi Bike activity, by borough</button>
+      <div class="accordion-content" id="nyc-exposure-wrap">
+        <div class="accordion-content-inner">
+          <p class="accordion-sub"><b>Not a risk-per-rider rate</b> —
+            same caveat as DC. Both sides use the same
+            <b id="nyc-exposure-window">recent</b> window.</p>
+          <div id="nyc-exposure-table"></div>
+          <p class="estimate-note" id="nyc-exposure-note"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="src" id="nyc-src"></div>
+
+    <div class="city-block-map-wrap">
+      <div id="nyc-map" style="height:780px;border-radius:10px"></div>
+      <div class="legend">
+        <div><span class="dot" style="background:#a371f7"></span>fatal outcome</div>
+        <div><span class="dot" style="background:#f78166"></span>other cyclist crash</div>
         <div><span style="display:inline-block;width:14px;height:2px;background:#3fb950;vertical-align:middle;margin-right:6px"></span>mapped bike lane (OSM)</div>
       </div>
     </div>
@@ -1413,25 +1531,27 @@ function setCityBlockVisible(block, visible) {
 }
 function activateCityToggle(state) {
   cityToggleState = state;
-  const showDC = state === "dc" || state === "both";
-  const showChicago = state === "chicago" || state === "both";
-  const dcBlock = document.getElementById("city-block-dc");
+  const showDC      = state === "dc"      || state === "all";
+  const showBoston  = state === "boston"  || state === "all";
+  const showChicago = state === "chicago" || state === "all";
+  const showNYC     = state === "nyc"     || state === "all";
+  const dcBlock  = document.getElementById("city-block-dc");
+  const bosBlock = document.getElementById("city-block-boston");
   const chiBlock = document.getElementById("city-block-chicago");
-  setCityBlockVisible(dcBlock, showDC);
+  const nycBlock = document.getElementById("city-block-nyc");
+  setCityBlockVisible(dcBlock,  showDC);
+  setCityBlockVisible(bosBlock, showBoston);
   setCityBlockVisible(chiBlock, showChicago);
-  if (showDC) {
-    loadDC().then(()=>setCityBlockVisible(dcBlock, true));
-    requestAnimationFrame(()=>dcMap && dcMap.resize());
-  }
-  if (showChicago) {
-    loadChicago().then(()=>setCityBlockVisible(chiBlock, true));
-    requestAnimationFrame(()=>chicagoMap && chicagoMap.resize());
-  }
+  setCityBlockVisible(nycBlock, showNYC);
+  if (showDC)      { loadDC().then(()=>setCityBlockVisible(dcBlock, true));           requestAnimationFrame(()=>dcMap && dcMap.resize()); }
+  if (showBoston)  { loadBoston().then(()=>setCityBlockVisible(bosBlock, true));      requestAnimationFrame(()=>bostonMap && bostonMap.resize()); }
+  if (showChicago) { loadChicago().then(()=>setCityBlockVisible(chiBlock, true));     requestAnimationFrame(()=>chicagoMap && chicagoMap.resize()); }
+  if (showNYC)     { loadNYC().then(()=>setCityBlockVisible(nycBlock, true));         requestAnimationFrame(()=>nycMap && nycMap.resize()); }
 }
 
 (function setupCityToggle() {
   const tc = document.getElementById("city-toggle");
-  [["dc","DC"],["chicago","Chicago"],["both","Both"]].forEach(([v,l]) => {
+  [["dc","DC"],["boston","Boston"],["chicago","Chicago"],["nyc","NYC"],["all","All"]].forEach(([v,l]) => {
     chip(tc, l, (b) => {
       [...tc.children].forEach(c=>c.classList.remove("on"));
       b.classList.add("on");
@@ -1540,6 +1660,120 @@ async function loadDC() {
   ["dc-ward-wrap","dc-exposure-wrap","dc-bikeshare-wrap"].forEach(refreshAccordion);
 }
 
+// ---- Boston Pilot panel ----
+let bostonMap;
+let bostonLoaded = false;
+
+async function loadBoston() {
+  if (bostonLoaded) return;
+  bostonLoaded = true;
+  bostonMap = new maplibregl.Map({
+    container: "boston-map",
+    style: { version: 8,
+      sources: { carto: { type:"raster",
+        tiles:["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
+        tileSize:256, attribution:"© OpenStreetMap, © CARTO" }},
+      layers: [{ id:"carto", type:"raster", source:"carto" }] },
+    center: [-71.07, 42.33], zoom: 12.5
+  });
+
+  const BOS = await fetch(DATA+"boston_pilot.json").then(r=>r.json());
+  const ws = BOS.ward_summary;
+  const dw = ws.date_window;
+
+  const windowLabel = dw.start
+    ? `${formatISODate(dw.start)}–${formatISODate(dw.end)} (last ${dw.years} years)`
+    : "data not yet generated";
+  document.getElementById("bos-window-text").textContent = windowLabel;
+  document.getElementById("bos-window-detail").textContent = dw.start
+    ? `Showing ${windowLabel}. ${ws.total_records.toLocaleString()} total records, `
+      + `${ws.records_excluded_no_geo_or_district} excluded (no usable location/district).`
+    : ws.measure_note;
+  document.getElementById("bos-total-label").textContent = dw.start
+    ? `from ${formatISODate(dw.start)} to ${formatISODate(dw.end)}`
+    : "in this window";
+
+  document.getElementById("bos-total").textContent = ws.total_records.toLocaleString();
+  const totalFatal = ws.by_ward.reduce((s,r)=>s+r.fatal, 0);
+  document.getElementById("bos-fatal").textContent = totalFatal;
+
+  document.getElementById("bos-ward-table").innerHTML = `<table class="rank-table"><tr>
+      <th>District</th><th>Crashes</th><th>Fatal</th><th>Injury</th><th>Near bike lane</th>
+    </tr>` + ws.by_ward.map(r => `<tr>
+        <td>${r.ward}</td><td>${r.crashes}</td><td>${r.fatal}</td><td>${r.injury}</td>
+        <td>${r.crashes ? (r.near_bike_lane/r.crashes*100).toFixed(0) : 0}% (${r.near_bike_lane})</td>
+      </tr>`).join("") + `</table>`;
+
+  const we = BOS.ward_exposure;
+  document.getElementById("bos-exposure-window").textContent = we.window && we.window.start
+    ? `${formatISODate(we.window.start)}–${formatISODate(we.window.end)}`
+    : "recent";
+  document.getElementById("bos-exposure-table").innerHTML = `<table class="rank-table"><tr>
+      <th>District</th><th>Crashes</th><th>Bluebikes trips</th><th>of which e-bike</th><th>Crashes / 1,000 trips</th>
+    </tr>` + we.by_ward.map(r => `<tr>
+        <td>${r.ward}</td><td>${r.crashes_in_window}</td>
+        <td>${(r.bluebikes_trips_in_window||0).toLocaleString()}</td>
+        <td>${(r.bluebikes_ebike_trips_in_window||0).toLocaleString()}</td>
+        <td>${r.crashes_per_1000_bluebikes_trips ?? "n/a"}</td>
+      </tr>`).join("") + `</table>`;
+  document.getElementById("bos-exposure-note").textContent = we.measure_note;
+
+  const bs = BOS.bikeshare_context && BOS.bikeshare_context.monthly || [];
+  if (bs.length) {
+    const maxTrips = Math.max(...bs.map(r=>r.total_trips));
+    document.getElementById("bos-bikeshare").innerHTML = bs.map(r => `
+      <div class="bar-row">
+        <div class="lab"><span>${formatYYYYMM(r.month)}</span><span>${(r.electric_bike_share*100).toFixed(0)}% e-bike (${r.total_trips.toLocaleString()} trips)</span></div>
+        <div class="bar"><i style="width:${(r.total_trips/maxTrips*100).toFixed(1)}%"></i></div>
+      </div>`).join("");
+  } else {
+    document.getElementById("bos-bikeshare").innerHTML = `<p class="estimate-note">${BOS.bikeshare_context ? BOS.bikeshare_context.measure_note : "Data not yet generated."}</p>`;
+  }
+
+  fetch(DATA+"boston_bike_lanes.geojson").then(r=>r.json()).then(lanesGeo => {
+    if (bostonMap.loaded()) {
+      bostonMap.addSource("boston-bike-lanes", { type:"geojson", data: lanesGeo });
+      bostonMap.addLayer({ id:"boston-lane-lines", type:"line", source:"boston-bike-lanes",
+        paint:{ "line-color":"#3fb950", "line-width":1.5, "line-opacity":0.55 }});
+    } else {
+      bostonMap.on("load", () => {
+        bostonMap.addSource("boston-bike-lanes", { type:"geojson", data: lanesGeo });
+        bostonMap.addLayer({ id:"boston-lane-lines", type:"line", source:"boston-bike-lanes",
+          paint:{ "line-color":"#3fb950", "line-width":1.5, "line-opacity":0.55 }});
+      });
+    }
+  });
+
+  const addBostonPoints = () => {
+    bostonMap.addSource("boston-crashes", { type:"geojson", data: ws.geojson });
+    bostonMap.addLayer({ id:"boston-pts", type:"circle", source:"boston-crashes",
+      paint:{ "circle-radius":["interpolate",["linear"],["zoom"],
+          10, ["case",["get","fatal"],4,1.3],
+          13, ["case",["get","fatal"],7,3],
+          16, ["case",["get","fatal"],12,8]],
+        "circle-opacity":0.6, "circle-stroke-width":0.3, "circle-stroke-color":"#000",
+        "circle-color":["case",["get","fatal"],"#a371f7","#f78166"] }});
+    bostonMap.on("click","boston-pts",e=>{
+      const p = e.features[0].properties;
+      new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+        `<b>${p.ward}</b> · ${p.date}<br>Fatal: ${p.fatal ? "Yes" : "No"}<br>
+         Injury: ${p.injury ? "Yes" : "No"}<br>
+         Near a mapped bike lane (~30m): ${p.near_bike_lane ? "Yes" : "No"}`
+      ).addTo(bostonMap);
+    });
+    bostonMap.on("mouseenter","boston-pts",()=>bostonMap.getCanvas().style.cursor="pointer");
+    bostonMap.on("mouseleave","boston-pts",()=>bostonMap.getCanvas().style.cursor="");
+  };
+  if (bostonMap.loaded()) addBostonPoints(); else bostonMap.on("load", addBostonPoints);
+
+  document.getElementById("bos-src").innerHTML =
+    `<b>District crash data:</b> ${ws.measure_note}<br><br>
+     <b>Bikeshare context:</b> ${BOS.bikeshare_context ? BOS.bikeshare_context.measure_note : "Bluebikes trip history."}<br><br>
+     Source: City of Boston Vision Zero Crash Records (data.boston.gov), Bluebikes trip history.`;
+
+  ["bos-ward-wrap","bos-exposure-wrap","bos-bikeshare-wrap"].forEach(refreshAccordion);
+}
+
 // ---- Chicago Pilot panel ----
 let chicagoMap; // deferred -- built on first click of the Chicago tab
 let chicagoLoaded = false;
@@ -1633,6 +1867,108 @@ async function loadChicago() {
      Source: City of Chicago Data Portal (Traffic Crashes - People/Crashes), Divvy trip history.`;
 
   ["chi-ward-wrap","chi-exposure-wrap"].forEach(refreshAccordion);
+}
+
+// ---- NYC Pilot panel ----
+let nycMap;
+let nycLoaded = false;
+
+async function loadNYC() {
+  if (nycLoaded) return;
+  nycLoaded = true;
+  nycMap = new maplibregl.Map({
+    container: "nyc-map",
+    style: { version: 8,
+      sources: { carto: { type:"raster",
+        tiles:["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
+        tileSize:256, attribution:"© OpenStreetMap, © CARTO" }},
+      layers: [{ id:"carto", type:"raster", source:"carto" }] },
+    center: [-73.95, 40.73], zoom: 10.5
+  });
+
+  const NYC = await fetch(DATA+"nyc_pilot.json").then(r=>r.json());
+  const ws = NYC.ward_summary;
+  const dw = ws.date_window;
+
+  const windowLabel = dw.start
+    ? `${formatISODate(dw.start)}–${formatISODate(dw.end)} (last ${dw.years} years)`
+    : "data not yet generated";
+  document.getElementById("nyc-window-text").textContent = windowLabel;
+  document.getElementById("nyc-window-detail").textContent = dw.start
+    ? `Showing ${windowLabel}. ${ws.total_records.toLocaleString()} total records, `
+      + `${ws.records_excluded_no_borough} excluded (no borough), `
+      + `${ws.records_excluded_no_geo} excluded (no coordinates).`
+    : ws.measure_note;
+  document.getElementById("nyc-total-label").textContent = dw.start
+    ? `from ${formatISODate(dw.start)} to ${formatISODate(dw.end)}`
+    : "in this window";
+
+  document.getElementById("nyc-total").textContent = ws.total_records.toLocaleString();
+  const totalFatal = ws.by_ward.reduce((s,r)=>s+(r.fatal||0), 0);
+  document.getElementById("nyc-fatal").textContent = totalFatal;
+
+  document.getElementById("nyc-ward-table").innerHTML = `<table class="rank-table"><tr>
+      <th>Borough</th><th>Crashes</th><th>Fatal</th><th>Cyclists injured</th><th>Near bike lane</th>
+    </tr>` + ws.by_ward.map(r => `<tr>
+        <td>${r.ward}</td><td>${r.crashes}</td><td>${r.fatal}</td><td>${r.cyclist_injured}</td>
+        <td>${r.crashes ? (r.near_bike_lane/r.crashes*100).toFixed(0) : 0}% (${r.near_bike_lane})</td>
+      </tr>`).join("") + `</table>`;
+
+  const we = NYC.ward_exposure;
+  document.getElementById("nyc-exposure-window").textContent = we.window && we.window.start
+    ? `${formatISODate(we.window.start)}–${formatISODate(we.window.end)}`
+    : "recent";
+  document.getElementById("nyc-exposure-table").innerHTML = `<table class="rank-table"><tr>
+      <th>Borough</th><th>Crashes</th><th>Citi Bike trips</th><th>of which e-bike</th><th>Crashes / 1,000 trips</th>
+    </tr>` + we.by_ward.map(r => `<tr>
+        <td>${r.ward}</td><td>${r.crashes_in_window}</td>
+        <td>${(r.citibike_trips_in_window||0).toLocaleString()}</td>
+        <td>${(r.citibike_ebike_trips_in_window||0).toLocaleString()}</td>
+        <td>${r.crashes_per_1000_citibike_trips ?? "n/a"}</td>
+      </tr>`).join("") + `</table>`;
+  document.getElementById("nyc-exposure-note").textContent = we.measure_note;
+
+  fetch(DATA+"nyc_bike_lanes.geojson").then(r=>r.json()).then(lanesGeo => {
+    if (nycMap.loaded()) {
+      nycMap.addSource("nyc-bike-lanes", { type:"geojson", data: lanesGeo });
+      nycMap.addLayer({ id:"nyc-lane-lines", type:"line", source:"nyc-bike-lanes",
+        paint:{ "line-color":"#3fb950", "line-width":1.2, "line-opacity":0.5 }});
+    } else {
+      nycMap.on("load", () => {
+        nycMap.addSource("nyc-bike-lanes", { type:"geojson", data: lanesGeo });
+        nycMap.addLayer({ id:"nyc-lane-lines", type:"line", source:"nyc-bike-lanes",
+          paint:{ "line-color":"#3fb950", "line-width":1.2, "line-opacity":0.5 }});
+      });
+    }
+  });
+
+  const addNYCPoints = () => {
+    nycMap.addSource("nyc-crashes", { type:"geojson", data: ws.geojson });
+    nycMap.addLayer({ id:"nyc-pts", type:"circle", source:"nyc-crashes",
+      paint:{ "circle-radius":["interpolate",["linear"],["zoom"],
+          9,  ["case",["get","fatal"],4,1],
+          12, ["case",["get","fatal"],7,2.5],
+          15, ["case",["get","fatal"],12,7]],
+        "circle-opacity":0.55, "circle-stroke-width":0.3, "circle-stroke-color":"#000",
+        "circle-color":["case",["get","fatal"],"#a371f7","#f78166"] }});
+    nycMap.on("click","nyc-pts",e=>{
+      const p = e.features[0].properties;
+      new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+        `<b>${p.ward}</b> · ${p.date}<br>Fatal: ${p.fatal ? "Yes" : "No"}<br>
+         Cyclists injured: ${p.cyclist_injured||0}<br>
+         Near a mapped bike lane (~30m): ${p.near_bike_lane ? "Yes" : "No"}`
+      ).addTo(nycMap);
+    });
+    nycMap.on("mouseenter","nyc-pts",()=>nycMap.getCanvas().style.cursor="pointer");
+    nycMap.on("mouseleave","nyc-pts",()=>nycMap.getCanvas().style.cursor="");
+  };
+  if (nycMap.loaded()) addNYCPoints(); else nycMap.on("load", addNYCPoints);
+
+  document.getElementById("nyc-src").innerHTML =
+    `<b>Borough crash data:</b> ${ws.measure_note}<br><br>
+     Source: NYC Motor Vehicle Collisions (NYPD via NYC Open Data), Citi Bike trip history.`;
+
+  ["nyc-ward-wrap","nyc-exposure-wrap"].forEach(refreshAccordion);
 }
 </script>
 </body>

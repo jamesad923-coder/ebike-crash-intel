@@ -1,0 +1,17 @@
+{
+  "ward_summary": {
+    "date_window": {"start": null, "end": null, "years": 5},
+    "measure_note": "Data not yet generated — run etl/nyc/transform_nyc.py to populate.",
+    "records_excluded_no_borough": 0,
+    "records_excluded_no_geo": 0,
+    "total_records": 0,
+    "by_ward": [],
+    "geojson": {"type": "FeatureCollection", "features": []}
+  },
+  "ward_exposure": {
+    "window": {"start": null, "end": null},
+    "unmapped_trips": 0,
+    "measure_note": "Data not yet generated.",
+    "by_ward": []
+  }
+}
