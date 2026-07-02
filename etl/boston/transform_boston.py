@@ -65,11 +65,6 @@ def _is_fatal(severity: str | None) -> bool:
     return "fatal" in (severity or "").lower()
 
 
-def _is_injury(severity: str | None) -> bool:
-    s = (severity or "").lower()
-    return "non-fatal" in s or "injury" in s
-
-
 def build_ward_summary() -> dict:
     records = cached_bicycle_crashes()
     lookup = WardLookup()
@@ -106,13 +101,16 @@ def build_ward_summary() -> dict:
             all_dates.append(d)
 
         fatal = _is_fatal(r.get("severity"))
-        injury = _is_injury(r.get("severity"))
         near_lane = lane_index.is_near(lat, lon)
 
         w = by_ward[district]
         w["crashes"] += 1
         w["fatal"] += int(fatal)
-        w["injury"] += int(injury and not fatal)
+        # "injury" here really means "not matched as fatal" -- Boston's
+        # public data no longer has an injury/no-injury field at all (see
+        # fetch_boston_crashes.py docstring), so this is everything that
+        # ISN'T a fuzzy-matched fatality, not a confirmed injury count.
+        w["injury"] += int(not fatal)
         w["near_bike_lane"] += int(near_lane)
 
         features.append({
@@ -121,7 +119,6 @@ def build_ward_summary() -> dict:
             "properties": {
                 "ward": district,
                 "fatal": fatal,
-                "injury": injury,
                 "near_bike_lane": near_lane,
                 "date": d.strftime("%Y-%m-%d") if d else "",
             },
@@ -143,12 +140,20 @@ def build_ward_summary() -> dict:
             f"length as a consistency choice). Source: City of Boston Vision "
             f"Zero Crash Records (data.boston.gov). NOT exposure-adjusted -- "
             f"no per-district ridership data available. Boston's VZ data has "
-            f"no e-bike-specific flag and no separate major/minor injury split "
-            f"(only 'Fatal injury' vs 'Non-fatal injury'). District assigned "
-            f"via point-in-polygon against official City Council District "
-            f"boundaries -- no district field in the crash records directly. "
-            f"'near_bike_lane' means within ~30m of an OSM-mapped cycleway "
-            f"(infrastructure context, not a cause)."
+            f"no e-bike-specific flag. As of 2026 Boston's public crash file "
+            f"no longer includes ANY injury-severity field (no more 'Fatal "
+            f"injury' vs 'Non-fatal injury' vs 'No injury') -- the 'fatal' "
+            f"count here is instead an APPROXIMATE match against Boston's "
+            f"separate Vision Zero Fatality Records file, joined by nearest "
+            f"timestamp (within 6h) and location (within ~1km) since the two "
+            f"files share no common id; this recovers most but not all known "
+            f"bike fatalities, so 'fatal' is a lower bound, and the 'injury' "
+            f"count below is really just 'not matched as fatal', not a "
+            f"confirmed injury. District assigned via point-in-polygon "
+            f"against official City Council District boundaries -- no "
+            f"district field in the crash records directly. 'near_bike_lane' "
+            f"means within ~30m of an OSM-mapped cycleway (infrastructure "
+            f"context, not a cause)."
         ),
         "records_excluded_no_geo_or_district": no_geo,
         "total_records": len(records),

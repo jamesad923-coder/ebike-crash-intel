@@ -15,9 +15,13 @@ from pathlib import Path
 
 # Boston Open Data ArcGIS REST endpoint for City Council Districts.
 # Returns GeoJSON with a DISTRICT property (integer 1-9).
+# NOTE (2026): the old "City_Council_Districts" service now requires an
+# auth token ("Token Required", error 499) -- it appears to have been
+# superseded by the 2023-2032 redistricting layer below, found live via
+# Boston's ArcGIS Hub catalog search, which is still public/tokenless.
 DISTRICT_URL = (
     "https://services.arcgis.com/sFnw0xNflSi8J0uh/arcgis/rest/services/"
-    "City_Council_Districts/FeatureServer/0/query"
+    "CityCouncilDistricts_2023_5_25/FeatureServer/0/query"
 )
 RAW = Path(__file__).resolve().parents[2] / "data" / "raw" / "boston"
 

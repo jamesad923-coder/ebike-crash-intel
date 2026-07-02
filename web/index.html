@@ -409,6 +409,9 @@
     <h2>Age band</h2>
     <div class="filters" id="f-age"></div>
 
+    <h2>Sex</h2>
+    <div class="filters" id="f-sex"></div>
+
     <h2>What the crash report coded (PBCAT)</h2>
     <p class="sub" style="margin-top:-4px">Pre-crash actions from NHTSA crash-typing. This is "what the
       report found" — <b>not</b> an AI fault judgment.</p>
@@ -416,9 +419,6 @@
 
     <h2>Lighting at time of crash</h2>
     <div id="lighting"></div>
-
-    <h2>Sex</h2>
-    <div id="sex-breakdown"></div>
 
     <div class="src" id="src"></div>
   </div>
@@ -645,14 +645,20 @@
     <div class="banner">
       <b>Read this first.</b> District crash counts cover
       <b id="bos-window-text">a fixed recent window</b>. Source is the City of
-      Boston <b>Vision Zero Crash Records</b> (data.boston.gov). Boston's
-      severity data has only <b>"Fatal injury" vs "Non-fatal injury"</b> —
-      no separate major/minor split like DC. No <b>speeding flag</b> and no
-      <b>e-bike-specific flag</b> (same gap as every other city in this
-      project). Districts are assigned via <b>point-in-polygon</b> against
-      Boston City Council District boundaries — no district field in the
-      crash records directly. Bikeshare exposure is <b>Bluebikes only</b>,
-      same caveat as DC: covers their fleet, not personally-owned bikes.
+      Boston <b>Vision Zero Crash Records</b> (data.boston.gov). As of 2026
+      Boston's public crash file <b>dropped its injury-severity field
+      entirely</b> — no more "Fatal injury" vs "Non-fatal injury" at all. The
+      <b>Fatal</b> count below is instead an <b>approximate match</b> against
+      Boston's separate Vision Zero Fatality Records file, joined by nearest
+      timestamp (within 6h) and location (within ~1km) since the two files
+      share no common id — treat it as a <b>lower bound</b>, and treat
+      "Injury" as "not matched as fatal," not a confirmed injury. No
+      <b>speeding flag</b> and no <b>e-bike-specific flag</b> (same gap as
+      every other city in this project). Districts are assigned via
+      <b>point-in-polygon</b> against Boston City Council District
+      boundaries — no district field in the crash records directly.
+      Bikeshare exposure is <b>Bluebikes only</b>, same caveat as DC: covers
+      their fleet, not personally-owned bikes.
     </div>
 
     <p class="estimate-note" id="bos-window-detail"></p>
@@ -1033,6 +1039,7 @@ setTimeout(hideLoadingScreen, 20000);
 let GEO, SUMMARY;
 let activeYears = new Set();
 let activeAge = "all";
+let activeSex = "all";
 
 const fmt = n => n.toLocaleString("en-US");
 
@@ -1054,6 +1061,10 @@ function filteredFeatures() {
       if (activeAge === "minor" && !minor) return false;
       if (activeAge === "adult" && (minor || p.age_band === "Unknown")) return false;
     }
+    // Sex is a reported field with Male/Female plus "Not Reported" /
+    // "Reported as Unknown"; picking a specific sex excludes the unknowns
+    // rather than guessing, same honesty rule as the adult age filter.
+    if (activeSex !== "all" && p.sex !== activeSex) return false;
     return true;
   });
 }
@@ -1078,7 +1089,6 @@ function recompute() {
   };
   bars(document.getElementById("pbcat"), tally("crash_group", ["", "Not a Cyclist"]));
   bars(document.getElementById("lighting"), tally("lighting"));
-  bars(document.getElementById("sex-breakdown"), tally("sex", ["Reported as Unknown"]));
 
   // map
   if (map.getSource("fatalities")) {
@@ -1307,6 +1317,13 @@ map.on("load", async () => {
   [["all","All ages"],["minor","Under 18"],["adult","18+"]].forEach(([v,l])=>{
     chip(ac, l, (b)=>{ activeAge=v;
       [...ac.children].forEach(c=>c.classList.remove("on")); b.classList.add("on");
+      recompute();
+    }, v==="all");
+  });
+  const sc = document.getElementById("f-sex");
+  [["all","All sexes"],["Male","Male"],["Female","Female"]].forEach(([v,l])=>{
+    chip(sc, l, (b)=>{ activeSex=v;
+      [...sc.children].forEach(c=>c.classList.remove("on")); b.classList.add("on");
       recompute();
     }, v==="all");
   });
@@ -1698,7 +1715,7 @@ async function loadBoston() {
   document.getElementById("bos-fatal").textContent = totalFatal;
 
   document.getElementById("bos-ward-table").innerHTML = `<table class="rank-table"><tr>
-      <th>District</th><th>Crashes</th><th>Fatal</th><th>Injury</th><th>Near bike lane</th>
+      <th>District</th><th>Crashes</th><th>Fatal*</th><th>Not matched fatal</th><th>Near bike lane</th>
     </tr>` + ws.by_ward.map(r => `<tr>
         <td>${r.ward}</td><td>${r.crashes}</td><td>${r.fatal}</td><td>${r.injury}</td>
         <td>${r.crashes ? (r.near_bike_lane/r.crashes*100).toFixed(0) : 0}% (${r.near_bike_lane})</td>
@@ -1756,8 +1773,7 @@ async function loadBoston() {
     bostonMap.on("click","boston-pts",e=>{
       const p = e.features[0].properties;
       new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
-        `<b>${p.ward}</b> · ${p.date}<br>Fatal: ${p.fatal ? "Yes" : "No"}<br>
-         Injury: ${p.injury ? "Yes" : "No"}<br>
+        `<b>${p.ward}</b> · ${p.date}<br>Fatal (approx. match): ${p.fatal ? "Yes" : "No"}<br>
          Near a mapped bike lane (~30m): ${p.near_bike_lane ? "Yes" : "No"}`
       ).addTo(bostonMap);
     });

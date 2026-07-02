@@ -18,14 +18,41 @@ from __future__ import annotations
 import csv
 import io
 import json
+import socket
 import sys
+import time
 import urllib.request
 import zipfile
 from pathlib import Path
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 
 S3_BASE = "https://s3.amazonaws.com/tripdata"
 RAW = Path(__file__).resolve().parents[2] / "data" / "raw" / "nyc"
+
+# NYC Citi Bike monthly files are very large (hundreds of MB), so slow or
+# reset connections are common. Use a generous read timeout and retry a
+# few times on transient network errors rather than letting one timeout
+# abort the whole multi-month build.
+DOWNLOAD_TIMEOUT = 600
+MAX_RETRIES = 4
+
+
+def _download(url: str) -> bytes:
+    last_err: Exception | None = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        req = urllib.request.Request(url, headers={"User-Agent": "ebike-crash-intel/0.1"})
+        try:
+            with urllib.request.urlopen(req, timeout=DOWNLOAD_TIMEOUT) as r:
+                return r.read()
+        except HTTPError:
+            raise  # 404 / other HTTP status handled by caller
+        except (URLError, socket.timeout, ConnectionError) as e:
+            last_err = e
+            wait = 5 * attempt
+            print(f"    download attempt {attempt}/{MAX_RETRIES} failed ({e}); "
+                  f"retrying in {wait}s...")
+            time.sleep(wait)
+    raise last_err  # type: ignore[misc]
 
 
 def fetch_month_trips(yyyymm: str) -> list[dict]:
@@ -35,10 +62,8 @@ def fetch_month_trips(yyyymm: str) -> list[dict]:
     for suffix in [f"{yyyymm}-citibike-tripdata.csv.zip",
                    f"{yyyymm}-citibike-tripdata.zip"]:
         url = f"{S3_BASE}/{suffix}"
-        req = urllib.request.Request(url, headers={"User-Agent": "ebike-crash-intel/0.1"})
         try:
-            with urllib.request.urlopen(req, timeout=180) as r:
-                zip_bytes = r.read()
+            zip_bytes = _download(url)
             break
         except HTTPError as e:
             if e.code == 404:

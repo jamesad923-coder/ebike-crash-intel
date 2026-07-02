@@ -1,8 +1,13 @@
 """Fetch NYC Borough boundary polygons and provide a point-in-borough lookup.
 
-Source: NYC Open Data "Borough Boundaries" dataset (7t3b-ywvw) -- the
+Source: NYC Open Data "Borough Boundaries" dataset (gthc-hcne) -- the
 standard administrative boundaries used by the city. Five boroughs:
 Manhattan, Bronx, Brooklyn, Queens, Staten Island.
+
+NOTE: the dataset was previously id'd 7t3b-ywvw and served via the
+/api/geospatial export endpoint; that id 404s as of 2026 (NYC Open Data
+retired it) -- gthc-hcne via the standard /resource/*.geojson endpoint is
+the current replacement, confirmed live against the Socrata catalog search.
 
 Uses the grid-rasterization approach from Chicago's WardLookup -- Citi Bike
 has millions of trip points per month; per-point polygon testing would be
@@ -17,10 +22,7 @@ import json
 import urllib.request
 from pathlib import Path
 
-BOROUGH_URL = (
-    "https://data.cityofnewyork.us/api/geospatial/7t3b-ywvw"
-    "?method=export&type=GeoJSON"
-)
+BOROUGH_URL = "https://data.cityofnewyork.us/resource/gthc-hcne.geojson?$limit=100"
 RAW = Path(__file__).resolve().parents[2] / "data" / "raw" / "nyc"
 
 
@@ -31,7 +33,8 @@ def fetch_borough_polygons() -> list[dict]:
         data = json.loads(r.read())
     out = []
     for f in data["features"]:
-        name = (f["properties"].get("boro_name") or
+        name = (f["properties"].get("boroname") or
+                f["properties"].get("boro_name") or
                 f["properties"].get("NAME") or
                 f["properties"].get("BoroName") or "").upper()
         geom = f["geometry"]
