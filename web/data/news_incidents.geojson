@@ -69,37 +69,6 @@
         ],
         "date": "20260627T043000Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -122.80378,
-          45.4871723
-        ]
-      },
-      "properties": {
-        "city": "Beaverton",
-        "state": "OR",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "kbnd.com"
-        ],
-        "sources": [
-          {
-            "domain": "kbnd.com",
-            "url": "https://kbnd.com/kbnd-news/regional-news/921940",
-            "date": "20260626T143000Z"
-          }
-        ],
-        "date": "20260626T143000Z"
-      }
     }
   ]
 }
