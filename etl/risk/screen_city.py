@@ -290,6 +290,10 @@ def main() -> None:
     out_dir = WEB / "risk-screening" / city_key
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "index.html").write_text(page(city_key, cfg, s))
+    # Machine-readable artifact so other generators (the plan-ready city
+    # reports) can embed the screening without re-deriving it.
+    (WEB / "data" / f"risk_screen_{city_key}.json").write_text(json.dumps(
+        {"city": cfg["name"], "generated": datetime.now().strftime("%Y-%m-%d"), **s}))
     print(f"{cfg['name']}: {s['n_points']:,} points -> "
           f"{s['n_cells_with_crashes']:,} cells with crashes; "
           f"persistence threshold {s['persistence_threshold']}/half")

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bicyclist Crash Concentration Screening: Chicago | Crash Atlas</title>
+<meta name="description" content="Grid-cell screening of 11,113 recorded bicyclist crashes in Chicago — the first step of a High-Injury Network analysis. Count-based, honestly caveated, not a prediction.">
+<link rel="canonical" href="https://jamesad923-coder.github.io/ebike-crash-intel/risk-screening/chicago/">
+<meta property="og:title" content="Bicyclist Crash Concentration Screening: Chicago | Crash Atlas"><meta property="og:description" content="Grid-cell screening of 11,113 recorded bicyclist crashes in Chicago — the first step of a High-Injury Network analysis. Count-based, honestly caveated, not a prediction.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚲</text></svg>">
+<style>
+:root { --bg:#0e1116; --panel:#161b22; --line:#2a313c; --txt:#e6edf3;
+  --muted:#8b949e; --accent:#f78166; --warn:#d29922; --good:#3fb950; --minor:#a371f7; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--txt);
+  font:14px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+header.site { border-bottom:1px solid var(--line); padding:14px 18px; }
+.wordmark { font-weight:700; font-size:17px; color:var(--txt); }
+.tagline { color:var(--muted); font-size:12px; margin-left:12px; }
+.layout { display:grid; grid-template-columns:420px 1fr; gap:0; height:calc(100vh - 51px); }
+.side { overflow-y:auto; padding:18px; border-right:1px solid var(--line); }
+h1 { font-size:19px; margin:4px 0 2px; }
+.sub { color:var(--muted); margin:0 0 12px; font-size:12.5px; }
+.banner { background:var(--panel); border:1px solid var(--warn); border-radius:10px;
+  padding:11px 13px; font-size:12.5px; margin:12px 0; }
+.cell-card { background:var(--panel); border:1px solid var(--line); border-radius:10px;
+  padding:10px 12px; margin:8px 0; cursor:pointer; font-size:12.5px; }
+.cell-card:hover, .cell-card.active { border-color:var(--accent); }
+.cell-head { font-size:13px; }
+.cell-factors { color:var(--muted); margin:4px 0; }
+.cell-years { color:var(--muted); font-size:11.5px; }
+.badge { font-size:10.5px; border:1px solid var(--muted); color:var(--muted);
+  border-radius:8px; padding:1px 7px; margin-left:6px; }
+.badge.persistent { border-color:var(--good); color:var(--good); }
+#map { height:100%; }
+footer { color:var(--muted); font-size:11.5px; padding:14px 0; }
+@media (max-width:800px) { .layout { grid-template-columns:1fr; height:auto; }
+  #map { height:420px; } }
+</style>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+</head><body>
+<header class="site"><a class="wordmark" href="../../">🚲 Crash Atlas</a>
+<span class="tagline">Risk screening demo · count-based · supports judgment, never replaces it</span></header>
+<div class="layout">
+<div class="side">
+<h1>Chicago: Crash Concentration Screening</h1>
+<p class="sub">11,113 recorded bicyclist crashes, 2021–2026 ·
+top 20 of 3,551 ~250m grid cells ·
+generated 2026-07-04</p>
+
+<div class="banner"><b>Read this first.</b> This is the first step of a
+High-Injury-Network-style analysis: where documented crashes <b>concentrate</b>.
+It is <b>not a prediction</b> and <b>not exposure-adjusted</b> — busy corridors
+rank high partly because more people ride there; a high-count cell can be the
+safest place per rider in the city. <b>Persistent</b> means concentrated in both
+halves of the window (≥2 crashes in each) — those
+locations most likely reflect roadway conditions rather than chance, and are
+where systemic-safety practice says to look first. Cell boundaries are
+arbitrary ~250m squares. This screening <b>supports engineering judgment; it
+never replaces it</b>.</div>
+
+<div class="cell-card" data-i="0">
+<div class="cell-head"><b>#1</b> · Ward 1 · 48 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 3, 2022: 9, 2023: 10, 2024: 13, 2025: 7, 2026: 6</div>
+</div><div class="cell-card" data-i="1">
+<div class="cell-head"><b>#2</b> · Ward 32 · 43 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 8, 2022: 5, 2023: 11, 2024: 9, 2025: 7, 2026: 3</div>
+</div><div class="cell-card" data-i="2">
+<div class="cell-head"><b>#3</b> · Ward 2 · 36 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 3, 2022: 8, 2023: 6, 2024: 8, 2025: 10, 2026: 1</div>
+</div><div class="cell-card" data-i="3">
+<div class="cell-head"><b>#4</b> · Ward 42 · 36 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 1, 2022: 5, 2023: 6, 2024: 12, 2025: 10, 2026: 2</div>
+</div><div class="cell-card" data-i="4">
+<div class="cell-head"><b>#5</b> · Ward 27 · 34 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 3, 2022: 3, 2023: 9, 2024: 7, 2025: 10, 2026: 2</div>
+</div><div class="cell-card" data-i="5">
+<div class="cell-head"><b>#6</b> · Ward 42 · 33 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 2, 2022: 6, 2023: 5, 2024: 6, 2025: 10, 2026: 4</div>
+</div><div class="cell-card" data-i="6">
+<div class="cell-head"><b>#7</b> · Ward 27 · 30 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 7, 2022: 5, 2023: 7, 2024: 4, 2025: 4, 2026: 3</div>
+</div><div class="cell-card" data-i="7">
+<div class="cell-head"><b>#8</b> · Ward 42 · 30 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 7, 2022: 1, 2023: 5, 2024: 5, 2025: 6, 2026: 6</div>
+</div><div class="cell-card" data-i="8">
+<div class="cell-head"><b>#9</b> · Ward 34 · 29 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 5, 2022: 4, 2023: 8, 2024: 7, 2025: 4, 2026: 1</div>
+</div><div class="cell-card" data-i="9">
+<div class="cell-head"><b>#10</b> · Ward 42 · 27 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 4, 2022: 3, 2023: 4, 2024: 6, 2025: 4, 2026: 6</div>
+</div><div class="cell-card" data-i="10">
+<div class="cell-head"><b>#11</b> · Ward 1 · 27 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 2, 2022: 7, 2023: 4, 2024: 3, 2025: 8, 2026: 3</div>
+</div><div class="cell-card" data-i="11">
+<div class="cell-head"><b>#12</b> · Ward 43 · 26 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 6, 2022: 4, 2023: 2, 2024: 6, 2025: 7, 2026: 1</div>
+</div><div class="cell-card" data-i="12">
+<div class="cell-head"><b>#13</b> · Ward 42 · 26 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 2, 2022: 3, 2023: 6, 2024: 8, 2025: 7</div>
+</div><div class="cell-card" data-i="13">
+<div class="cell-head"><b>#14</b> · Ward 1 · 26 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 3, 2022: 2, 2023: 4, 2024: 4, 2025: 9, 2026: 4</div>
+</div><div class="cell-card" data-i="14">
+<div class="cell-head"><b>#15</b> · Ward 44 · 25 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 3, 2022: 6, 2023: 7, 2024: 6, 2025: 2, 2026: 1</div>
+</div><div class="cell-card" data-i="15">
+<div class="cell-head"><b>#16</b> · Ward 27 · 25 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 1, 2022: 7, 2023: 3, 2024: 6, 2025: 4, 2026: 4</div>
+</div><div class="cell-card" data-i="16">
+<div class="cell-head"><b>#17</b> · Ward 46 · 24 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 8, 2022: 3, 2023: 5, 2024: 3, 2025: 3, 2026: 2</div>
+</div><div class="cell-card" data-i="17">
+<div class="cell-head"><b>#18</b> · Ward 48 · 24 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 4, 2022: 3, 2023: 3, 2024: 6, 2025: 5, 2026: 3</div>
+</div><div class="cell-card" data-i="18">
+<div class="cell-head"><b>#19</b> · Ward 42 · 23 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 4, 2022: 4, 2023: 4, 2024: 7, 2025: 4</div>
+</div><div class="cell-card" data-i="19">
+<div class="cell-head"><b>#20</b> · Ward 28 · 23 crashes <span class="badge persistent">persistent</span></div>
+<div class="cell-factors">only 0% of crashes near any mapped bike lane — possible network gap (context, not cause) · persistent across both halves of the window</div>
+<div class="cell-years">2021: 3, 2022: 5, 2023: 5, 2024: 5, 2025: 4, 2026: 1</div>
+</div>
+
+<footer>Source: city open crash data via the <a href="../../">Crash Atlas</a>
+pilot pipeline · method &amp; code <a href="https://github.com/jamesad923-coder/ebike-crash-intel">open source</a> ·
+city staff can request the full-resolution version:
+<a href="mailto:jamesad923@gmail.com?subject=Risk%20screening:%20Chicago">jamesad923@gmail.com</a></footer>
+</div>
+<div id="map"></div>
+</div>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script>
+const CELLS = [{"bounds": [-87.675, 41.9075, -87.6725, 41.91], "center": [-87.67375, 41.90875], "total": 48, "fatal": 0, "near_lane_share": 0.0, "first_half": 25, "second_half": 23, "persistent": true, "by_year": {"2021": 3, "2022": 9, "2023": 10, "2024": 13, "2025": 7, "2026": 6}, "area": "Ward 1"}, {"bounds": [-87.6775, 41.91, -87.675, 41.9125], "center": [-87.67625, 41.91125], "total": 43, "fatal": 0, "near_lane_share": 0.0, "first_half": 24, "second_half": 19, "persistent": true, "by_year": {"2021": 8, "2022": 5, "2023": 11, "2024": 9, "2025": 7, "2026": 3}, "area": "Ward 32"}, {"bounds": [-87.6325, 41.91, -87.63, 41.9125], "center": [-87.63125, 41.91125], "total": 36, "fatal": 0, "near_lane_share": 0.0, "first_half": 17, "second_half": 19, "persistent": true, "by_year": {"2021": 3, "2022": 8, "2023": 6, "2024": 8, "2025": 10, "2026": 1}, "area": "Ward 2"}, {"bounds": [-87.6275, 41.89, -87.625, 41.8925], "center": [-87.62625, 41.89125], "total": 36, "fatal": 0, "near_lane_share": 0.0, "first_half": 12, "second_half": 24, "persistent": true, "by_year": {"2021": 1, "2022": 5, "2023": 6, "2024": 12, "2025": 10, "2026": 2}, "area": "Ward 42"}, {"bounds": [-87.6475, 41.89, -87.645, 41.8925], "center": [-87.64625, 41.89125], "total": 34, "fatal": 0, "near_lane_share": 0.0, "first_half": 16, "second_half": 18, "persistent": true, "by_year": {"2021": 3, "2022": 3, "2023": 9, "2024": 7, "2025": 10, "2026": 2}, "area": "Ward 27"}, {"bounds": [-87.6275, 41.8925, -87.625, 41.895], "center": [-87.62625, 41.89375], "total": 33, "fatal": 0, "near_lane_share": 0.0, "first_half": 14, "second_half": 19, "persistent": true, "by_year": {"2021": 2, "2022": 6, "2023": 5, "2024": 6, "2025": 10, "2026": 4}, "area": "Ward 42"}, {"bounds": [-87.665, 41.9025, -87.6625, 41.905], "center": [-87.66375, 41.90375], "total": 30, "fatal": 0, "near_lane_share": 0.0, "first_half": 20, "second_half": 10, "persistent": true, "by_year": {"2021": 7, "2022": 5, "2023": 7, "2024": 4, "2025": 4, "2026": 3}, "area": "Ward 27"}, {"bounds": [-87.6275, 41.8875, -87.625, 41.89], "center": [-87.62625, 41.88875], "total": 30, "fatal": 0, "near_lane_share": 0.0, "first_half": 15, "second_half": 15, "persistent": true, "by_year": {"2021": 7, "2022": 1, "2023": 5, "2024": 5, "2025": 6, "2026": 6}, "area": "Ward 42"}, {"bounds": [-87.6275, 41.8825, -87.625, 41.885], "center": [-87.62625, 41.88375], "total": 29, "fatal": 0, "near_lane_share": 0.0, "first_half": 17, "second_half": 12, "persistent": true, "by_year": {"2021": 5, "2022": 4, "2023": 8, "2024": 7, "2025": 4, "2026": 1}, "area": "Ward 34"}, {"bounds": [-87.63, 41.8875, -87.6275, 41.89], "center": [-87.62875, 41.88875], "total": 27, "fatal": 0, "near_lane_share": 0.0, "first_half": 11, "second_half": 16, "persistent": true, "by_year": {"2021": 4, "2022": 3, "2023": 4, "2024": 6, "2025": 4, "2026": 6}, "area": "Ward 42"}, {"bounds": [-87.67, 41.905, -87.6675, 41.9075], "center": [-87.66875, 41.90625], "total": 27, "fatal": 0, "near_lane_share": 0.0, "first_half": 13, "second_half": 14, "persistent": true, "by_year": {"2021": 2, "2022": 7, "2023": 4, "2024": 3, "2025": 8, "2026": 3}, "area": "Ward 1"}, {"bounds": [-87.6425, 41.93, -87.64, 41.9325], "center": [-87.64125, 41.93125], "total": 26, "fatal": 0, "near_lane_share": 0.0, "first_half": 12, "second_half": 14, "persistent": true, "by_year": {"2021": 6, "2022": 4, "2023": 2, "2024": 6, "2025": 7, "2026": 1}, "area": "Ward 43"}, {"bounds": [-87.6325, 41.8825, -87.63, 41.885], "center": [-87.63125, 41.88375], "total": 26, "fatal": 0, "near_lane_share": 0.0, "first_half": 14, "second_half": 12, "persistent": true, "by_year": {"2021": 2, "2022": 3, "2023": 6, "2024": 8, "2025": 7}, "area": "Ward 42"}, {"bounds": [-87.6975, 41.9225, -87.695, 41.925], "center": [-87.69625, 41.92375], "total": 26, "fatal": 0, "near_lane_share": 0.0, "first_half": 9, "second_half": 17, "persistent": true, "by_year": {"2021": 3, "2022": 2, "2023": 4, "2024": 4, "2025": 9, "2026": 4}, "area": "Ward 1"}, {"bounds": [-87.6525, 41.9425, -87.65, 41.945], "center": [-87.65125, 41.94375], "total": 25, "fatal": 0, "near_lane_share": 0.0, "first_half": 16, "second_half": 9, "persistent": true, "by_year": {"2021": 3, "2022": 6, "2023": 7, "2024": 6, "2025": 2, "2026": 1}, "area": "Ward 44"}, {"bounds": [-87.6525, 41.895, -87.65, 41.8975], "center": [-87.65125, 41.89625], "total": 25, "fatal": 0, "near_lane_share": 0.0, "first_half": 13, "second_half": 12, "persistent": true, "by_year": {"2021": 1, "2022": 7, "2023": 3, "2024": 6, "2025": 4, "2026": 4}, "area": "Ward 27"}, {"bounds": [-87.6475, 41.9525, -87.645, 41.955], "center": [-87.64625, 41.95375], "total": 24, "fatal": 0, "near_lane_share": 0.0, "first_half": 16, "second_half": 8, "persistent": true, "by_year": {"2021": 8, "2022": 3, "2023": 5, "2024": 3, "2025": 3, "2026": 2}, "area": "Ward 46"}, {"bounds": [-87.6675, 41.975, -87.665, 41.9775], "center": [-87.66625, 41.97625], "total": 24, "fatal": 0, "near_lane_share": 0.0, "first_half": 11, "second_half": 13, "persistent": true, "by_year": {"2021": 4, "2022": 3, "2023": 3, "2024": 6, "2025": 5, "2026": 3}, "area": "Ward 48"}, {"bounds": [-87.6225, 41.8825, -87.62, 41.885], "center": [-87.62125, 41.88375], "total": 23, "fatal": 0, "near_lane_share": 0.0, "first_half": 12, "second_half": 11, "persistent": true, "by_year": {"2021": 4, "2022": 4, "2023": 4, "2024": 7, "2025": 4}, "area": "Ward 42"}, {"bounds": [-87.645, 41.865, -87.6425, 41.8675], "center": [-87.64375, 41.86625], "total": 23, "fatal": 0, "near_lane_share": 0.0, "first_half": 14, "second_half": 9, "persistent": true, "by_year": {"2021": 3, "2022": 5, "2023": 5, "2024": 5, "2025": 4, "2026": 1}, "area": "Ward 28"}];
+const map = new maplibregl.Map({ container:"map",
+  style: { version:8, sources: { carto: { type:"raster",
+    tiles:["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
+    tileSize:256, attribution:"© OpenStreetMap, © CARTO" } },
+    layers:[{ id:"carto", type:"raster", source:"carto" }] },
+  center: [-87.65, 41.85], zoom: 10.8 });
+map.on("load", () => {
+  map.addSource("cells", { type:"geojson", data: { type:"FeatureCollection",
+    features: CELLS.map((c, i) => ({ type:"Feature",
+      geometry: { type:"Polygon", coordinates: [[
+        [c.bounds[0], c.bounds[1]], [c.bounds[2], c.bounds[1]],
+        [c.bounds[2], c.bounds[3]], [c.bounds[0], c.bounds[3]],
+        [c.bounds[0], c.bounds[1]]]] },
+      properties: { i, total: c.total, persistent: c.persistent ? 1 : 0 } })) } });
+  map.addLayer({ id:"cells-fill", type:"fill", source:"cells",
+    paint: { "fill-color": ["case", ["==", ["get","persistent"], 1], "#f78166", "#d29922"],
+      "fill-opacity": 0.35 } });
+  map.addLayer({ id:"cells-line", type:"line", source:"cells",
+    paint: { "line-color": ["case", ["==", ["get","persistent"], 1], "#f78166", "#d29922"],
+      "line-width": 1.5 } });
+  map.on("click", "cells-fill", e => {
+    const i = e.features[0].properties.i;
+    document.querySelectorAll(".cell-card").forEach(el => el.classList.remove("active"));
+    const card = document.querySelector(`.cell-card[data-i="${i}"]`);
+    if (card) { card.classList.add("active"); card.scrollIntoView({ behavior:"smooth", block:"center" }); }
+  });
+  map.on("mouseenter","cells-fill",()=>map.getCanvas().style.cursor="pointer");
+  map.on("mouseleave","cells-fill",()=>map.getCanvas().style.cursor="");
+});
+document.querySelectorAll(".cell-card").forEach(el => el.addEventListener("click", () => {
+  const c = CELLS[+el.dataset.i];
+  document.querySelectorAll(".cell-card").forEach(x => x.classList.remove("active"));
+  el.classList.add("active");
+  map.flyTo({ center: c.center, zoom: 14.5 });
+}));
+</script>
+</body></html>

@@ -55,6 +55,14 @@ RECENT_MONTHS = _recent_months()
 def _parse_date(ts: str | None) -> datetime | None:
     if not ts:
         return None
+    # Boston's CKAN CSV ships timestamps like "2016-09-17 23:59:31+00".
+    # Python 3.9's fromisoformat cannot parse a bare "+00" offset (3.11+
+    # can), and the old silent None return made EVERY date unparseable
+    # locally -- which also silently disabled the CRASH_CUTOFF window
+    # filter. Normalize "+00" -> "+00:00" before parsing.
+    ts = ts.strip()
+    if ts.endswith("+00"):
+        ts = ts + ":00"
     try:
         return datetime.fromisoformat(ts.replace("Z", "+00:00")).replace(tzinfo=timezone.utc)
     except (ValueError, TypeError):
