@@ -74,6 +74,20 @@ h2 { font-size:15px; margin:30px 0 10px; color:var(--txt); }
 .bar { background:var(--line); border-radius:4px; height:8px; overflow:hidden; }
 .bar i { display:block; height:100%; background:var(--accent); border-radius:4px; }
 #map { height:420px; border-radius:10px; border:1px solid var(--line); margin:10px 0; }
+/* MapLibre popups default to a white box, and this page's light --txt
+   inherits into it: white-on-white. Match the dashboard's dark panel,
+   and also restyle the tip arrow + close button. Scoped under #map
+   (popups render inside the map container) because MapLibre's own
+   stylesheet is linked AFTER this style block -- the ID selector wins
+   on specificity regardless of load order. */
+#map .maplibregl-popup-content { background:var(--panel); color:var(--txt);
+  border:1px solid var(--line); border-radius:8px; font-size:12px; }
+#map .maplibregl-popup-content b { color:var(--accent); }
+#map .maplibregl-popup-close-button { color:var(--muted); font-size:14px; }
+#map .maplibregl-popup-anchor-bottom .maplibregl-popup-tip { border-top-color:var(--panel); }
+#map .maplibregl-popup-anchor-top .maplibregl-popup-tip { border-bottom-color:var(--panel); }
+#map .maplibregl-popup-anchor-left .maplibregl-popup-tip { border-right-color:var(--panel); }
+#map .maplibregl-popup-anchor-right .maplibregl-popup-tip { border-left-color:var(--panel); }
 .legend { color:var(--muted); font-size:12px; margin-bottom:6px; }
 .dot { display:inline-block; width:9px; height:9px; border-radius:50%;
   vertical-align:middle; margin-right:5px; }
