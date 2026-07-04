@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bicycle &amp; E-Bike Crash Data by City (2019–2024) | Crash Atlas</title>
+<meta name="description" content="Cyclist fatality data pages for 338 U.S. cities, from federal crash data 2019–2024. Mapped, sourced, honestly caveated.">
+<link rel="canonical" href="https://jamesad923-coder.github.io/ebike-crash-intel/cities/">
+<meta property="og:title" content="Bicycle &amp; E-Bike Crash Data by City (2019–2024) | Crash Atlas">
+<meta property="og:description" content="Cyclist fatality data pages for 338 U.S. cities, from federal crash data 2019–2024. Mapped, sourced, honestly caveated.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jamesad923-coder.github.io/ebike-crash-intel/cities/">
+<meta property="og:site_name" content="Crash Atlas">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚲</text></svg>">
+
+<style>
+:root { --bg:#0e1116; --panel:#161b22; --line:#2a313c; --txt:#e6edf3;
+        --muted:#8b949e; --accent:#f78166; --warn:#d29922; --good:#3fb950;
+        --minor:#a371f7; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--txt);
+  font:14px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { max-width:860px; margin:0 auto; padding:24px 18px 60px; }
+header.site { border-bottom:1px solid var(--line); }
+header.site .wrap { display:flex; align-items:baseline; gap:14px; padding:14px 18px; }
+.wordmark { font-weight:700; font-size:17px; color:var(--txt); letter-spacing:0.2px; }
+.wordmark:hover { text-decoration:none; color:var(--accent); }
+.tagline { color:var(--muted); font-size:12px; }
+h1 { font-size:24px; margin:26px 0 4px; }
+h2 { font-size:15px; margin:30px 0 10px; color:var(--txt); }
+.sub { color:var(--muted); margin:0 0 18px; }
+.banner { background:var(--panel); border:1px solid var(--warn); border-radius:10px;
+  padding:12px 14px; font-size:13px; color:var(--txt); margin:18px 0; }
+.banner.smalln { border-color:var(--accent); }
+.stats { display:flex; gap:14px; flex-wrap:wrap; margin:18px 0; }
+.stat { background:var(--panel); border:1px solid var(--line); border-radius:10px;
+  padding:12px 16px; min-width:150px; flex:1; }
+.stat .n { display:block; font-size:26px; font-weight:700; }
+.stat .l { color:var(--muted); font-size:12px; }
+.stat.minor .n { color:var(--minor); }
+.bar-row { margin:7px 0; }
+.bar-row .lab { display:flex; justify-content:space-between; font-size:12.5px;
+  color:var(--txt); margin-bottom:3px; }
+.bar-row .lab span:last-child { color:var(--muted); }
+.bar { background:var(--line); border-radius:4px; height:8px; overflow:hidden; }
+.bar i { display:block; height:100%; background:var(--accent); border-radius:4px; }
+#map { height:420px; border-radius:10px; border:1px solid var(--line); margin:10px 0; }
+.legend { color:var(--muted); font-size:12px; margin-bottom:6px; }
+.dot { display:inline-block; width:9px; height:9px; border-radius:50%;
+  vertical-align:middle; margin-right:5px; }
+.cta { background:var(--panel); border:1px solid var(--good); border-radius:10px;
+  padding:16px; margin:30px 0; }
+.cta b { color:var(--good); }
+.news-item { background:var(--panel); border:1px solid var(--line); border-radius:10px;
+  padding:11px 14px; margin:8px 0; font-size:13px; }
+.news-item .tier { font-size:11px; color:var(--warn); }
+.news-item .tier.corroborated { color:var(--good); }
+footer { border-top:1px solid var(--line); margin-top:44px; padding-top:16px;
+  color:var(--muted); font-size:12px; }
+.states h2 { margin-top:26px; }
+.citylist { columns:2; column-gap:30px; padding-left:18px; margin:6px 0; }
+.citylist li { margin:3px 0; break-inside:avoid; }
+.citylist .n { color:var(--muted); font-size:12px; }
+@media (max-width:600px){ .citylist { columns:1; } .stats { flex-direction:column; } }
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="wordmark" href="../">🚲 Crash Atlas</a>
+<span class="tagline">U.S. cyclist &amp; e-bike crash intelligence · open data, every number sourced</span>
+</div></header>
+<div class="wrap states">
+<h1>Crash Data by City</h1>
+<p class="sub">Cyclist fatality pages for 338 U.S. cities · NHTSA FARS 2019–2024
+· number in parentheses is total recorded fatalities</p>
+
+<div class="banner"><b>Read this first.</b> City pages show <b>counts, not
+rates</b> — more fatalities often just means more riding. Cities appear here
+when they have at least 3 recorded fatalities in the window
+(a handful of cities with active local e-bike safety discussions are included
+below that threshold, clearly caveated). Of 6383 pedalcyclist fatality records 2019-2024, 4305 (67%) are coded to a specific city; rural and unincorporated-area crashes usually are not. City totals are a floor, not a ceiling.</div>
+
+<h2>Alabama</h2>
+<ul class="citylist"><li><a href="al/birmingham/">Birmingham</a> <span class="n">(4)</span></li>
+<li><a href="al/athens/">Athens</a> <span class="n">(3)</span></li>
+<li><a href="al/montgomery/">Montgomery</a> <span class="n">(3)</span></li></ul><h2>Alaska</h2>
+<ul class="citylist"><li><a href="ak/anchorage/">Anchorage</a> <span class="n">(4)</span></li></ul><h2>Arizona</h2>
+<ul class="citylist"><li><a href="az/phoenix/">Phoenix</a> <span class="n">(65)</span></li>
+<li><a href="az/tucson/">Tucson</a> <span class="n">(45)</span></li>
+<li><a href="az/goodyear/">Goodyear</a> <span class="n">(20)</span></li>
+<li><a href="az/glendale/">Glendale</a> <span class="n">(19)</span></li>
+<li><a href="az/mesa/">Mesa</a> <span class="n">(19)</span></li>
+<li><a href="az/tempe/">Tempe</a> <span class="n">(11)</span></li>
+<li><a href="az/show-low/">Show Low</a> <span class="n">(9)</span></li>
+<li><a href="az/flagstaff/">Flagstaff</a> <span class="n">(7)</span></li>
+<li><a href="az/scottsdale/">Scottsdale</a> <span class="n">(7)</span></li>
+<li><a href="az/buckeye/">Buckeye</a> <span class="n">(6)</span></li>
+<li><a href="az/chandler/">Chandler</a> <span class="n">(6)</span></li>
+<li><a href="az/gilbert/">Gilbert</a> <span class="n">(4)</span></li>
+<li><a href="az/yuma/">Yuma</a> <span class="n">(4)</span></li>
+<li><a href="az/apache-junction/">Apache Junction</a> <span class="n">(3)</span></li>
+<li><a href="az/prescott-valley/">Prescott Valley</a> <span class="n">(3)</span></li></ul><h2>Arkansas</h2>
+<ul class="citylist"><li><a href="ar/little-rock/">Little Rock</a> <span class="n">(6)</span></li>
+<li><a href="ar/fort-smith/">Fort Smith</a> <span class="n">(4)</span></li>
+<li><a href="ar/pine-bluff/">Pine Bluff</a> <span class="n">(3)</span></li></ul><h2>California</h2>
+<ul class="citylist"><li><a href="ca/los-angeles/">Los Angeles</a> <span class="n">(87)</span></li>
+<li><a href="ca/sacramento/">Sacramento</a> <span class="n">(27)</span></li>
+<li><a href="ca/san-jose/">San Jose</a> <span class="n">(25)</span></li>
+<li><a href="ca/stockton/">Stockton</a> <span class="n">(25)</span></li>
+<li><a href="ca/fresno/">Fresno</a> <span class="n">(23)</span></li>
+<li><a href="ca/san-diego/">San Diego</a> <span class="n">(21)</span></li>
+<li><a href="ca/bakersfield/">Bakersfield</a> <span class="n">(19)</span></li>
+<li><a href="ca/huntington-beach/">Huntington Beach</a> <span class="n">(13)</span></li>
+<li><a href="ca/san-bernardino/">San Bernardino</a> <span class="n">(13)</span></li>
+<li><a href="ca/long-beach/">Long Beach</a> <span class="n">(11)</span></li>
+<li><a href="ca/modesto/">Modesto</a> <span class="n">(11)</span></li>
+<li><a href="ca/oakland/">Oakland</a> <span class="n">(11)</span></li>
+<li><a href="ca/santa-ana/">Santa Ana</a> <span class="n">(11)</span></li>
+<li><a href="ca/rancho-cucamonga/">Rancho Cucamonga</a> <span class="n">(8)</span></li>
+<li><a href="ca/anaheim/">Anaheim</a> <span class="n">(7)</span></li>
+<li><a href="ca/compton/">Compton</a> <span class="n">(7)</span></li>
+<li><a href="ca/fountain-valley/">Fountain Valley</a> <span class="n">(7)</span></li>
+<li><a href="ca/garden-grove/">Garden Grove</a> <span class="n">(7)</span></li>
+<li><a href="ca/ontario/">Ontario</a> <span class="n">(7)</span></li>
+<li><a href="ca/other/">Other</a> <span class="n">(7)</span></li>
+<li><a href="ca/oxnard/">Oxnard</a> <span class="n">(7)</span></li>
+<li><a href="ca/pomona/">Pomona</a> <span class="n">(7)</span></li>
+<li><a href="ca/riverside/">Riverside</a> <span class="n">(7)</span></li>
+<li><a href="ca/escondido/">Escondido</a> <span class="n">(5)</span></li>
+<li><a href="ca/fremont/">Fremont</a> <span class="n">(5)</span></li>
+<li><a href="ca/garnet/">Garnet</a> <span class="n">(5)</span></li>
+<li><a href="ca/merced/">Merced</a> <span class="n">(5)</span></li>
+<li><a href="ca/oceanside/">Oceanside</a> <span class="n">(5)</span></li>
+<li><a href="ca/roseville/">Roseville</a> <span class="n">(5)</span></li>
+<li><a href="ca/san-francisco/">San Francisco</a> <span class="n">(5)</span></li>
+<li><a href="ca/south-gate/">South Gate</a> <span class="n">(5)</span></li>
+<li><a href="ca/turlock/">Turlock</a> <span class="n">(5)</span></li>
+<li><a href="ca/victorville/">Victorville</a> <span class="n">(5)</span></li>
+<li><a href="ca/visalia/">Visalia</a> <span class="n">(5)</span></li>
+<li><a href="ca/westminster/">Westminster</a> <span class="n">(5)</span></li>
+<li><a href="ca/fairfield/">Fairfield</a> <span class="n">(4)</span></li>
+<li><a href="ca/hayward/">Hayward</a> <span class="n">(4)</span></li>
+<li><a href="ca/highland/">Highland</a> <span class="n">(4)</span></li>
+<li><a href="ca/inglewood/">Inglewood</a> <span class="n">(4)</span></li>
+<li><a href="ca/lancaster/">Lancaster</a> <span class="n">(4)</span></li>
+<li><a href="ca/santa-monica/">Santa Monica</a> <span class="n">(4)</span></li>
+<li><a href="ca/antioch/">Antioch</a> <span class="n">(3)</span></li>
+<li><a href="ca/apple-valley/">Apple Valley</a> <span class="n">(3)</span></li>
+<li><a href="ca/carlsbad/">Carlsbad</a> <span class="n">(3)</span></li>
+<li><a href="ca/citrus-heights/">Citrus Heights</a> <span class="n">(3)</span></li>
+<li><a href="ca/coachella/">Coachella</a> <span class="n">(3)</span></li>
+<li><a href="ca/concord/">Concord</a> <span class="n">(3)</span></li>
+<li><a href="ca/corona/">Corona</a> <span class="n">(3)</span></li>
+<li><a href="ca/cupertino/">Cupertino</a> <span class="n">(3)</span></li>
+<li><a href="ca/downey/">Downey</a> <span class="n">(3)</span></li>
+<li><a href="ca/el-monte/">El Monte</a> <span class="n">(3)</span></li>
+<li><a href="ca/eureka/">Eureka</a> <span class="n">(3)</span></li>
+<li><a href="ca/fontana/">Fontana</a> <span class="n">(3)</span></li>
+<li><a href="ca/fullerton/">Fullerton</a> <span class="n">(3)</span></li>
+<li><a href="ca/hemet/">Hemet</a> <span class="n">(3)</span></li>
+<li><a href="ca/indio/">Indio</a> <span class="n">(3)</span></li>
+<li><a href="ca/moreno-valley/">Moreno Valley</a> <span class="n">(3)</span></li>
+<li><a href="ca/national-city/">National City</a> <span class="n">(3)</span></li>
+<li><a href="ca/palo-alto/">Palo Alto</a> <span class="n">(3)</span></li>
+<li><a href="ca/perris/">Perris</a> <span class="n">(3)</span></li>
+<li><a href="ca/rancho-cordova/">Rancho Cordova</a> <span class="n">(3)</span></li>
+<li><a href="ca/rialto/">Rialto</a> <span class="n">(3)</span></li>
+<li><a href="ca/richmond/">Richmond</a> <span class="n">(3)</span></li>
+<li><a href="ca/san-jacinto/">San Jacinto</a> <span class="n">(3)</span></li>
+<li><a href="ca/santa-clarita/">Santa Clarita</a> <span class="n">(3)</span></li>
+<li><a href="ca/tulare/">Tulare</a> <span class="n">(3)</span></li>
+<li><a href="ca/west-sacramento/">West Sacramento</a> <span class="n">(3)</span></li>
+<li><a href="ca/encinitas/">Encinitas</a> <span class="n">(1)</span></li>
+<li><a href="ca/laguna-beach/">Laguna Beach</a> <span class="n">(1)</span></li>
+<li><a href="ca/newport-beach/">Newport Beach</a> <span class="n">(1)</span></li>
+<li><a href="ca/san-clemente/">San Clemente</a> <span class="n">(1)</span></li></ul><h2>Colorado</h2>
+<ul class="citylist"><li><a href="co/colorado-springs/">Colorado Springs</a> <span class="n">(14)</span></li>
+<li><a href="co/denver/">Denver</a> <span class="n">(11)</span></li>
+<li><a href="co/aurora/">Aurora</a> <span class="n">(8)</span></li>
+<li><a href="co/lakewood/">Lakewood</a> <span class="n">(6)</span></li>
+<li><a href="co/longmont/">Longmont</a> <span class="n">(5)</span></li>
+<li><a href="co/fort-collins/">Fort Collins</a> <span class="n">(4)</span></li>
+<li><a href="co/commerce-city/">Commerce City</a> <span class="n">(3)</span></li>
+<li><a href="co/thornton/">Thornton</a> <span class="n">(3)</span></li></ul><h2>Connecticut</h2>
+<ul class="citylist"><li><a href="ct/new-haven/">New Haven</a> <span class="n">(5)</span></li>
+<li><a href="ct/hartford/">Hartford</a> <span class="n">(3)</span></li></ul><h2>Delaware</h2>
+<ul class="citylist"><li><a href="de/newark/">Newark</a> <span class="n">(3)</span></li></ul><h2>District of Columbia</h2>
+<ul class="citylist"><li><a href="dc/washington/">Washington</a> <span class="n">(12)</span></li></ul><h2>Florida</h2>
+<ul class="citylist"><li><a href="fl/jacksonville/">Jacksonville</a> <span class="n">(44)</span></li>
+<li><a href="fl/tampa/">Tampa</a> <span class="n">(33)</span></li>
+<li><a href="fl/miami/">Miami</a> <span class="n">(25)</span></li>
+<li><a href="fl/fort-lauderdale/">Fort Lauderdale</a> <span class="n">(21)</span></li>
+<li><a href="fl/saint-petersburg/">Saint Petersburg</a> <span class="n">(19)</span></li>
+<li><a href="fl/orlando/">Orlando</a> <span class="n">(15)</span></li>
+<li><a href="fl/hollywood/">Hollywood</a> <span class="n">(13)</span></li>
+<li><a href="fl/pompano-beach/">Pompano Beach</a> <span class="n">(13)</span></li>
+<li><a href="fl/sarasota/">Sarasota</a> <span class="n">(13)</span></li>
+<li><a href="fl/fort-myers/">Fort Myers</a> <span class="n">(12)</span></li>
+<li><a href="fl/largo/">Largo</a> <span class="n">(11)</span></li>
+<li><a href="fl/ocala/">Ocala</a> <span class="n">(10)</span></li>
+<li><a href="fl/daytona-beach/">Daytona Beach</a> <span class="n">(9)</span></li>
+<li><a href="fl/hialeah/">Hialeah</a> <span class="n">(8)</span></li>
+<li><a href="fl/pinellas-park/">Pinellas Park</a> <span class="n">(8)</span></li>
+<li><a href="fl/west-palm-beach/">West Palm Beach</a> <span class="n">(8)</span></li>
+<li><a href="fl/melbourne/">Melbourne</a> <span class="n">(7)</span></li>
+<li><a href="fl/miami-gardens/">Miami Gardens</a> <span class="n">(7)</span></li>
+<li><a href="fl/new-smyrna-beach/">New Smyrna Beach</a> <span class="n">(7)</span></li>
+<li><a href="fl/port-orange/">Port Orange</a> <span class="n">(7)</span></li>
+<li><a href="fl/tallahassee/">Tallahassee</a> <span class="n">(7)</span></li>
+<li><a href="fl/cape-coral/">Cape Coral</a> <span class="n">(6)</span></li>
+<li><a href="fl/gainesville/">Gainesville</a> <span class="n">(6)</span></li>
+<li><a href="fl/titusville/">Titusville</a> <span class="n">(6)</span></li>
+<li><a href="fl/bradenton/">Bradenton</a> <span class="n">(5)</span></li>
+<li><a href="fl/dania-beach/">Dania Beach</a> <span class="n">(5)</span></li>
+<li><a href="fl/davie/">Davie</a> <span class="n">(5)</span></li>
+<li><a href="fl/kissimmee/">Kissimmee</a> <span class="n">(5)</span></li>
+<li><a href="fl/lake-worth/">Lake Worth</a> <span class="n">(5)</span></li>
+<li><a href="fl/panama-city-beach/">Panama City Beach</a> <span class="n">(5)</span></li>
+<li><a href="fl/plant-city/">Plant City</a> <span class="n">(5)</span></li>
+<li><a href="fl/port-charlotte/">Port Charlotte</a> <span class="n">(5)</span></li>
+<li><a href="fl/clearwater/">Clearwater</a> <span class="n">(4)</span></li>
+<li><a href="fl/deerfield-beach/">Deerfield Beach</a> <span class="n">(4)</span></li>
+<li><a href="fl/delray-beach/">Delray Beach</a> <span class="n">(4)</span></li>
+<li><a href="fl/key-west/">Key West</a> <span class="n">(4)</span></li>
+<li><a href="fl/lakeland/">Lakeland</a> <span class="n">(4)</span></li>
+<li><a href="fl/marathon/">Marathon</a> <span class="n">(4)</span></li>
+<li><a href="fl/ocoee/">Ocoee</a> <span class="n">(4)</span></li>
+<li><a href="fl/other/">Other</a> <span class="n">(4)</span></li>
+<li><a href="fl/pembroke-pines/">Pembroke Pines</a> <span class="n">(4)</span></li>
+<li><a href="fl/sebring/">Sebring</a> <span class="n">(4)</span></li>
+<li><a href="fl/sunrise/">Sunrise</a> <span class="n">(4)</span></li>
+<li><a href="fl/tamarac/">Tamarac</a> <span class="n">(4)</span></li>
+<li><a href="fl/altamonte-springs/">Altamonte Springs</a> <span class="n">(3)</span></li>
+<li><a href="fl/apopka/">Apopka</a> <span class="n">(3)</span></li>
+<li><a href="fl/auburndale/">Auburndale</a> <span class="n">(3)</span></li>
+<li><a href="fl/boca-raton/">Boca Raton</a> <span class="n">(3)</span></li>
+<li><a href="fl/casselberry/">Casselberry</a> <span class="n">(3)</span></li>
+<li><a href="fl/cocoa/">Cocoa</a> <span class="n">(3)</span></li>
+<li><a href="fl/deland/">Deland</a> <span class="n">(3)</span></li>
+<li><a href="fl/destin/">Destin</a> <span class="n">(3)</span></li>
+<li><a href="fl/edgewater/">Edgewater</a> <span class="n">(3)</span></li>
+<li><a href="fl/florida-city/">Florida City</a> <span class="n">(3)</span></li>
+<li><a href="fl/hallandale-beach/">Hallandale Beach</a> <span class="n">(3)</span></li>
+<li><a href="fl/holly-hill/">Holly Hill</a> <span class="n">(3)</span></li>
+<li><a href="fl/homestead/">Homestead</a> <span class="n">(3)</span></li>
+<li><a href="fl/immokalee/">Immokalee</a> <span class="n">(3)</span></li>
+<li><a href="fl/jacksonville-beach/">Jacksonville Beach</a> <span class="n">(3)</span></li>
+<li><a href="fl/jupiter/">Jupiter</a> <span class="n">(3)</span></li>
+<li><a href="fl/miami-beach/">Miami Beach</a> <span class="n">(3)</span></li>
+<li><a href="fl/miramar/">Miramar</a> <span class="n">(3)</span></li>
+<li><a href="fl/panama-city/">Panama City</a> <span class="n">(3)</span></li>
+<li><a href="fl/plantation/">Plantation</a> <span class="n">(3)</span></li>
+<li><a href="fl/port-saint-lucie/">Port Saint Lucie</a> <span class="n">(3)</span></li>
+<li><a href="fl/saint-cloud/">Saint Cloud</a> <span class="n">(3)</span></li>
+<li><a href="fl/sanford/">Sanford</a> <span class="n">(3)</span></li>
+<li><a href="fl/tarpon-springs/">Tarpon Springs</a> <span class="n">(3)</span></li>
+<li><a href="fl/winter-garden/">Winter Garden</a> <span class="n">(3)</span></li>
+<li><a href="fl/winter-haven/">Winter Haven</a> <span class="n">(3)</span></li></ul><h2>Georgia</h2>
+<ul class="citylist"><li><a href="ga/augusta/">Augusta</a> <span class="n">(10)</span></li>
+<li><a href="ga/savannah/">Savannah</a> <span class="n">(10)</span></li>
+<li><a href="ga/atlanta/">Atlanta</a> <span class="n">(6)</span></li>
+<li><a href="ga/athens/">Athens</a> <span class="n">(3)</span></li>
+<li><a href="ga/columbus/">Columbus</a> <span class="n">(3)</span></li>
+<li><a href="ga/gainesville/">Gainesville</a> <span class="n">(3)</span></li></ul><h2>Hawaii</h2>
+<ul class="citylist"><li><a href="hi/honolulu/">Honolulu</a> <span class="n">(13)</span></li>
+<li><a href="hi/other/">Other</a> <span class="n">(5)</span></li>
+<li><a href="hi/hilo/">Hilo</a> <span class="n">(3)</span></li></ul><h2>Illinois</h2>
+<ul class="citylist"><li><a href="il/chicago/">Chicago</a> <span class="n">(46)</span></li>
+<li><a href="il/peoria/">Peoria</a> <span class="n">(6)</span></li>
+<li><a href="il/rockford/">Rockford</a> <span class="n">(5)</span></li>
+<li><a href="il/springfield/">Springfield</a> <span class="n">(4)</span></li>
+<li><a href="il/aurora/">Aurora</a> <span class="n">(3)</span></li>
+<li><a href="il/elgin/">Elgin</a> <span class="n">(3)</span></li>
+<li><a href="il/skokie/">Skokie</a> <span class="n">(3)</span></li>
+<li><a href="il/waukegan/">Waukegan</a> <span class="n">(3)</span></li></ul><h2>Indiana</h2>
+<ul class="citylist"><li><a href="in/indianapolis/">Indianapolis</a> <span class="n">(29)</span></li>
+<li><a href="in/evansville/">Evansville</a> <span class="n">(9)</span></li>
+<li><a href="in/anderson/">Anderson</a> <span class="n">(5)</span></li>
+<li><a href="in/fort-wayne/">Fort Wayne</a> <span class="n">(5)</span></li>
+<li><a href="in/gary/">Gary</a> <span class="n">(5)</span></li>
+<li><a href="in/mishawaka/">Mishawaka</a> <span class="n">(3)</span></li></ul><h2>Iowa</h2>
+<ul class="citylist"><li><a href="ia/waterloo/">Waterloo</a> <span class="n">(4)</span></li></ul><h2>Kansas</h2>
+<ul class="citylist"><li><a href="ks/wichita/">Wichita</a> <span class="n">(10)</span></li></ul><h2>Kentucky</h2>
+<ul class="citylist"><li><a href="ky/louisville/">Louisville</a> <span class="n">(18)</span></li>
+<li><a href="ky/lexington-fayette/">Lexington-Fayette</a> <span class="n">(7)</span></li>
+<li><a href="ky/owensboro/">Owensboro</a> <span class="n">(3)</span></li></ul><h2>Louisiana</h2>
+<ul class="citylist"><li><a href="la/new-orleans/">New Orleans</a> <span class="n">(37)</span></li>
+<li><a href="la/baton-rouge/">Baton Rouge</a> <span class="n">(22)</span></li>
+<li><a href="la/lafayette/">Lafayette</a> <span class="n">(11)</span></li>
+<li><a href="la/gonzales/">Gonzales</a> <span class="n">(4)</span></li>
+<li><a href="la/lake-charles/">Lake Charles</a> <span class="n">(3)</span></li>
+<li><a href="la/monroe/">Monroe</a> <span class="n">(3)</span></li>
+<li><a href="la/new-iberia/">New Iberia</a> <span class="n">(3)</span></li></ul><h2>Maryland</h2>
+<ul class="citylist"><li><a href="md/baltimore/">Baltimore</a> <span class="n">(8)</span></li></ul><h2>Massachusetts</h2>
+<ul class="citylist"><li><a href="ma/boston/">Boston</a> <span class="n">(6)</span></li>
+<li><a href="ma/ipswich/">Ipswich</a> <span class="n">(5)</span></li>
+<li><a href="ma/newton/">Newton</a> <span class="n">(5)</span></li></ul><h2>Michigan</h2>
+<ul class="citylist"><li><a href="mi/detroit/">Detroit</a> <span class="n">(22)</span></li>
+<li><a href="mi/grand-rapids/">Grand Rapids</a> <span class="n">(6)</span></li>
+<li><a href="mi/warren/">Warren</a> <span class="n">(6)</span></li>
+<li><a href="mi/clinton-township/">Clinton Township</a> <span class="n">(4)</span></li>
+<li><a href="mi/flint/">Flint</a> <span class="n">(4)</span></li>
+<li><a href="mi/westland/">Westland</a> <span class="n">(4)</span></li>
+<li><a href="mi/battle-creek/">Battle Creek</a> <span class="n">(3)</span></li>
+<li><a href="mi/redford-township/">Redford Township</a> <span class="n">(3)</span></li></ul><h2>Minnesota</h2>
+<ul class="citylist"><li><a href="mn/minneapolis/">Minneapolis</a> <span class="n">(5)</span></li></ul><h2>Mississippi</h2>
+<ul class="citylist"><li><a href="ms/jackson/">Jackson</a> <span class="n">(8)</span></li>
+<li><a href="ms/gautier/">Gautier</a> <span class="n">(3)</span></li>
+<li><a href="ms/gulfport/">Gulfport</a> <span class="n">(3)</span></li></ul><h2>Missouri</h2>
+<ul class="citylist"><li><a href="mo/kansas-city/">Kansas City</a> <span class="n">(10)</span></li>
+<li><a href="mo/independence/">Independence</a> <span class="n">(9)</span></li>
+<li><a href="mo/springfield/">Springfield</a> <span class="n">(5)</span></li></ul><h2>Nebraska</h2>
+<ul class="citylist"><li><a href="ne/omaha/">Omaha</a> <span class="n">(4)</span></li></ul><h2>Nevada</h2>
+<ul class="citylist"><li><a href="nv/las-vegas/">Las Vegas</a> <span class="n">(7)</span></li>
+<li><a href="nv/north-las-vegas/">North Las Vegas</a> <span class="n">(6)</span></li>
+<li><a href="nv/reno/">Reno</a> <span class="n">(6)</span></li>
+<li><a href="nv/henderson/">Henderson</a> <span class="n">(4)</span></li></ul><h2>New Jersey</h2>
+<ul class="citylist"><li><a href="nj/camden/">Camden</a> <span class="n">(5)</span></li>
+<li><a href="nj/newark/">Newark</a> <span class="n">(5)</span></li>
+<li><a href="nj/atlantic-city/">Atlantic City</a> <span class="n">(4)</span></li>
+<li><a href="nj/paterson/">Paterson</a> <span class="n">(4)</span></li>
+<li><a href="nj/east-brunswick/">East Brunswick</a> <span class="n">(3)</span></li>
+<li><a href="nj/hamilton-township/">Hamilton Township</a> <span class="n">(3)</span></li>
+<li><a href="nj/jersey-city/">Jersey City</a> <span class="n">(3)</span></li>
+<li><a href="nj/trenton/">Trenton</a> <span class="n">(3)</span></li></ul><h2>New Mexico</h2>
+<ul class="citylist"><li><a href="nm/albuquerque/">Albuquerque</a> <span class="n">(17)</span></li>
+<li><a href="nm/las-cruces/">Las Cruces</a> <span class="n">(6)</span></li>
+<li><a href="nm/santa-fe/">Santa Fe</a> <span class="n">(3)</span></li></ul><h2>New York</h2>
+<ul class="citylist"><li><a href="ny/new-york-city/">New York City</a> <span class="n">(101)</span></li>
+<li><a href="ny/middle-village/">Middle Village</a> <span class="n">(16)</span></li>
+<li><a href="ny/buffalo/">Buffalo</a> <span class="n">(11)</span></li>
+<li><a href="ny/brookhaven/">Brookhaven</a> <span class="n">(10)</span></li>
+<li><a href="ny/hempstead/">Hempstead</a> <span class="n">(10)</span></li>
+<li><a href="ny/babylon/">Babylon</a> <span class="n">(7)</span></li>
+<li><a href="ny/islip/">Islip</a> <span class="n">(6)</span></li>
+<li><a href="ny/rochester/">Rochester</a> <span class="n">(6)</span></li>
+<li><a href="ny/syracuse/">Syracuse</a> <span class="n">(6)</span></li>
+<li><a href="ny/oyster-bay/">Oyster Bay</a> <span class="n">(5)</span></li>
+<li><a href="ny/poughkeepsie/">Poughkeepsie</a> <span class="n">(4)</span></li>
+<li><a href="ny/hyde-park/">Hyde Park</a> <span class="n">(3)</span></li>
+<li><a href="ny/kingston/">Kingston</a> <span class="n">(3)</span></li>
+<li><a href="ny/north-tonawanda/">North Tonawanda</a> <span class="n">(3)</span></li>
+<li><a href="ny/other/">Other</a> <span class="n">(3)</span></li></ul><h2>North Carolina</h2>
+<ul class="citylist"><li><a href="nc/charlotte/">Charlotte</a> <span class="n">(11)</span></li>
+<li><a href="nc/asheville/">Asheville</a> <span class="n">(7)</span></li>
+<li><a href="nc/fayetteville/">Fayetteville</a> <span class="n">(4)</span></li>
+<li><a href="nc/high-point/">High Point</a> <span class="n">(4)</span></li>
+<li><a href="nc/durham/">Durham</a> <span class="n">(3)</span></li>
+<li><a href="nc/greensboro/">Greensboro</a> <span class="n">(3)</span></li>
+<li><a href="nc/raleigh/">Raleigh</a> <span class="n">(3)</span></li></ul><h2>Ohio</h2>
+<ul class="citylist"><li><a href="oh/columbus/">Columbus</a> <span class="n">(12)</span></li>
+<li><a href="oh/cleveland/">Cleveland</a> <span class="n">(11)</span></li>
+<li><a href="oh/akron/">Akron</a> <span class="n">(5)</span></li>
+<li><a href="oh/cincinnati/">Cincinnati</a> <span class="n">(5)</span></li>
+<li><a href="oh/toledo/">Toledo</a> <span class="n">(5)</span></li>
+<li><a href="oh/dayton/">Dayton</a> <span class="n">(3)</span></li>
+<li><a href="oh/findlay/">Findlay</a> <span class="n">(3)</span></li></ul><h2>Oklahoma</h2>
+<ul class="citylist"><li><a href="ok/oklahoma-city/">Oklahoma City</a> <span class="n">(18)</span></li>
+<li><a href="ok/tulsa/">Tulsa</a> <span class="n">(11)</span></li>
+<li><a href="ok/norman/">Norman</a> <span class="n">(4)</span></li>
+<li><a href="ok/shawnee/">Shawnee</a> <span class="n">(4)</span></li>
+<li><a href="ok/ardmore/">Ardmore</a> <span class="n">(3)</span></li></ul><h2>Oregon</h2>
+<ul class="citylist"><li><a href="or/portland/">Portland</a> <span class="n">(15)</span></li>
+<li><a href="or/salem/">Salem</a> <span class="n">(8)</span></li>
+<li><a href="or/eugene/">Eugene</a> <span class="n">(6)</span></li>
+<li><a href="or/bend/">Bend</a> <span class="n">(3)</span></li>
+<li><a href="or/hillsboro/">Hillsboro</a> <span class="n">(3)</span></li></ul><h2>Pennsylvania</h2>
+<ul class="citylist"><li><a href="pa/philadelphia/">Philadelphia</a> <span class="n">(31)</span></li>
+<li><a href="pa/pittsburgh/">Pittsburgh</a> <span class="n">(5)</span></li>
+<li><a href="pa/murrysville/">Murrysville</a> <span class="n">(4)</span></li></ul><h2>Rhode Island</h2>
+<ul class="citylist"><li><a href="ri/providence/">Providence</a> <span class="n">(3)</span></li></ul><h2>South Carolina</h2>
+<ul class="citylist"><li><a href="sc/north-charleston/">North Charleston</a> <span class="n">(11)</span></li>
+<li><a href="sc/charleston/">Charleston</a> <span class="n">(5)</span></li></ul><h2>Tennessee</h2>
+<ul class="citylist"><li><a href="tn/memphis/">Memphis</a> <span class="n">(11)</span></li>
+<li><a href="tn/chattanooga/">Chattanooga</a> <span class="n">(4)</span></li>
+<li><a href="tn/knoxville/">Knoxville</a> <span class="n">(4)</span></li>
+<li><a href="tn/murfreesboro/">Murfreesboro</a> <span class="n">(4)</span></li>
+<li><a href="tn/nashville/">Nashville</a> <span class="n">(4)</span></li>
+<li><a href="tn/cleveland/">Cleveland</a> <span class="n">(3)</span></li></ul><h2>Texas</h2>
+<ul class="citylist"><li><a href="tx/houston/">Houston</a> <span class="n">(76)</span></li>
+<li><a href="tx/san-antonio/">San Antonio</a> <span class="n">(34)</span></li>
+<li><a href="tx/austin/">Austin</a> <span class="n">(21)</span></li>
+<li><a href="tx/dallas/">Dallas</a> <span class="n">(20)</span></li>
+<li><a href="tx/corpus-christi/">Corpus Christi</a> <span class="n">(14)</span></li>
+<li><a href="tx/fort-worth/">Fort Worth</a> <span class="n">(9)</span></li>
+<li><a href="tx/mckinney/">Mckinney</a> <span class="n">(7)</span></li>
+<li><a href="tx/beaumont/">Beaumont</a> <span class="n">(5)</span></li>
+<li><a href="tx/arlington/">Arlington</a> <span class="n">(4)</span></li>
+<li><a href="tx/balch-springs/">Balch Springs</a> <span class="n">(4)</span></li>
+<li><a href="tx/baytown/">Baytown</a> <span class="n">(4)</span></li>
+<li><a href="tx/brownsville/">Brownsville</a> <span class="n">(4)</span></li>
+<li><a href="tx/denton/">Denton</a> <span class="n">(4)</span></li>
+<li><a href="tx/galveston/">Galveston</a> <span class="n">(4)</span></li>
+<li><a href="tx/lubbock/">Lubbock</a> <span class="n">(4)</span></li>
+<li><a href="tx/other/">Other</a> <span class="n">(4)</span></li>
+<li><a href="tx/texas-city/">Texas City</a> <span class="n">(4)</span></li>
+<li><a href="tx/waco/">Waco</a> <span class="n">(4)</span></li>
+<li><a href="tx/abilene/">Abilene</a> <span class="n">(3)</span></li>
+<li><a href="tx/cedar-park/">Cedar Park</a> <span class="n">(3)</span></li>
+<li><a href="tx/el-paso/">El Paso</a> <span class="n">(3)</span></li>
+<li><a href="tx/fort-stockton/">Fort Stockton</a> <span class="n">(3)</span></li>
+<li><a href="tx/laredo/">Laredo</a> <span class="n">(3)</span></li>
+<li><a href="tx/port-arthur/">Port Arthur</a> <span class="n">(3)</span></li>
+<li><a href="tx/richardson/">Richardson</a> <span class="n">(3)</span></li></ul><h2>Utah</h2>
+<ul class="citylist"><li><a href="ut/salt-lake-city/">Salt Lake City</a> <span class="n">(6)</span></li>
+<li><a href="ut/ogden/">Ogden</a> <span class="n">(5)</span></li>
+<li><a href="ut/other/">Other</a> <span class="n">(3)</span></li></ul><h2>Vermont</h2>
+<ul class="citylist"><li><a href="vt/south-burlington/">South Burlington</a> <span class="n">(3)</span></li></ul><h2>Virginia</h2>
+<ul class="citylist"><li><a href="va/virginia-beach/">Virginia Beach</a> <span class="n">(11)</span></li>
+<li><a href="va/hampton/">Hampton</a> <span class="n">(7)</span></li>
+<li><a href="va/chesapeake/">Chesapeake</a> <span class="n">(6)</span></li>
+<li><a href="va/newport-news/">Newport News</a> <span class="n">(5)</span></li>
+<li><a href="va/norfolk/">Norfolk</a> <span class="n">(4)</span></li></ul><h2>Washington</h2>
+<ul class="citylist"><li><a href="wa/seattle/">Seattle</a> <span class="n">(10)</span></li>
+<li><a href="wa/kent/">Kent</a> <span class="n">(4)</span></li>
+<li><a href="wa/yakima/">Yakima</a> <span class="n">(4)</span></li>
+<li><a href="wa/bellevue/">Bellevue</a> <span class="n">(3)</span></li>
+<li><a href="wa/spokane/">Spokane</a> <span class="n">(3)</span></li>
+<li><a href="wa/tacoma/">Tacoma</a> <span class="n">(3)</span></li></ul><h2>Wisconsin</h2>
+<ul class="citylist"><li><a href="wi/milwaukee/">Milwaukee</a> <span class="n">(13)</span></li>
+<li><a href="wi/madison/">Madison</a> <span class="n">(5)</span></li></ul>
+
+<footer>
+Source: NHTSA FARS 2019–2024 · generated 2026-07-04 ·
+<a href="https://github.com/jamesad923-coder/ebike-crash-intel">open source</a> · <a href="../">national dashboard</a>
+</footer>
+</div>
+</body></html>

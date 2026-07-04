@@ -148,6 +148,8 @@
   .tab { padding:10px 14px; font-size:13px; color:var(--muted); cursor:pointer;
     border-bottom:2px solid transparent; }
   .tab.on { color:var(--txt); border-bottom-color:var(--accent); font-weight:600; }
+  a.tab { text-decoration:none; }
+  a.tab:hover { color:var(--txt); }
   #info-btn { margin-left:auto; width:24px; height:24px; border-radius:50%;
     border:1px solid var(--line); background:transparent; color:var(--muted);
     font:italic 700 13px Georgia,serif; cursor:pointer; flex-shrink:0;
@@ -330,6 +332,7 @@
   <div class="tab" data-view="news">Recent reports — news (unverified)</div>
   <div class="tab" data-view="risk">Risk &amp; Prevention</div>
   <div class="tab" data-view="cities">City Pilots</div>
+  <a class="tab" href="cities/">City Data Pages ↗</a>
   <button id="info-btn" title="About Crash Atlas">i</button>
 </div>
 
@@ -1097,7 +1100,9 @@ function recompute() {
 }
 
 // ---- tabs ----
-document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+// [data-view] excludes the "City Data Pages" anchor -- that one is a real
+// link out to the static city pages, not a view switch.
+document.querySelectorAll(".tab[data-view]").forEach(t => t.addEventListener("click", () => {
   document.querySelectorAll(".tab").forEach(x=>x.classList.remove("on"));
   document.querySelectorAll(".view").forEach(x=>x.classList.remove("on"));
   t.classList.add("on");

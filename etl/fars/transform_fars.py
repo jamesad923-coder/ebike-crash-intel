@@ -37,6 +37,23 @@ PERSONAL_CONVEYANCE = {"8"}
 LAT_BAD = {"77.7777", "88.8888", "99.9999", ""}
 LON_BAD = {"777.7777", "888.8888", "999.9999", ""}
 
+# CITYNAME/COUNTYNAME sentinels meaning "no real place coded" -- about a
+# third of pedalcyclist fatalities (mostly rural/unincorporated) carry one
+# of these instead of a city. Treated as empty, never shown as a place.
+PLACE_BAD = {"NOT APPLICABLE", "NOT REPORTED", "REPORTED AS UNKNOWN", "UNKNOWN", ""}
+
+
+def clean_place(name: str | None) -> str:
+    """Normalize a FARS CITYNAME/COUNTYNAME to display case, or '' if it's
+    a sentinel. FARS ships these as all-caps ('LOS ANGELES'), and county
+    names carry an embedded FIPS code ('MOBILE (97)') that we strip."""
+    n = (name or "").strip()
+    if n.endswith(")") and "(" in n:
+        n = n[:n.rindex("(")].strip()
+    if n.upper() in PLACE_BAD:
+        return ""
+    return n.title()
+
 
 def _find(csv_dir: Path, name: str) -> Path:
     """Resolve a FARS CSV by name, case-insensitively. NHTSA's zips are
@@ -129,6 +146,8 @@ def transform(years: list[int]) -> dict:
                 "properties": {
                     "year": year,
                     "state": a.get("STATENAME", ""),
+                    "city": clean_place(a.get("CITYNAME")),    # '' if not coded to a city
+                    "county": clean_place(a.get("COUNTYNAME")),
                     "age_band": band,           # banded, never exact
                     "sex": sex,
                     "lighting": light,

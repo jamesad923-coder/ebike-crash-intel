@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jamesad923-coder.github.io/ebike-crash-intel/sitemap.xml
