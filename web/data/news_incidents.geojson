@@ -38,37 +38,6 @@
         ],
         "date": "20260627T101500Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.493895,
-          38.5810606
-        ]
-      },
-      "properties": {
-        "city": "Sacramento",
-        "state": "CA",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "Unknown",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wisn.com"
-        ],
-        "sources": [
-          {
-            "domain": "wisn.com",
-            "url": "https://www.wisn.com/article/e-bike-rider-hurt-after-collision-with-pick-up-truck-in-west-allis/71750340",
-            "date": "20260627T043000Z"
-          }
-        ],
-        "date": "20260627T043000Z"
-      }
     }
   ]
 }
