@@ -19,6 +19,7 @@ on:
 
 permissions:
   contents: write
+  issues: write  # trigger-brief step opens one issue per newly detected incident
 
 jobs:
   refresh-news:
@@ -30,10 +31,27 @@ jobs:
           python-version: "3.11"
       - name: Run news pipeline
         run: python3 etl/news/transform_news.py 7d
+      # Draft a public data brief for each newly detected incident. The
+      # issue is the notification (repo owner gets emailed); the send to a
+      # real human is ALWAYS a manual decision after the reviewer checklist
+      # inside the brief -- automated location extraction can be wrong.
+      - name: Draft data briefs for new incidents
+        run: python3 etl/briefs/generate_brief.py | tee /tmp/briefs.out
+      - name: Open one issue per new brief
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create data-brief --color 3fb950 \
+            --description "Auto-drafted city data brief awaiting review" 2>/dev/null || true
+          grep '^NEW ' /tmp/briefs.out | cut -c5- | while read -r f; do
+            title=$(head -1 "$f" | sed 's/^# //')
+            gh issue create --title "$title" --body-file "$f" \
+              --label data-brief || true
+          done
       - name: Commit updated artifacts if changed
         run: |
           git config user.name "ebike-crash-intel-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add web/data/news_incidents.geojson web/data/news_unlocated.json
+          git add web/data/news_incidents.geojson web/data/news_unlocated.json briefs/
           git diff --staged --quiet || git commit -m "Auto-refresh news-sourced incident reports"
           git push
