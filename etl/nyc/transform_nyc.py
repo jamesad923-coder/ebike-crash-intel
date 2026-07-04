@@ -94,6 +94,16 @@ def build_ward_summary() -> dict:
         except (ValueError, TypeError):
             no_geo += 1
             continue
+        # NYPD's dataset contains placeholder coordinates -- 340 records sit
+        # at exactly (0, 0) ("Null Island") -- which parse as valid floats
+        # and then poison anything spatial downstream (the risk screening's
+        # top "hotspot" was the 0,0 grid cell before this check). Reject
+        # anything outside a generous NYC bounding box, treating it the
+        # same as missing coordinates (excluded and counted in the
+        # records_excluded_no_geo figure, like every other no-geo record).
+        if not (40.3 < lat < 41.1) or not (-74.4 < lon < -73.5):
+            no_geo += 1
+            continue
 
         killed = int(r.get("number_of_cyclist_killed") or 0)
         injured = int(r.get("number_of_cyclist_injured") or 0)
