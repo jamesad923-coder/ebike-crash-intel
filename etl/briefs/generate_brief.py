@@ -37,6 +37,7 @@ STATE_FILE = BRIEFS / ".state.json"
 
 BASE_URL = "https://jamesad923-coder.github.io/ebike-crash-intel"
 REPO_URL = "https://github.com/jamesad923-coder/ebike-crash-intel"
+CONTACT_EMAIL = "jamesad923@gmail.com"
 
 ABBR_TO_STATE = {v: k for k, v in STATE_ABBR.items()}
 
@@ -174,7 +175,7 @@ automated news scanning and is **not independently verified**.*
 *Crash Atlas is an open-data project: [dashboard]({BASE_URL}/) ·
 [methodology]({REPO_URL}/blob/main/DATA_SOURCES.md). City staff, school
 districts, local organizations, and reporters can request an expanded
-brief at no cost via [the repository]({REPO_URL}/issues).*
+brief at no cost: [{CONTACT_EMAIL}](mailto:{CONTACT_EMAIL}).*
 """
 
 

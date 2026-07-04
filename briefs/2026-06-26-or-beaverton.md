@@ -44,4 +44,4 @@ automated news scanning and is **not independently verified**.*
 *Crash Atlas is an open-data project: [dashboard](https://jamesad923-coder.github.io/ebike-crash-intel/) ·
 [methodology](https://github.com/jamesad923-coder/ebike-crash-intel/blob/main/DATA_SOURCES.md). City staff, school
 districts, local organizations, and reporters can request an expanded
-brief at no cost via [the repository](https://github.com/jamesad923-coder/ebike-crash-intel/issues).*
+brief at no cost: [jamesad923@gmail.com](mailto:jamesad923@gmail.com).*

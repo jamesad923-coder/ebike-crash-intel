@@ -31,8 +31,8 @@ CITIES_DIR = WEB / "cities"
 BASE_URL = "https://jamesad923-coder.github.io/ebike-crash-intel"
 SITE_NAME = "Crash Atlas"
 REPO_URL = "https://github.com/jamesad923-coder/ebike-crash-intel"
-# Where the "request a data brief" CTA points until an email/form exists.
-CONTACT_URL = f"{REPO_URL}/issues/new?title=Data%20brief%20request"
+# Where the "request a data brief" CTA points.
+CONTACT_EMAIL = "jamesad923@gmail.com"
 
 # A page whose city has fewer than this many fatalities gets a prominent
 # small-numbers caveat instead of a trend framing.
@@ -258,7 +258,8 @@ click through to sources before treating any report as fact.</p>
 <b>Work on safety in {E(c["city"])}?</b> City staff, school districts, advocacy
 groups, and local reporters can request a <b>free data brief</b> for {E(name)} —
 this page's data plus state context and crash-pattern detail, in a format ready
-for council discussions or reporting. <a href="{CONTACT_URL}">Request a brief</a>
+for council discussions or reporting.
+<a href="mailto:{CONTACT_EMAIL}?subject=Data%20brief%20request:%20{E(c['city'].replace(' ', '%20'))},%20{c['state_abbr']}">Request a brief</a>
 · <a href="../../../">Explore the national dashboard</a>
 </div>
 
