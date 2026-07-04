@@ -81,6 +81,10 @@ DOMAIN_STATE = {
     "wmur.com": "NH", "mcall.com": "PA", "thetimes-tribune.com": "PA",
     "theoaklandpress.com": "MI", "dailybulletin.com": "CA",
     "10news.com": "CA",
+    # Added after a confirmed mislocation: a wisn.com (Milwaukee ABC)
+    # story about a West Allis, WI crash was tagged "Sacramento, CA"
+    # because a stray city-state string in the page chrome matched first.
+    "wisn.com": "WI", "kbnd.com": "OR", "telegraphherald.com": "IA",
 }
 
 DEVICE_PATTERNS = [
@@ -260,9 +264,28 @@ def _clean_place(raw: str) -> str:
 
 def extract_location(text: str, domain: str | None = None) -> tuple[str, str, str] | None:
     """Returns (place, state, precision) or None. precision is one of:
-    "dateline" (city, high confidence), "city_state_mention" (city, medium),
+    "dateline" (city, high confidence), "city_state_mention" (city, medium,
+    unambiguous), "city_state_mention+outlet_market" (city, medium -- the
+    outlet's home state resolved conflicting candidates),
     "county+outlet_market" (county, medium -- coarser by nature), or
-    "outlet_market" (state only, from a curated domain table, lowest)."""
+    "outlet_market" (state only, from a curated domain table, lowest).
+
+    MISLOCATION GUARD: news-site page chrome (nav bars, weather widgets,
+    syndicated-story links) is full of stray "City, ST" strings, and the
+    real location often is NOT written city-comma-state in body copy at
+    all -- local outlets say "West Allis" bare because their audience
+    knows the state. Taking the first regex hit tagged a Milwaukee
+    station's West Allis, WI story as Sacramento, CA. So instead:
+      - collect ALL candidates, then pick by repetition and earliness;
+      - if the outlet's home state is known (curated table) and NO
+        candidate is in it, distrust every candidate -- the only
+        city-state strings on a local outlet's page that aren't about
+        its own market are almost always chrome/syndication junk;
+      - if candidates span multiple states with no home-state anchor,
+        treat the location as ambiguous rather than guessing.
+    Falls through to the coarser county/outlet-market signals (or None ->
+    the unlocated bucket) in the distrust/ambiguous cases: under-locating
+    is honest, mislocating is not."""
     m = DATELINE_RE.search(text[:1500])
     if m:
         state = (m.group(2) + m.group(3)).upper()
@@ -271,13 +294,36 @@ def extract_location(text: str, domain: str | None = None) -> tuple[str, str, st
             if place:
                 return place, state, "dateline"
 
+    # (place, state) -> {"count": n, "first": earliest match position}
+    candidates: dict[tuple[str, str], dict] = {}
     for m in CITY_STATE_RE.finditer(text):
         state = (m.group(2) + m.group(3)).upper()
         if state not in STATE_ABBR or PERSON_NAME_RE.match(m.group(1)):
             continue
         place = _clean_place(m.group(1).strip(", "))
-        if place:
-            return place, state, "city_state_mention"
+        if not place:
+            continue
+        c = candidates.setdefault((place, state), {"count": 0, "first": m.start()})
+        c["count"] += 1
+
+    if candidates:
+        home = DOMAIN_STATE.get(domain or "")
+        states = {st for (_, st) in candidates}
+        pool, precision = None, "city_state_mention"
+        if home:
+            if home in states:
+                pool = {k: v for k, v in candidates.items() if k[1] == home}
+                if len(states) > 1:
+                    precision = "city_state_mention+outlet_market"
+            # home known but absent from candidates: distrust all (fall through)
+        elif len(states) == 1:
+            pool = candidates
+        # multiple states, no anchor: ambiguous (fall through)
+
+        if pool:
+            (place, state), _ = min(pool.items(),
+                                    key=lambda kv: (-kv[1]["count"], kv[1]["first"]))
+            return place, state, precision
 
     m = COUNTY_RE.search(text)
     if m and domain in DOMAIN_STATE:
