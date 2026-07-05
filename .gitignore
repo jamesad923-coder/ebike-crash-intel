@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 .DS_Store
 .env.local
+
+# Outreach CRM: contacts, send log, generated packages -- private, never
+# committed (public repo; city staff shouldn't find themselves in a
+# visible sales tracker).
+/outreach/
