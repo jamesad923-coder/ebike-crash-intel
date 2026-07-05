@@ -44,12 +44,28 @@ CITY_ALIASES = {
 # with a small count still matters there; the generator adds a prominent
 # small-numbers caveat.
 ALWAYS_INCLUDE = {
+    # SoCal coastal cities with council-level e-bike debates
     ("Encinitas", "California"),
     ("Carlsbad", "California"),
     ("San Clemente", "California"),
     ("Newport Beach", "California"),
     ("Dana Point", "California"),
     ("Laguna Beach", "California"),
+    # Jersey Shore towns with active teen e-bike ordinance debates --
+    # also the home turf: Crash Atlas is built in Wall, NJ. Township
+    # naming varies in FARS ("Brick" vs "Brick Township"), so both
+    # variants are listed; absent ones (zero FARS records in the
+    # window) simply don't materialize, which is itself the honest
+    # story: the shore's e-bike crisis is injuries and near-misses,
+    # which fatality data cannot see.
+    ("Wall", "New Jersey"), ("Wall Township", "New Jersey"),
+    ("Toms River", "New Jersey"), ("Toms River Township", "New Jersey"),
+    ("Brick", "New Jersey"), ("Brick Township", "New Jersey"),
+    ("Middletown", "New Jersey"), ("Middletown Township", "New Jersey"),
+    ("Long Branch", "New Jersey"),
+    ("Asbury Park", "New Jersey"),
+    ("Manasquan", "New Jersey"),
+    ("Belmar", "New Jersey"),
 }
 
 # Cities below this total are excluded from the artifact (too noisy to
