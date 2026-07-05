@@ -7,5 +7,37 @@
     "url": "https://www.gdeltproject.org/",
     "limitations": "UNVERIFIED beyond automated cross-source checks. Each report is either 'corroborated' (2+ independent outlets, same city/outcome, within 3 days) or 'single_source' (one outlet only) -- shown explicitly. Extracted automatically from article text via keyword/dateline matching, not human-reviewed. Early news reports can be wrong about cause or severity. Never shows a name or exact age -- city, age BAND, device, and outcome only. Always check the linked source(s) before treating any single report as fact."
   },
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.000197,
+          43.247847
+        ]
+      },
+      "properties": {
+        "city": "Constantia",
+        "state": "NY",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "25-44",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "oswegocountytoday.com"
+        ],
+        "sources": [
+          {
+            "domain": "oswegocountytoday.com",
+            "url": "https://oswegocountytoday.com/lead-story/state-police-investigate-fatal-electric-scooter-crash-in-granby/",
+            "date": "20260705T014500Z"
+          }
+        ],
+        "date": "20260705T014500Z"
+      }
+    }
+  ]
 }

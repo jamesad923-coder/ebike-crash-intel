@@ -1,4 +1,53 @@
 {
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
-  "reports": []
+  "reports": [
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "idahostatejournal.com",
+      "url": "http://www.idahostatejournal.com/news/local/two-dead-others-airlifted-to-hospitals-after-e-bike-utv-and-dirt-bike-crashes-across/article_a7d5e939-d6a2-4690-9e3e-0d194a1ab798.html",
+      "seendate": "20260705T024500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "idahostatejournal.com"
+      ],
+      "sources": [
+        {
+          "domain": "idahostatejournal.com",
+          "url": "http://www.idahostatejournal.com/news/local/two-dead-others-airlifted-to-hospitals-after-e-bike-utv-and-dirt-bike-crashes-across/article_a7d5e939-d6a2-4690-9e3e-0d194a1ab798.html",
+          "date": "20260705T024500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "idahostatejournal.com",
+      "url": "https://www.idahostatejournal.com/news/local/two-dead-others-airlifted-to-hospitals-after-e-bike-utv-and-dirt-bike-crashes-across/article_a7d5e939-d6a2-4690-9e3e-0d194a1ab798.html",
+      "seendate": "20260705T001500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "idahostatejournal.com"
+      ],
+      "sources": [
+        {
+          "domain": "idahostatejournal.com",
+          "url": "https://www.idahostatejournal.com/news/local/two-dead-others-airlifted-to-hospitals-after-e-bike-utv-and-dirt-bike-crashes-across/article_a7d5e939-d6a2-4690-9e3e-0d194a1ab798.html",
+          "date": "20260705T001500Z"
+        }
+      ]
+    }
+  ]
 }
