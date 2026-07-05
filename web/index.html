@@ -150,6 +150,10 @@
   .tab.on { color:var(--txt); border-bottom-color:var(--accent); font-weight:600; }
   a.tab { text-decoration:none; }
   a.tab:hover { color:var(--txt); }
+  #story-strip { padding:7px 18px; font-size:12.5px; color:var(--muted);
+    background:var(--panel); border-bottom:1px solid var(--line); }
+  #story-strip a { color:var(--accent); text-decoration:none; }
+  #story-strip a:hover { text-decoration:underline; }
   #info-btn { margin-left:auto; width:24px; height:24px; border-radius:50%;
     border:1px solid var(--line); background:transparent; color:var(--muted);
     font:italic 700 13px Georgia,serif; cursor:pointer; flex-shrink:0;
@@ -333,7 +337,12 @@
   <div class="tab" data-view="risk">Risk &amp; Prevention</div>
   <div class="tab" data-view="cities">City Pilots</div>
   <a class="tab" href="cities/">City Data Pages ↗</a>
+  <a class="tab" href="about/">Our Story</a>
   <button id="info-btn" title="About Crash Atlas">i</button>
+</div>
+<div id="story-strip">
+  Built by a high school e-bike rider in NJ, after too many close calls —
+  <a href="about/">read our story →</a>
 </div>
 
 <div id="info-modal">
@@ -380,7 +389,7 @@
       not adjusted for ridership unless explicitly labeled as a rate.</p>
 
     <p class="sub" style="margin:14px 0 0;">
-      <a href="about/">About this project &amp; who runs it →</a><br>
+      <a href="about/">Our Story — who built this and why →</a><br>
       <a href="https://github.com/jamesad923-coder/ebike-crash-intel" target="_blank">View source &amp; data sources on GitHub →</a>
     </p>
   </div>

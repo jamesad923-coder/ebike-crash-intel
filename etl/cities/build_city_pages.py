@@ -282,7 +282,7 @@ Source: NHTSA Fatality Analysis Reporting System (FARS), {y0}–{y1} national fi
 {E(meta["coding_note"])}
 Methodology and every data source documented in
 <a href="{REPO_URL}/blob/main/DATA_SOURCES.md">DATA_SOURCES.md</a>.
-Generated {meta["generated"]} · <a href="../../../about/">about this project</a> ·
+Generated {meta["generated"]} · <a href="../../../about/">our story</a> ·
 <a href="{REPO_URL}">open source</a> · no tracking on this site.
 </footer>
 </div>

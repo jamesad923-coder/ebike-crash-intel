@@ -312,7 +312,7 @@ report can be independently reproduced.</p>
 
 <footer>
 Prepared by <b>Crash Atlas</b> — an independent, open-data road-safety project
-by James Adigun ({BASE_URL}/about/).
+by James Adigun (our story: {BASE_URL}/about/).
 Questions, corrections, or an expanded version of this report (no cost):
 <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> ·
 live dashboard: {BASE_URL}/ · report page: {BASE_URL}/reports/{c["slug"]}/
