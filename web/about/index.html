@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Crash Atlas — who runs this and why</title>
+<meta name="description" content="Crash Atlas is an independent, open-data road-safety project: U.S. bicycle and e-bike crash data, mapped and sourced, with honest limits stated on every page.">
+<link rel="canonical" href="https://jamesad923-coder.github.io/ebike-crash-intel/about/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚲</text></svg>">
+<style>
+:root { --bg:#0e1116; --panel:#161b22; --line:#2a313c; --txt:#e6edf3;
+        --muted:#8b949e; --accent:#f78166; --good:#3fb950; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--txt);
+  font:15px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+header.site { border-bottom:1px solid var(--line); padding:14px 18px; }
+.wordmark { font-weight:700; font-size:17px; color:var(--txt); }
+.wrap { max-width:680px; margin:0 auto; padding:30px 18px 70px; }
+h1 { font-size:24px; margin:22px 0 6px; }
+h2 { font-size:16px; margin:32px 0 8px; }
+.principles { background:var(--panel); border:1px solid var(--line);
+  border-radius:10px; padding:6px 20px; margin:16px 0; }
+.principles li { margin:10px 0; }
+.principles b { color:var(--good); }
+footer { border-top:1px solid var(--line); margin-top:44px; padding-top:16px;
+  color:var(--muted); font-size:12.5px; }
+</style>
+</head>
+<body>
+<header class="site"><a class="wordmark" href="../">🚲 Crash Atlas</a></header>
+<div class="wrap">
+
+<h1>About Crash Atlas</h1>
+
+<p>Crash Atlas is an independent, open-data project that maps and explains
+U.S. bicycle and e-bike crash data — federal fatality records, national
+injury estimates, city open data, and news-detected incident reports —
+in one place, with every number traceable to its source.</p>
+
+<p>It exists because of a gap: e-bike safety is being debated in city
+councils, school boards, and living rooms across the country, but the
+real data is scattered across half a dozen agencies, lags by years, and
+is easy to misread. Those debates deserve better than anecdotes — and
+better than overconfident dashboards that hide their own limitations.</p>
+
+<h2>The rules this project runs on</h2>
+<ul class="principles">
+<li><b>Every number is sourced.</b> Each page names its dataset, links to
+it, and the full pipeline is open source — anything here can be
+independently reproduced.</li>
+<li><b>Counts are not rates.</b> Where no ridership denominator exists,
+we say so instead of implying risk comparisons the data can't support.</li>
+<li><b>Limits are stated up front.</b> Federal data can't separate
+e-bikes from bicycles; single-bike falls aren't in fatality data; news
+detection is automated and unverified. Every page says what its data
+cannot tell you, before it tells you anything.</li>
+<li><b>No black boxes.</b> Analyses here are interpretable and auditable
+— screening that supports engineering judgment, never a "prediction"
+that replaces it.</li>
+<li><b>Privacy by design.</b> Age bands, never exact ages; no names,
+ever — even when a news source prints them. And no tracking on this
+site.</li>
+</ul>
+
+<h2>Who runs this</h2>
+<p>Hi — I'm <b>James Adigun</b>. I build and maintain Crash Atlas
+independently: the data pipelines, the dashboard, the city pages, and
+the reports all come from the same open codebase. [One sentence of
+background you're comfortable sharing — e.g. what you do / where you're
+based.] I started this project because [your one-line reason — what
+made e-bike safety personal or urgent for you], and it has grown into a
+full-time effort to give cities, schools, families, and reporters the
+honest data layer this conversation has been missing.</p>
+
+<h2>For cities, school districts, and local organizations</h2>
+<p>I provide <b>free city data briefs and safety data reports</b> —
+print-ready summaries of your city's crash record with state context
+and honest framing, suitable for council packets, Safety Action Plans,
+and community meetings. If you work on street safety in any capacity,
+email me: <a href="mailto:jamesad923@gmail.com">jamesad923@gmail.com</a>.
+Corrections are welcome too — if you find an error anywhere on this
+site, I want to know about it.</p>
+
+<footer>
+<a href="../">Dashboard</a> ·
+<a href="../cities/">City data pages</a> ·
+<a href="https://github.com/jamesad923-coder/ebike-crash-intel">Source code &amp; methodology</a> ·
+<a href="mailto:jamesad923@gmail.com">jamesad923@gmail.com</a>
+</footer>
+</div>
+</body>
+</html>

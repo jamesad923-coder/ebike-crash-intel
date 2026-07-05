@@ -172,7 +172,8 @@ automated news scanning and is **not independently verified**.*
   denominator exists.
 
 ---
-*Crash Atlas is an open-data project: [dashboard]({BASE_URL}/) ·
+*Crash Atlas is an independent open-data project by James Adigun:
+[about]({BASE_URL}/about/) · [dashboard]({BASE_URL}/) ·
 [methodology]({REPO_URL}/blob/main/DATA_SOURCES.md). City staff, school
 districts, local organizations, and reporters can request an expanded
 brief at no cost: [{CONTACT_EMAIL}](mailto:{CONTACT_EMAIL}).*

@@ -282,7 +282,8 @@ Source: NHTSA Fatality Analysis Reporting System (FARS), {y0}–{y1} national fi
 {E(meta["coding_note"])}
 Methodology and every data source documented in
 <a href="{REPO_URL}/blob/main/DATA_SOURCES.md">DATA_SOURCES.md</a>.
-Generated {meta["generated"]} · <a href="{REPO_URL}">open source</a> · no tracking on this site.
+Generated {meta["generated"]} · <a href="../../../about/">about this project</a> ·
+<a href="{REPO_URL}">open source</a> · no tracking on this site.
 </footer>
 </div>
 
@@ -372,7 +373,7 @@ def build() -> None:
 
     (CITIES_DIR / "index.html").write_text(index_page(cities, meta))
 
-    urls = [f"{BASE_URL}/", f"{BASE_URL}/cities/"] + [
+    urls = [f"{BASE_URL}/", f"{BASE_URL}/about/", f"{BASE_URL}/cities/"] + [
         f"{BASE_URL}/cities/{c['slug']}/" for c in cities]
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
