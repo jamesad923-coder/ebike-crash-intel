@@ -100,12 +100,21 @@
   #crash-logo.show { opacity:1; transform:translate(-50%,-50%) translateY(0) scale(1); }
   #crash-logo svg { width:64px; height:64px; flex-shrink:0; }
 
-  #crash-footer { margin-top:22px; text-align:center; opacity:0; transition:opacity .6s ease;
+  /* Negative margin pulls the button up toward the wordmark -- the stage
+     is a fixed 230px box with the logo centered in it, which left the
+     button stranded ~130px below the words. Bigger button, closer in. */
+  #crash-footer { margin-top:-30px; text-align:center; opacity:0; transition:opacity .6s ease;
     transform:translateY(4px); }
   #crash-footer.show { opacity:1; transform:translateY(0); }
-  #load-map-btn { padding:11px 30px; font-size:15px; font-weight:700; letter-spacing:.01em;
-    background:var(--accent); color:#1a1208; border:none; border-radius:22px; cursor:pointer;
+  #load-map-btn { padding:15px 46px; font-size:18px; font-weight:700; letter-spacing:.01em;
+    background:var(--accent); color:#1a1208; border:none; border-radius:28px; cursor:pointer;
     transition:transform .15s ease, box-shadow .15s ease; }
+  /* Corner info button on the loading screen -- slightly bigger than the
+     dashboard's, so "what is this?" is answerable before Load Map. */
+  #info-btn-loading { position:absolute; top:18px; right:20px; width:34px; height:34px;
+    border-radius:50%; border:1px solid var(--line); background:transparent;
+    color:var(--muted); font:italic 700 17px Georgia,serif; cursor:pointer; }
+  #info-btn-loading:hover { color:var(--txt); border-color:var(--accent); }
   #load-map-btn:hover { transform:translateY(-1px); box-shadow:0 4px 14px rgba(247,129,102,.35); }
   #load-map-btn:active { transform:translateY(0); }
   html,body { margin:0; height:100%; background:var(--bg); color:var(--txt);
@@ -150,17 +159,32 @@
   .tab.on { color:var(--txt); border-bottom-color:var(--accent); font-weight:600; }
   a.tab { text-decoration:none; }
   a.tab:hover { color:var(--txt); }
-  #story-strip { padding:7px 18px; font-size:12.5px; color:var(--muted);
-    background:var(--panel); border-bottom:1px solid var(--line); }
+  /* Story strip: a news-chyron-style ticker cycling the origin story and
+     live data facts, with a persistent Our Story pill on the right so the
+     link never disappears mid-rotation. Rotation is disabled entirely
+     under prefers-reduced-motion (static story line instead), same
+     policy as the intro animation. */
+  #story-strip { display:flex; align-items:center; gap:14px; padding:7px 18px;
+    font-size:12.5px; color:var(--muted); background:var(--panel);
+    border-bottom:1px solid var(--line); }
   #story-strip a { color:var(--accent); text-decoration:none; }
   #story-strip a:hover { text-decoration:underline; }
+  #ticker { position:relative; flex:1; height:19px; overflow:hidden; }
+  .ticker-item { position:absolute; inset:0; opacity:0; white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis; transition:opacity .6s ease; }
+  .ticker-item.on { opacity:1; }
+  #story-pill { flex-shrink:0; border:1px solid var(--accent); border-radius:12px;
+    padding:1px 11px; font-size:11.5px; font-weight:600; }
+  #story-pill:hover { background:var(--accent); color:#1a1208; text-decoration:none; }
   #info-btn { margin-left:auto; width:24px; height:24px; border-radius:50%;
     border:1px solid var(--line); background:transparent; color:var(--muted);
     font:italic 700 13px Georgia,serif; cursor:pointer; flex-shrink:0;
     transition:border-color .15s ease, color .15s ease; }
   #info-btn:hover { border-color:var(--accent); color:var(--accent); }
 
-  #info-modal { position:fixed; inset:0; z-index:2000; display:none;
+  /* Above the loading screen (z 9999) so the corner info button works
+     before the map is loaded. */
+  #info-modal { position:fixed; inset:0; z-index:10001; display:none;
     background:rgba(0,0,0,.55); }
   #info-modal.show { display:flex; align-items:center; justify-content:center; }
   #info-panel { background:var(--panel); border:1px solid var(--line); border-radius:12px;
@@ -329,6 +353,7 @@
   <div id="crash-footer">
     <button id="load-map-btn">Load Map</button>
   </div>
+  <button id="info-btn-loading" title="About Crash Atlas">i</button>
 </div>
 <div class="tabs">
   <div class="tab on" data-view="fars">Fatalities — map (FARS)</div>
@@ -337,12 +362,13 @@
   <div class="tab" data-view="risk">Risk &amp; Prevention</div>
   <div class="tab" data-view="cities">City Pilots</div>
   <a class="tab" href="cities/">City Data Pages ↗</a>
-  <a class="tab" href="about/">Our Story</a>
   <button id="info-btn" title="About Crash Atlas">i</button>
 </div>
 <div id="story-strip">
-  Built by a high school e-bike rider in NJ, after too many close calls —
-  <a href="about/">read our story →</a>
+  <div id="ticker">
+    <span class="ticker-item on">Built by a high school e-bike rider in NJ, after too many close calls — <a href="about/">read our story →</a></span>
+  </div>
+  <a id="story-pill" href="about/">Our Story →</a>
 </div>
 
 <div id="info-modal">
@@ -862,9 +888,43 @@ setTimeout(hideLoadingScreen, 20000);
   };
   const close = () => modal.classList.remove("show");
   openBtn.addEventListener("click", open);
+  // Loading-screen corner "i" opens the same modal (modal z-index sits
+  // above the loading screen for exactly this).
+  const loadingBtn = document.getElementById("info-btn-loading");
+  if (loadingBtn) loadingBtn.addEventListener("click", open);
   closeBtn.addEventListener("click", close);
   modal.addEventListener("click", e => { if (e.target === modal) close(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+})();
+
+// ---- Story-strip ticker ----
+// Starts with the origin-story line alone; live data facts are appended
+// once the FARS summary loads (addTickerItems below), and rotation only
+// begins when there's more than one item. Reduced-motion users get the
+// static story line, no rotation -- same policy as the intro animation.
+const tickerAPI = (function setupTicker() {
+  const ticker = document.getElementById("ticker");
+  let idx = 0, timer = null;
+  const items = () => [...ticker.children];
+  const show = (i) => items().forEach((el, j) => el.classList.toggle("on", j === i));
+  const next = () => { idx = (idx + 1) % items().length; show(idx); };
+  const start = () => {
+    if (timer || items().length < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    timer = setInterval(next, 7000);
+  };
+  const stop = () => { clearInterval(timer); timer = null; };
+  ticker.addEventListener("mouseenter", stop);
+  ticker.addEventListener("mouseleave", start);
+  return {
+    add(html) {
+      const el = document.createElement("span");
+      el.className = "ticker-item";
+      el.innerHTML = html;
+      ticker.appendChild(el);
+      start();
+    },
+  };
 })();
 
 (function runCrashIntro() {
@@ -1290,6 +1350,17 @@ map.on("load", async () => {
     fetch(DATA+"fars_points.geojson").then(r=>r.json()),
     fetch(DATA+"fars_summary.json").then(r=>r.json())
   ]);
+
+  // Live facts for the story-strip ticker -- computed from the same
+  // sourced data as the dashboard, never hardcoded.
+  {
+    const ys = Object.keys(SUMMARY.totals.by_year).sort();
+    const lastY = ys[ys.length - 1];
+    const total = Object.values(SUMMARY.totals.by_year).reduce((a,b)=>a+b, 0);
+    const minors = Object.values(SUMMARY.totals.minors_by_year).reduce((a,b)=>a+b, 0);
+    tickerAPI.add(`${fmt(SUMMARY.totals.by_year[lastY])} pedalcyclist deaths recorded in ${lastY} — <a href="cities/">see your city's data →</a>`);
+    tickerAPI.add(`${fmt(minors)} of the ${fmt(total)} cyclists killed since ${ys[0]} were minors — every number sourced, <a href="about/">none of them invented →</a>`);
+  }
 
   // source w/ clustering
   map.addSource("fatalities", { type:"geojson", data:GEO, cluster:true, clusterRadius:45 });
