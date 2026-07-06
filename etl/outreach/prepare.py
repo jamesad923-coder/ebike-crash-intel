@@ -108,28 +108,33 @@ def stood_out_line(rec: dict, years: list[int]) -> str:
             f"since {y0}, {minors_txt}.{extra}")
 
 
-def draft_email(rec: dict, contact: dict | None, years: list[int]) -> str:
+def draft_email(rec: dict, contact: dict | None, years: list[int]) -> dict:
+    """Returns the drafted email as structured parts: to/cc/subject plus a
+    plain-text body and an HTML body. The HTML body uses real <a> anchors
+    with descriptive link text ("this Oceanside report") rather than raw
+    pasted URLs -- Gmail auto-linkifies raw URLs through its google.com/url
+    'Redirect Notice' interstitial, but tends to link a proper anchor
+    straight through. (A custom domain will reduce it further; github.io
+    paths have no reputation yet.)"""
     in_nj = rec["state_abbr"] == "NJ"
     where = "in Wall" if in_nj else "in Wall, New Jersey,"
     subject_tail = ("free report from a local student project" if in_nj
                     else "free report from a student-built open-data project")
-    surname = ""
-    if contact and contact.get("name"):
-        surname = contact["name"].split()[-1]
+    surname = contact["name"].split()[-1] if contact and contact.get("name") else ""
     greeting = f"Hi Mr./Ms. {surname}," if surname else "Hi,"
-    to_line = contact.get("email", "MANUAL LOOKUP NEEDED") if contact else "MANUAL LOOKUP NEEDED"
-    cc = f"\nCC: {contact['cc']}" if contact and contact.get("cc") else ""
+    to = contact.get("email", "") if contact else ""
+    cc = contact.get("cc", "") if contact else ""
+    subject = f"Cyclist crash data for {rec['city']} — {subject_tail}"
+    report_url = f"{BASE_URL}/reports/{rec['slug']}/"
+    stood_out = stood_out_line(rec, years)
 
-    return f"""TO: {to_line}{cc}
-SUBJECT: Cyclist crash data for {rec['city']} — {subject_tail}
-
-{greeting}
+    text = f"""{greeting}
 
 [REVIEW: greeting title, and personalize the stood-out line below if you know something local]
 
 I'm James Adigun, a high school student {where} and an e-bike rider. After my friends and I had too many close calls, I built Crash Atlas — an open-data project that maps U.S. bike and e-bike crash data, with every number sourced.
 
-I put together a safety data report for {rec['city']} — attached, and also at {BASE_URL}/reports/{rec['slug']}/. One thing that stood out: {stood_out_line(rec, years)}
+I put together a safety data report for {rec['city']} — attached, and also at {report_url}. One thing that stood out: {stood_out}
 
 It's free, it can go straight into a council packet, and corrections are welcome — if your team finds anything wrong, I want to know.
 
@@ -139,6 +144,31 @@ James Adigun
 Crash Atlas — {BASE_URL}/
 Our story: {BASE_URL}/about/
 """
+
+    def p(s):  # paragraph
+        return f'<p style="margin:0 0 14px">{s}</p>'
+    html_body = (
+        '<div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;'
+        'font-size:14px;line-height:1.6;color:#1a1f26">'
+        + p(f'<span style="color:#b4432c">[REVIEW: greeting title; attach the PDF; '
+            'personalize the stood-out line if you know something local; then delete this line]</span>')
+        + p(greeting)
+        + p("I'm James Adigun, a high school student " + where + " and an e-bike rider. "
+            "After my friends and I had too many close calls, I built Crash Atlas — an "
+            "open-data project that maps U.S. bike and e-bike crash data, with every "
+            "number sourced.")
+        + p(f'I put together a safety data report for {rec["city"]} — attached, and also '
+            f'available as <a href="{report_url}">this {rec["city"]} report</a>. One thing '
+            f'that stood out: {stood_out}')
+        + p("It's free, it can go straight into a council packet, and corrections are "
+            "welcome — if your team finds anything wrong, I want to know.")
+        + p("Happy to walk anyone through it.")
+        + p('James Adigun<br>'
+            f'<a href="{BASE_URL}/">Crash Atlas</a> · '
+            f'<a href="{BASE_URL}/about/">Our story</a>')
+        + '</div>')
+
+    return {"to": to, "cc": cc, "subject": subject, "text": text, "html": html_body}
 
 
 def prepare(slug: str) -> None:
@@ -154,7 +184,12 @@ def prepare(slug: str) -> None:
     pkg.mkdir(parents=True)
 
     pdf_status = make_pdf(slug, rec["city"], pkg)
-    (pkg / "email.txt").write_text(draft_email(rec, contact, years))
+    email = draft_email(rec, contact, years)
+    to_line = email["to"] or "MANUAL LOOKUP NEEDED"
+    cc_line = f"\nCC: {email['cc']}" if email["cc"] else ""
+    (pkg / "email.txt").write_text(
+        f"TO: {to_line}{cc_line}\nSUBJECT: {email['subject']}\n\n{email['text']}")
+    (pkg / "email.json").write_text(json.dumps(email, indent=2))  # for create_draft (html)
     (pkg / "contact.json").write_text(json.dumps(
         contact or {"status": "NO CONTACT ON FILE",
                     "next": "run find_contacts.py on the city site, verify, add to outreach/contacts.json"},
