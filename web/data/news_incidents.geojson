@@ -13,12 +13,43 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -76.000197,
-          43.247847
+          -76.417702,
+          43.2653897
         ]
       },
       "properties": {
-        "city": "Constantia",
+        "city": "Granby",
+        "state": "NY",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "Unknown",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "cnycentral.com"
+        ],
+        "sources": [
+          {
+            "domain": "cnycentral.com",
+            "url": "https://cnycentral.com/news/local/police-release-name-of-electric-scooter-rider-who-died-crashing-into-utility-pole-granby-state-route-48-melrose-avenue-dylan-scheller-oswego-hospital-internal-injuries-new-york-state",
+            "date": "20260706T184500Z"
+          }
+        ],
+        "date": "20260706T184500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.4291017,
+          42.947011
+        ]
+      },
+      "properties": {
+        "city": "Skaneateles",
         "state": "NY",
         "location_precision": "city_state_mention",
         "device": "E-scooter",
