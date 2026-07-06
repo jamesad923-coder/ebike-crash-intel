@@ -23,6 +23,9 @@ import shutil
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from reports.build_city_report import PILOT_SCREENING  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[2]
 WEB = ROOT / "web"
 CITIES_DIR = WEB / "cities"
@@ -129,9 +132,16 @@ def bars(rows: list[dict], denom: int | None = None) -> str:
     return "\n".join(out)
 
 
-def head(title: str, desc: str, canonical: str, jsonld: dict | None = None) -> str:
+def head(title: str, desc: str, canonical: str, jsonld: dict | None = None,
+         og_image: str | None = None) -> str:
     ld = (f'<script type="application/ld+json">{json.dumps(jsonld)}</script>'
           if jsonld else "")
+    og_img = (f'\n<meta property="og:image" content="{og_image}">'
+              f'\n<meta property="og:image:width" content="1200">'
+              f'\n<meta property="og:image:height" content="630">'
+              f'\n<meta name="twitter:card" content="summary_large_image">'
+              f'\n<meta name="twitter:image" content="{og_image}">'
+              if og_image else "")
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -144,7 +154,7 @@ def head(title: str, desc: str, canonical: str, jsonld: dict | None = None) -> s
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{canonical}">
-<meta property="og:site_name" content="{SITE_NAME}">
+<meta property="og:site_name" content="{SITE_NAME}">{og_img}
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚲</text></svg>">
 {ld}
 <style>{CSS}</style>
@@ -174,6 +184,24 @@ def city_page(c: dict, meta: dict) -> str:
         "isBasedOn": "https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars",
         "license": "https://creativecommons.org/publicdomain/zero/1.0/",
     }
+
+    # Cross-links: city pages must not be dead ends -- a visitor (or a
+    # crawler) should always have somewhere relevant to go next.
+    extras = []
+    if (WEB / "reports" / c["slug"] / "index.html").exists():
+        extras.append(f'<a href="../../../reports/{c["slug"]}/">Print-ready safety report for {E(c["city"])}</a>')
+    if c["slug"] in PILOT_SCREENING:
+        extras.append(f'<a href="../../../risk-screening/{PILOT_SCREENING[c["slug"]]}/">Crash concentration screening (interactive)</a>')
+    siblings = [s for s in meta["cities"]
+                if s["state"] == c["state"] and s["slug"] != c["slug"]][:8]
+    sib_links = " · ".join(
+        f'<a href="../../{s["slug"]}/">{E(s["city"])}</a>' for s in siblings)
+    explore = f"""
+<h2>Explore more</h2>
+<p>{"<br>".join(extras) + ("<br>" if extras else "")}
+{"More " + E(c["state"]) + " cities: " + sib_links + "<br>" if sib_links else ""}
+<a href="../../">All {len(meta["cities"])} city data pages</a> ·
+<a href="../../../">National dashboard</a></p>"""
 
     small = c["total"] < SMALL_N
     small_note = ("" if not small else
@@ -225,7 +253,7 @@ map.on("load", () => {{
 }});
 </script>"""
 
-    return f"""{head(title, desc, canonical, jsonld)}
+    return f"""{head(title, desc, canonical, jsonld, og_image=f"{canonical}card.png")}
 <body>
 {site_header("../../../")}
 <div class="wrap">
@@ -276,7 +304,7 @@ for council discussions or reporting.
 <a href="mailto:{CONTACT_EMAIL}?subject=Data%20brief%20request:%20{E(c['city'].replace(' ', '%20'))},%20{c['state_abbr']}">Request a brief</a>
 · <a href="../../../">Explore the national dashboard</a>
 </div>
-
+{explore}
 <footer>
 Source: NHTSA Fatality Analysis Reporting System (FARS), {y0}–{y1} national files.
 {E(meta["coding_note"])}
@@ -333,13 +361,19 @@ def index_page(cities: list[dict], meta: dict) -> str:
             f'<span class="n">({c["total"]})</span></li>' for c in rows)
         sections.append(f"<h2>{E(state)}</h2>\n<ul class=\"citylist\">{items}</ul>")
 
-    return f"""{head(title, desc, canonical)}
+    return f"""{head(title, desc, canonical, og_image=f"{BASE_URL}/card.png")}
 <body>
 {site_header("../")}
 <div class="wrap states">
 <h1>Crash Data by City</h1>
 <p class="sub">Cyclist fatality pages for {len(cities)} U.S. cities · NHTSA FARS {y0}–{y1}
 · number in parentheses is total recorded fatalities</p>
+
+<input id="city-search" type="search" placeholder="Find your city… (e.g. Toms River)"
+  autocomplete="off"
+  style="width:100%;padding:11px 14px;font-size:15px;background:var(--panel);
+  color:var(--txt);border:1px solid var(--line);border-radius:10px;margin:4px 0 8px">
+<p class="sub" id="search-count" style="display:none"></p>
 
 <div class="banner"><b>Read this first.</b> City pages show <b>counts, not
 rates</b> — more fatalities often just means more riding. Cities appear here
@@ -349,11 +383,40 @@ below that threshold, clearly caveated). {E(meta["coding_note"])}</div>
 
 {"".join(sections)}
 
+<p class="sub" id="no-match" style="display:none">No city matched. If your city
+isn't listed, it has fewer than {meta["min_fatalities"]} recorded cyclist fatalities
+in this window — which is worth knowing too. <a href="mailto:jamesad923@gmail.com">Ask
+for your city's data anyway</a> — it's free.</p>
+
 <footer>
 Source: NHTSA FARS {y0}–{y1} · generated {meta["generated"]} ·
 <a href="{REPO_URL}">open source</a> · <a href="../">national dashboard</a>
 </footer>
 </div>
+<script>
+// Client-side filter over the already-rendered lists -- no index to
+// download, works offline, invisible to crawlers (full lists stay in DOM).
+const input = document.getElementById("city-search");
+const counter = document.getElementById("search-count");
+const noMatch = document.getElementById("no-match");
+input.addEventListener("input", () => {{
+  const q = input.value.trim().toLowerCase();
+  let shown = 0;
+  document.querySelectorAll(".citylist").forEach(ul => {{
+    let any = false;
+    ul.querySelectorAll("li").forEach(li => {{
+      const hit = !q || li.textContent.toLowerCase().includes(q);
+      li.style.display = hit ? "" : "none";
+      if (hit) {{ any = true; shown++; }}
+    }});
+    ul.style.display = any ? "" : "none";
+    ul.previousElementSibling.style.display = any ? "" : "none";  // the state h2
+  }});
+  counter.style.display = q ? "" : "none";
+  counter.textContent = q ? `${{shown}} match${{shown === 1 ? "" : "es"}}` : "";
+  noMatch.style.display = (q && !shown) ? "" : "none";
+}});
+</script>
 </body></html>"""
 
 

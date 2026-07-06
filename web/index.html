@@ -8,6 +8,17 @@
 <meta http-equiv="Expires" content="0" />
 <link rel="icon" href="data:image/svg+xml,<svg width='16' height='16' viewBox='0 0 72 72' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='36' cy='36' r='16' stroke='%23f78166' stroke-width='4'/><path d='M28,49 L36,21 L44,49' stroke='%23e6edf3' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/><circle cx='10' cy='8' r='7' fill='%23a371f7'/><circle cx='60' cy='6' r='5' fill='%23f78166'/><circle cx='58' cy='60' r='7' fill='%23a371f7'/><circle cx='8' cy='58' r='5' fill='%23f78166'/></svg>" />
 <title>U.S. Pedalcyclist &amp; E-Bike Crash Intelligence</title>
+<meta name="description" content="Crash Atlas maps U.S. bicycle and e-bike crash data — federal fatality records, injury estimates, and city open data — with every number sourced and every limit stated. Built by a high school e-bike rider in NJ." />
+<meta property="og:title" content="Crash Atlas — U.S. Bicycle & E-Bike Crash Data" />
+<meta property="og:description" content="Federal crash data, mapped and sourced, with honest limits on every page. Counts, not rates. Built by a high school e-bike rider in NJ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://jamesad923-coder.github.io/ebike-crash-intel/" />
+<meta property="og:site_name" content="Crash Atlas" />
+<meta property="og:image" content="https://jamesad923-coder.github.io/ebike-crash-intel/card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://jamesad923-coder.github.io/ebike-crash-intel/card.png" />
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <style>
@@ -575,6 +586,17 @@
       levers are citations from FHWA/NACTO/NHTSA guidance, not claims our
       data proves they work.
     </div>
+
+    <h2>City crash-concentration screenings</h2>
+    <p class="sub" style="margin-top:-4px">HIN-style grid screening of city open
+      crash data — where documented crashes concentrate, with persistence checked
+      across time. Count-based; supports engineering judgment, never replaces it.</p>
+    <p style="margin:4px 0 0">
+      <a href="risk-screening/nyc/">New York City</a> ·
+      <a href="risk-screening/dc/">Washington, DC</a> ·
+      <a href="risk-screening/chicago/">Chicago</a> ·
+      <a href="risk-screening/boston/">Boston</a>
+    </p>
 
     <h2>State ranking: rate vs. raw count</h2>
     <p class="sub" style="margin-top:-4px">Toggle to see how differently a state ranks once adjusted for bike-commute share.</p>
@@ -1221,7 +1243,13 @@ function renderNewsList() {
       ${p.device} · ${p.outcome} · age band: ${p.age_band} · ${p.date ? p.date.slice(0,8) : ""}<br>
       Source(s): ${srcLinks}
     </div>`;
-  }).join("") || `<p class="sub">No reports in this tier right now.</p>`;
+  }).join("") || (NEWS_GEO.features.length === 0 && newsActiveTier === "all"
+    ? `<p class="sub"><b style="color:var(--good)">No qualifying reports detected
+       in the last 7 days — that's good news.</b> The automated scan (GDELT)
+       runs every 6 hours and only lists articles where a device, a crash,
+       and an outcome could all be confirmed — we'd rather show you nothing
+       than show you noise.</p>`
+    : `<p class="sub">No reports in this tier right now.</p>`);
 
   if (newsMap.getSource("news")) {
     newsMap.getSource("news").setData({type:"FeatureCollection", features:feats});

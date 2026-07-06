@@ -11,6 +11,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jamesad923-coder.github.io/ebike-crash-intel/cities/">
 <meta property="og:site_name" content="Crash Atlas">
+<meta property="og:image" content="https://jamesad923-coder.github.io/ebike-crash-intel/card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jamesad923-coder.github.io/ebike-crash-intel/card.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚲</text></svg>">
 
 <style>
@@ -89,6 +94,12 @@ footer { border-top:1px solid var(--line); margin-top:44px; padding-top:16px;
 <h1>Crash Data by City</h1>
 <p class="sub">Cyclist fatality pages for 341 U.S. cities · NHTSA FARS 2019–2024
 · number in parentheses is total recorded fatalities</p>
+
+<input id="city-search" type="search" placeholder="Find your city… (e.g. Toms River)"
+  autocomplete="off"
+  style="width:100%;padding:11px 14px;font-size:15px;background:var(--panel);
+  color:var(--txt);border:1px solid var(--line);border-radius:10px;margin:4px 0 8px">
+<p class="sub" id="search-count" style="display:none"></p>
 
 <div class="banner"><b>Read this first.</b> City pages show <b>counts, not
 rates</b> — more fatalities often just means more riding. Cities appear here
@@ -439,9 +450,38 @@ below that threshold, clearly caveated). Of 6383 pedalcyclist fatality records 2
 <ul class="citylist"><li><a href="wi/milwaukee/">Milwaukee</a> <span class="n">(13)</span></li>
 <li><a href="wi/madison/">Madison</a> <span class="n">(5)</span></li></ul>
 
+<p class="sub" id="no-match" style="display:none">No city matched. If your city
+isn't listed, it has fewer than 3 recorded cyclist fatalities
+in this window — which is worth knowing too. <a href="mailto:jamesad923@gmail.com">Ask
+for your city's data anyway</a> — it's free.</p>
+
 <footer>
 Source: NHTSA FARS 2019–2024 · generated 2026-07-05 ·
 <a href="https://github.com/jamesad923-coder/ebike-crash-intel">open source</a> · <a href="../">national dashboard</a>
 </footer>
 </div>
+<script>
+// Client-side filter over the already-rendered lists -- no index to
+// download, works offline, invisible to crawlers (full lists stay in DOM).
+const input = document.getElementById("city-search");
+const counter = document.getElementById("search-count");
+const noMatch = document.getElementById("no-match");
+input.addEventListener("input", () => {
+  const q = input.value.trim().toLowerCase();
+  let shown = 0;
+  document.querySelectorAll(".citylist").forEach(ul => {
+    let any = false;
+    ul.querySelectorAll("li").forEach(li => {
+      const hit = !q || li.textContent.toLowerCase().includes(q);
+      li.style.display = hit ? "" : "none";
+      if (hit) { any = true; shown++; }
+    });
+    ul.style.display = any ? "" : "none";
+    ul.previousElementSibling.style.display = any ? "" : "none";  // the state h2
+  });
+  counter.style.display = q ? "" : "none";
+  counter.textContent = q ? `${shown} match${shown === 1 ? "" : "es"}` : "";
+  noMatch.style.display = (q && !shown) ? "" : "none";
+});
+</script>
 </body></html>
