@@ -29,35 +29,11 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "Unknown",
+      "age_band": "45-64",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "fox56.com",
-      "url": "https://fox56.com/news/local/two-injured-after-e-bikes-collide-with-vehicle-in-south-scranton-06-30-2026",
-      "seendate": "20260630T163000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "fox56.com"
-      ],
-      "sources": [
-        {
-          "domain": "fox56.com",
-          "url": "https://fox56.com/news/local/two-injured-after-e-bikes-collide-with-vehicle-in-south-scranton-06-30-2026",
-          "date": "20260630T163000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "45-64",
-      "city": "Arthur Pocatello",
-      "state": "ID",
-      "location_precision": "city_state_mention",
-      "located": true,
       "domain": "idahostatejournal.com",
       "url": "http://www.idahostatejournal.com/news/local/two-dead-others-airlifted-to-hospitals-after-e-bike-utv-and-dirt-bike-crashes-across/article_a7d5e939-d6a2-4690-9e3e-0d194a1ab798.html",
       "seendate": "20260705T024500Z",
@@ -70,7 +46,26 @@
           "domain": "idahostatejournal.com",
           "url": "http://www.idahostatejournal.com/news/local/two-dead-others-airlifted-to-hospitals-after-e-bike-utv-and-dirt-bike-crashes-across/article_a7d5e939-d6a2-4690-9e3e-0d194a1ab798.html",
           "date": "20260705T024500Z"
-        },
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "idahostatejournal.com",
+      "url": "https://www.idahostatejournal.com/news/local/two-dead-others-airlifted-to-hospitals-after-e-bike-utv-and-dirt-bike-crashes-across/article_a7d5e939-d6a2-4690-9e3e-0d194a1ab798.html",
+      "seendate": "20260705T001500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "idahostatejournal.com"
+      ],
+      "sources": [
         {
           "domain": "idahostatejournal.com",
           "url": "https://www.idahostatejournal.com/news/local/two-dead-others-airlifted-to-hospitals-after-e-bike-utv-and-dirt-bike-crashes-across/article_a7d5e939-d6a2-4690-9e3e-0d194a1ab798.html",
