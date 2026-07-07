@@ -19,24 +19,38 @@ conversation" for "this is now live infrastructure" -- it isn't.
 
 **This is live, not theoretical** -- the repo is public at
 `github.com/jamesad923-coder/ebike-crash-intel`, hosted on GitHub Pages,
-and three scheduled GitHub Actions workflows run unattended:
+and scheduled GitHub Actions workflows run unattended:
 
 - **`refresh-news.yml`** -- every 6 hours, runs `etl/news/transform_news.py`
   and commits updated `web/data/news_*.json`. This is the one that matters
-  for "show it within hours, not years."
+  for "show it within hours, not years." It also runs
+  `etl/briefs/generate_brief.py` after each refresh: every newly detected
+  incident gets an auto-drafted city data brief (committed to `briefs/`,
+  deduped via `briefs/.state.json`) and a labeled GitHub issue -- the
+  issue is the email notification to the maintainer. **The brief is a
+  draft for human review (it opens with a mandatory checklist); sending
+  one to a real person is always a manual decision.**
 - **`refresh-risk.yml`** -- weekly (Mondays), rebuilds the Risk & Prevention
   layer. As a side effect this also re-fetches FARS and CRSS for whatever
   years are passed to it, so FARS/CRSS effectively get refreshed weekly too,
   even though there's no separate `refresh-fars.yml` -- one less workflow to
   maintain, same result.
-- **`refresh-dc-pilot.yml`** -- weekly (Mondays), rebuilds the DC ward
-  crash summary and Capital Bikeshare e-bike trip context.
-- **`deploy-pages.yml`** -- fires after any of the above (via
-  `workflow_run`, since GitHub deliberately doesn't let a bot's own commit
-  trigger other workflows via `push` -- this took a real fix to discover
-  and wire up, see git history) and republishes the live site. A new crash
-  report goes from "GDELT indexed the article" to "live on the public map"
-  with nobody touching a keyboard, typically within the 6-hour window.
+- **`refresh-dc-pilot.yml`**, **`refresh-chicago-pilot.yml`**,
+  **`refresh-boston-pilot.yml`**, **`refresh-nyc-pilot.yml`** -- weekly,
+  each rebuilds its city's crash summary and bikeshare e-bike trip context.
+- **`deploy-pages.yml`** -- fires on push to main and after the bot
+  workflows (via `workflow_run`, since GitHub deliberately doesn't let a
+  bot's own commit trigger other workflows via `push` -- this took a real
+  fix to discover and wire up, see git history) and republishes the live
+  site. A new crash report goes from "GDELT indexed the article" to "live
+  on the public map" with nobody touching a keyboard, typically within
+  the 6-hour window.
+
+**Deploys fail transiently sometimes** (observed in production: an
+`actions/deploy-pages` step failed with no content problem at all).
+After pushing anything user-facing, verify the latest deploy-pages run
+actually concluded `success` via the Actions API; an empty commit
+retriggers it.
 
 **A real gap observed in production, not hypothetical:** GitHub's own cron
 scheduler is not 100% reliable -- one scheduled news-refresh slot (00:17 UTC

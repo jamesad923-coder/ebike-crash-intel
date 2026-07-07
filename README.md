@@ -1,112 +1,124 @@
-# U.S. Pedalcyclist & E-Bike Crash Intelligence (v1)
+# Crash Atlas — U.S. Bicycle & E-Bike Crash Intelligence
 
-An open-source dashboard over two federal public-safety datasets, built to
-help riders, parents, planners, and journalists see patterns in pedalcyclist
-crashes and micromobility injuries — **without inventing certainty the data
-doesn't support.**
+An open-source platform over federal, city, and news-sourced crash data,
+built to help riders, parents, planners, and journalists see patterns in
+bicycle and e-bike crashes — **without inventing certainty the data
+doesn't support.** Built by a high school e-bike rider in New Jersey
+after too many close calls ([our story](web/about/index.html)).
 
-See [PROJECT_BRIEF.md](PROJECT_BRIEF.md) for the full mission and constraints.
+Live: **https://jamesad923-coder.github.io/ebike-crash-intel/**
 
-## What this v1 actually is
+See [PROJECT_BRIEF.md](PROJECT_BRIEF.md) for the original mission brief and
+[DATA_SOURCES.md](DATA_SOURCES.md) for per-source lineage and limitations.
 
-Six honest, separate views — deliberately not merged, because they answer
-different questions, run on different timescales, and cannot be joined:
+## What this is
+
+**The dashboard** — honest, separate views, deliberately not merged,
+because they answer different questions and cannot be joined:
 
 1. **Fatalities (FARS)** — a map of pedalcyclist fatalities in fatal
-   motor-vehicle crashes, 2022-2023, with NHTSA's PBCAT pre-crash-action
-   coding (what the report found, not an AI fault call). Federal, annual,
-   lags ~1-2 years.
+   motor-vehicle crashes, **2019–2024**, filterable by year, age band, and
+   sex, with NHTSA's PBCAT pre-crash-action coding (what the report found,
+   not an AI fault call). Federal, annual, lags ~1–2 years.
 2. **Injuries (NEISS)** — national *estimates* (not counts) of micromobility
-   ED visits for 2024, broken out by device, age, and diagnosis, with a
-   confirmed e-bike slice. Federal, annual.
+   ED visits, by device, age, and diagnosis, with a confirmed e-bike slice
+   (2024 onward, the first year e-bikes got their own product code).
 3. **Recent reports (news)** — automatically detected crash mentions from
-   the last 7 days via GDELT's free news index, city/age-band/device/outcome
-   only (never a name or exact age), tagged corroborated vs. single-source.
-   This is the only tab that can show something that happened yesterday —
-   see AUTOMATION.md for what "automatic" actually requires here and what's
-   still a manual step.
-4. **Risk & Prevention** — this project's own interpretable model, built
-   entirely from FARS + CRSS + Census ACS data (no opaque ML): a
-   state-level risk ranking adjusted by a bike-commute exposure proxy, a
-   PBCAT contributing-factor cross-tab for BOTH fatal (FARS) and
-   non-fatal (CRSS) crashes shown side by side, and raw-count fatality
-   cluster flags -- each paired with a sourced, evidence-based prevention
-   lever (FHWA/NACTO/NHTSA guidance). See DATA_SOURCES.md for what this
-   can and can't honestly claim.
-5. **DC Pilot** — the first city-level crash source: 7,378 real,
-   geocoded bicycle crashes by ward (Open Data DC), a real per-ward
-   crashes-per-bikeshare-trip comparison (Capital Bikeshare e-bike trips
-   mapped to wards via point-in-polygon), and OpenStreetMap bike-lane
-   proximity context. Wards 7/8 rank worst on both the exposure-relative
-   measure and bike-lane coverage -- three independent signals pointing
-   the same direction.
-6. **Chicago Pilot** — the second city, verified independently rather
-   than assumed from DC's pattern: 11,162 bicyclist crash records since
-   2021 (Chicago Data Portal), Divvy's e-bike-specific trip data (same
-   Lyft-operated schema as Capital Bikeshare), and two fields DC's data
-   didn't have cleanly -- directly police-reported helmet use and
-   bike-lane-location-at-crash-time.
+   the last 7 days via GDELT, city/age-band/device/outcome only (never a
+   name or exact age), tagged corroborated vs. single-source. Refreshes
+   every 6 hours unattended (see AUTOMATION.md).
+4. **Risk & Prevention** — an interpretable (no opaque ML) state risk
+   ranking adjusted by a bike-commute exposure proxy, PBCAT factor
+   cross-tabs for fatal (FARS) and non-fatal (CRSS) crashes, each paired
+   with sourced prevention levers (FHWA/NACTO/NHTSA guidance).
+5. **City Pilots** — ward/district/borough-level crash data with bikeshare
+   e-bike exposure context and OSM bike-lane proximity, each city verified
+   independently: **DC, Chicago, Boston, NYC**.
+
+**Beyond the dashboard:**
+
+- **341 per-city data pages** (`/cities/`) — static, SEO-indexable pages
+  with each city's fatality record, honest caveats, a crash map, and
+  social-share cards. Searchable index.
+- **Crash-concentration screenings** (`/risk-screening/{city}/`) —
+  HIN-style ~250m grid screening of city open data with a persistence
+  check, for the four pilot cities. Count-based; supports engineering
+  judgment, never replaces it.
+- **Print-ready city safety reports** (`/reports/{st}/{city}/`) —
+  light-themed, council-packet-ready documents ("Save as PDF" from any
+  browser). Free to any city, school district, or local organization:
+  jamesad923@gmail.com.
+- **Auto-drafted data briefs** (`briefs/`) — when the news pipeline
+  detects a new incident, it drafts a neutral data brief for that city
+  (with a mandatory human-review checklist) and opens a repo issue.
 
 ## Quick start
 
-Requires Python 3.9+ and no other dependencies (standard library only).
+Requires Python 3.9+ and **no other dependencies** (standard library only).
+Social cards and report PDFs additionally use a local Chrome for headless
+rendering.
 
 ```bash
-# 1. Fetch + transform FARS (fully automatic, ~70MB download)
-python3 etl/fars/transform_fars.py 2022 2023
+# Federal fatality data (fully automatic, ~400MB of downloads first run)
+python3 etl/fars/transform_fars.py            # defaults to 2019-2024
 
-# 2. NEISS requires one manual step first (see etl/neiss/fetch_neiss.py
-#    docstring — CPSC's server blocks scripted requests). Then:
-python3 etl/neiss/transform_neiss.py 2024
+# Per-city aggregates -> 341 static city pages -> social cards
+python3 etl/cities/build_city_data.py
+python3 etl/cities/build_city_pages.py
+python3 etl/cities/build_social_cards.py      # headless Chrome, ~7 min
 
-# 3. News-sourced recent reports (fully automatic, free, no key —
-#    see AUTOMATION.md for how to make this actually run on a schedule)
+# City pilot pipelines (each fetches its city's open data)
+python3 etl/dc/transform_dc.py
+python3 etl/chicago/transform_chicago.py
+python3 etl/boston/transform_boston.py
+python3 etl/nyc/transform_nyc.py
+
+# Crash-concentration screening + print-ready reports
+python3 etl/risk/screen_city.py nyc           # also: dc, chicago, boston
+python3 etl/reports/build_city_report.py
+
+# News-sourced recent reports (fully automatic, free, no key)
 python3 etl/news/transform_news.py 7d
 
-# 4. Serve the dashboard (it's a static page, no build step)
-cd web && python3 -m http.server 8765
-# open http://localhost:8765
-```
+# NEISS requires one manual browser step first (CPSC blocks scripts) --
+# see etl/neiss/fetch_neiss.py, then:
+python3 etl/neiss/transform_neiss.py 2024
 
-Deploying is the same idea: push `web/` to Vercel, Cloudflare Pages, GitHub
-Pages, or any static host. No server, no database, no build step.
+# Serve the dashboard (static page, no build step)
+cd web && python3 -m http.server 8765
+```
 
 ## Why this architecture
 
-The underlying data is small (a few thousand FARS records/year, ~20k NEISS
-sample rows/year) and updates annually. Running a database + API server for
-that would add cost and maintenance for no benefit, so v1 is
-**data-as-committed-artifacts + a static page**:
+The data is small and updates annually-to-6-hourly, so v1 is
+**data-as-committed-artifacts + a static page** — no server, no database,
+no build step, no pip installs:
 
-- `etl/` — Python connectors, one per source, each with the honesty
-  constraints documented inline (sentinel values, code limitations, sample
-  vs. census, etc.)
-- `data/raw/` — the original downloaded files (gitignored; regenerate
-  via the ETL scripts)
-- `web/data/*.json` / `*.geojson` — the small, committed, reproducible
-  output artifacts the dashboard reads. Every artifact carries a
-  `provenance` block (source, dataset, years, URL, limitations).
-- `web/index.html` — the whole frontend. MapLibre GL for the map,
-  vanilla JS for filtering/charts, no build tooling.
-
-This will need to change in Phase 3 (city-level data + real-time
-exposure/ridership) — see DATA_SOURCES.md for the phase plan.
+- `etl/` — Python connectors, one per source, honesty constraints
+  documented inline (sentinel values, coding limitations, sample vs.
+  census, upstream-source breakage notes).
+- `data/raw/` — original downloads (gitignored; regenerate via ETL).
+- `web/data/` — small, committed, reproducible artifacts the site reads.
+  Every artifact carries a `provenance` block.
+- `web/index.html` — the whole dashboard. MapLibre GL + vanilla JS.
+- `.github/workflows/` — unattended refresh (news every 6h; risk and the
+  four city pilots weekly) + auto-deploy to GitHub Pages. AUTOMATION.md
+  has the honest details, including where GitHub's cron falls short.
 
 ## What's not here yet, and why
 
 - **Rate-based hotspots.** No national ridership/exposure denominator
-  exists. Counts are counts; a busy area looks "dangerous" partly because
-  more people ride there. Labeled honestly in the UI.
-- **Court/legal outcomes.** Sparse, fragmented across federal/state systems.
-  Phase 4.
-- **News-sourced crashes.** Valuable for catching what federal data misses,
-  but high dedup/verification/privacy risk. Phase 4, lower-confidence tier.
-- **City-level street data.** Coverage varies hugely by city. Phase 3.
-- **Satellite crash detection.** Doesn't work — confirmed dead end. Imagery's
-  only legitimate role here is infrastructure context (bike lanes, etc.),
-  not detecting crashes.
+  exists. Counts are labeled as counts, everywhere, on purpose.
+- **E-bike isolation in crash data.** Federal crash data cannot separate
+  e-bikes from conventional bicycles; only NEISS (2024+) isolates them,
+  as unmappable national estimates. Every page says so.
+- **Court/legal outcomes.** Sparse, fragmented. Future phase.
+- **Satellite crash detection.** Confirmed dead end — imagery's only
+  legitimate role is infrastructure context.
 
 ## Data lineage and limitations
 
 See [DATA_SOURCES.md](DATA_SOURCES.md) for exact source URLs, code
-definitions, sentinel-value handling, and known gaps per dataset.
+definitions, sentinel-value handling, and known gaps per dataset — plus
+the parts of each city's data that broke or changed upstream and how the
+pipeline handles that honestly.

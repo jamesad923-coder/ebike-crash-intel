@@ -1,5 +1,11 @@
 # Claude Code Prompt — U.S. E-Bike Crash Intelligence & Prevention System
 
+> **Historical document.** This is the original founding brief that started
+> the project (June 2026), preserved as-is. For the current state see
+> README.md; for working conventions and hard-won lessons see CLAUDE.md;
+> for per-source lineage see DATA_SOURCES.md. Much of what this brief
+> proposed is now built — and some of it (FastAPI/Postgres/Next.js) was
+> deliberately NOT built, in favor of static-site + committed artifacts.
 
 ---
 

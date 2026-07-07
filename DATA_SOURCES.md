@@ -410,6 +410,64 @@ already exists in the literature.
   reported-in-lane count across every ward checked), since OSM coverage
   and an officer's on-scene call are two different, imperfect signals.
 
+## Boston Pilot — third city, and a case study in upstream breakage
+
+- **Source:** City of Boston Vision Zero Crash Records + Vision Zero
+  Fatality Records (data.boston.gov, CKAN portal). Bluebikes trip data
+  (hubway-data S3 bucket) for e-bike exposure context; Boston City Council
+  District boundaries for point-in-polygon district assignment.
+- **The 2026 source change that matters:** Boston migrated off Socrata and
+  the republished crash CSV **dropped its severity field entirely** — there
+  is no fatal/injury/no-injury coding in the public data anymore. The
+  pipeline recovers an approximate fatal flag by fuzzy-matching the
+  separate fatality dataset on timestamp (±6h) + location (~1km), since
+  the two files share no id. Manually verified: ~8/11 known bike
+  fatalities match confidently; the rest stay unmatched rather than
+  guessed. **Boston's fatal count is a documented lower bound, not exact.**
+- Window: 2021-01-01 onward (~5 years, matching DC/Chicago as a
+  consistency choice). No e-bike flag, no speeding field, no injury
+  severity — all stated in the UI banner.
+- Full details and the honesty limits: `etl/boston/*.py` docstrings.
+
+## NYC Pilot — fourth city, the largest dataset
+
+- **Source:** NYC Motor Vehicle Collisions (NYPD, data.cityofnewyork.us),
+  filtered to crashes with ≥1 cyclist injured or killed; borough comes
+  directly from the NYPD record. Citi Bike monthly trip files (NYC fleet
+  only, Jersey City excluded) for exposure context; Borough Boundaries
+  dataset `gthc-hcne` (the older `7t3b-ywvw` id was retired upstream).
+- **Data-quality catch worth remembering:** 340 NYPD records carry
+  placeholder coordinates at exactly (0, 0) — "Null Island" — which parse
+  as valid floats and briefly ranked as the city's top crash-concentration
+  cell before a bounding-box check was added. Coordinates outside a
+  generous NYC bbox are treated as missing (counted in
+  `records_excluded_no_geo`), same as any other no-geo record.
+- ~27k cyclist crashes across the five boroughs (~21k mappable); no
+  e-bike flag (same gap as every city); Citi-Bike-only exposure caveat
+  identical to the other pilots.
+- Full details: `etl/nyc/*.py` docstrings.
+
+## City data pages, screenings, and reports (derived layers)
+
+Three public layers are **derived** from the sources above rather than new
+sources — documented here so nothing looks like it appeared from nowhere:
+
+- **`/cities/` (341 pages)** — per-city FARS aggregates from the raw
+  national files (full person/accident join, so totals include records
+  without usable coordinates). Only ~67% of pedalcyclist fatality records
+  are coded to a city at all (rural/unincorporated crashes usually
+  aren't), so **city counts are a floor, not a ceiling** — stated on every
+  page. Cities appear at ≥3 fatalities 2019–2024, plus an allowlist of
+  towns with active e-bike policy debates (small counts, prominently
+  caveated). NYC is coded as both "New York" and "New York City" across
+  FARS years and is merged.
+- **`/risk-screening/{city}/`** — ~250m grid-cell concentration screening
+  over each pilot city's open crash data, with persistence checked across
+  window halves. Count-based, not exposure-adjusted, not a prediction —
+  the page says so in its own banner.
+- **`/reports/{st}/{city}/`** — print-first safety data reports composed
+  from the layers above; nothing new is computed there.
+
 ## Sources not yet integrated (and why)
 
 | Source | Status | Why not yet |
