@@ -32,6 +32,19 @@ h1 { font-size:19px; margin:4px 0 2px; }
   border-radius:8px; padding:1px 7px; margin-left:6px; }
 .badge.persistent { border-color:var(--good); color:var(--good); }
 #map { height:100%; }
+/* Rank badge pinned in each cell's top-left corner. pointer-events:none so
+   clicks/hovers pass through to the map cell underneath. */
+.cell-rank { font:700 11px -apple-system,"Segoe UI",Roboto,sans-serif;
+  color:#fff; background:rgba(14,17,22,.72); border:1px solid rgba(255,255,255,.25);
+  border-radius:5px; padding:0 4px; pointer-events:none; white-space:nowrap;
+  text-shadow:0 1px 2px #000; }
+.maplibregl-popup-content { background:#161b22; color:#e6edf3; border:1px solid #2a313c;
+  border-radius:8px; font-size:12px; padding:10px 12px; }
+.maplibregl-popup-content b { color:#f78166; }
+.maplibregl-popup-anchor-top .maplibregl-popup-tip { border-bottom-color:#161b22; }
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip { border-top-color:#161b22; }
+.maplibregl-popup-anchor-left .maplibregl-popup-tip { border-right-color:#161b22; }
+.maplibregl-popup-anchor-right .maplibregl-popup-tip { border-left-color:#161b22; }
 footer { color:var(--muted); font-size:11.5px; padding:14px 0; }
 @media (max-width:800px) { .layout { grid-template-columns:1fr; height:auto; }
   #map { height:420px; } }
@@ -45,7 +58,7 @@ footer { color:var(--muted); font-size:11.5px; padding:14px 0; }
 <h1>Boston: Crash Concentration Screening</h1>
 <p class="sub">1,459 recorded bicyclist crashes, 2021–2025 ·
 top 20 of 666 ~250m grid cells ·
-generated 2026-07-04</p>
+generated 2026-07-06</p>
 
 <div class="banner"><b>Read this first.</b> This is the first step of a
 High-Injury-Network-style analysis: where documented crashes <b>concentrate</b>.
@@ -170,14 +183,47 @@ map.on("load", () => {
   map.addLayer({ id:"cells-line", type:"line", source:"cells",
     paint: { "line-color": ["case", ["==", ["get","persistent"], 1], "#f78166", "#d29922"],
       "line-width": 1.5 } });
+
+  // Rank badge (#1, #2, ...) pinned in each cell's top-left corner as an
+  // HTML marker -- gives every zone an on-map identity without needing a
+  // glyph server for a symbol layer.
+  CELLS.forEach((c, i) => {
+    const el = document.createElement("div");
+    el.className = "cell-rank";
+    el.textContent = "#" + (i + 1);
+    // bounds = [minLon, minLat, maxLon, maxLat]; top-left on screen is
+    // west edge + north edge = [bounds[0], bounds[3]].
+    new maplibregl.Marker({ element: el, anchor: "top-left" })
+      .setLngLat([c.bounds[0], c.bounds[3]]).addTo(map);
+  });
+
+  // Hover popup with the zone's full stats, pulled from CELLS[i].
+  const hover = new maplibregl.Popup({ closeButton:false, closeOnClick:false,
+    offset:8, maxWidth:"260px" });
+  map.on("mousemove", "cells-fill", e => {
+    map.getCanvas().style.cursor = "pointer";
+    const c = CELLS[e.features[0].properties.i];
+    const yr = Object.entries(c.by_year).map(([y,n]) => `${y}: ${n}`).join(" · ");
+    const lane = Math.round(c.near_lane_share * 100);
+    hover.setLngLat(e.lngLat).setHTML(
+      `<b>#${CELLS.indexOf(c)+1} · ${c.area}</b><br>` +
+      `${c.total} crashes` + (c.fatal ? ` · ${c.fatal} fatal` : "") +
+      ` · ${c.persistent ? "persistent" : "episodic"}<br>` +
+      `<span style="color:#8b949e">By year:</span> ${yr}<br>` +
+      `<span style="color:#8b949e">Near a mapped bike lane:</span> ${lane}%`
+    ).addTo(map);
+  });
+  map.on("mouseleave", "cells-fill", () => {
+    map.getCanvas().style.cursor = "";
+    hover.remove();
+  });
+
   map.on("click", "cells-fill", e => {
     const i = e.features[0].properties.i;
     document.querySelectorAll(".cell-card").forEach(el => el.classList.remove("active"));
     const card = document.querySelector(`.cell-card[data-i="${i}"]`);
     if (card) { card.classList.add("active"); card.scrollIntoView({ behavior:"smooth", block:"center" }); }
   });
-  map.on("mouseenter","cells-fill",()=>map.getCanvas().style.cursor="pointer");
-  map.on("mouseleave","cells-fill",()=>map.getCanvas().style.cursor="");
 });
 document.querySelectorAll(".cell-card").forEach(el => el.addEventListener("click", () => {
   const c = CELLS[+el.dataset.i];
