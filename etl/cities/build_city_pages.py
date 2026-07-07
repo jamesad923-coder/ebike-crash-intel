@@ -19,7 +19,6 @@ from __future__ import annotations
 
 import html
 import json
-import shutil
 import sys
 from pathlib import Path
 
@@ -301,8 +300,12 @@ click through to sources before treating any report as fact.</p>
 groups, and local reporters can request a <b>free data brief</b> for {E(name)} —
 this page's data plus state context and crash-pattern detail, in a format ready
 for council discussions or reporting.
-<a href="mailto:{CONTACT_EMAIL}?subject=Data%20brief%20request:%20{E(c['city'].replace(' ', '%20'))},%20{c['state_abbr']}">Request a brief</a>
-· <a href="../../../">Explore the national dashboard</a>
+<div style="margin-top:10px">
+  Email <a href="mailto:{CONTACT_EMAIL}?subject=Data%20brief%20request:%20{E(c['city'].replace(' ', '%20'))},%20{c['state_abbr']}"><b>{CONTACT_EMAIL}</b></a>
+  <span style="color:var(--muted)">(or
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to={CONTACT_EMAIL}&su=Data%20brief%20request:%20{E(c['city'].replace(' ', '%20'))},%20{c['state_abbr']}" target="_blank" rel="noopener">compose in Gmail</a>)</span>
+  · <a href="../../../">Explore the national dashboard</a>
+</div>
 </div>
 {explore}
 <footer>
@@ -424,10 +427,12 @@ def build() -> None:
     data = json.loads((WEB / "data" / "city_stats.json").read_text())
     cities, meta = data["cities"], data
 
-    # Fully regenerated output -- safe to clear, nothing hand-edited lives here.
-    if CITIES_DIR.exists():
-        shutil.rmtree(CITIES_DIR)
-    CITIES_DIR.mkdir(parents=True)
+    # Clear only the generated HTML, NOT the whole tree -- build_social_cards.py
+    # writes card.png into these same per-city dirs, and an rmtree here would
+    # silently delete every social card on each page rebuild (which it did once).
+    CITIES_DIR.mkdir(parents=True, exist_ok=True)
+    for html_file in CITIES_DIR.rglob("index.html"):
+        html_file.unlink()
 
     for c in cities:
         page_dir = CITIES_DIR / c["slug"]

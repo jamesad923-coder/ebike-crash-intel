@@ -1576,6 +1576,24 @@ async function loadRisk() {
      <b>Cluster caveat:</b> ${RISK.clusters.measure_note}`;
 }
 
+// MapLibre's map.loaded() returns false while tiles are still loading, even
+// after the one-shot 'load' event has already fired -- so the common
+// `if (map.loaded()) add(); else map.on('load', add)` pattern silently drops
+// the layer when an async geojson fetch resolves mid-tile-load. Harmless on
+// localhost (tiles are instant); on a live CDN it left NYC with no bike
+// lanes and Boston with no crash points. This helper runs fn exactly once as
+// soon as the STYLE is ready (all addSource/addLayer need), independent of
+// tile state, and is safe whether or not 'load' has already fired.
+function whenMapReady(map, fn) {
+  if (map.isStyleLoaded()) { fn(); return; }
+  const handler = () => {
+    if (!map.isStyleLoaded()) return;
+    map.off("styledata", handler);
+    fn();
+  };
+  map.on("styledata", handler);
+}
+
 // ---- DC Pilot panel ----
 let dcMap; // deferred -- built on first click of the DC Pilot tab
 
@@ -1762,11 +1780,14 @@ async function loadDC() {
   // geometry alone is ~1.6MB, same lazy-loading rationale as every other
   // tab in this dashboard.
   fetch(DATA+"dc_bike_lanes.geojson").then(r=>r.json()).then(lanesGeo => {
-    dcMap.addSource("dc-bike-lanes", { type:"geojson", data: lanesGeo });
-    dcMap.addLayer({ id:"dc-lane-lines", type:"line", source:"dc-bike-lanes",
-      paint:{ "line-color":"#3fb950", "line-width":1.5, "line-opacity":0.55 }});
+    whenMapReady(dcMap, () => {
+      dcMap.addSource("dc-bike-lanes", { type:"geojson", data: lanesGeo });
+      dcMap.addLayer({ id:"dc-lane-lines", type:"line", source:"dc-bike-lanes",
+        paint:{ "line-color":"#3fb950", "line-width":1.5, "line-opacity":0.55 }});
+    });
   });
 
+  whenMapReady(dcMap, () => {
   dcMap.addSource("dc-crashes", { type:"geojson", data: ws.geojson });
   dcMap.addLayer({ id:"dc-pts", type:"circle", source:"dc-crashes",
     paint:{ "circle-radius":["interpolate",["linear"],["zoom"],
@@ -1787,6 +1808,7 @@ async function loadDC() {
   });
   dcMap.on("mouseenter","dc-pts",()=>dcMap.getCanvas().style.cursor="pointer");
   dcMap.on("mouseleave","dc-pts",()=>dcMap.getCanvas().style.cursor="");
+  });
 
   document.getElementById("dc-src").innerHTML =
     `<b>Ward crash data:</b> ${ws.measure_note}<br><br>
@@ -1867,17 +1889,11 @@ async function loadBoston() {
   }
 
   fetch(DATA+"boston_bike_lanes.geojson").then(r=>r.json()).then(lanesGeo => {
-    if (bostonMap.loaded()) {
+    whenMapReady(bostonMap, () => {
       bostonMap.addSource("boston-bike-lanes", { type:"geojson", data: lanesGeo });
       bostonMap.addLayer({ id:"boston-lane-lines", type:"line", source:"boston-bike-lanes",
         paint:{ "line-color":"#3fb950", "line-width":1.5, "line-opacity":0.55 }});
-    } else {
-      bostonMap.on("load", () => {
-        bostonMap.addSource("boston-bike-lanes", { type:"geojson", data: lanesGeo });
-        bostonMap.addLayer({ id:"boston-lane-lines", type:"line", source:"boston-bike-lanes",
-          paint:{ "line-color":"#3fb950", "line-width":1.5, "line-opacity":0.55 }});
-      });
-    }
+    });
   });
 
   const addBostonPoints = () => {
@@ -1899,7 +1915,7 @@ async function loadBoston() {
     bostonMap.on("mouseenter","boston-pts",()=>bostonMap.getCanvas().style.cursor="pointer");
     bostonMap.on("mouseleave","boston-pts",()=>bostonMap.getCanvas().style.cursor="");
   };
-  if (bostonMap.loaded()) addBostonPoints(); else bostonMap.on("load", addBostonPoints);
+  whenMapReady(bostonMap, addBostonPoints);
 
   document.getElementById("bos-src").innerHTML =
     `<b>District crash data:</b> ${ws.measure_note}<br><br>
@@ -1969,11 +1985,14 @@ async function loadChicago() {
   // Bike lane geometry drawn FIRST so crash points layer on top of it --
   // same lazy-loaded separate-file pattern as DC.
   fetch(DATA+"chicago_bike_lanes.geojson").then(r=>r.json()).then(lanesGeo => {
-    chicagoMap.addSource("chicago-bike-lanes", { type:"geojson", data: lanesGeo });
-    chicagoMap.addLayer({ id:"chicago-lane-lines", type:"line", source:"chicago-bike-lanes",
-      paint:{ "line-color":"#3fb950", "line-width":1.5, "line-opacity":0.55 }});
+    whenMapReady(chicagoMap, () => {
+      chicagoMap.addSource("chicago-bike-lanes", { type:"geojson", data: lanesGeo });
+      chicagoMap.addLayer({ id:"chicago-lane-lines", type:"line", source:"chicago-bike-lanes",
+        paint:{ "line-color":"#3fb950", "line-width":1.5, "line-opacity":0.55 }});
+    });
   });
 
+  whenMapReady(chicagoMap, () => {
   chicagoMap.addSource("chicago-crashes", { type:"geojson", data: ws.geojson });
   chicagoMap.addLayer({ id:"chicago-pts", type:"circle", source:"chicago-crashes",
     paint:{ "circle-radius":["interpolate",["linear"],["zoom"],
@@ -1996,6 +2015,7 @@ async function loadChicago() {
   });
   chicagoMap.on("mouseenter","chicago-pts",()=>chicagoMap.getCanvas().style.cursor="pointer");
   chicagoMap.on("mouseleave","chicago-pts",()=>chicagoMap.getCanvas().style.cursor="");
+  });
 
   document.getElementById("chi-src").innerHTML =
     `<b>Ward crash data:</b> ${ws.measure_note}<br><br>
@@ -2064,17 +2084,11 @@ async function loadNYC() {
   document.getElementById("nyc-exposure-note").textContent = we.measure_note;
 
   fetch(DATA+"nyc_bike_lanes.geojson").then(r=>r.json()).then(lanesGeo => {
-    if (nycMap.loaded()) {
+    whenMapReady(nycMap, () => {
       nycMap.addSource("nyc-bike-lanes", { type:"geojson", data: lanesGeo });
       nycMap.addLayer({ id:"nyc-lane-lines", type:"line", source:"nyc-bike-lanes",
         paint:{ "line-color":"#3fb950", "line-width":1.2, "line-opacity":0.5 }});
-    } else {
-      nycMap.on("load", () => {
-        nycMap.addSource("nyc-bike-lanes", { type:"geojson", data: lanesGeo });
-        nycMap.addLayer({ id:"nyc-lane-lines", type:"line", source:"nyc-bike-lanes",
-          paint:{ "line-color":"#3fb950", "line-width":1.2, "line-opacity":0.5 }});
-      });
-    }
+    });
   });
 
   const addNYCPoints = () => {
@@ -2097,7 +2111,7 @@ async function loadNYC() {
     nycMap.on("mouseenter","nyc-pts",()=>nycMap.getCanvas().style.cursor="pointer");
     nycMap.on("mouseleave","nyc-pts",()=>nycMap.getCanvas().style.cursor="");
   };
-  if (nycMap.loaded()) addNYCPoints(); else nycMap.on("load", addNYCPoints);
+  whenMapReady(nycMap, addNYCPoints);
 
   document.getElementById("nyc-src").innerHTML =
     `<b>Borough crash data:</b> ${ws.measure_note}<br><br>
