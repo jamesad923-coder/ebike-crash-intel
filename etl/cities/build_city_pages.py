@@ -301,9 +301,9 @@ groups, and local reporters can request a <b>free data brief</b> for {E(name)} �
 this page's data plus state context and crash-pattern detail, in a format ready
 for council discussions or reporting.
 <div style="margin-top:10px">
-  Email <a href="mailto:{CONTACT_EMAIL}?subject=Data%20brief%20request:%20{E(c['city'].replace(' ', '%20'))},%20{c['state_abbr']}"><b>{CONTACT_EMAIL}</b></a>
-  <span style="color:var(--muted)">(or
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to={CONTACT_EMAIL}&su=Data%20brief%20request:%20{E(c['city'].replace(' ', '%20'))},%20{c['state_abbr']}" target="_blank" rel="noopener">compose in Gmail</a>)</span>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to={CONTACT_EMAIL}&su=Data%20brief%20request:%20{E(c['city'].replace(' ', '%20'))},%20{c['state_abbr']}" target="_blank" rel="noopener"><b>Request a brief</b></a>
+  <span style="color:var(--muted)">— or email
+  <a href="mailto:{CONTACT_EMAIL}?subject=Data%20brief%20request:%20{E(c['city'].replace(' ', '%20'))},%20{c['state_abbr']}">{CONTACT_EMAIL}</a></span>
   · <a href="../../../">Explore the national dashboard</a>
 </div>
 </div>
