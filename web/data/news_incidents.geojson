@@ -24,7 +24,7 @@
         "device": "E-bike",
         "outcome": "Severe injury",
         "throttle_ambiguous": false,
-        "age_band": "Unknown",
+        "age_band": "0-12 (child)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "kolotv.com"
@@ -55,7 +55,7 @@
         "device": "E-scooter",
         "outcome": "Fatality",
         "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
+        "age_band": "Unknown",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "cnycentral.com"
