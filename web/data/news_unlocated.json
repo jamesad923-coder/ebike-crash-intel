@@ -2,6 +2,54 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "ktbs.com",
+      "url": "https://www.ktbs.com/news/local/1-dead-1-injured-in-electric-bike-collision-on-alabama-avenue/article_eb1be29d-59c8-4c72-9321-b77b9438b956.html",
+      "seendate": "20260709T014500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "ktbs.com"
+      ],
+      "sources": [
+        {
+          "domain": "ktbs.com",
+          "url": "https://www.ktbs.com/news/local/1-dead-1-injured-in-electric-bike-collision-on-alabama-avenue/article_eb1be29d-59c8-4c72-9321-b77b9438b956.html",
+          "date": "20260709T014500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "foxla.com",
+      "url": "https://www.foxla.com/news/17-year-old-charges-e-motorcycle-buena-high-ventura",
+      "seendate": "20260708T234500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "foxla.com"
+      ],
+      "sources": [
+        {
+          "domain": "foxla.com",
+          "url": "https://www.foxla.com/news/17-year-old-charges-e-motorcycle-buena-high-ventura",
+          "date": "20260708T234500Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -30,7 +78,7 @@
       "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "13-17 (teen)",
-      "city": "Sunny Gillette",
+      "city": "Cloudy Gillette",
       "state": "WY",
       "location_precision": "city_state_mention",
       "located": true,
