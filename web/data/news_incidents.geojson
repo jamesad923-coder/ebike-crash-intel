@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -78.9018053,
+          35.996653
+        ]
+      },
+      "properties": {
+        "city": "Durham",
+        "state": "NC",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "abc11.com"
+        ],
+        "sources": [
+          {
+            "domain": "abc11.com",
+            "url": "https://abc11.com/post/joseph-savarino-man-charged-death-teen-jack-oshea-was-bike-when-he-hit-enter-indictment-plea/19474681/",
+            "date": "20260709T161500Z"
+          }
+        ],
+        "date": "20260709T161500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -119.812658,
           39.5261788
         ]
@@ -55,7 +86,7 @@
         "device": "E-scooter",
         "outcome": "Fatality",
         "throttle_ambiguous": false,
-        "age_band": "Unknown",
+        "age_band": "45-64",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "cnycentral.com"
