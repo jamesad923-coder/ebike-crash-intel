@@ -100,37 +100,6 @@
         ],
         "date": "20260706T184500Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -76.4291017,
-          42.947011
-        ]
-      },
-      "properties": {
-        "city": "Skaneateles",
-        "state": "NY",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "25-44",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "oswegocountytoday.com"
-        ],
-        "sources": [
-          {
-            "domain": "oswegocountytoday.com",
-            "url": "https://oswegocountytoday.com/lead-story/state-police-investigate-fatal-electric-scooter-crash-in-granby/",
-            "date": "20260705T014500Z"
-          }
-        ],
-        "date": "20260705T014500Z"
-      }
     }
   ]
 }
