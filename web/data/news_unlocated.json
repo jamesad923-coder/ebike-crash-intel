@@ -5,6 +5,30 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wwmt.com",
+      "url": "https://wwmt.com/news/local/kid-e-bike-hit-car-battle-creek-boy-teen-driver-16-girl-hurt-injured-west-eagle-street-hospital-4th-july-riding-ride-michigan-wwmt",
+      "seendate": "20260710T031500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wwmt.com"
+      ],
+      "sources": [
+        {
+          "domain": "wwmt.com",
+          "url": "https://wwmt.com/news/local/kid-e-bike-hit-car-battle-creek-boy-teen-driver-16-girl-hurt-injured-west-eagle-street-hospital-4th-july-riding-ride-michigan-wwmt",
+          "date": "20260710T031500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
       "age_band": "Unknown",
       "city": null,
       "state": null,
@@ -76,33 +100,9 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": "Investigation PROVIDENCE",
-      "state": "RI",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "turnto10.com",
-      "url": "https://turnto10.com/news/local/person-injured-after-overnight-hit-and-run",
-      "seendate": "20260712T190000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "turnto10.com"
-      ],
-      "sources": [
-        {
-          "domain": "turnto10.com",
-          "url": "https://turnto10.com/news/local/person-injured-after-overnight-hit-and-run",
-          "date": "20260712T190000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "13-17 (teen)",
-      "city": "Clear Gillette",
+      "city": "Sunny Gillette",
       "state": "WY",
       "location_precision": "city_state_mention",
       "located": true,
