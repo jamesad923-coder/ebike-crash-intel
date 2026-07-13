@@ -7,7 +7,7 @@
     },
     "measure_note": "Bicyclist-involved crash COUNTS by Boston City Council District, 2021-01-01 onward (~5 years, matching DC and Chicago window length as a consistency choice). Source: City of Boston Vision Zero Crash Records (data.boston.gov). NOT exposure-adjusted -- no per-district ridership data available. Boston's VZ data has no e-bike-specific flag. As of 2026 Boston's public crash file no longer includes ANY injury-severity field (no more 'Fatal injury' vs 'Non-fatal injury' vs 'No injury') -- the 'fatal' count here is instead an APPROXIMATE match against Boston's separate Vision Zero Fatality Records file, joined by nearest timestamp (within 6h) and location (within ~1km) since the two files share no common id; this recovers most but not all known bike fatalities, so 'fatal' is a lower bound, and the 'injury' count below is really just 'not matched as fatal', not a confirmed injury. District assigned via point-in-polygon against official City Council District boundaries -- no district field in the crash records directly. 'near_bike_lane' means within ~30m of an OSM-mapped cycleway (infrastructure context, not a cause).",
     "records_excluded_no_geo_or_district": 35,
-    "total_records": 3895,
+    "total_records": 3894,
     "by_ward": [
       {
         "ward": "District 8",
@@ -53,9 +53,9 @@
       },
       {
         "ward": "District 6",
-        "crashes": 137,
+        "crashes": 136,
         "fatal": 0,
-        "injury": 137,
+        "injury": 136,
         "near_bike_lane": 67
       },
       {
@@ -3505,22 +3505,6 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              -71.09544733308992,
-              42.34519968795554
-            ]
-          },
-          "properties": {
-            "ward": "District 8",
-            "fatal": false,
-            "near_bike_lane": true,
-            "date": "2021-10-15"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
               -71.05288183108644,
               42.36572806343412
             ]
@@ -4826,22 +4810,6 @@
             "fatal": false,
             "near_bike_lane": true,
             "date": "2024-04-13"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
-              -71.10439456596154,
-              42.3096155855278
-            ]
-          },
-          "properties": {
-            "ward": "District 6",
-            "fatal": false,
-            "near_bike_lane": false,
-            "date": "2022-10-15"
           }
         },
         {
@@ -14193,6 +14161,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.09988309836629,
+              42.34370262995474
+            ]
+          },
+          "properties": {
+            "ward": "District 8",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2023-09-19"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.03541672274113,
               42.33564961125607
             ]
@@ -15889,22 +15873,6 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              -71.0998830982152,
-              42.34370263011434
-            ]
-          },
-          "properties": {
-            "ward": "District 8",
-            "fatal": false,
-            "near_bike_lane": false,
-            "date": "2023-09-19"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
               -71.08819021665852,
               42.33518916083926
             ]
@@ -16689,6 +16657,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.0954473333671,
+              42.345199687799685
+            ]
+          },
+          "properties": {
+            "ward": "District 8",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2021-10-15"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.05668000182139,
               42.36203200040218
             ]
@@ -16954,6 +16938,22 @@
             "fatal": false,
             "near_bike_lane": true,
             "date": "2023-08-11"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.09687298020927,
+              42.34260452354548
+            ]
+          },
+          "properties": {
+            "ward": "District 8",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2021-09-10"
           }
         },
         {
@@ -21777,22 +21777,6 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              -71.09687298013782,
-              42.34260452360701
-            ]
-          },
-          "properties": {
-            "ward": "District 8",
-            "fatal": false,
-            "near_bike_lane": false,
-            "date": "2021-09-10"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
               -71.14019979651509,
               42.348634388663505
             ]
@@ -23453,78 +23437,85 @@
         "electric_bike_trips": 128860,
         "classic_bike_trips": 303815,
         "electric_bike_share": 0.298
+      },
+      {
+        "month": "202606",
+        "total_trips": 515776,
+        "electric_bike_trips": 135472,
+        "classic_bike_trips": 380304,
+        "electric_bike_share": 0.263
       }
     ]
   },
   "ward_exposure": {
     "window": {
       "start": "2026-02-01",
-      "end": "2026-05-31"
+      "end": "2026-06-30"
     },
-    "unmapped_trips": 520851,
+    "unmapped_trips": 725781,
     "measure_note": "NOT a true risk-per-rider rate -- same caveat as DC and Chicago. Numerator (crashes) includes ALL cyclists; denominator (Bluebikes trips) is Bluebikes' fleet only. Read as 'crash activity relative to Bluebikes activity', not 'risk per cyclist'.",
     "by_ward": [
       {
         "ward": "District 1",
         "crashes_in_window": 0,
-        "bluebikes_trips_in_window": 100049,
-        "bluebikes_ebike_trips_in_window": 36922,
+        "bluebikes_trips_in_window": 153611,
+        "bluebikes_ebike_trips_in_window": 52058,
         "crashes_per_1000_bluebikes_trips": 0.0
       },
       {
         "ward": "District 2",
         "crashes_in_window": 0,
-        "bluebikes_trips_in_window": 161260,
-        "bluebikes_ebike_trips_in_window": 59239,
+        "bluebikes_trips_in_window": 237827,
+        "bluebikes_ebike_trips_in_window": 81803,
         "crashes_per_1000_bluebikes_trips": 0.0
       },
       {
         "ward": "District 3",
         "crashes_in_window": 0,
-        "bluebikes_trips_in_window": 40152,
-        "bluebikes_ebike_trips_in_window": 15563,
+        "bluebikes_trips_in_window": 58281,
+        "bluebikes_ebike_trips_in_window": 21373,
         "crashes_per_1000_bluebikes_trips": 0.0
       },
       {
         "ward": "District 4",
         "crashes_in_window": 0,
-        "bluebikes_trips_in_window": 4691,
-        "bluebikes_ebike_trips_in_window": 3036,
+        "bluebikes_trips_in_window": 6927,
+        "bluebikes_ebike_trips_in_window": 4406,
         "crashes_per_1000_bluebikes_trips": 0.0
       },
       {
         "ward": "District 5",
         "crashes_in_window": 0,
-        "bluebikes_trips_in_window": 2444,
-        "bluebikes_ebike_trips_in_window": 1433,
+        "bluebikes_trips_in_window": 3912,
+        "bluebikes_ebike_trips_in_window": 2245,
         "crashes_per_1000_bluebikes_trips": 0.0
       },
       {
         "ward": "District 6",
         "crashes_in_window": 0,
-        "bluebikes_trips_in_window": 22139,
-        "bluebikes_ebike_trips_in_window": 8374,
+        "bluebikes_trips_in_window": 32436,
+        "bluebikes_ebike_trips_in_window": 11855,
         "crashes_per_1000_bluebikes_trips": 0.0
       },
       {
         "ward": "District 7",
         "crashes_in_window": 0,
-        "bluebikes_trips_in_window": 56567,
-        "bluebikes_ebike_trips_in_window": 17135,
+        "bluebikes_trips_in_window": 80194,
+        "bluebikes_ebike_trips_in_window": 23001,
         "crashes_per_1000_bluebikes_trips": 0.0
       },
       {
         "ward": "District 8",
         "crashes_in_window": 0,
-        "bluebikes_trips_in_window": 215173,
-        "bluebikes_ebike_trips_in_window": 68548,
+        "bluebikes_trips_in_window": 311866,
+        "bluebikes_ebike_trips_in_window": 92262,
         "crashes_per_1000_bluebikes_trips": 0.0
       },
       {
         "ward": "District 9",
         "crashes_in_window": 0,
-        "bluebikes_trips_in_window": 68068,
-        "bluebikes_ebike_trips_in_window": 23567,
+        "bluebikes_trips_in_window": 96335,
+        "bluebikes_ebike_trips_in_window": 32080,
         "crashes_per_1000_bluebikes_trips": 0.0
       }
     ]
