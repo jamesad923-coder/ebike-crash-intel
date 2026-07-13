@@ -13,6 +13,55 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -92.4630182,
+          44.0234387
+        ]
+      },
+      "properties": {
+        "city": "Rochester",
+        "state": "MN",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "Unknown",
+        "confidence_tier": "corroborated",
+        "corroborating_domains": [
+          "power96radio.com",
+          "quickcountry.com",
+          "therockofrochester.com",
+          "y105fm.com"
+        ],
+        "sources": [
+          {
+            "domain": "power96radio.com",
+            "url": "https://power96radio.com/ixp/669/p/suv-versus-ebike-crash-northwest-rochester/",
+            "date": "20260713T061500Z"
+          },
+          {
+            "domain": "quickcountry.com",
+            "url": "https://quickcountry.com/ixp/669/p/suv-versus-ebike-crash-northwest-rochester/",
+            "date": "20260713T053000Z"
+          },
+          {
+            "domain": "therockofrochester.com",
+            "url": "https://therockofrochester.com/ixp/669/p/suv-versus-ebike-crash-northwest-rochester/",
+            "date": "20260713T050000Z"
+          },
+          {
+            "domain": "y105fm.com",
+            "url": "https://y105fm.com/ixp/669/p/suv-versus-ebike-crash-northwest-rochester/",
+            "date": "20260713T044500Z"
+          }
+        ],
+        "date": "20260713T061500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -78.9018053,
           35.996653
         ]
@@ -75,12 +124,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -76.1474244,
-          43.0481221
+          -76.417702,
+          43.2653897
         ]
       },
       "properties": {
-        "city": "Syracuse",
+        "city": "Granby",
         "state": "NY",
         "location_precision": "city_state_mention",
         "device": "E-scooter",
