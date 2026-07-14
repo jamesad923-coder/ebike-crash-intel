@@ -98,30 +98,6 @@
       ]
     },
     {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "dailymail.com",
-      "url": "https://www.dailymail.com/news/article-15958453/Payouts-e-bike-injuries-reaches-100million.html",
-      "seendate": "20260707T114500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "dailymail.com"
-      ],
-      "sources": [
-        {
-          "domain": "dailymail.com",
-          "url": "https://www.dailymail.com/news/article-15958453/Payouts-e-bike-injuries-reaches-100million.html",
-          "date": "20260707T114500Z"
-        }
-      ]
-    },
-    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -180,7 +156,7 @@
       "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "13-17 (teen)",
-      "city": "Clear Gillette",
+      "city": "Sunny Gillette",
       "state": "WY",
       "location_precision": "city_state_mention",
       "located": true,
