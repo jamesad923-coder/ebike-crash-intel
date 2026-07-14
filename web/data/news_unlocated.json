@@ -2,26 +2,26 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
-      "device": "E-scooter",
+      "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Fatality",
+      "outcome": "Injury",
       "age_band": "25-44",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "wpbf.com",
-      "url": "https://www.wpbf.com/article/florida-delray-beach-active-shooter-training/71924262",
-      "seendate": "20260714T051500Z",
+      "domain": "abc6onyourside.com",
+      "url": "https://abc6onyourside.com/news/local/1-injured-after-e-bike-crash-in-northeast-columbus",
+      "seendate": "20260714T161500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "wpbf.com"
+        "abc6onyourside.com"
       ],
       "sources": [
         {
-          "domain": "wpbf.com",
-          "url": "https://www.wpbf.com/article/florida-delray-beach-active-shooter-training/71924262",
-          "date": "20260714T051500Z"
+          "domain": "abc6onyourside.com",
+          "url": "https://abc6onyourside.com/news/local/1-injured-after-e-bike-crash-in-northeast-columbus",
+          "date": "20260714T161500Z"
         }
       ]
     },
