@@ -87,37 +87,6 @@
         ],
         "date": "20260709T161500Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -119.812658,
-          39.5261788
-        ]
-      },
-      "properties": {
-        "city": "Reno",
-        "state": "NV",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Severe injury",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "kolotv.com"
-        ],
-        "sources": [
-          {
-            "domain": "kolotv.com",
-            "url": "https://www.kolotv.com/2026/07/07/e-bike-rider-critical-condition-after-crash-mammoth-lakes/",
-            "date": "20260707T201500Z"
-          }
-        ],
-        "date": "20260707T201500Z"
-      }
     }
   ]
 }

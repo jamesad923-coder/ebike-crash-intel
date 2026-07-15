@@ -150,30 +150,6 @@
           "date": "20260714T000000Z"
         }
       ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "13-17 (teen)",
-      "city": "Sunny Gillette",
-      "state": "WY",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "gillettenewsrecord.com",
-      "url": "https://www.gillettenewsrecord.com/records/crime_blotter/article_d52ee74e-a51a-488d-9a5a-415dcbc83801.html",
-      "seendate": "20260708T033000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "gillettenewsrecord.com"
-      ],
-      "sources": [
-        {
-          "domain": "gillettenewsrecord.com",
-          "url": "https://www.gillettenewsrecord.com/records/crime_blotter/article_d52ee74e-a51a-488d-9a5a-415dcbc83801.html",
-          "date": "20260708T033000Z"
-        }
-      ]
     }
   ]
 }
