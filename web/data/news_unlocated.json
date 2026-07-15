@@ -115,8 +115,7 @@
         "kfilradio.com",
         "kroc.com",
         "power96radio.com",
-        "quickcountry.com",
-        "y105fm.com"
+        "quickcountry.com"
       ],
       "sources": [
         {
@@ -133,11 +132,6 @@
           "domain": "power96radio.com",
           "url": "https://power96radio.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
           "date": "20260714T010000Z"
-        },
-        {
-          "domain": "y105fm.com",
-          "url": "https://y105fm.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-          "date": "20260714T000000Z"
         },
         {
           "domain": "kroc.com",
