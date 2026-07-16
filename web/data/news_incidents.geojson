@@ -27,9 +27,7 @@
         "age_band": "Unknown",
         "confidence_tier": "corroborated",
         "corroborating_domains": [
-          "kroc.com",
           "power96radio.com",
-          "quickcountry.com",
           "therockofrochester.com",
           "y105fm.com"
         ],
@@ -40,11 +38,6 @@
             "date": "20260713T061500Z"
           },
           {
-            "domain": "quickcountry.com",
-            "url": "https://quickcountry.com/ixp/669/p/suv-versus-ebike-crash-northwest-rochester/",
-            "date": "20260713T053000Z"
-          },
-          {
             "domain": "therockofrochester.com",
             "url": "https://therockofrochester.com/ixp/669/p/suv-versus-ebike-crash-northwest-rochester/",
             "date": "20260713T050000Z"
@@ -53,11 +46,6 @@
             "domain": "y105fm.com",
             "url": "https://y105fm.com/ixp/669/p/suv-versus-ebike-crash-northwest-rochester/",
             "date": "20260713T044500Z"
-          },
-          {
-            "domain": "kroc.com",
-            "url": "https://kroc.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-            "date": "20260714T000000Z"
           }
         ],
         "date": "20260713T061500Z"
