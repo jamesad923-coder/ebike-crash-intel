@@ -33,6 +33,13 @@ ROOT = Path(__file__).resolve().parents[2]
 WEB = ROOT / "web"
 
 BASE_URL = "https://jamesad923-coder.github.io/ebike-crash-intel"
+
+# Anonymous, cookieless page-view counting (GoatCounter) -- the honest
+# middle ground between "no tracking" and flying blind on whether outreach
+# recipients ever open these pages. No personal data; copy on /about/
+# says exactly what is collected.
+GC_SCRIPT = ('<script data-goatcounter="https://crashatlas.goatcounter.com/count" '
+             'async src="//gc.zgo.at/count.js"></script>')
 REPO_URL = "https://github.com/jamesad923-coder/ebike-crash-intel"
 CONTACT_EMAIL = "jamesad923@gmail.com"
 
@@ -326,6 +333,7 @@ document.querySelectorAll(".cell-card").forEach(el => el.addEventListener("click
   map.flyTo({{ center: c.center, zoom: 14.5 }});
 }}));
 </script>
+{GC_SCRIPT}
 </body></html>"""
 
 

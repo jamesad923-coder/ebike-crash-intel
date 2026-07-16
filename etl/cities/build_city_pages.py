@@ -31,6 +31,13 @@ CITIES_DIR = WEB / "cities"
 
 # Site config -- swap BASE_URL when a custom domain lands (one line).
 BASE_URL = "https://jamesad923-coder.github.io/ebike-crash-intel"
+
+# Anonymous, cookieless page-view counting (GoatCounter) -- the honest
+# middle ground between "no tracking" and flying blind on whether outreach
+# recipients ever open these pages. No personal data; copy on /about/
+# says exactly what is collected.
+GC_SCRIPT = ('<script data-goatcounter="https://crashatlas.goatcounter.com/count" '
+             'async src="//gc.zgo.at/count.js"></script>')
 SITE_NAME = "Crash Atlas"
 REPO_URL = "https://github.com/jamesad923-coder/ebike-crash-intel"
 # Where the "request a data brief" CTA points.
@@ -314,7 +321,8 @@ Source: NHTSA Fatality Analysis Reporting System (FARS), {y0}–{y1} national fi
 Methodology and every data source documented in
 <a href="{REPO_URL}/blob/main/DATA_SOURCES.md">DATA_SOURCES.md</a>.
 Generated {meta["generated"]} · <a href="../../../about/">our story</a> ·
-<a href="{REPO_URL}">open source</a> · no tracking on this site.
+<a href="{REPO_URL}">open source</a> · anonymous, cookieless visit counts
+only (<a href="../../../about/">what we measure</a>).
 </footer>
 </div>
 
@@ -342,6 +350,7 @@ fetch("../../../data/news_incidents.geojson").then(r => r.json()).then(d => {{
   }}).join("");
 }}).catch(() => {{}});
 </script>
+{GC_SCRIPT}
 </body></html>"""
 
 
@@ -420,6 +429,7 @@ input.addEventListener("input", () => {{
   noMatch.style.display = (q && !shown) ? "" : "none";
 }});
 </script>
+{GC_SCRIPT}
 </body></html>"""
 
 
