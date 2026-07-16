@@ -5,7 +5,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "0-12 (child)",
+      "age_band": "25-44",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -22,30 +22,6 @@
           "domain": "abc6onyourside.com",
           "url": "https://abc6onyourside.com/news/local/1-injured-after-e-bike-crash-in-northeast-columbus",
           "date": "20260714T161500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "65+",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "fox11online.com",
-      "url": "https://fox11online.com/news/local/e-bike-fire-believed-to-spark-ledgeview-duplex-blaze-cat-and-dog-rescued-electric-river-point-court-garage-pets-de-pere-smoke-flames-brown-county",
-      "seendate": "20260713T180000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "fox11online.com"
-      ],
-      "sources": [
-        {
-          "domain": "fox11online.com",
-          "url": "https://fox11online.com/news/local/e-bike-fire-believed-to-spark-ledgeview-duplex-blaze-cat-and-dog-rescued-electric-river-point-court-garage-pets-de-pere-smoke-flames-brown-county",
-          "date": "20260713T180000Z"
         }
       ]
     },
@@ -77,53 +53,23 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "quickcountry.com",
-      "url": "https://quickcountry.com/ixp/669/p/suv-versus-ebike-crash-northwest-rochester/",
-      "seendate": "20260713T053000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "quickcountry.com"
-      ],
-      "sources": [
-        {
-          "domain": "quickcountry.com",
-          "url": "https://quickcountry.com/ixp/669/p/suv-versus-ebike-crash-northwest-rochester/",
-          "date": "20260713T053000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
       "age_band": "0-12 (child)",
       "city": "Twitter Rochester",
       "state": "MN",
       "location_precision": "city_state_mention",
       "located": true,
-      "domain": "kfilradio.com",
-      "url": "https://kfilradio.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-      "seendate": "20260713T230000Z",
+      "domain": "kdhlradio.com",
+      "url": "https://kdhlradio.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
+      "seendate": "20260713T210000Z",
       "confidence_tier": "corroborated",
       "corroborating_domains": [
         "kdhlradio.com",
-        "kfilradio.com",
         "kroc.com",
         "power96radio.com",
         "quickcountry.com",
         "y105fm.com"
       ],
       "sources": [
-        {
-          "domain": "kfilradio.com",
-          "url": "https://kfilradio.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-          "date": "20260713T230000Z"
-        },
         {
           "domain": "kdhlradio.com",
           "url": "https://kdhlradio.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
@@ -148,6 +94,30 @@
           "domain": "quickcountry.com",
           "url": "https://quickcountry.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
           "date": "20260714T000000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": "Downtown Rochester",
+      "state": "MN",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "kfilradio.com",
+      "url": "https://kfilradio.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
+      "seendate": "20260713T230000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "kfilradio.com"
+      ],
+      "sources": [
+        {
+          "domain": "kfilradio.com",
+          "url": "https://kfilradio.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
+          "date": "20260713T230000Z"
         }
       ]
     }

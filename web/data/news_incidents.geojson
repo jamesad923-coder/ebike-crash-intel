@@ -28,6 +28,7 @@
         "confidence_tier": "corroborated",
         "corroborating_domains": [
           "power96radio.com",
+          "quickcountry.com",
           "therockofrochester.com",
           "y105fm.com"
         ],
@@ -36,6 +37,11 @@
             "domain": "power96radio.com",
             "url": "https://power96radio.com/ixp/669/p/suv-versus-ebike-crash-northwest-rochester/",
             "date": "20260713T061500Z"
+          },
+          {
+            "domain": "quickcountry.com",
+            "url": "https://quickcountry.com/ixp/669/p/suv-versus-ebike-crash-northwest-rochester/",
+            "date": "20260713T053000Z"
           },
           {
             "domain": "therockofrochester.com",
