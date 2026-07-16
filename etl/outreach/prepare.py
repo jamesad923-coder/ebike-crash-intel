@@ -67,17 +67,31 @@ def ensure_report(slug: str) -> dict:
 def make_pdf(slug: str, city: str, dest: Path) -> str:
     """Print the report to PDF via headless Chrome. Prefers the LIVE url
     (what we attach should be exactly what the emailed link shows);
-    falls back to the local file if offline."""
+    falls back to the local file if the live page isn't up yet.
+
+    The live URL is only used after an HTTP 200 check: Chrome happily
+    prints GitHub Pages' 404 page to a plausible-sized PDF, which is how
+    three brand-new cities (reports built locally, not yet deployed) once
+    got identical 48KB '404' PDFs packaged for outreach."""
     name = f"Crash-Atlas-{city.replace(' ', '-')}-Safety-Data-Report.pdf"
     out = dest / name
-    for src in (f"{BASE_URL}/reports/{slug}/",
-                (WEB / "reports" / slug / "index.html").as_uri()):
+    live = f"{BASE_URL}/reports/{slug}/"
+    sources = [(WEB / "reports" / slug / "index.html").as_uri()]
+    try:
+        import urllib.request
+        req = urllib.request.Request(live, method="HEAD",
+                                     headers={"User-Agent": "crash-atlas-outreach"})
+        if urllib.request.urlopen(req, timeout=15).status == 200:
+            sources.insert(0, live)
+    except Exception:
+        pass  # live not reachable/not deployed -> local file only
+    for src in sources:
         r = subprocess.run(
             [CHROME, "--headless=new", "--disable-gpu", "--no-pdf-header-footer",
              f"--print-to-pdf={out}", src],
             capture_output=True, timeout=90)
         if r.returncode == 0 and out.exists() and out.stat().st_size > 20000:
-            return name + ("" if src.startswith("http") else "  [from LOCAL file -- live site unreachable]")
+            return name + ("" if src.startswith("http") else "  [from LOCAL file -- live page not deployed yet]")
     return f"PDF FAILED -- print manually: {BASE_URL}/reports/{slug}/  (Cmd+P > Save as PDF)"
 
 
