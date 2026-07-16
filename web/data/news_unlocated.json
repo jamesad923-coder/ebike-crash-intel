@@ -5,7 +5,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "65+",
+      "age_band": "18-24",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -52,6 +52,30 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wwmt.com",
+      "url": "https://wwmt.com/news/local/kid-e-bike-hit-car-battle-creek-boy-teen-driver-16-girl-hurt-injured-west-eagle-street-hospital-4th-july-riding-ride-michigan-wwmt",
+      "seendate": "20260710T031500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wwmt.com"
+      ],
+      "sources": [
+        {
+          "domain": "wwmt.com",
+          "url": "https://wwmt.com/news/local/kid-e-bike-hit-car-battle-creek-boy-teen-driver-16-girl-hurt-injured-west-eagle-street-hospital-4th-july-riding-ride-michigan-wwmt",
+          "date": "20260710T031500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "0-12 (child)",
       "city": "Twitter Rochester",
@@ -65,6 +89,7 @@
       "corroborating_domains": [
         "kdhlradio.com",
         "kfilradio.com",
+        "kroc.com",
         "power96radio.com",
         "quickcountry.com",
         "y105fm.com"
@@ -91,9 +116,29 @@
           "date": "20260714T000000Z"
         },
         {
+          "domain": "kroc.com",
+          "url": "https://kroc.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
+          "date": "20260714T000000Z"
+        },
+        {
           "domain": "quickcountry.com",
           "url": "https://quickcountry.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
           "date": "20260714T000000Z"
+        },
+        {
+          "domain": "kfilradio.com",
+          "url": "https://kfilradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
+          "date": "20260716T174500Z"
+        },
+        {
+          "domain": "y105fm.com",
+          "url": "https://y105fm.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
+          "date": "20260716T174500Z"
+        },
+        {
+          "domain": "kdhlradio.com",
+          "url": "https://kdhlradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
+          "date": "20260716T161500Z"
         }
       ]
     }

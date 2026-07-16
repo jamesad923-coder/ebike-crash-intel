@@ -27,7 +27,6 @@
         "age_band": "Unknown",
         "confidence_tier": "corroborated",
         "corroborating_domains": [
-          "kroc.com",
           "power96radio.com",
           "quickcountry.com",
           "therockofrochester.com",
@@ -53,45 +52,9 @@
             "domain": "y105fm.com",
             "url": "https://y105fm.com/ixp/669/p/suv-versus-ebike-crash-northwest-rochester/",
             "date": "20260713T044500Z"
-          },
-          {
-            "domain": "kroc.com",
-            "url": "https://kroc.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-            "date": "20260714T000000Z"
           }
         ],
         "date": "20260713T061500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.9018053,
-          35.996653
-        ]
-      },
-      "properties": {
-        "city": "Durham",
-        "state": "NC",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "abc11.com"
-        ],
-        "sources": [
-          {
-            "domain": "abc11.com",
-            "url": "https://abc11.com/post/joseph-savarino-man-charged-death-teen-jack-oshea-was-bike-when-he-hit-enter-indictment-plea/19474681/",
-            "date": "20260709T161500Z"
-          }
-        ],
-        "date": "20260709T161500Z"
       }
     }
   ]
