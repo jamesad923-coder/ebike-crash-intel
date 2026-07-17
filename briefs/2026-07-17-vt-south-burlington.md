@@ -14,7 +14,7 @@ automated news scanning and is **not independently verified**.*
 ## What was detected
 
 - Reported: **E-bike**, outcome coded
-  “Injury”, age band Unknown.
+  “Injury”, age band 13-17 (teen).
 - Confidence: single news source — treat as unconfirmed.
 - Location precision: `city_state_mention` (automated
   keyword extraction, not human-read).
