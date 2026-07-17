@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -73.176273,
+          44.4642957
+        ]
+      },
+      "properties": {
+        "city": "South Burlington",
+        "state": "VT",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "Unknown",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "wcax.com"
+        ],
+        "sources": [
+          {
+            "domain": "wcax.com",
+            "url": "https://www.wcax.com/2026/07/16/e-bike-crash-leaves-woman-seriously-injured-burlington/",
+            "date": "20260717T041500Z"
+          }
+        ],
+        "date": "20260717T041500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -90.0733934,
           29.9561422
         ]

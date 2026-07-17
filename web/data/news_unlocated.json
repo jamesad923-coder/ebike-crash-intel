@@ -29,7 +29,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "18-24",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -126,13 +126,13 @@
           "date": "20260714T000000Z"
         },
         {
-          "domain": "kfilradio.com",
-          "url": "https://kfilradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
+          "domain": "y105fm.com",
+          "url": "https://y105fm.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
           "date": "20260716T174500Z"
         },
         {
-          "domain": "y105fm.com",
-          "url": "https://y105fm.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
+          "domain": "kfilradio.com",
+          "url": "https://kfilradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
           "date": "20260716T174500Z"
         },
         {
