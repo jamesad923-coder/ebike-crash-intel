@@ -126,6 +126,30 @@
       "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "0-12 (child)",
+      "city": "Johns County",
+      "state": "FL",
+      "location_precision": "county+outlet_market",
+      "located": true,
+      "domain": "news4jax.com",
+      "url": "https://www.news4jax.com/news/local/2026/07/17/family-of-7-displaced-after-e-bike-sparks-fire-in-garage-of-st-johns-county-home-turns-to-the-community-for-support/",
+      "seendate": "20260717T230000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "news4jax.com"
+      ],
+      "sources": [
+        {
+          "domain": "news4jax.com",
+          "url": "https://www.news4jax.com/news/local/2026/07/17/family-of-7-displaced-after-e-bike-sparks-fire-in-garage-of-st-johns-county-home-turns-to-the-community-for-support/",
+          "date": "20260717T230000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
       "city": "Twitter Rochester",
       "state": "MN",
       "location_precision": "city_state_mention",
