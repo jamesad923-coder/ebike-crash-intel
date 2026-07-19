@@ -125,7 +125,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "0-12 (child)",
+      "age_band": "13-17 (teen)",
       "city": "Johns County",
       "state": "FL",
       "location_precision": "county+outlet_market",
@@ -163,8 +163,7 @@
         "kfilradio.com",
         "kroc.com",
         "power96radio.com",
-        "quickcountry.com",
-        "y105fm.com"
+        "quickcountry.com"
       ],
       "sources": [
         {
@@ -183,11 +182,6 @@
           "date": "20260714T010000Z"
         },
         {
-          "domain": "y105fm.com",
-          "url": "https://y105fm.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-          "date": "20260714T000000Z"
-        },
-        {
           "domain": "kroc.com",
           "url": "https://kroc.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
           "date": "20260714T000000Z"
@@ -196,11 +190,6 @@
           "domain": "quickcountry.com",
           "url": "https://quickcountry.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
           "date": "20260714T000000Z"
-        },
-        {
-          "domain": "y105fm.com",
-          "url": "https://y105fm.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
-          "date": "20260716T174500Z"
         },
         {
           "domain": "kfilradio.com",
