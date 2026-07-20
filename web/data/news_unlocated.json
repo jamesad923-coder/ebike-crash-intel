@@ -5,6 +5,30 @@
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
+      "age_band": "18-24",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "lewistownsentinel.com",
+      "url": "https://www.lewistownsentinel.com/news/local-news/2026/07/police-reports-596/",
+      "seendate": "20260720T060000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "lewistownsentinel.com"
+      ],
+      "sources": [
+        {
+          "domain": "lewistownsentinel.com",
+          "url": "https://www.lewistownsentinel.com/news/local-news/2026/07/police-reports-596/",
+          "date": "20260720T060000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
       "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
@@ -46,30 +70,6 @@
           "domain": "abc7.com",
           "url": "https://abc7.com/post/21-year-old-charged-vehicular-manslaughter-oc-car-surfing-crash-killed-beloved-surfer/19422028/",
           "date": "20260719T144500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nydailynews.com",
-      "url": "https://www.nydailynews.com/2026/07/18/readers-sound-off-on-banning-horse-carriages-church-property-and-donor-organs/",
-      "seendate": "20260718T100000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nydailynews.com"
-      ],
-      "sources": [
-        {
-          "domain": "nydailynews.com",
-          "url": "https://www.nydailynews.com/2026/07/18/readers-sound-off-on-banning-horse-carriages-church-property-and-donor-organs/",
-          "date": "20260718T100000Z"
         }
       ]
     },
@@ -170,6 +170,30 @@
       ]
     },
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "13-17 (teen)",
+      "city": "PDT Milton",
+      "state": "WA",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "kiro7.com",
+      "url": "https://www.kiro7.com/news/local/15-year-old-seriously-injured-e-scooter-crash/LQDT7NVXKVEURIWYTRVGC4EUAU/",
+      "seendate": "20260720T050000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "kiro7.com"
+      ],
+      "sources": [
+        {
+          "domain": "kiro7.com",
+          "url": "https://www.kiro7.com/news/local/15-year-old-seriously-injured-e-scooter-crash/LQDT7NVXKVEURIWYTRVGC4EUAU/",
+          "date": "20260720T050000Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -209,7 +233,6 @@
       "corroborating_domains": [
         "kdhlradio.com",
         "kfilradio.com",
-        "kroc.com",
         "power96radio.com",
         "quickcountry.com",
         "y105fm.com"
@@ -236,11 +259,6 @@
           "date": "20260714T000000Z"
         },
         {
-          "domain": "kroc.com",
-          "url": "https://kroc.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-          "date": "20260714T000000Z"
-        },
-        {
           "domain": "quickcountry.com",
           "url": "https://quickcountry.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
           "date": "20260714T000000Z"
@@ -259,6 +277,30 @@
           "domain": "kdhlradio.com",
           "url": "https://kdhlradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
           "date": "20260716T161500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": "In Rochester",
+      "state": "MN",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "kroc.com",
+      "url": "https://kroc.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
+      "seendate": "20260714T000000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "kroc.com"
+      ],
+      "sources": [
+        {
+          "domain": "kroc.com",
+          "url": "https://kroc.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
+          "date": "20260714T000000Z"
         }
       ]
     }
