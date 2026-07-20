@@ -76,6 +76,30 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nydailynews.com",
+      "url": "https://www.nydailynews.com/2026/07/18/readers-sound-off-on-banning-horse-carriages-church-property-and-donor-organs/",
+      "seendate": "20260718T100000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nydailynews.com"
+      ],
+      "sources": [
+        {
+          "domain": "nydailynews.com",
+          "url": "https://www.nydailynews.com/2026/07/18/readers-sound-off-on-banning-horse-carriages-church-property-and-donor-organs/",
+          "date": "20260718T100000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Severe injury",
       "age_band": "25-44",
       "city": null,
@@ -198,30 +222,6 @@
       "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "0-12 (child)",
-      "city": "Johns County",
-      "state": "FL",
-      "location_precision": "county+outlet_market",
-      "located": true,
-      "domain": "news4jax.com",
-      "url": "https://www.news4jax.com/news/local/2026/07/17/family-of-7-displaced-after-e-bike-sparks-fire-in-garage-of-st-johns-county-home-turns-to-the-community-for-support/",
-      "seendate": "20260717T230000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "news4jax.com"
-      ],
-      "sources": [
-        {
-          "domain": "news4jax.com",
-          "url": "https://www.news4jax.com/news/local/2026/07/17/family-of-7-displaced-after-e-bike-sparks-fire-in-garage-of-st-johns-county-home-turns-to-the-community-for-support/",
-          "date": "20260717T230000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
       "city": "Twitter Rochester",
       "state": "MN",
       "location_precision": "city_state_mention",
@@ -233,6 +233,7 @@
       "corroborating_domains": [
         "kdhlradio.com",
         "kfilradio.com",
+        "kroc.com",
         "power96radio.com",
         "quickcountry.com",
         "y105fm.com"
@@ -259,14 +260,14 @@
           "date": "20260714T000000Z"
         },
         {
-          "domain": "quickcountry.com",
-          "url": "https://quickcountry.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
+          "domain": "kroc.com",
+          "url": "https://kroc.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
           "date": "20260714T000000Z"
         },
         {
-          "domain": "y105fm.com",
-          "url": "https://y105fm.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
-          "date": "20260716T174500Z"
+          "domain": "quickcountry.com",
+          "url": "https://quickcountry.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
+          "date": "20260714T000000Z"
         },
         {
           "domain": "kfilradio.com",
@@ -277,30 +278,6 @@
           "domain": "kdhlradio.com",
           "url": "https://kdhlradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
           "date": "20260716T161500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": "In Rochester",
-      "state": "MN",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "kroc.com",
-      "url": "https://kroc.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-      "seendate": "20260714T000000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "kroc.com"
-      ],
-      "sources": [
-        {
-          "domain": "kroc.com",
-          "url": "https://kroc.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-          "date": "20260714T000000Z"
         }
       ]
     }
