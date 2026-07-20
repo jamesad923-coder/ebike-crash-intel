@@ -2,6 +2,30 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "komonews.com",
+      "url": "https://komonews.com/news/local/15-year-old-boy-seriously-hurt-after-crashing-e-scooter-into-car-in-pierce-county",
+      "seendate": "20260720T013000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "komonews.com"
+      ],
+      "sources": [
+        {
+          "domain": "komonews.com",
+          "url": "https://komonews.com/news/local/15-year-old-boy-seriously-hurt-after-crashing-e-scooter-into-car-in-pierce-county",
+          "date": "20260720T013000Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -142,6 +166,30 @@
           "domain": "kwayradio.com",
           "url": "https://kwayradio.com/waverly-teen-hospitalized-from-e-bike-crash/",
           "date": "20260713T173000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": "Johns County",
+      "state": "FL",
+      "location_precision": "county+outlet_market",
+      "located": true,
+      "domain": "news4jax.com",
+      "url": "https://www.news4jax.com/news/local/2026/07/17/family-of-7-displaced-after-e-bike-sparks-fire-in-garage-of-st-johns-county-home-turns-to-the-community-for-support/",
+      "seendate": "20260717T230000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "news4jax.com"
+      ],
+      "sources": [
+        {
+          "domain": "news4jax.com",
+          "url": "https://www.news4jax.com/news/local/2026/07/17/family-of-7-displaced-after-e-bike-sparks-fire-in-garage-of-st-johns-county-home-turns-to-the-community-for-support/",
+          "date": "20260717T230000Z"
         }
       ]
     },
