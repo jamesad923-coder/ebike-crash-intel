@@ -149,47 +149,23 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "abc6onyourside.com",
-      "url": "https://abc6onyourside.com/news/local/1-injured-after-e-bike-crash-in-northeast-columbus",
-      "seendate": "20260714T161500Z",
+      "age_band": "25-44",
+      "city": "Baltimore",
+      "state": "DC",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "miragenews.com",
+      "url": "https://www.miragenews.com/e-bike-crash-in-dee-why-passenger-critically-1713743/",
+      "seendate": "20260721T160000Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "abc6onyourside.com"
+        "miragenews.com"
       ],
       "sources": [
         {
-          "domain": "abc6onyourside.com",
-          "url": "https://abc6onyourside.com/news/local/1-injured-after-e-bike-crash-in-northeast-columbus",
-          "date": "20260714T161500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "18-24",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "kwayradio.com",
-      "url": "https://kwayradio.com/waverly-teen-hospitalized-from-e-bike-crash/",
-      "seendate": "20260713T173000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "kwayradio.com"
-      ],
-      "sources": [
-        {
-          "domain": "kwayradio.com",
-          "url": "https://kwayradio.com/waverly-teen-hospitalized-from-e-bike-crash/",
-          "date": "20260713T173000Z"
+          "domain": "miragenews.com",
+          "url": "https://www.miragenews.com/e-bike-crash-in-dee-why-passenger-critically-1713743/",
+          "date": "20260721T160000Z"
         }
       ]
     },
@@ -214,70 +190,6 @@
           "domain": "kiro7.com",
           "url": "https://www.kiro7.com/news/local/15-year-old-seriously-injured-e-scooter-crash/LQDT7NVXKVEURIWYTRVGC4EUAU/",
           "date": "20260720T050000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": "Twitter Rochester",
-      "state": "MN",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "kfilradio.com",
-      "url": "https://kfilradio.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-      "seendate": "20260713T230000Z",
-      "confidence_tier": "corroborated",
-      "corroborating_domains": [
-        "kdhlradio.com",
-        "kfilradio.com",
-        "kroc.com",
-        "power96radio.com",
-        "quickcountry.com",
-        "y105fm.com"
-      ],
-      "sources": [
-        {
-          "domain": "kfilradio.com",
-          "url": "https://kfilradio.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-          "date": "20260713T230000Z"
-        },
-        {
-          "domain": "kdhlradio.com",
-          "url": "https://kdhlradio.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-          "date": "20260713T210000Z"
-        },
-        {
-          "domain": "power96radio.com",
-          "url": "https://power96radio.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-          "date": "20260714T010000Z"
-        },
-        {
-          "domain": "y105fm.com",
-          "url": "https://y105fm.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-          "date": "20260714T000000Z"
-        },
-        {
-          "domain": "kroc.com",
-          "url": "https://kroc.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-          "date": "20260714T000000Z"
-        },
-        {
-          "domain": "quickcountry.com",
-          "url": "https://quickcountry.com/ixp/669/p/rochester-e-bike-crash-victim-identified/",
-          "date": "20260714T000000Z"
-        },
-        {
-          "domain": "kfilradio.com",
-          "url": "https://kfilradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
-          "date": "20260716T174500Z"
-        },
-        {
-          "domain": "kdhlradio.com",
-          "url": "https://kdhlradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
-          "date": "20260716T161500Z"
         }
       ]
     }

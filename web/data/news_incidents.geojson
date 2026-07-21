@@ -13,6 +13,99 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -77.615214,
+          43.157285
+        ]
+      },
+      "properties": {
+        "city": "Rochester",
+        "state": "NY",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "25-44",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "13wham.com"
+        ],
+        "sources": [
+          {
+            "domain": "13wham.com",
+            "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
+            "date": "20260721T033000Z"
+          }
+        ],
+        "date": "20260721T033000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.176273,
+          44.4642957
+        ]
+      },
+      "properties": {
+        "city": "South Burlington",
+        "state": "VT",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "wcax.com"
+        ],
+        "sources": [
+          {
+            "domain": "wcax.com",
+            "url": "https://www.wcax.com/2026/07/20/friends-remember-16-year-old-killed-burlington-e-bike-crash-last-week/",
+            "date": "20260720T230000Z"
+          }
+        ],
+        "date": "20260720T230000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.049981,
+          40.0502623
+        ]
+      },
+      "properties": {
+        "city": "Erie",
+        "state": "CO",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Severe injury",
+        "throttle_ambiguous": true,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "coloradohometownweekly.com"
+        ],
+        "sources": [
+          {
+            "domain": "coloradohometownweekly.com",
+            "url": "https://www.coloradohometownweekly.com/2026/07/20/emoto-ebike-longmont-illegal-riding-police/",
+            "date": "20260720T174500Z"
+          }
+        ],
+        "date": "20260720T174500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -73.176273,
           44.4642957
         ]
@@ -68,6 +161,49 @@
           }
         ],
         "date": "20260717T024500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.4630182,
+          44.0234387
+        ]
+      },
+      "properties": {
+        "city": "Rochester",
+        "state": "MN",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "Unknown",
+        "confidence_tier": "corroborated",
+        "corroborating_domains": [
+          "kdhlradio.com",
+          "kfilradio.com",
+          "y105fm.com"
+        ],
+        "sources": [
+          {
+            "domain": "y105fm.com",
+            "url": "https://y105fm.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
+            "date": "20260716T174500Z"
+          },
+          {
+            "domain": "kfilradio.com",
+            "url": "https://kfilradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
+            "date": "20260716T174500Z"
+          },
+          {
+            "domain": "kdhlradio.com",
+            "url": "https://kdhlradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
+            "date": "20260716T161500Z"
+          }
+        ],
+        "date": "20260716T174500Z"
       }
     }
   ]
