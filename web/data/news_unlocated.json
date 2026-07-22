@@ -2,6 +2,30 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "Throttle vehicle (unclear e-bike classification)",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "abc7chicago.com",
+      "url": "https://abc7chicago.com/post/teen-boy-riding-dirt-bike-killed-wauconda-crash-north-main-street/19556691/",
+      "seendate": "20260722T163000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "abc7chicago.com"
+      ],
+      "sources": [
+        {
+          "domain": "abc7chicago.com",
+          "url": "https://abc7chicago.com/post/teen-boy-riding-dirt-bike-killed-wauconda-crash-north-main-street/19556691/",
+          "date": "20260722T163000Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -46,30 +70,6 @@
           "domain": "miragenews.com",
           "url": "https://www.miragenews.com/e-bike-crash-in-dee-why-passenger-critically-1713743/",
           "date": "20260721T160000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "clickorlando.com",
-      "url": "https://www.clickorlando.com/news/local/2026/07/21/parents-split-as-orange-county-public-schools-considers-elementary-ban-on-e-bikes-e-scooters/",
-      "seendate": "20260721T144500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "clickorlando.com"
-      ],
-      "sources": [
-        {
-          "domain": "clickorlando.com",
-          "url": "https://www.clickorlando.com/news/local/2026/07/21/parents-split-as-orange-county-public-schools-considers-elementary-ban-on-e-bikes-e-scooters/",
-          "date": "20260721T144500Z"
         }
       ]
     },
@@ -190,30 +190,6 @@
           "domain": "runnersworld.com",
           "url": "https://www.runnersworld.com/news/a73172935/runner-ebike-crash-central-park/",
           "date": "20260717T233000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "clickorlando.com",
-      "url": "https://www.clickorlando.com/news/local/2026/07/16/orange-county-man-accused-of-striking-11-year-old-on-e-bike-smashing-his-phone/",
-      "seendate": "20260716T230000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "clickorlando.com"
-      ],
-      "sources": [
-        {
-          "domain": "clickorlando.com",
-          "url": "https://www.clickorlando.com/news/local/2026/07/16/orange-county-man-accused-of-striking-11-year-old-on-e-bike-smashing-his-phone/",
-          "date": "20260716T230000Z"
         }
       ]
     },
