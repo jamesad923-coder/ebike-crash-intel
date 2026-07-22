@@ -50,6 +50,30 @@
       ]
     },
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "clickorlando.com",
+      "url": "https://www.clickorlando.com/news/local/2026/07/21/parents-split-as-orange-county-public-schools-considers-elementary-ban-on-e-bikes-e-scooters/",
+      "seendate": "20260721T144500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "clickorlando.com"
+      ],
+      "sources": [
+        {
+          "domain": "clickorlando.com",
+          "url": "https://www.clickorlando.com/news/local/2026/07/21/parents-split-as-orange-county-public-schools-considers-elementary-ban-on-e-bikes-e-scooters/",
+          "date": "20260721T144500Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -172,6 +196,30 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "clickorlando.com",
+      "url": "https://www.clickorlando.com/news/local/2026/07/16/orange-county-man-accused-of-striking-11-year-old-on-e-bike-smashing-his-phone/",
+      "seendate": "20260716T230000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "clickorlando.com"
+      ],
+      "sources": [
+        {
+          "domain": "clickorlando.com",
+          "url": "https://www.clickorlando.com/news/local/2026/07/16/orange-county-man-accused-of-striking-11-year-old-on-e-bike-smashing-his-phone/",
+          "date": "20260716T230000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "13-17 (teen)",
       "city": null,
@@ -214,30 +262,6 @@
           "domain": "1049thewolf.com",
           "url": "https://www.1049thewolf.com/2026/07/21/ppd-5-year-old-struck-in-peoria-hit-and-run/",
           "date": "20260721T211500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "25-44",
-      "city": "Hospital Newark",
-      "state": "NY",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "13wham.com",
-      "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
-      "seendate": "20260721T033000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "13wham.com"
-      ],
-      "sources": [
-        {
-          "domain": "13wham.com",
-          "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
-          "date": "20260721T033000Z"
         }
       ]
     },
