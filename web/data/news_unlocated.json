@@ -2,6 +2,54 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "mynbc5.com",
+      "url": "https://www.mynbc5.com/article/memorial-teen-killed-burlington-e-bike-crash/73221985",
+      "seendate": "20260721T214500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "mynbc5.com"
+      ],
+      "sources": [
+        {
+          "domain": "mynbc5.com",
+          "url": "https://www.mynbc5.com/article/memorial-teen-killed-burlington-e-bike-crash/73221985",
+          "date": "20260721T214500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "miragenews.com",
+      "url": "https://www.miragenews.com/e-bike-crash-in-dee-why-passenger-critically-1713743/",
+      "seendate": "20260721T160000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "miragenews.com"
+      ],
+      "sources": [
+        {
+          "domain": "miragenews.com",
+          "url": "https://www.miragenews.com/e-bike-crash-in-dee-why-passenger-critically-1713743/",
+          "date": "20260721T160000Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -149,23 +197,23 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "25-44",
-      "city": "Baltimore",
-      "state": "DC",
+      "age_band": "0-12 (child)",
+      "city": "Run Peoria",
+      "state": "IL",
       "location_precision": "city_state_mention",
       "located": true,
-      "domain": "miragenews.com",
-      "url": "https://www.miragenews.com/e-bike-crash-in-dee-why-passenger-critically-1713743/",
-      "seendate": "20260721T160000Z",
+      "domain": "1049thewolf.com",
+      "url": "https://www.1049thewolf.com/2026/07/21/ppd-5-year-old-struck-in-peoria-hit-and-run/",
+      "seendate": "20260721T211500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "miragenews.com"
+        "1049thewolf.com"
       ],
       "sources": [
         {
-          "domain": "miragenews.com",
-          "url": "https://www.miragenews.com/e-bike-crash-in-dee-why-passenger-critically-1713743/",
-          "date": "20260721T160000Z"
+          "domain": "1049thewolf.com",
+          "url": "https://www.1049thewolf.com/2026/07/21/ppd-5-year-old-struck-in-peoria-hit-and-run/",
+          "date": "20260721T211500Z"
         }
       ]
     },
