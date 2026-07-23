@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -86.7742984,
+          36.1622767
+        ]
+      },
+      "properties": {
+        "city": "Nashville",
+        "state": "TN",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "0-12 (child)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "wsmv.com"
+        ],
+        "sources": [
+          {
+            "domain": "wsmv.com",
+            "url": "https://www.wsmv.com/2026/07/23/e-bike-operator-seriously-injured-after-crash-with-vehicle-hopkinsville/",
+            "date": "20260723T153000Z"
+          }
+        ],
+        "date": "20260723T153000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -119.702667,
           34.4221319
         ]
@@ -44,61 +75,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.8272911,
-          41.3775996
+          -77.4759588,
+          43.1301133
         ]
       },
       "properties": {
-        "city": "Westerly",
-        "state": "RI",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "65+",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "turnto10.com"
-        ],
-        "sources": [
-          {
-            "domain": "turnto10.com",
-            "url": "https://turnto10.com/news/local/westerly-residents-voice-growing-concerns-children-riding-e-bikes-facebook-post-social-media-crashes-complaints-july-21-2026",
-            "date": "20260721T220000Z"
-          }
-        ],
-        "date": "20260721T220000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -89.5891008,
-          40.6938609
-        ]
-      },
-      "properties": {
-        "city": "Peoria",
-        "state": "IL",
+        "city": "Penfield",
+        "state": "NY",
         "location_precision": "city_state_mention",
         "device": "E-bike",
         "outcome": "Injury",
         "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
+        "age_band": "Unknown",
         "confidence_tier": "single_source",
         "corroborating_domains": [
-          "mix1069.com"
+          "13wham.com"
         ],
         "sources": [
           {
-            "domain": "mix1069.com",
-            "url": "https://www.mix1069.com/2026/07/21/ppd-5-year-old-struck-in-peoria-hit-and-run/",
-            "date": "20260721T203000Z"
+            "domain": "13wham.com",
+            "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
+            "date": "20260721T033000Z"
           }
         ],
-        "date": "20260721T203000Z"
+        "date": "20260721T033000Z"
       }
     },
     {
@@ -223,43 +223,6 @@
           }
         ],
         "date": "20260717T024500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -92.4630182,
-          44.0234387
-        ]
-      },
-      "properties": {
-        "city": "Rochester",
-        "state": "MN",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "Unknown",
-        "confidence_tier": "corroborated",
-        "corroborating_domains": [
-          "kdhlradio.com",
-          "kfilradio.com"
-        ],
-        "sources": [
-          {
-            "domain": "kfilradio.com",
-            "url": "https://kfilradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
-            "date": "20260716T174500Z"
-          },
-          {
-            "domain": "kdhlradio.com",
-            "url": "https://kdhlradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
-            "date": "20260716T161500Z"
-          }
-        ],
-        "date": "20260716T174500Z"
       }
     }
   ]
