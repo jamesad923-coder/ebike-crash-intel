@@ -13,6 +13,68 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -119.702667,
+          34.4221319
+        ]
+      },
+      "properties": {
+        "city": "Santa Barbara",
+        "state": "CA",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "Unknown",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "noozhawk.com"
+        ],
+        "sources": [
+          {
+            "domain": "noozhawk.com",
+            "url": "https://www.noozhawk.com/adult-e-bike-rider-seriously-injured-in-crash-on-santa-barbaras-westside/",
+            "date": "20260723T020000Z"
+          }
+        ],
+        "date": "20260723T020000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.8272911,
+          41.3775996
+        ]
+      },
+      "properties": {
+        "city": "Westerly",
+        "state": "RI",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "65+",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "turnto10.com"
+        ],
+        "sources": [
+          {
+            "domain": "turnto10.com",
+            "url": "https://turnto10.com/news/local/westerly-residents-voice-growing-concerns-children-riding-e-bikes-facebook-post-social-media-crashes-complaints-july-21-2026",
+            "date": "20260721T220000Z"
+          }
+        ],
+        "date": "20260721T220000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -89.5891008,
           40.6938609
         ]
@@ -37,37 +99,6 @@
           }
         ],
         "date": "20260721T203000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -78.1875515,
-          42.9980144
-        ]
-      },
-      "properties": {
-        "city": "Batavia",
-        "state": "NY",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "65+",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "13wham.com"
-        ],
-        "sources": [
-          {
-            "domain": "13wham.com",
-            "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
-            "date": "20260721T033000Z"
-          }
-        ],
-        "date": "20260721T033000Z"
       }
     },
     {
@@ -214,15 +245,9 @@
         "confidence_tier": "corroborated",
         "corroborating_domains": [
           "kdhlradio.com",
-          "kfilradio.com",
-          "y105fm.com"
+          "kfilradio.com"
         ],
         "sources": [
-          {
-            "domain": "y105fm.com",
-            "url": "https://y105fm.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
-            "date": "20260716T174500Z"
-          },
           {
             "domain": "kfilradio.com",
             "url": "https://kfilradio.com/ixp/669/p/elton-hills-dr-lane-reduction-rochester-mn/",
