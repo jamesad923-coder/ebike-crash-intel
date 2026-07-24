@@ -2,6 +2,54 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "northernvirginiamag.com",
+      "url": "https://northernvirginiamag.com/news/2026/07/24/9-year-old-killed-in-herndon-e-scooter-crash/",
+      "seendate": "20260724T153000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "northernvirginiamag.com"
+      ],
+      "sources": [
+        {
+          "domain": "northernvirginiamag.com",
+          "url": "https://northernvirginiamag.com/news/2026/07/24/9-year-old-killed-in-herndon-e-scooter-crash/",
+          "date": "20260724T153000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wktv.com",
+      "url": "https://www.wktv.com/news/local/11-year-old-girl-hurt-after-electric-scooter-accident-in-camden/article_d17472a0-61f6-49be-9613-1b45e1382706.html",
+      "seendate": "20260723T223000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wktv.com"
+      ],
+      "sources": [
+        {
+          "domain": "wktv.com",
+          "url": "https://www.wktv.com/news/local/11-year-old-girl-hurt-after-electric-scooter-accident-in-camden/article_d17472a0-61f6-49be-9613-1b45e1382706.html",
+          "date": "20260723T223000Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -292,6 +340,30 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nydailynews.com",
+      "url": "https://www.nydailynews.com/2026/07/18/readers-sound-off-on-banning-horse-carriages-church-property-and-donor-organs/",
+      "seendate": "20260718T100000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nydailynews.com"
+      ],
+      "sources": [
+        {
+          "domain": "nydailynews.com",
+          "url": "https://www.nydailynews.com/2026/07/18/readers-sound-off-on-banning-horse-carriages-church-property-and-donor-organs/",
+          "date": "20260718T100000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Severe injury",
       "age_band": "25-44",
       "city": null,
@@ -310,30 +382,6 @@
           "domain": "runnersworld.com",
           "url": "https://www.runnersworld.com/news/a73172935/runner-ebike-crash-central-park/",
           "date": "20260717T233000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "0-12 (child)",
-      "city": "Save CAMDEN",
-      "state": "NY",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "wktv.com",
-      "url": "https://www.wktv.com/news/local/11-year-old-girl-hurt-after-electric-scooter-accident-in-camden/article_d17472a0-61f6-49be-9613-1b45e1382706.html",
-      "seendate": "20260723T223000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wktv.com"
-      ],
-      "sources": [
-        {
-          "domain": "wktv.com",
-          "url": "https://www.wktv.com/news/local/11-year-old-girl-hurt-after-electric-scooter-accident-in-camden/article_d17472a0-61f6-49be-9613-1b45e1382706.html",
-          "date": "20260723T223000Z"
         }
       ]
     },
@@ -365,8 +413,8 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "25-44",
-      "city": "Greenhouses Penfield",
+      "age_band": "0-12 (child)",
+      "city": "Florida Rochester",
       "state": "NY",
       "location_precision": "city_state_mention",
       "located": true,
