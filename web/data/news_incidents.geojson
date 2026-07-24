@@ -106,37 +106,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.0540989,
-          42.6603037
-        ]
-      },
-      "properties": {
-        "city": "Penn Yan",
-        "state": "NY",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "13wham.com"
-        ],
-        "sources": [
-          {
-            "domain": "13wham.com",
-            "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
-            "date": "20260721T033000Z"
-          }
-        ],
-        "date": "20260721T033000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -73.176273,
           44.4642957
         ]
@@ -192,37 +161,6 @@
           }
         ],
         "date": "20260720T174500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -73.176273,
-          44.4642957
-        ]
-      },
-      "properties": {
-        "city": "South Burlington",
-        "state": "VT",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "Unknown",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wcax.com"
-        ],
-        "sources": [
-          {
-            "domain": "wcax.com",
-            "url": "https://www.wcax.com/2026/07/16/e-bike-crash-leaves-woman-seriously-injured-burlington/",
-            "date": "20260717T041500Z"
-          }
-        ],
-        "date": "20260717T041500Z"
       }
     }
   ]

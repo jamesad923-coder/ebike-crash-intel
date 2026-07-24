@@ -5,7 +5,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -316,30 +316,6 @@
     {
       "device": "E-scooter",
       "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": "Fairfax County",
-      "state": "DC",
-      "location_precision": "county+outlet_market",
-      "located": true,
-      "domain": "wjla.com",
-      "url": "https://wjla.com/news/local/9-year-old-boy-riding-scooter-killed-by-vehicle-in-fairfax-county-police-department-madden-court-july-2026",
-      "seendate": "20260724T031500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wjla.com"
-      ],
-      "sources": [
-        {
-          "domain": "wjla.com",
-          "url": "https://wjla.com/news/local/9-year-old-boy-riding-scooter-killed-by-vehicle-in-fairfax-county-police-department-madden-court-july-2026",
-          "date": "20260724T031500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "0-12 (child)",
       "city": "Save CAMDEN",
@@ -382,6 +358,30 @@
           "domain": "1049thewolf.com",
           "url": "https://www.1049thewolf.com/2026/07/21/ppd-5-year-old-struck-in-peoria-hit-and-run/",
           "date": "20260721T211500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "25-44",
+      "city": "Greenhouses Penfield",
+      "state": "NY",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "13wham.com",
+      "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
+      "seendate": "20260721T033000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "13wham.com"
+      ],
+      "sources": [
+        {
+          "domain": "13wham.com",
+          "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
+          "date": "20260721T033000Z"
         }
       ]
     },
