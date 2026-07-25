@@ -29,7 +29,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "65+",
       "city": null,
       "state": null,
       "location_precision": null,
