@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -82.445154,
+          38.4192496
+        ]
+      },
+      "properties": {
+        "city": "Huntington",
+        "state": "WV",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "18-24",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "wsaz.com"
+        ],
+        "sources": [
+          {
+            "domain": "wsaz.com",
+            "url": "https://www.wsaz.com/2026/07/24/wsaz-investigators-asking-public-come-forward-with-info-marly-kinneys-death-wva-house-speaker-calling-session-remove-delegate-other-top-stories/",
+            "date": "20260724T213000Z"
+          }
+        ],
+        "date": "20260724T213000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -90.3854141,
           43.3355298
         ]
