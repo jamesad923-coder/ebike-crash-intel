@@ -44,37 +44,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -90.3854141,
-          43.3355298
-        ]
-      },
-      "properties": {
-        "city": "Richland Center",
-        "state": "WI",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "65+",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wrco.com"
-        ],
-        "sources": [
-          {
-            "domain": "wrco.com",
-            "url": "https://wrco.com/news/2026/07/23/e-bike-crash-in-sauk-county-results-in-fatality",
-            "date": "20260724T030000Z"
-          }
-        ],
-        "date": "20260724T030000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -86.7742984,
           36.1622767
         ]
