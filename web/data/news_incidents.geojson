@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -75.747986,
+          43.334668
+        ]
+      },
+      "properties": {
+        "city": "Camden",
+        "state": "NY",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "0-12 (child)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "oneidadispatch.com"
+        ],
+        "sources": [
+          {
+            "domain": "oneidadispatch.com",
+            "url": "https://www.oneidadispatch.com/2026/07/26/camden-juvenile-injured-in-electric-scooter-accident/",
+            "date": "20260726T151500Z"
+          }
+        ],
+        "date": "20260726T151500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -82.445154,
           38.4192496
         ]
@@ -37,6 +68,37 @@
           }
         ],
         "date": "20260724T213000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.3854141,
+          43.3355298
+        ]
+      },
+      "properties": {
+        "city": "Richland Center",
+        "state": "WI",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "65+",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "wrco.com"
+        ],
+        "sources": [
+          {
+            "domain": "wrco.com",
+            "url": "https://wrco.com/news/2026/07/23/e-bike-crash-in-sauk-county-results-in-fatality",
+            "date": "20260724T030000Z"
+          }
+        ],
+        "date": "20260724T030000Z"
       }
     },
     {
@@ -99,37 +161,6 @@
           }
         ],
         "date": "20260723T020000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -89.5891008,
-          40.6938609
-        ]
-      },
-      "properties": {
-        "city": "Peoria",
-        "state": "IL",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "mix1069.com"
-        ],
-        "sources": [
-          {
-            "domain": "mix1069.com",
-            "url": "https://www.mix1069.com/2026/07/21/ppd-5-year-old-struck-in-peoria-hit-and-run/",
-            "date": "20260721T203000Z"
-          }
-        ],
-        "date": "20260721T203000Z"
       }
     },
     {

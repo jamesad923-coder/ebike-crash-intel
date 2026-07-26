@@ -52,32 +52,8 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wrco.com",
-      "url": "https://wrco.com/news/2026/07/23/e-bike-crash-in-sauk-county-results-in-fatality",
-      "seendate": "20260724T030000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wrco.com"
-      ],
-      "sources": [
-        {
-          "domain": "wrco.com",
-          "url": "https://wrco.com/news/2026/07/23/e-bike-crash-in-sauk-county-results-in-fatality",
-          "date": "20260724T030000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "18-24",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -334,54 +310,6 @@
           "domain": "komonews.com",
           "url": "https://komonews.com/news/local/15-year-old-boy-seriously-hurt-after-crashing-e-scooter-into-car-in-pierce-county",
           "date": "20260720T013000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "18-24",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "abc7.com",
-      "url": "https://abc7.com/post/21-year-old-charged-vehicular-manslaughter-oc-car-surfing-crash-killed-beloved-surfer/19422028/",
-      "seendate": "20260719T144500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "abc7.com"
-      ],
-      "sources": [
-        {
-          "domain": "abc7.com",
-          "url": "https://abc7.com/post/21-year-old-charged-vehicular-manslaughter-oc-car-surfing-crash-killed-beloved-surfer/19422028/",
-          "date": "20260719T144500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": "Johns County",
-      "state": "FL",
-      "location_precision": "county+outlet_market",
-      "located": true,
-      "domain": "news4jax.com",
-      "url": "https://www.news4jax.com/news/local/2026/07/25/introducing-the-rygiene-app-an-e-bike-safety-app-built-by-an-atlantic-beach-dad-to-help-parents-track-kids-rides/",
-      "seendate": "20260725T054500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "news4jax.com"
-      ],
-      "sources": [
-        {
-          "domain": "news4jax.com",
-          "url": "https://www.news4jax.com/news/local/2026/07/25/introducing-the-rygiene-app-an-e-bike-safety-app-built-by-an-atlantic-beach-dad-to-help-parents-track-kids-rides/",
-          "date": "20260725T054500Z"
         }
       ]
     },
