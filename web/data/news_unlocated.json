@@ -29,7 +29,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "65+",
+      "age_band": "18-24",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -197,30 +197,6 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "news3lv.com",
-      "url": "https://news3lv.com/news/local/e-bike-e-scooter-fatalities-down-but-injuries-are-on-the-rise",
-      "seendate": "20260722T054500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "news3lv.com"
-      ],
-      "sources": [
-        {
-          "domain": "news3lv.com",
-          "url": "https://news3lv.com/news/local/e-bike-e-scooter-fatalities-down-but-injuries-are-on-the-rise",
-          "date": "20260722T054500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
       "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
@@ -286,6 +262,30 @@
           "domain": "lewistownsentinel.com",
           "url": "https://www.lewistownsentinel.com/news/local-news/2026/07/police-reports-596/",
           "date": "20260720T060000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "komonews.com",
+      "url": "https://komonews.com/news/local/15-year-old-boy-seriously-hurt-after-crashing-e-scooter-into-car-in-pierce-county",
+      "seendate": "20260720T013000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "komonews.com"
+      ],
+      "sources": [
+        {
+          "domain": "komonews.com",
+          "url": "https://komonews.com/news/local/15-year-old-boy-seriously-hurt-after-crashing-e-scooter-into-car-in-pierce-county",
+          "date": "20260720T013000Z"
         }
       ]
     },

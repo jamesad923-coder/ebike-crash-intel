@@ -13,37 +13,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -82.6263633,
-          30.2097438
-        ]
-      },
-      "properties": {
-        "city": "Columbia County",
-        "state": "FL",
-        "location_precision": "county+outlet_market",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "news4jax.com"
-        ],
-        "sources": [
-          {
-            "domain": "news4jax.com",
-            "url": "https://www.news4jax.com/news/local/2026/07/25/introducing-the-rygiene-app-an-e-bike-safety-app-built-by-an-atlantic-beach-dad-to-help-parents-track-kids-rides/",
-            "date": "20260725T054500Z"
-          }
-        ],
-        "date": "20260725T054500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -82.445154,
           38.4192496
         ]
@@ -254,37 +223,6 @@
           }
         ],
         "date": "20260720T174500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.0363849,
-          38.8950982
-        ]
-      },
-      "properties": {
-        "city": "Washington",
-        "state": "DC",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "komonews.com"
-        ],
-        "sources": [
-          {
-            "domain": "komonews.com",
-            "url": "https://komonews.com/news/local/15-year-old-boy-seriously-hurt-after-crashing-e-scooter-into-car-in-pierce-county",
-            "date": "20260720T013000Z"
-          }
-        ],
-        "date": "20260720T013000Z"
       }
     }
   ]
