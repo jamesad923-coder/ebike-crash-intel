@@ -297,37 +297,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.615214,
-          43.157285
-        ]
-      },
-      "properties": {
-        "city": "Rochester",
-        "state": "NY",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "Unknown",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "13wham.com"
-        ],
-        "sources": [
-          {
-            "domain": "13wham.com",
-            "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
-            "date": "20260721T033000Z"
-          }
-        ],
-        "date": "20260721T033000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -73.176273,
           44.4642957
         ]
@@ -352,37 +321,6 @@
           }
         ],
         "date": "20260720T230000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -105.049981,
-          40.0502623
-        ]
-      },
-      "properties": {
-        "city": "Erie",
-        "state": "CO",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Severe injury",
-        "throttle_ambiguous": true,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "coloradohometownweekly.com"
-        ],
-        "sources": [
-          {
-            "domain": "coloradohometownweekly.com",
-            "url": "https://www.coloradohometownweekly.com/2026/07/20/emoto-ebike-longmont-illegal-riding-police/",
-            "date": "20260720T174500Z"
-          }
-        ],
-        "date": "20260720T174500Z"
       }
     }
   ]
