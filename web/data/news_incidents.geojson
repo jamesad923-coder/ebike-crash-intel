@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -89.6272791,
+          44.9597858
+        ]
+      },
+      "properties": {
+        "city": "Wausau",
+        "state": "WI",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "wsaw.com"
+        ],
+        "sources": [
+          {
+            "domain": "wsaw.com",
+            "url": "https://www.wsaw.com/2026/07/26/teenager-dead-after-crash-between-e-bike-car-sheboygan/",
+            "date": "20260727T081500Z"
+          }
+        ],
+        "date": "20260727T081500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -157.855676,
           21.304547
         ]
@@ -228,6 +259,37 @@
           }
         ],
         "date": "20260723T020000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.615214,
+          43.157285
+        ]
+      },
+      "properties": {
+        "city": "Rochester",
+        "state": "NY",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "Unknown",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "13wham.com"
+        ],
+        "sources": [
+          {
+            "domain": "13wham.com",
+            "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
+            "date": "20260721T033000Z"
+          }
+        ],
+        "date": "20260721T033000Z"
       }
     },
     {

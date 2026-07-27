@@ -53,7 +53,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "25-44",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -269,30 +269,6 @@
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "18-24",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "lewistownsentinel.com",
-      "url": "https://www.lewistownsentinel.com/news/local-news/2026/07/police-reports-596/",
-      "seendate": "20260720T060000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "lewistownsentinel.com"
-      ],
-      "sources": [
-        {
-          "domain": "lewistownsentinel.com",
-          "url": "https://www.lewistownsentinel.com/news/local-news/2026/07/police-reports-596/",
-          "date": "20260720T060000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
       "age_band": "0-12 (child)",
       "city": "Save CAMDEN",
       "state": "NY",
@@ -334,54 +310,6 @@
           "domain": "1049thewolf.com",
           "url": "https://www.1049thewolf.com/2026/07/21/ppd-5-year-old-struck-in-peoria-hit-and-run/",
           "date": "20260721T211500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": "Hospital Newark",
-      "state": "NY",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "13wham.com",
-      "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
-      "seendate": "20260721T033000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "13wham.com"
-      ],
-      "sources": [
-        {
-          "domain": "13wham.com",
-          "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
-          "date": "20260721T033000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "13-17 (teen)",
-      "city": "PDT Milton",
-      "state": "WA",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "kiro7.com",
-      "url": "https://www.kiro7.com/news/local/15-year-old-seriously-injured-e-scooter-crash/LQDT7NVXKVEURIWYTRVGC4EUAU/",
-      "seendate": "20260720T050000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "kiro7.com"
-      ],
-      "sources": [
-        {
-          "domain": "kiro7.com",
-          "url": "https://www.kiro7.com/news/local/15-year-old-seriously-injured-e-scooter-crash/LQDT7NVXKVEURIWYTRVGC4EUAU/",
-          "date": "20260720T050000Z"
         }
       ]
     }
