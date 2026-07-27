@@ -13,6 +13,73 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -157.855676,
+          21.304547
+        ]
+      },
+      "properties": {
+        "city": "Honolulu",
+        "state": "HI",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "45-64",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "staradvertiser.com"
+        ],
+        "sources": [
+          {
+            "domain": "staradvertiser.com",
+            "url": "https://www.staradvertiser.com/2026/07/26/breaking-news/e-scooter-rider-seriously-injured-after-honolulu-crash/",
+            "date": "20260727T020000Z"
+          }
+        ],
+        "date": "20260727T020000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9370433,
+          43.7128967
+        ]
+      },
+      "properties": {
+        "city": "Sheboygan",
+        "state": "WI",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "b93radio.com"
+        ],
+        "sources": [
+          {
+            "domain": "b93radio.com",
+            "url": "https://b93radio.com/2026/07/26/saturday-accident-involving-e-bike-turns-fatal/",
+            "date": "20260727T010000Z"
+          },
+          {
+            "domain": "b93radio.com",
+            "url": "https://b93radio.com/2026/07/26/saturday-accident-involving-e-bike-turns-fatal-2/",
+            "date": "20260727T010000Z"
+          }
+        ],
+        "date": "20260727T010000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -75.747986,
           43.334668
         ]
