@@ -2,6 +2,54 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "mynewsla.com",
+      "url": "https://mynewsla.com/crime/2026/07/27/authorities-release-id-of-fatal-e-bike-crash-in-huntington-beach/",
+      "seendate": "20260728T051500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "mynewsla.com"
+      ],
+      "sources": [
+        {
+          "domain": "mynewsla.com",
+          "url": "https://mynewsla.com/crime/2026/07/27/authorities-release-id-of-fatal-e-bike-crash-in-huntington-beach/",
+          "date": "20260728T051500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "65+",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "journal-advocate.com",
+      "url": "https://www.journal-advocate.com/2026/07/27/ovid-man-on-e-bike-killed-in-collision-saturday/",
+      "seendate": "20260727T223000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "journal-advocate.com"
+      ],
+      "sources": [
+        {
+          "domain": "journal-advocate.com",
+          "url": "https://www.journal-advocate.com/2026/07/27/ovid-man-on-e-bike-killed-in-collision-saturday/",
+          "date": "20260727T223000Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -22,30 +70,6 @@
           "domain": "1019therock.com",
           "url": "https://1019therock.com/felony-robbery-aggravated-assault-maine/",
           "date": "20260727T163000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "bigcountry969.com",
-      "url": "https://bigcountry969.com/felony-robbery-aggravated-assault-maine/",
-      "seendate": "20260727T144500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "bigcountry969.com"
-      ],
-      "sources": [
-        {
-          "domain": "bigcountry969.com",
-          "url": "https://bigcountry969.com/felony-robbery-aggravated-assault-maine/",
-          "date": "20260727T144500Z"
         }
       ]
     },
@@ -358,30 +382,6 @@
           "domain": "1049thewolf.com",
           "url": "https://www.1049thewolf.com/2026/07/21/ppd-5-year-old-struck-in-peoria-hit-and-run/",
           "date": "20260721T211500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": "Hospital Newark",
-      "state": "NY",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "13wham.com",
-      "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
-      "seendate": "20260721T033000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "13wham.com"
-      ],
-      "sources": [
-        {
-          "domain": "13wham.com",
-          "url": "https://13wham.com/news/local/police-seek-id-of-man-seriously-injured-in-newark-e-bike-crash-electric-bicycle-north-clinton-street",
-          "date": "20260721T033000Z"
         }
       ]
     }

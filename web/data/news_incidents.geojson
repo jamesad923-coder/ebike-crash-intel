@@ -13,6 +13,105 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -89.093966,
+          42.2713945
+        ]
+      },
+      "properties": {
+        "city": "Rockford",
+        "state": "IL",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "wifr.com"
+        ],
+        "sources": [
+          {
+            "domain": "wifr.com",
+            "url": "https://www.wifr.com/2026/07/28/beloit-area-teen-killed-sheboygan-e-bike-crash-loved-ones-launch-fundraiser/",
+            "date": "20260728T051500Z"
+          }
+        ],
+        "date": "20260728T051500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.8155355,
+          36.6713502
+        ]
+      },
+      "properties": {
+        "city": "Fresno County",
+        "state": "CA",
+        "location_precision": "county+outlet_market",
+        "device": "E-scooter",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "abc30.com"
+        ],
+        "sources": [
+          {
+            "domain": "abc30.com",
+            "url": "https://abc30.com/post/fresno-state-bike-safety-camp-teaches-students-safe-riding-skills/19587323/",
+            "date": "20260728T004500Z"
+          }
+        ],
+        "date": "20260728T004500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -157.855676,
+          21.304547
+        ]
+      },
+      "properties": {
+        "city": "Honolulu",
+        "state": "HI",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "Unknown",
+        "confidence_tier": "corroborated",
+        "corroborating_domains": [
+          "kitv.com",
+          "staradvertiser.com"
+        ],
+        "sources": [
+          {
+            "domain": "kitv.com",
+            "url": "https://www.kitv.com/news/local/e-scooter-rider-hospitalized-after-honolulu-crash/article_4548896b-d211-4dcc-95a7-d24008062d83.html",
+            "date": "20260727T233000Z"
+          },
+          {
+            "domain": "staradvertiser.com",
+            "url": "https://www.staradvertiser.com/2026/07/26/breaking-news/e-scooter-rider-seriously-injured-after-honolulu-crash/",
+            "date": "20260727T020000Z"
+          }
+        ],
+        "date": "20260727T233000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -89.6272791,
           44.9597858
         ]
@@ -37,37 +136,6 @@
           }
         ],
         "date": "20260727T081500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -157.855676,
-          21.304547
-        ]
-      },
-      "properties": {
-        "city": "Honolulu",
-        "state": "HI",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "45-64",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "staradvertiser.com"
-        ],
-        "sources": [
-          {
-            "domain": "staradvertiser.com",
-            "url": "https://www.staradvertiser.com/2026/07/26/breaking-news/e-scooter-rider-seriously-injured-after-honolulu-crash/",
-            "date": "20260727T020000Z"
-          }
-        ],
-        "date": "20260727T020000Z"
       }
     },
     {
@@ -215,7 +283,7 @@
         "device": "E-bike",
         "outcome": "Injury",
         "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
+        "age_band": "13-17 (teen)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "wsmv.com"
@@ -290,37 +358,6 @@
           }
         ],
         "date": "20260721T203000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -73.176273,
-          44.4642957
-        ]
-      },
-      "properties": {
-        "city": "South Burlington",
-        "state": "VT",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wcax.com"
-        ],
-        "sources": [
-          {
-            "domain": "wcax.com",
-            "url": "https://www.wcax.com/2026/07/20/friends-remember-16-year-old-killed-burlington-e-bike-crash-last-week/",
-            "date": "20260720T230000Z"
-          }
-        ],
-        "date": "20260720T230000Z"
       }
     }
   ]

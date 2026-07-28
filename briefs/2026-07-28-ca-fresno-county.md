@@ -1,4 +1,4 @@
-# Data brief: E-scooter injury reported in Honolulu, HI (2026-07-27)
+# Data brief: E-scooter fatality reported in Fresno County, CA (2026-07-28)
 
 *Auto-drafted by the Crash Atlas news pipeline. Everything below is from
 public data with sources linked; the incident itself was detected by
@@ -6,7 +6,7 @@ automated news scanning and is **not independently verified**.*
 
 > **Before using this brief (reviewer checklist):**
 > 1. Open each source below and confirm the article is actually about
->    Honolulu, HI — automated location extraction does sometimes attach
+>    Fresno County, CA — automated location extraction does sometimes attach
 >    the wrong city to a story.
 > 2. Confirm the outcome and age band against the article text.
 > 3. If either check fails, discard this brief; do not send it.
@@ -14,25 +14,21 @@ automated news scanning and is **not independently verified**.*
 ## What was detected
 
 - Reported: **E-scooter**, outcome coded
-  “Injury”, age band Unknown.
-- Confidence: corroborated by 2+ independent outlets.
-- Location precision: `city_state_mention` (automated
+  “Fatality”, age band 13-17 (teen).
+- Confidence: single news source — treat as unconfirmed.
+- Location precision: `county+outlet_market` (automated
   keyword extraction, not human-read).
 - Sources:
-  - [kitv.com](https://www.kitv.com/news/local/e-scooter-rider-hospitalized-after-honolulu-crash/article_4548896b-d211-4dcc-95a7-d24008062d83.html)
-  - [staradvertiser.com](https://www.staradvertiser.com/2026/07/26/breaking-news/e-scooter-rider-seriously-injured-after-honolulu-crash/)
+  - [abc30.com](https://abc30.com/post/fresno-state-bike-safety-camp-teaches-students-safe-riding-skills/19587323/)
 
-## Honolulu in the federal fatality data
+## Fresno County in the federal fatality data
 
-- **Honolulu, HI**: 13 recorded cyclist fatalities in FARS 2019–2024, of which 0 were minors (under 18).
-- Year by year: 2019: 2, 2020: 2, 2021: 3, 2022: 3, 2023: 1, 2024: 2.
-- Most common crash type coded in this city's reports (PBCAT): “Crossing Paths - Other Circumstances” (3 of 13). This is what crash reports found, not a fault judgment.
-- City data page: https://jamesad923-coder.github.io/ebike-crash-intel/cities/hi/honolulu/
+- Fresno County has fewer than 3 recorded cyclist fatalities in FARS 2019–2024, so it does not have a standing city page. That is itself worth knowing: the local discussion is likely driven by injuries and near misses, which federal fatality data does not capture.
 
 ## State context
 
-- **Hawaii**: 36 pedalcyclist fatalities in FARS 2019–2024 (#36 among states by raw count — a count, not a rate; larger states rank high partly because more people ride).
-- Adjusted for bike-commute share (an imperfect but real exposure proxy), Hawaii ranks **#25** at 26.7 fatalities per 10k bike commuters (raw-count rank #33).
+- **California**: 937 pedalcyclist fatalities in FARS 2019–2024 (#2 among states by raw count — a count, not a rate; larger states rank high partly because more people ride).
+- Adjusted for bike-commute share (an imperfect but real exposure proxy), California ranks **#26** at 25.44 fatalities per 10k bike commuters (raw-count rank #2).
 
 ## What this data can and cannot say
 
