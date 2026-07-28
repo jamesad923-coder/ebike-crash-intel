@@ -74,6 +74,30 @@
       ]
     },
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "bigcountry969.com",
+      "url": "https://bigcountry969.com/felony-robbery-aggravated-assault-maine/",
+      "seendate": "20260727T144500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "bigcountry969.com"
+      ],
+      "sources": [
+        {
+          "domain": "bigcountry969.com",
+          "url": "https://bigcountry969.com/felony-robbery-aggravated-assault-maine/",
+          "date": "20260727T144500Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -125,7 +149,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
