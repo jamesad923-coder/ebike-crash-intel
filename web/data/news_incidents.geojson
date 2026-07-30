@@ -106,43 +106,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -157.855676,
-          21.304547
-        ]
-      },
-      "properties": {
-        "city": "Honolulu",
-        "state": "HI",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "Unknown",
-        "confidence_tier": "corroborated",
-        "corroborating_domains": [
-          "kitv.com",
-          "staradvertiser.com"
-        ],
-        "sources": [
-          {
-            "domain": "kitv.com",
-            "url": "https://www.kitv.com/news/local/e-scooter-rider-hospitalized-after-honolulu-crash/article_4548896b-d211-4dcc-95a7-d24008062d83.html",
-            "date": "20260727T233000Z"
-          },
-          {
-            "domain": "staradvertiser.com",
-            "url": "https://www.staradvertiser.com/2026/07/26/breaking-news/e-scooter-rider-seriously-injured-after-honolulu-crash/",
-            "date": "20260727T020000Z"
-          }
-        ],
-        "date": "20260727T233000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -89.6272791,
           44.9597858
         ]
@@ -167,6 +130,37 @@
           }
         ],
         "date": "20260727T081500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -157.855676,
+          21.304547
+        ]
+      },
+      "properties": {
+        "city": "Honolulu",
+        "state": "HI",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "45-64",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "staradvertiser.com"
+        ],
+        "sources": [
+          {
+            "domain": "staradvertiser.com",
+            "url": "https://www.staradvertiser.com/2026/07/26/breaking-news/e-scooter-rider-seriously-injured-after-honolulu-crash/",
+            "date": "20260727T020000Z"
+          }
+        ],
+        "date": "20260727T020000Z"
       }
     },
     {
@@ -314,7 +308,7 @@
         "device": "E-bike",
         "outcome": "Injury",
         "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
+        "age_band": "0-12 (child)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "wsmv.com"
