@@ -297,37 +297,6 @@
         ],
         "date": "20260724T030000Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -86.7742984,
-          36.1622767
-        ]
-      },
-      "properties": {
-        "city": "Nashville",
-        "state": "TN",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wsmv.com"
-        ],
-        "sources": [
-          {
-            "domain": "wsmv.com",
-            "url": "https://www.wsmv.com/2026/07/23/e-bike-operator-seriously-injured-after-crash-with-vehicle-hopkinsville/",
-            "date": "20260723T153000Z"
-          }
-        ],
-        "date": "20260723T153000Z"
-      }
     }
   ]
 }

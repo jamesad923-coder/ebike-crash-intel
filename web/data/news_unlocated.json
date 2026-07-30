@@ -5,7 +5,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "65+",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -118,30 +118,6 @@
           "domain": "northernvirginiamag.com",
           "url": "https://northernvirginiamag.com/news/2026/07/24/9-year-old-killed-in-herndon-e-scooter-crash/",
           "date": "20260724T153000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "45-64",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wchstv.com",
-      "url": "https://wchstv.com/news/local/man-on-e-bike-dies-after-collision-with-pedestrian-in-boyd-county",
-      "seendate": "20260724T134500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wchstv.com"
-      ],
-      "sources": [
-        {
-          "domain": "wchstv.com",
-          "url": "https://wchstv.com/news/local/man-on-e-bike-dies-after-collision-with-pedestrian-in-boyd-county",
-          "date": "20260724T134500Z"
         }
       ]
     },
