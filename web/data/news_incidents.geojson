@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -81.6936772,
+          41.4996574
+        ]
+      },
+      "properties": {
+        "city": "Cleveland",
+        "state": "OH",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "25-44",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "cleveland19.com"
+        ],
+        "sources": [
+          {
+            "domain": "cleveland19.com",
+            "url": "https://www.cleveland19.com/2026/07/29/e-bike-rider-seriously-injured-crash-mentor-on-the-lake-police-urge-helmet-use/",
+            "date": "20260730T000000Z"
+          }
+        ],
+        "date": "20260730T000000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -89.093966,
           42.2713945
         ]
@@ -296,37 +327,6 @@
           }
         ],
         "date": "20260723T153000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -119.702667,
-          34.4221319
-        ]
-      },
-      "properties": {
-        "city": "Santa Barbara",
-        "state": "CA",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "Unknown",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "noozhawk.com"
-        ],
-        "sources": [
-          {
-            "domain": "noozhawk.com",
-            "url": "https://www.noozhawk.com/adult-e-bike-rider-seriously-injured-in-crash-on-santa-barbaras-westside/",
-            "date": "20260723T020000Z"
-          }
-        ],
-        "date": "20260723T020000Z"
       }
     }
   ]
