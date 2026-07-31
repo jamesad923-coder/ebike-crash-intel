@@ -143,37 +143,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -89.6272791,
-          44.9597858
-        ]
-      },
-      "properties": {
-        "city": "Wausau",
-        "state": "WI",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wsaw.com"
-        ],
-        "sources": [
-          {
-            "domain": "wsaw.com",
-            "url": "https://www.wsaw.com/2026/07/26/teenager-dead-after-crash-between-e-bike-car-sheboygan/",
-            "date": "20260727T081500Z"
-          }
-        ],
-        "date": "20260727T081500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -87.9370433,
           43.7128967
         ]

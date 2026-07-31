@@ -98,6 +98,30 @@
       ]
     },
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wsaw.com",
+      "url": "https://www.wsaw.com/2026/07/26/teenager-dead-after-crash-between-e-bike-car-sheboygan/",
+      "seendate": "20260727T081500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wsaw.com"
+      ],
+      "sources": [
+        {
+          "domain": "wsaw.com",
+          "url": "https://www.wsaw.com/2026/07/26/teenager-dead-after-crash-between-e-bike-car-sheboygan/",
+          "date": "20260727T081500Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
