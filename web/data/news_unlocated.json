@@ -26,6 +26,30 @@
       ]
     },
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "kitv.com",
+      "url": "https://www.kitv.com/news/local/e-scooter-rider-hospitalized-after-honolulu-crash/article_4548896b-d211-4dcc-95a7-d24008062d83.html",
+      "seendate": "20260727T233000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "kitv.com"
+      ],
+      "sources": [
+        {
+          "domain": "kitv.com",
+          "url": "https://www.kitv.com/news/local/e-scooter-rider-hospitalized-after-honolulu-crash/article_4548896b-d211-4dcc-95a7-d24008062d83.html",
+          "date": "20260727T233000Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -46,30 +70,6 @@
           "domain": "journal-advocate.com",
           "url": "https://www.journal-advocate.com/2026/07/27/ovid-man-on-e-bike-killed-in-collision-saturday/",
           "date": "20260727T223000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "1019therock.com",
-      "url": "https://1019therock.com/felony-robbery-aggravated-assault-maine/",
-      "seendate": "20260727T163000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "1019therock.com"
-      ],
-      "sources": [
-        {
-          "domain": "1019therock.com",
-          "url": "https://1019therock.com/felony-robbery-aggravated-assault-maine/",
-          "date": "20260727T163000Z"
         }
       ]
     },
@@ -118,54 +118,6 @@
           "domain": "northernvirginiamag.com",
           "url": "https://northernvirginiamag.com/news/2026/07/24/9-year-old-killed-in-herndon-e-scooter-crash/",
           "date": "20260724T153000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "fox17.com",
-      "url": "https://fox17.com/news/local/electric-biker-injured-in-hopkinsville-crash-fort-campbell-boulevard-and-country-club-lane-hopkinsville-fire-ems-vanderbilt-university-medical-center-in-clarksville",
-      "seendate": "20260723T214500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "fox17.com"
-      ],
-      "sources": [
-        {
-          "domain": "fox17.com",
-          "url": "https://fox17.com/news/local/electric-biker-injured-in-hopkinsville-crash-fort-campbell-boulevard-and-country-club-lane-hopkinsville-fire-ems-vanderbilt-university-medical-center-in-clarksville",
-          "date": "20260723T214500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "0-12 (child)",
-      "city": "Save CAMDEN",
-      "state": "NY",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "wktv.com",
-      "url": "https://www.wktv.com/news/local/11-year-old-girl-hurt-after-electric-scooter-accident-in-camden/article_d17472a0-61f6-49be-9613-1b45e1382706.html",
-      "seendate": "20260723T223000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wktv.com"
-      ],
-      "sources": [
-        {
-          "domain": "wktv.com",
-          "url": "https://www.wktv.com/news/local/11-year-old-girl-hurt-after-electric-scooter-accident-in-camden/article_d17472a0-61f6-49be-9613-1b45e1382706.html",
-          "date": "20260723T223000Z"
         }
       ]
     }
