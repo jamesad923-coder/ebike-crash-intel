@@ -75,37 +75,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -119.8155355,
-          36.6713502
-        ]
-      },
-      "properties": {
-        "city": "Fresno County",
-        "state": "CA",
-        "location_precision": "county+outlet_market",
-        "device": "E-scooter",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "abc30.com"
-        ],
-        "sources": [
-          {
-            "domain": "abc30.com",
-            "url": "https://abc30.com/post/fresno-state-bike-safety-camp-teaches-students-safe-riding-skills/19587323/",
-            "date": "20260728T004500Z"
-          }
-        ],
-        "date": "20260728T004500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -157.855676,
           21.304547
         ]
@@ -117,7 +86,7 @@
         "device": "E-scooter",
         "outcome": "Injury",
         "throttle_ambiguous": false,
-        "age_band": "Unknown",
+        "age_band": "0-12 (child)",
         "confidence_tier": "corroborated",
         "corroborating_domains": [
           "kitv.com",

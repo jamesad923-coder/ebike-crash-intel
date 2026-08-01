@@ -14,7 +14,7 @@ automated news scanning and is **not independently verified**.*
 ## What was detected
 
 - Reported: **E-scooter**, outcome coded
-  “Injury”, age band 25-44.
+  “Injury”, age band 0-12 (child).
 - Confidence: corroborated by 2+ independent outlets.
 - Location precision: `city_state_mention` (automated
   keyword extraction, not human-read).
