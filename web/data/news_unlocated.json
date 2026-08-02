@@ -34,6 +34,30 @@
       "state": null,
       "location_precision": null,
       "located": false,
+      "domain": "wjactv.com",
+      "url": "https://wjactv.com/news/local/whats-the-law-recent-accidents-involving-e-bikes-prompt-stricter-safety-enforcement-pennsylvania-windber-police-electric-bicycles-rules-regulations",
+      "seendate": "20260731T020000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wjactv.com"
+      ],
+      "sources": [
+        {
+          "domain": "wjactv.com",
+          "url": "https://wjactv.com/news/local/whats-the-law-recent-accidents-involving-e-bikes-prompt-stricter-safety-enforcement-pennsylvania-windber-police-electric-bicycles-rules-regulations",
+          "date": "20260731T020000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
       "domain": "mynewsla.com",
       "url": "https://mynewsla.com/crime/2026/07/27/authorities-release-id-of-fatal-e-bike-crash-in-huntington-beach/",
       "seendate": "20260728T051500Z",

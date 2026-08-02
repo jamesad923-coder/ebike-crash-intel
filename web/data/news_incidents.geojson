@@ -117,7 +117,7 @@
         "device": "E-scooter",
         "outcome": "Injury",
         "throttle_ambiguous": false,
-        "age_band": "Unknown",
+        "age_band": "25-44",
         "confidence_tier": "corroborated",
         "corroborating_domains": [
           "kitv.com",
@@ -203,37 +203,6 @@
           }
         ],
         "date": "20260727T010000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.747986,
-          43.334668
-        ]
-      },
-      "properties": {
-        "city": "Camden",
-        "state": "NY",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "oneidadispatch.com"
-        ],
-        "sources": [
-          {
-            "domain": "oneidadispatch.com",
-            "url": "https://www.oneidadispatch.com/2026/07/26/camden-juvenile-injured-in-electric-scooter-accident/",
-            "date": "20260726T151500Z"
-          }
-        ],
-        "date": "20260726T151500Z"
       }
     }
   ]
