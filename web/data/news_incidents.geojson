@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -121.493895,
+          38.5810606
+        ]
+      },
+      "properties": {
+        "city": "Sacramento",
+        "state": "CA",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "mynbc5.com"
+        ],
+        "sources": [
+          {
+            "domain": "mynbc5.com",
+            "url": "https://www.mynbc5.com/article/skalka-knapp-charged-burlington-vermont-fatal-crash/73319317",
+            "date": "20260731T211500Z"
+          }
+        ],
+        "date": "20260731T211500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -81.6936772,
           41.4996574
         ]
