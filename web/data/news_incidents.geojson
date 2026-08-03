@@ -117,92 +117,19 @@
         "device": "E-scooter",
         "outcome": "Injury",
         "throttle_ambiguous": false,
-        "age_band": "25-44",
-        "confidence_tier": "corroborated",
+        "age_band": "Unknown",
+        "confidence_tier": "single_source",
         "corroborating_domains": [
-          "kitv.com",
-          "staradvertiser.com"
+          "kitv.com"
         ],
         "sources": [
           {
             "domain": "kitv.com",
             "url": "https://www.kitv.com/news/local/e-scooter-rider-hospitalized-after-honolulu-crash/article_4548896b-d211-4dcc-95a7-d24008062d83.html",
             "date": "20260727T233000Z"
-          },
-          {
-            "domain": "staradvertiser.com",
-            "url": "https://www.staradvertiser.com/2026/07/26/breaking-news/e-scooter-rider-seriously-injured-after-honolulu-crash/",
-            "date": "20260727T020000Z"
           }
         ],
         "date": "20260727T233000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -89.6272791,
-          44.9597858
-        ]
-      },
-      "properties": {
-        "city": "Wausau",
-        "state": "WI",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wsaw.com"
-        ],
-        "sources": [
-          {
-            "domain": "wsaw.com",
-            "url": "https://www.wsaw.com/2026/07/26/teenager-dead-after-crash-between-e-bike-car-sheboygan/",
-            "date": "20260727T081500Z"
-          }
-        ],
-        "date": "20260727T081500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -87.9370433,
-          43.7128967
-        ]
-      },
-      "properties": {
-        "city": "Sheboygan",
-        "state": "WI",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "b93radio.com"
-        ],
-        "sources": [
-          {
-            "domain": "b93radio.com",
-            "url": "https://b93radio.com/2026/07/26/saturday-accident-involving-e-bike-turns-fatal/",
-            "date": "20260727T010000Z"
-          },
-          {
-            "domain": "b93radio.com",
-            "url": "https://b93radio.com/2026/07/26/saturday-accident-involving-e-bike-turns-fatal-2/",
-            "date": "20260727T010000Z"
-          }
-        ],
-        "date": "20260727T010000Z"
       }
     }
   ]
