@@ -4,6 +4,30 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "kfdm.com",
+      "url": "https://kfdm.com/news/local/e-bike-rider-injured-in-collision-near-lake-sam-rayburn-08-03-2026",
+      "seendate": "20260803T161500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "kfdm.com"
+      ],
+      "sources": [
+        {
+          "domain": "kfdm.com",
+          "url": "https://kfdm.com/news/local/e-bike-rider-injured-in-collision-near-lake-sam-rayburn-08-03-2026",
+          "date": "20260803T161500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "65+",
       "city": null,
@@ -46,30 +70,6 @@
           "domain": "journal-advocate.com",
           "url": "https://www.journal-advocate.com/2026/07/27/ovid-man-on-e-bike-killed-in-collision-saturday/",
           "date": "20260727T223000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "1019therock.com",
-      "url": "https://1019therock.com/felony-robbery-aggravated-assault-maine/",
-      "seendate": "20260727T163000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "1019therock.com"
-      ],
-      "sources": [
-        {
-          "domain": "1019therock.com",
-          "url": "https://1019therock.com/felony-robbery-aggravated-assault-maine/",
-          "date": "20260727T163000Z"
         }
       ]
     }
