@@ -5,7 +5,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "25-44",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -29,47 +29,23 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "65+",
+      "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "mynewsla.com",
-      "url": "https://mynewsla.com/crime/2026/07/27/authorities-release-id-of-fatal-e-bike-crash-in-huntington-beach/",
-      "seendate": "20260728T051500Z",
+      "domain": "mynbc5.com",
+      "url": "https://www.mynbc5.com/article/skalka-knapp-charged-burlington-vermont-fatal-crash/73319317",
+      "seendate": "20260731T211500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "mynewsla.com"
+        "mynbc5.com"
       ],
       "sources": [
         {
-          "domain": "mynewsla.com",
-          "url": "https://mynewsla.com/crime/2026/07/27/authorities-release-id-of-fatal-e-bike-crash-in-huntington-beach/",
-          "date": "20260728T051500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "65+",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "journal-advocate.com",
-      "url": "https://www.journal-advocate.com/2026/07/27/ovid-man-on-e-bike-killed-in-collision-saturday/",
-      "seendate": "20260727T223000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "journal-advocate.com"
-      ],
-      "sources": [
-        {
-          "domain": "journal-advocate.com",
-          "url": "https://www.journal-advocate.com/2026/07/27/ovid-man-on-e-bike-killed-in-collision-saturday/",
-          "date": "20260727T223000Z"
+          "domain": "mynbc5.com",
+          "url": "https://www.mynbc5.com/article/skalka-knapp-charged-burlington-vermont-fatal-crash/73319317",
+          "date": "20260731T211500Z"
         }
       ]
     }

@@ -13,13 +13,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.493895,
-          38.5810606
+          -73.176273,
+          44.4642957
         ]
       },
       "properties": {
-        "city": "Sacramento",
-        "state": "CA",
+        "city": "South Burlington",
+        "state": "VT",
         "location_precision": "city_state_mention",
         "device": "E-bike",
         "outcome": "Fatality",
@@ -27,16 +27,16 @@
         "age_band": "13-17 (teen)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
-          "mynbc5.com"
+          "wcax.com"
         ],
         "sources": [
           {
-            "domain": "mynbc5.com",
-            "url": "https://www.mynbc5.com/article/skalka-knapp-charged-burlington-vermont-fatal-crash/73319317",
-            "date": "20260731T211500Z"
+            "domain": "wcax.com",
+            "url": "https://www.wcax.com/2026/08/03/im-completely-shattered-dad-mourns-teen-killed-burlington-e-bike-crash/",
+            "date": "20260804T014500Z"
           }
         ],
-        "date": "20260731T211500Z"
+        "date": "20260804T014500Z"
       }
     },
     {
@@ -68,99 +68,6 @@
           }
         ],
         "date": "20260730T000000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -89.093966,
-          42.2713945
-        ]
-      },
-      "properties": {
-        "city": "Rockford",
-        "state": "IL",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wifr.com"
-        ],
-        "sources": [
-          {
-            "domain": "wifr.com",
-            "url": "https://www.wifr.com/2026/07/28/beloit-area-teen-killed-sheboygan-e-bike-crash-loved-ones-launch-fundraiser/",
-            "date": "20260728T051500Z"
-          }
-        ],
-        "date": "20260728T051500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -119.8155355,
-          36.6713502
-        ]
-      },
-      "properties": {
-        "city": "Fresno County",
-        "state": "CA",
-        "location_precision": "county+outlet_market",
-        "device": "E-scooter",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "abc30.com"
-        ],
-        "sources": [
-          {
-            "domain": "abc30.com",
-            "url": "https://abc30.com/post/fresno-state-bike-safety-camp-teaches-students-safe-riding-skills/19587323/",
-            "date": "20260728T004500Z"
-          }
-        ],
-        "date": "20260728T004500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -157.855676,
-          21.304547
-        ]
-      },
-      "properties": {
-        "city": "Honolulu",
-        "state": "HI",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "Unknown",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "kitv.com"
-        ],
-        "sources": [
-          {
-            "domain": "kitv.com",
-            "url": "https://www.kitv.com/news/local/e-scooter-rider-hospitalized-after-honolulu-crash/article_4548896b-d211-4dcc-95a7-d24008062d83.html",
-            "date": "20260727T233000Z"
-          }
-        ],
-        "date": "20260727T233000Z"
       }
     }
   ]
