@@ -29,23 +29,23 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
+      "age_band": "25-44",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "mynbc5.com",
-      "url": "https://www.mynbc5.com/article/skalka-knapp-charged-burlington-vermont-fatal-crash/73319317",
-      "seendate": "20260731T211500Z",
+      "domain": "wjactv.com",
+      "url": "https://wjactv.com/news/local/whats-the-law-recent-accidents-involving-e-bikes-prompt-stricter-safety-enforcement-pennsylvania-windber-police-electric-bicycles-rules-regulations",
+      "seendate": "20260731T020000Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "mynbc5.com"
+        "wjactv.com"
       ],
       "sources": [
         {
-          "domain": "mynbc5.com",
-          "url": "https://www.mynbc5.com/article/skalka-knapp-charged-burlington-vermont-fatal-crash/73319317",
-          "date": "20260731T211500Z"
+          "domain": "wjactv.com",
+          "url": "https://wjactv.com/news/local/whats-the-law-recent-accidents-involving-e-bikes-prompt-stricter-safety-enforcement-pennsylvania-windber-police-electric-bicycles-rules-regulations",
+          "date": "20260731T020000Z"
         }
       ]
     }
