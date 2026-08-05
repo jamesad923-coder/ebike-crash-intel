@@ -2,10 +2,34 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "abc7chicago.com",
+      "url": "https://abc7chicago.com/post/boy-16-driving-scooter-killed-north-center-crash-chicago-police-say/19629237/",
+      "seendate": "20260805T131500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "abc7chicago.com"
+      ],
+      "sources": [
+        {
+          "domain": "abc7chicago.com",
+          "url": "https://abc7chicago.com/post/boy-16-driving-scooter-killed-north-center-crash-chicago-police-say/19629237/",
+          "date": "20260805T131500Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "25-44",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -22,6 +46,54 @@
           "domain": "kfdm.com",
           "url": "https://kfdm.com/news/local/e-bike-rider-injured-in-collision-near-lake-sam-rayburn-08-03-2026",
           "date": "20260803T161500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "mynbc5.com",
+      "url": "https://www.mynbc5.com/article/skalka-knapp-charged-burlington-vermont-fatal-crash/73319317",
+      "seendate": "20260731T211500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "mynbc5.com"
+      ],
+      "sources": [
+        {
+          "domain": "mynbc5.com",
+          "url": "https://www.mynbc5.com/article/skalka-knapp-charged-burlington-vermont-fatal-crash/73319317",
+          "date": "20260731T211500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wgal.com",
+      "url": "https://www.wgal.com/article/york-city-woman-accused-hitting-e-bike-rider-car-punching-woman/73310329",
+      "seendate": "20260731T011500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wgal.com"
+      ],
+      "sources": [
+        {
+          "domain": "wgal.com",
+          "url": "https://www.wgal.com/article/york-city-woman-accused-hitting-e-bike-rider-car-punching-woman/73310329",
+          "date": "20260731T011500Z"
         }
       ]
     }
