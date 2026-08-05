@@ -24,30 +24,6 @@
           "date": "20260803T161500Z"
         }
       ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wjactv.com",
-      "url": "https://wjactv.com/news/local/whats-the-law-recent-accidents-involving-e-bikes-prompt-stricter-safety-enforcement-pennsylvania-windber-police-electric-bicycles-rules-regulations",
-      "seendate": "20260731T020000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wjactv.com"
-      ],
-      "sources": [
-        {
-          "domain": "wjactv.com",
-          "url": "https://wjactv.com/news/local/whats-the-law-recent-accidents-involving-e-bikes-prompt-stricter-safety-enforcement-pennsylvania-windber-police-electric-bicycles-rules-regulations",
-          "date": "20260731T020000Z"
-        }
-      ]
     }
   ]
 }
