@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -88.4069744,
+          44.2613967
+        ]
+      },
+      "properties": {
+        "city": "Appleton",
+        "state": "WI",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "1039wvbo.com"
+        ],
+        "sources": [
+          {
+            "domain": "1039wvbo.com",
+            "url": "https://www.1039wvbo.com/2026/08/05/unlicensed-14-year-old-injured-in-illegal-e-bike-crash-in-sheboygan/",
+            "date": "20260806T013000Z"
+          }
+        ],
+        "date": "20260806T013000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -89.3841663,
           43.07469
         ]
@@ -68,37 +99,6 @@
           }
         ],
         "date": "20260804T014500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.6936772,
-          41.4996574
-        ]
-      },
-      "properties": {
-        "city": "Cleveland",
-        "state": "OH",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "25-44",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "cleveland19.com"
-        ],
-        "sources": [
-          {
-            "domain": "cleveland19.com",
-            "url": "https://www.cleveland19.com/2026/07/29/e-bike-rider-seriously-injured-crash-mentor-on-the-lake-police-urge-helmet-use/",
-            "date": "20260730T000000Z"
-          }
-        ],
-        "date": "20260730T000000Z"
       }
     }
   ]

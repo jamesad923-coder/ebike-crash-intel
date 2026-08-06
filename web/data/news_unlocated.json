@@ -10,18 +10,18 @@
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "abc7chicago.com",
-      "url": "https://abc7chicago.com/post/boy-16-driving-scooter-killed-north-center-crash-chicago-police-say/19629237/",
-      "seendate": "20260805T131500Z",
+      "domain": "chicago.suntimes.com",
+      "url": "https://chicago.suntimes.com/news/2026/08/05/teen-killed-e-scooter-crash-western-avenue-north-center-alex-blacio",
+      "seendate": "20260806T024500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "abc7chicago.com"
+        "chicago.suntimes.com"
       ],
       "sources": [
         {
-          "domain": "abc7chicago.com",
-          "url": "https://abc7chicago.com/post/boy-16-driving-scooter-killed-north-center-crash-chicago-police-say/19629237/",
-          "date": "20260805T131500Z"
+          "domain": "chicago.suntimes.com",
+          "url": "https://chicago.suntimes.com/news/2026/08/05/teen-killed-e-scooter-crash-western-avenue-north-center-alex-blacio",
+          "date": "20260806T024500Z"
         }
       ]
     },
@@ -29,7 +29,31 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "25-44",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "abc7chicago.com",
+      "url": "https://abc7chicago.com/post/crystal-lake-crash-child-riding-bike-injured-walkup-road-dvorak-fire-department-officials-say/19632179/",
+      "seendate": "20260806T004500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "abc7chicago.com"
+      ],
+      "sources": [
+        {
+          "domain": "abc7chicago.com",
+          "url": "https://abc7chicago.com/post/crystal-lake-crash-child-riding-bike-injured-walkup-road-dvorak-fire-department-officials-say/19632179/",
+          "date": "20260806T004500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
