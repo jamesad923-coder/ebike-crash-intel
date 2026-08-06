@@ -2,6 +2,30 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": true,
+      "outcome": "Severe injury",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "abc7.com",
+      "url": "https://abc7.com/post/socal-teen-speaks-bike-dangers-recovering-life-threatening-2025-crash/19631366/",
+      "seendate": "20260806T044500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "abc7.com"
+      ],
+      "sources": [
+        {
+          "domain": "abc7.com",
+          "url": "https://abc7.com/post/socal-teen-speaks-bike-dangers-recovering-life-threatening-2025-crash/19631366/",
+          "date": "20260806T044500Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -70,30 +94,6 @@
           "domain": "kfdm.com",
           "url": "https://kfdm.com/news/local/e-bike-rider-injured-in-collision-near-lake-sam-rayburn-08-03-2026",
           "date": "20260803T161500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "mynbc5.com",
-      "url": "https://www.mynbc5.com/article/skalka-knapp-charged-burlington-vermont-fatal-crash/73319317",
-      "seendate": "20260731T211500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "mynbc5.com"
-      ],
-      "sources": [
-        {
-          "domain": "mynbc5.com",
-          "url": "https://www.mynbc5.com/article/skalka-knapp-charged-burlington-vermont-fatal-crash/73319317",
-          "date": "20260731T211500Z"
         }
       ]
     }
