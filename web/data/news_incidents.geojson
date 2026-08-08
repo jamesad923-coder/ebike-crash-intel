@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -106.779807,
+          32.3140354
+        ]
+      },
+      "properties": {
+        "city": "Las Cruces",
+        "state": "NM",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "cbs4local.com"
+        ],
+        "sources": [
+          {
+            "domain": "cbs4local.com",
+            "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+            "date": "20260806T201500Z"
+          }
+        ],
+        "date": "20260806T201500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -95.0435373,
           45.1219492
         ]
@@ -37,6 +68,37 @@
           }
         ],
         "date": "20260806T183000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.3841663,
+          43.07469
+        ]
+      },
+      "properties": {
+        "city": "Madison",
+        "state": "WI",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "65+",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "channel3000.com"
+        ],
+        "sources": [
+          {
+            "domain": "channel3000.com",
+            "url": "https://www.channel3000.com/news/merrimac-woman-identified-in-e-bike-fatal-crash/article_19fd121c-119f-4839-a40e-1576e2b32200.html",
+            "date": "20260804T171500Z"
+          }
+        ],
+        "date": "20260804T171500Z"
       }
     },
     {
