@@ -13,123 +13,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -88.4069744,
-          44.2613967
+          -95.0435373,
+          45.1219492
         ]
       },
       "properties": {
-        "city": "Appleton",
-        "state": "WI",
+        "city": "Willmar",
+        "state": "MN",
         "location_precision": "city_state_mention",
         "device": "E-bike",
         "outcome": "Injury",
         "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
+        "age_band": "45-64",
         "confidence_tier": "single_source",
         "corroborating_domains": [
-          "1039wvbo.com"
+          "wctrib.com"
         ],
         "sources": [
           {
-            "domain": "1039wvbo.com",
-            "url": "https://www.1039wvbo.com/2026/08/05/unlicensed-14-year-old-injured-in-illegal-e-bike-crash-in-sheboygan/",
-            "date": "20260806T013000Z"
+            "domain": "wctrib.com",
+            "url": "https://www.wctrib.com/news/local/willmar-police-investigate-crash-that-severely-injured-man-on-e-bike",
+            "date": "20260806T183000Z"
           }
         ],
-        "date": "20260806T013000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.493895,
-          38.5810606
-        ]
-      },
-      "properties": {
-        "city": "Sacramento",
-        "state": "CA",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "mynbc5.com"
-        ],
-        "sources": [
-          {
-            "domain": "mynbc5.com",
-            "url": "https://www.mynbc5.com/article/skalka-knapp-charged-burlington-vermont-fatal-crash/73319317",
-            "date": "20260731T211500Z"
-          }
-        ],
-        "date": "20260731T211500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.493895,
-          38.5810606
-        ]
-      },
-      "properties": {
-        "city": "Sacramento",
-        "state": "CA",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "Unknown",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wtae.com"
-        ],
-        "sources": [
-          {
-            "domain": "wtae.com",
-            "url": "https://www.wtae.com/article/greensburg-officials-crack-down-e-bike-usage-violations-accidents/73359283",
-            "date": "20260805T234500Z"
-          }
-        ],
-        "date": "20260805T234500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -89.3841663,
-          43.07469
-        ]
-      },
-      "properties": {
-        "city": "Madison",
-        "state": "WI",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "65+",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "channel3000.com"
-        ],
-        "sources": [
-          {
-            "domain": "channel3000.com",
-            "url": "https://www.channel3000.com/news/merrimac-woman-identified-in-e-bike-fatal-crash/article_19fd121c-119f-4839-a40e-1576e2b32200.html",
-            "date": "20260804T171500Z"
-          }
-        ],
-        "date": "20260804T171500Z"
+        "date": "20260806T183000Z"
       }
     },
     {
