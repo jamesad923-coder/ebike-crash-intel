@@ -13,30 +13,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -106.779807,
-          32.3140354
+          -77.0363849,
+          38.8950982
         ]
       },
       "properties": {
-        "city": "Las Cruces",
-        "state": "NM",
+        "city": "Washington",
+        "state": "DC",
         "location_precision": "city_state_mention",
         "device": "E-scooter",
         "outcome": "Fatality",
         "throttle_ambiguous": false,
         "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
+        "confidence_tier": "corroborated",
         "corroborating_domains": [
-          "cbs4local.com"
+          "okcfox.com",
+          "wach.com",
+          "wgxa.tv"
         ],
         "sources": [
           {
-            "domain": "cbs4local.com",
-            "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-            "date": "20260806T201500Z"
+            "domain": "okcfox.com",
+            "url": "https://okcfox.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+            "date": "20260806T200000Z"
+          },
+          {
+            "domain": "wgxa.tv",
+            "url": "https://wgxa.tv/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+            "date": "20260806T200000Z"
+          },
+          {
+            "domain": "wach.com",
+            "url": "https://wach.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+            "date": "20260806T194500Z"
           }
         ],
-        "date": "20260806T201500Z"
+        "date": "20260806T200000Z"
       }
     },
     {

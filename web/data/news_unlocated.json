@@ -4,6 +4,30 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "6abc.com",
+      "url": "https://6abc.com/post/2-teens-injured-following-bike-crash-olney/19651400/",
+      "seendate": "20260809T151500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "6abc.com"
+      ],
+      "sources": [
+        {
+          "domain": "6abc.com",
+          "url": "https://6abc.com/post/2-teens-injured-following-bike-crash-olney/19651400/",
+          "date": "20260809T151500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Severe injury",
       "age_band": "45-64",
       "city": null,
@@ -50,6 +74,30 @@
       ]
     },
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "cbs4local.com",
+      "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+      "seendate": "20260806T201500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "cbs4local.com"
+      ],
+      "sources": [
+        {
+          "domain": "cbs4local.com",
+          "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+          "date": "20260806T201500Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -70,78 +118,6 @@
           "domain": "dailymail.com",
           "url": "https://www.dailymail.com/media/article-16034141/florida-radio-host-e-bike-accident-helmet-hair.html",
           "date": "20260806T201500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "okcfox.com",
-      "url": "https://okcfox.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-      "seendate": "20260806T200000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "okcfox.com"
-      ],
-      "sources": [
-        {
-          "domain": "okcfox.com",
-          "url": "https://okcfox.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-          "date": "20260806T200000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wgxa.tv",
-      "url": "https://wgxa.tv/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-      "seendate": "20260806T200000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wgxa.tv"
-      ],
-      "sources": [
-        {
-          "domain": "wgxa.tv",
-          "url": "https://wgxa.tv/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-          "date": "20260806T200000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wach.com",
-      "url": "https://wach.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-      "seendate": "20260806T194500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wach.com"
-      ],
-      "sources": [
-        {
-          "domain": "wach.com",
-          "url": "https://wach.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-          "date": "20260806T194500Z"
         }
       ]
     },
@@ -245,7 +221,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "0-12 (child)",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
