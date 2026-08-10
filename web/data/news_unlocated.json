@@ -51,6 +51,30 @@
     },
     {
       "device": "E-bike",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "okcfox.com",
+      "url": "https://okcfox.com/news/fox-25-investigates/edmond-parents-raise-school-safety-concerns-over-walking-routes-traffic-and-e-bikes",
+      "seendate": "20260807T183000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "okcfox.com"
+      ],
+      "sources": [
+        {
+          "domain": "okcfox.com",
+          "url": "https://okcfox.com/news/fox-25-investigates/edmond-parents-raise-school-safety-concerns-over-walking-routes-traffic-and-e-bikes",
+          "date": "20260807T183000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "13-17 (teen)",
@@ -70,30 +94,6 @@
           "domain": "local10.com",
           "url": "https://www.local10.com/news/local/2026/08/06/teen-riding-electric-scooter-seriously-injured-in-crash-in-wilton-manors/",
           "date": "20260806T211500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "cbs4local.com",
-      "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-      "seendate": "20260806T201500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "cbs4local.com"
-      ],
-      "sources": [
-        {
-          "domain": "cbs4local.com",
-          "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-          "date": "20260806T201500Z"
         }
       ]
     },
@@ -118,6 +118,30 @@
           "domain": "dailymail.com",
           "url": "https://www.dailymail.com/media/article-16034141/florida-radio-host-e-bike-accident-helmet-hair.html",
           "date": "20260806T201500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "okcfox.com",
+      "url": "https://okcfox.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+      "seendate": "20260806T200000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "okcfox.com"
+      ],
+      "sources": [
+        {
+          "domain": "okcfox.com",
+          "url": "https://okcfox.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+          "date": "20260806T200000Z"
         }
       ]
     },
@@ -214,6 +238,30 @@
           "domain": "abc7chicago.com",
           "url": "https://abc7chicago.com/post/crystal-lake-crash-child-riding-bike-injured-walkup-road-dvorak-fire-department-officials-say/19632179/",
           "date": "20260806T004500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "channel3000.com",
+      "url": "https://www.channel3000.com/news/merrimac-woman-identified-in-e-bike-fatal-crash/article_19fd121c-119f-4839-a40e-1576e2b32200.html",
+      "seendate": "20260804T171500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "channel3000.com"
+      ],
+      "sources": [
+        {
+          "domain": "channel3000.com",
+          "url": "https://www.channel3000.com/news/merrimac-woman-identified-in-e-bike-fatal-crash/article_19fd121c-119f-4839-a40e-1576e2b32200.html",
+          "date": "20260804T171500Z"
         }
       ]
     },
