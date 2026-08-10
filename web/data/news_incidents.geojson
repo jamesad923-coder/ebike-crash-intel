@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -89.5176418,
+          37.304731
+        ]
+      },
+      "properties": {
+        "city": "Cape Girardeau",
+        "state": "MO",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "0-12 (child)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "kfvs12.com"
+        ],
+        "sources": [
+          {
+            "domain": "kfvs12.com",
+            "url": "https://www.kfvs12.com/2026/08/10/12-year-old-girl-injured-electric-scooter-crash-mccracken-county/",
+            "date": "20260810T033000Z"
+          }
+        ],
+        "date": "20260810T033000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -106.779807,
           32.3140354
         ]
@@ -56,9 +87,8 @@
         "outcome": "Fatality",
         "throttle_ambiguous": false,
         "age_band": "13-17 (teen)",
-        "confidence_tier": "corroborated",
+        "confidence_tier": "single_source",
         "corroborating_domains": [
-          "wach.com",
           "wgxa.tv"
         ],
         "sources": [
@@ -66,11 +96,6 @@
             "domain": "wgxa.tv",
             "url": "https://wgxa.tv/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
             "date": "20260806T200000Z"
-          },
-          {
-            "domain": "wach.com",
-            "url": "https://wach.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-            "date": "20260806T194500Z"
           }
         ],
         "date": "20260806T200000Z"
@@ -105,6 +130,37 @@
           }
         ],
         "date": "20260806T183000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.3841663,
+          43.07469
+        ]
+      },
+      "properties": {
+        "city": "Madison",
+        "state": "WI",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "65+",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "channel3000.com"
+        ],
+        "sources": [
+          {
+            "domain": "channel3000.com",
+            "url": "https://www.channel3000.com/news/merrimac-woman-identified-in-e-bike-fatal-crash/article_19fd121c-119f-4839-a40e-1576e2b32200.html",
+            "date": "20260804T171500Z"
+          }
+        ],
+        "date": "20260804T171500Z"
       }
     },
     {
