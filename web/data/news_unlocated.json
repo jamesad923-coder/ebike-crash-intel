@@ -74,30 +74,6 @@
       ]
     },
     {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "cbs4local.com",
-      "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-      "seendate": "20260806T201500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "cbs4local.com"
-      ],
-      "sources": [
-        {
-          "domain": "cbs4local.com",
-          "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-          "date": "20260806T201500Z"
-        }
-      ]
-    },
-    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -286,6 +262,30 @@
           "domain": "abc7chicago.com",
           "url": "https://abc7chicago.com/post/crystal-lake-crash-child-riding-bike-injured-walkup-road-dvorak-fire-department-officials-say/19632179/",
           "date": "20260806T004500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "channel3000.com",
+      "url": "https://www.channel3000.com/news/merrimac-woman-identified-in-e-bike-fatal-crash/article_19fd121c-119f-4839-a40e-1576e2b32200.html",
+      "seendate": "20260804T171500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "channel3000.com"
+      ],
+      "sources": [
+        {
+          "domain": "channel3000.com",
+          "url": "https://www.channel3000.com/news/merrimac-woman-identified-in-e-bike-fatal-crash/article_19fd121c-119f-4839-a40e-1576e2b32200.html",
+          "date": "20260804T171500Z"
         }
       ]
     }
