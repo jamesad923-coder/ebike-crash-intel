@@ -5,6 +5,30 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nbcconnecticut.com",
+      "url": "https://www.nbcconnecticut.com/news/local/e-bike-operator-seriously-injured-after-crash-in-norwalk/3763852/",
+      "seendate": "20260811T180000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nbcconnecticut.com"
+      ],
+      "sources": [
+        {
+          "domain": "nbcconnecticut.com",
+          "url": "https://www.nbcconnecticut.com/news/local/e-bike-operator-seriously-injured-after-crash-in-norwalk/3763852/",
+          "date": "20260811T180000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
       "age_band": "0-12 (child)",
       "city": null,
       "state": null,
@@ -262,30 +286,6 @@
           "domain": "abc7chicago.com",
           "url": "https://abc7chicago.com/post/crystal-lake-crash-child-riding-bike-injured-walkup-road-dvorak-fire-department-officials-say/19632179/",
           "date": "20260806T004500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "channel3000.com",
-      "url": "https://www.channel3000.com/news/merrimac-woman-identified-in-e-bike-fatal-crash/article_19fd121c-119f-4839-a40e-1576e2b32200.html",
-      "seendate": "20260804T171500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "channel3000.com"
-      ],
-      "sources": [
-        {
-          "domain": "channel3000.com",
-          "url": "https://www.channel3000.com/news/merrimac-woman-identified-in-e-bike-fatal-crash/article_19fd121c-119f-4839-a40e-1576e2b32200.html",
-          "date": "20260804T171500Z"
         }
       ]
     }
