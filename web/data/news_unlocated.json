@@ -5,7 +5,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -51,30 +51,6 @@
     },
     {
       "device": "E-bike",
-      "throttle_ambiguous": true,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "okcfox.com",
-      "url": "https://okcfox.com/news/fox-25-investigates/edmond-parents-raise-school-safety-concerns-over-walking-routes-traffic-and-e-bikes",
-      "seendate": "20260807T183000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "okcfox.com"
-      ],
-      "sources": [
-        {
-          "domain": "okcfox.com",
-          "url": "https://okcfox.com/news/fox-25-investigates/edmond-parents-raise-school-safety-concerns-over-walking-routes-traffic-and-e-bikes",
-          "date": "20260807T183000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "13-17 (teen)",
@@ -94,6 +70,30 @@
           "domain": "local10.com",
           "url": "https://www.local10.com/news/local/2026/08/06/teen-riding-electric-scooter-seriously-injured-in-crash-in-wilton-manors/",
           "date": "20260806T211500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "cbs4local.com",
+      "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+      "seendate": "20260806T201500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "cbs4local.com"
+      ],
+      "sources": [
+        {
+          "domain": "cbs4local.com",
+          "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+          "date": "20260806T201500Z"
         }
       ]
     },
@@ -141,6 +141,30 @@
         {
           "domain": "okcfox.com",
           "url": "https://okcfox.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+          "date": "20260806T200000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wgxa.tv",
+      "url": "https://wgxa.tv/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+      "seendate": "20260806T200000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wgxa.tv"
+      ],
+      "sources": [
+        {
+          "domain": "wgxa.tv",
+          "url": "https://wgxa.tv/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
           "date": "20260806T200000Z"
         }
       ]
@@ -262,30 +286,6 @@
           "domain": "abc7chicago.com",
           "url": "https://abc7chicago.com/post/crystal-lake-crash-child-riding-bike-injured-walkup-road-dvorak-fire-department-officials-say/19632179/",
           "date": "20260806T004500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "kfdm.com",
-      "url": "https://kfdm.com/news/local/e-bike-rider-injured-in-collision-near-lake-sam-rayburn-08-03-2026",
-      "seendate": "20260803T161500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "kfdm.com"
-      ],
-      "sources": [
-        {
-          "domain": "kfdm.com",
-          "url": "https://kfdm.com/news/local/e-bike-rider-injured-in-collision-near-lake-sam-rayburn-08-03-2026",
-          "date": "20260803T161500Z"
         }
       ]
     }

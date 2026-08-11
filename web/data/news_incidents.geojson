@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -84.4970393,
+          38.0464066
+        ]
+      },
+      "properties": {
+        "city": "Lexington",
+        "state": "KY",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "wkyt.com"
+        ],
+        "sources": [
+          {
+            "domain": "wkyt.com",
+            "url": "https://www.wkyt.com/2026/08/10/kentucky-youth-seriously-injured-crash-involving-electric-scooter/",
+            "date": "20260811T004500Z"
+          }
+        ],
+        "date": "20260811T004500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -89.5176418,
           37.304731
         ]
@@ -44,37 +75,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -106.779807,
-          32.3140354
-        ]
-      },
-      "properties": {
-        "city": "Las Cruces",
-        "state": "NM",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "cbs4local.com"
-        ],
-        "sources": [
-          {
-            "domain": "cbs4local.com",
-            "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-            "date": "20260806T201500Z"
-          }
-        ],
-        "date": "20260806T201500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -77.0363849,
           38.8950982
         ]
@@ -83,22 +83,22 @@
         "city": "Washington",
         "state": "DC",
         "location_precision": "city_state_mention",
-        "device": "E-scooter",
+        "device": "E-bike",
         "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
+        "throttle_ambiguous": true,
+        "age_band": "0-12 (child)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
-          "wgxa.tv"
+          "okcfox.com"
         ],
         "sources": [
           {
-            "domain": "wgxa.tv",
-            "url": "https://wgxa.tv/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-            "date": "20260806T200000Z"
+            "domain": "okcfox.com",
+            "url": "https://okcfox.com/news/fox-25-investigates/edmond-parents-raise-school-safety-concerns-over-walking-routes-traffic-and-e-bikes",
+            "date": "20260807T183000Z"
           }
         ],
-        "date": "20260806T200000Z"
+        "date": "20260807T183000Z"
       }
     },
     {
@@ -161,37 +161,6 @@
           }
         ],
         "date": "20260804T171500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -73.176273,
-          44.4642957
-        ]
-      },
-      "properties": {
-        "city": "South Burlington",
-        "state": "VT",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wcax.com"
-        ],
-        "sources": [
-          {
-            "domain": "wcax.com",
-            "url": "https://www.wcax.com/2026/08/03/im-completely-shattered-dad-mourns-teen-killed-burlington-e-bike-crash/",
-            "date": "20260804T014500Z"
-          }
-        ],
-        "date": "20260804T014500Z"
       }
     }
   ]
