@@ -4,6 +4,30 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "kiro7.com",
+      "url": "https://www.kiro7.com/news/local/harborview-seeing-more-more-patients-injured-e-bike-e-scooter-crashes/L4PAIASXG5HSHENAY5NWVRQISY/",
+      "seendate": "20260812T050000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "kiro7.com"
+      ],
+      "sources": [
+        {
+          "domain": "kiro7.com",
+          "url": "https://www.kiro7.com/news/local/harborview-seeing-more-more-patients-injured-e-bike-e-scooter-crashes/L4PAIASXG5HSHENAY5NWVRQISY/",
+          "date": "20260812T050000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "Unknown",
       "city": null,
@@ -46,6 +70,30 @@
           "domain": "nbcconnecticut.com",
           "url": "https://www.nbcconnecticut.com/news/local/e-bike-operator-seriously-injured-after-crash-in-norwalk/3763852/",
           "date": "20260811T180000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wkyt.com",
+      "url": "https://www.wkyt.com/2026/08/10/kentucky-youth-seriously-injured-crash-involving-electric-scooter/",
+      "seendate": "20260811T004500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wkyt.com"
+      ],
+      "sources": [
+        {
+          "domain": "wkyt.com",
+          "url": "https://www.wkyt.com/2026/08/10/kentucky-youth-seriously-injured-crash-involving-electric-scooter/",
+          "date": "20260811T004500Z"
         }
       ]
     },
@@ -142,6 +190,30 @@
           "domain": "dailymail.com",
           "url": "https://www.dailymail.com/media/article-16034141/florida-radio-host-e-bike-accident-helmet-hair.html",
           "date": "20260806T201500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "okcfox.com",
+      "url": "https://okcfox.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+      "seendate": "20260806T200000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "okcfox.com"
+      ],
+      "sources": [
+        {
+          "domain": "okcfox.com",
+          "url": "https://okcfox.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+          "date": "20260806T200000Z"
         }
       ]
     },

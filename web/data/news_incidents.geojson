@@ -13,37 +13,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -84.4970393,
-          38.0464066
-        ]
-      },
-      "properties": {
-        "city": "Lexington",
-        "state": "KY",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wkyt.com"
-        ],
-        "sources": [
-          {
-            "domain": "wkyt.com",
-            "url": "https://www.wkyt.com/2026/08/10/kentucky-youth-seriously-injured-crash-involving-electric-scooter/",
-            "date": "20260811T004500Z"
-          }
-        ],
-        "date": "20260811T004500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -89.5176418,
           37.304731
         ]
@@ -99,37 +68,6 @@
           }
         ],
         "date": "20260806T201500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.0363849,
-          38.8950982
-        ]
-      },
-      "properties": {
-        "city": "Washington",
-        "state": "DC",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "okcfox.com"
-        ],
-        "sources": [
-          {
-            "domain": "okcfox.com",
-            "url": "https://okcfox.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-            "date": "20260806T200000Z"
-          }
-        ],
-        "date": "20260806T200000Z"
       }
     },
     {
