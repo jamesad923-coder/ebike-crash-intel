@@ -106,6 +106,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -77.0363849,
+          38.8950982
+        ]
+      },
+      "properties": {
+        "city": "Washington",
+        "state": "DC",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "okcfox.com"
+        ],
+        "sources": [
+          {
+            "domain": "okcfox.com",
+            "url": "https://okcfox.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+            "date": "20260806T200000Z"
+          }
+        ],
+        "date": "20260806T200000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -95.0435373,
           45.1219492
         ]
