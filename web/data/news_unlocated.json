@@ -74,10 +74,34 @@
       ]
     },
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "komonews.com",
+      "url": "https://komonews.com/news/local/37-year-old-man-on-electric-scooter-hit-killed-by-16-year-old-driver-north-seattle-police-traffic-crash-collision",
+      "seendate": "20260811T144500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "komonews.com"
+      ],
+      "sources": [
+        {
+          "domain": "komonews.com",
+          "url": "https://komonews.com/news/local/37-year-old-man-on-electric-scooter-hit-killed-by-16-year-old-driver-north-seattle-police-traffic-crash-collision",
+          "date": "20260811T144500Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "13-17 (teen)",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
