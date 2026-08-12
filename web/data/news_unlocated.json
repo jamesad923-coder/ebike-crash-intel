@@ -74,30 +74,6 @@
       ]
     },
     {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wkyt.com",
-      "url": "https://www.wkyt.com/2026/08/10/kentucky-youth-seriously-injured-crash-involving-electric-scooter/",
-      "seendate": "20260811T004500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wkyt.com"
-      ],
-      "sources": [
-        {
-          "domain": "wkyt.com",
-          "url": "https://www.wkyt.com/2026/08/10/kentucky-youth-seriously-injured-crash-involving-electric-scooter/",
-          "date": "20260811T004500Z"
-        }
-      ]
-    },
-    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",

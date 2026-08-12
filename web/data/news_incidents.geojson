@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -84.4970393,
+          38.0464066
+        ]
+      },
+      "properties": {
+        "city": "Lexington",
+        "state": "KY",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "wkyt.com"
+        ],
+        "sources": [
+          {
+            "domain": "wkyt.com",
+            "url": "https://www.wkyt.com/2026/08/10/kentucky-youth-seriously-injured-crash-involving-electric-scooter/",
+            "date": "20260811T004500Z"
+          }
+        ],
+        "date": "20260811T004500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -89.5176418,
           37.304731
         ]
