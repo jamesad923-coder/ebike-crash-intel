@@ -2,6 +2,78 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "yahoo.com",
+      "url": "https://www.yahoo.com/news/us/articles/florida-deputies-truck-believed-involved-150846692.html",
+      "seendate": "20260813T154500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "yahoo.com"
+      ],
+      "sources": [
+        {
+          "domain": "yahoo.com",
+          "url": "https://www.yahoo.com/news/us/articles/florida-deputies-truck-believed-involved-150846692.html",
+          "date": "20260813T154500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "yahoo.com",
+      "url": "https://www.yahoo.com/news/us/articles/dover-school-officials-urge-caution-084141656.html",
+      "seendate": "20260813T091500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "yahoo.com"
+      ],
+      "sources": [
+        {
+          "domain": "yahoo.com",
+          "url": "https://www.yahoo.com/news/us/articles/dover-school-officials-urge-caution-084141656.html",
+          "date": "20260813T091500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nyc.streetsblog.org",
+      "url": "https://nyc.streetsblog.org/2026/08/13/the-e-moto-effect-to-make-roads-safer-we-need-to-reverse-engineer-micromobility-regulations",
+      "seendate": "20260813T074500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nyc.streetsblog.org"
+      ],
+      "sources": [
+        {
+          "domain": "nyc.streetsblog.org",
+          "url": "https://nyc.streetsblog.org/2026/08/13/the-e-moto-effect-to-make-roads-safer-we-need-to-reverse-engineer-micromobility-regulations",
+          "date": "20260813T074500Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -22,30 +94,6 @@
           "domain": "abc7news.com",
           "url": "https://abc7news.com/post/yebin-kim-32-year-old-woman-struck-killed-truck-riding-scooter-san-francisco-identified/19670449/",
           "date": "20260813T041500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcbayarea.com",
-      "url": "https://www.nbcbayarea.com/news/local/woman-killed-riding-electric-scooter-san-francisco-identified/4127284/",
-      "seendate": "20260813T001500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcbayarea.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcbayarea.com",
-          "url": "https://www.nbcbayarea.com/news/local/woman-killed-riding-electric-scooter-san-francisco-identified/4127284/",
-          "date": "20260813T001500Z"
         }
       ]
     },
@@ -149,7 +197,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -195,33 +243,9 @@
     },
     {
       "device": "E-bike",
-      "throttle_ambiguous": true,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "okcfox.com",
-      "url": "https://okcfox.com/news/fox-25-investigates/edmond-parents-raise-school-safety-concerns-over-walking-routes-traffic-and-e-bikes",
-      "seendate": "20260807T183000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "okcfox.com"
-      ],
-      "sources": [
-        {
-          "domain": "okcfox.com",
-          "url": "https://okcfox.com/news/fox-25-investigates/edmond-parents-raise-school-safety-concerns-over-walking-routes-traffic-and-e-bikes",
-          "date": "20260807T183000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "13-17 (teen)",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -238,6 +262,30 @@
           "domain": "local10.com",
           "url": "https://www.local10.com/news/local/2026/08/06/teen-riding-electric-scooter-seriously-injured-in-crash-in-wilton-manors/",
           "date": "20260806T211500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "cbs4local.com",
+      "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+      "seendate": "20260806T201500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "cbs4local.com"
+      ],
+      "sources": [
+        {
+          "domain": "cbs4local.com",
+          "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+          "date": "20260806T201500Z"
         }
       ]
     },

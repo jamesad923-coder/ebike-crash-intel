@@ -100,68 +100,6 @@
         ],
         "date": "20260810T033000Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -106.779807,
-          32.3140354
-        ]
-      },
-      "properties": {
-        "city": "Las Cruces",
-        "state": "NM",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "cbs4local.com"
-        ],
-        "sources": [
-          {
-            "domain": "cbs4local.com",
-            "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
-            "date": "20260806T201500Z"
-          }
-        ],
-        "date": "20260806T201500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -95.0435373,
-          45.1219492
-        ]
-      },
-      "properties": {
-        "city": "Willmar",
-        "state": "MN",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "45-64",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wctrib.com"
-        ],
-        "sources": [
-          {
-            "domain": "wctrib.com",
-            "url": "https://www.wctrib.com/news/local/willmar-police-investigate-crash-that-severely-injured-man-on-e-bike",
-            "date": "20260806T183000Z"
-          }
-        ],
-        "date": "20260806T183000Z"
-      }
     }
   ]
 }
