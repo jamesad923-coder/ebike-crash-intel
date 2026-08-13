@@ -2,6 +2,54 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nbcbayarea.com",
+      "url": "https://www.nbcbayarea.com/news/local/woman-killed-riding-electric-scooter-san-francisco-identified/4127284/",
+      "seendate": "20260813T001500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nbcbayarea.com"
+      ],
+      "sources": [
+        {
+          "domain": "nbcbayarea.com",
+          "url": "https://www.nbcbayarea.com/news/local/woman-killed-riding-electric-scooter-san-francisco-identified/4127284/",
+          "date": "20260813T001500Z"
+        }
+      ]
+    },
+    {
+      "device": "Throttle vehicle (unclear e-bike classification)",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "mvtimes.com",
+      "url": "https://www.mvtimes.com/2026/08/12/trauma-counseling-for-first-responders/",
+      "seendate": "20260812T231500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "mvtimes.com"
+      ],
+      "sources": [
+        {
+          "domain": "mvtimes.com",
+          "url": "https://www.mvtimes.com/2026/08/12/trauma-counseling-for-first-responders/",
+          "date": "20260812T231500Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -29,7 +77,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "Unknown",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -70,30 +118,6 @@
           "domain": "nbcconnecticut.com",
           "url": "https://www.nbcconnecticut.com/news/local/e-bike-operator-seriously-injured-after-crash-in-norwalk/3763852/",
           "date": "20260811T180000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "komonews.com",
-      "url": "https://komonews.com/news/local/37-year-old-man-on-electric-scooter-hit-killed-by-16-year-old-driver-north-seattle-police-traffic-crash-collision",
-      "seendate": "20260811T144500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "komonews.com"
-      ],
-      "sources": [
-        {
-          "domain": "komonews.com",
-          "url": "https://komonews.com/news/local/37-year-old-man-on-electric-scooter-hit-killed-by-16-year-old-driver-north-seattle-police-traffic-crash-collision",
-          "date": "20260811T144500Z"
         }
       ]
     },
@@ -166,6 +190,30 @@
           "domain": "local10.com",
           "url": "https://www.local10.com/news/local/2026/08/06/teen-riding-electric-scooter-seriously-injured-in-crash-in-wilton-manors/",
           "date": "20260806T211500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "cbs4local.com",
+      "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+      "seendate": "20260806T201500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "cbs4local.com"
+      ],
+      "sources": [
+        {
+          "domain": "cbs4local.com",
+          "url": "https://cbs4local.com/news/nation-world/two-13-year-old-girls-electric-scooter-killed-crash-truck-utah",
+          "date": "20260806T201500Z"
         }
       ]
     },
@@ -286,78 +334,6 @@
           "domain": "abc7.com",
           "url": "https://abc7.com/post/socal-teen-speaks-bike-dangers-recovering-life-threatening-2025-crash/19631366/",
           "date": "20260806T044500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "chicago.suntimes.com",
-      "url": "https://chicago.suntimes.com/news/2026/08/05/teen-killed-e-scooter-crash-western-avenue-north-center-alex-blacio",
-      "seendate": "20260806T024500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "chicago.suntimes.com"
-      ],
-      "sources": [
-        {
-          "domain": "chicago.suntimes.com",
-          "url": "https://chicago.suntimes.com/news/2026/08/05/teen-killed-e-scooter-crash-western-avenue-north-center-alex-blacio",
-          "date": "20260806T024500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "1039wvbo.com",
-      "url": "https://www.1039wvbo.com/2026/08/05/unlicensed-14-year-old-injured-in-illegal-e-bike-crash-in-sheboygan/",
-      "seendate": "20260806T013000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "1039wvbo.com"
-      ],
-      "sources": [
-        {
-          "domain": "1039wvbo.com",
-          "url": "https://www.1039wvbo.com/2026/08/05/unlicensed-14-year-old-injured-in-illegal-e-bike-crash-in-sheboygan/",
-          "date": "20260806T013000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "abc7chicago.com",
-      "url": "https://abc7chicago.com/post/crystal-lake-crash-child-riding-bike-injured-walkup-road-dvorak-fire-department-officials-say/19632179/",
-      "seendate": "20260806T004500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "abc7chicago.com"
-      ],
-      "sources": [
-        {
-          "domain": "abc7chicago.com",
-          "url": "https://abc7chicago.com/post/crystal-lake-crash-child-riding-bike-injured-walkup-road-dvorak-fire-department-officials-say/19632179/",
-          "date": "20260806T004500Z"
         }
       ]
     }
