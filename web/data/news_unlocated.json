@@ -3,6 +3,54 @@
   "reports": [
     {
       "device": "E-bike",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wral.com",
+      "url": "https://www.wral.com/news/ap/51e6f-kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
+      "seendate": "20260814T153000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wral.com"
+      ],
+      "sources": [
+        {
+          "domain": "wral.com",
+          "url": "https://www.wral.com/news/ap/51e6f-kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
+          "date": "20260814T153000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Severe injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "myfox28columbus.com",
+      "url": "https://myfox28columbus.com/news/local/e-bike-rider-struck-by-vehicle-on-summit-st-at-18th-ave-in-critical-condition-bike-lane-accident-investigation-unit-grant-medical-center-white-ford-2010-e-250",
+      "seendate": "20260814T044500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "myfox28columbus.com"
+      ],
+      "sources": [
+        {
+          "domain": "myfox28columbus.com",
+          "url": "https://myfox28columbus.com/news/local/e-bike-rider-struck-by-vehicle-on-summit-st-at-18th-ave-in-critical-condition-bike-lane-accident-investigation-unit-grant-medical-center-white-ford-2010-e-250",
+          "date": "20260814T044500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "45-64",
@@ -148,30 +196,6 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wgal.com",
-      "url": "https://www.wgal.com/article/lancaster-county-hazmat-company-ending-service/73406230",
-      "seendate": "20260812T013000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wgal.com"
-      ],
-      "sources": [
-        {
-          "domain": "wgal.com",
-          "url": "https://www.wgal.com/article/lancaster-county-hazmat-company-ending-service/73406230",
-          "date": "20260812T013000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "Unknown",
       "city": null,
@@ -197,7 +221,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "0-12 (child)",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -238,6 +262,30 @@
           "domain": "fox32chicago.com",
           "url": "https://www.fox32chicago.com/news/e-bike-rider-critically-injured-after-crashing-into-box-truck-in-geneva-police-say",
           "date": "20260808T000000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": "Franklin Saginaw",
+      "state": "MI",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "wnem.com",
+      "url": "https://www.wnem.com/2026/08/14/live-wnem-morning-extra-teen-injured-saginaw-shooting/",
+      "seendate": "20260814T113000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wnem.com"
+      ],
+      "sources": [
+        {
+          "domain": "wnem.com",
+          "url": "https://www.wnem.com/2026/08/14/live-wnem-morning-extra-teen-injured-saginaw-shooting/",
+          "date": "20260814T113000Z"
         }
       ]
     },
