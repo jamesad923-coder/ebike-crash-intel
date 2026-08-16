@@ -53,7 +53,7 @@
       "device": "E-bike",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
-      "age_band": "18-24",
+      "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -268,32 +268,8 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "65+",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "local21news.com",
-      "url": "https://local21news.com/news/local/person-on-e-bike-hit-by-car-in-lancaster-county-roadway-dispatch-pa-pennsylvania-lititz-crash-e-bike-accident-ems-ambulance",
-      "seendate": "20260810T143000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "local21news.com"
-      ],
-      "sources": [
-        {
-          "domain": "local21news.com",
-          "url": "https://local21news.com/news/local/person-on-e-bike-hit-by-car-in-lancaster-county-roadway-dispatch-pa-pennsylvania-lititz-crash-e-bike-accident-ems-ambulance",
-          "date": "20260810T143000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "18-24",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -317,7 +293,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "0-12 (child)",
+      "age_band": "13-17 (teen)",
       "city": "Franklin Saginaw",
       "state": "MI",
       "location_precision": "city_state_mention",
@@ -358,6 +334,30 @@
           "domain": "wnem.com",
           "url": "https://www.wnem.com/2026/08/13/14-year-old-boy-riding-e-bike-critically-injured-early-morning-crash/",
           "date": "20260813T211500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "65+",
+      "city": "Crashes HARRISBURG",
+      "state": "PA",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "local21news.com",
+      "url": "https://local21news.com/news/local/pa-state-rep-to-propose-a-new-policy-regarding-e-bikes-and-scooters-york-crash-allegheny-joe-mcandrew",
+      "seendate": "20260812T041500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "local21news.com"
+      ],
+      "sources": [
+        {
+          "domain": "local21news.com",
+          "url": "https://local21news.com/news/local/pa-state-rep-to-propose-a-new-policy-regarding-e-bikes-and-scooters-york-crash-allegheny-joe-mcandrew",
+          "date": "20260812T041500Z"
         }
       ]
     }
