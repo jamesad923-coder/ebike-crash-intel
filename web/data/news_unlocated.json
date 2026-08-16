@@ -51,6 +51,30 @@
     },
     {
       "device": "E-bike",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "18-24",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "ksat.com",
+      "url": "https://www.ksat.com/business/2026/08/14/kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
+      "seendate": "20260814T151500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "ksat.com"
+      ],
+      "sources": [
+        {
+          "domain": "ksat.com",
+          "url": "https://www.ksat.com/business/2026/08/14/kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
+          "date": "20260814T151500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "45-64",
@@ -245,7 +269,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "Unknown",
+      "age_band": "65+",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -334,30 +358,6 @@
           "domain": "wnem.com",
           "url": "https://www.wnem.com/2026/08/13/14-year-old-boy-riding-e-bike-critically-injured-early-morning-crash/",
           "date": "20260813T211500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": "Crashes HARRISBURG",
-      "state": "PA",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "local21news.com",
-      "url": "https://local21news.com/news/local/pa-state-rep-to-propose-a-new-policy-regarding-e-bikes-and-scooters-york-crash-allegheny-joe-mcandrew",
-      "seendate": "20260812T041500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "local21news.com"
-      ],
-      "sources": [
-        {
-          "domain": "local21news.com",
-          "url": "https://local21news.com/news/local/pa-state-rep-to-propose-a-new-policy-regarding-e-bikes-and-scooters-york-crash-allegheny-joe-mcandrew",
-          "date": "20260812T041500Z"
         }
       ]
     }
