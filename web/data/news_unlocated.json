@@ -196,30 +196,6 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wgal.com",
-      "url": "https://www.wgal.com/article/lancaster-county-hazmat-company-ending-service/73406230",
-      "seendate": "20260812T013000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wgal.com"
-      ],
-      "sources": [
-        {
-          "domain": "wgal.com",
-          "url": "https://www.wgal.com/article/lancaster-county-hazmat-company-ending-service/73406230",
-          "date": "20260812T013000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "Unknown",
       "city": null,
