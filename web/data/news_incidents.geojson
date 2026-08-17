@@ -69,37 +69,6 @@
         ],
         "date": "20260811T004500Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -89.5176418,
-          37.304731
-        ]
-      },
-      "properties": {
-        "city": "Cape Girardeau",
-        "state": "MO",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "kfvs12.com"
-        ],
-        "sources": [
-          {
-            "domain": "kfvs12.com",
-            "url": "https://www.kfvs12.com/2026/08/10/12-year-old-girl-injured-electric-scooter-crash-mccracken-county/",
-            "date": "20260810T033000Z"
-          }
-        ],
-        "date": "20260810T033000Z"
-      }
     }
   ]
 }
