@@ -194,30 +194,6 @@
       ]
     },
     {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "miragenews.com",
-      "url": "https://www.miragenews.com/e-scooters-injure-nearly-500-kids-in-england-1725580/",
-      "seendate": "20260812T013000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "miragenews.com"
-      ],
-      "sources": [
-        {
-          "domain": "miragenews.com",
-          "url": "https://www.miragenews.com/e-scooters-injure-nearly-500-kids-in-england-1725580/",
-          "date": "20260812T013000Z"
-        }
-      ]
-    },
-    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -262,30 +238,6 @@
           "domain": "nbcconnecticut.com",
           "url": "https://www.nbcconnecticut.com/news/local/e-bike-operator-seriously-injured-after-crash-in-norwalk/3763852/",
           "date": "20260811T180000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "miragenews.com",
-      "url": "https://www.miragenews.com/e-scooter-head-injuries-on-rise-study-1725373/",
-      "seendate": "20260811T154500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "miragenews.com"
-      ],
-      "sources": [
-        {
-          "domain": "miragenews.com",
-          "url": "https://www.miragenews.com/e-scooter-head-injuries-on-rise-study-1725373/",
-          "date": "20260811T154500Z"
         }
       ]
     },
