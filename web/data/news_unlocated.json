@@ -3,30 +3,6 @@
   "reports": [
     {
       "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Severe injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wgal.com",
-      "url": "https://www.wgal.com/article/lancaster-man-critically-injured-electric-bicycle-crash/73439559",
-      "seendate": "20260815T010000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wgal.com"
-      ],
-      "sources": [
-        {
-          "domain": "wgal.com",
-          "url": "https://www.wgal.com/article/lancaster-man-critically-injured-electric-bicycle-crash/73439559",
-          "date": "20260815T010000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
       "age_band": "13-17 (teen)",
@@ -46,30 +22,6 @@
           "domain": "wral.com",
           "url": "https://www.wral.com/news/ap/51e6f-kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
           "date": "20260814T153000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": true,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "ksat.com",
-      "url": "https://www.ksat.com/business/2026/08/14/kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
-      "seendate": "20260814T151500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "ksat.com"
-      ],
-      "sources": [
-        {
-          "domain": "ksat.com",
-          "url": "https://www.ksat.com/business/2026/08/14/kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
-          "date": "20260814T151500Z"
         }
       ]
     },
@@ -170,6 +122,30 @@
       ]
     },
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nbcbayarea.com",
+      "url": "https://www.nbcbayarea.com/news/local/woman-killed-riding-electric-scooter-san-francisco-identified/4127284/",
+      "seendate": "20260813T001500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nbcbayarea.com"
+      ],
+      "sources": [
+        {
+          "domain": "nbcbayarea.com",
+          "url": "https://www.nbcbayarea.com/news/local/woman-killed-riding-electric-scooter-san-francisco-identified/4127284/",
+          "date": "20260813T001500Z"
+        }
+      ]
+    },
+    {
       "device": "Throttle vehicle (unclear e-bike classification)",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
@@ -244,32 +220,8 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcconnecticut.com",
-      "url": "https://www.nbcconnecticut.com/news/local/e-bike-operator-seriously-injured-after-crash-in-norwalk/3763852/",
-      "seendate": "20260811T180000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcconnecticut.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcconnecticut.com",
-          "url": "https://www.nbcconnecticut.com/news/local/e-bike-operator-seriously-injured-after-crash-in-norwalk/3763852/",
-          "date": "20260811T180000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "18-24",
+      "age_band": "13-17 (teen)",
       "city": "Franklin Saginaw",
       "state": "MI",
       "location_precision": "city_state_mention",
