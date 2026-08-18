@@ -3,25 +3,25 @@
   "reports": [
     {
       "device": "E-bike",
-      "throttle_ambiguous": true,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
+      "throttle_ambiguous": false,
+      "outcome": "Severe injury",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "click2houston.com",
-      "url": "https://www.click2houston.com/business/2026/08/14/kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
-      "seendate": "20260814T164500Z",
+      "domain": "wgal.com",
+      "url": "https://www.wgal.com/article/lancaster-man-critically-injured-electric-bicycle-crash/73439559",
+      "seendate": "20260815T010000Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "click2houston.com"
+        "wgal.com"
       ],
       "sources": [
         {
-          "domain": "click2houston.com",
-          "url": "https://www.click2houston.com/business/2026/08/14/kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
-          "date": "20260814T164500Z"
+          "domain": "wgal.com",
+          "url": "https://www.wgal.com/article/lancaster-man-critically-injured-electric-bicycle-crash/73439559",
+          "date": "20260815T010000Z"
         }
       ]
     },
@@ -194,6 +194,54 @@
       ]
     },
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "miragenews.com",
+      "url": "https://www.miragenews.com/e-scooters-injure-nearly-500-kids-in-england-1725580/",
+      "seendate": "20260812T013000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "miragenews.com"
+      ],
+      "sources": [
+        {
+          "domain": "miragenews.com",
+          "url": "https://www.miragenews.com/e-scooters-injure-nearly-500-kids-in-england-1725580/",
+          "date": "20260812T013000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wgal.com",
+      "url": "https://www.wgal.com/article/lancaster-county-hazmat-company-ending-service/73406230",
+      "seendate": "20260812T013000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wgal.com"
+      ],
+      "sources": [
+        {
+          "domain": "wgal.com",
+          "url": "https://www.wgal.com/article/lancaster-county-hazmat-company-ending-service/73406230",
+          "date": "20260812T013000Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -218,10 +266,34 @@
       ]
     },
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "miragenews.com",
+      "url": "https://www.miragenews.com/e-scooter-head-injuries-on-rise-study-1725373/",
+      "seendate": "20260811T154500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "miragenews.com"
+      ],
+      "sources": [
+        {
+          "domain": "miragenews.com",
+          "url": "https://www.miragenews.com/e-scooter-head-injuries-on-rise-study-1725373/",
+          "date": "20260811T154500Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
+      "age_band": "18-24",
       "city": "Franklin Saginaw",
       "state": "MI",
       "location_precision": "city_state_mention",
