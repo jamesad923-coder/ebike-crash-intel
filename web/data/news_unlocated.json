@@ -51,6 +51,30 @@
     },
     {
       "device": "E-bike",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "ksat.com",
+      "url": "https://www.ksat.com/business/2026/08/14/kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
+      "seendate": "20260814T151500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "ksat.com"
+      ],
+      "sources": [
+        {
+          "domain": "ksat.com",
+          "url": "https://www.ksat.com/business/2026/08/14/kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
+          "date": "20260814T151500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "45-64",
