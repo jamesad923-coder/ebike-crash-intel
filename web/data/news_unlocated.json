@@ -122,30 +122,6 @@
       ]
     },
     {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcbayarea.com",
-      "url": "https://www.nbcbayarea.com/news/local/woman-killed-riding-electric-scooter-san-francisco-identified/4127284/",
-      "seendate": "20260813T001500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcbayarea.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcbayarea.com",
-          "url": "https://www.nbcbayarea.com/news/local/woman-killed-riding-electric-scooter-san-francisco-identified/4127284/",
-          "date": "20260813T001500Z"
-        }
-      ]
-    },
-    {
       "device": "Throttle vehicle (unclear e-bike classification)",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
@@ -172,54 +148,6 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "kiro7.com",
-      "url": "https://www.kiro7.com/news/local/harborview-seeing-more-more-patients-injured-e-bike-e-scooter-crashes/L4PAIASXG5HSHENAY5NWVRQISY/",
-      "seendate": "20260812T050000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "kiro7.com"
-      ],
-      "sources": [
-        {
-          "domain": "kiro7.com",
-          "url": "https://www.kiro7.com/news/local/harborview-seeing-more-more-patients-injured-e-bike-e-scooter-crashes/L4PAIASXG5HSHENAY5NWVRQISY/",
-          "date": "20260812T050000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wgal.com",
-      "url": "https://www.wgal.com/article/lancaster-county-hazmat-company-ending-service/73406230",
-      "seendate": "20260812T013000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wgal.com"
-      ],
-      "sources": [
-        {
-          "domain": "wgal.com",
-          "url": "https://www.wgal.com/article/lancaster-county-hazmat-company-ending-service/73406230",
-          "date": "20260812T013000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "13-17 (teen)",
       "city": "Franklin Saginaw",
@@ -227,8 +155,8 @@
       "location_precision": "city_state_mention",
       "located": true,
       "domain": "wnem.com",
-      "url": "https://www.wnem.com/2026/08/14/live-wnem-morning-extra-teen-injured-saginaw-shooting/",
-      "seendate": "20260814T113000Z",
+      "url": "https://www.wnem.com/2026/08/18/wnem-evening-extra-14-year-old-dies-after-e-bike-crash/",
+      "seendate": "20260819T021500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
         "wnem.com"
@@ -236,8 +164,8 @@
       "sources": [
         {
           "domain": "wnem.com",
-          "url": "https://www.wnem.com/2026/08/14/live-wnem-morning-extra-teen-injured-saginaw-shooting/",
-          "date": "20260814T113000Z"
+          "url": "https://www.wnem.com/2026/08/18/wnem-evening-extra-14-year-old-dies-after-e-bike-crash/",
+          "date": "20260819T021500Z"
         }
       ]
     },
@@ -262,6 +190,11 @@
           "domain": "wnem.com",
           "url": "https://www.wnem.com/2026/08/13/14-year-old-boy-riding-e-bike-critically-injured-early-morning-crash/",
           "date": "20260813T211500Z"
+        },
+        {
+          "domain": "wnem.com",
+          "url": "https://www.wnem.com/2026/08/14/live-wnem-morning-extra-teen-injured-saginaw-shooting/",
+          "date": "20260814T113000Z"
         }
       ]
     }
