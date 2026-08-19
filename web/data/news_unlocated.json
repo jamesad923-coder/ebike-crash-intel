@@ -3,6 +3,102 @@
   "reports": [
     {
       "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Severe injury",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "myfox28columbus.com",
+      "url": "https://myfox28columbus.com/news/local/man-critically-injured-in-e-bike-crash-dies-from-injuries-days-after-incident-summit-street-william-brewer-critical-condition-accident-investigation-unit",
+      "seendate": "20260819T180000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "myfox28columbus.com"
+      ],
+      "sources": [
+        {
+          "domain": "myfox28columbus.com",
+          "url": "https://myfox28columbus.com/news/local/man-critically-injured-in-e-bike-crash-dies-from-injuries-days-after-incident-summit-street-william-brewer-critical-condition-accident-investigation-unit",
+          "date": "20260819T180000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wsgw.com",
+      "url": "https://www.wsgw.com/davison-teen-killed-in-e-bike-crash/",
+      "seendate": "20260819T171500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wsgw.com"
+      ],
+      "sources": [
+        {
+          "domain": "wsgw.com",
+          "url": "https://www.wsgw.com/davison-teen-killed-in-e-bike-crash/",
+          "date": "20260819T171500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nbcchicago.com",
+      "url": "https://www.nbcchicago.com/news/local/fundraiser-set-for-suburban-15-year-old-badly-hurt-in-e-bike-crash/3977093/",
+      "seendate": "20260818T234500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nbcchicago.com"
+      ],
+      "sources": [
+        {
+          "domain": "nbcchicago.com",
+          "url": "https://www.nbcchicago.com/news/local/fundraiser-set-for-suburban-15-year-old-badly-hurt-in-e-bike-crash/3977093/",
+          "date": "20260818T234500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wcvb.com",
+      "url": "https://www.wcvb.com/article/cambridge-hit-and-run-suspect-arrested/73454847",
+      "seendate": "20260817T224500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wcvb.com"
+      ],
+      "sources": [
+        {
+          "domain": "wcvb.com",
+          "url": "https://www.wcvb.com/article/cambridge-hit-and-run-suspect-arrested/73454847",
+          "date": "20260817T224500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
       "age_band": "13-17 (teen)",
@@ -22,6 +118,30 @@
           "domain": "wral.com",
           "url": "https://www.wral.com/news/ap/51e6f-kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
           "date": "20260814T153000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Severe injury",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "abc6onyourside.com",
+      "url": "https://abc6onyourside.com/news/local/e-bike-rider-struck-by-vehicle-on-summit-st-at-18th-ave-in-critical-condition-bike-lane-accident-investigation-unit-grant-medical-center-white-ford-2010-e-250",
+      "seendate": "20260814T061500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "abc6onyourside.com"
+      ],
+      "sources": [
+        {
+          "domain": "abc6onyourside.com",
+          "url": "https://abc6onyourside.com/news/local/e-bike-rider-struck-by-vehicle-on-summit-st-at-18th-ave-in-critical-condition-bike-lane-accident-investigation-unit-grant-medical-center-white-ford-2010-e-250",
+          "date": "20260814T061500Z"
         }
       ]
     },
