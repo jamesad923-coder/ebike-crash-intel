@@ -7,37 +7,5 @@
     "url": "https://www.gdeltproject.org/",
     "limitations": "UNVERIFIED beyond automated cross-source checks. Each report is either 'corroborated' (2+ independent outlets, same city/outcome, within 3 days) or 'single_source' (one outlet only) -- shown explicitly. Extracted automatically from article text via keyword/dateline matching, not human-reviewed. Early news reports can be wrong about cause or severity. Never shows a name or exact age -- city, age BAND, device, and outcome only. Always check the linked source(s) before treating any single report as fact."
   },
-  "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -73.176273,
-          44.4642957
-        ]
-      },
-      "properties": {
-        "city": "South Burlington",
-        "state": "VT",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wcax.com"
-        ],
-        "sources": [
-          {
-            "domain": "wcax.com",
-            "url": "https://www.wcax.com/2026/08/12/e-scooter-rider-seriously-injured-crash-with-bus-burlington/",
-            "date": "20260812T200000Z"
-          }
-        ],
-        "date": "20260812T200000Z"
-      }
-    }
-  ]
+  "features": []
 }

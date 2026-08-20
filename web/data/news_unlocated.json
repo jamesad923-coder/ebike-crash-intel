@@ -74,30 +74,6 @@
       ]
     },
     {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wcvb.com",
-      "url": "https://www.wcvb.com/article/cambridge-hit-and-run-suspect-arrested/73454847",
-      "seendate": "20260817T224500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wcvb.com"
-      ],
-      "sources": [
-        {
-          "domain": "wcvb.com",
-          "url": "https://www.wcvb.com/article/cambridge-hit-and-run-suspect-arrested/73454847",
-          "date": "20260817T224500Z"
-        }
-      ]
-    },
-    {
       "device": "E-bike",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
@@ -118,30 +94,6 @@
           "domain": "wral.com",
           "url": "https://www.wral.com/news/ap/51e6f-kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
           "date": "20260814T153000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Severe injury",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "abc6onyourside.com",
-      "url": "https://abc6onyourside.com/news/local/e-bike-rider-struck-by-vehicle-on-summit-st-at-18th-ave-in-critical-condition-bike-lane-accident-investigation-unit-grant-medical-center-white-ford-2010-e-250",
-      "seendate": "20260814T061500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "abc6onyourside.com"
-      ],
-      "sources": [
-        {
-          "domain": "abc6onyourside.com",
-          "url": "https://abc6onyourside.com/news/local/e-bike-rider-struck-by-vehicle-on-summit-st-at-18th-ave-in-critical-condition-bike-lane-accident-investigation-unit-grant-medical-center-white-ford-2010-e-250",
-          "date": "20260814T061500Z"
         }
       ]
     },
@@ -242,30 +194,6 @@
       ]
     },
     {
-      "device": "Throttle vehicle (unclear e-bike classification)",
-      "throttle_ambiguous": true,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "mvtimes.com",
-      "url": "https://www.mvtimes.com/2026/08/12/trauma-counseling-for-first-responders/",
-      "seendate": "20260812T231500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "mvtimes.com"
-      ],
-      "sources": [
-        {
-          "domain": "mvtimes.com",
-          "url": "https://www.mvtimes.com/2026/08/12/trauma-counseling-for-first-responders/",
-          "date": "20260812T231500Z"
-        }
-      ]
-    },
-    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -286,6 +214,54 @@
           "domain": "wnem.com",
           "url": "https://www.wnem.com/2026/08/18/wnem-evening-extra-14-year-old-dies-after-e-bike-crash/",
           "date": "20260819T021500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": "Johns County",
+      "state": "FL",
+      "location_precision": "county+outlet_market",
+      "located": true,
+      "domain": "news4jax.com",
+      "url": "https://www.news4jax.com/news/florida/2026/08/14/kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
+      "seendate": "20260814T133000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "news4jax.com"
+      ],
+      "sources": [
+        {
+          "domain": "news4jax.com",
+          "url": "https://www.news4jax.com/news/florida/2026/08/14/kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
+          "date": "20260814T133000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "45-64",
+      "city": "Johns County",
+      "state": "FL",
+      "location_precision": "county+outlet_market",
+      "located": true,
+      "domain": "news4jax.com",
+      "url": "https://www.news4jax.com/news/local/2026/08/17/jacksonville-proposed-e-bike-ordinance-may-change-after-stakeholder-meeting-age-limit-could-be-removed/",
+      "seendate": "20260818T001500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "news4jax.com"
+      ],
+      "sources": [
+        {
+          "domain": "news4jax.com",
+          "url": "https://www.news4jax.com/news/local/2026/08/17/jacksonville-proposed-e-bike-ordinance-may-change-after-stakeholder-meeting-age-limit-could-be-removed/",
+          "date": "20260818T001500Z"
         }
       ]
     },
