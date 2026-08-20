@@ -7,5 +7,37 @@
     "url": "https://www.gdeltproject.org/",
     "limitations": "UNVERIFIED beyond automated cross-source checks. Each report is either 'corroborated' (2+ independent outlets, same city/outcome, within 3 days) or 'single_source' (one outlet only) -- shown explicitly. Extracted automatically from article text via keyword/dateline matching, not human-reviewed. Early news reports can be wrong about cause or severity. Never shows a name or exact age -- city, age BAND, device, and outcome only. Always check the linked source(s) before treating any single report as fact."
   },
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.8678322,
+          32.7927956
+        ]
+      },
+      "properties": {
+        "city": "Mount Pleasant",
+        "state": "SC",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "abcnews4.com"
+        ],
+        "sources": [
+          {
+            "domain": "abcnews4.com",
+            "url": "https://abcnews4.com/news/local/mount-pleasant-police-arrest-man-after-he-allegedly-grabbed-juvenile-off-e-bike-hit-them-crime-charleston-county-detention-center-treadwell-street",
+            "date": "20260819T211500Z"
+          }
+        ],
+        "date": "20260819T211500Z"
+      }
+    }
+  ]
 }
