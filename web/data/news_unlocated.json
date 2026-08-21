@@ -99,30 +99,6 @@
     },
     {
       "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Severe injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wgal.com",
-      "url": "https://www.wgal.com/article/lancaster-man-critically-injured-electric-bicycle-crash/73439559",
-      "seendate": "20260815T010000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wgal.com"
-      ],
-      "sources": [
-        {
-          "domain": "wgal.com",
-          "url": "https://www.wgal.com/article/lancaster-man-critically-injured-electric-bicycle-crash/73439559",
-          "date": "20260815T010000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
       "age_band": "13-17 (teen)",
@@ -149,30 +125,6 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "abc6onyourside.com",
-      "url": "https://abc6onyourside.com/news/local/e-bike-rider-struck-by-vehicle-on-summit-st-at-18th-ave-in-critical-condition-bike-lane-accident-investigation-unit-grant-medical-center-white-ford-2010-e-250",
-      "seendate": "20260814T061500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "abc6onyourside.com"
-      ],
-      "sources": [
-        {
-          "domain": "abc6onyourside.com",
-          "url": "https://abc6onyourside.com/news/local/e-bike-rider-struck-by-vehicle-on-summit-st-at-18th-ave-in-critical-condition-bike-lane-accident-investigation-unit-grant-medical-center-white-ford-2010-e-250",
-          "date": "20260814T061500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
       "age_band": "13-17 (teen)",
       "city": "Franklin Saginaw",
       "state": "MI",
@@ -190,35 +142,6 @@
           "domain": "wnem.com",
           "url": "https://www.wnem.com/2026/08/18/wnem-evening-extra-14-year-old-dies-after-e-bike-crash/",
           "date": "20260819T021500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Severe injury",
-      "age_band": "13-17 (teen)",
-      "city": "Franklin Saginaw",
-      "state": "MI",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "wnem.com",
-      "url": "https://www.wnem.com/2026/08/13/14-year-old-boy-riding-e-bike-critically-injured-early-morning-crash/",
-      "seendate": "20260813T211500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wnem.com"
-      ],
-      "sources": [
-        {
-          "domain": "wnem.com",
-          "url": "https://www.wnem.com/2026/08/13/14-year-old-boy-riding-e-bike-critically-injured-early-morning-crash/",
-          "date": "20260813T211500Z"
-        },
-        {
-          "domain": "wnem.com",
-          "url": "https://www.wnem.com/2026/08/14/live-wnem-morning-extra-teen-injured-saginaw-shooting/",
-          "date": "20260814T113000Z"
         }
       ]
     }
