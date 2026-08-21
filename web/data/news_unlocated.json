@@ -99,25 +99,25 @@
     },
     {
       "device": "E-bike",
-      "throttle_ambiguous": true,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
+      "throttle_ambiguous": false,
+      "outcome": "Severe injury",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "wral.com",
-      "url": "https://www.wral.com/news/ap/51e6f-kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
-      "seendate": "20260814T153000Z",
+      "domain": "wgal.com",
+      "url": "https://www.wgal.com/article/lancaster-man-critically-injured-electric-bicycle-crash/73439559",
+      "seendate": "20260815T010000Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "wral.com"
+        "wgal.com"
       ],
       "sources": [
         {
-          "domain": "wral.com",
-          "url": "https://www.wral.com/news/ap/51e6f-kids-keep-getting-hurt-and-killed-on-e-bikes-should-parents-be-held-responsible/",
-          "date": "20260814T153000Z"
+          "domain": "wgal.com",
+          "url": "https://www.wgal.com/article/lancaster-man-critically-injured-electric-bicycle-crash/73439559",
+          "date": "20260815T010000Z"
         }
       ]
     },
