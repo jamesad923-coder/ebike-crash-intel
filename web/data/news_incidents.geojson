@@ -7,5 +7,37 @@
     "url": "https://www.gdeltproject.org/",
     "limitations": "UNVERIFIED beyond automated cross-source checks. Each report is either 'corroborated' (2+ independent outlets, same city/outcome, within 3 days) or 'single_source' (one outlet only) -- shown explicitly. Extracted automatically from article text via keyword/dateline matching, not human-reviewed. Early news reports can be wrong about cause or severity. Never shows a name or exact age -- city, age BAND, device, and outcome only. Always check the linked source(s) before treating any single report as fact."
   },
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.5891008,
+          40.6938609
+        ]
+      },
+      "properties": {
+        "city": "Peoria",
+        "state": "IL",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "45-64",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "1049thewolf.com"
+        ],
+        "sources": [
+          {
+            "domain": "1049thewolf.com",
+            "url": "https://www.1049thewolf.com/2026/08/17/peoria-man-injured-in-hit-run-saturday-night/",
+            "date": "20260817T213000Z"
+          }
+        ],
+        "date": "20260817T213000Z"
+      }
+    }
+  ]
 }
