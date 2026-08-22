@@ -10,6 +10,30 @@
       "state": null,
       "location_precision": null,
       "located": false,
+      "domain": "courant.com",
+      "url": "https://www.courant.com/2026/08/21/three-juveniles-riding-on-e-bike-hospitalized-after-crashing-into-car-in-milford/",
+      "seendate": "20260821T210000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "courant.com"
+      ],
+      "sources": [
+        {
+          "domain": "courant.com",
+          "url": "https://www.courant.com/2026/08/21/three-juveniles-riding-on-e-bike-hospitalized-after-crashing-into-car-in-milford/",
+          "date": "20260821T210000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
       "domain": "mynbc5.com",
       "url": "https://www.mynbc5.com/article/weathersfield-vermont-e-bike-crash/73483765",
       "seendate": "20260820T161500Z",
@@ -94,30 +118,6 @@
           "domain": "nbcchicago.com",
           "url": "https://www.nbcchicago.com/news/local/fundraiser-set-for-suburban-15-year-old-badly-hurt-in-e-bike-crash/3977093/",
           "date": "20260818T234500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Severe injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wgal.com",
-      "url": "https://www.wgal.com/article/lancaster-man-critically-injured-electric-bicycle-crash/73439559",
-      "seendate": "20260815T010000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wgal.com"
-      ],
-      "sources": [
-        {
-          "domain": "wgal.com",
-          "url": "https://www.wgal.com/article/lancaster-man-critically-injured-electric-bicycle-crash/73439559",
-          "date": "20260815T010000Z"
         }
       ]
     },
