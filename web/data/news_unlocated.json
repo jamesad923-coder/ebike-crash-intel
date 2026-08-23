@@ -2,6 +2,30 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nbcdfw.com",
+      "url": "https://www.nbcdfw.com/news/local/12-year-old-significantly-injured-stable-garland-hit-run-crash/4066485/",
+      "seendate": "20260823T004500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nbcdfw.com"
+      ],
+      "sources": [
+        {
+          "domain": "nbcdfw.com",
+          "url": "https://www.nbcdfw.com/news/local/12-year-old-significantly-injured-stable-garland-hit-run-crash/4066485/",
+          "date": "20260823T004500Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
