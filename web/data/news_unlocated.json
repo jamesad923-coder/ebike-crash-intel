@@ -4,6 +4,30 @@
     {
       "device": "E-scooter",
       "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "18-24",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "local10.com",
+      "url": "https://www.local10.com/news/local/2026/08/24/miami-dade-deputies-id-victim-in-e-scooter-crash-that-escalated-to-fatal-shooting/",
+      "seendate": "20260824T161500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "local10.com"
+      ],
+      "sources": [
+        {
+          "domain": "local10.com",
+          "url": "https://www.local10.com/news/local/2026/08/24/miami-dade-deputies-id-victim-in-e-scooter-crash-that-escalated-to-fatal-shooting/",
+          "date": "20260824T161500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "0-12 (child)",
       "city": null,
@@ -29,7 +53,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "13-17 (teen)",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -53,7 +77,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
