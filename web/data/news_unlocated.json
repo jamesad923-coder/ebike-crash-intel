@@ -4,6 +4,174 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "sgvtribune.com",
+      "url": "https://www.sgvtribune.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+      "seendate": "20260826T190000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "sgvtribune.com"
+      ],
+      "sources": [
+        {
+          "domain": "sgvtribune.com",
+          "url": "https://www.sgvtribune.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+          "date": "20260826T190000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "dailybreeze.com",
+      "url": "https://www.dailybreeze.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+      "seendate": "20260826T164500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "dailybreeze.com"
+      ],
+      "sources": [
+        {
+          "domain": "dailybreeze.com",
+          "url": "https://www.dailybreeze.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+          "date": "20260826T164500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "whittierdailynews.com",
+      "url": "https://www.whittierdailynews.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+      "seendate": "20260826T153000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "whittierdailynews.com"
+      ],
+      "sources": [
+        {
+          "domain": "whittierdailynews.com",
+          "url": "https://www.whittierdailynews.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+          "date": "20260826T153000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "pasadenastarnews.com",
+      "url": "https://www.pasadenastarnews.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+      "seendate": "20260826T153000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "pasadenastarnews.com"
+      ],
+      "sources": [
+        {
+          "domain": "pasadenastarnews.com",
+          "url": "https://www.pasadenastarnews.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+          "date": "20260826T153000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "65+",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "redlandsdailyfacts.com",
+      "url": "https://www.redlandsdailyfacts.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+      "seendate": "20260826T150000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "redlandsdailyfacts.com"
+      ],
+      "sources": [
+        {
+          "domain": "redlandsdailyfacts.com",
+          "url": "https://www.redlandsdailyfacts.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+          "date": "20260826T150000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "courant.com",
+      "url": "https://www.courant.com/2026/08/26/one-person-seriously-injured-in-crash-involving-e-scooter-in-norwalk/",
+      "seendate": "20260826T121500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "courant.com"
+      ],
+      "sources": [
+        {
+          "domain": "courant.com",
+          "url": "https://www.courant.com/2026/08/26/one-person-seriously-injured-in-crash-involving-e-scooter-in-norwalk/",
+          "date": "20260826T121500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "krcrtv.com",
+      "url": "https://krcrtv.com/news/local/e-bike-rider-hospitalized-after-crash-with-pickup-in-redding",
+      "seendate": "20260826T033000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "krcrtv.com"
+      ],
+      "sources": [
+        {
+          "domain": "krcrtv.com",
+          "url": "https://krcrtv.com/news/local/e-bike-rider-hospitalized-after-crash-with-pickup-in-redding",
+          "date": "20260826T033000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "0-12 (child)",
       "city": null,
@@ -50,34 +218,10 @@
       ]
     },
     {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcdfw.com",
-      "url": "https://www.nbcdfw.com/news/local/12-year-old-significantly-injured-stable-garland-hit-run-crash/4066485/",
-      "seendate": "20260823T004500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcdfw.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcdfw.com",
-          "url": "https://www.nbcdfw.com/news/local/12-year-old-significantly-injured-stable-garland-hit-run-crash/4066485/",
-          "date": "20260823T004500Z"
-        }
-      ]
-    },
-    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -118,54 +262,6 @@
           "domain": "mynbc5.com",
           "url": "https://www.mynbc5.com/article/weathersfield-vermont-e-bike-crash/73483765",
           "date": "20260820T161500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Severe injury",
-      "age_band": "45-64",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "myfox28columbus.com",
-      "url": "https://myfox28columbus.com/news/local/man-critically-injured-in-e-bike-crash-dies-from-injuries-days-after-incident-summit-street-william-brewer-critical-condition-accident-investigation-unit",
-      "seendate": "20260819T180000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "myfox28columbus.com"
-      ],
-      "sources": [
-        {
-          "domain": "myfox28columbus.com",
-          "url": "https://myfox28columbus.com/news/local/man-critically-injured-in-e-bike-crash-dies-from-injuries-days-after-incident-summit-street-william-brewer-critical-condition-accident-investigation-unit",
-          "date": "20260819T180000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wsgw.com",
-      "url": "https://www.wsgw.com/davison-teen-killed-in-e-bike-crash/",
-      "seendate": "20260819T171500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wsgw.com"
-      ],
-      "sources": [
-        {
-          "domain": "wsgw.com",
-          "url": "https://www.wsgw.com/davison-teen-killed-in-e-bike-crash/",
-          "date": "20260819T171500Z"
         }
       ]
     }
