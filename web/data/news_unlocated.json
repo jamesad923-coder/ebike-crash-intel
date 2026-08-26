@@ -168,30 +168,6 @@
           "date": "20260819T171500Z"
         }
       ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": "Franklin Saginaw",
-      "state": "MI",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "wnem.com",
-      "url": "https://www.wnem.com/2026/08/18/wnem-evening-extra-14-year-old-dies-after-e-bike-crash/",
-      "seendate": "20260819T021500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wnem.com"
-      ],
-      "sources": [
-        {
-          "domain": "wnem.com",
-          "url": "https://www.wnem.com/2026/08/18/wnem-evening-extra-14-year-old-dies-after-e-bike-crash/",
-          "date": "20260819T021500Z"
-        }
-      ]
     }
   ]
 }
