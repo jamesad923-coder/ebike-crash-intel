@@ -2,10 +2,34 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "sandiegouniontribune.com",
+      "url": "https://www.sandiegouniontribune.com/2026/08/25/encinitas-council-to-host-special-traffic-safety-meeting-wednesday-afternoon/",
+      "seendate": "20260825T234500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "sandiegouniontribune.com"
+      ],
+      "sources": [
+        {
+          "domain": "sandiegouniontribune.com",
+          "url": "https://www.sandiegouniontribune.com/2026/08/25/encinitas-council-to-host-special-traffic-safety-meeting-wednesday-afternoon/",
+          "date": "20260825T234500Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "45-64",
+      "age_band": "18-24",
       "city": null,
       "state": null,
       "location_precision": null,
