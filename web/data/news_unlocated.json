@@ -4,6 +4,78 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
+      "outcome": "Severe injury",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "myfox28columbus.com",
+      "url": "https://myfox28columbus.com/news/local/e-bike-rider-in-critical-condition-after-university-district-crash-investigation-ongoing-ohio-state-medical-center-serious-injuries-car-electric-powered-bicycle",
+      "seendate": "20260827T210000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "myfox28columbus.com"
+      ],
+      "sources": [
+        {
+          "domain": "myfox28columbus.com",
+          "url": "https://myfox28columbus.com/news/local/e-bike-rider-in-critical-condition-after-university-district-crash-investigation-ongoing-ohio-state-medical-center-serious-injuries-car-electric-powered-bicycle",
+          "date": "20260827T210000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "mynbc5.com",
+      "url": "https://www.mynbc5.com/article/doug-knapp-shiloh-skalka-court-crash/73542932",
+      "seendate": "20260827T144500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "mynbc5.com"
+      ],
+      "sources": [
+        {
+          "domain": "mynbc5.com",
+          "url": "https://www.mynbc5.com/article/doug-knapp-shiloh-skalka-court-crash/73542932",
+          "date": "20260827T144500Z"
+        }
+      ]
+    },
+    {
+      "device": "Throttle vehicle (unclear e-bike classification)",
+      "throttle_ambiguous": true,
+      "outcome": "Injury",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wwmt.com",
+      "url": "https://wwmt.com/news/local/dirt-bike-baby-crash-grand-haven-injured-riding-back-mercury-drive-no-helmet-20-month-girl-ford-work-truck-driveway-parking-lot-michigan-wwmt",
+      "seendate": "20260827T034500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wwmt.com"
+      ],
+      "sources": [
+        {
+          "domain": "wwmt.com",
+          "url": "https://wwmt.com/news/local/dirt-bike-baby-crash-grand-haven-injured-riding-back-mercury-drive-no-helmet-20-month-girl-ford-work-truck-driveway-parking-lot-michigan-wwmt",
+          "date": "20260827T034500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "Unknown",
       "city": null,
@@ -27,9 +99,9 @@
     },
     {
       "device": "E-bike",
-      "throttle_ambiguous": false,
+      "throttle_ambiguous": true,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "65+",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -51,9 +123,9 @@
     },
     {
       "device": "E-bike",
-      "throttle_ambiguous": false,
+      "throttle_ambiguous": true,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "65+",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -75,9 +147,9 @@
     },
     {
       "device": "E-bike",
-      "throttle_ambiguous": false,
+      "throttle_ambiguous": true,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "65+",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -99,7 +171,7 @@
     },
     {
       "device": "E-bike",
-      "throttle_ambiguous": false,
+      "throttle_ambiguous": true,
       "outcome": "Injury",
       "age_band": "65+",
       "city": null,
@@ -142,30 +214,6 @@
           "domain": "courant.com",
           "url": "https://www.courant.com/2026/08/26/one-person-seriously-injured-in-crash-involving-e-scooter-in-norwalk/",
           "date": "20260826T121500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "krcrtv.com",
-      "url": "https://krcrtv.com/news/local/e-bike-rider-hospitalized-after-crash-with-pickup-in-redding",
-      "seendate": "20260826T033000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "krcrtv.com"
-      ],
-      "sources": [
-        {
-          "domain": "krcrtv.com",
-          "url": "https://krcrtv.com/news/local/e-bike-rider-hospitalized-after-crash-with-pickup-in-redding",
-          "date": "20260826T033000Z"
         }
       ]
     },
@@ -221,7 +269,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "13-17 (teen)",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -238,30 +286,6 @@
           "domain": "courant.com",
           "url": "https://www.courant.com/2026/08/21/three-juveniles-riding-on-e-bike-hospitalized-after-crashing-into-car-in-milford/",
           "date": "20260821T210000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "mynbc5.com",
-      "url": "https://www.mynbc5.com/article/weathersfield-vermont-e-bike-crash/73483765",
-      "seendate": "20260820T161500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "mynbc5.com"
-      ],
-      "sources": [
-        {
-          "domain": "mynbc5.com",
-          "url": "https://www.mynbc5.com/article/weathersfield-vermont-e-bike-crash/73483765",
-          "date": "20260820T161500Z"
         }
       ]
     }
