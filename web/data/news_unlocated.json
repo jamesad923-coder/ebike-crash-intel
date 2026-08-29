@@ -5,6 +5,54 @@
       "device": "E-bike",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "littleapplepost.com",
+      "url": "https://littleapplepost.com/posts/102fe0b6-8bfd-4c14-96aa-6ceeb82aca66",
+      "seendate": "20260829T174500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "littleapplepost.com"
+      ],
+      "sources": [
+        {
+          "domain": "littleapplepost.com",
+          "url": "https://littleapplepost.com/posts/102fe0b6-8bfd-4c14-96aa-6ceeb82aca66",
+          "date": "20260829T174500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "littleapplepost.com",
+      "url": "https://littleapplepost.com/posts/ec111abb-47eb-4ffb-b058-032b757ff23c",
+      "seendate": "20260829T124500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "littleapplepost.com"
+      ],
+      "sources": [
+        {
+          "domain": "littleapplepost.com",
+          "url": "https://littleapplepost.com/posts/ec111abb-47eb-4ffb-b058-032b757ff23c",
+          "date": "20260829T124500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
       "age_band": "0-12 (child)",
       "city": null,
       "state": null,
@@ -173,7 +221,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Severe injury",
-      "age_band": "45-64",
+      "age_band": "18-24",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -218,26 +266,26 @@
       ]
     },
     {
-      "device": "Throttle vehicle (unclear e-bike classification)",
+      "device": "E-bike",
       "throttle_ambiguous": true,
       "outcome": "Injury",
-      "age_band": "25-44",
+      "age_band": "65+",
       "city": null,
       "state": null,
       "location_precision": null,
       "located": false,
-      "domain": "wwmt.com",
-      "url": "https://wwmt.com/news/local/dirt-bike-baby-crash-grand-haven-injured-riding-back-mercury-drive-no-helmet-20-month-girl-ford-work-truck-driveway-parking-lot-michigan-wwmt",
-      "seendate": "20260827T034500Z",
+      "domain": "dailybreeze.com",
+      "url": "https://www.dailybreeze.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+      "seendate": "20260826T164500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "wwmt.com"
+        "dailybreeze.com"
       ],
       "sources": [
         {
-          "domain": "wwmt.com",
-          "url": "https://wwmt.com/news/local/dirt-bike-baby-crash-grand-haven-injured-riding-back-mercury-drive-no-helmet-20-month-girl-ford-work-truck-driveway-parking-lot-michigan-wwmt",
-          "date": "20260827T034500Z"
+          "domain": "dailybreeze.com",
+          "url": "https://www.dailybreeze.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+          "date": "20260826T164500Z"
         }
       ]
     },
@@ -269,7 +317,7 @@
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "0-12 (child)",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -286,6 +334,30 @@
           "domain": "courant.com",
           "url": "https://www.courant.com/2026/08/26/one-person-seriously-injured-in-crash-involving-e-scooter-in-norwalk/",
           "date": "20260826T121500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "krcrtv.com",
+      "url": "https://krcrtv.com/news/local/e-bike-rider-hospitalized-after-crash-with-pickup-in-redding",
+      "seendate": "20260826T033000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "krcrtv.com"
+      ],
+      "sources": [
+        {
+          "domain": "krcrtv.com",
+          "url": "https://krcrtv.com/news/local/e-bike-rider-hospitalized-after-crash-with-pickup-in-redding",
+          "date": "20260826T033000Z"
         }
       ]
     },
@@ -310,6 +382,30 @@
           "domain": "sandiegouniontribune.com",
           "url": "https://www.sandiegouniontribune.com/2026/08/25/encinitas-council-to-host-special-traffic-safety-meeting-wednesday-afternoon/",
           "date": "20260825T234500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "miragenews.com",
+      "url": "https://www.miragenews.com/all-signs-were-there-1732270/",
+      "seendate": "20260824T194500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "miragenews.com"
+      ],
+      "sources": [
+        {
+          "domain": "miragenews.com",
+          "url": "https://www.miragenews.com/all-signs-were-there-1732270/",
+          "date": "20260824T194500Z"
         }
       ]
     },
@@ -387,7 +483,7 @@
     },
     {
       "device": "E-bike",
-      "throttle_ambiguous": true,
+      "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "65+",
       "city": "Oc",
@@ -399,7 +495,6 @@
       "seendate": "20260826T190000Z",
       "confidence_tier": "corroborated",
       "corroborating_domains": [
-        "dailybreeze.com",
         "pasadenastarnews.com",
         "sgvtribune.com",
         "whittierdailynews.com"
@@ -409,11 +504,6 @@
           "domain": "sgvtribune.com",
           "url": "https://www.sgvtribune.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
           "date": "20260826T190000Z"
-        },
-        {
-          "domain": "dailybreeze.com",
-          "url": "https://www.dailybreeze.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
-          "date": "20260826T164500Z"
         },
         {
           "domain": "whittierdailynews.com",
