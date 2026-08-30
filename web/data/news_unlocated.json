@@ -3,6 +3,54 @@
   "reports": [
     {
       "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nbcsandiego.com",
+      "url": "https://www.nbcsandiego.com/news/local/26-year-old-e-bike-rider-killed-in-vista-crash/4067212/",
+      "seendate": "20260830T044500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nbcsandiego.com"
+      ],
+      "sources": [
+        {
+          "domain": "nbcsandiego.com",
+          "url": "https://www.nbcsandiego.com/news/local/26-year-old-e-bike-rider-killed-in-vista-crash/4067212/",
+          "date": "20260830T044500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "miragenews.com",
+      "url": "https://www.miragenews.com/fatal-e-scooter-crash-at-childers-1735430/",
+      "seendate": "20260829T213000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "miragenews.com"
+      ],
+      "sources": [
+        {
+          "domain": "miragenews.com",
+          "url": "https://www.miragenews.com/fatal-e-scooter-crash-at-childers-1735430/",
+          "date": "20260829T213000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
       "age_band": "45-64",
@@ -341,7 +389,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "13-17 (teen)",
+      "age_band": "18-24",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -389,30 +437,6 @@
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "45-64",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "miragenews.com",
-      "url": "https://www.miragenews.com/all-signs-were-there-1732270/",
-      "seendate": "20260824T194500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "miragenews.com"
-      ],
-      "sources": [
-        {
-          "domain": "miragenews.com",
-          "url": "https://www.miragenews.com/all-signs-were-there-1732270/",
-          "date": "20260824T194500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
       "age_band": "18-24",
       "city": null,
       "state": null,
@@ -430,30 +454,6 @@
           "domain": "local10.com",
           "url": "https://www.local10.com/news/local/2026/08/24/miami-dade-deputies-id-victim-in-e-scooter-crash-that-escalated-to-fatal-shooting/",
           "date": "20260824T161500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcdfw.com",
-      "url": "https://www.nbcdfw.com/news/local/12-year-old-significantly-injured-stable-garland-hit-run-crash/4066485/",
-      "seendate": "20260823T004500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcdfw.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcdfw.com",
-          "url": "https://www.nbcdfw.com/news/local/12-year-old-significantly-injured-stable-garland-hit-run-crash/4066485/",
-          "date": "20260823T004500Z"
         }
       ]
     },
