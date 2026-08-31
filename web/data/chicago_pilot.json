@@ -2,191 +2,191 @@
   "ward_summary": {
     "date_window": {
       "start": "2021-01-01",
-      "end": "2026-08-24"
+      "end": "2026-08-31"
     },
     "measure_note": "Bicyclist-involved crash COUNTS by Chicago ward, 2021-01-01 onward (Chicago's full data goes back to 2015; we used a window matching DC's in length, not because we separately confirmed Chicago's pre-2021 reporting consistency the way DC's was checked -- a deliberate consistency choice, not an equivalent claim). NOT exposure-adjusted on its own -- see ward_exposure for that. Chicago's crash data has no e-bike-specific flag either, same gap as every other source in this project. helmet_used/helmet_not_used and in_bike_lane are DIRECTLY police-reported fields -- more reliable than an estimate, but still subject to whatever the reporting officer observed and recorded at the scene. near_mapped_bike_lane is the SEPARATE OSM-proximity estimate also used for DC (within ~30m of a mapped cycleway) -- it can disagree with in_bike_lane (e.g. a real lane exists but isn't mapped on OSM yet, or the officer's 'in bike lane' call was about a lane too new/minor to be in OSM). Both are shown, not reconciled into one number.",
     "records_excluded_no_geo_or_ward": 128,
-    "total_records": 11907,
+    "total_records": 12026,
     "by_ward": [
       {
-        "ward": "Ward 27",
-        "crashes": 792,
-        "fatal": 0,
-        "major_injury": 66,
-        "minor_injury": 491,
-        "helmet_used": 323,
-        "helmet_not_used": 469,
-        "in_bike_lane": 151,
-        "near_mapped_bike_lane": 430,
-        "minors_involved": 46
-      },
-      {
         "ward": "Ward 42",
-        "crashes": 789,
+        "crashes": 803,
         "fatal": 1,
-        "major_injury": 51,
-        "minor_injury": 474,
-        "helmet_used": 289,
-        "helmet_not_used": 500,
-        "in_bike_lane": 116,
-        "near_mapped_bike_lane": 389,
+        "major_injury": 54,
+        "minor_injury": 481,
+        "helmet_used": 294,
+        "helmet_not_used": 509,
+        "in_bike_lane": 117,
+        "near_mapped_bike_lane": 396,
         "minors_involved": 20
       },
       {
+        "ward": "Ward 27",
+        "crashes": 799,
+        "fatal": 0,
+        "major_injury": 67,
+        "minor_injury": 497,
+        "helmet_used": 324,
+        "helmet_not_used": 475,
+        "in_bike_lane": 151,
+        "near_mapped_bike_lane": 435,
+        "minors_involved": 47
+      },
+      {
         "ward": "Ward 32",
-        "crashes": 606,
+        "crashes": 612,
         "fatal": 1,
         "major_injury": 61,
-        "minor_injury": 383,
-        "helmet_used": 286,
-        "helmet_not_used": 320,
-        "in_bike_lane": 159,
-        "near_mapped_bike_lane": 402,
+        "minor_injury": 386,
+        "helmet_used": 288,
+        "helmet_not_used": 324,
+        "in_bike_lane": 161,
+        "near_mapped_bike_lane": 407,
         "minors_involved": 41
       },
       {
         "ward": "Ward 1",
-        "crashes": 493,
+        "crashes": 497,
         "fatal": 0,
         "major_injury": 43,
-        "minor_injury": 310,
-        "helmet_used": 237,
-        "helmet_not_used": 256,
-        "in_bike_lane": 170,
-        "near_mapped_bike_lane": 356,
+        "minor_injury": 313,
+        "helmet_used": 239,
+        "helmet_not_used": 258,
+        "in_bike_lane": 172,
+        "near_mapped_bike_lane": 360,
         "minors_involved": 29
       },
       {
         "ward": "Ward 34",
-        "crashes": 473,
+        "crashes": 478,
         "fatal": 1,
         "major_injury": 21,
-        "minor_injury": 287,
-        "helmet_used": 174,
-        "helmet_not_used": 299,
-        "in_bike_lane": 87,
-        "near_mapped_bike_lane": 261,
+        "minor_injury": 290,
+        "helmet_used": 177,
+        "helmet_not_used": 301,
+        "in_bike_lane": 89,
+        "near_mapped_bike_lane": 263,
         "minors_involved": 15
       },
       {
         "ward": "Ward 44",
-        "crashes": 441,
+        "crashes": 445,
         "fatal": 0,
-        "major_injury": 39,
-        "minor_injury": 287,
-        "helmet_used": 185,
-        "helmet_not_used": 256,
-        "in_bike_lane": 72,
-        "near_mapped_bike_lane": 190,
+        "major_injury": 40,
+        "minor_injury": 290,
+        "helmet_used": 186,
+        "helmet_not_used": 259,
+        "in_bike_lane": 73,
+        "near_mapped_bike_lane": 192,
         "minors_involved": 12
       },
       {
         "ward": "Ward 43",
-        "crashes": 415,
+        "crashes": 420,
         "fatal": 0,
         "major_injury": 29,
-        "minor_injury": 276,
-        "helmet_used": 189,
-        "helmet_not_used": 226,
+        "minor_injury": 278,
+        "helmet_used": 190,
+        "helmet_not_used": 230,
         "in_bike_lane": 107,
-        "near_mapped_bike_lane": 233,
+        "near_mapped_bike_lane": 236,
         "minors_involved": 23
       },
       {
         "ward": "Ward 28",
-        "crashes": 410,
+        "crashes": 416,
         "fatal": 1,
-        "major_injury": 44,
-        "minor_injury": 279,
-        "helmet_used": 105,
-        "helmet_not_used": 305,
-        "in_bike_lane": 63,
-        "near_mapped_bike_lane": 278,
-        "minors_involved": 30
+        "major_injury": 45,
+        "minor_injury": 283,
+        "helmet_used": 106,
+        "helmet_not_used": 310,
+        "in_bike_lane": 66,
+        "near_mapped_bike_lane": 283,
+        "minors_involved": 31
       },
       {
         "ward": "Ward 46",
-        "crashes": 401,
+        "crashes": 405,
         "fatal": 1,
         "major_injury": 22,
-        "minor_injury": 272,
-        "helmet_used": 188,
-        "helmet_not_used": 213,
-        "in_bike_lane": 61,
-        "near_mapped_bike_lane": 171,
+        "minor_injury": 275,
+        "helmet_used": 190,
+        "helmet_not_used": 215,
+        "in_bike_lane": 62,
+        "near_mapped_bike_lane": 172,
         "minors_involved": 14
       },
       {
         "ward": "Ward 47",
-        "crashes": 351,
+        "crashes": 354,
         "fatal": 1,
         "major_injury": 30,
-        "minor_injury": 224,
-        "helmet_used": 180,
-        "helmet_not_used": 171,
+        "minor_injury": 226,
+        "helmet_used": 181,
+        "helmet_not_used": 173,
         "in_bike_lane": 80,
-        "near_mapped_bike_lane": 218,
+        "near_mapped_bike_lane": 219,
         "minors_involved": 28
       },
       {
         "ward": "Ward 2",
-        "crashes": 326,
+        "crashes": 329,
         "fatal": 0,
         "major_injury": 20,
-        "minor_injury": 207,
+        "minor_injury": 209,
         "helmet_used": 143,
-        "helmet_not_used": 183,
+        "helmet_not_used": 186,
         "in_bike_lane": 60,
         "near_mapped_bike_lane": 145,
         "minors_involved": 9
       },
       {
         "ward": "Ward 33",
-        "crashes": 313,
+        "crashes": 318,
         "fatal": 0,
         "major_injury": 15,
-        "minor_injury": 208,
-        "helmet_used": 109,
-        "helmet_not_used": 204,
-        "in_bike_lane": 65,
-        "near_mapped_bike_lane": 161,
-        "minors_involved": 47
+        "minor_injury": 210,
+        "helmet_used": 110,
+        "helmet_not_used": 208,
+        "in_bike_lane": 66,
+        "near_mapped_bike_lane": 164,
+        "minors_involved": 48
       },
       {
         "ward": "Ward 26",
-        "crashes": 311,
+        "crashes": 316,
         "fatal": 0,
-        "major_injury": 17,
-        "minor_injury": 210,
+        "major_injury": 18,
+        "minor_injury": 213,
         "helmet_used": 86,
-        "helmet_not_used": 225,
+        "helmet_not_used": 230,
         "in_bike_lane": 53,
-        "near_mapped_bike_lane": 160,
+        "near_mapped_bike_lane": 161,
         "minors_involved": 46
       },
       {
         "ward": "Ward 48",
-        "crashes": 308,
+        "crashes": 313,
         "fatal": 0,
         "major_injury": 21,
-        "minor_injury": 193,
-        "helmet_used": 131,
-        "helmet_not_used": 177,
-        "in_bike_lane": 61,
-        "near_mapped_bike_lane": 173,
+        "minor_injury": 197,
+        "helmet_used": 133,
+        "helmet_not_used": 180,
+        "in_bike_lane": 62,
+        "near_mapped_bike_lane": 178,
         "minors_involved": 22
       },
       {
         "ward": "Ward 35",
-        "crashes": 299,
+        "crashes": 300,
         "fatal": 0,
         "major_injury": 24,
-        "minor_injury": 188,
+        "minor_injury": 189,
         "helmet_used": 143,
-        "helmet_not_used": 156,
+        "helmet_not_used": 157,
         "in_bike_lane": 68,
-        "near_mapped_bike_lane": 203,
-        "minors_involved": 33
+        "near_mapped_bike_lane": 204,
+        "minors_involved": 34
       },
       {
         "ward": "Ward 30",
@@ -201,28 +201,28 @@
         "minors_involved": 99
       },
       {
-        "ward": "Ward 11",
-        "crashes": 264,
-        "fatal": 3,
-        "major_injury": 19,
-        "minor_injury": 169,
-        "helmet_used": 77,
-        "helmet_not_used": 187,
-        "in_bike_lane": 40,
-        "near_mapped_bike_lane": 130,
-        "minors_involved": 37
-      },
-      {
         "ward": "Ward 36",
-        "crashes": 263,
+        "crashes": 267,
         "fatal": 0,
         "major_injury": 29,
-        "minor_injury": 160,
-        "helmet_used": 76,
-        "helmet_not_used": 187,
-        "in_bike_lane": 35,
-        "near_mapped_bike_lane": 103,
+        "minor_injury": 163,
+        "helmet_used": 77,
+        "helmet_not_used": 190,
+        "in_bike_lane": 37,
+        "near_mapped_bike_lane": 106,
         "minors_involved": 58
+      },
+      {
+        "ward": "Ward 11",
+        "crashes": 267,
+        "fatal": 3,
+        "major_injury": 19,
+        "minor_injury": 171,
+        "helmet_used": 77,
+        "helmet_not_used": 190,
+        "in_bike_lane": 41,
+        "near_mapped_bike_lane": 130,
+        "minors_involved": 37
       },
       {
         "ward": "Ward 25",
@@ -238,87 +238,87 @@
       },
       {
         "ward": "Ward 40",
-        "crashes": 246,
+        "crashes": 248,
         "fatal": 1,
         "major_injury": 21,
         "minor_injury": 144,
-        "helmet_used": 85,
+        "helmet_used": 87,
         "helmet_not_used": 160,
         "in_bike_lane": 20,
-        "near_mapped_bike_lane": 98,
+        "near_mapped_bike_lane": 100,
         "minors_involved": 40
       },
       {
         "ward": "Ward 49",
-        "crashes": 212,
+        "crashes": 214,
         "fatal": 0,
         "major_injury": 21,
-        "minor_injury": 136,
-        "helmet_used": 83,
-        "helmet_not_used": 129,
+        "minor_injury": 137,
+        "helmet_used": 84,
+        "helmet_not_used": 130,
         "in_bike_lane": 12,
         "near_mapped_bike_lane": 39,
         "minors_involved": 28
       },
       {
         "ward": "Ward 4",
-        "crashes": 211,
+        "crashes": 213,
         "fatal": 0,
         "major_injury": 20,
-        "minor_injury": 133,
+        "minor_injury": 134,
         "helmet_used": 77,
-        "helmet_not_used": 134,
-        "in_bike_lane": 29,
-        "near_mapped_bike_lane": 91,
+        "helmet_not_used": 136,
+        "in_bike_lane": 30,
+        "near_mapped_bike_lane": 92,
         "minors_involved": 20
       },
       {
         "ward": "Ward 39",
-        "crashes": 205,
+        "crashes": 206,
         "fatal": 0,
         "major_injury": 22,
         "minor_injury": 136,
         "helmet_used": 81,
-        "helmet_not_used": 124,
-        "in_bike_lane": 36,
-        "near_mapped_bike_lane": 71,
+        "helmet_not_used": 125,
+        "in_bike_lane": 37,
+        "near_mapped_bike_lane": 72,
         "minors_involved": 34
       },
       {
         "ward": "Ward 31",
-        "crashes": 202,
+        "crashes": 204,
         "fatal": 0,
         "major_injury": 18,
-        "minor_injury": 130,
-        "helmet_used": 31,
-        "helmet_not_used": 171,
-        "in_bike_lane": 12,
-        "near_mapped_bike_lane": 88,
+        "minor_injury": 132,
+        "helmet_used": 32,
+        "helmet_not_used": 172,
+        "in_bike_lane": 14,
+        "near_mapped_bike_lane": 89,
         "minors_involved": 64
       },
       {
         "ward": "Ward 45",
-        "crashes": 196,
+        "crashes": 197,
         "fatal": 0,
         "major_injury": 19,
-        "minor_injury": 123,
+        "minor_injury": 124,
         "helmet_used": 64,
-        "helmet_not_used": 132,
+        "helmet_not_used": 133,
         "in_bike_lane": 15,
         "near_mapped_bike_lane": 46,
-        "minors_involved": 50
+        "minors_involved": 51
       },
       {
         "ward": "Ward 12",
-        "crashes": 178,
+        "crashes": 180,
         "fatal": 0,
         "major_injury": 12,
-        "minor_injury": 119,
+        "minor_injury": 121,
         "helmet_used": 39,
-        "helmet_not_used": 139,
-        "in_bike_lane": 10,
-        "near_mapped_bike_lane": 31,
-        "minors_involved": 37
+        "helmet_not_used": 141,
+        "in_bike_lane": 11,
+        "near_mapped_bike_lane": 54,
+        "minors_involved": 39
       },
       {
         "ward": "Ward 37",
@@ -334,39 +334,39 @@
       },
       {
         "ward": "Ward 50",
-        "crashes": 164,
+        "crashes": 165,
         "fatal": 1,
         "major_injury": 22,
-        "minor_injury": 113,
-        "helmet_used": 48,
+        "minor_injury": 114,
+        "helmet_used": 49,
         "helmet_not_used": 116,
         "in_bike_lane": 6,
-        "near_mapped_bike_lane": 33,
+        "near_mapped_bike_lane": 34,
         "minors_involved": 46
       },
       {
         "ward": "Ward 3",
-        "crashes": 163,
+        "crashes": 165,
         "fatal": 0,
         "major_injury": 12,
-        "minor_injury": 90,
-        "helmet_used": 58,
+        "minor_injury": 91,
+        "helmet_used": 60,
         "helmet_not_used": 105,
         "in_bike_lane": 18,
-        "near_mapped_bike_lane": 73,
+        "near_mapped_bike_lane": 75,
         "minors_involved": 6
       },
       {
         "ward": "Ward 14",
-        "crashes": 145,
+        "crashes": 146,
         "fatal": 0,
         "major_injury": 17,
-        "minor_injury": 94,
+        "minor_injury": 95,
         "helmet_used": 23,
-        "helmet_not_used": 122,
+        "helmet_not_used": 123,
         "in_bike_lane": 2,
         "near_mapped_bike_lane": 9,
-        "minors_involved": 38
+        "minors_involved": 39
       },
       {
         "ward": "Ward 5",
@@ -382,62 +382,62 @@
       },
       {
         "ward": "Ward 24",
-        "crashes": 134,
+        "crashes": 135,
         "fatal": 1,
         "major_injury": 12,
-        "minor_injury": 96,
+        "minor_injury": 97,
         "helmet_used": 22,
-        "helmet_not_used": 112,
+        "helmet_not_used": 113,
         "in_bike_lane": 10,
         "near_mapped_bike_lane": 45,
-        "minors_involved": 24
+        "minors_involved": 25
       },
       {
         "ward": "Ward 16",
-        "crashes": 132,
+        "crashes": 133,
         "fatal": 0,
         "major_injury": 13,
-        "minor_injury": 81,
+        "minor_injury": 82,
         "helmet_used": 15,
-        "helmet_not_used": 117,
+        "helmet_not_used": 118,
         "in_bike_lane": 4,
         "near_mapped_bike_lane": 35,
         "minors_involved": 22
       },
       {
         "ward": "Ward 6",
-        "crashes": 128,
+        "crashes": 130,
         "fatal": 0,
         "major_injury": 13,
         "minor_injury": 83,
         "helmet_used": 19,
-        "helmet_not_used": 109,
+        "helmet_not_used": 111,
         "in_bike_lane": 10,
         "near_mapped_bike_lane": 55,
         "minors_involved": 17
       },
       {
         "ward": "Ward 23",
-        "crashes": 125,
+        "crashes": 127,
         "fatal": 0,
         "major_injury": 9,
-        "minor_injury": 78,
-        "helmet_used": 15,
-        "helmet_not_used": 110,
+        "minor_injury": 79,
+        "helmet_used": 16,
+        "helmet_not_used": 111,
         "in_bike_lane": 4,
         "near_mapped_bike_lane": 0,
-        "minors_involved": 30
+        "minors_involved": 31
       },
       {
         "ward": "Ward 20",
-        "crashes": 110,
+        "crashes": 111,
         "fatal": 1,
         "major_injury": 12,
-        "minor_injury": 71,
+        "minor_injury": 72,
         "helmet_used": 19,
-        "helmet_not_used": 91,
-        "in_bike_lane": 5,
-        "near_mapped_bike_lane": 23,
+        "helmet_not_used": 92,
+        "in_bike_lane": 6,
+        "near_mapped_bike_lane": 24,
         "minors_involved": 13
       },
       {
@@ -453,13 +453,25 @@
         "minors_involved": 21
       },
       {
+        "ward": "Ward 8",
+        "crashes": 97,
+        "fatal": 0,
+        "major_injury": 17,
+        "minor_injury": 56,
+        "helmet_used": 12,
+        "helmet_not_used": 85,
+        "in_bike_lane": 5,
+        "near_mapped_bike_lane": 19,
+        "minors_involved": 14
+      },
+      {
         "ward": "Ward 38",
-        "crashes": 94,
+        "crashes": 95,
         "fatal": 1,
-        "major_injury": 8,
+        "major_injury": 9,
         "minor_injury": 56,
         "helmet_used": 21,
-        "helmet_not_used": 73,
+        "helmet_not_used": 74,
         "in_bike_lane": 0,
         "near_mapped_bike_lane": 4,
         "minors_involved": 32
@@ -477,18 +489,6 @@
         "minors_involved": 12
       },
       {
-        "ward": "Ward 8",
-        "crashes": 94,
-        "fatal": 0,
-        "major_injury": 17,
-        "minor_injury": 54,
-        "helmet_used": 12,
-        "helmet_not_used": 82,
-        "in_bike_lane": 4,
-        "near_mapped_bike_lane": 18,
-        "minors_involved": 14
-      },
-      {
         "ward": "Ward 29",
         "crashes": 87,
         "fatal": 0,
@@ -502,15 +502,27 @@
       },
       {
         "ward": "Ward 13",
-        "crashes": 80,
+        "crashes": 81,
         "fatal": 1,
         "major_injury": 8,
-        "minor_injury": 40,
+        "minor_injury": 41,
         "helmet_used": 8,
-        "helmet_not_used": 72,
+        "helmet_not_used": 73,
         "in_bike_lane": 1,
         "near_mapped_bike_lane": 0,
         "minors_involved": 27
+      },
+      {
+        "ward": "Ward 17",
+        "crashes": 80,
+        "fatal": 1,
+        "major_injury": 7,
+        "minor_injury": 61,
+        "helmet_used": 9,
+        "helmet_not_used": 71,
+        "in_bike_lane": 6,
+        "near_mapped_bike_lane": 21,
+        "minors_involved": 14
       },
       {
         "ward": "Ward 41",
@@ -525,51 +537,39 @@
         "minors_involved": 37
       },
       {
-        "ward": "Ward 17",
-        "crashes": 78,
-        "fatal": 1,
-        "major_injury": 7,
-        "minor_injury": 59,
-        "helmet_used": 8,
-        "helmet_not_used": 70,
-        "in_bike_lane": 6,
-        "near_mapped_bike_lane": 21,
-        "minors_involved": 13
-      },
-      {
         "ward": "Ward 19",
-        "crashes": 77,
+        "crashes": 78,
         "fatal": 0,
         "major_injury": 4,
-        "minor_injury": 47,
-        "helmet_used": 20,
+        "minor_injury": 48,
+        "helmet_used": 21,
         "helmet_not_used": 57,
         "in_bike_lane": 0,
         "near_mapped_bike_lane": 2,
-        "minors_involved": 26
+        "minors_involved": 27
       },
       {
         "ward": "Ward 10",
-        "crashes": 72,
+        "crashes": 73,
         "fatal": 1,
         "major_injury": 14,
-        "minor_injury": 43,
+        "minor_injury": 44,
         "helmet_used": 12,
-        "helmet_not_used": 60,
+        "helmet_not_used": 61,
         "in_bike_lane": 4,
         "near_mapped_bike_lane": 28,
         "minors_involved": 17
       },
       {
         "ward": "Ward 22",
-        "crashes": 71,
+        "crashes": 73,
         "fatal": 0,
-        "major_injury": 6,
+        "major_injury": 8,
         "minor_injury": 49,
         "helmet_used": 6,
-        "helmet_not_used": 65,
+        "helmet_not_used": 67,
         "in_bike_lane": 8,
-        "near_mapped_bike_lane": 36,
+        "near_mapped_bike_lane": 38,
         "minors_involved": 16
       },
       {
@@ -598,12 +598,12 @@
       },
       {
         "ward": "Ward 18",
-        "crashes": 50,
+        "crashes": 51,
         "fatal": 0,
         "major_injury": 2,
-        "minor_injury": 33,
+        "minor_injury": 34,
         "helmet_used": 12,
-        "helmet_not_used": 38,
+        "helmet_not_used": 39,
         "in_bike_lane": 0,
         "near_mapped_bike_lane": 2,
         "minors_involved": 17
@@ -778,6 +778,27 @@
             "helmet_used": false,
             "age_band": "Unknown",
             "date": "2024-07-27"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7061861024,
+              41.9686941655
+            ]
+          },
+          "properties": {
+            "ward": "Ward 33",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-28"
           }
         },
         {
@@ -1114,6 +1135,27 @@
             "helmet_used": true,
             "age_band": "65+",
             "date": "2025-06-12"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6329267461,
+              41.8752975008
+            ]
+          },
+          "properties": {
+            "ward": "Ward 34",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "Unknown",
+            "date": "2026-08-24"
           }
         },
         {
@@ -2139,7 +2181,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "13-17 (teen)",
             "date": "2022-07-14"
@@ -2416,6 +2458,27 @@
             "helmet_used": false,
             "age_band": "Unknown",
             "date": "2022-09-22"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7220520909,
+              41.7493390001
+            ]
+          },
+          "properties": {
+            "ward": "Ward 18",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "45-64",
+            "date": "2026-08-29"
           }
         },
         {
@@ -2731,6 +2794,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2025-11-03"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6300074056,
+              41.7689916
+            ]
+          },
+          "properties": {
+            "ward": "Ward 6",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-22"
           }
         },
         {
@@ -3231,7 +3315,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": true,
             "age_band": "25-44",
             "date": "2022-04-07"
@@ -3865,6 +3949,27 @@
             "helmet_used": true,
             "age_band": "45-64",
             "date": "2022-09-07"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7060949316,
+              41.9685847551
+            ]
+          },
+          "properties": {
+            "ward": "Ward 33",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "13-17 (teen)",
+            "date": "2026-08-28"
           }
         },
         {
@@ -6255,7 +6360,7 @@
             "major_injury": false,
             "minor_injury": false,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "45-64",
             "date": "2024-04-22"
@@ -7673,6 +7778,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6586152282,
+              41.9269963629
+            ]
+          },
+          "properties": {
+            "ward": "Ward 43",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-24"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6517589344,
               41.9182395531
             ]
@@ -8807,6 +8933,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6423187267,
+              41.8313201352
+            ]
+          },
+          "properties": {
+            "ward": "Ward 11",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7028312075,
               41.7721430133
             ]
@@ -9069,7 +9216,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "65+",
             "date": "2024-01-03"
@@ -9521,6 +9668,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6376249072,
+              41.8890092769
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-30"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6349286922,
               41.8892649255
             ]
@@ -9829,6 +9997,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2022-07-20"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6430424047,
+              41.869597513
+            ]
+          },
+          "properties": {
+            "ward": "Ward 28",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "0-12 (child)",
+            "date": "2026-08-28"
           }
         },
         {
@@ -13595,6 +13784,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.7785939169,
+              41.9686384098
+            ]
+          },
+          "properties": {
+            "ward": "Ward 45",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "0-12 (child)",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7136394675,
               41.9281889149
             ]
@@ -14214,7 +14424,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2026-03-15"
@@ -14743,6 +14953,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2026-07-16"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6228941903,
+              41.8934694676
+            ]
+          },
+          "properties": {
+            "ward": "Ward 2",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-22"
           }
         },
         {
@@ -15590,6 +15821,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6653844664,
+              41.8691702426
+            ]
+          },
+          "properties": {
+            "ward": "Ward 28",
+            "fatal": false,
+            "major_injury": true,
+            "minor_injury": false,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-24"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7062600612,
               41.8806531808
             ]
@@ -16087,6 +16339,27 @@
             "helmet_used": false,
             "age_band": "18-24",
             "date": "2021-10-31"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6243999705,
+              41.8949795111
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-26"
           }
         },
         {
@@ -21197,6 +21470,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6815993017,
+              42.0079641415
+            ]
+          },
+          "properties": {
+            "ward": "Ward 49",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-24"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.747032136,
               41.9241190242
             ]
@@ -21816,7 +22110,7 @@
             "major_injury": false,
             "minor_injury": false,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "Unknown",
             "date": "2025-10-23"
@@ -23395,6 +23689,27 @@
             "helmet_used": true,
             "age_band": "45-64",
             "date": "2024-03-22"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6491923854,
+              41.9421601056
+            ]
+          },
+          "properties": {
+            "ward": "Ward 44",
+            "fatal": false,
+            "major_injury": true,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-30"
           }
         },
         {
@@ -25155,7 +25470,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": true,
             "age_band": "18-24",
             "date": "2023-11-10"
@@ -25852,6 +26167,27 @@
             "helmet_used": false,
             "age_band": "Unknown",
             "date": "2022-08-03"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6702586466,
+              41.9199136479
+            ]
+          },
+          "properties": {
+            "ward": "Ward 32",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-24"
           }
         },
         {
@@ -30563,6 +30899,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6257439173,
+              41.8698610776
+            ]
+          },
+          "properties": {
+            "ward": "Ward 4",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-23"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7167269168,
               41.9106535514
             ]
@@ -30619,6 +30976,27 @@
             "helmet_used": true,
             "age_band": "25-44",
             "date": "2023-11-29"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6338513822,
+              41.9258666225
+            ]
+          },
+          "properties": {
+            "ward": "Ward 43",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-26"
           }
         },
         {
@@ -31123,6 +31501,27 @@
             "helmet_used": true,
             "age_band": "25-44",
             "date": "2026-07-31"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6485143069,
+              41.879306749
+            ]
+          },
+          "properties": {
+            "ward": "Ward 34",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-29"
           }
         },
         {
@@ -33314,6 +33713,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6948431353,
+              41.9212218463
+            ]
+          },
+          "properties": {
+            "ward": "Ward 1",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "Unknown",
+            "date": "2026-08-27"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6793118467,
               41.9680064622
             ]
@@ -35435,6 +35855,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.7035616861,
+              41.8818088088
+            ]
+          },
+          "properties": {
+            "ward": "Ward 27",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-25"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6212031228,
               41.8031895509
             ]
@@ -37024,6 +37465,27 @@
             "helmet_used": false,
             "age_band": "13-17 (teen)",
             "date": "2024-02-03"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.639617688,
+              41.9418614883
+            ]
+          },
+          "properties": {
+            "ward": "Ward 44",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-23"
           }
         },
         {
@@ -38963,6 +39425,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6388083457,
+              41.8582008798
+            ]
+          },
+          "properties": {
+            "ward": "Ward 11",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-27"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6546828762,
               41.6921620042
             ]
@@ -40384,6 +40867,27 @@
             "helmet_used": false,
             "age_band": "18-24",
             "date": "2022-10-19"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7845018464,
+              41.9601589801
+            ]
+          },
+          "properties": {
+            "ward": "Ward 38",
+            "fatal": false,
+            "major_injury": true,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-24"
           }
         },
         {
@@ -42344,6 +42848,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.7234428552,
+              41.8079772027
+            ]
+          },
+          "properties": {
+            "ward": "Ward 14",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "0-12 (child)",
+            "date": "2026-08-27"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6976497881,
               41.9941104976
             ]
@@ -43912,6 +44437,27 @@
             "helmet_used": true,
             "age_band": "45-64",
             "date": "2021-09-14"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6338999012,
+              41.88205499
+            ]
+          },
+          "properties": {
+            "ward": "Ward 34",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "Unknown",
+            "date": "2026-08-25"
           }
         },
         {
@@ -51321,7 +51867,7 @@
             "major_injury": false,
             "minor_injury": false,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": true,
             "age_band": "13-17 (teen)",
             "date": "2023-05-29"
@@ -54986,6 +55532,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6509136976,
+              41.8854960431
+            ]
+          },
+          "properties": {
+            "ward": "Ward 27",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6469999206,
               41.8649598981
             ]
@@ -56645,6 +57212,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6771164157,
+              41.9033795754
+            ]
+          },
+          "properties": {
+            "ward": "Ward 1",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-22"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7048269833,
               41.9437178912
             ]
@@ -57884,6 +58472,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6906561438,
+              41.9611899744
+            ]
+          },
+          "properties": {
+            "ward": "Ward 47",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "45-64",
+            "date": "2026-08-29"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6501302747,
               41.9362396113
             ]
@@ -58997,6 +59606,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6980625834,
+              41.9033343307
+            ]
+          },
+          "properties": {
+            "ward": "Ward 26",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "65+",
+            "date": "2026-08-23"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6460768099,
               41.9619536314
             ]
@@ -59931,7 +60561,7 @@
             "major_injury": false,
             "minor_injury": false,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "65+",
             "date": "2024-12-02"
@@ -60649,6 +61279,27 @@
             "helmet_used": false,
             "age_band": "Unknown",
             "date": "2022-08-04"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7661910356,
+              41.9254841887
+            ]
+          },
+          "properties": {
+            "ward": "Ward 31",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-25"
           }
         },
         {
@@ -62010,7 +62661,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": true,
             "age_band": "45-64",
             "date": "2025-12-09"
@@ -62210,6 +62861,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6669294629,
+              41.881564167
+            ]
+          },
+          "properties": {
+            "ward": "Ward 27",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "0-12 (child)",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7295470974,
               41.9600539088
             ]
@@ -62224,6 +62896,27 @@
             "helmet_used": false,
             "age_band": "13-17 (teen)",
             "date": "2021-08-05"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6259249496,
+              41.8650755746
+            ]
+          },
+          "properties": {
+            "ward": "Ward 3",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "Unknown",
+            "date": "2026-08-26"
           }
         },
         {
@@ -62287,6 +62980,27 @@
             "helmet_used": false,
             "age_band": "0-12 (child)",
             "date": "2021-11-23"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6635610209,
+              41.7595636031
+            ]
+          },
+          "properties": {
+            "ward": "Ward 17",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "13-17 (teen)",
+            "date": "2026-08-28"
           }
         },
         {
@@ -66032,6 +66746,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.629303031,
+              41.8867096667
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": true,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-26"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6983627585,
               41.9175885777
             ]
@@ -66235,6 +66970,27 @@
             "helmet_used": true,
             "age_band": "18-24",
             "date": "2025-07-17"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7156628812,
+              41.793268792
+            ]
+          },
+          "properties": {
+            "ward": "Ward 23",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "0-12 (child)",
+            "date": "2026-08-25"
           }
         },
         {
@@ -66592,6 +67348,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2025-11-14"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.5762204372,
+              41.7556129585
+            ]
+          },
+          "properties": {
+            "ward": "Ward 8",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-28"
           }
         },
         {
@@ -67628,6 +68405,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6734132848,
+              41.9422586514
+            ]
+          },
+          "properties": {
+            "ward": "Ward 32",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-29"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7640623678,
               41.8669927444
             ]
@@ -68440,6 +69238,27 @@
             "helmet_used": true,
             "age_band": "45-64",
             "date": "2026-08-05"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6492141782,
+              41.9429444174
+            ]
+          },
+          "properties": {
+            "ward": "Ward 44",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "45-64",
+            "date": "2026-08-27"
           }
         },
         {
@@ -74705,6 +75524,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.5843946879,
+              41.7368215101
+            ]
+          },
+          "properties": {
+            "ward": "Ward 8",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-24"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6410879286,
               41.8832421627
             ]
@@ -74946,7 +75786,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": true,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "45-64",
             "date": "2025-05-16"
@@ -76553,6 +77393,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.7135542416,
+              41.9537377255
+            ]
+          },
+          "properties": {
+            "ward": "Ward 33",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-24"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7040530939,
               41.8056087323
             ]
@@ -77939,6 +78800,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6389652344,
+              41.9184108708
+            ]
+          },
+          "properties": {
+            "ward": "Ward 43",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-22"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6349518584,
               41.9192045182
             ]
@@ -79171,6 +80053,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2023-09-27"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6871384938,
+              41.7675611211
+            ]
+          },
+          "properties": {
+            "ward": "Ward 16",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "45-64",
+            "date": "2026-08-27"
           }
         },
         {
@@ -84722,6 +85625,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6651455995,
+              41.9850958597
+            ]
+          },
+          "properties": {
+            "ward": "Ward 48",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-29"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6747334287,
               41.9668728105
             ]
@@ -85744,6 +86668,27 @@
             "helmet_used": true,
             "age_band": "18-24",
             "date": "2021-08-06"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6312078202,
+              41.8892498019
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "18-24",
+            "date": "2026-08-22"
           }
         },
         {
@@ -86857,6 +87802,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2025-03-08"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6399859877,
+              41.8891577891
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": true,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "65+",
+            "date": "2026-08-12"
           }
         },
         {
@@ -90560,6 +91526,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6571830589,
+              41.9947005965
+            ]
+          },
+          "properties": {
+            "ward": "Ward 48",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6304165432,
               41.8769973129
             ]
@@ -92366,6 +93353,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6881732881,
+              42.0066514808
+            ]
+          },
+          "properties": {
+            "ward": "Ward 40",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "Unknown",
+            "date": "2026-08-29"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6286007752,
               41.8646862051
             ]
@@ -92548,6 +93556,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2021-09-26"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7855438749,
+              41.9221759232
+            ]
+          },
+          "properties": {
+            "ward": "Ward 36",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-27"
           }
         },
         {
@@ -92905,6 +93934,27 @@
             "helmet_used": false,
             "age_band": "45-64",
             "date": "2022-09-07"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6691936594,
+              41.9848227827
+            ]
+          },
+          "properties": {
+            "ward": "Ward 48",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-24"
           }
         },
         {
@@ -93325,6 +94375,27 @@
             "helmet_used": false,
             "age_band": "Unknown",
             "date": "2021-06-26"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6296922567,
+              41.8880703776
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-29"
           }
         },
         {
@@ -94350,7 +95421,7 @@
             "major_injury": true,
             "minor_injury": false,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2022-07-11"
@@ -94480,6 +95551,27 @@
             "helmet_used": false,
             "age_band": "18-24",
             "date": "2024-11-09"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6349711709,
+              41.9148356407
+            ]
+          },
+          "properties": {
+            "ward": "Ward 43",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "Unknown",
+            "date": "2026-08-30"
           }
         },
         {
@@ -94732,6 +95824,27 @@
             "helmet_used": true,
             "age_band": "Unknown",
             "date": "2023-09-01"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6706918049,
+              42.003589982
+            ]
+          },
+          "properties": {
+            "ward": "Ward 49",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "Unknown",
+            "date": "2026-08-28"
           }
         },
         {
@@ -98151,7 +99264,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2025-03-15"
@@ -99894,7 +101007,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "13-17 (teen)",
             "date": "2025-05-09"
@@ -100094,6 +101207,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6357436267,
+              41.8924065363
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-20"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6701802662,
               41.9047892178
             ]
@@ -100276,6 +101410,27 @@
             "helmet_used": false,
             "age_band": "13-17 (teen)",
             "date": "2024-02-27"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6341345746,
+              41.8843589772
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-16"
           }
         },
         {
@@ -102614,6 +103769,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.7441630555,
+              41.9281745772
+            ]
+          },
+          "properties": {
+            "ward": "Ward 31",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-23"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6703490883,
               42.0139485473
             ]
@@ -104441,6 +105617,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.7371236223,
+              41.916925286
+            ]
+          },
+          "properties": {
+            "ward": "Ward 26",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6765666455,
               41.8727994672
             ]
@@ -105333,7 +106530,7 @@
             "major_injury": false,
             "minor_injury": false,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "18-24",
             "date": "2021-09-12"
@@ -106457,6 +107654,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.7181796899,
+              41.9030141752
+            ]
+          },
+          "properties": {
+            "ward": "Ward 26",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "45-64",
+            "date": "2026-08-23"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.708386116,
               41.970477858
             ]
@@ -107213,6 +108431,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6511463933,
+              41.8378712364
+            ]
+          },
+          "properties": {
+            "ward": "Ward 11",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-27"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6652171433,
               41.9875672486
             ]
@@ -107395,6 +108634,27 @@
             "helmet_used": false,
             "age_band": "18-24",
             "date": "2023-11-04"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6567674369,
+              41.969172448
+            ]
+          },
+          "properties": {
+            "ward": "Ward 46",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-22"
           }
         },
         {
@@ -108571,6 +109831,27 @@
             "helmet_used": false,
             "age_band": "18-24",
             "date": "2025-06-06"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7052666759,
+              41.8573016539
+            ]
+          },
+          "properties": {
+            "ward": "Ward 24",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "13-17 (teen)",
+            "date": "2026-08-27"
           }
         },
         {
@@ -114374,6 +115655,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6473907056,
+              41.8781024031
+            ]
+          },
+          "properties": {
+            "ward": "Ward 34",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-26"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6839285892,
               41.9697377116
             ]
@@ -115669,6 +116971,27 @@
             "helmet_used": false,
             "age_band": "18-24",
             "date": "2026-04-15"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7554688028,
+              41.8870667112
+            ]
+          },
+          "properties": {
+            "ward": "Ward 28",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-30"
           }
         },
         {
@@ -117370,6 +118693,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2025-09-19"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7137124476,
+              41.8443068099
+            ]
+          },
+          "properties": {
+            "ward": "Ward 22",
+            "fatal": false,
+            "major_injury": true,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "45-64",
+            "date": "2026-08-22"
           }
         },
         {
@@ -119281,6 +120625,27 @@
             "helmet_used": false,
             "age_band": "45-64",
             "date": "2021-07-06"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6696674864,
+              41.9883030455
+            ]
+          },
+          "properties": {
+            "ward": "Ward 48",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-28"
           }
         },
         {
@@ -121535,6 +122900,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.637486334,
+              41.911020923
+            ]
+          },
+          "properties": {
+            "ward": "Ward 2",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "65+",
+            "date": "2026-08-18"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.634006821,
               41.8832420942
             ]
@@ -122585,6 +123971,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.630492795,
+              41.8674829196
+            ]
+          },
+          "properties": {
+            "ward": "Ward 3",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "18-24",
+            "date": "2026-08-30"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.639189329,
               41.9257199272
             ]
@@ -123225,7 +124632,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "18-24",
             "date": "2022-03-14"
@@ -125651,6 +127058,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6201089651,
+              41.8926415957
+            ]
+          },
+          "properties": {
+            "ward": "Ward 2",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-29"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.686894159,
               41.7900565433
             ]
@@ -127198,6 +128626,27 @@
             "helmet_used": true,
             "age_band": "18-24",
             "date": "2025-09-03"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6844953017,
+              41.930045282
+            ]
+          },
+          "properties": {
+            "ward": "Ward 32",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-27"
           }
         },
         {
@@ -129053,6 +130502,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6353228468,
+              41.8767874094
+            ]
+          },
+          "properties": {
+            "ward": "Ward 34",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-27"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.768490677,
               41.9277038016
             ]
@@ -130012,6 +131482,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2026-05-19"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6781730309,
+              41.932394164
+            ]
+          },
+          "properties": {
+            "ward": "Ward 32",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-28"
           }
         },
         {
@@ -134807,6 +136298,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6664471425,
+              41.8642820997
+            ]
+          },
+          "properties": {
+            "ward": "Ward 28",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-23"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6924941747,
               41.975912899
             ]
@@ -134968,6 +136480,27 @@
             "helmet_used": true,
             "age_band": "18-24",
             "date": "2023-09-13"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6885081542,
+              41.9513916284
+            ]
+          },
+          "properties": {
+            "ward": "Ward 47",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-26"
           }
         },
         {
@@ -138881,6 +140414,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.5411415979,
+              41.6537763162
+            ]
+          },
+          "properties": {
+            "ward": "Ward 10",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6970926719,
               41.9056165572
             ]
@@ -140424,7 +141978,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": true,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "18-24",
             "date": "2026-05-25"
@@ -142451,6 +144005,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.7051038214,
+              41.9683721753
+            ]
+          },
+          "properties": {
+            "ward": "Ward 33",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "45-64",
+            "date": "2026-08-26"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6628397063,
               41.7215869636
             ]
@@ -143018,6 +144593,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6443695494,
+              41.9348397558
+            ]
+          },
+          "properties": {
+            "ward": "Ward 44",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "65+",
+            "date": "2026-08-30"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7029051799,
               41.9903138951
             ]
@@ -143347,6 +144943,27 @@
             "helmet_used": false,
             "age_band": "45-64",
             "date": "2026-08-16"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6330707107,
+              41.9039692113
+            ]
+          },
+          "properties": {
+            "ward": "Ward 27",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-25"
           }
         },
         {
@@ -143984,6 +145601,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6857042874,
+              41.9300634795
+            ]
+          },
+          "properties": {
+            "ward": "Ward 32",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-22"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6967442354,
               41.9033283837
             ]
@@ -144334,6 +145972,27 @@
             "helmet_used": true,
             "age_band": "Unknown",
             "date": "2022-03-07"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7145239981,
+              41.9026605455
+            ]
+          },
+          "properties": {
+            "ward": "Ward 26",
+            "fatal": false,
+            "major_injury": true,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "45-64",
+            "date": "2026-08-29"
           }
         },
         {
@@ -148996,6 +150655,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2021-09-02"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7034976536,
+              41.9722396869
+            ]
+          },
+          "properties": {
+            "ward": "Ward 40",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "Unknown",
+            "date": "2026-08-24"
           }
         },
         {
@@ -165068,6 +166748,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6281876091,
+              41.9014699459
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-14"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7298678825,
               41.9681117866
             ]
@@ -166342,6 +168043,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2023-06-09"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7040397933,
+              41.8134908544
+            ]
+          },
+          "properties": {
+            "ward": "Ward 12",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "13-17 (teen)",
+            "date": "2026-08-29"
           }
         },
         {
@@ -167840,6 +169562,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6255420976,
+              41.8925622525
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-23"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.646115077,
               41.9697304894
             ]
@@ -167882,6 +169625,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6428153617,
+              41.8963916501
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-25"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.5508863102,
               41.7266826772
             ]
@@ -167917,6 +169681,27 @@
             "helmet_used": false,
             "age_band": "65+",
             "date": "2021-09-17"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6771095282,
+              41.9520300178
+            ]
+          },
+          "properties": {
+            "ward": "Ward 47",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-30"
           }
         },
         {
@@ -168673,6 +170458,27 @@
             "helmet_used": false,
             "age_band": "Unknown",
             "date": "2024-12-16"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6454412782,
+              41.7996752873
+            ]
+          },
+          "properties": {
+            "ward": "Ward 20",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "45-64",
+            "date": "2026-08-27"
           }
         },
         {
@@ -172397,6 +174203,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.7118734168,
+              41.9282101955
+            ]
+          },
+          "properties": {
+            "ward": "Ward 35",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "13-17 (teen)",
+            "date": "2026-08-29"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.649162689,
               41.941302752
             ]
@@ -174959,6 +176786,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.62439717,
+              41.7509265387
+            ]
+          },
+          "properties": {
+            "ward": "Ward 6",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-27"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6279552194,
               41.7510031524
             ]
@@ -175540,6 +177388,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2026-08-21"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.676987476,
+              41.8958031149
+            ]
+          },
+          "properties": {
+            "ward": "Ward 36",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-25"
           }
         },
         {
@@ -178298,6 +180167,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.7003724266,
+              41.8163252671
+            ]
+          },
+          "properties": {
+            "ward": "Ward 12",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "13-17 (teen)",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6837830986,
               41.7791234838
             ]
@@ -180223,6 +182113,27 @@
             "helmet_used": false,
             "age_band": "0-12 (child)",
             "date": "2021-06-14"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7869994488,
+              41.9966088598
+            ]
+          },
+          "properties": {
+            "ward": "Ward 39",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-23"
           }
         },
         {
@@ -182729,6 +184640,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.7231822341,
+              41.8443814009
+            ]
+          },
+          "properties": {
+            "ward": "Ward 22",
+            "fatal": false,
+            "major_injury": true,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "45-64",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6427358179,
               41.8580074512
             ]
@@ -184493,6 +186425,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6477558272,
+              41.8965092929
+            ]
+          },
+          "properties": {
+            "ward": "Ward 27",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "Unknown",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6062261594,
               41.7876664163
             ]
@@ -184654,6 +186607,27 @@
             "helmet_used": false,
             "age_band": "Unknown",
             "date": "2025-10-18"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6698757147,
+              41.9907562497
+            ]
+          },
+          "properties": {
+            "ward": "Ward 48",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "65+",
+            "date": "2026-08-25"
           }
         },
         {
@@ -185879,6 +187853,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6471614958,
+              41.961994087
+            ]
+          },
+          "properties": {
+            "ward": "Ward 46",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "65+",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6322330599,
               41.9220638
             ]
@@ -186460,6 +188455,27 @@
             "helmet_used": false,
             "age_band": "18-24",
             "date": "2025-02-03"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7064986747,
+              41.8982855522
+            ]
+          },
+          "properties": {
+            "ward": "Ward 36",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-21"
           }
         },
         {
@@ -190079,6 +192095,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6998926826,
+              42.0049596912
+            ]
+          },
+          "properties": {
+            "ward": "Ward 50",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-29"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6604440015,
               41.9470176804
             ]
@@ -191017,6 +193054,27 @@
             "helmet_used": true,
             "age_band": "18-24",
             "date": "2023-08-25"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6310494661,
+              41.8945059235
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "Unknown",
+            "date": "2026-08-25"
           }
         },
         {
@@ -196337,6 +198395,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6473756956,
+              41.7432171637
+            ]
+          },
+          "properties": {
+            "ward": "Ward 17",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-27"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7238067518,
               41.7660130088
             ]
@@ -197849,6 +199928,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.7177222725,
+              41.9028553667
+            ]
+          },
+          "properties": {
+            "ward": "Ward 26",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6475578449,
               41.7967869948
             ]
@@ -198038,6 +200138,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6497679935,
+              41.9511453094
+            ]
+          },
+          "properties": {
+            "ward": "Ward 46",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-29"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7005357656,
               41.9465528262
             ]
@@ -198069,7 +200190,7 @@
             "major_injury": false,
             "minor_injury": false,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2021-08-15"
@@ -199056,7 +201177,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "45-64",
             "date": "2023-08-07"
@@ -199970,6 +202091,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6265485479,
+              41.8892840135
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": true,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-29"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6484152758,
               41.9099688376
             ]
@@ -200089,6 +202231,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2021-10-14"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6276421505,
+              41.8705950091
+            ]
+          },
+          "properties": {
+            "ward": "Ward 4",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-28"
           }
         },
         {
@@ -201916,6 +204079,27 @@
             "helmet_used": true,
             "age_band": "Unknown",
             "date": "2026-04-25"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6597649708,
+              41.9070494717
+            ]
+          },
+          "properties": {
+            "ward": "Ward 27",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-26"
           }
         },
         {
@@ -207719,6 +209903,48 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.5694589557,
+              41.7397481435
+            ]
+          },
+          "properties": {
+            "ward": "Ward 8",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6837960962,
+              41.6918126183
+            ]
+          },
+          "properties": {
+            "ward": "Ward 19",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "0-12 (child)",
+            "date": "2026-08-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6366044996,
               41.8896893992
             ]
@@ -209252,6 +211478,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6267874536,
+              41.8907781341
+            ]
+          },
+          "properties": {
+            "ward": "Ward 42",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-21"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.650417352,
               41.89645528
             ]
@@ -209350,6 +211597,27 @@
             "helmet_used": false,
             "age_band": "45-64",
             "date": "2025-05-11"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7130837351,
+              41.9640594877
+            ]
+          },
+          "properties": {
+            "ward": "Ward 33",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-26"
           }
         },
         {
@@ -210379,6 +212647,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2025-07-25"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6979123842,
+              41.9231103722
+            ]
+          },
+          "properties": {
+            "ward": "Ward 1",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-25"
           }
         },
         {
@@ -216423,7 +218712,7 @@
             "major_injury": false,
             "minor_injury": false,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2023-08-20"
@@ -218219,6 +220508,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6539489546,
+              41.9616796333
+            ]
+          },
+          "properties": {
+            "ward": "Ward 46",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": true,
+            "age_band": "65+",
+            "date": "2026-08-25"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.6474016827,
               41.9246251166
             ]
@@ -219052,6 +221362,27 @@
             "helmet_used": true,
             "age_band": "25-44",
             "date": "2025-04-08"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7741042001,
+              41.778303829
+            ]
+          },
+          "properties": {
+            "ward": "Ward 13",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "45-64",
+            "date": "2026-08-30"
           }
         },
         {
@@ -223210,6 +225541,27 @@
             "helmet_used": true,
             "age_band": "25-44",
             "date": "2023-12-22"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7021642627,
+              41.9244853216
+            ]
+          },
+          "properties": {
+            "ward": "Ward 1",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-26"
           }
         },
         {
@@ -228099,7 +230451,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "18-24",
             "date": "2024-11-27"
@@ -232373,6 +234725,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6563005352,
+              41.8633537261
+            ]
+          },
+          "properties": {
+            "ward": "Ward 28",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "18-24",
+            "date": "2026-08-24"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.683134088,
               41.9068419164
             ]
@@ -232786,6 +235159,27 @@
             "helmet_used": false,
             "age_band": "18-24",
             "date": "2023-10-11"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6520881102,
+              41.9180144508
+            ]
+          },
+          "properties": {
+            "ward": "Ward 43",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "45-64",
+            "date": "2026-08-28"
           }
         },
         {
@@ -236720,6 +239114,27 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -87.6846437835,
+              41.9298489966
+            ]
+          },
+          "properties": {
+            "ward": "Ward 32",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": true,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "Unknown",
+            "date": "2026-08-22"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -87.7295234275,
               41.9391730926
             ]
@@ -236902,6 +239317,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2022-05-08"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7209427466,
+              41.8820071016
+            ]
+          },
+          "properties": {
+            "ward": "Ward 28",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-30"
           }
         },
         {
@@ -238242,7 +240678,7 @@
             "major_injury": false,
             "minor_injury": true,
             "in_bike_lane": false,
-            "near_mapped_bike_lane": false,
+            "near_mapped_bike_lane": true,
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2024-02-06"
@@ -238456,6 +240892,27 @@
             "helmet_used": true,
             "age_band": "25-44",
             "date": "2024-05-08"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.7233624082,
+              41.7951395437
+            ]
+          },
+          "properties": {
+            "ward": "Ward 23",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": false,
+            "helmet_used": false,
+            "age_band": "Unknown",
+            "date": "2026-08-23"
           }
         },
         {
@@ -240283,6 +242740,27 @@
             "helmet_used": false,
             "age_band": "25-44",
             "date": "2026-03-09"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6546176469,
+              41.896072567
+            ]
+          },
+          "properties": {
+            "ward": "Ward 27",
+            "fatal": false,
+            "major_injury": true,
+            "minor_injury": false,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": false,
+            "age_band": "25-44",
+            "date": "2026-08-30"
           }
         },
         {
@@ -247360,6 +249838,27 @@
             "helmet_used": true,
             "age_band": "45-64",
             "date": "2024-07-30"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -87.6967646402,
+              41.8955437081
+            ]
+          },
+          "properties": {
+            "ward": "Ward 36",
+            "fatal": false,
+            "major_injury": false,
+            "minor_injury": true,
+            "in_bike_lane": false,
+            "near_mapped_bike_lane": true,
+            "helmet_used": true,
+            "age_band": "25-44",
+            "date": "2026-08-28"
           }
         },
         {
