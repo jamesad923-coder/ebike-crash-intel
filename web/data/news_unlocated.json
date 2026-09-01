@@ -5,6 +5,30 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wishtv.com",
+      "url": "https://www.wishtv.com/news/local-news/impd-investigates-fatal-ebike-crash/",
+      "seendate": "20260831T121500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wishtv.com"
+      ],
+      "sources": [
+        {
+          "domain": "wishtv.com",
+          "url": "https://www.wishtv.com/news/local-news/impd-investigates-fatal-ebike-crash/",
+          "date": "20260831T121500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
       "age_band": "25-44",
       "city": null,
       "state": null,
@@ -269,7 +293,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Severe injury",
-      "age_band": "18-24",
+      "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -293,7 +317,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -316,6 +340,54 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "presstelegram.com",
+      "url": "https://www.presstelegram.com/2026/08/26/oc-father-to-face-trial-after-his-son-was-injured-while-riding-an-e-motorcycle/",
+      "seendate": "20260827T011500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "presstelegram.com"
+      ],
+      "sources": [
+        {
+          "domain": "presstelegram.com",
+          "url": "https://www.presstelegram.com/2026/08/26/oc-father-to-face-trial-after-his-son-was-injured-while-riding-an-e-motorcycle/",
+          "date": "20260827T011500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "65+",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "sgvtribune.com",
+      "url": "https://www.sgvtribune.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+      "seendate": "20260826T190000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "sgvtribune.com"
+      ],
+      "sources": [
+        {
+          "domain": "sgvtribune.com",
+          "url": "https://www.sgvtribune.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+          "date": "20260826T190000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "65+",
       "city": null,
@@ -334,6 +406,54 @@
           "domain": "dailybreeze.com",
           "url": "https://www.dailybreeze.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
           "date": "20260826T164500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "65+",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "whittierdailynews.com",
+      "url": "https://www.whittierdailynews.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+      "seendate": "20260826T153000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "whittierdailynews.com"
+      ],
+      "sources": [
+        {
+          "domain": "whittierdailynews.com",
+          "url": "https://www.whittierdailynews.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+          "date": "20260826T153000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "65+",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "pasadenastarnews.com",
+      "url": "https://www.pasadenastarnews.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+      "seendate": "20260826T153000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "pasadenastarnews.com"
+      ],
+      "sources": [
+        {
+          "domain": "pasadenastarnews.com",
+          "url": "https://www.pasadenastarnews.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
+          "date": "20260826T153000Z"
         }
       ]
     },
@@ -365,7 +485,7 @@
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -388,32 +508,8 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "18-24",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "krcrtv.com",
-      "url": "https://krcrtv.com/news/local/e-bike-rider-hospitalized-after-crash-with-pickup-in-redding",
-      "seendate": "20260826T033000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "krcrtv.com"
-      ],
-      "sources": [
-        {
-          "domain": "krcrtv.com",
-          "url": "https://krcrtv.com/news/local/e-bike-rider-hospitalized-after-crash-with-pickup-in-redding",
-          "date": "20260826T033000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "0-12 (child)",
+      "age_band": "18-24",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -434,86 +530,26 @@
       ]
     },
     {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "18-24",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "local10.com",
-      "url": "https://www.local10.com/news/local/2026/08/24/miami-dade-deputies-id-victim-in-e-scooter-crash-that-escalated-to-fatal-shooting/",
-      "seendate": "20260824T161500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "local10.com"
-      ],
-      "sources": [
-        {
-          "domain": "local10.com",
-          "url": "https://www.local10.com/news/local/2026/08/24/miami-dade-deputies-id-victim-in-e-scooter-crash-that-escalated-to-fatal-shooting/",
-          "date": "20260824T161500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": true,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": "Oc",
-      "state": "LA",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "presstelegram.com",
-      "url": "https://www.presstelegram.com/2026/08/26/oc-father-to-face-trial-after-his-son-was-injured-while-riding-an-e-motorcycle/",
-      "seendate": "20260827T011500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "presstelegram.com"
-      ],
-      "sources": [
-        {
-          "domain": "presstelegram.com",
-          "url": "https://www.presstelegram.com/2026/08/26/oc-father-to-face-trial-after-his-son-was-injured-while-riding-an-e-motorcycle/",
-          "date": "20260827T011500Z"
-        }
-      ]
-    },
-    {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "65+",
-      "city": "Oc",
-      "state": "LA",
-      "location_precision": "city_state_mention",
+      "outcome": "Fatality",
+      "age_band": "25-44",
+      "city": "East County",
+      "state": "CA",
+      "location_precision": "county+outlet_market",
       "located": true,
-      "domain": "sgvtribune.com",
-      "url": "https://www.sgvtribune.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
-      "seendate": "20260826T190000Z",
-      "confidence_tier": "corroborated",
+      "domain": "10news.com",
+      "url": "https://www.10news.com/news/local-news/e-bike-rider-killed-in-vista-crash",
+      "seendate": "20260830T211500Z",
+      "confidence_tier": "single_source",
       "corroborating_domains": [
-        "pasadenastarnews.com",
-        "sgvtribune.com",
-        "whittierdailynews.com"
+        "10news.com"
       ],
       "sources": [
         {
-          "domain": "sgvtribune.com",
-          "url": "https://www.sgvtribune.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
-          "date": "20260826T190000Z"
-        },
-        {
-          "domain": "whittierdailynews.com",
-          "url": "https://www.whittierdailynews.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
-          "date": "20260826T153000Z"
-        },
-        {
-          "domain": "pasadenastarnews.com",
-          "url": "https://www.pasadenastarnews.com/2026/08/26/2-e-bike-riders-hospitalized-with-major-injuries-after-collision-in-riverside/",
-          "date": "20260826T153000Z"
+          "domain": "10news.com",
+          "url": "https://www.10news.com/news/local-news/e-bike-rider-killed-in-vista-crash",
+          "date": "20260830T211500Z"
         }
       ]
     }
