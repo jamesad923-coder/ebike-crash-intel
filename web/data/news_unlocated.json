@@ -293,7 +293,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Severe injury",
-      "age_band": "0-12 (child)",
+      "age_band": "18-24",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -334,30 +334,6 @@
           "domain": "mynbc5.com",
           "url": "https://www.mynbc5.com/article/doug-knapp-shiloh-skalka-court-crash/73542932",
           "date": "20260827T144500Z"
-        }
-      ]
-    },
-    {
-      "device": "Throttle vehicle (unclear e-bike classification)",
-      "throttle_ambiguous": true,
-      "outcome": "Injury",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wwmt.com",
-      "url": "https://wwmt.com/news/local/dirt-bike-baby-crash-grand-haven-injured-riding-back-mercury-drive-no-helmet-20-month-girl-ford-work-truck-driveway-parking-lot-michigan-wwmt",
-      "seendate": "20260827T034500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wwmt.com"
-      ],
-      "sources": [
-        {
-          "domain": "wwmt.com",
-          "url": "https://wwmt.com/news/local/dirt-bike-baby-crash-grand-haven-injured-riding-back-mercury-drive-no-helmet-20-month-girl-ford-work-truck-driveway-parking-lot-michigan-wwmt",
-          "date": "20260827T034500Z"
         }
       ]
     },
