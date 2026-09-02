@@ -1,4 +1,4 @@
-# Data brief: E-bike injury reported in Watford City, ND (2026-09-01)
+# Data brief: Throttle vehicle (unclear e-bike classification) fatality reported in Springfield, MA (2026-09-02)
 
 *Auto-drafted by the Crash Atlas news pipeline. Everything below is from
 public data with sources linked; the incident itself was detected by
@@ -6,29 +6,30 @@ automated news scanning and is **not independently verified**.*
 
 > **Before using this brief (reviewer checklist):**
 > 1. Open each source below and confirm the article is actually about
->    Watford City, ND — automated location extraction does sometimes attach
+>    Springfield, MA — automated location extraction does sometimes attach
 >    the wrong city to a story.
 > 2. Confirm the outcome and age band against the article text.
 > 3. If either check fails, discard this brief; do not send it.
 
 ## What was detected
 
-- Reported: **E-bike**, outcome coded
-  “Injury”, age band Unknown.
+- Reported: **Throttle vehicle (unclear e-bike classification)**, outcome coded
+  “Fatality”, age band 13-17 (teen).
 - Confidence: single news source — treat as unconfirmed.
+- The article text mentions a **throttle-capable vehicle** (e.g. Sur-Ron class) that may not legally be a Class 1–3 e-bike; federal data has no e-bike class field, so this is a keyword flag, not a classification.
 - Location precision: `city_state_mention` (automated
   keyword extraction, not human-read).
 - Sources:
-  - [kfyrtv.com](https://www.kfyrtv.com/2026/09/01/two-kids-seriously-hurt-e-bike-pickup-crash/)
+  - [westernmassnews.com](https://www.westernmassnews.com/2026/09/01/6-illegal-vehicles-seized-springfield-2-days/)
 
-## Watford City in the federal fatality data
+## Springfield in the federal fatality data
 
-- Watford City has fewer than 3 recorded cyclist fatalities in FARS 2019–2024, so it does not have a standing city page. That is itself worth knowing: the local discussion is likely driven by injuries and near misses, which federal fatality data does not capture.
+- Springfield has fewer than 3 recorded cyclist fatalities in FARS 2019–2024, so it does not have a standing city page. That is itself worth knowing: the local discussion is likely driven by injuries and near misses, which federal fatality data does not capture.
 
 ## State context
 
-- **North Dakota**: 6 pedalcyclist fatalities in FARS 2019–2024 (#49 among states by raw count — a count, not a rate; larger states rank high partly because more people ride).
-- Adjusted for bike-commute share (an imperfect but real exposure proxy), North Dakota ranks **#44** at 9.62 fatalities per 10k bike commuters (raw-count rank #51).
+- **Massachusetts**: 52 pedalcyclist fatalities in FARS 2019–2024 (#30 among states by raw count — a count, not a rate; larger states rank high partly because more people ride).
+- Adjusted for bike-commute share (an imperfect but real exposure proxy), Massachusetts ranks **#50** at 7.03 fatalities per 10k bike commuters (raw-count rank #30).
 
 ## What this data can and cannot say
 

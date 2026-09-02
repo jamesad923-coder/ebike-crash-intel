@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -72.5886727,
+          42.1018764
+        ]
+      },
+      "properties": {
+        "city": "Springfield",
+        "state": "MA",
+        "location_precision": "city_state_mention",
+        "device": "Throttle vehicle (unclear e-bike classification)",
+        "outcome": "Fatality",
+        "throttle_ambiguous": true,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "westernmassnews.com"
+        ],
+        "sources": [
+          {
+            "domain": "westernmassnews.com",
+            "url": "https://www.westernmassnews.com/2026/09/01/6-illegal-vehicles-seized-springfield-2-days/",
+            "date": "20260902T001500Z"
+          }
+        ],
+        "date": "20260902T001500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -103.283247,
           47.802241
         ]
@@ -24,7 +55,7 @@
         "device": "E-bike",
         "outcome": "Injury",
         "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
+        "age_band": "Unknown",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "kfyrtv.com"

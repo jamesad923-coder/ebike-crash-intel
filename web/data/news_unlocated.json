@@ -5,7 +5,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "Unknown",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -293,7 +293,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Severe injury",
-      "age_band": "13-17 (teen)",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -317,7 +317,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "0-12 (child)",
+      "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -334,6 +334,30 @@
           "domain": "mynbc5.com",
           "url": "https://www.mynbc5.com/article/doug-knapp-shiloh-skalka-court-crash/73542932",
           "date": "20260827T144500Z"
+        }
+      ]
+    },
+    {
+      "device": "Throttle vehicle (unclear e-bike classification)",
+      "throttle_ambiguous": true,
+      "outcome": "Injury",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wwmt.com",
+      "url": "https://wwmt.com/news/local/dirt-bike-baby-crash-grand-haven-injured-riding-back-mercury-drive-no-helmet-20-month-girl-ford-work-truck-driveway-parking-lot-michigan-wwmt",
+      "seendate": "20260827T034500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wwmt.com"
+      ],
+      "sources": [
+        {
+          "domain": "wwmt.com",
+          "url": "https://wwmt.com/news/local/dirt-bike-baby-crash-grand-haven-injured-riding-back-mercury-drive-no-helmet-20-month-girl-ford-work-truck-driveway-parking-lot-michigan-wwmt",
+          "date": "20260827T034500Z"
         }
       ]
     },
@@ -485,7 +509,7 @@
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "13-17 (teen)",
+      "age_band": "18-24",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -502,30 +526,6 @@
           "domain": "courant.com",
           "url": "https://www.courant.com/2026/08/26/one-person-seriously-injured-in-crash-involving-e-scooter-in-norwalk/",
           "date": "20260826T121500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "18-24",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "sandiegouniontribune.com",
-      "url": "https://www.sandiegouniontribune.com/2026/08/25/encinitas-council-to-host-special-traffic-safety-meeting-wednesday-afternoon/",
-      "seendate": "20260825T234500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "sandiegouniontribune.com"
-      ],
-      "sources": [
-        {
-          "domain": "sandiegouniontribune.com",
-          "url": "https://www.sandiegouniontribune.com/2026/08/25/encinitas-council-to-host-special-traffic-safety-meeting-wednesday-afternoon/",
-          "date": "20260825T234500Z"
         }
       ]
     },
