@@ -292,54 +292,6 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Severe injury",
-      "age_band": "18-24",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "myfox28columbus.com",
-      "url": "https://myfox28columbus.com/news/local/e-bike-rider-in-critical-condition-after-university-district-crash-investigation-ongoing-ohio-state-medical-center-serious-injuries-car-electric-powered-bicycle",
-      "seendate": "20260827T210000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "myfox28columbus.com"
-      ],
-      "sources": [
-        {
-          "domain": "myfox28columbus.com",
-          "url": "https://myfox28columbus.com/news/local/e-bike-rider-in-critical-condition-after-university-district-crash-investigation-ongoing-ohio-state-medical-center-serious-injuries-car-electric-powered-bicycle",
-          "date": "20260827T210000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "mynbc5.com",
-      "url": "https://www.mynbc5.com/article/doug-knapp-shiloh-skalka-court-crash/73542932",
-      "seendate": "20260827T144500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "mynbc5.com"
-      ],
-      "sources": [
-        {
-          "domain": "mynbc5.com",
-          "url": "https://www.mynbc5.com/article/doug-knapp-shiloh-skalka-court-crash/73542932",
-          "date": "20260827T144500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "25-44",
       "city": "East County",
