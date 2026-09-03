@@ -13,30 +13,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -72.5886727,
-          42.1018764
+          -75.9107565,
+          43.9747838
         ]
       },
       "properties": {
-        "city": "Springfield",
-        "state": "MA",
+        "city": "Watertown",
+        "state": "NY",
         "location_precision": "city_state_mention",
-        "device": "Throttle vehicle (unclear e-bike classification)",
+        "device": "E-bike",
         "outcome": "Fatality",
-        "throttle_ambiguous": true,
-        "age_band": "13-17 (teen)",
+        "throttle_ambiguous": false,
+        "age_band": "65+",
         "confidence_tier": "single_source",
         "corroborating_domains": [
-          "westernmassnews.com"
+          "wwnytv.com"
         ],
         "sources": [
           {
-            "domain": "westernmassnews.com",
-            "url": "https://www.westernmassnews.com/2026/09/01/6-illegal-vehicles-seized-springfield-2-days/",
-            "date": "20260902T001500Z"
+            "domain": "wwnytv.com",
+            "url": "https://www.wwnytv.com/2026/09/02/dpw-superintendent-out-watertown/",
+            "date": "20260902T164500Z"
           }
         ],
-        "date": "20260902T001500Z"
+        "date": "20260902T164500Z"
       }
     },
     {
