@@ -221,30 +221,6 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "65+",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "portlandmercury.com",
-      "url": "https://www.portlandmercury.com/good-morning-news/good-morning-news-measles-at-the-rodeo-climate-change-and-nepal-floods-trump-changes-lake-ontario-to-lake-america-cool/",
-      "seendate": "20260828T180000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "portlandmercury.com"
-      ],
-      "sources": [
-        {
-          "domain": "portlandmercury.com",
-          "url": "https://www.portlandmercury.com/good-morning-news/good-morning-news-measles-at-the-rodeo-climate-change-and-nepal-floods-trump-changes-lake-ontario-to-lake-america-cool/",
-          "date": "20260828T180000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
       "age_band": "25-44",
       "city": "East County",
       "state": "CA",
