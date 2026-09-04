@@ -10,6 +10,78 @@
       "state": null,
       "location_precision": null,
       "located": false,
+      "domain": "okcfox.com",
+      "url": "https://okcfox.com/news/local/one-killed-in-electric-bike-crash-in-del-city",
+      "seendate": "20260904T143000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "okcfox.com"
+      ],
+      "sources": [
+        {
+          "domain": "okcfox.com",
+          "url": "https://okcfox.com/news/local/one-killed-in-electric-bike-crash-in-del-city",
+          "date": "20260904T143000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "whmi.com",
+      "url": "https://www.whmi.com/news/fox/watch-bystanders-police-lift-volkswagen-off-woman-pinned-underneath-dramatic-e-bike-crash",
+      "seendate": "20260904T033000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "whmi.com"
+      ],
+      "sources": [
+        {
+          "domain": "whmi.com",
+          "url": "https://www.whmi.com/news/fox/watch-bystanders-police-lift-volkswagen-off-woman-pinned-underneath-dramatic-e-bike-crash",
+          "date": "20260904T033000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "6abc.com",
+      "url": "https://6abc.com/post/community-members-lift-car-rescue-trapped-bike-rider-prospect-park-pennsylvania/19781251/",
+      "seendate": "20260903T000000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "6abc.com"
+      ],
+      "sources": [
+        {
+          "domain": "6abc.com",
+          "url": "https://6abc.com/post/community-members-lift-car-rescue-trapped-bike-rider-prospect-park-pennsylvania/19781251/",
+          "date": "20260903T000000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
       "domain": "wishtv.com",
       "url": "https://www.wishtv.com/news/local-news/impd-investigates-fatal-ebike-crash/",
       "seendate": "20260831T121500Z",
@@ -166,126 +238,6 @@
           "domain": "portlandmercury.com",
           "url": "https://www.portlandmercury.com/good-morning-news/good-morning-news-measles-at-the-rodeo-climate-change-and-nepal-floods-trump-changes-lake-ontario-to-lake-america-cool/",
           "date": "20260828T180000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "katc.com",
-      "url": "https://www.katc.com/lafayette-parish/youngsville-police-investigate-fatal-crash-involving-electric-scooter",
-      "seendate": "20260828T100000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "katc.com"
-      ],
-      "sources": [
-        {
-          "domain": "katc.com",
-          "url": "https://www.katc.com/lafayette-parish/youngsville-police-investigate-fatal-crash-involving-electric-scooter",
-          "date": "20260828T100000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "kpel965.com",
-      "url": "https://kpel965.com/ixp/34/p/youngsville-fatal-electric-scooter-crash-savoy/",
-      "seendate": "20260828T091500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "kpel965.com"
-      ],
-      "sources": [
-        {
-          "domain": "kpel965.com",
-          "url": "https://kpel965.com/ixp/34/p/youngsville-fatal-electric-scooter-crash-savoy/",
-          "date": "20260828T091500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "999ktdy.com",
-      "url": "https://999ktdy.com/ixp/34/p/youngsville-fatal-electric-scooter-crash-savoy/",
-      "seendate": "20260828T081500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "999ktdy.com"
-      ],
-      "sources": [
-        {
-          "domain": "999ktdy.com",
-          "url": "https://999ktdy.com/ixp/34/p/youngsville-fatal-electric-scooter-crash-savoy/",
-          "date": "20260828T081500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nyc.streetsblog.org",
-      "url": "https://nyc.streetsblog.org/2026/08/28/disgracebook-illegal-e-motos-still-being-shipped-to-nyc-despite-mamdani-cease-and-desist-deadline",
-      "seendate": "20260828T081500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nyc.streetsblog.org"
-      ],
-      "sources": [
-        {
-          "domain": "nyc.streetsblog.org",
-          "url": "https://nyc.streetsblog.org/2026/08/28/disgracebook-illegal-e-motos-still-being-shipped-to-nyc-despite-mamdani-cease-and-desist-deadline",
-          "date": "20260828T081500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": true,
-      "outcome": "Injury",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "click2houston.com",
-      "url": "https://www.click2houston.com/news/local/2026/08/28/9-year-old-on-e-bike-injured-in-crash-with-car-in-north-harris-county/",
-      "seendate": "20260828T051500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "click2houston.com"
-      ],
-      "sources": [
-        {
-          "domain": "click2houston.com",
-          "url": "https://www.click2houston.com/news/local/2026/08/28/9-year-old-on-e-bike-injured-in-crash-with-car-in-north-harris-county/",
-          "date": "20260828T051500Z"
         }
       ]
     },

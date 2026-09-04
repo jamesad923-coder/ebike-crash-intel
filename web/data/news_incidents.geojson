@@ -55,7 +55,7 @@
         "device": "E-bike",
         "outcome": "Injury",
         "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
+        "age_band": "Unknown",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "kfyrtv.com"
