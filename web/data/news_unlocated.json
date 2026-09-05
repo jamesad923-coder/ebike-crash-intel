@@ -53,7 +53,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "0-12 (child)",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -70,6 +70,30 @@
           "domain": "okcfox.com",
           "url": "https://okcfox.com/news/local/one-killed-in-electric-bike-crash-in-del-city",
           "date": "20260904T143000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "whmi.com",
+      "url": "https://www.whmi.com/news/fox/watch-bystanders-police-lift-volkswagen-off-woman-pinned-underneath-dramatic-e-bike-crash",
+      "seendate": "20260904T033000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "whmi.com"
+      ],
+      "sources": [
+        {
+          "domain": "whmi.com",
+          "url": "https://www.whmi.com/news/fox/watch-bystanders-police-lift-volkswagen-off-woman-pinned-underneath-dramatic-e-bike-crash",
+          "date": "20260904T033000Z"
         }
       ]
     },
@@ -166,30 +190,6 @@
           "domain": "littleapplepost.com",
           "url": "https://littleapplepost.com/posts/102fe0b6-8bfd-4c14-96aa-6ceeb82aca66",
           "date": "20260829T174500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": true,
-      "outcome": "Fatality",
-      "age_band": "45-64",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "littleapplepost.com",
-      "url": "https://littleapplepost.com/posts/ec111abb-47eb-4ffb-b058-032b757ff23c",
-      "seendate": "20260829T124500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "littleapplepost.com"
-      ],
-      "sources": [
-        {
-          "domain": "littleapplepost.com",
-          "url": "https://littleapplepost.com/posts/ec111abb-47eb-4ffb-b058-032b757ff23c",
-          "date": "20260829T124500Z"
         }
       ]
     },
