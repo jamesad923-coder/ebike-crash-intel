@@ -5,6 +5,54 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "koco.com",
+      "url": "https://www.koco.com/article/driver-fatal-del-city-collision-e-bike-arrested/73615227",
+      "seendate": "20260905T020000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "koco.com"
+      ],
+      "sources": [
+        {
+          "domain": "koco.com",
+          "url": "https://www.koco.com/article/driver-fatal-del-city-collision-e-bike-arrested/73615227",
+          "date": "20260905T020000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "news9.com",
+      "url": "https://www.news9.com/oklahoma-city-news/driver-arrested-after-e-bike-rider-killed-in-del-city-crash",
+      "seendate": "20260904T234500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "news9.com"
+      ],
+      "sources": [
+        {
+          "domain": "news9.com",
+          "url": "https://www.news9.com/oklahoma-city-news/driver-arrested-after-e-bike-rider-killed-in-del-city-crash",
+          "date": "20260904T234500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
       "age_band": "0-12 (child)",
       "city": null,
       "state": null,
@@ -22,54 +70,6 @@
           "domain": "okcfox.com",
           "url": "https://okcfox.com/news/local/one-killed-in-electric-bike-crash-in-del-city",
           "date": "20260904T143000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "whmi.com",
-      "url": "https://www.whmi.com/news/fox/watch-bystanders-police-lift-volkswagen-off-woman-pinned-underneath-dramatic-e-bike-crash",
-      "seendate": "20260904T033000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "whmi.com"
-      ],
-      "sources": [
-        {
-          "domain": "whmi.com",
-          "url": "https://www.whmi.com/news/fox/watch-bystanders-police-lift-volkswagen-off-woman-pinned-underneath-dramatic-e-bike-crash",
-          "date": "20260904T033000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "6abc.com",
-      "url": "https://6abc.com/post/community-members-lift-car-rescue-trapped-bike-rider-prospect-park-pennsylvania/19781251/",
-      "seendate": "20260903T000000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "6abc.com"
-      ],
-      "sources": [
-        {
-          "domain": "6abc.com",
-          "url": "https://6abc.com/post/community-members-lift-car-rescue-trapped-bike-rider-prospect-park-pennsylvania/19781251/",
-          "date": "20260903T000000Z"
         }
       ]
     },
@@ -190,30 +190,6 @@
           "domain": "littleapplepost.com",
           "url": "https://littleapplepost.com/posts/ec111abb-47eb-4ffb-b058-032b757ff23c",
           "date": "20260829T124500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": true,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "fox9.com",
-      "url": "https://www.fox9.com/news/brooklyn-center-fatal-crash-highlights-e-bike-e-moto-young-rider-safety",
-      "seendate": "20260829T041500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "fox9.com"
-      ],
-      "sources": [
-        {
-          "domain": "fox9.com",
-          "url": "https://www.fox9.com/news/brooklyn-center-fatal-crash-highlights-e-bike-e-moto-young-rider-safety",
-          "date": "20260829T041500Z"
         }
       ]
     },
