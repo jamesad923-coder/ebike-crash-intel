@@ -4,6 +4,54 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "6abc.com",
+      "url": "https://6abc.com/post/2-juveniles-hospitalized-bike-crash-philadelphias-cobbs-creek-section/19798310/",
+      "seendate": "20260906T140000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "6abc.com"
+      ],
+      "sources": [
+        {
+          "domain": "6abc.com",
+          "url": "https://6abc.com/post/2-juveniles-hospitalized-bike-crash-philadelphias-cobbs-creek-section/19798310/",
+          "date": "20260906T140000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nbcphiladelphia.com",
+      "url": "https://www.nbcphiladelphia.com/news/local/e-bike-crash-8th-street-and-hazel-avenue-west-philadelphia/4458870/",
+      "seendate": "20260906T111500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nbcphiladelphia.com"
+      ],
+      "sources": [
+        {
+          "domain": "nbcphiladelphia.com",
+          "url": "https://www.nbcphiladelphia.com/news/local/e-bike-crash-8th-street-and-hazel-avenue-west-philadelphia/4458870/",
+          "date": "20260906T111500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "25-44",
       "city": null,
@@ -53,7 +101,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "Unknown",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -118,78 +166,6 @@
           "domain": "wishtv.com",
           "url": "https://www.wishtv.com/news/local-news/impd-investigates-fatal-ebike-crash/",
           "date": "20260831T121500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcsandiego.com",
-      "url": "https://www.nbcsandiego.com/news/local/26-year-old-e-bike-rider-killed-in-vista-crash/4067212/",
-      "seendate": "20260830T044500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcsandiego.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcsandiego.com",
-          "url": "https://www.nbcsandiego.com/news/local/26-year-old-e-bike-rider-killed-in-vista-crash/4067212/",
-          "date": "20260830T044500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "miragenews.com",
-      "url": "https://www.miragenews.com/fatal-e-scooter-crash-at-childers-1735430/",
-      "seendate": "20260829T213000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "miragenews.com"
-      ],
-      "sources": [
-        {
-          "domain": "miragenews.com",
-          "url": "https://www.miragenews.com/fatal-e-scooter-crash-at-childers-1735430/",
-          "date": "20260829T213000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": true,
-      "outcome": "Fatality",
-      "age_band": "45-64",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "littleapplepost.com",
-      "url": "https://littleapplepost.com/posts/102fe0b6-8bfd-4c14-96aa-6ceeb82aca66",
-      "seendate": "20260829T174500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "littleapplepost.com"
-      ],
-      "sources": [
-        {
-          "domain": "littleapplepost.com",
-          "url": "https://littleapplepost.com/posts/102fe0b6-8bfd-4c14-96aa-6ceeb82aca66",
-          "date": "20260829T174500Z"
         }
       ]
     },
