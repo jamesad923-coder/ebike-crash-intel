@@ -5,7 +5,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
+      "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -101,7 +101,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "0-12 (child)",
+      "age_band": "25-44",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -166,30 +166,6 @@
           "domain": "wishtv.com",
           "url": "https://www.wishtv.com/news/local-news/impd-investigates-fatal-ebike-crash/",
           "date": "20260831T121500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": "East County",
-      "state": "CA",
-      "location_precision": "county+outlet_market",
-      "located": true,
-      "domain": "10news.com",
-      "url": "https://www.10news.com/news/local-news/e-bike-rider-killed-in-vista-crash",
-      "seendate": "20260830T211500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "10news.com"
-      ],
-      "sources": [
-        {
-          "domain": "10news.com",
-          "url": "https://www.10news.com/news/local-news/e-bike-rider-killed-in-vista-crash",
-          "date": "20260830T211500Z"
         }
       ]
     }
