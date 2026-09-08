@@ -173,7 +173,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -214,6 +214,30 @@
           "domain": "whmi.com",
           "url": "https://www.whmi.com/news/fox/watch-bystanders-police-lift-volkswagen-off-woman-pinned-underneath-dramatic-e-bike-crash",
           "date": "20260904T033000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "6abc.com",
+      "url": "https://6abc.com/post/community-members-lift-car-rescue-trapped-bike-rider-prospect-park-pennsylvania/19781251/",
+      "seendate": "20260903T000000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "6abc.com"
+      ],
+      "sources": [
+        {
+          "domain": "6abc.com",
+          "url": "https://6abc.com/post/community-members-lift-car-rescue-trapped-bike-rider-prospect-park-pennsylvania/19781251/",
+          "date": "20260903T000000Z"
         }
       ]
     }

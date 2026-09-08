@@ -44,37 +44,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -87.2638628,
-          30.9732384
-        ]
-      },
-      "properties": {
-        "city": "Century",
-        "state": "FL",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "northescambia.com"
-        ],
-        "sources": [
-          {
-            "domain": "northescambia.com",
-            "url": "http://www.northescambia.com/2026/09/escambia-ems-ambulance-collides-with-e-bike-rider-while-responding-to-another-crash",
-            "date": "20260905T100000Z"
-          }
-        ],
-        "date": "20260905T100000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -75.9107565,
           43.9747838
         ]
