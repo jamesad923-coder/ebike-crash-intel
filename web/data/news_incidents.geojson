@@ -44,6 +44,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -87.2638628,
+          30.9732384
+        ]
+      },
+      "properties": {
+        "city": "Century",
+        "state": "FL",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "0-12 (child)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "northescambia.com"
+        ],
+        "sources": [
+          {
+            "domain": "northescambia.com",
+            "url": "http://www.northescambia.com/2026/09/escambia-ems-ambulance-collides-with-e-bike-rider-while-responding-to-another-crash",
+            "date": "20260905T100000Z"
+          }
+        ],
+        "date": "20260905T100000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -75.9107565,
           43.9747838
         ]
@@ -68,37 +99,6 @@
           }
         ],
         "date": "20260902T164500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -103.283247,
-          47.802241
-        ]
-      },
-      "properties": {
-        "city": "Watford City",
-        "state": "ND",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "kfyrtv.com"
-        ],
-        "sources": [
-          {
-            "domain": "kfyrtv.com",
-            "url": "https://www.kfyrtv.com/2026/09/01/two-kids-seriously-hurt-e-bike-pickup-crash/",
-            "date": "20260901T033000Z"
-          }
-        ],
-        "date": "20260901T033000Z"
       }
     }
   ]
