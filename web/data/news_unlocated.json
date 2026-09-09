@@ -2,6 +2,30 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "65+",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nydailynews.com",
+      "url": "https://www.nydailynews.com/2026/09/08/e-scooter-operator-77-killed-in-head-on-crash-in-brooklyn-bike-lane/",
+      "seendate": "20260909T020000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nydailynews.com"
+      ],
+      "sources": [
+        {
+          "domain": "nydailynews.com",
+          "url": "https://www.nydailynews.com/2026/09/08/e-scooter-operator-77-killed-in-head-on-crash-in-brooklyn-bike-lane/",
+          "date": "20260909T020000Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
@@ -173,7 +197,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "Unknown",
+      "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -214,30 +238,6 @@
           "domain": "whmi.com",
           "url": "https://www.whmi.com/news/fox/watch-bystanders-police-lift-volkswagen-off-woman-pinned-underneath-dramatic-e-bike-crash",
           "date": "20260904T033000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "6abc.com",
-      "url": "https://6abc.com/post/community-members-lift-car-rescue-trapped-bike-rider-prospect-park-pennsylvania/19781251/",
-      "seendate": "20260903T000000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "6abc.com"
-      ],
-      "sources": [
-        {
-          "domain": "6abc.com",
-          "url": "https://6abc.com/post/community-members-lift-car-rescue-trapped-bike-rider-prospect-park-pennsylvania/19781251/",
-          "date": "20260903T000000Z"
         }
       ]
     }
