@@ -197,7 +197,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -214,30 +214,6 @@
           "domain": "okcfox.com",
           "url": "https://okcfox.com/news/local/one-killed-in-electric-bike-crash-in-del-city",
           "date": "20260904T143000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "whmi.com",
-      "url": "https://www.whmi.com/news/fox/watch-bystanders-police-lift-volkswagen-off-woman-pinned-underneath-dramatic-e-bike-crash",
-      "seendate": "20260904T033000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "whmi.com"
-      ],
-      "sources": [
-        {
-          "domain": "whmi.com",
-          "url": "https://www.whmi.com/news/fox/watch-bystanders-police-lift-volkswagen-off-woman-pinned-underneath-dramatic-e-bike-crash",
-          "date": "20260904T033000Z"
         }
       ]
     }
