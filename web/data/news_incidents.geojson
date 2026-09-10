@@ -24,7 +24,7 @@
         "device": "E-scooter",
         "outcome": "Injury",
         "throttle_ambiguous": false,
-        "age_band": "13-17 (teen)",
+        "age_band": "0-12 (child)",
         "confidence_tier": "single_source",
         "corroborating_domains": [
           "turnto10.com"
@@ -37,37 +37,6 @@
           }
         ],
         "date": "20260907T021500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.9107565,
-          43.9747838
-        ]
-      },
-      "properties": {
-        "city": "Watertown",
-        "state": "NY",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Fatality",
-        "throttle_ambiguous": false,
-        "age_band": "65+",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "wwnytv.com"
-        ],
-        "sources": [
-          {
-            "domain": "wwnytv.com",
-            "url": "https://www.wwnytv.com/2026/09/02/dpw-superintendent-out-watertown/",
-            "date": "20260902T164500Z"
-          }
-        ],
-        "date": "20260902T164500Z"
       }
     }
   ]

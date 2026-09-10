@@ -2,6 +2,78 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "klkntv.com",
+      "url": "https://www.klkntv.com/just-heartbreaking-community-sends-flowers-to-honor16-year-old-daughter-killed-in-e-bike-accident/",
+      "seendate": "20260910T080000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "klkntv.com"
+      ],
+      "sources": [
+        {
+          "domain": "klkntv.com",
+          "url": "https://www.klkntv.com/just-heartbreaking-community-sends-flowers-to-honor16-year-old-daughter-killed-in-e-bike-accident/",
+          "date": "20260910T080000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "fox5atlanta.com",
+      "url": "https://www.fox5atlanta.com/news/teen-killed-after-e-scooter-crashes-tractor-trailer-marietta",
+      "seendate": "20260910T044500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "fox5atlanta.com"
+      ],
+      "sources": [
+        {
+          "domain": "fox5atlanta.com",
+          "url": "https://www.fox5atlanta.com/news/teen-killed-after-e-scooter-crashes-tractor-trailer-marietta",
+          "date": "20260910T044500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "sbsun.com",
+      "url": "https://www.sbsun.com/2026/09/09/woman-killed-on-e-bike-in-collision-with-suv-in-colton/",
+      "seendate": "20260910T030000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "sbsun.com"
+      ],
+      "sources": [
+        {
+          "domain": "sbsun.com",
+          "url": "https://www.sbsun.com/2026/09/09/woman-killed-on-e-bike-in-collision-with-suv-in-colton/",
+          "date": "20260910T030000Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -197,7 +269,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "Unknown",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -214,30 +286,6 @@
           "domain": "okcfox.com",
           "url": "https://okcfox.com/news/local/one-killed-in-electric-bike-crash-in-del-city",
           "date": "20260904T143000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "whmi.com",
-      "url": "https://www.whmi.com/news/fox/watch-bystanders-police-lift-volkswagen-off-woman-pinned-underneath-dramatic-e-bike-crash",
-      "seendate": "20260904T033000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "whmi.com"
-      ],
-      "sources": [
-        {
-          "domain": "whmi.com",
-          "url": "https://www.whmi.com/news/fox/watch-bystanders-police-lift-volkswagen-off-woman-pinned-underneath-dramatic-e-bike-crash",
-          "date": "20260904T033000Z"
         }
       ]
     }
