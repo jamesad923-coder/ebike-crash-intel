@@ -264,30 +264,6 @@
           "date": "20260904T234500Z"
         }
       ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "okcfox.com",
-      "url": "https://okcfox.com/news/local/one-killed-in-electric-bike-crash-in-del-city",
-      "seendate": "20260904T143000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "okcfox.com"
-      ],
-      "sources": [
-        {
-          "domain": "okcfox.com",
-          "url": "https://okcfox.com/news/local/one-killed-in-electric-bike-crash-in-del-city",
-          "date": "20260904T143000Z"
-        }
-      ]
     }
   ]
 }
