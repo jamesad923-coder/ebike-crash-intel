@@ -10,6 +10,30 @@
       "state": null,
       "location_precision": null,
       "located": false,
+      "domain": "fox29.com",
+      "url": "https://www.fox29.com/news/e-bike-rider-killed-after-crashing-parked-suv-philadelphia",
+      "seendate": "20260912T183000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "fox29.com"
+      ],
+      "sources": [
+        {
+          "domain": "fox29.com",
+          "url": "https://www.fox29.com/news/e-bike-rider-killed-after-crashing-parked-suv-philadelphia",
+          "date": "20260912T183000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
       "domain": "klkntv.com",
       "url": "https://www.klkntv.com/just-heartbreaking-community-sends-flowers-to-honor16-year-old-daughter-killed-in-e-bike-accident/",
       "seendate": "20260910T080000Z",
