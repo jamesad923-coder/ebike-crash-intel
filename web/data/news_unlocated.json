@@ -221,47 +221,23 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "koco.com",
-      "url": "https://www.koco.com/article/driver-fatal-del-city-collision-e-bike-arrested/73615227",
-      "seendate": "20260905T020000Z",
+      "age_band": "0-12 (child)",
+      "city": "Blois MANCHESTER",
+      "state": "NH",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "wmur.com",
+      "url": "https://www.wmur.com/article/fatal-ebike-crash-raymond/73692947",
+      "seendate": "20260912T014500Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "koco.com"
+        "wmur.com"
       ],
       "sources": [
         {
-          "domain": "koco.com",
-          "url": "https://www.koco.com/article/driver-fatal-del-city-collision-e-bike-arrested/73615227",
-          "date": "20260905T020000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "news9.com",
-      "url": "https://www.news9.com/oklahoma-city-news/driver-arrested-after-e-bike-rider-killed-in-del-city-crash",
-      "seendate": "20260904T234500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "news9.com"
-      ],
-      "sources": [
-        {
-          "domain": "news9.com",
-          "url": "https://www.news9.com/oklahoma-city-news/driver-arrested-after-e-bike-rider-killed-in-del-city-crash",
-          "date": "20260904T234500Z"
+          "domain": "wmur.com",
+          "url": "https://www.wmur.com/article/fatal-ebike-crash-raymond/73692947",
+          "date": "20260912T014500Z"
         }
       ]
     }
