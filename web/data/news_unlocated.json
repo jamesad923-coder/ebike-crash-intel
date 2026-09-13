@@ -5,7 +5,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "0-12 (child)",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -166,30 +166,6 @@
           "domain": "abc7.com",
           "url": "https://abc7.com/post/woman-riding-bike-hit-killed-suv-colton/19798833/",
           "date": "20260906T173000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "6abc.com",
-      "url": "https://6abc.com/post/2-juveniles-hospitalized-bike-crash-philadelphias-cobbs-creek-section/19798310/",
-      "seendate": "20260906T140000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "6abc.com"
-      ],
-      "sources": [
-        {
-          "domain": "6abc.com",
-          "url": "https://6abc.com/post/2-juveniles-hospitalized-bike-crash-philadelphias-cobbs-creek-section/19798310/",
-          "date": "20260906T140000Z"
         }
       ]
     },
