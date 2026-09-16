@@ -5,7 +5,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
+      "age_band": "18-24",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -94,30 +94,6 @@
           "domain": "sbsun.com",
           "url": "https://www.sbsun.com/2026/09/09/woman-killed-on-e-bike-in-collision-with-suv-in-colton/",
           "date": "20260910T030000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "65+",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nydailynews.com",
-      "url": "https://www.nydailynews.com/2026/09/08/e-scooter-operator-77-killed-in-head-on-crash-in-brooklyn-bike-lane/",
-      "seendate": "20260909T020000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nydailynews.com"
-      ],
-      "sources": [
-        {
-          "domain": "nydailynews.com",
-          "url": "https://www.nydailynews.com/2026/09/08/e-scooter-operator-77-killed-in-head-on-crash-in-brooklyn-bike-lane/",
-          "date": "20260909T020000Z"
         }
       ]
     },
