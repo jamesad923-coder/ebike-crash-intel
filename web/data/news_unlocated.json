@@ -50,58 +50,10 @@
       ]
     },
     {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "fox5atlanta.com",
-      "url": "https://www.fox5atlanta.com/news/teen-killed-after-e-scooter-crashes-tractor-trailer-marietta",
-      "seendate": "20260910T044500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "fox5atlanta.com"
-      ],
-      "sources": [
-        {
-          "domain": "fox5atlanta.com",
-          "url": "https://www.fox5atlanta.com/news/teen-killed-after-e-scooter-crashes-tractor-trailer-marietta",
-          "date": "20260910T044500Z"
-        }
-      ]
-    },
-    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "sbsun.com",
-      "url": "https://www.sbsun.com/2026/09/09/woman-killed-on-e-bike-in-collision-with-suv-in-colton/",
-      "seendate": "20260910T030000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "sbsun.com"
-      ],
-      "sources": [
-        {
-          "domain": "sbsun.com",
-          "url": "https://www.sbsun.com/2026/09/09/woman-killed-on-e-bike-in-collision-with-suv-in-colton/",
-          "date": "20260910T030000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
+      "age_band": "Unknown",
       "city": "Blois MANCHESTER",
       "state": "NH",
       "location_precision": "city_state_mention",
