@@ -1,29 +1,4 @@
 {
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
-  "reports": [
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "fox29.com",
-      "url": "https://www.fox29.com/news/e-bike-rider-killed-after-crashing-parked-suv-philadelphia",
-      "seendate": "20260912T183000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "fox29.com"
-      ],
-      "sources": [
-        {
-          "domain": "fox29.com",
-          "url": "https://www.fox29.com/news/e-bike-rider-killed-after-crashing-parked-suv-philadelphia",
-          "date": "20260912T183000Z"
-        }
-      ]
-    }
-  ]
+  "reports": []
 }
