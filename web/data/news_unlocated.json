@@ -24,30 +24,6 @@
           "date": "20260912T183000Z"
         }
       ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": "Blois MANCHESTER",
-      "state": "NH",
-      "location_precision": "city_state_mention",
-      "located": true,
-      "domain": "wmur.com",
-      "url": "https://www.wmur.com/article/fatal-ebike-crash-raymond/73692947",
-      "seendate": "20260912T014500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wmur.com"
-      ],
-      "sources": [
-        {
-          "domain": "wmur.com",
-          "url": "https://www.wmur.com/article/fatal-ebike-crash-raymond/73692947",
-          "date": "20260912T014500Z"
-        }
-      ]
     }
   ]
 }
