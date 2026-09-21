@@ -8033,6 +8033,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.0784529442512,
+              42.33781026922586
+            ]
+          },
+          "properties": {
+            "ward": "District 7",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2021-09-12"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.08271370241526,
               42.35326697747881
             ]
@@ -15706,22 +15722,6 @@
             "fatal": false,
             "near_bike_lane": true,
             "date": "2024-12-13"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
-              -71.07840311140149,
-              42.337726602704684
-            ]
-          },
-          "properties": {
-            "ward": "District 7",
-            "fatal": false,
-            "near_bike_lane": true,
-            "date": "2021-09-12"
           }
         },
         {
