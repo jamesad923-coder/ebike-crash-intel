@@ -6,6 +6,30 @@
       "throttle_ambiguous": false,
       "outcome": "Fatality",
       "age_band": "25-44",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wrrv.com",
+      "url": "https://wrrv.com/ixp/705/p/poughkeepsie-man-charged-fatal-crash/",
+      "seendate": "20260923T123000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wrrv.com"
+      ],
+      "sources": [
+        {
+          "domain": "wrrv.com",
+          "url": "https://wrrv.com/ixp/705/p/poughkeepsie-man-charged-fatal-crash/",
+          "date": "20260923T123000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "25-44",
       "city": "East County",
       "state": "CA",
       "location_precision": "county+outlet_market",
@@ -30,7 +54,7 @@
       "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "13-17 (teen)",
-      "city": "Clear Erie",
+      "city": "Cloudy Erie",
       "state": "PA",
       "location_precision": "city_state_mention",
       "located": true,
