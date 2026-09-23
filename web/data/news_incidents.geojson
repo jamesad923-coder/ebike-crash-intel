@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -81.6936772,
+          41.4996574
+        ]
+      },
+      "properties": {
+        "city": "Cleveland",
+        "state": "OH",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "45-64",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "cleveland19.com"
+        ],
+        "sources": [
+          {
+            "domain": "cleveland19.com",
+            "url": "https://www.cleveland19.com/2026/09/23/family-cleveland-father-killed-hit-and-run-e-scooter-crash-still-searching-answers-6-months-later/",
+            "date": "20260923T040000Z"
+          }
+        ],
+        "date": "20260923T040000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -77.8818627,
           34.2751052
         ]
