@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -71.4547891,
+          42.9956397
+        ]
+      },
+      "properties": {
+        "city": "Manchester",
+        "state": "NH",
+        "location_precision": "city_state_mention",
+        "device": "E-scooter",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "unionleader.com"
+        ],
+        "sources": [
+          {
+            "domain": "unionleader.com",
+            "url": "https://www.unionleader.com/news/safety/pelham-high-student-seriously-injured-in-e-scooter-collision/article_33556de8-c2d4-4ba1-a39d-509198506b66.html",
+            "date": "20260923T210000Z"
+          }
+        ],
+        "date": "20260923T210000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -81.6936772,
           41.4996574
         ]
