@@ -26,6 +26,30 @@
       ]
     },
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "13-17 (teen)",
+      "city": "Selvakumar PELHAM",
+      "state": "NH",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "wmur.com",
+      "url": "https://www.wmur.com/article/scooter-crash-injures-student/73860924",
+      "seendate": "20260924T030000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wmur.com"
+      ],
+      "sources": [
+        {
+          "domain": "wmur.com",
+          "url": "https://www.wmur.com/article/scooter-crash-injures-student/73860924",
+          "date": "20260924T030000Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -54,7 +78,7 @@
       "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "13-17 (teen)",
-      "city": "Sunny Erie",
+      "city": "Clear Erie",
       "state": "PA",
       "location_precision": "city_state_mention",
       "located": true,
