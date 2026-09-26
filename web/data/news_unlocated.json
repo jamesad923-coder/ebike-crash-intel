@@ -72,6 +72,30 @@
           "date": "20260922T044500Z"
         }
       ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "13-17 (teen)",
+      "city": "Sunny Erie",
+      "state": "PA",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "erienewsnow.com",
+      "url": "https://www.erienewsnow.com/news/local/17-year-old-lake-city-boy-injured-in-e-bike-crash-in-girard-township/article_fe8c51b4-c5b6-424b-91b7-0674a947f6d8.html",
+      "seendate": "20260921T151500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "erienewsnow.com"
+      ],
+      "sources": [
+        {
+          "domain": "erienewsnow.com",
+          "url": "https://www.erienewsnow.com/news/local/17-year-old-lake-city-boy-injured-in-e-bike-crash-in-girard-township/article_fe8c51b4-c5b6-424b-91b7-0674a947f6d8.html",
+          "date": "20260921T151500Z"
+        }
+      ]
     }
   ]
 }
