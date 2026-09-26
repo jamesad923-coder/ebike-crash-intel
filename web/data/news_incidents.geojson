@@ -75,6 +75,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -80.0852695,
+          42.1294712
+        ]
+      },
+      "properties": {
+        "city": "Erie",
+        "state": "PA",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "erienewsnow.com"
+        ],
+        "sources": [
+          {
+            "domain": "erienewsnow.com",
+            "url": "https://www.erienewsnow.com/news/local/17-year-old-lake-city-boy-injured-in-e-bike-crash-in-girard-township/article_fe8c51b4-c5b6-424b-91b7-0674a947f6d8.html",
+            "date": "20260921T151500Z"
+          }
+        ],
+        "date": "20260921T151500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -77.8818627,
           34.2751052
         ]
