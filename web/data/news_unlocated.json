@@ -2,6 +2,30 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nbcmiami.com",
+      "url": "https://www.nbcmiami.com/news/local/1-dead-1-critical-after-e-scooter-crash-in-little-havana-police-say/3864902/",
+      "seendate": "20260927T194500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nbcmiami.com"
+      ],
+      "sources": [
+        {
+          "domain": "nbcmiami.com",
+          "url": "https://www.nbcmiami.com/news/local/1-dead-1-critical-after-e-scooter-crash-in-little-havana-police-say/3864902/",
+          "date": "20260927T194500Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -22,30 +46,6 @@
           "domain": "wrrv.com",
           "url": "https://wrrv.com/ixp/705/p/poughkeepsie-man-charged-fatal-crash/",
           "date": "20260923T123000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "erienewsnow.com",
-      "url": "https://www.erienewsnow.com/news/local/17-year-old-lake-city-boy-injured-in-e-bike-crash-in-girard-township/article_fe8c51b4-c5b6-424b-91b7-0674a947f6d8.html",
-      "seendate": "20260921T151500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "erienewsnow.com"
-      ],
-      "sources": [
-        {
-          "domain": "erienewsnow.com",
-          "url": "https://www.erienewsnow.com/news/local/17-year-old-lake-city-boy-injured-in-e-bike-crash-in-girard-township/article_fe8c51b4-c5b6-424b-91b7-0674a947f6d8.html",
-          "date": "20260921T151500Z"
         }
       ]
     },
