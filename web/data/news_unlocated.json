@@ -26,6 +26,30 @@
       ]
     },
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "unionleader.com",
+      "url": "https://www.unionleader.com/news/safety/pelham-high-student-seriously-injured-in-e-scooter-collision/article_33556de8-c2d4-4ba1-a39d-509198506b66.html",
+      "seendate": "20260923T210000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "unionleader.com"
+      ],
+      "sources": [
+        {
+          "domain": "unionleader.com",
+          "url": "https://www.unionleader.com/news/safety/pelham-high-student-seriously-injured-in-e-scooter-collision/article_33556de8-c2d4-4ba1-a39d-509198506b66.html",
+          "date": "20260923T210000Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -46,30 +70,6 @@
           "domain": "wrrv.com",
           "url": "https://wrrv.com/ixp/705/p/poughkeepsie-man-charged-fatal-crash/",
           "date": "20260923T123000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "erienewsnow.com",
-      "url": "https://www.erienewsnow.com/news/local/17-year-old-lake-city-boy-injured-in-e-bike-crash-in-girard-township/article_fe8c51b4-c5b6-424b-91b7-0674a947f6d8.html",
-      "seendate": "20260921T151500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "erienewsnow.com"
-      ],
-      "sources": [
-        {
-          "domain": "erienewsnow.com",
-          "url": "https://www.erienewsnow.com/news/local/17-year-old-lake-city-boy-injured-in-e-bike-crash-in-girard-township/article_fe8c51b4-c5b6-424b-91b7-0674a947f6d8.html",
-          "date": "20260921T151500Z"
         }
       ]
     },
