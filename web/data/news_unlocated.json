@@ -96,30 +96,6 @@
           "date": "20260924T030000Z"
         }
       ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": "East County",
-      "state": "CA",
-      "location_precision": "county+outlet_market",
-      "located": true,
-      "domain": "10news.com",
-      "url": "https://www.10news.com/news/local-news/north-county-news/family-pleads-for-tips-after-possible-hit-and-run-in-oceanside",
-      "seendate": "20260922T044500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "10news.com"
-      ],
-      "sources": [
-        {
-          "domain": "10news.com",
-          "url": "https://www.10news.com/news/local-news/north-county-news/family-pleads-for-tips-after-possible-hit-and-run-in-oceanside",
-          "date": "20260922T044500Z"
-        }
-      ]
     }
   ]
 }
