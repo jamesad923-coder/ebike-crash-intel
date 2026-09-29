@@ -2,6 +2,30 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nbcmiami.com",
+      "url": "https://www.nbcmiami.com/news/local/driver-charged-deadly-hit-and-run-siblings-e-bike-miami-dade/3865591/",
+      "seendate": "20260929T053000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nbcmiami.com"
+      ],
+      "sources": [
+        {
+          "domain": "nbcmiami.com",
+          "url": "https://www.nbcmiami.com/news/local/driver-charged-deadly-hit-and-run-siblings-e-bike-miami-dade/3865591/",
+          "date": "20260929T053000Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
