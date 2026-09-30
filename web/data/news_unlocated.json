@@ -53,54 +53,6 @@
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "unionleader.com",
-      "url": "https://www.unionleader.com/news/safety/pelham-high-student-seriously-injured-in-e-scooter-collision/article_33556de8-c2d4-4ba1-a39d-509198506b66.html",
-      "seendate": "20260923T210000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "unionleader.com"
-      ],
-      "sources": [
-        {
-          "domain": "unionleader.com",
-          "url": "https://www.unionleader.com/news/safety/pelham-high-student-seriously-injured-in-e-scooter-collision/article_33556de8-c2d4-4ba1-a39d-509198506b66.html",
-          "date": "20260923T210000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wrrv.com",
-      "url": "https://wrrv.com/ixp/705/p/poughkeepsie-man-charged-fatal-crash/",
-      "seendate": "20260923T123000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wrrv.com"
-      ],
-      "sources": [
-        {
-          "domain": "wrrv.com",
-          "url": "https://wrrv.com/ixp/705/p/poughkeepsie-man-charged-fatal-crash/",
-          "date": "20260923T123000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
       "age_band": "13-17 (teen)",
       "city": "Selvakumar PELHAM",
       "state": "NH",
