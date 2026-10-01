@@ -4,8 +4,56 @@
     {
       "device": "E-bike",
       "throttle_ambiguous": false,
-      "outcome": "Fatality",
+      "outcome": "Injury",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "kool965.com",
+      "url": "https://kool965.com/post-falls-juvenile-hit-truck-hospitalized/",
+      "seendate": "20261001T044500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "kool965.com"
+      ],
+      "sources": [
+        {
+          "domain": "kool965.com",
+          "url": "https://kool965.com/post-falls-juvenile-hit-truck-hospitalized/",
+          "date": "20261001T044500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
       "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "fox9.com",
+      "url": "https://www.fox9.com/news/cold-spring-e-bike-crash-11-year-old-seriously-hurt-after-being-struck-car",
+      "seendate": "20261001T030000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "fox9.com"
+      ],
+      "sources": [
+        {
+          "domain": "fox9.com",
+          "url": "https://www.fox9.com/news/cold-spring-e-bike-crash-11-year-old-seriously-hurt-after-being-struck-car",
+          "date": "20261001T030000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -50,26 +98,26 @@
       ]
     },
     {
-      "device": "E-scooter",
+      "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "13-17 (teen)",
-      "city": "Selvakumar PELHAM",
-      "state": "NH",
+      "city": "Sunny Champaign",
+      "state": "IL",
       "location_precision": "city_state_mention",
       "located": true,
-      "domain": "wmur.com",
-      "url": "https://www.wmur.com/article/scooter-crash-injures-student/73860924",
-      "seendate": "20260924T030000Z",
+      "domain": "news-gazette.com",
+      "url": "https://www.news-gazette.com/news/local/courts-police-fire/two-teens-injured-in-e-bike-vehicle-accident/article_5f77fb35-e859-4a1a-8307-0b298b47c9f8.html",
+      "seendate": "20260930T190000Z",
       "confidence_tier": "single_source",
       "corroborating_domains": [
-        "wmur.com"
+        "news-gazette.com"
       ],
       "sources": [
         {
-          "domain": "wmur.com",
-          "url": "https://www.wmur.com/article/scooter-crash-injures-student/73860924",
-          "date": "20260924T030000Z"
+          "domain": "news-gazette.com",
+          "url": "https://www.news-gazette.com/news/local/courts-police-fire/two-teens-injured-in-e-bike-vehicle-accident/article_5f77fb35-e859-4a1a-8307-0b298b47c9f8.html",
+          "date": "20260930T190000Z"
         }
       ]
     }
