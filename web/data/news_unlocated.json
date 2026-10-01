@@ -10,6 +10,78 @@
       "state": null,
       "location_precision": null,
       "located": false,
+      "domain": "mix106radio.com",
+      "url": "https://mix106radio.com/ixp/96/p/post-falls-juvenile-hit-truck-hospitalized/",
+      "seendate": "20261001T193000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "mix106radio.com"
+      ],
+      "sources": [
+        {
+          "domain": "mix106radio.com",
+          "url": "https://mix106radio.com/ixp/96/p/post-falls-juvenile-hit-truck-hospitalized/",
+          "date": "20261001T193000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "fox26houston.com",
+      "url": "https://www.fox26houston.com/news/atascocita-crash-juvenile-hospitalized-hit-vehicle-whi-riding-electric-scooter",
+      "seendate": "20261001T180000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "fox26houston.com"
+      ],
+      "sources": [
+        {
+          "domain": "fox26houston.com",
+          "url": "https://www.fox26houston.com/news/atascocita-crash-juvenile-hospitalized-hit-vehicle-whi-riding-electric-scooter",
+          "date": "20261001T180000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "1035kissfmboise.com",
+      "url": "https://1035kissfmboise.com/ixp/96/p/post-falls-juvenile-hit-truck-hospitalized/",
+      "seendate": "20261001T163000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "1035kissfmboise.com"
+      ],
+      "sources": [
+        {
+          "domain": "1035kissfmboise.com",
+          "url": "https://1035kissfmboise.com/ixp/96/p/post-falls-juvenile-hit-truck-hospitalized/",
+          "date": "20261001T163000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
       "domain": "kool965.com",
       "url": "https://kool965.com/post-falls-juvenile-hit-truck-hospitalized/",
       "seendate": "20261001T044500Z",
@@ -50,30 +122,6 @@
       ]
     },
     {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcmiami.com",
-      "url": "https://www.nbcmiami.com/news/local/driver-charged-deadly-hit-and-run-siblings-e-bike-miami-dade/3865591/",
-      "seendate": "20260929T053000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcmiami.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcmiami.com",
-          "url": "https://www.nbcmiami.com/news/local/driver-charged-deadly-hit-and-run-siblings-e-bike-miami-dade/3865591/",
-          "date": "20260929T053000Z"
-        }
-      ]
-    },
-    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
@@ -102,7 +150,7 @@
       "throttle_ambiguous": false,
       "outcome": "Injury",
       "age_band": "13-17 (teen)",
-      "city": "Sunny Champaign",
+      "city": "Cloudy Champaign",
       "state": "IL",
       "location_precision": "city_state_mention",
       "located": true,
