@@ -77,7 +77,7 @@
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Injury",
-      "age_band": "13-17 (teen)",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
