@@ -168,30 +168,6 @@
           "date": "20261001T030000Z"
         }
       ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "nbcmiami.com",
-      "url": "https://www.nbcmiami.com/news/local/1-dead-1-critical-after-e-scooter-crash-in-little-havana-police-say/3864902/",
-      "seendate": "20260927T194500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "nbcmiami.com"
-      ],
-      "sources": [
-        {
-          "domain": "nbcmiami.com",
-          "url": "https://www.nbcmiami.com/news/local/1-dead-1-critical-after-e-scooter-crash-in-little-havana-police-say/3864902/",
-          "date": "20260927T194500Z"
-        }
-      ]
     }
   ]
 }
