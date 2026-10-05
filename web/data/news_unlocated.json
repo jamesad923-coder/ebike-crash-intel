@@ -5,7 +5,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "Unknown",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -29,7 +29,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "Unknown",
+      "age_band": "18-24",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -166,6 +166,30 @@
           "domain": "fox9.com",
           "url": "https://www.fox9.com/news/cold-spring-e-bike-crash-11-year-old-seriously-hurt-after-being-struck-car",
           "date": "20261001T030000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "news-gazette.com",
+      "url": "https://www.news-gazette.com/news/local/courts-police-fire/two-teens-injured-in-e-bike-vehicle-accident/article_5f77fb35-e859-4a1a-8307-0b298b47c9f8.html",
+      "seendate": "20260930T190000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "news-gazette.com"
+      ],
+      "sources": [
+        {
+          "domain": "news-gazette.com",
+          "url": "https://www.news-gazette.com/news/local/courts-police-fire/two-teens-injured-in-e-bike-vehicle-accident/article_5f77fb35-e859-4a1a-8307-0b298b47c9f8.html",
+          "date": "20260930T190000Z"
         }
       ]
     }
