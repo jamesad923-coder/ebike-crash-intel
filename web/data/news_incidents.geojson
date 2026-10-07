@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -95.0435373,
+          45.1219492
+        ]
+      },
+      "properties": {
+        "city": "Willmar",
+        "state": "MN",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "0-12 (child)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "willmarradio.com"
+        ],
+        "sources": [
+          {
+            "domain": "willmarradio.com",
+            "url": "https://www.willmarradio.com/news/child-injured-in-ebike-crash-near-cold-spring/article_2d120206-b6ed-4ab4-b0e8-af593cac7335.html",
+            "date": "20261001T194500Z"
+          }
+        ],
+        "date": "20261001T194500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -83.6089968,
           40.6478171
         ]
