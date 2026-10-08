@@ -120,54 +120,6 @@
           "date": "20261001T163000Z"
         }
       ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "kool965.com",
-      "url": "https://kool965.com/post-falls-juvenile-hit-truck-hospitalized/",
-      "seendate": "20261001T044500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "kool965.com"
-      ],
-      "sources": [
-        {
-          "domain": "kool965.com",
-          "url": "https://kool965.com/post-falls-juvenile-hit-truck-hospitalized/",
-          "date": "20261001T044500Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Injury",
-      "age_band": "0-12 (child)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "fox9.com",
-      "url": "https://www.fox9.com/news/cold-spring-e-bike-crash-11-year-old-seriously-hurt-after-being-struck-car",
-      "seendate": "20261001T030000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "fox9.com"
-      ],
-      "sources": [
-        {
-          "domain": "fox9.com",
-          "url": "https://www.fox9.com/news/cold-spring-e-bike-crash-11-year-old-seriously-hurt-after-being-struck-car",
-          "date": "20261001T030000Z"
-        }
-      ]
     }
   ]
 }
