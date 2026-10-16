@@ -1,29 +1,4 @@
 {
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
-  "reports": [
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "45-64",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wapt.com",
-      "url": "https://www.wapt.com/article/rankin-county-e-bike-crash-kills-brandon-man/74151459",
-      "seendate": "20261016T040000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wapt.com"
-      ],
-      "sources": [
-        {
-          "domain": "wapt.com",
-          "url": "https://www.wapt.com/article/rankin-county-e-bike-crash-kills-brandon-man/74151459",
-          "date": "20261016T040000Z"
-        }
-      ]
-    }
-  ]
+  "reports": []
 }
