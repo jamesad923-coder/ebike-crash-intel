@@ -48,6 +48,30 @@
           "date": "20261016T040000Z"
         }
       ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Severe injury",
+      "age_band": "Unknown",
+      "city": "KHTS Washington",
+      "state": "DC",
+      "location_precision": "city_state_mention",
+      "located": true,
+      "domain": "hometownstation.com",
+      "url": "https://www.hometownstation.com/santa-clarita-news/traffic/crash/vehicle-crash-leaves-e-scooter-rider-in-critical-condition-in-newhall-614721",
+      "seendate": "20261018T190000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "hometownstation.com"
+      ],
+      "sources": [
+        {
+          "domain": "hometownstation.com",
+          "url": "https://www.hometownstation.com/santa-clarita-news/traffic/crash/vehicle-crash-leaves-e-scooter-rider-in-critical-condition-in-newhall-614721",
+          "date": "20261018T190000Z"
+        }
+      ]
     }
   ]
 }
