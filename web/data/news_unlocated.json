@@ -5,7 +5,7 @@
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "45-64",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
