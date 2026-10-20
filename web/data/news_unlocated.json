@@ -2,6 +2,78 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "45-64",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "latimes.com",
+      "url": "https://www.latimes.com/socal/daily-pilot/news/story/2026-10-19/woman-on-e-bike-hits-curb-in-huntington-beach-suffers-fatal-injuries",
+      "seendate": "20261020T010000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "latimes.com"
+      ],
+      "sources": [
+        {
+          "domain": "latimes.com",
+          "url": "https://www.latimes.com/socal/daily-pilot/news/story/2026-10-19/woman-on-e-bike-hits-curb-in-huntington-beach-suffers-fatal-injuries",
+          "date": "20261020T010000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nj1015.com",
+      "url": "https://nj1015.com/teen-ebike-collision-route-40/",
+      "seendate": "20261019T164500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nj1015.com"
+      ],
+      "sources": [
+        {
+          "domain": "nj1015.com",
+          "url": "https://nj1015.com/teen-ebike-collision-route-40/",
+          "date": "20261019T164500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wftv.com",
+      "url": "https://www.wftv.com/news/local/brevard-county-man-rearrested-murder-charge-after-teen-e-bike-crash/CBRTCKF4O5E7ZFEOO2256U33GA/",
+      "seendate": "20261019T160000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wftv.com"
+      ],
+      "sources": [
+        {
+          "domain": "wftv.com",
+          "url": "https://www.wftv.com/news/local/brevard-county-man-rearrested-murder-charge-after-teen-e-bike-crash/CBRTCKF4O5E7ZFEOO2256U33GA/",
+          "date": "20261019T160000Z"
+        }
+      ]
+    },
+    {
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
