@@ -2,6 +2,30 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "daytondailynews.com",
+      "url": "https://www.daytondailynews.com/local/11-year-old-girl-riding-scooter-in-lebanon-hit-by-suv-seriously-injured/article_c93cb382-0a1c-57f2-b603-3118e0ad92b7.html",
+      "seendate": "20261021T063000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "daytondailynews.com"
+      ],
+      "sources": [
+        {
+          "domain": "daytondailynews.com",
+          "url": "https://www.daytondailynews.com/local/11-year-old-girl-riding-scooter-in-lebanon-hit-by-suv-seriously-injured/article_c93cb382-0a1c-57f2-b603-3118e0ad92b7.html",
+          "date": "20261021T063000Z"
+        }
+      ]
+    },
+    {
       "device": "Throttle vehicle (unclear e-bike classification)",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
