@@ -2,6 +2,150 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "Throttle vehicle (unclear e-bike classification)",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "whittierdailynews.com",
+      "url": "https://www.whittierdailynews.com/2026/10/20/oc-parents-of-teen-boy-killed-in-e-moto-crash-charged-with-child-endangerment/",
+      "seendate": "20261021T041500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "whittierdailynews.com"
+      ],
+      "sources": [
+        {
+          "domain": "whittierdailynews.com",
+          "url": "https://www.whittierdailynews.com/2026/10/20/oc-parents-of-teen-boy-killed-in-e-moto-crash-charged-with-child-endangerment/",
+          "date": "20261021T041500Z"
+        }
+      ]
+    },
+    {
+      "device": "Throttle vehicle (unclear e-bike classification)",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "presstelegram.com",
+      "url": "https://www.presstelegram.com/2026/10/20/oc-parents-of-teen-boy-killed-in-e-moto-crash-charged-with-child-endangerment/",
+      "seendate": "20261021T014500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "presstelegram.com"
+      ],
+      "sources": [
+        {
+          "domain": "presstelegram.com",
+          "url": "https://www.presstelegram.com/2026/10/20/oc-parents-of-teen-boy-killed-in-e-moto-crash-charged-with-child-endangerment/",
+          "date": "20261021T014500Z"
+        }
+      ]
+    },
+    {
+      "device": "Throttle vehicle (unclear e-bike classification)",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "redlandsdailyfacts.com",
+      "url": "https://www.redlandsdailyfacts.com/2026/10/20/oc-parents-of-teen-boy-killed-in-e-moto-crash-charged-with-child-endangerment/",
+      "seendate": "20261021T013000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "redlandsdailyfacts.com"
+      ],
+      "sources": [
+        {
+          "domain": "redlandsdailyfacts.com",
+          "url": "https://www.redlandsdailyfacts.com/2026/10/20/oc-parents-of-teen-boy-killed-in-e-moto-crash-charged-with-child-endangerment/",
+          "date": "20261021T013000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wxyz.com",
+      "url": "https://www.wxyz.com/news/troy-teen-injured-in-e-bike-crash-sues-gm-automaker-withdraws-countersuit",
+      "seendate": "20261021T013000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wxyz.com"
+      ],
+      "sources": [
+        {
+          "domain": "wxyz.com",
+          "url": "https://www.wxyz.com/news/troy-teen-injured-in-e-bike-crash-sues-gm-automaker-withdraws-countersuit",
+          "date": "20261021T013000Z"
+        }
+      ]
+    },
+    {
+      "device": "Throttle vehicle (unclear e-bike classification)",
+      "throttle_ambiguous": true,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "sbsun.com",
+      "url": "https://www.sbsun.com/2026/10/20/oc-parents-of-teen-boy-killed-in-e-moto-crash-charged-with-child-endangerment/",
+      "seendate": "20261021T013000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "sbsun.com"
+      ],
+      "sources": [
+        {
+          "domain": "sbsun.com",
+          "url": "https://www.sbsun.com/2026/10/20/oc-parents-of-teen-boy-killed-in-e-moto-crash-charged-with-child-endangerment/",
+          "date": "20261021T013000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "18-24",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wibc.com",
+      "url": "https://wibc.com/899809/person-riding-scooter-hit-by-car-in-noblesville/",
+      "seendate": "20261021T003000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wibc.com"
+      ],
+      "sources": [
+        {
+          "domain": "wibc.com",
+          "url": "https://wibc.com/899809/person-riding-scooter-hit-by-car-in-noblesville/",
+          "date": "20261021T003000Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
