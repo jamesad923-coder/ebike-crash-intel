@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -83.6900211,
+          43.0161693
+        ]
+      },
+      "properties": {
+        "city": "Flint",
+        "state": "MI",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Injury",
+        "throttle_ambiguous": false,
+        "age_band": "13-17 (teen)",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "abc12.com"
+        ],
+        "sources": [
+          {
+            "domain": "abc12.com",
+            "url": "https://www.abc12.com/news/michigan-teen-injured-in-e-bike-crash-sues-gm-automaker-withdraws-countersuit/article_ebd67c58-be04-56a6-8055-06548b93c0a8.html",
+            "date": "20261021T170000Z"
+          }
+        ],
+        "date": "20261021T170000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -81.9748429,
           33.4709714
         ]
