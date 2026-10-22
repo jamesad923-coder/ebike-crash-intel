@@ -2,6 +2,30 @@
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
   "reports": [
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Severe injury",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "news3lv.com",
+      "url": "https://news3lv.com/news/local/juvenile-hospitalized-with-life-threatening-injuries-after-e-scooter-crash-in-henderson-collision",
+      "seendate": "20261022T050000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "news3lv.com"
+      ],
+      "sources": [
+        {
+          "domain": "news3lv.com",
+          "url": "https://news3lv.com/news/local/juvenile-hospitalized-with-life-threatening-injuries-after-e-scooter-crash-in-henderson-collision",
+          "date": "20261022T050000Z"
+        }
+      ]
+    },
+    {
       "device": "Throttle vehicle (unclear e-bike classification)",
       "throttle_ambiguous": true,
       "outcome": "Fatality",
