@@ -5,7 +5,7 @@
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Severe injury",
-      "age_band": "0-12 (child)",
+      "age_band": "Unknown",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -21,6 +21,30 @@
         {
           "domain": "news3lv.com",
           "url": "https://news3lv.com/news/local/juvenile-hospitalized-with-life-threatening-injuries-after-e-scooter-crash-in-henderson-collision",
+          "date": "20261022T050000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "news3lv.com",
+      "url": "https://news3lv.com/news/local/fewer-students-hit-by-cars-so-far-but-safety-concerns-persist-in-clark-county",
+      "seendate": "20261022T050000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "news3lv.com"
+      ],
+      "sources": [
+        {
+          "domain": "news3lv.com",
+          "url": "https://news3lv.com/news/local/fewer-students-hit-by-cars-so-far-but-safety-concerns-persist-in-clark-county",
           "date": "20261022T050000Z"
         }
       ]
