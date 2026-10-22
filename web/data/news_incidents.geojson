@@ -13,6 +13,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -77.615214,
+          43.157285
+        ]
+      },
+      "properties": {
+        "city": "Rochester",
+        "state": "NY",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "18-24",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "whec.com"
+        ],
+        "sources": [
+          {
+            "domain": "whec.com",
+            "url": "https://www.whec.com/top-news/rochester-police-announce-arrest-in-june-deadly-hit-and-run-on-west-ridge-road/",
+            "date": "20261022T211500Z"
+          }
+        ],
+        "date": "20261022T211500Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -83.6900211,
           43.0161693
         ]
