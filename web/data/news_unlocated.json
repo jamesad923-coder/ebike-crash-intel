@@ -29,7 +29,7 @@
       "device": "E-scooter",
       "throttle_ambiguous": false,
       "outcome": "Severe injury",
-      "age_band": "Unknown",
+      "age_band": "0-12 (child)",
       "city": null,
       "state": null,
       "location_precision": null,
@@ -45,6 +45,30 @@
         {
           "domain": "news3lv.com",
           "url": "https://news3lv.com/news/local/juvenile-hospitalized-with-life-threatening-injuries-after-e-scooter-crash-in-henderson-collision",
+          "date": "20261022T050000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "news3lv.com",
+      "url": "https://news3lv.com/news/local/fewer-students-hit-by-cars-so-far-but-safety-concerns-persist-in-clark-county",
+      "seendate": "20261022T050000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "news3lv.com"
+      ],
+      "sources": [
+        {
+          "domain": "news3lv.com",
+          "url": "https://news3lv.com/news/local/fewer-students-hit-by-cars-so-far-but-safety-concerns-persist-in-clark-county",
           "date": "20261022T050000Z"
         }
       ]
@@ -286,30 +310,6 @@
           "domain": "wftv.com",
           "url": "https://www.wftv.com/news/local/brevard-county-man-rearrested-murder-charge-after-teen-e-bike-crash/CBRTCKF4O5E7ZFEOO2256U33GA/",
           "date": "20261019T160000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "Unknown",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wglt.org",
-      "url": "https://www.wglt.org/local-news/2026-10-16/e-scooter-rider-from-bloomington-killed-in-traffic-collision",
-      "seendate": "20261016T223000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wglt.org"
-      ],
-      "sources": [
-        {
-          "domain": "wglt.org",
-          "url": "https://www.wglt.org/local-news/2026-10-16/e-scooter-rider-from-bloomington-killed-in-traffic-collision",
-          "date": "20261016T223000Z"
         }
       ]
     },
