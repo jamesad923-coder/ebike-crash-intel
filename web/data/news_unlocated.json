@@ -5,6 +5,54 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "wesh.com",
+      "url": "https://www.wesh.com/article/ee-bike-rider-injured-orange-county-patrol-car-crash-fhp/74237444",
+      "seendate": "20261024T160000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "wesh.com"
+      ],
+      "sources": [
+        {
+          "domain": "wesh.com",
+          "url": "https://www.wesh.com/article/ee-bike-rider-injured-orange-county-patrol-car-crash-fhp/74237444",
+          "date": "20261024T160000Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "fox35orlando.com",
+      "url": "https://www.fox35orlando.com/news/man-injured-e-bike-crash-involving-ocso-patrol-vehicle-officials-say",
+      "seendate": "20261024T154500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "fox35orlando.com"
+      ],
+      "sources": [
+        {
+          "domain": "fox35orlando.com",
+          "url": "https://www.fox35orlando.com/news/man-injured-e-bike-crash-involving-ocso-patrol-vehicle-officials-say",
+          "date": "20261024T154500Z"
+        }
+      ]
+    },
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
       "age_band": "25-44",
       "city": null,
       "state": null,
@@ -53,7 +101,7 @@
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
-      "age_band": "0-12 (child)",
+      "age_band": "13-17 (teen)",
       "city": null,
       "state": null,
       "location_precision": null,
