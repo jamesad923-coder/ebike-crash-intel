@@ -87,24 +87,18 @@
         "outcome": "Fatality",
         "throttle_ambiguous": false,
         "age_band": "65+",
-        "confidence_tier": "corroborated",
+        "confidence_tier": "single_source",
         "corroborating_domains": [
-          "wgac.com",
           "wrdw.com"
         ],
         "sources": [
-          {
-            "domain": "wgac.com",
-            "url": "https://wgac.com/2026/10/16/third-fatal-e-bike-crash-in-a-month-prompts-columbia-county-sheriffs-office-safety-alert/",
-            "date": "20261019T201500Z"
-          },
           {
             "domain": "wrdw.com",
             "url": "https://www.wrdw.com/2026/10/21/driver-charged-e-bike-crash-that-killed-65-year-old-man/",
             "date": "20261021T151500Z"
           }
         ],
-        "date": "20261019T201500Z"
+        "date": "20261021T151500Z"
       }
     },
     {
