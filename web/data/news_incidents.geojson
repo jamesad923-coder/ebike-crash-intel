@@ -193,37 +193,6 @@
         ],
         "date": "20261021T011500Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -74.0060152,
-          40.7127281
-        ]
-      },
-      "properties": {
-        "city": "New York",
-        "state": "NY",
-        "location_precision": "city_state_mention",
-        "device": "E-bike",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "Unknown",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "amny.com"
-        ],
-        "sources": [
-          {
-            "domain": "amny.com",
-            "url": "https://www.amny.com/sponsored/join-a-winning-team-inside-the-new-york-personal-injury-firm-built-to-win/",
-            "date": "20261020T150000Z"
-          }
-        ],
-        "date": "20261020T150000Z"
-      }
     }
   ]
 }
