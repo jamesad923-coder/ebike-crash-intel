@@ -131,68 +131,6 @@
         ],
         "date": "20261021T141500Z"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -84.5127405,
-          39.1012809
-        ]
-      },
-      "properties": {
-        "city": "Cincinnati",
-        "state": "OH",
-        "location_precision": "city_state_mention",
-        "device": "E-scooter",
-        "outcome": "Injury",
-        "throttle_ambiguous": false,
-        "age_band": "0-12 (child)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "fox19.com"
-        ],
-        "sources": [
-          {
-            "domain": "fox19.com",
-            "url": "https://www.fox19.com/2026/10/21/11-year-old-seriously-injured-electric-scooter-suv-crash-lebanon-troopers-say/",
-            "date": "20261021T021500Z"
-          }
-        ],
-        "date": "20261021T021500Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -116.0833144,
-          34.8253019
-        ]
-      },
-      "properties": {
-        "city": "San Bernardino County",
-        "state": "CA",
-        "location_precision": "county+outlet_market",
-        "device": "Throttle vehicle (unclear e-bike classification)",
-        "outcome": "Fatality",
-        "throttle_ambiguous": true,
-        "age_band": "13-17 (teen)",
-        "confidence_tier": "single_source",
-        "corroborating_domains": [
-          "dailybulletin.com"
-        ],
-        "sources": [
-          {
-            "domain": "dailybulletin.com",
-            "url": "https://www.dailybulletin.com/2026/10/20/oc-parents-of-teen-boy-killed-in-e-moto-crash-charged-with-child-endangerment/",
-            "date": "20261021T011500Z"
-          }
-        ],
-        "date": "20261021T011500Z"
-      }
     }
   ]
 }
