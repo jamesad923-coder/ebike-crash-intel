@@ -74,54 +74,6 @@
       ]
     },
     {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Severe injury",
-      "age_band": "65+",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "news3lv.com",
-      "url": "https://news3lv.com/news/local/juvenile-hospitalized-with-life-threatening-injuries-after-e-scooter-crash-in-henderson-collision",
-      "seendate": "20261022T050000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "news3lv.com"
-      ],
-      "sources": [
-        {
-          "domain": "news3lv.com",
-          "url": "https://news3lv.com/news/local/juvenile-hospitalized-with-life-threatening-injuries-after-e-scooter-crash-in-henderson-collision",
-          "date": "20261022T050000Z"
-        }
-      ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": true,
-      "outcome": "Fatality",
-      "age_band": "13-17 (teen)",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "whittierdailynews.com",
-      "url": "https://www.whittierdailynews.com/2026/10/21/six-more-orange-county-parents-and-1-brother-facing-criminal-charges-for-underage-e-motorcycle-use/",
-      "seendate": "20261022T034500Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "whittierdailynews.com"
-      ],
-      "sources": [
-        {
-          "domain": "whittierdailynews.com",
-          "url": "https://www.whittierdailynews.com/2026/10/21/six-more-orange-county-parents-and-1-brother-facing-criminal-charges-for-underage-e-motorcycle-use/",
-          "date": "20261022T034500Z"
-        }
-      ]
-    },
-    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
