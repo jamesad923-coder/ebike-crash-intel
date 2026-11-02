@@ -7,28 +7,28 @@
     },
     "measure_note": "Bicyclist-involved crash COUNTS by Boston City Council District, 2021-01-01 onward (~5 years, matching DC and Chicago window length as a consistency choice). Source: City of Boston Vision Zero Crash Records (data.boston.gov). NOT exposure-adjusted -- no per-district ridership data available. Boston's VZ data has no e-bike-specific flag. As of 2026 Boston's public crash file no longer includes ANY injury-severity field (no more 'Fatal injury' vs 'Non-fatal injury' vs 'No injury') -- the 'fatal' count here is instead an APPROXIMATE match against Boston's separate Vision Zero Fatality Records file, joined by nearest timestamp (within 6h) and location (within ~1km) since the two files share no common id; this recovers most but not all known bike fatalities, so 'fatal' is a lower bound, and the 'injury' count below is really just 'not matched as fatal', not a confirmed injury. District assigned via point-in-polygon against official City Council District boundaries -- no district field in the crash records directly. 'near_bike_lane' means within ~30m of an OSM-mapped cycleway (infrastructure context, not a cause).",
     "records_excluded_no_geo_or_district": 39,
-    "total_records": 4072,
+    "total_records": 4073,
     "by_ward": [
       {
         "ward": "District 8",
-        "crashes": 294,
+        "crashes": 295,
         "fatal": 1,
-        "injury": 293,
+        "injury": 294,
         "near_bike_lane": 232
       },
       {
         "ward": "District 3",
-        "crashes": 253,
+        "crashes": 254,
         "fatal": 0,
-        "injury": 253,
+        "injury": 254,
         "near_bike_lane": 91
       },
       {
         "ward": "District 2",
-        "crashes": 201,
+        "crashes": 202,
         "fatal": 0,
-        "injury": 201,
-        "near_bike_lane": 124
+        "injury": 202,
+        "near_bike_lane": 125
       },
       {
         "ward": "District 9",
@@ -46,9 +46,9 @@
       },
       {
         "ward": "District 1",
-        "crashes": 175,
+        "crashes": 174,
         "fatal": 0,
-        "injury": 175,
+        "injury": 174,
         "near_bike_lane": 99
       },
       {
@@ -60,9 +60,9 @@
       },
       {
         "ward": "District 4",
-        "crashes": 111,
+        "crashes": 110,
         "fatal": 0,
-        "injury": 111,
+        "injury": 110,
         "near_bike_lane": 45
       },
       {
@@ -714,6 +714,22 @@
             "fatal": false,
             "near_bike_lane": false,
             "date": "2023-07-15"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.07649348294177,
+              42.34846987214558
+            ]
+          },
+          "properties": {
+            "ward": "District 2",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-04-10"
           }
         },
         {
@@ -1658,6 +1674,22 @@
             "fatal": true,
             "near_bike_lane": true,
             "date": "2026-07-09"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.06519925627074,
+              42.306409778888366
+            ]
+          },
+          "properties": {
+            "ward": "District 3",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-05-03"
           }
         },
         {
@@ -20561,22 +20593,6 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              -71.07610678111817,
-              42.29143782601643
-            ]
-          },
-          "properties": {
-            "ward": "District 4",
-            "fatal": false,
-            "near_bike_lane": false,
-            "date": "2026-06-18"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
               -71.0818842524789,
               42.33179372478211
             ]
@@ -21114,22 +21130,6 @@
             "fatal": false,
             "near_bike_lane": false,
             "date": "2025-07-13"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
-              -71.00527303291727,
-              42.38540067686532
-            ]
-          },
-          "properties": {
-            "ward": "District 1",
-            "fatal": false,
-            "near_bike_lane": false,
-            "date": "2026-04-09"
           }
         },
         {
@@ -24977,6 +24977,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.0966909684101,
+              42.34196167859733
+            ]
+          },
+          "properties": {
+            "ward": "District 8",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-01-05"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.11109551286684,
               42.32962350766265
             ]
@@ -26195,13 +26211,6 @@
     "measure_note": "Bluebikes monthly trip data (hubway-data S3 bucket -- Bluebikes was originally called Hubway). Same Lyft platform as Capital Bikeshare and Divvy; same rideable_type field distinguishing electric_bike from classic_bike per trip. Covers ONLY Bluebikes' own fleet -- says nothing about personally-owned e-bikes. Shown as citywide context, not blended into district crash counts.",
     "monthly": [
       {
-        "month": "202605",
-        "total_trips": 432675,
-        "electric_bike_trips": 128860,
-        "classic_bike_trips": 303815,
-        "electric_bike_share": 0.298
-      },
-      {
         "month": "202606",
         "total_trips": 515776,
         "electric_bike_trips": 135472,
@@ -26226,74 +26235,74 @@
   },
   "ward_exposure": {
     "window": {
-      "start": "2026-05-01",
+      "start": "2026-06-01",
       "end": "2026-08-31"
     },
-    "unmapped_trips": 833731,
+    "unmapped_trips": 650530,
     "measure_note": "NOT a true risk-per-rider rate -- same caveat as DC and Chicago. Numerator (crashes) includes ALL cyclists; denominator (Bluebikes trips) is Bluebikes' fleet only. Read as 'crash activity relative to Bluebikes activity', not 'risk per cyclist'.",
     "by_ward": [
       {
-        "ward": "District 4",
-        "crashes_in_window": 8,
-        "bluebikes_trips_in_window": 8785,
-        "bluebikes_ebike_trips_in_window": 5606,
-        "crashes_per_1000_bluebikes_trips": 0.91
+        "ward": "District 5",
+        "crashes_in_window": 4,
+        "bluebikes_trips_in_window": 4317,
+        "bluebikes_ebike_trips_in_window": 2499,
+        "crashes_per_1000_bluebikes_trips": 0.93
       },
       {
-        "ward": "District 5",
-        "crashes_in_window": 5,
-        "bluebikes_trips_in_window": 5491,
-        "bluebikes_ebike_trips_in_window": 3172,
-        "crashes_per_1000_bluebikes_trips": 0.91
+        "ward": "District 4",
+        "crashes_in_window": 6,
+        "bluebikes_trips_in_window": 6997,
+        "bluebikes_ebike_trips_in_window": 4479,
+        "crashes_per_1000_bluebikes_trips": 0.86
       },
       {
         "ward": "District 6",
-        "crashes_in_window": 15,
-        "bluebikes_trips_in_window": 41081,
-        "bluebikes_ebike_trips_in_window": 15863,
-        "crashes_per_1000_bluebikes_trips": 0.37
+        "crashes_in_window": 13,
+        "bluebikes_trips_in_window": 32210,
+        "bluebikes_ebike_trips_in_window": 12774,
+        "crashes_per_1000_bluebikes_trips": 0.4
       },
       {
         "ward": "District 3",
-        "crashes_in_window": 22,
-        "bluebikes_trips_in_window": 70378,
-        "bluebikes_ebike_trips_in_window": 25446,
-        "crashes_per_1000_bluebikes_trips": 0.31
+        "crashes_in_window": 18,
+        "bluebikes_trips_in_window": 55106,
+        "bluebikes_ebike_trips_in_window": 19926,
+        "crashes_per_1000_bluebikes_trips": 0.33
       },
       {
         "ward": "District 9",
-        "crashes_in_window": 14,
-        "bluebikes_trips_in_window": 113355,
-        "bluebikes_ebike_trips_in_window": 39445,
-        "crashes_per_1000_bluebikes_trips": 0.12
+        "crashes_in_window": 13,
+        "bluebikes_trips_in_window": 88784,
+        "bluebikes_ebike_trips_in_window": 31180,
+        "crashes_per_1000_bluebikes_trips": 0.15
       },
       {
         "ward": "District 7",
-        "crashes_in_window": 9,
-        "bluebikes_trips_in_window": 93340,
-        "bluebikes_ebike_trips_in_window": 26928,
-        "crashes_per_1000_bluebikes_trips": 0.1
+        "crashes_in_window": 7,
+        "bluebikes_trips_in_window": 74064,
+        "bluebikes_ebike_trips_in_window": 21551,
+        "crashes_per_1000_bluebikes_trips": 0.09
       },
       {
         "ward": "District 1",
-        "crashes_in_window": 14,
-        "bluebikes_trips_in_window": 204922,
-        "bluebikes_ebike_trips_in_window": 66691,
+        "crashes_in_window": 12,
+        "bluebikes_trips_in_window": 165828,
+        "bluebikes_ebike_trips_in_window": 53725,
         "crashes_per_1000_bluebikes_trips": 0.07
       },
       {
         "ward": "District 2",
-        "crashes_in_window": 17,
-        "bluebikes_trips_in_window": 302958,
-        "bluebikes_ebike_trips_in_window": 100431,
-        "crashes_per_1000_bluebikes_trips": 0.06
+        "crashes_in_window": 16,
+        "bluebikes_trips_in_window": 242185,
+        "bluebikes_ebike_trips_in_window": 79837,
+        "crashes_per_1000_bluebikes_trips": 0.07
       },
       {
         "ward": "District 8",
-        "crashes_in_window": 21,
-        "bluebikes_trips_in_window": 387370,
-        "bluebikes_ebike_trips_in_window": 109845,
-        "crashes_per_1000_bluebikes_trips": 0.05
+        "crashes_in_window": 19,
+        "bluebikes_trips_in_window": 308715,
+        "bluebikes_ebike_trips_in_window": 86999,
+        "crashes_per_1000_bluebikes_trips": 0.06
       }
     ]
   }
