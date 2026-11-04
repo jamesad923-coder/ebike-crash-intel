@@ -1,4 +1,29 @@
 {
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
-  "reports": []
+  "reports": [
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "0-12 (child)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "newsroomamerica.com",
+      "url": "https://newsroomamerica.com/tag/child_injuries",
+      "seendate": "20261104T013000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "newsroomamerica.com"
+      ],
+      "sources": [
+        {
+          "domain": "newsroomamerica.com",
+          "url": "https://newsroomamerica.com/tag/child_injuries",
+          "date": "20261104T013000Z"
+        }
+      ]
+    }
+  ]
 }
