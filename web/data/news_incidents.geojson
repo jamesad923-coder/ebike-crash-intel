@@ -7,5 +7,37 @@
     "url": "https://www.gdeltproject.org/",
     "limitations": "UNVERIFIED beyond automated cross-source checks. Each report is either 'corroborated' (2+ independent outlets, same city/outcome, within 3 days) or 'single_source' (one outlet only) -- shown explicitly. Extracted automatically from article text via keyword/dateline matching, not human-reviewed. Early news reports can be wrong about cause or severity. Never shows a name or exact age -- city, age BAND, device, and outcome only. Always check the linked source(s) before treating any single report as fact."
   },
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.4494174,
+          26.6279798
+        ]
+      },
+      "properties": {
+        "city": "Palm Beach",
+        "state": "FL",
+        "location_precision": "city_state_mention",
+        "device": "E-bike",
+        "outcome": "Fatality",
+        "throttle_ambiguous": false,
+        "age_band": "18-24",
+        "confidence_tier": "single_source",
+        "corroborating_domains": [
+          "wflx.com"
+        ],
+        "sources": [
+          {
+            "domain": "wflx.com",
+            "url": "https://www.wflx.com/2026/11/06/i-miss-him-friends-mourn-boca-raton-teen-killed-e-bike-crash/",
+            "date": "20261106T083000Z"
+          }
+        ],
+        "date": "20261106T083000Z"
+      }
+    }
+  ]
 }
