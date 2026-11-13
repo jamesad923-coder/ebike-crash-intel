@@ -48,30 +48,6 @@
           "date": "20261108T183000Z"
         }
       ]
-    },
-    {
-      "device": "E-bike",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "18-24",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wptv.com",
-      "url": "https://www.wptv.com/news/local-news/our-community/boca-raton-delray-beach/i-miss-him-friends-mourn-boca-raton-teen-killed-in-e-bike-crash",
-      "seendate": "20261106T083000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wptv.com"
-      ],
-      "sources": [
-        {
-          "domain": "wptv.com",
-          "url": "https://www.wptv.com/news/local-news/our-community/boca-raton-delray-beach/i-miss-him-friends-mourn-boca-raton-teen-killed-in-e-bike-crash",
-          "date": "20261106T083000Z"
-        }
-      ]
     }
   ]
 }
