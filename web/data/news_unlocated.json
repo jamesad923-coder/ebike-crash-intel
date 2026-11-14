@@ -26,6 +26,30 @@
       ]
     },
     {
+      "device": "E-scooter",
+      "throttle_ambiguous": false,
+      "outcome": "Injury",
+      "age_band": "Unknown",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "nbcphiladelphia.com",
+      "url": "https://www.nbcphiladelphia.com/news/local/serious-crash-involving-e-scooter-under-investigation-in-woodbury/4495254/",
+      "seendate": "20261111T030000Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "nbcphiladelphia.com"
+      ],
+      "sources": [
+        {
+          "domain": "nbcphiladelphia.com",
+          "url": "https://www.nbcphiladelphia.com/news/local/serious-crash-involving-e-scooter-under-investigation-in-woodbury/4495254/",
+          "date": "20261111T030000Z"
+        }
+      ]
+    },
+    {
       "device": "E-bike",
       "throttle_ambiguous": false,
       "outcome": "Fatality",
