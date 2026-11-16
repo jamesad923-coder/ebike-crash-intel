@@ -21,7 +21,7 @@
         "crashes": 256,
         "fatal": 0,
         "injury": 256,
-        "near_bike_lane": 92
+        "near_bike_lane": 93
       },
       {
         "ward": "District 2",
@@ -23576,7 +23576,7 @@
           "properties": {
             "ward": "District 3",
             "fatal": false,
-            "near_bike_lane": false,
+            "near_bike_lane": true,
             "date": "2023-07-10"
           }
         },
