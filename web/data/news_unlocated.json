@@ -1,29 +1,4 @@
 {
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
-  "reports": [
-    {
-      "device": "E-scooter",
-      "throttle_ambiguous": false,
-      "outcome": "Fatality",
-      "age_band": "25-44",
-      "city": null,
-      "state": null,
-      "location_precision": null,
-      "located": false,
-      "domain": "wlwt.com",
-      "url": "https://www.wlwt.com/article/william-mccullough-crash-covington-scooter-brother/74394007",
-      "seendate": "20261111T040000Z",
-      "confidence_tier": "single_source",
-      "corroborating_domains": [
-        "wlwt.com"
-      ],
-      "sources": [
-        {
-          "domain": "wlwt.com",
-          "url": "https://www.wlwt.com/article/william-mccullough-crash-covington-scooter-brother/74394007",
-          "date": "20261111T040000Z"
-        }
-      ]
-    }
-  ]
+  "reports": []
 }
