@@ -2,68 +2,68 @@
   "ward_summary": {
     "date_window": {
       "start": "2021-01-01",
-      "end": "2026-09-29",
+      "end": "2026-10-29",
       "years": 5
     },
     "measure_note": "Bicyclist-involved crash COUNTS by Boston City Council District, 2021-01-01 onward (~5 years, matching DC and Chicago window length as a consistency choice). Source: City of Boston Vision Zero Crash Records (data.boston.gov). NOT exposure-adjusted -- no per-district ridership data available. Boston's VZ data has no e-bike-specific flag. As of 2026 Boston's public crash file no longer includes ANY injury-severity field (no more 'Fatal injury' vs 'Non-fatal injury' vs 'No injury') -- the 'fatal' count here is instead an APPROXIMATE match against Boston's separate Vision Zero Fatality Records file, joined by nearest timestamp (within 6h) and location (within ~1km) since the two files share no common id; this recovers most but not all known bike fatalities, so 'fatal' is a lower bound, and the 'injury' count below is really just 'not matched as fatal', not a confirmed injury. District assigned via point-in-polygon against official City Council District boundaries -- no district field in the crash records directly. 'near_bike_lane' means within ~30m of an OSM-mapped cycleway (infrastructure context, not a cause).",
     "records_excluded_no_geo_or_district": 39,
-    "total_records": 4098,
+    "total_records": 4128,
     "by_ward": [
       {
         "ward": "District 8",
-        "crashes": 300,
+        "crashes": 303,
         "fatal": 1,
-        "injury": 299,
-        "near_bike_lane": 237
+        "injury": 302,
+        "near_bike_lane": 238
       },
       {
         "ward": "District 3",
-        "crashes": 256,
+        "crashes": 265,
         "fatal": 0,
-        "injury": 256,
-        "near_bike_lane": 93
+        "injury": 265,
+        "near_bike_lane": 98
       },
       {
         "ward": "District 2",
-        "crashes": 208,
+        "crashes": 211,
         "fatal": 0,
-        "injury": 208,
-        "near_bike_lane": 129
+        "injury": 211,
+        "near_bike_lane": 130
       },
       {
         "ward": "District 9",
-        "crashes": 202,
+        "crashes": 208,
         "fatal": 0,
-        "injury": 202,
-        "near_bike_lane": 133
+        "injury": 208,
+        "near_bike_lane": 138
       },
       {
         "ward": "District 7",
-        "crashes": 182,
+        "crashes": 185,
         "fatal": 1,
-        "injury": 181,
-        "near_bike_lane": 80
+        "injury": 184,
+        "near_bike_lane": 82
       },
       {
         "ward": "District 1",
-        "crashes": 177,
+        "crashes": 179,
         "fatal": 0,
-        "injury": 177,
-        "near_bike_lane": 101
+        "injury": 179,
+        "near_bike_lane": 102
       },
       {
         "ward": "District 6",
-        "crashes": 161,
+        "crashes": 164,
         "fatal": 0,
-        "injury": 161,
+        "injury": 164,
         "near_bike_lane": 78
       },
       {
         "ward": "District 4",
-        "crashes": 111,
+        "crashes": 112,
         "fatal": 0,
-        "injury": 111,
-        "near_bike_lane": 46
+        "injury": 112,
+        "near_bike_lane": 47
       },
       {
         "ward": "District 5",
@@ -689,6 +689,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.10756854596896,
+              42.33325787543577
+            ]
+          },
+          "properties": {
+            "ward": "District 8",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-02"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.06817564290809,
               42.33330554809788
             ]
@@ -1130,6 +1146,22 @@
             "fatal": false,
             "near_bike_lane": false,
             "date": "2022-08-14"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.07075434946688,
+              42.35948365161255
+            ]
+          },
+          "properties": {
+            "ward": "District 8",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-13"
           }
         },
         {
@@ -3281,6 +3313,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.07008253884325,
+              42.33594363212385
+            ]
+          },
+          "properties": {
+            "ward": "District 3",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-08"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.08049993836859,
               42.33364827774625
             ]
@@ -4369,6 +4417,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.09066806181268,
+              42.286337490074814
+            ]
+          },
+          "properties": {
+            "ward": "District 4",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-16"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.11109551286684,
               42.32962350766265
             ]
@@ -4657,6 +4721,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.05708171558481,
+              42.34015874558521
+            ]
+          },
+          "properties": {
+            "ward": "District 2",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-24"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.09715182524712,
               42.34880344290092
             ]
@@ -4730,6 +4810,22 @@
             "fatal": false,
             "near_bike_lane": false,
             "date": "2025-05-17"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.07201818804987,
+              42.33262014368461
+            ]
+          },
+          "properties": {
+            "ward": "District 3",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-01"
           }
         },
         {
@@ -5450,6 +5546,22 @@
             "fatal": false,
             "near_bike_lane": true,
             "date": "2023-09-10"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.0543011452124,
+              42.321790114583905
+            ]
+          },
+          "properties": {
+            "ward": "District 3",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-16"
           }
         },
         {
@@ -7361,6 +7473,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.08567208826958,
+              42.32131623588759
+            ]
+          },
+          "properties": {
+            "ward": "District 7",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-09"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.11037184568299,
               42.30713393729496
             ]
@@ -7418,6 +7546,22 @@
             "fatal": false,
             "near_bike_lane": true,
             "date": "2025-09-11"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.14817014508583,
+              42.35765869232945
+            ]
+          },
+          "properties": {
+            "ward": "District 9",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-15"
           }
         },
         {
@@ -8945,6 +9089,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.05586603160064,
+              42.363609140105105
+            ]
+          },
+          "properties": {
+            "ward": "District 1",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-13"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.10604446244054,
               42.31485296849013
             ]
@@ -9402,6 +9562,22 @@
             "fatal": false,
             "near_bike_lane": true,
             "date": "2023-03-20"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.07529471224018,
+              42.33223773774564
+            ]
+          },
+          "properties": {
+            "ward": "District 3",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-27"
           }
         },
         {
@@ -10250,6 +10426,22 @@
             "fatal": false,
             "near_bike_lane": false,
             "date": "2022-07-06"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.0753613847683,
+              42.383584917311275
+            ]
+          },
+          "properties": {
+            "ward": "District 1",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-08"
           }
         },
         {
@@ -11786,6 +11978,22 @@
             "fatal": false,
             "near_bike_lane": true,
             "date": "2025-05-04"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.11193932239297,
+              42.31910828013098
+            ]
+          },
+          "properties": {
+            "ward": "District 6",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-26"
           }
         },
         {
@@ -13345,6 +13553,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.06046631597906,
+              42.32009727543205
+            ]
+          },
+          "properties": {
+            "ward": "District 3",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-20"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.13275759369229,
               42.355539014087846
             ]
@@ -14666,6 +14890,22 @@
             "fatal": false,
             "near_bike_lane": false,
             "date": "2023-01-29"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.092399234367,
+              42.33295015679992
+            ]
+          },
+          "properties": {
+            "ward": "District 7",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-29"
           }
         },
         {
@@ -16145,6 +16385,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.1117502973873,
+              42.33118227756449
+            ]
+          },
+          "properties": {
+            "ward": "District 6",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-04"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.07806819865539,
               42.33734916507624
             ]
@@ -16778,6 +17034,22 @@
             "fatal": false,
             "near_bike_lane": true,
             "date": "2024-07-08"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.04965254868279,
+              42.30076283144285
+            ]
+          },
+          "properties": {
+            "ward": "District 3",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-09"
           }
         },
         {
@@ -17642,6 +17914,22 @@
             "fatal": false,
             "near_bike_lane": true,
             "date": "2025-05-28"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.0727271219818,
+              42.3360522713876
+            ]
+          },
+          "properties": {
+            "ward": "District 3",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-02"
           }
         },
         {
@@ -19825,6 +20113,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.12371933998844,
+              42.36833400288524
+            ]
+          },
+          "properties": {
+            "ward": "District 9",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-07"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.08618821585601,
               42.34413429544672
             ]
@@ -21169,6 +21473,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.07671428517116,
+              42.346360309353145
+            ]
+          },
+          "properties": {
+            "ward": "District 2",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-09"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.0502550020959,
               42.33843409565828
             ]
@@ -21210,6 +21530,22 @@
             "fatal": false,
             "near_bike_lane": false,
             "date": "2021-10-22"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.14577056336165,
+              42.36154672165098
+            ]
+          },
+          "properties": {
+            "ward": "District 9",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-01"
           }
         },
         {
@@ -21377,6 +21713,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.15140322916106,
+              42.33647434603828
+            ]
+          },
+          "properties": {
+            "ward": "District 9",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-17"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.0573803959455,
               42.367768839668166
             ]
@@ -21402,6 +21754,22 @@
             "fatal": false,
             "near_bike_lane": false,
             "date": "2022-10-08"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.07284412787256,
+              42.34846684963359
+            ]
+          },
+          "properties": {
+            "ward": "District 2",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-12"
           }
         },
         {
@@ -21482,6 +21850,22 @@
             "fatal": false,
             "near_bike_lane": true,
             "date": "2024-06-18"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.0751934744757,
+              42.33774620773719
+            ]
+          },
+          "properties": {
+            "ward": "District 3",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-23"
           }
         },
         {
@@ -22257,6 +22641,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.06147989729703,
+              42.32047042309178
+            ]
+          },
+          "properties": {
+            "ward": "District 3",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-20"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.064909139748,
               42.375880218049836
             ]
@@ -22906,6 +23306,38 @@
             "fatal": false,
             "near_bike_lane": true,
             "date": "2026-06-02"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.09990375951381,
+              42.322767653412356
+            ]
+          },
+          "properties": {
+            "ward": "District 7",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-02"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.0901033967954,
+              42.34922396109724
+            ]
+          },
+          "properties": {
+            "ward": "District 8",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-12"
           }
         },
         {
@@ -24273,6 +24705,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.1279818760617,
+              42.2909866066261
+            ]
+          },
+          "properties": {
+            "ward": "District 6",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-06"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.05541994085277,
               42.35260486988443
             ]
@@ -25009,6 +25457,22 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
+              -71.15227465477108,
+              42.33718959235167
+            ]
+          },
+          "properties": {
+            "ward": "District 9",
+            "fatal": false,
+            "near_bike_lane": false,
+            "date": "2026-10-01"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
               -71.08665732939623,
               42.29868030969056
             ]
@@ -25050,6 +25514,22 @@
             "fatal": false,
             "near_bike_lane": true,
             "date": "2026-03-24"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -71.1303734148904,
+              42.36228404596916
+            ]
+          },
+          "properties": {
+            "ward": "District 9",
+            "fatal": false,
+            "near_bike_lane": true,
+            "date": "2026-10-01"
           }
         },
         {
@@ -26649,6 +27129,13 @@
     "measure_note": "NOT a true risk-per-rider rate -- same caveat as DC and Chicago. Numerator (crashes) includes ALL cyclists; denominator (Bluebikes trips) is Bluebikes' fleet only. Read as 'crash activity relative to Bluebikes activity', not 'risk per cyclist'.",
     "by_ward": [
       {
+        "ward": "District 4",
+        "crashes_in_window": 8,
+        "bluebikes_trips_in_window": 9129,
+        "bluebikes_ebike_trips_in_window": 6041,
+        "crashes_per_1000_bluebikes_trips": 0.88
+      },
+      {
         "ward": "District 5",
         "crashes_in_window": 5,
         "bluebikes_trips_in_window": 5691,
@@ -26656,57 +27143,50 @@
         "crashes_per_1000_bluebikes_trips": 0.88
       },
       {
-        "ward": "District 4",
-        "crashes_in_window": 7,
-        "bluebikes_trips_in_window": 9129,
-        "bluebikes_ebike_trips_in_window": 6041,
-        "crashes_per_1000_bluebikes_trips": 0.77
-      },
-      {
         "ward": "District 6",
-        "crashes_in_window": 15,
+        "crashes_in_window": 18,
         "bluebikes_trips_in_window": 42675,
         "bluebikes_ebike_trips_in_window": 17647,
-        "crashes_per_1000_bluebikes_trips": 0.35
+        "crashes_per_1000_bluebikes_trips": 0.42
       },
       {
         "ward": "District 3",
-        "crashes_in_window": 20,
+        "crashes_in_window": 29,
         "bluebikes_trips_in_window": 74186,
         "bluebikes_ebike_trips_in_window": 28998,
-        "crashes_per_1000_bluebikes_trips": 0.27
+        "crashes_per_1000_bluebikes_trips": 0.39
       },
       {
         "ward": "District 9",
-        "crashes_in_window": 16,
+        "crashes_in_window": 22,
         "bluebikes_trips_in_window": 125092,
         "bluebikes_ebike_trips_in_window": 46995,
-        "crashes_per_1000_bluebikes_trips": 0.13
+        "crashes_per_1000_bluebikes_trips": 0.18
       },
       {
         "ward": "District 7",
-        "crashes_in_window": 9,
+        "crashes_in_window": 12,
         "bluebikes_trips_in_window": 108527,
         "bluebikes_ebike_trips_in_window": 35028,
-        "crashes_per_1000_bluebikes_trips": 0.08
+        "crashes_per_1000_bluebikes_trips": 0.11
       },
       {
         "ward": "District 1",
-        "crashes_in_window": 15,
+        "crashes_in_window": 17,
         "bluebikes_trips_in_window": 211133,
         "bluebikes_ebike_trips_in_window": 74266,
-        "crashes_per_1000_bluebikes_trips": 0.07
+        "crashes_per_1000_bluebikes_trips": 0.08
       },
       {
         "ward": "District 2",
-        "crashes_in_window": 22,
+        "crashes_in_window": 25,
         "bluebikes_trips_in_window": 313843,
         "bluebikes_ebike_trips_in_window": 112516,
-        "crashes_per_1000_bluebikes_trips": 0.07
+        "crashes_per_1000_bluebikes_trips": 0.08
       },
       {
         "ward": "District 8",
-        "crashes_in_window": 24,
+        "crashes_in_window": 27,
         "bluebikes_trips_in_window": 421866,
         "bluebikes_ebike_trips_in_window": 132671,
         "crashes_per_1000_bluebikes_trips": 0.06
