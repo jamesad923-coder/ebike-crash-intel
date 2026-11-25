@@ -1,4 +1,29 @@
 {
   "note": "Reports where no confident city/state could be extracted from the article (no AP-style dateline found). Not placed on the map; not assigned invented coordinates.",
-  "reports": []
+  "reports": [
+    {
+      "device": "E-bike",
+      "throttle_ambiguous": false,
+      "outcome": "Fatality",
+      "age_band": "13-17 (teen)",
+      "city": null,
+      "state": null,
+      "location_precision": null,
+      "located": false,
+      "domain": "fox26houston.com",
+      "url": "https://www.fox26houston.com/news/fort-bend-county-plans-e-bike-safety-classes-after-14-year-old-rider-killed",
+      "seendate": "20261125T044500Z",
+      "confidence_tier": "single_source",
+      "corroborating_domains": [
+        "fox26houston.com"
+      ],
+      "sources": [
+        {
+          "domain": "fox26houston.com",
+          "url": "https://www.fox26houston.com/news/fort-bend-county-plans-e-bike-safety-classes-after-14-year-old-rider-killed",
+          "date": "20261125T044500Z"
+        }
+      ]
+    }
+  ]
 }
